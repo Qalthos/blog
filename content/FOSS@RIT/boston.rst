@@ -1,8 +1,8 @@
 Boston
 ######
 :date: 2011-01-23 07:14
-:author: Nathaniel Case (noreply@blogger.com)
-:tags: http://schemas.google.com/blogger/2008/kind#post, peopledashboard, hackfest, FOSSRIT, widgets, CIVX, Boston
+:author: Nathaniel Case
+:tags: peopledashboard, hackfest, FOSSRIT, widgets, CIVX, Boston
 
 So here we are in OLPC HQ, right in the middle of MIT. It's pretty sweet
 having `Luke`_ around again to hack CIVX with us.

@@ -1,8 +1,8 @@
 pyDex on Sugar
 ##############
 :date: 2011-01-19 23:51
-:author: Nathaniel Case (noreply@blogger.com)
-:tags: http://schemas.google.com/blogger/2008/kind#post, FOSSRIT, sugar, pyDex
+:author: Nathaniel Case
+:tags: FOSSRIT, sugar, pyDex
 
 A warning, this gets very technical with lots of acronyms and jargon.
 tl;dr: I have a new pyDex branch which \*should\* run on the OLPC

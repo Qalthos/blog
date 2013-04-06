@@ -1,8 +1,8 @@
 Here be Dragons
 ###############
 :date: 2010-09-09 18:11
-:author: Nathaniel Case (noreply@blogger.com)
-:tags: http://schemas.google.com/blogger/2008/kind#post, peopledashboard, FOSSRIT, CIVX
+:author: Nathaniel Case
+:tags: peopledashboard, FOSSRIT, CIVX
 
 Today was the day we got `Rebecca`_ on to a git repo towards
 implementing her changes to the people dashboard. It's only a halfway

@@ -1,8 +1,8 @@
 Final Stretch
 #############
 :date: 2012-02-29 16:15
-:author: Nathaniel Case (noreply@blogger.com)
-:tags: http://schemas.google.com/blogger/2008/kind#post, pybotwar, hackfest, FOSSRIT, FLOSS-seminar, webbotwar, RIT, openshift
+:author: Nathaniel Case
+:tags: pybotwar, hackfest, FOSSRIT, FLOSS-seminar, webbotwar, RIT, openshift
 
 So the past two days have been madness trying to get the recently
 christened WebBotWar (or just WebBot) to actually work on the web.

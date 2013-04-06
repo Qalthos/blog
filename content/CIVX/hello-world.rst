@@ -1,8 +1,8 @@
 Hello, world...
 ###############
 :date: 2010-09-09 18:10
-:author: Nathaniel Case (noreply@blogger.com)
-:tags: http://schemas.google.com/blogger/2008/kind#post, FOSSRIT, democracymap, CIVX, geowebdns
+:author: Nathaniel Case
+:tags: FOSSRIT, democracymap, CIVX, geowebdns
 
 .. raw:: html
 

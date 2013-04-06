@@ -1,8 +1,8 @@
 Multiprocessing the PolyScraper
 ###############################
 :date: 2011-06-29 18:04
-:author: Nathaniel Case (noreply@blogger.com)
-:tags: http://schemas.google.com/blogger/2008/kind#post, hackfest, FOSSRIT, SURS, polyscraper
+:author: Nathaniel Case
+:tags: hackfest, FOSSRIT, SURS, polyscraper
 
 Warning: This post was written at 4AM and contains a technical account
 of what I have been doing attempting to parallelize CIVX's internals. If

@@ -1,8 +1,8 @@
 The Last Week
 #############
 :date: 2011-06-21 22:56
-:author: Nathaniel Case (noreply@blogger.com)
-:tags: http://schemas.google.com/blogger/2008/kind#post, peopledashboard, FOSSRIT, widgets, scrapers, SURS, CIVX, fabulous
+:author: Nathaniel Case
+:tags: peopledashboard, FOSSRIT, widgets, scrapers, SURS, CIVX, fabulous
 
 This week has been a mess for a lot of reasons. Let's see what I managed
 to get through so far.

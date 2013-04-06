@@ -1,8 +1,8 @@
 FLOSS Seminar Update
 ####################
 :date: 2012-01-19 17:46
-:author: Nathaniel Case (noreply@blogger.com)
-:tags: http://schemas.google.com/blogger/2008/kind#post, FOSSRIT, FLOSS-seminar, RIT
+:author: Nathaniel Case
+:tags: FOSSRIT, FLOSS-seminar, RIT
 
 So it's week 5, what has been going on?
 

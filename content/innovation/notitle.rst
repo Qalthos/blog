@@ -1,8 +1,8 @@
 notitle
 #######
 :date: 2011-10-18 18:47
-:author: Nathaniel Case (noreply@blogger.com)
-:tags: http://schemas.google.com/blogger/2008/kind#post, innovation_reskin, CSI
+:author: Nathaniel Case
+:tags: innovation_reskin, CSI
 
 Working on `http://www-staging.rit.edu/innovationcenter/`_, I've gotten
 most of it to look pretty close to what the Nova site looks like now.

@@ -1,8 +1,8 @@
 Wikiotics
 #########
 :date: 2010-09-20 19:45
-:author: Nathaniel Case (noreply@blogger.com)
-:tags: http://schemas.google.com/blogger/2008/kind#post, wikiotics, FOSSRIT
+:author: Nathaniel Case
+:tags: wikiotics, FOSSRIT
 
 As of Friday, I have been doing some work (along with `Taylor`_ for a
 new set of people, `Wikiotics`_. Their goal is basically to create a

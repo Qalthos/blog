@@ -1,8 +1,8 @@
 Just another ten-hour day
 #########################
 :date: 2010-09-09 18:11
-:author: Nathaniel Case (noreply@blogger.com)
-:tags: http://schemas.google.com/blogger/2008/kind#post, peopledashboard, FOSSRIT, CIVX
+:author: Nathaniel Case
+:tags: peopledashboard, FOSSRIT, CIVX
 
 Today was another exciting day in CIVX-land.
 tl;dr: I spend the day helping other people and being awesome

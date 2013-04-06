@@ -1,8 +1,8 @@
 pyDex Progress
 ##############
 :date: 2010-07-10 16:51
-:author: Nathaniel Case (noreply@blogger.com)
-:tags: http://schemas.google.com/blogger/2008/kind#post, pyDex
+:author: Nathaniel Case
+:tags: pyDex
 
 I've finally gotten around to staging and commiting a few enhancements
 to the `pydex repository`_. The more advanced stuff like Isshu pokemon

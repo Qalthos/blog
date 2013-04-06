@@ -1,8 +1,8 @@
 Summer of CIVX
 ##############
 :date: 2011-06-21 22:56
-:author: Nathaniel Case (noreply@blogger.com)
-:tags: http://schemas.google.com/blogger/2008/kind#post, peopledashboard, FOSSRIT, widgets, SURS, CIVX
+:author: Nathaniel Case
+:tags: peopledashboard, FOSSRIT, widgets, SURS, CIVX
 
 So I'm back at RIT for the summer working on CIVX again. There's been a
 lot of development on Moksha, the software stack CIVX runs on, and not

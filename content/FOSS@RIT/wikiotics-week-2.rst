@@ -1,8 +1,8 @@
 Wikiotics Week 2
 ################
 :date: 2010-09-29 18:36
-:author: Nathaniel Case (noreply@blogger.com)
-:tags: http://schemas.google.com/blogger/2008/kind#post, wikiotics, FOSSRIT
+:author: Nathaniel Case
+:tags: wikiotics, FOSSRIT
 
 We're into week 2 of Wikiotics' `four week plan`_ to push Wikiotics
 development, so I thought I'd get out all the stuff I did last week.

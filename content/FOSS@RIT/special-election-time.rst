@@ -1,8 +1,8 @@
 Special Election Time
 #####################
 :date: 2011-03-29 03:07
-:author: Nathaniel Case (noreply@blogger.com)
-:tags: http://schemas.google.com/blogger/2008/kind#post, FOSSRIT, election
+:author: Nathaniel Case
+:tags: FOSSRIT, election
 
 Rochester is having a special election tomorrow to choose a new Mayor,
 as the previous Mayor, Robert Duffy, is now the Lieutenant Governor of

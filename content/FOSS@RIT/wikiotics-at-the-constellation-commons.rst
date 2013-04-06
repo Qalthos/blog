@@ -1,8 +1,8 @@
 Wikiotics at the Constellation Commons
 ######################################
 :date: 2010-12-08 23:30
-:author: Nathaniel Case (noreply@blogger.com)
-:tags: http://schemas.google.com/blogger/2008/kind#post, wikiotics, FOSSRIT
+:author: Nathaniel Case
+:tags: wikiotics, FOSSRIT
 
 This happened quite some time ago now, but with the election coverage I
 haven't had much time to get this out.

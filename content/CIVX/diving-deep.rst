@@ -1,8 +1,8 @@
 Diving Deep
 ###########
 :date: 2010-09-09 18:11
-:author: Nathaniel Case (noreply@blogger.com)
-:tags: http://schemas.google.com/blogger/2008/kind#post, FOSSRIT, scrapers, CIVX
+:author: Nathaniel Case
+:tags: FOSSRIT, scrapers, CIVX
 
 Yesterday had been spent working on a proper dev branch to CIVX. Today
 we gave it a home.

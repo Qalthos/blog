@@ -1,8 +1,8 @@
 Election Night
 ##############
 :date: 2011-03-29 02:59
-:author: Nathaniel Case (noreply@blogger.com)
-:tags: http://schemas.google.com/blogger/2008/kind#post, journalism, FOSSRIT, election
+:author: Nathaniel Case
+:tags: journalism, FOSSRIT, election
 
 So election night is tonight. I'll have free time soon.
 The main reason for my lack of time lately has to do with the election.

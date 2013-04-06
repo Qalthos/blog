@@ -1,8 +1,8 @@
 First FLOSS Seminar post
 ########################
 :date: 2011-12-01 20:22
-:author: Nathaniel Case (noreply@blogger.com)
-:tags: http://schemas.google.com/blogger/2008/kind#post, FOSSRIT, FLOSS-seminar, RIT
+:author: Nathaniel Case
+:tags: FOSSRIT, FLOSS-seminar, RIT
 
 So this quarter I am taking a `FLOSS`_ Seminar being taught by `Bean`_
 which should be pretty awesome. As a graduate student (as well as a

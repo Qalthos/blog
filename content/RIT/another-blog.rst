@@ -1,8 +1,8 @@
 Another Blog
 ############
 :date: 2010-09-07 16:49
-:author: Nathaniel Case (noreply@blogger.com)
-:tags: http://schemas.google.com/blogger/2008/kind#post, journalism, RIT
+:author: Nathaniel Case
+:tags: journalism, RIT
 
 Just as I get used to this one, another of my classes requires me to
 keep a blog, and to keep it separate from any other blogs we may keep.

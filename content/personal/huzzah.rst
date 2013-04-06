@@ -1,8 +1,8 @@
 Huzzah!
 #######
 :date: 2010-09-06 17:57
-:author: Nathaniel Case (noreply@blogger.com)
-:tags: http://schemas.google.com/blogger/2008/kind#post, personal, RIT
+:author: Nathaniel Case
+:tags: personal, RIT
 
 Here we are, back at the beginning of another school year. It's going to
 be interesting, I'm still pretty laid back from Fan Expo Canada in

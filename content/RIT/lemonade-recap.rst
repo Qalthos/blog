@@ -1,8 +1,8 @@
 Lemonade Recap
 ##############
 :date: 2010-11-10 20:26
-:author: Nathaniel Case (noreply@blogger.com)
-:tags: http://schemas.google.com/blogger/2008/kind#post, lemonade, FOSSRIT
+:author: Nathaniel Case
+:tags: lemonade, FOSSRIT
 
 So here we are at the end of the quarter. Have we accomplished our
 goals? I think so.

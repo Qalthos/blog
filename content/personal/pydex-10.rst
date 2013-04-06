@@ -1,8 +1,8 @@
 pyDex 1.0
 #########
 :date: 2011-05-08 03:19
-:author: Nathaniel Case (noreply@blogger.com)
-:tags: http://schemas.google.com/blogger/2008/kind#post, pyDex
+:author: Nathaniel Case
+:tags: pyDex
 
 And in mostly unrelated but terribly belated news, I finally released
 `pyDex 1.0`_ this morning. Black/White pokedex, new config system, baby

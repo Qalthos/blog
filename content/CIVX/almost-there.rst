@@ -1,8 +1,8 @@
 Almost There...
 ###############
 :date: 2010-09-09 18:11
-:author: Nathaniel Case (noreply@blogger.com)
-:tags: http://schemas.google.com/blogger/2008/kind#post, peopledashboard, FOSSRIT, CIVX
+:author: Nathaniel Case
+:tags: peopledashboard, FOSSRIT, CIVX
 
 Today I worked my way through more of `Rebecca's`_ changes to the people
 dashboard. It was actually in better condition than I had thought last

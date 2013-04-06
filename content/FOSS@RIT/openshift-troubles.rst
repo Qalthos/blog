@@ -1,8 +1,8 @@
 OpenShift Troubles
 ##################
 :date: 2012-02-03 06:47
-:author: Nathaniel Case (noreply@blogger.com)
-:tags: http://schemas.google.com/blogger/2008/kind#post, personal, FOSSRIT, FLOSS-seminar, openshift
+:author: Nathaniel Case
+:tags: personal, FOSSRIT, FLOSS-seminar, openshift
 
 Recently I've been playing with `OpenShift`_, a new(ish) service from
 Red Hat as a sort of 'push to cloud' deployment strategy. It's

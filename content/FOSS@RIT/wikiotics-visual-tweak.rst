@@ -1,8 +1,8 @@
 Wikiotics Visual Tweak
 ######################
 :date: 2010-12-08 23:51
-:author: Nathaniel Case (noreply@blogger.com)
-:tags: http://schemas.google.com/blogger/2008/kind#post, wikiotics, FOSSRIT
+:author: Nathaniel Case
+:tags: wikiotics, FOSSRIT
 
 So `trose`_ and I have been asked to put abow on the Wikiotics work
 while we're between projects. We both hit some bumps at the end of the

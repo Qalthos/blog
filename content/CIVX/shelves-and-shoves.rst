@@ -1,8 +1,8 @@
 Shelves and Shoves
 ##################
 :date: 2011-06-21 22:56
-:author: Nathaniel Case (noreply@blogger.com)
-:tags: http://schemas.google.com/blogger/2008/kind#post, peopledashboard, FOSSRIT, widgets, scrapers, SURS, CIVX
+:author: Nathaniel Case
+:tags: peopledashboard, FOSSRIT, widgets, scrapers, SURS, CIVX
 
 Today is the day to hit `bug #105`_, another of the leftover bugs from
 last year.

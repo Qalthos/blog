@@ -1,8 +1,8 @@
 Updating git
 ############
 :date: 2010-10-04 19:39
-:author: Nathaniel Case (noreply@blogger.com)
-:tags: http://schemas.google.com/blogger/2008/kind#post, wikiotics, FOSSRIT
+:author: Nathaniel Case
+:tags: wikiotics, FOSSRIT
 
 We here at RIT are working on our own branch of Ductus, and Ductus got a
 big addition over the weekend, namespaces. Unfortunately, our repository

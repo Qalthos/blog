@@ -1,8 +1,8 @@
 Lemons Taking Off
 #################
 :date: 2010-09-23 14:35
-:author: Nathaniel Case (noreply@blogger.com)
-:tags: http://schemas.google.com/blogger/2008/kind#post, lemonade, FOSSRIT, sugar
+:author: Nathaniel Case
+:tags: lemonade, FOSSRIT, sugar
 
 It looks like Lemonade Stand is taking off for fall quarter's `HFOSS`_
 class. This is quite exciting and there's a number of things I'm looking

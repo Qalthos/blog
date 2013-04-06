@@ -1,8 +1,8 @@
 TurboGears2 on OpenShift, just like it should be
 ################################################
 :date: 2012-02-03 06:47
-:author: Nathaniel Case (noreply@blogger.com)
-:tags: http://schemas.google.com/blogger/2008/kind#post, personal, hackfest, FOSSRIT, FLOSS-seminar, RIT, openshift
+:author: Nathaniel Case
+:tags: personal, hackfest, FOSSRIT, FLOSS-seminar, RIT, openshift
 
 After much work and many trials, I finally have an app pushed to
 OpenShift with no manual tweaking necessary. As often happens with these

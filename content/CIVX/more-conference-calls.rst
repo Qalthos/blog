@@ -1,8 +1,8 @@
 More Conference Calls
 #####################
 :date: 2010-09-09 18:11
-:author: Nathaniel Case (noreply@blogger.com)
-:tags: http://schemas.google.com/blogger/2008/kind#post, FOSSRIT, democracymap, CIVX, geowebdns
+:author: Nathaniel Case
+:tags: FOSSRIT, democracymap, CIVX, geowebdns
 
 Every time I go through one of these calls I feel like I come out
 knowing less about the topic discussed. The topics aren't hard, and I

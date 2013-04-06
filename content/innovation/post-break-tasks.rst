@@ -1,8 +1,8 @@
 Post-Break Tasks
 ################
 :date: 2011-12-07 22:31
-:author: Nathaniel Case (noreply@blogger.com)
-:tags: http://schemas.google.com/blogger/2008/kind#post, innovation_reskin, CSI
+:author: Nathaniel Case
+:tags: innovation_reskin, CSI
 
 Today I got quite bit done. I reduced the whitespace between items in
 the grid view on the beta site, I wrote and exposed an edit form for the

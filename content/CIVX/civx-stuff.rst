@@ -1,8 +1,8 @@
 CIVX Stuff
 ##########
 :date: 2010-09-09 18:11
-:author: Nathaniel Case (noreply@blogger.com)
-:tags: http://schemas.google.com/blogger/2008/kind#post, peopledashboard, FOSSRIT, widgets, CIVX
+:author: Nathaniel Case
+:tags: peopledashboard, FOSSRIT, widgets, CIVX
 
 So I've been spending some time finally getting some time to familiarize
 myself with CIVX and all the parts that make up the system. I'm almost

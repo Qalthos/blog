@@ -1,8 +1,8 @@
 Introducing: GeoPirate!
 #######################
 :date: 2010-09-09 18:11
-:author: Nathaniel Case (noreply@blogger.com)
-:tags: http://schemas.google.com/blogger/2008/kind#post, FOSSRIT, democracymap, CIVX, geowebdns
+:author: Nathaniel Case
+:tags: FOSSRIT, democracymap, CIVX, geowebdns
 
 So I've recieved my apparently mandated CIVX nickname, despite it
 possibly being inaccurate in a week or two. I, along with `Pixel Ninja`_

@@ -1,8 +1,8 @@
 Back up to Speed
 ################
 :date: 2011-06-21 22:56
-:author: Nathaniel Case (noreply@blogger.com)
-:tags: http://schemas.google.com/blogger/2008/kind#post, peopledashboard, FOSSRIT, widgets, scrapers, SURS, CIVX
+:author: Nathaniel Case
+:tags: peopledashboard, FOSSRIT, widgets, scrapers, SURS, CIVX
 
 I've almost closed `bug #106`_. I've done all I can do for now, until I
 can figure out how to attribute actions to senators. Until then, I

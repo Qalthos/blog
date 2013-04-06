@@ -1,8 +1,8 @@
 Grokking the Core
 #################
 :date: 2011-06-21 22:55
-:author: Nathaniel Case (noreply@blogger.com)
-:tags: http://schemas.google.com/blogger/2008/kind#post, FOSSRIT, scrapers, SURS, CIVX, polyscraper
+:author: Nathaniel Case
+:tags: FOSSRIT, scrapers, SURS, CIVX, polyscraper
 
 This week begins the real dive into the core of what makes CIVX. Today
 (and yesterday, though yesterday hardly counts as a real day) were spent

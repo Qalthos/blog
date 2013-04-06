@@ -1,8 +1,8 @@
 Lemonade Stand 2.1 Released
 ###########################
 :date: 2010-11-12 07:03
-:author: Nathaniel Case (noreply@blogger.com)
-:tags: http://schemas.google.com/blogger/2008/kind#post, lemonade, FOSSRIT
+:author: Nathaniel Case
+:tags: lemonade, FOSSRIT
 
 I am proud to announce the immediate availability of Lemonade Stand 2.1,
 with a quarter's worth of work and effort behind it.

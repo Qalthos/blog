@@ -1,8 +1,8 @@
 GrooveBot updates
 #################
 :date: 2011-09-28 01:28
-:author: Nathaniel Case (noreply@blogger.com)
-:tags: http://schemas.google.com/blogger/2008/kind#post, groovebot, FOSSRIT
+:author: Nathaniel Case
+:tags: groovebot, FOSSRIT
 
 Today I'm going to talk about something a bit more understandable, I
 hope.
