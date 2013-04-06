@@ -29,7 +29,15 @@ looked something like this:
 
 ::
 
-     [Nethack Server]    ----    | |    | |   [tee]============[controller]    | |                 | |    | |                 | |    ----                ---- [Nethack Client]     [netHUD]
+ [Nethack Server]
+    -----
+     | |
+     | |
+    [tee]============[controller]
+     | |                 | |
+     | |                 | |
+    -----               -----
+ [Nethack Client]     [netHUD]
 
 tee.py acted as the proxy and sent any messages received from the
 nethack server to the controller, which cached the current state of all
