@@ -1,6 +1,6 @@
 *.pyc
 *.py~
 *~
-.swp
+*.swp
 output
 *.pid
