@@ -31,9 +31,9 @@ added to the timeline at some point anyway, or were likewise available
 from other sources. When Remy showed me what he had written for 2010, it
 was obvious this could be easily replicated in code.
 
-About an hour of JavaScript wrangling later, I had made `this`_. `Also
-this`_, and if you're reading this from about a year in the future,
-`this should even exist`_. It's still needs some tweaking, the years are
+About an hour of JavaScript wrangling later, I had made `this`__. Also
+`this`__, and if you're reading this from about a year in the future,
+`this`__ should even exist. It's still needs some tweaking, the years are
 hardcoded in the documents, the pages aren't linked from the main
 timeline page, and I'd rather have them all use one common file than
 make a new one each year, but it works, it's fairly similar to what was
@@ -45,6 +45,6 @@ added to Timeline.
    </p>
 
 .. _Timeline: http://foss.rit.edu/timeline/
-.. _this: http://foss.rit.edu/timeline/2011.html
-.. _Also this: http://foss.rit.edu/timeline/2010.html
-.. _this should even exist: http://foss.rit.edu/timeline/2012.html
+.. __: http://foss.rit.edu/timeline/2011.html
+.. __: http://foss.rit.edu/timeline/2010.html
+.. __: http://foss.rit.edu/timeline/2012.html
