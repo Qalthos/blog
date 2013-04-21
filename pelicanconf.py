@@ -13,7 +13,8 @@ DEFAULT_LANG = u'en'
 LINKS =  (('FOSS@RIT', 'http://foss.rit.edu'),
          )
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = (('Github', 'http://github.com/Qalthos'),
+          ('Google+', 'http://gplus.to/qalthos'),
+         )
 
 DEFAULT_PAGINATION = False
