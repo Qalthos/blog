@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://blog.linkybook.com/" rel="alternate"></link><link href="http://blog.linkybook.com/feeds/personal.atom.xml" rel="self"></link><id>http://blog.linkybook.com/</id><updated>2012-07-24T18:47:00-04:00</updated><entry><title>Recent Projects: Groovebot</title><link href="http://blog.linkybook.com/recent-projects-groovebot.html" rel="alternate"></link><updated>2012-07-24T18:47:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2012-07-24:recent-projects-groovebot.html</id><summary type="html">&lt;p&gt;This is the first of a number of posts meant to overview the things I've
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://qalthos.github.io/blog/" rel="alternate"></link><link href="http://qalthos.github.io/blog/feeds/personal.atom.xml" rel="self"></link><id>http://qalthos.github.io/blog/</id><updated>2012-07-24T18:47:00-04:00</updated><entry><title>Recent Projects: Groovebot</title><link href="http://qalthos.github.io/blog/recent-projects-groovebot.html" rel="alternate"></link><updated>2012-07-24T18:47:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2012-07-24:recent-projects-groovebot.html</id><summary type="html">&lt;p&gt;This is the first of a number of posts meant to overview the things I've
 been doing recently. First up on the list is the long-overdue
 &lt;a class="reference external" href="https://github.com/Qalthos/groovebot"&gt;Groovebot&lt;/a&gt; update.&lt;/p&gt;
 &lt;p&gt;Before this summer, Groovebot 'worked' on &lt;a class="reference external" href="http://spotify.com/"&gt;Spotify&lt;/a&gt;, and also had a
@@ -56,7 +56,7 @@ second bot. This second bot has all the work I've been doing lately and,
 some few remaining problems aside, mostly work. Ideally, I will soon
 have a better host for the bot that will let me run Spotify, but for now
 Pandora is working well enough.&lt;/p&gt;
-&lt;/p&gt;</summary><category term="groovebot"></category></entry><entry><title>OpenShift Troubles</title><link href="http://blog.linkybook.com/openshift-troubles.html" rel="alternate"></link><updated>2012-02-03T06:47:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2012-02-03:openshift-troubles.html</id><summary type="html">&lt;p&gt;Recently I've been playing with &lt;a class="reference external" href="http://openshift.redhat.com/"&gt;OpenShift&lt;/a&gt;, a new(ish) service from
+&lt;/p&gt;</summary><category term="groovebot"></category></entry><entry><title>OpenShift Troubles</title><link href="http://qalthos.github.io/blog/openshift-troubles.html" rel="alternate"></link><updated>2012-02-03T06:47:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2012-02-03:openshift-troubles.html</id><summary type="html">&lt;p&gt;Recently I've been playing with &lt;a class="reference external" href="http://openshift.redhat.com/"&gt;OpenShift&lt;/a&gt;, a new(ish) service from
 Red Hat as a sort of 'push to cloud' deployment strategy. It's
 interesting for people like me who can whip up a site quick, but don't
 necessarily have the framework in place to host it.&lt;/p&gt;
@@ -112,7 +112,7 @@ should I really try), I wasn't getting any good error messages.
 So what is the site that has been giving me all these troubles? It's a
 little site I set up to publicly shame Remy into stopping smoking:
 &lt;a class="reference external" href="http://remysmoke-qalthos.rhcloud.com/"&gt;remysmoke-qalthos.rhcloud.com&lt;/a&gt;&lt;/p&gt;
-</summary><category term="FLOSS-seminar"></category><category term="openshift"></category></entry><entry><title>Openshift Troubles Continued</title><link href="http://blog.linkybook.com/openshift-troubles-continued.html" rel="alternate"></link><updated>2012-02-03T06:47:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2012-02-03:openshift-troubles-continued.html</id><summary type="html">&lt;p&gt;I figured out the problem I was having with OpenShift.&lt;/p&gt;
+</summary><category term="FLOSS-seminar"></category><category term="openshift"></category></entry><entry><title>Openshift Troubles Continued</title><link href="http://qalthos.github.io/blog/openshift-troubles-continued.html" rel="alternate"></link><updated>2012-02-03T06:47:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2012-02-03:openshift-troubles-continued.html</id><summary type="html">&lt;p&gt;I figured out the problem I was having with OpenShift.&lt;/p&gt;
 &lt;p&gt;To put it simply, I didn't pay enough attention.&lt;/p&gt;
 &lt;p&gt;For reference, when moving an existing TurboGears app to OpenShift, make
 sure you add the changes in config/app_cfg.py&lt;/p&gt;
@@ -120,7 +120,7 @@ sure you add the changes in config/app_cfg.py&lt;/p&gt;
 that I had gotten all the relevant changes, but apparently I somehow
 missed this file.&lt;/p&gt;
 &lt;p&gt;More detailed directions coming soon.&lt;/p&gt;
-&lt;/p&gt;</summary><category term="FLOSS-seminar"></category><category term="openshift"></category></entry><entry><title>GrooveBot updates</title><link href="http://blog.linkybook.com/groovebot-updates.html" rel="alternate"></link><updated>2011-09-28T01:28:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2011-09-28:groovebot-updates.html</id><summary type="html">&lt;p&gt;Today I'm going to talk about something a bit more understandable, I
+&lt;/p&gt;</summary><category term="FLOSS-seminar"></category><category term="openshift"></category></entry><entry><title>GrooveBot updates</title><link href="http://qalthos.github.io/blog/groovebot-updates.html" rel="alternate"></link><updated>2011-09-28T01:28:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-09-28:groovebot-updates.html</id><summary type="html">&lt;p&gt;Today I'm going to talk about something a bit more understandable, I
 hope.&lt;/p&gt;
 &lt;p&gt;Back around the summer of 2010, the FOSSBox wanted some ambient music to
 play in the background. One of the things we wanted was a way to have
@@ -155,12 +155,12 @@ Hopefully, when a new, free music API becomes available that we can hook
 into, it should be easier to reimplement those functions in a more
 general way so that multiple backends can be used for a more varied
 music experience. And then we can get back to the OS grooving.&lt;/p&gt;
-&lt;/p&gt;</summary><category term="groovebot"></category></entry><entry><title>pyDex 1.0</title><link href="http://blog.linkybook.com/pydex-10.html" rel="alternate"></link><updated>2011-05-08T03:19:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2011-05-08:pydex-10.html</id><summary type="html">&lt;p&gt;And in mostly unrelated but terribly belated news, I finally released
+&lt;/p&gt;</summary><category term="groovebot"></category></entry><entry><title>pyDex 1.0</title><link href="http://qalthos.github.io/blog/pydex-10.html" rel="alternate"></link><updated>2011-05-08T03:19:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-05-08:pydex-10.html</id><summary type="html">&lt;p&gt;And in mostly unrelated but terribly belated news, I finally released
 &lt;a class="reference external" href="https://gitorious.org/pydex"&gt;pyDex 1.0&lt;/a&gt; this morning. Black/White pokedex, new config system, baby
 pokemon, and game detection, are all new features introduced in this
 version. Old configs should get read properly and get seamlessly updated
 to the new version, though there may be a few bugs in the process.&lt;/p&gt;
-</summary><category term="pyDex"></category></entry><entry><title>Killer Bunnies and the Towering Draw Pile</title><link href="http://blog.linkybook.com/killer-bunnies-and-the-towering-draw-pile.html" rel="alternate"></link><updated>2011-01-23T07:12:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2011-01-23:killer-bunnies-and-the-towering-draw-pile.html</id><summary type="html">&lt;p&gt;There was a hackfest Friday night, and a writeup is coming soon, but
+</summary><category term="pyDex"></category></entry><entry><title>Killer Bunnies and the Towering Draw Pile</title><link href="http://qalthos.github.io/blog/killer-bunnies-and-the-towering-draw-pile.html" rel="alternate"></link><updated>2011-01-23T07:12:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-01-23:killer-bunnies-and-the-towering-draw-pile.html</id><summary type="html">&lt;p&gt;There was a hackfest Friday night, and a writeup is coming soon, but
 first a bit of random chatter.&lt;/p&gt;
 &lt;p&gt;I have, for a few years, been collecting the various pieces that make up
 &lt;a class="reference external" href="http://boardgamegeek.com/boardgame/3699/killer-bunnies-and-the-quest-for-the-magic-carrot"&gt;Killer Bunnies and the Quest for the Magic Carrot&lt;/a&gt;. For Christmas, I
@@ -197,7 +197,7 @@ addition would extend gameplay a bit more and provide new challenges for
 longtime players (not to mention many more dice to play with).&lt;/p&gt;
 &lt;p&gt;So that's how I spent my weekend apart from coding like a superstar. But
 don't worry, I'll get to that soon.&lt;/p&gt;
-</summary><category term="games"></category></entry><entry><title>pyDex on Sugar</title><link href="http://blog.linkybook.com/pydex-on-sugar.html" rel="alternate"></link><updated>2011-01-19T23:51:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2011-01-19:pydex-on-sugar.html</id><summary type="html">&lt;p&gt;A warning, this gets very technical with lots of acronyms and jargon.
+</summary><category term="games"></category></entry><entry><title>pyDex on Sugar</title><link href="http://qalthos.github.io/blog/pydex-on-sugar.html" rel="alternate"></link><updated>2011-01-19T23:51:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-01-19:pydex-on-sugar.html</id><summary type="html">&lt;p&gt;A warning, this gets very technical with lots of acronyms and jargon.
 tl;dr: I have a new pyDex branch which *should* run on the OLPC
 A few days ago, I decided I'd finally see how well pyDex runs on the
 OLPC. Turns out, it runs pretty well, which isn't too surprising as it
@@ -226,7 +226,7 @@ probably get to test it sometime this weekend, maybe even turn it into a
 real activity by then. This is still just a small project, and I doubt
 it will ever go up on Sugar's activities site, but it has given me a
 much better understanding about how non-pygame activities work.&lt;/p&gt;
-</summary><category term="sugar"></category><category term="pyDex"></category></entry><entry><title>Huzzah!</title><link href="http://blog.linkybook.com/huzzah.html" rel="alternate"></link><updated>2010-09-06T17:57:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2010-09-06:huzzah.html</id><summary type="html">&lt;p&gt;Here we are, back at the beginning of another school year. It's going to
+</summary><category term="sugar"></category><category term="pyDex"></category></entry><entry><title>Huzzah!</title><link href="http://qalthos.github.io/blog/huzzah.html" rel="alternate"></link><updated>2010-09-06T17:57:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-09-06:huzzah.html</id><summary type="html">&lt;p&gt;Here we are, back at the beginning of another school year. It's going to
 be interesting, I'm still pretty laid back from Fan Expo Canada in
 Toronto.&lt;/p&gt;
 &lt;p&gt;My new monitor finally arrived. Well, it arrived Saturday, but the RIT
@@ -242,7 +242,7 @@ want to blast music, I'll just end up blasting Justin instead.&lt;/p&gt;
 &lt;p&gt;So I now have two monitors, though I don't know if I'm keeping the
 ancient 15&amp;quot; LCD from home that was serving as a spare. We'll see. In the
 meantime, Minecraft looks better than ever.&lt;/p&gt;
-</summary><category term="hardware"></category></entry><entry><title>Writing and Me</title><link href="http://blog.linkybook.com/writing-and-me.html" rel="alternate"></link><updated>2010-07-21T04:13:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2010-07-21:writing-and-me.html</id><summary type="html">&lt;p&gt;I am not a writer. Had things progressed differently, I might have tried
+</summary><category term="hardware"></category></entry><entry><title>Writing and Me</title><link href="http://qalthos.github.io/blog/writing-and-me.html" rel="alternate"></link><updated>2010-07-21T04:13:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-07-21:writing-and-me.html</id><summary type="html">&lt;p&gt;I am not a writer. Had things progressed differently, I might have tried
 it. I do enjoy the writing process. One important problem is that I hate
 revision. I start from a theoretical perfect model, and slowly write it
 out, far slower than my brain, which can race ahead to new, more
@@ -281,7 +281,7 @@ without glaring errors to fix, and my personal writing tends to throw
 parsing errors in anyone who isn't me.&lt;/p&gt;
 &lt;p&gt;Hopefully I'll get better at this. At the very least I hope to catch the
 common mistakes here.&lt;/p&gt;
-</summary><category term="introspective"></category></entry><entry><title>pyDex Progress</title><link href="http://blog.linkybook.com/pydex-progress.html" rel="alternate"></link><updated>2010-07-10T16:51:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2010-07-10:pydex-progress.html</id><summary type="html">&lt;p&gt;I've finally gotten around to staging and commiting a few enhancements
+</summary><category term="introspective"></category></entry><entry><title>pyDex Progress</title><link href="http://qalthos.github.io/blog/pydex-progress.html" rel="alternate"></link><updated>2010-07-10T16:51:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-07-10:pydex-progress.html</id><summary type="html">&lt;p&gt;I've finally gotten around to staging and commiting a few enhancements
 to the &lt;a class="reference external" href="http://gitorious.org/pydex"&gt;pydex repository&lt;/a&gt;. The more advanced stuff like Isshu pokemon
 and the new file format are still in limbo, naturally, and won't get
 moved to master any time soon since they make older files incompatible,
