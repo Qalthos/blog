@@ -3,7 +3,8 @@
 
 AUTHOR = u'Nathaniel Case'
 SITENAME = u'Why Not Wingnut?'
-SITEURL = 'http://blog.linkybook.com'
+#SITEURL = 'http://blog.linkybook.com'
+SITEURL = 'http://qalthos.github.io/blog/'
 
 TIMEZONE = 'America/New_York'
 
