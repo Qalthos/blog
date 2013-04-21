@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Recent Projects: Groovebot</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="./theme/css/main.css" type="text/css" />
+                <link href="http://blog.linkybook.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Why Not Wingnut? Atom Feed" />
+                
+        <!--[if IE]>
+                <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+        <!--[if lte IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="./css/ie.css"/>
+                <script src="./js/IE8.js" type="text/javascript"></script><![endif]-->
+
+        <!--[if lt IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="./css/ie6.css"/><![endif]-->
+
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="./">Why Not Wingnut? </a></h1>
+                <nav><ul>
+                                                                                                    <li ><a href="./category/civx.html">CIVX</a></li>
+                                    <li ><a href="./category/fossrit.html">FOSS@RIT</a></li>
+                                    <li ><a href="./category/rit.html">RIT</a></li>
+                                    <li ><a href="./category/innovation.html">innovation</a></li>
+                                    <li class="active"><a href="./category/personal.html">personal</a></li>
+                                </ul></nav>
+        </header><!-- /#banner -->
+        <section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="./recent-projects-groovebot.html" rel="bookmark"
+           title="Permalink to Recent Projects: Groovebot">Recent Projects: Groovebot</a></h1>
+          </header>
+
+    <div class="entry-content">
+      <footer class="post-info">
+        <abbr class="published" title="2012-07-24T18:47:00">
+                Tue 24 July 2012
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="./author/nathaniel-case.html">Nathaniel Case</a>
+        </address>
+        <p>In <a href="./category/personal.html">personal</a>. </p>
+<p>tags: <a href="./tag/groovebot.html">groovebot</a><a href="./tag/fossrit.html">FOSSRIT</a></p>
+</footer><!-- /.post-info -->      <p>This is the first of a number of posts meant to overview the things I've
+been doing recently. First up on the list is the long-overdue
+<a class="reference external" href="https://github.com/Qalthos/groovebot">Groovebot</a> update.</p>
+<p>Before this summer, Groovebot 'worked' on <a class="reference external" href="http://spotify.com/">Spotify</a>, and also had a
+fairly useful but undertested <a class="reference external" href="http://en.wikipedia.org/wiki/Music_Player_Daemon">MPD</a> backend that worked for me when I
+could get MPD running properly. Unfortunately, I no longer had an active
+Spotify subscription, which meant that I couldn't use the Spotify
+backend, and I had moved off of RIT's campus, meaning I no longer had a
+~100Mb connection to my fileserver, so streaming files that way was more
+problematic.</p>
+<p>While looking around for other things I could use to get Groovebot
+running on, I rediscovered <a class="reference external" href="http://kevinmehall.net/p/pithos/">Pithos</a>, a Python frontend to Pandora.
+Using Pithos as an authenticator, I could get URLs to music files that I
+could play if I could figure out how to play them in Python. As a
+temporary test, I just sent them to mplayer to play the files. This
+worked well enough, but had the same problem I had encountered with
+Spotify, namely that I could not get a callback properly positioned to
+fire when the song finished.</p>
+<p>I put the project aside for a time, until <a class="reference external" href="http://www.jlewopensource.com/">Justin</a> pointed out
+GStreamer is made to do this sort of thing. With this in mind, I took
+another look at the task, first trying to run GStreamer in its own event
+loop on top of Twisted, then giving up and processing events on a tick.
+This means I have to respond to every event GStreamer throws out (which
+is a fair number of them), but most of them can be thrown out without
+looking at them. Some more tweaking later, and PandBot was born, able to
+connect to a user's Pandora station, play music, and thumb songs up or
+down based on user respones in the IRC channel.</p>
+<p>At this point, I had been writing new bots each time I added a new
+backend, with a lot of repeated code in each, leading to subtle bugs and
+api implementations that were slowly drifting apart based on individual
+needs. This made me a little annoyed, but I didn't have any particular
+need to fix it, so I left it alone. Until an accidental click around the
+Spotify website left me with another Premium subscription (and $10
+poorer...) I poked around on SpotBot to see if it still worked. Turns
+out it did... just not on the DJ computer in the FOSSBox. Turns out that
+spytify, the python bindings for <a class="reference external" href="http://despotify.se/">despotify</a> have gotten a little stale
+in the interim, and no longer compile with modern versions of Cython.
+This meant I should probably break down and get an API key from Spotify
+and use the proper official API instead.</p>
+<p>However, in working on MPD and Pandora bots in the meantime had given me
+a number of ideas and fixes that would be problematic to port back to
+Spotify, which meant I had finally gotten an excuse to try to merge the
+three seperate codebases into one unified version. Starting with MPD and
+Pandora, I merged the files and ran the result through a three-way diff,
+trying to identify important parts of each bot to make sure each worked
+properly after the merge. Next, I looked into the architecture of
+pyspotify, and immediately ran into some trouble. pyspotify works
+differently to the backends I had been used to, having its own threading
+I would need to juggle alongside my own. Additionally, the code is not
+thread safe, which is a problem with the heavily-threaded Groovebot
+code.</p>
+<p>So now, the status is that we are down to two bots. One is the ancient
+Grooveshark code that is in need of updating and integrating with the
+second bot. This second bot has all the work I've been doing lately and,
+some few remaining problems aside, mostly work. Ideally, I will soon
+have a better host for the bot that will let me run Spotify, but for now
+Pandora is working well enough.</p>
+</p>
+    </div><!-- /.entry-content -->
+    
+  </article>
+</section>
+        <section id="extras" class="body">
+                        <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                                                    <li><a href="http://foss.rit.edu">FOSS@RIT</a></li>
+                                                </ul>
+                </div><!-- /.blogroll -->
+                                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="http://blog.linkybook.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+                            
+                                                    <li><a href="#">You can add links in your config file</a></li>
+                                                    <li><a href="#">Another social link</a></li>
+                                                </ul>
+                </div><!-- /.social -->
+                </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

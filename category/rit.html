@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Why Not Wingnut? - RIT</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../theme/css/main.css" type="text/css" />
+                <link href="http://blog.linkybook.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Why Not Wingnut? Atom Feed" />
+                
+        <!--[if IE]>
+                <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+        <!--[if lte IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="../css/ie.css"/>
+                <script src="../js/IE8.js" type="text/javascript"></script><![endif]-->
+
+        <!--[if lt IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="../css/ie6.css"/><![endif]-->
+
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="../">Why Not Wingnut? </a></h1>
+                <nav><ul>
+                                                                                                    <li ><a href="../category/civx.html">CIVX</a></li>
+                                    <li ><a href="../category/fossrit.html">FOSS@RIT</a></li>
+                                    <li class="active"><a href="../category/rit.html">RIT</a></li>
+                                    <li ><a href="../category/innovation.html">innovation</a></li>
+                                    <li ><a href="../category/personal.html">personal</a></li>
+                                </ul></nav>
+        </header><!-- /#banner -->
+                
+            
+
+                            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="../final-stretch.html">Final Stretch</a></h1> 
+                    <footer class="post-info">
+        <abbr class="published" title="2012-02-29T16:15:00">
+                Wed 29 February 2012
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="../author/nathaniel-case.html">Nathaniel Case</a>
+        </address>
+        <p>In <a href="../category/rit.html">RIT</a>. </p>
+<p>tags: <a href="../tag/pybotwar.html">pybotwar</a><a href="../tag/hackfest.html">hackfest</a><a href="../tag/fossrit.html">FOSSRIT</a><a href="../tag/floss-seminar.html">FLOSS-seminar</a><a href="../tag/webbotwar.html">webbotwar</a><a href="../tag/rit.html">RIT</a><a href="../tag/openshift.html">openshift</a></p>
+</footer><!-- /.post-info --><p>So the past two days have been madness trying to get the recently
+christened WebBotWar (or just WebBot) to actually work on the web.</p>
+<p>We had it working locally some time last week (I think... the days are
+really starting to mush together), but OpenShift was a whole other
+thing. This boiled down to two basic problems we had:</p>
+<ul class="simple">
+<li>pybotwar depended on pyBox2D, which needs to compile, which doesn't
+work well even when you have control of the machine</li>
+<li>We were relying on memcached to provide cheap communication between
+the pybotwar process and the frontend. As near as I can tell,
+memcached is not actually supported on OpenShift Express, though that
+might not actually be true.</li>
+</ul>
+<p>The first was surprisingly easy to fix, though it took me some time to
+actually think of the solution. In the final setup, there are
+essentially three repositories: our modified pybotwar, the TG2 webbot
+frontend, and a meta-repository containing both of the previous two in
+the proper places. This third repo is not meant to be actually used to
+develop, its only purpose is to be pushed to OpenShift and act as a
+quick pull for someone looking to run WebBotWar themselves. The
+practical upshot of this is that if we commit pyBox2D inside the
+pybotwar directory of our meta-repo, pybotwar can find its dependencies,
+and no one else needs to have to bother with it.</p>
+<p>The second problem was more tricky, and eventually resulted in a rather
+simple patch that just happened to take me around 12 hours to get right.
+A quick Google of OpenShift Express Python and <a class="reference external" href="http://en.wikipedia.org/wiki/NoSQL">NoSQL</a> led me to
+MongoDB, which has some benefits and drawbacks compared to just shoving
+bits into memory, but seems to work very well in practice and is
+probably the right way to go regardless. To be perfectly fair, memcached
+<em>is</em> a type of NoSQL, but MongoDB is actually supported by OpenShift in
+an easily-installable manner, and despite its more finicky syntax, it
+works, which is something I failed to get with memcached.</p>
+<p>Meanwhile, the rest of my team was hard at work making massive progress
+on other fronts. Facebook authentication works, as does uploading custom
+robot definitions, though I don't think the two are plugged into each
+other yet. As well, there are brand new pretty images for the robots and
+the turrets.</p>
+<p>There's a few outstanding problems left, but (as long as I don't push
+anything broken) you can have a look at webbotwar in action <a class="reference external" href="webbotwar-qalthos.rhcloud.com">here</a>.</p>
+</p>                </article>
+                            </aside><!-- /#featured -->
+                            <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+                                                
+
+                 
+                        <li><article class="hentry">    
+                <header>
+                    <h1><a href="../floss-seminar-update.html" rel="bookmark"
+                           title="Permalink to FLOSS Seminar Update">FLOSS Seminar Update</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2012-01-19T17:46:00">
+                Thu 19 January 2012
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="../author/nathaniel-case.html">Nathaniel Case</a>
+        </address>
+        <p>In <a href="../category/rit.html">RIT</a>. </p>
+<p>tags: <a href="../tag/fossrit.html">FOSSRIT</a><a href="../tag/floss-seminar.html">FLOSS-seminar</a><a href="../tag/rit.html">RIT</a></p>
+</footer><!-- /.post-info -->                <p>So it's week 5, what has been going on?</p>
+<p>The class has split into three groups, working on different games. My
+group's idea is a social update to the venerable likes of <a class="reference external" href="http://robocode.sourceforge.net/">robocode</a>,
+though how exactly that is going to pan out is still debatable.</p>
+<p>Ideally, this would ...</p>
+                <a class="readmore" href="../floss-seminar-update.html">read more</a>
+                                </div><!-- /.entry-content -->
+            </article></li>
+                            
+
+                 
+                        <li><article class="hentry">    
+                <header>
+                    <h1><a href="../first-floss-seminar-post.html" rel="bookmark"
+                           title="Permalink to First FLOSS Seminar post">First FLOSS Seminar post</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2011-12-01T20:22:00">
+                Thu 01 December 2011
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="../author/nathaniel-case.html">Nathaniel Case</a>
+        </address>
+        <p>In <a href="../category/rit.html">RIT</a>. </p>
+<p>tags: <a href="../tag/fossrit.html">FOSSRIT</a><a href="../tag/floss-seminar.html">FLOSS-seminar</a><a href="../tag/rit.html">RIT</a></p>
+</footer><!-- /.post-info -->                <p>So this quarter I am taking a <a class="reference external" href="http://en.wikipedia.org/wiki/Free_and_open_source_software#FLOSS">FLOSS</a> Seminar being taught by <a class="reference external" href="http://threebean.org">Bean</a>
+which should be pretty awesome. As a graduate student (as well as a
+fairly advanced FLOSS citizen) there are a few extra things going to be
+required of me, and we're working on ironing out the ...</p>
+                <a class="readmore" href="../first-floss-seminar-post.html">read more</a>
+                                </div><!-- /.entry-content -->
+            </article></li>
+                            
+
+                 
+                        <li><article class="hentry">    
+                <header>
+                    <h1><a href="../lemonade-stand-21-released.html" rel="bookmark"
+                           title="Permalink to Lemonade Stand 2.1 Released">Lemonade Stand 2.1 Released</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2010-11-12T07:03:00">
+                Fri 12 November 2010
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="../author/nathaniel-case.html">Nathaniel Case</a>
+        </address>
+        <p>In <a href="../category/rit.html">RIT</a>. </p>
+<p>tags: <a href="../tag/lemonade.html">lemonade</a><a href="../tag/fossrit.html">FOSSRIT</a></p>
+</footer><!-- /.post-info -->                <p>I am proud to announce the immediate availability of Lemonade Stand 2.1,
+with a quarter's worth of work and effort behind it.
+There are few gameplay changes in this release, but it feels like a
+brand new game thanks to the wonderful new art assets courtesy of <a class="reference external" href="http://jtmengel.blogspot.com/">JT ...</a></p>
+                <a class="readmore" href="../lemonade-stand-21-released.html">read more</a>
+                                </div><!-- /.entry-content -->
+            </article></li>
+                            
+
+                 
+                        <li><article class="hentry">    
+                <header>
+                    <h1><a href="../lemonade-recap.html" rel="bookmark"
+                           title="Permalink to Lemonade Recap">Lemonade Recap</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2010-11-10T20:26:00">
+                Wed 10 November 2010
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="../author/nathaniel-case.html">Nathaniel Case</a>
+        </address>
+        <p>In <a href="../category/rit.html">RIT</a>. </p>
+<p>tags: <a href="../tag/lemonade.html">lemonade</a><a href="../tag/fossrit.html">FOSSRIT</a></p>
+</footer><!-- /.post-info -->                <p>So here we are at the end of the quarter. Have we accomplished our
+goals? I think so.
+We've gotten a lot done in the last ten weeks. We got some new images,
+we got some new ideas into the game, and on the whole, it looks much
+better ...</p>
+                <a class="readmore" href="../lemonade-recap.html">read more</a>
+                                </div><!-- /.entry-content -->
+            </article></li>
+                            
+
+                 
+                        <li><article class="hentry">    
+                <header>
+                    <h1><a href="../lemonade-week-8.html" rel="bookmark"
+                           title="Permalink to Lemonade Week... 8?">Lemonade Week... 8?</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2010-10-26T23:59:00">
+                Tue 26 October 2010
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="../author/nathaniel-case.html">Nathaniel Case</a>
+        </address>
+        <p>In <a href="../category/rit.html">RIT</a>. </p>
+<p>tags: <a href="../tag/lemonade.html">lemonade</a><a href="../tag/fossrit.html">FOSSRIT</a><a href="../tag/sugar.html">sugar</a></p>
+</footer><!-- /.post-info -->                <p>So... lots of stuff has happened in the last few weeks.
+First, we have a new background, thanks to JT. In fact, we have three
+now, and as of five minutes ago, a different one will show up depending
+on the current weather.
+There's also been a lot of ...</p>
+                <a class="readmore" href="../lemonade-week-8.html">read more</a>
+                                </div><!-- /.entry-content -->
+            </article></li>
+                            
+
+                 
+                        <li><article class="hentry">    
+                <header>
+                    <h1><a href="../lemons-taking-off.html" rel="bookmark"
+                           title="Permalink to Lemons Taking Off">Lemons Taking Off</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2010-09-23T14:35:00">
+                Thu 23 September 2010
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="../author/nathaniel-case.html">Nathaniel Case</a>
+        </address>
+        <p>In <a href="../category/rit.html">RIT</a>. </p>
+<p>tags: <a href="../tag/lemonade.html">lemonade</a><a href="../tag/fossrit.html">FOSSRIT</a><a href="../tag/sugar.html">sugar</a></p>
+</footer><!-- /.post-info -->                <p>It looks like Lemonade Stand is taking off for fall quarter's <a class="reference external" href="http://teachingopensource.org/index.php/RIT/The_Course">HFOSS</a>
+class. This is quite exciting and there's a number of things I'm looking
+to get in for a 2.2 release
+* More events
+* Fluctuating prices
+* Loyalty and advertising
+among <a class="reference external" href="http://wiki.sugarlabs.org/go/Lemonade_Stand#Additional_Ideas_.26_Features">others</a>.
+The 2.1 release, meanwhile ...</p>
+                <a class="readmore" href="../lemons-taking-off.html">read more</a>
+                                </div><!-- /.entry-content -->
+            </article></li>
+                            
+
+                 
+                        <li><article class="hentry">    
+                <header>
+                    <h1><a href="../another-blog.html" rel="bookmark"
+                           title="Permalink to Another Blog">Another Blog</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2010-09-07T16:49:00">
+                Tue 07 September 2010
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="../author/nathaniel-case.html">Nathaniel Case</a>
+        </address>
+        <p>In <a href="../category/rit.html">RIT</a>. </p>
+<p>tags: <a href="../tag/journalism.html">journalism</a><a href="../tag/rit.html">RIT</a></p>
+</footer><!-- /.post-info -->                <p>Just as I get used to this one, another of my classes requires me to
+keep a blog, and to keep it separate from any other blogs we may keep.
+The new blog is linked at left, but anything interesting will get
+crossposted here and it's likely going to ...</p>
+                <a class="readmore" href="../another-blog.html">read more</a>
+                                </div><!-- /.entry-content -->
+            </article></li>
+                            </ol><!-- /#posts-list -->
+                                                    </section><!-- /#content -->
+                    <section id="extras" class="body">
+                        <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                                                    <li><a href="http://foss.rit.edu">FOSS@RIT</a></li>
+                                                </ul>
+                </div><!-- /.blogroll -->
+                                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="http://blog.linkybook.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+                            
+                                                    <li><a href="#">You can add links in your config file</a></li>
+                                                    <li><a href="#">Another social link</a></li>
+                                                </ul>
+                </div><!-- /.social -->
+                </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

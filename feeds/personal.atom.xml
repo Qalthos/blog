@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://blog.linkybook.com/" rel="alternate"></link><link href="http://blog.linkybook.com/feeds/personal.atom.xml" rel="self"></link><id>http://blog.linkybook.com/</id><updated>2012-07-24T18:47:00-04:00</updated><entry><title>Recent Projects: Groovebot</title><link href="http://blog.linkybook.com/recent-projects-groovebot.html" rel="alternate"></link><updated>2012-07-24T18:47:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2012-07-24:recent-projects-groovebot.html</id><summary type="html">&lt;p&gt;This is the first of a number of posts meant to overview the things I've
+been doing recently. First up on the list is the long-overdue
+&lt;a class="reference external" href="https://github.com/Qalthos/groovebot"&gt;Groovebot&lt;/a&gt; update.&lt;/p&gt;
+&lt;p&gt;Before this summer, Groovebot 'worked' on &lt;a class="reference external" href="http://spotify.com/"&gt;Spotify&lt;/a&gt;, and also had a
+fairly useful but undertested &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Music_Player_Daemon"&gt;MPD&lt;/a&gt; backend that worked for me when I
+could get MPD running properly. Unfortunately, I no longer had an active
+Spotify subscription, which meant that I couldn't use the Spotify
+backend, and I had moved off of RIT's campus, meaning I no longer had a
+~100Mb connection to my fileserver, so streaming files that way was more
+problematic.&lt;/p&gt;
+&lt;p&gt;While looking around for other things I could use to get Groovebot
+running on, I rediscovered &lt;a class="reference external" href="http://kevinmehall.net/p/pithos/"&gt;Pithos&lt;/a&gt;, a Python frontend to Pandora.
+Using Pithos as an authenticator, I could get URLs to music files that I
+could play if I could figure out how to play them in Python. As a
+temporary test, I just sent them to mplayer to play the files. This
+worked well enough, but had the same problem I had encountered with
+Spotify, namely that I could not get a callback properly positioned to
+fire when the song finished.&lt;/p&gt;
+&lt;p&gt;I put the project aside for a time, until &lt;a class="reference external" href="http://www.jlewopensource.com/"&gt;Justin&lt;/a&gt; pointed out
+GStreamer is made to do this sort of thing. With this in mind, I took
+another look at the task, first trying to run GStreamer in its own event
+loop on top of Twisted, then giving up and processing events on a tick.
+This means I have to respond to every event GStreamer throws out (which
+is a fair number of them), but most of them can be thrown out without
+looking at them. Some more tweaking later, and PandBot was born, able to
+connect to a user's Pandora station, play music, and thumb songs up or
+down based on user respones in the IRC channel.&lt;/p&gt;
+&lt;p&gt;At this point, I had been writing new bots each time I added a new
+backend, with a lot of repeated code in each, leading to subtle bugs and
+api implementations that were slowly drifting apart based on individual
+needs. This made me a little annoyed, but I didn't have any particular
+need to fix it, so I left it alone. Until an accidental click around the
+Spotify website left me with another Premium subscription (and $10
+poorer...) I poked around on SpotBot to see if it still worked. Turns
+out it did... just not on the DJ computer in the FOSSBox. Turns out that
+spytify, the python bindings for &lt;a class="reference external" href="http://despotify.se/"&gt;despotify&lt;/a&gt; have gotten a little stale
+in the interim, and no longer compile with modern versions of Cython.
+This meant I should probably break down and get an API key from Spotify
+and use the proper official API instead.&lt;/p&gt;
+&lt;p&gt;However, in working on MPD and Pandora bots in the meantime had given me
+a number of ideas and fixes that would be problematic to port back to
+Spotify, which meant I had finally gotten an excuse to try to merge the
+three seperate codebases into one unified version. Starting with MPD and
+Pandora, I merged the files and ran the result through a three-way diff,
+trying to identify important parts of each bot to make sure each worked
+properly after the merge. Next, I looked into the architecture of
+pyspotify, and immediately ran into some trouble. pyspotify works
+differently to the backends I had been used to, having its own threading
+I would need to juggle alongside my own. Additionally, the code is not
+thread safe, which is a problem with the heavily-threaded Groovebot
+code.&lt;/p&gt;
+&lt;p&gt;So now, the status is that we are down to two bots. One is the ancient
+Grooveshark code that is in need of updating and integrating with the
+second bot. This second bot has all the work I've been doing lately and,
+some few remaining problems aside, mostly work. Ideally, I will soon
+have a better host for the bot that will let me run Spotify, but for now
+Pandora is working well enough.&lt;/p&gt;
+&lt;/p&gt;</summary><category term="groovebot"></category><category term="FOSSRIT"></category></entry><entry><title>GrooveBot updates</title><link href="http://blog.linkybook.com/groovebot-updates.html" rel="alternate"></link><updated>2011-09-28T01:28:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2011-09-28:groovebot-updates.html</id><summary type="html">&lt;p&gt;Today I'm going to talk about something a bit more understandable, I
+hope.&lt;/p&gt;
+&lt;p&gt;Back around the summer of 2010, the FOSSBox wanted some ambient music to
+play in the background. One of the things we wanted was a way to have
+control over the songs played be available to anyone, even if they
+weren't here to listen with us. &lt;a class="reference external" href="http://jlewopensource.com/"&gt;Jlew&lt;/a&gt; was working on some IRC bots at
+the time, so he wrote up a bot that could hook into the &lt;a class="reference external" href="http://www.grooveshark.com/"&gt;GrooveShark&lt;/a&gt;
+API and play music that users requested through IRC. It was cool, when
+it worked, and it was fun having community control over song selections,
+even when that sometimes led to a bit of musical griefing.&lt;/p&gt;
+&lt;p&gt;Then GrooveShark kept changing it's API without warning, then they
+changed their pricing for access to said API, and then the bot stopped
+working. Plans to build a more robust bot around &lt;a class="reference external" href="https://gitorious.org/jlew/groovebot"&gt;GrooveBot&lt;/a&gt;, as it was
+now called, were scrapped, and the FOSSBox was quiet once more.&lt;/p&gt;
+&lt;p&gt;Then &lt;a class="reference external" href="http://turntable.fm/"&gt;turntable.fm&lt;/a&gt; happened. While we are not their optimal use-case,
+it did allow us a measure of community choice in our songs, and
+generally got us back to playing some sweet tunes while we work, with
+the added bonus that anyone could run it, not just people with premium
+access. Everything was pretty good, all things considered, and we could
+continue on with our lives.&lt;/p&gt;
+&lt;p&gt;Except for one thing.&lt;/p&gt;
+&lt;p&gt;Now with GrooveBot, you could send all kinds of commands to the bot and
+it would tell you what songs were playing, queue additional songs, pause
+or resume playback, and so on, all from the IRC windows we were already
+using to communicate with people outside of the area. I don't expect any
+of this to be available for Turntable any time soon, but there is one
+function that I have sorely missed. And that is the ability to change
+the volume from my computer without having to get up and manually prod
+whoever's running the audio.&lt;/p&gt;
+&lt;p&gt;So now there is a stripped version of GrooveBot on gitorious called
+volbot, and all he does is respond to requests to change the volume.
+Hopefully, when a new, free music API becomes available that we can hook
+into, it should be easier to reimplement those functions in a more
+general way so that multiple backends can be used for a more varied
+music experience. And then we can get back to the OS grooving.&lt;/p&gt;
+&lt;/p&gt;</summary><category term="groovebot"></category><category term="FOSSRIT"></category></entry><entry><title>pyDex 1.0</title><link href="http://blog.linkybook.com/pydex-10.html" rel="alternate"></link><updated>2011-05-08T03:19:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2011-05-08:pydex-10.html</id><summary type="html">&lt;p&gt;And in mostly unrelated but terribly belated news, I finally released
+&lt;a class="reference external" href="https://gitorious.org/pydex"&gt;pyDex 1.0&lt;/a&gt; this morning. Black/White pokedex, new config system, baby
+pokemon, and game detection, are all new features introduced in this
+version. Old configs should get read properly and get seamlessly updated
+to the new version, though there may be a few bugs in the process.&lt;/p&gt;
+</summary><category term="pyDex"></category></entry><entry><title>Killer Bunnies and the Towering Draw Pile</title><link href="http://blog.linkybook.com/killer-bunnies-and-the-towering-draw-pile.html" rel="alternate"></link><updated>2011-01-23T07:12:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2011-01-23:killer-bunnies-and-the-towering-draw-pile.html</id><summary type="html">&lt;p&gt;There was a hackfest Friday night, and a writeup is coming soon, but
+first a bit of random chatter.
+I have, for a few years, been collecting the various pieces that make up
+&lt;a class="reference external" href="http://boardgamegeek.com/boardgame/3699/killer-bunnies-and-the-quest-for-the-magic-carrot"&gt;Killer Bunnies and the Quest for the Magic Carrot&lt;/a&gt;. For Christmas, I
+received the Stainless Steel booster pack, leaving me one short (Ominous
+Onyx) of completing the game's many many expansion packs. In total, my
+game had over 650 cards and was disturbingly fun to play.
+Yesterday, I was surprised upon reaching my friend Eric's apartment to
+be greeted with not just one, but two new expansions, one of which I
+didn't even know existed. I am now the owner of not just the Ominous
+Onyx booster pack, but also the mysterious new Chocolate pack, adding in
+many of the hard-to-find promo cards that Playroom has put out over the
+years.
+We put together the full game, now consisting of 770 playable cards, 11
+dice, 9 pawns, a large cardboard ball, and various plastic tokens and
+stands to help try and make sense of all the nonsense. The draw pile
+stacks over a foot high thanks to the thick card construction, and
+shuffling amounts to little more than a best-effort situation. The game
+is frankly insane and a blast to play, with a breadth of randomness not
+normally found in such games. While strategy is important, one can
+switch freely between winning and losing with a few short turns, and
+often quite frequently does. The game is long enough to be satisfying,
+but not so long as to drag on, (as long as people are paying attention)
+and the variety and humor in the cards keeps the game fresh play after
+play.
+Still, my game is not quite complete. One more add-on remains, though
+not really a necessary one. A spin-off game called Kinder Bunnies also
+exists, aimed at a younger audience with streamlined rules and
+simplified gameplay. It is also completely compatible with the main
+Killer Bunnies game, with a few cards directly referencing Kinder
+Bunnies from Killer Bunnies. it also would add another ten &amp;quot;Magic
+Carrots&amp;quot; to the game, which are a sort of victory point mechanism, where
+once all the Magic Carrots have been picked up, the game ends. Thus, the
+addition would extend gameplay a bit more and provide new challenges for
+longtime players (not to mention many more dice to play with).
+So that's how I spent my weekend apart from coding like a superstar. But
+don't worry, I'll get to that soon.&lt;/p&gt;
+</summary><category term="personal"></category></entry><entry><title>pyDex on Sugar</title><link href="http://blog.linkybook.com/pydex-on-sugar.html" rel="alternate"></link><updated>2011-01-19T23:51:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2011-01-19:pydex-on-sugar.html</id><summary type="html">&lt;p&gt;A warning, this gets very technical with lots of acronyms and jargon.
+tl;dr: I have a new pyDex branch which *should* run on the OLPC
+A few days ago, I decided I'd finally see how well pyDex runs on the
+OLPC. Turns out, it runs pretty well, which isn't too surprising as it
+is written in pure pyGTK and Glade, both of which are well supported in
+Sugar.
+So today, I loaded up my dev files and set to work. First, though, I had
+to clean up my dev branch and finish commiting the few hacks I had
+accumulated over the last few months. I finally fixed the zero index bug
+and found I had a problem in my new scraper that was causing all the
+evolution problems. In anyt case, that's all fixed, so my dev branch is
+nice and clean and almost ready for the Black/White release in a few
+weeks.
+Getting back to Sugar, I finally found &lt;a class="reference external" href="http://magazine.redhat.com/2007/04/26/building-the-xo-porting-a-pygtk-game-to-sugar-part-two/"&gt;a good tutorial&lt;/a&gt; on *porting*
+a pyGTK program rather than writing a new one. While admittedly I
+haven't looked very hard, I had had a bit of a problem getting past the
+example activity before, probably due to my use of Glade as I cannot
+replace my top window as easily when it is automatically pulled from
+Glade's XML and I really don't feel like defining everything in code.
+The most useful thing I found in this tutorial is sending different
+parents to the main panel depending on where it is called from. So if we
+call the program normally, main_window is still loaded from Glade, but
+if Sugar loads it, we use their prebuilt panel.
+It still needs to be tested, and I need to add actual activity
+information (and an icon eventually), but I think it should work. I'll
+probably get to test it sometime this weekend, maybe even turn it into a
+real activity by then. This is still just a small project, and I doubt
+it will ever go up on Sugar's activities site, but it has given me a
+much better understanding about how non-pygame activities work.&lt;/p&gt;
+</summary><category term="FOSSRIT"></category><category term="sugar"></category><category term="pyDex"></category></entry><entry><title>Huzzah!</title><link href="http://blog.linkybook.com/huzzah.html" rel="alternate"></link><updated>2010-09-06T17:57:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2010-09-06:huzzah.html</id><summary type="html">&lt;p&gt;Here we are, back at the beginning of another school year. It's going to
+be interesting, I'm still pretty laid back from Fan Expo Canada in
+Toronto.
+My new monitor finally arrived. Well, it arrived Saturday, but the RIT
+post office isn't open on weekends over breaks, so I had to wait until
+this morining. Luckily, it seems that the stand on my last monitor which
+made me love it so much is a standard VESA mount, so I detached it from
+my old monitor, removed the sad excuse of a stand from my new monitor,
+and now have a beautiful new screen on the beautiful old stand. The new
+monitor, meanwhile, being an LED-backlit model, is much lighter now than
+it's stand. The speakers seem okay, although they're on the back of the
+monitor (no doubt meant to reflect off the wall behind them) so if I
+want to blast music, I'll just end up blasting Justin instead.
+So I now have two monitors, though I don't know if I'm keeping the
+ancient 15&amp;quot; LCD from home that was serving as a spare. We'll see. In the
+meantime, Minecraft looks better than ever.&lt;/p&gt;
+</summary><category term="personal"></category><category term="RIT"></category></entry><entry><title>Writing and Me</title><link href="http://blog.linkybook.com/writing-and-me.html" rel="alternate"></link><updated>2010-07-21T04:13:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2010-07-21:writing-and-me.html</id><summary type="html">&lt;p&gt;I am not a writer. Had things progressed differently, I might have tried
+it. I do enjoy the writing process. One important problem is that I hate
+revision. I start from a theoretical perfect model, and slowly write it
+out, far slower than my brain, which can race ahead to new, more
+exciting topics, while I still need to actually write what has been
+planned out before.
+Instead, I am a programmer. Really, the two are not very different. In
+programming, however, your audience is a computer, and the computer is
+far less forgiving of unclear communication. I'm not talking about typos
+or misplaced parentheses here, but in the ability of the writer to
+convey their ideas to the audience.
+Programming generally has a very strict syntax compared to speech. Words
+generally have only one meaning, and if they have more than one, it is
+immediately obvious which one is meant in any situation. Human
+communication, on the other hand, has shades of meaning, imagery, and
+all sorts of other trickery to say the same thing in many ways. Years of
+programming has left my vocabulary a bit dry, opting for specific,
+technical jargon rather than the more general, descriptive prose.
+To put it another way, if my writings were computer code, none of them
+would compile. But then, none of my real code does either, not on the
+first try. The compiler rejects a statement here or there, and when it
+finally runs, the output is all wrong. So I tweak the code, simplify and
+break down long statements, and try to say exactly waht I mean.
+Eventually, the code compiles and runs, and does exactly what I want it
+to.
+How does this relate to being a writer? Well, I follow mostly the same
+pattern in my writing. The only difference is that I do it without a
+compiler. I have learned long ago that self-correction is often useless
+for me, I tend to make the same mistakes while reading as I did writing
+it. My best writing comes form when I *do* have a compiler of sorts;
+school assignments where each revision compiles a little further with my
+teacher, and more meaning comes through.
+Unfortunately, I do not write regularly anymore. The days of required
+writing are almost gone, and I have yet to find a compiler for writing
+which works as well as my teachers. Add to that my dislike of revision
+without glaring errors to fix, and my personal writing tends to throw
+parsing errors in anyone who isn't me.
+Hopefully I'll get better at this. At the very least I hope to catch the
+common mistakes here.&lt;/p&gt;
+</summary><category term="personal"></category></entry><entry><title>pyDex Progress</title><link href="http://blog.linkybook.com/pydex-progress.html" rel="alternate"></link><updated>2010-07-10T16:51:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2010-07-10:pydex-progress.html</id><summary type="html">&lt;p&gt;I've finally gotten around to staging and commiting a few enhancements
+to the &lt;a class="reference external" href="http://gitorious.org/pydex"&gt;pydex repository&lt;/a&gt;. The more advanced stuff like Isshu pokemon
+and the new file format are still in limbo, naturally, and won't get
+moved to master any time soon since they make older files incompatible,
+though I hope to at least be able to read them for the time being.
+I'm also beginning to wonder about dynamically limiting the National
+Pokedex based on the game setting, once that actually does something.
+I've only played Gen IV extensively, but after loading up Yellow on a
+whim, I see how this could be useful. But I'm more concerned with
+bugfixing 1.0 so that it can see the light of daythan tacking on more
+features right now.&lt;/p&gt;
+</summary><category term="pyDex"></category></entry></feed>

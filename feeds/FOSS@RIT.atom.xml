@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://blog.linkybook.com/" rel="alternate"></link><link href="http://blog.linkybook.com/feeds/FOSS@RIT.atom.xml" rel="self"></link><id>http://blog.linkybook.com/</id><updated>2013-01-24T22:33:00-05:00</updated><entry><title>American Greetings Hackathon Followup</title><link href="http://blog.linkybook.com/american-greetings-hackathon-followup.html" rel="alternate"></link><updated>2013-01-24T22:33:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2013-01-24:american-greetings-hackathon-followup.html</id><summary type="html">&lt;p&gt;Last weekend was the &lt;a class="reference external" href="http://foss.rit.edu/node/425"&gt;American Greetings Hackathon&lt;/a&gt;, and it was one of
+the most successful yet. We got more than 70 people attending and
+working on projects, and most of those projects had at least something
+working by the end of the 24 hours.&lt;/p&gt;
+&lt;p&gt;I worked with &lt;a class="reference external" href="http://blog.helixoide.com/"&gt;Ross Delinger&lt;/a&gt;, with occasional controbutions from &lt;a class="reference external" href="http://www.ryansb.com/"&gt;Ryan
+S. Brown&lt;/a&gt; on a project eventually called &lt;a class="reference external" href="http://github.com/ryansb/hetHUD"&gt;netHUD&lt;/a&gt;. The idea was to
+take the new &lt;a class="reference external" href="http://nethackwiki.com/wiki/NetHack_4"&gt;NetHack 4&lt;/a&gt; network &lt;a class="reference external" href="http://nethackwiki.com/wiki/NetHack_4_Network_Protocol"&gt;protocol&lt;/a&gt; and try to make something
+more than just another interface to nethack.&lt;/p&gt;
+&lt;p&gt;Originally, we set out simply to connect to the nethack server and have
+a second channel of information. Ideally, we would make calls to the
+server and have it update us about games in progress. This turned out to
+be problematic for a number of reasons, but the most immediate was that
+we could not get two simultaneous connections to the server.&lt;/p&gt;
+&lt;p&gt;This meant we had to redesign our service. Instead of being a second
+stream, we would need to piggyback on the initial connection, which
+meant writing a server proxy. This may not have been the only way to do
+it, or even the best way to do it, but that's just how we roll. The
+eventual structure (all written in delicious &lt;a class="reference external" href="http://www.twistedmatrix.com"&gt;twisted&lt;/a&gt; protocols)
+looked something like this:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+[Nethack Server]
+   -----
+    | |
+    | |
+   [tee]============[controller]
+    | |                 | |
+    | |                 | |
+   -----               -----
+[Nethack Client]     [netHUD]
+&lt;/pre&gt;
+&lt;p&gt;tee.py acted as the proxy and sent any messages received from the
+nethack server to the controller, which cached the current state of all
+the games and sent updates to any listening netHUD instances. This way,
+you connect to nethack as usual and log in, and then in a second window,
+you connect to the server again on the netHUD port and get a slew of
+information about your current inventory, nearby points of interest (eg.
+monsters, items, traps), and other information. There's a lot more we
+could add to this over time; one of the ideas thrown around at the
+beginning was integration with the nethack wiki, providing additional
+information about items, monsters, even entire levels.&lt;/p&gt;
+&lt;/p&gt;</summary><category term="hackfest"></category><category term="FOSSRIT"></category></entry><entry><title>Recent Projects: Democrat &amp; Chronicle</title><link href="http://blog.linkybook.com/recent-projects-democrat-chronicle.html" rel="alternate"></link><updated>2012-08-22T22:16:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2012-08-22:recent-projects-democrat-chronicle.html</id><summary type="html">&lt;p&gt;One of the new projects I had this summer was a project proposed by the
+&lt;a class="reference external" href="http://www.democratandchronicle.com/"&gt;Democrat &amp;amp; Chronicle&lt;/a&gt;. The project involved access to a selection of
+emails sent to the Greece school district in the wake of the youtube
+video involving several of their students. The idea was that we would
+get a dump of email bodies and try to glean some information out of
+them.&lt;/p&gt;
+&lt;p&gt;The first hurdle, unfortunately, was getting at the information. Shortly
+after we were approached with the request, I received an Access file
+containing around 5000 email bodies to go through. Being what we are,
+most of the resources in the FOSSBox are oriented around Linux, and no
+one about had a copy of Access installed to get the data into a more
+friendly format.&lt;/p&gt;
+&lt;p&gt;In theory, there are ODBC drivers for access databases, just like there
+are for any other database system. In practice, however, they seem to
+only exist for Windows machines which, while not surprising, was
+disappointing. This led me to dig out an old VirtualBox VM with Windows
+XP on it, install the Access drivers from Microsoft, and throw
+LibreOffice on it, too. There's other ways I could have gotten this done
+instead of LibreOfiice, but I was still hoping this could be a simple
+action at the moment.&lt;/p&gt;
+&lt;p&gt;LibreOffice Base eventually got into the Access file, but then the
+troubles started again. It initially prompted me to save a LibreOffice
+database file, which sounded great to me... it could export it
+immediately, then I could copy it over and finish the task in Linux.
+Unfortunately, all this file did was create a small wrapper around the
+Access file, telling LibreOffice where the file was located, and what
+was needed to open it. So now I was back to trying to export the data.
+LibreOffice, though, was not willing to play along. I admit I am less
+than familiar with the Base component of LibreOffice, however some
+exploration and more searching online led me to believe I could not do
+the simple translation of data from one format to another from within
+Base.&lt;/p&gt;
+&lt;p&gt;Instead, I needed to select the table I was interested in (the only
+table in the database), tell LibreOffice to copy the table, then open a
+new spreadsheet in LibreOffice Calc and save the data that way. While
+this makes some sense to me (Base being simply for basic interaction
+with databases, Calc for manipulating raw data), I was dismayed that I
+could not find some way to export a single table to a common data
+format, like CSV, instead of having to go through yet another step. In
+any case, once I dumped the data into Calc, I could easily save it to
+CSV, drop that into my real computer, stop the VM, and get to work for
+real.&lt;/p&gt;
+&lt;p&gt;The end result is &lt;a class="reference external" href="https://github.com/Qalthos/mail_scrape"&gt;this&lt;/a&gt;. I'm not sure it will ever be of any
+particular use to anyone other than myself to remind me how to use the
+Python NLTK module (whose documentation seems to be geared more towards
+researchers than those already familiar with Python), and is hardcoded
+to certain facets of the data I was given, but it does manage to do a
+few things, and at each step it dumps the state of the data to a file so
+I can inspect the process and consider possible improvements.&lt;/p&gt;
+&lt;/p&gt;</summary><category term="journalism"></category><category term="FOSSRIT"></category><category term="data alchemy"></category></entry><entry><title>Introducing: FOSS@RIT Timeline Year in Review</title><link href="http://blog.linkybook.com/introducing-fossrit-timeline-year-in-review.html" rel="alternate"></link><updated>2012-08-22T22:15:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2012-08-22:introducing-fossrit-timeline-year-in-review.html</id><summary type="html">&lt;p&gt;Yesterday, I sat down with Remy and went over the last of the things we
+need to do to close out the summer. There was a long list of items,
+split into two sections, each containing the same sort of stuff.
+&lt;a class="reference external" href="mailto:FOSS&amp;#64;RIT"&gt;FOSS&amp;#64;RIT&lt;/a&gt; has done a lot of stuff in the past year, and we need to be
+able to tell people about it.&lt;/p&gt;
+&lt;p&gt;The first section concerned the few things we had done that hadn't yet
+hit &lt;a class="reference external" href="http://foss.rit.edu/timeline/"&gt;Timeline&lt;/a&gt;. This was a fairly sizeable chunk of things, and we
+needed a good, rapid-entry way of getting more events in there. No
+problem, I had done some work on that before, I could get it running and
+dump events in there no problem.&lt;/p&gt;
+&lt;p&gt;The second (and slightly longer) list dealt with things we needed to
+compile some information about as a sort of &amp;quot;here's what we've done&amp;quot;
+report. The list of things that needed to be in that was... just about
+the same as the last one. Remy planned to go through the Timeline site
+and add entries from it, categorize them, and push it to foss.rit.edu.&lt;/p&gt;
+&lt;p&gt;This deeply concerned me on two distinct levels. First was the part of
+me that never liked writing. I've mentioned it here once before, and I
+feel I've gotten better since then, but the concept of wading through
+all that data to write a report was not something that made me happy.
+The other part was that all the things in the second list had to be
+added to the timeline at some point anyway, or were likewise available
+from other sources. When Remy showed me what he had written for 2010, it
+was obvious this could be easily replicated in code.&lt;/p&gt;
+&lt;p&gt;About an hour of JavaScript wrangling later, I had made &lt;a class="reference external" href="http://foss.rit.edu/timeline/2011.html"&gt;this&lt;/a&gt;. &lt;a class="reference external" href="http://foss.rit.edu/timeline/2010.html"&gt;Also
+this&lt;/a&gt;, and if you're reading this from about a year in the future,
+&lt;a class="reference external" href="http://foss.rit.edu/timeline/2012.html"&gt;this should even exist&lt;/a&gt;. It's still needs some tweaking, the years are
+hardcoded in the documents, the pages aren't linked from the main
+timeline page, and I'd rather have them all use one common file than
+make a new one each year, but it works, it's fairly similar to what was
+handwritten last year, and it gets updated every time something gets
+added to Timeline.&lt;/p&gt;
+&lt;/p&gt;</summary><category term="FOSSRIT"></category><category term="data alchemy"></category><category term="jQuery"></category></entry><entry><title>OpenShift Troubles</title><link href="http://blog.linkybook.com/openshift-troubles.html" rel="alternate"></link><updated>2012-02-03T06:47:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2012-02-03:openshift-troubles.html</id><summary type="html">&lt;p&gt;Recently I've been playing with &lt;a class="reference external" href="http://openshift.redhat.com/"&gt;OpenShift&lt;/a&gt;, a new(ish) service from
+Red Hat as a sort of 'push to cloud' deployment strategy. It's
+interesting for people like me who can whip up a site quick, but don't
+necessarily have the framework in place to host it.
+Due to my work on &lt;a class="reference external" href="http://civx.us/"&gt;CIVX&lt;/a&gt;, I've gotten pretty familiar with
+&lt;a class="reference external" href="http://turbogears.org/"&gt;TurboGears&lt;/a&gt;, and the idea of being able to take a site like that and
+run it without having to set up apache or fiddle with paster sounded
+real nice. Unfortunately, it was not so simple as it seems.
+First up was to get something, anything, running. For a while, OpenShift
+was throwing a &lt;a class="reference external" href="http://www.flickr.com/photos/girliemac/6509400855/in/set-72157628409467125"&gt;500 error&lt;/a&gt; when you tried to get a new application
+registered. A brief poke into their IRC told had them aware of the
+problem and it was fixed shortly. Next came the other part that should
+have been easy, running TurboGears.
+&lt;a class="reference external" href="http://lewk.org/"&gt;Luke&lt;/a&gt; our favorite wizard around these parts, wrote a bit of &lt;a class="reference external" href="https://github.com/lmacken/openshift-quickstarter"&gt;code&lt;/a&gt;
+to get most of the available applications up and running without too
+much effort, including the currently unsupported TurboGears. Running
+this went off without a problem, but the resulting site gave me another
+happy 500 error. After a consult with Remy, we determined there were
+some missing version requirements that kept the site from running. After
+pulling those edits out of his repo and moving them upstream to Luke's,
+I had a working default TurboGears site.
+Until I tried to log in. Then I got another 500 error.
+I was beginning to get used to this, but it was still annoying to make a
+small change, then push it to the server and wait for the server to
+update the settings before I could test it. Even more fun was the
+occasional &lt;a class="reference external" href="http://www.flickr.com/photos/girliemac/6540643319/in/set-72157628409467125/"&gt;503 error&lt;/a&gt; when OpenShift couldn't keep up with my rapidly
+building and tearing down sites.
+Feeling that that was going to be a project by itself, I set about
+moving all my non-db-interfacing files to this new repository. The
+prebuilt version assumes that the site internally is named tg2app, and I
+was having trouble convincing it to go by anything else. Eventually I
+just decided to move files across one by one; first the templates that
+don't care what they're named, then the root controller, than the new
+model and widget. A lot of frustration, many &lt;a class="reference external" href="http://www.flickr.com/photos/girliemac/6508023617/in/set-72157628409467125"&gt;403&lt;/a&gt; and &lt;a class="reference external" href="http://www.flickr.com/photos/girliemac/6508022985/in/set-72157628409467125/"&gt;404&lt;/a&gt; errors
+later, I had something that pretended to work as long as I didn't use
+the database. But since the database is kind of the point of the site I
+was building, this was not exactly acceptable.
+So back to the drawing board then. I had a hunch something was wrong
+when I saw SQLAlchemy errors scroll by every time I reloaded the site.
+My best guess is that SQLAlchemy is failing to create the tables needed
+to run the site and continuing on blindly. Once I realized that, I
+dumped a test db from my local copy to the mysql db, and suddenly
+everything was working. Or almost everything, anyway.
+I could read form the db fine, but any time I tried to modify it, I got
+another dreaded 500 error. I poked into everything I could find to try
+to figure out where it was failing, and finally determined it couldn't
+be on my end, as my local copy worked just as expected.
+Finally I stumbled across the anwser, almost accidentally. When I moved
+the db from local sqlite to mysql, I failed to set the auto increment
+setting on the id of my new databases, so when I neglected to provide an
+id for the new entries I was making, mysql quite rightly complained at
+me. Unfortunately, since I can't find how to re-enable debug mode (nor
+should I really try), I wasn't getting any good error messages.
+So what is the site that has been giving me all these troubles? It's a
+little site I set up to publicly shame Remy into stopping smoking:
+&lt;a class="reference external" href="http://remysmoke-qalthos.rhcloud.com/"&gt;remysmoke-qalthos.rhcloud.com&lt;/a&gt;&lt;/p&gt;
+</summary><category term="personal"></category><category term="FOSSRIT"></category><category term="FLOSS-seminar"></category><category term="openshift"></category></entry><entry><title>Openshift Troubles Continued</title><link href="http://blog.linkybook.com/openshift-troubles-continued.html" rel="alternate"></link><updated>2012-02-03T06:47:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2012-02-03:openshift-troubles-continued.html</id><summary type="html">&lt;p&gt;I figured out the problem I was having with OpenShift.&lt;/p&gt;
+&lt;p&gt;To put it simply, I didn't pay enough attention.&lt;/p&gt;
+&lt;p&gt;For reference, when moving an existing TurboGears app to OpenShift, make
+sure you add the changes in config/app_cfg.py&lt;/p&gt;
+&lt;p&gt;As soon as I saw that, I felt really silly for missing it. I was so sure
+that I had gotten all the relevant changes, but apparently I somehow
+missed this file.&lt;/p&gt;
+&lt;p&gt;More detailed directions coming soon.&lt;/p&gt;
+&lt;/p&gt;</summary><category term="personal"></category><category term="FOSSRIT"></category><category term="FLOSS-seminar"></category><category term="openshift"></category></entry><entry><title>TurboGears2 on OpenShift, just like it should be</title><link href="http://blog.linkybook.com/turbogears2-on-openshift-just-like-it-should-be.html" rel="alternate"></link><updated>2012-02-03T06:47:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2012-02-03:turbogears2-on-openshift-just-like-it-should-be.html</id><summary type="html">&lt;p&gt;After much work and many trials, I finally have an app pushed to
+OpenShift with no manual tweaking necessary. As often happens with these
+things, the solution was much simpler than expected.&lt;/p&gt;
+&lt;p&gt;Note: I still don't have a foolproof 'follow this' solution ready, as
+the one I built works exactly as I want it to, but:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;It needs a lot of love and cleanup&lt;/li&gt;
+&lt;li&gt;It requires an external git script that isn't well documented&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The first isn't much of a problem, and can be worked out over the next
+few days. I'm more worried about the second one. For the curious, the
+script is &lt;a class="reference external" href="https://github.com/apenwarr/git-subtree"&gt;git-subtree&lt;/a&gt;, which acts like a submodule except it is more
+transparent to the repository which is a plus given OpenShift's odd
+structure.&lt;/p&gt;
+&lt;/p&gt;&lt;p&gt;Back on topic, when we last left off this topic, I had finally gotten
+OpenShift to acknowledge a project in a directory other than tg2app.
+This is useful because, at least for me, most of my projects are not
+named tg2app. That turned out to be stupid problem I had made for
+myself, but unfortunately, the next problem to tackle was not.&lt;/p&gt;
+&lt;p&gt;You see, when setting up an app on OpenShift, you have very little
+control over the actual environment the app is running in (this isn't
+entirely true, but is a useful fiction, especially as the service is
+likely to become more 'plug-and-go'). One of the few ways you can retain
+control is through a series of post-commit hooks, one of which was
+starting off the problematic section of code. When you first push your
+code to OpenShift, it needs to set up your database so it is ready to
+store information and do other databasey things.&lt;/p&gt;
+&lt;p&gt;Naturally, this wasn't happening.&lt;/p&gt;
+&lt;p&gt;First up was a problem with OpenShift. Python's default egg cache (not
+too important, it's a place python can use to extract files from
+installed packages temporarily) is not writable in OpenShift, so that
+needs to be set before anything else will work. Next, the proper MySQL
+library is not installed by TurboGears by default (the default is to use
+sqlite), so that had to be added to the requires list.&lt;/p&gt;
+&lt;p&gt;And then I hit yet another wall. Despite everything being set up
+properly, I could not connect to the MySQL database on OpenShift. It
+wasn't a problem with MySQL, because I could connect fine with the MySQL
+client. It wasn't even a problem with SQLAlchemy, because I was able to
+connect from a short example script. Finally, in a fit of insanity, I
+tried running the build script directly. I'm not even sure why, I was
+just at the point I would do anything just to see if it would work.&lt;/p&gt;
+&lt;p&gt;And, strangely enough, &lt;em&gt;it did&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;This had some pretty profound implications. It meant something was
+different during the build hook than in normal execution. Armed with
+this new knowledge, I headed over to OpenShift's IRC channel to get some
+answers (I had actually been in there for some time prior, just not with
+enough information for themore ruby-oriented users to help).&lt;/p&gt;
+&lt;p&gt;They told me that yes, indeed there was a difference. During the build
+step, the database is stopped, hence why I could not connect to it.
+There were, however, hooks for deploy and post_deploy, during both of
+which the database would be running. I moved the calls needing database
+access to deploy, and suddenly everything worked! I made a few more
+changes, cleaned up my tree, and tested it on a new app I wanted to get
+on OpenShift, and it (mostly) worked. There were a few problems left,
+but they seemed to be mostly my fault (and problems with the
+application, not OpenShift), so it looked like I had finally fixed
+deploying a standard TurboGears app. I've no doubt that there's
+something I've left out, but I'm pretty amazed at the progress I've made
+so far, and learned a lot about both OpenShift and TurboGears.&lt;/p&gt;
+&lt;/p&gt;</summary><category term="personal"></category><category term="hackfest"></category><category term="FOSSRIT"></category><category term="FLOSS-seminar"></category><category term="RIT"></category><category term="openshift"></category></entry><entry><title>ImagineRIT 2011</title><link href="http://blog.linkybook.com/imaginerit-2011.html" rel="alternate"></link><updated>2011-05-08T03:16:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2011-05-08:imaginerit-2011.html</id><summary type="html">&lt;p&gt;So I've been absent for a while lately, but with good reason. I've been
+preparing for ImagineRIT, which was held earlier today.
+After pulling possibly my longest day's hack yesterday (1pm to 4am,
+approximately), I woke up at 9 and headed over to the Innovation Center
+to talk to people about FOSS. All day long, the Fossbox was filled with
+curious people, looking to find out what it is we did. We had kids
+poking around on the OLPCs, checking out our software, and occasionally
+getting lost opening new programs. Every time I finished showing a group
+around all the different projects hosted in the FOSSBOX, a brand new
+group would appear and start asking questions. It was tiring, especially
+on about three hours of sleep, but it was quite fun and exciting showing
+off our work to new people.
+Of particular interest was Lemonade Stand, which seemed to excite many
+of the children who came around. Most seemed to pick up the game with
+minimal instruction (though it helped that by now I know very well which
+areas to explain... they should get tightened in the future) and most
+had lots of fun despite the large quantities of math involved.
+And the backdrop to all this was &lt;a class="reference external" href="rise.rit.edu"&gt;Rise Above the Crowd&lt;/a&gt;, the project I
+was spending so much time polishing yesterday. I don't know if I could
+explain what exactly Rise is, other than a real-time journalism and news
+collection framework, which doesn't really explain anything. Basically,
+users submit stories and photos to Rise, which in turn keep track of
+popular and recent content and display this information to strategically
+placed screens throughout the campus. After a few hiccoughs, the servers
+were online and serving data to the public, who then voted on their
+favorite stories. At the FOSSBOX, we had the projector set up serving
+the HD display mode so people could see what was current while they were
+there. Since I was the one most familiar with the system at the time, I
+tried to field any questions that popped up at the time to the best of
+my knowledge, though sometimes that wasn't much help. As the day
+progressed, we uncovered a few new bugs in the new system, and have some
+new tasks before the final release.
+All in all, a very exciting and fun weekend. We made a few contacts,
+introduced a few more people to &lt;a class="reference external" href="mailto:FOSS&amp;#64;RIT"&gt;FOSS&amp;#64;RIT&lt;/a&gt;, and gave away at least 40
+LiveCDs. I think that qualifies as quite a success.&lt;/p&gt;
+</summary><category term="journalism"></category><category term="lemonade"></category><category term="FOSSRIT"></category><category term="sugar"></category><category term="RIT"></category><category term="Rise"></category><category term="OPL"></category></entry><entry><title>Special Election Time</title><link href="http://blog.linkybook.com/special-election-time.html" rel="alternate"></link><updated>2011-03-29T03:07:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2011-03-29:special-election-time.html</id><summary type="html">&lt;p&gt;Rochester is having a special election tomorrow to choose a new Mayor,
+as the previous Mayor, Robert Duffy, is now the Lieutenant Governor of
+New York. I've been following the race with some interest despite not
+being registered to vote in this area, especially since I know one of
+the candidates.
+But more exciting than the actual business of an politics is the
+election itself, which gives a great opportunity to introduce &lt;a class="reference external" href="http://foss.rit.edu/election/"&gt;Election
+Scraper 2.0&lt;/a&gt;.
+You may remeber the old version. It was largely untested, had a few
+design issues, and wasn't very pretty to look at. Through the election
+night, I tweaked and honed it, until finally, mere minutes before the
+close of the last poll, it gave a very close approximation to an
+accurate number.
+We probably won't have that many problems this time around. But who
+knows? I'm looking forward to an exciting night in any case, and I'll be
+ready to fix any problems as they come.&lt;/p&gt;
+</summary><category term="FOSSRIT"></category><category term="election"></category></entry><entry><title>Election Aftermath</title><link href="http://blog.linkybook.com/election-aftermath.html" rel="alternate"></link><updated>2011-03-29T02:59:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2011-03-29:election-aftermath.html</id><summary type="html">&lt;p&gt;So the election was almost a week ago. Here's how our little experiment
+turned out.
+&lt;a class="reference external" href="http://farm2.static.flickr.com/1386/5143595646_9e4e56f556.jpg"&gt;|image0|&lt;/a&gt;
+The evening started out rather slowly, with information trickling in
+about races that were all but confirmed. We had the Innovation Center's
+display set up with various maps and information, and my page in the
+center in five columns, all showing zero votes.
+We waited until the polls closed at 9PM, and then we waited some more
+for the information to travel to the Board of Elections and make it onto
+the XML file. Even at this point, I still didn't know if the scraper was
+going to work, so I was checking the &lt;a class="reference external" href="http://66.192.47.50/flashresults.html"&gt;official unofficial results page&lt;/a&gt;
+to make sure they didn't have anything we didn't.
+When the first results popped on the screen, it was amazing. When
+results kept pouring in, it was even more impressive. When we finally
+figured out that all those numbers were wrong, it was time to start
+getting things fixed.
+There were several differences from what the Canadian data had led me to
+expect, and so I spent most of the night fixing small problems as they
+showed up. First, votes in NYS are tallied by party, even if multiple
+parties are running the same candidate. This was quite different from
+what I had been led to expect, and so the numbers we started out with
+were quite.. bizarre. Before we realized what was going on, it looked
+like Paladino was beating Cuomo in Monroe County almost 4 to 1. Checking
+back with the flash page revealed that I was only counting one party for
+each candidate, and whichever came last would show up on the screen. I
+had to keep a running count for each candidate rather than throwing out
+old data when going through the file.
+Having fixed that, and seeing that the numbers now matched what was
+coming out of the flash page, I settled back down and watched the third
+parties fight for 50,000 votes. That is, until someone pointed out to me
+that Andrew Cuomo was currently listed with 1.7 million votes for Monroe
+County alone. Seeing as how the total population of the area is only
+about 1 million, there was clearly something wrong. It seems that in my
+haste to keep count of how many votes a candidate got from each party, I
+was not clearing these numbers once the file was done being read. This
+was probably the hardest fix I had to make during the night, as it broke
+some of the models I had naively put forth on how the program should
+run.
+I eventually ended up with a workable solution, though I was sad to see
+the third party numbers were much lower now. There remained only one
+small problem, being that most vote totals seemed to be exactly twice
+what the flash site claimed they were. Finally, I realized that there
+was a master 'total votes' line for each candidate which made most of
+the hacks and shims I had written into my scraper obsolete. Instead, I
+could simply show only this total line and everything would be right
+again.
+This was an amazing experience, especially how the work I was doing was
+being picked up by people outside of RIT. Having to think fast on my
+feet was a new one too. I, like most programmers, usually like to
+examine a problem in detail and have time to test theories before
+publishing changes. Here, I was coding just about as fast as I could to
+fix each bug that turned up, and we managed to make it work before the
+last precincts rolled in.
+But even more than that, this was an opportunity to take the skills and
+tools I've been accumulating through my time at RIT and make them do
+something more than just a class assignment. This wasn't just another
+program to be written and forgotten, this was something that represented
+the school to some of the public who perhaps hadn't heard about what
+we're doing here. And that is cool.&lt;/p&gt;
+</summary><category term="journalism"></category><category term="FOSSRIT"></category><category term="election"></category></entry><entry><title>Election Night</title><link href="http://blog.linkybook.com/election-night.html" rel="alternate"></link><updated>2011-03-29T02:59:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2011-03-29:election-night.html</id><summary type="html">&lt;p&gt;So election night is tonight. I'll have free time soon.
+The main reason for my lack of time lately has to do with the election.
+On wednesday, just before I was going to classes, I got a call from Remy
+asking what my schedule was and if I'd like to take a trip to WXXI to
+talk with Rachel Ward and at their election coverage.
+A few hours later, we're in the lobby of WXXI, being mistaken for
+musicians (as anyone who meets Remy for the first time is likely to do),
+and waiting for Rachel to come down.
+We took a quick tour of the facilities, met a few other people, and got
+down to business. Monroe County's Board of Elections hosts a server with
+the live election information on a static ip and takes it down once the
+election is done. Further, this information is released ing the form of
+a flash app, making it harder to move the information.
+After a short discussion, we decided that we weren't going to get
+anywhere without making a call to the BoE. Rachel did her magic on the
+phone, getting more information out of them than I ever could have done.
+To make a long story short, this flash application is driven by an XML
+file (actually two) and that the system was provided by the company who
+made the machines and was pretty much a black box as far as they were
+concerned.
+A short bit of googling later, I had identified another location that
+used these machines: London, Ontario. using their XML files as a base, I
+made a quick scraper that spat out a basic table of races and
+candidates. It wasn't pretty, but it worked.
+Over the next few days, I poked and prodded at it, adding features and
+eventually moving to an HTML output and checking against a few more
+locations, and cleaned up the code some more. We met with Rachel once
+more yesterday, set the site up to be running on innovationtrail.org,
+and started the countdown.
+The current version of the scraper is now running on
+&lt;a class="reference external" href="http://foss.rit.edu/election/"&gt;http://foss.rit.edu/election/&lt;/a&gt; and should update its information every 30
+seconds, once information exists.&lt;/p&gt;
+</summary><category term="journalism"></category><category term="FOSSRIT"></category><category term="election"></category></entry><entry><title>Winter Hackathon 2</title><link href="http://blog.linkybook.com/winter-hackathon-2.html" rel="alternate"></link><updated>2011-02-19T02:58:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2011-02-19:winter-hackathon-2.html</id><summary type="html">&lt;p&gt;So I was gonna do a writeup about the winter hackathon.
+That didn't happen too much.
+But there's another one going on now.
+^__^&lt;/p&gt;
+</summary><category term="hackfest"></category><category term="FOSSRIT"></category></entry><entry><title>Boston</title><link href="http://blog.linkybook.com/boston.html" rel="alternate"></link><updated>2011-01-23T07:14:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2011-01-23:boston.html</id><summary type="html">&lt;p&gt;So here we are in OLPC HQ, right in the middle of MIT. It's pretty sweet
+having &lt;a class="reference external" href="http://lewk.org/"&gt;Luke&lt;/a&gt; around again to hack CIVX with us.
+I've had a lot to do in the past few days. Remy's been showing me
+scrapers and models, and I've been helping transition &lt;a class="reference external" href="http://foss.rit.edu/user/17"&gt;Kate's&lt;/a&gt; people
+dashboard into an integrated component or integrating &lt;a class="reference external" href="http://rebeccanatalie.com/"&gt;Rebecca's&lt;/a&gt; theme
+changes on the side. It's been hectic and fun and tough, but I finally
+feel like I'm contributing to a project, something with substance and
+goals, not just writing code to accomplish a task like some of my
+previous co-ops. Being in a team this large helps, especially when we
+pull in outside help like Luke, but I think it's mainly Remy's
+infectious excitement for the project. When he gets down to work, one
+can't help but feel his vision and be excited for the possibilities.
+Unfortunately, that means I had precious little time to pay attention to
+the other teams. Three separate groups hacking away at their own
+projects, tossing ideas about and getting input from a few members
+upstream, not to mention the whole OLPC offices around the corner- this
+was a right proper hackfest, and something that makes me excited for the
+future of these projects.&lt;/p&gt;
+</summary><category term="peopledashboard"></category><category term="hackfest"></category><category term="FOSSRIT"></category><category term="widgets"></category><category term="CIVX"></category><category term="Boston"></category></entry><entry><title>Wikiotics Visual Tweak</title><link href="http://blog.linkybook.com/wikiotics-visual-tweak.html" rel="alternate"></link><updated>2010-12-08T23:51:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2010-12-08:wikiotics-visual-tweak.html</id><summary type="html">&lt;p&gt;So &lt;a class="reference external" href="http://trosehfoss.blogspot.com/"&gt;trose&lt;/a&gt; and I have been asked to put abow on the Wikiotics work
+while we're between projects. We both hit some bumps at the end of the
+quarter, so there's a few unused hours left to put into this project.
+One of the things we've been tasked with is looking at the CSS and
+seeing if there is anything we can do to it to make it look a little
+better. Now, neither trose nor I are designers by any stretch of the
+imagination, but we've got a few ideas that might go a ways to making
+Wikiotics look more attractive.
+&lt;a class="reference external" href="http://3.bp.blogspot.com/_NuCXZozR8O8/TQAXjymF2KI/AAAAAAAAAi8/02g5WgJiCj0/s320/Screenshot-Wikiotics%2B-%2BNamoroka-1.png"&gt;|image0|&lt;/a&gt;
+This is how Wikiotics looks today. The different actions possible on a
+page are hanging out awkwardly in the center, and there's no clear
+division between the header and the content. After looking at this for a
+while, trose and I decided that we would emulate a few of the more
+reasonable designs of the more common wiki systems out there.
+&lt;a class="reference external" href="http://4.bp.blogspot.com/_NuCXZozR8O8/TQAXkGhFoPI/AAAAAAAAAjE/lnUp7vNtbAI/s320/Screenshot-Wikiotics%2B-%2BNamoroka.png"&gt;|image1|&lt;/a&gt;
+This is how Wikiotics looks on our local git. The 'tabs' have been moved
+to the right, and pushed further into the top bar (maybe too much).
+Further, the active tab bleeds into the content area, which is lightly
+colored to mark it as a separate area from the header and footer areas.
+The changed text and color on the top bar are not our doing, this
+appears to be a side-effect of running a subinstance of another page as
+we are, as is the case with the red link color.
+These changes are a small step, but I think they go some way towards
+making Wikiotics a bit more approachable to outsiders. There are a few
+more things to be done on Friday, but I don't think we're yet done
+looking at this.&lt;/p&gt;
+</summary><category term="wikiotics"></category><category term="FOSSRIT"></category></entry><entry><title>Wikiotics at the Constellation Commons</title><link href="http://blog.linkybook.com/wikiotics-at-the-constellation-commons.html" rel="alternate"></link><updated>2010-12-08T23:30:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2010-12-08:wikiotics-at-the-constellation-commons.html</id><summary type="html">&lt;p&gt;This happened quite some time ago now, but with the election coverage I
+haven't had much time to get this out.
+Two weeks ago, Taylor and I were asked to appear at the opening of the
+Constellation Commons for Global Learning, to show off Wikiotics as a
+student project and set up Wikiotics on all the computers. We got to
+show the site off to President Destler and to a few foreign language
+professors who were all quite excited about such a thing existing.
+In all we showed off the project to a fair number of people and got a
+very positive reaction from most of them. I don't know if we've seen any
+more users from this, but it seems to me it should help spread the word
+about Wikiotics.&lt;/p&gt;
+</summary><category term="wikiotics"></category><category term="FOSSRIT"></category></entry><entry><title>Updating git</title><link href="http://blog.linkybook.com/updating-git.html" rel="alternate"></link><updated>2010-10-04T19:39:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2010-10-04:updating-git.html</id><summary type="html">&lt;p&gt;We here at RIT are working on our own branch of Ductus, and Ductus got a
+big addition over the weekend, namespaces. Unfortunately, our repository
+didn't know anything about that and needed to be updated.
+Now, I'm not a novice to using git, nor are any of the people in the
+FOSSBOX. But we'd never had to worry about upstream repositories, for
+all of our projects, we *were* upstream.
+Taylor and I finally worked it out*, and now we're trying to fix all
+the problems that came up with the new hotness as best as we can. but
+even when you feel comfortable with something, you can never quite
+escape the possibility that something you hadn't considered might show
+up.
+* The process, for reference, as near as I can figure
+git remote add
+git pull
+git push&lt;/p&gt;
+</summary><category term="wikiotics"></category><category term="FOSSRIT"></category></entry><entry><title>Wikiotics Week 2</title><link href="http://blog.linkybook.com/wikiotics-week-2.html" rel="alternate"></link><updated>2010-09-29T18:36:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2010-09-29:wikiotics-week-2.html</id><summary type="html">&lt;p&gt;We're into week 2 of Wikiotics' &lt;a class="reference external" href="http://alpha.wikiotics.org/wiki/four_week_plan"&gt;four week plan&lt;/a&gt; to push Wikiotics
+development, so I thought I'd get out all the stuff I did last week.
+First, in order to get myself acquainted with the user interface I
+translated (badly) the introduction lesson into &lt;a class="reference external" href="http://alpha.wikiotics.org/wiki/Russian_lessons"&gt;Russian&lt;/a&gt; (and later
+tapped &lt;a class="reference external" href="http://rockettium.net/wordpress/"&gt;Ellen Rocket's&lt;/a&gt; German prowess for a &lt;a class="reference external" href="http://alpha.wikiotics.org/wiki/German_lessons"&gt;German&lt;/a&gt; one).
+Later I was asked to look into creoleparser to see if I could fix &lt;a class="reference external" href="http://code.google.com/p/creoleparser/issues/detail?id=42"&gt;bug
+42&lt;/a&gt; to disable external image loading, which we also want for Ductus.
+Getting into yet another python codebase so soon was interesting,
+especially when I had to switch back and forth looking at things
+&lt;a class="reference external" href="http://trosehfoss.blogspot.com/"&gt;Taylor&lt;/a&gt; was doing.
+That's all I really got into for week one, but now that I'm fairly
+comfortable with the various technolologies being used, I think things
+will really start rolling soon&lt;/p&gt;
+</summary><category term="wikiotics"></category><category term="FOSSRIT"></category></entry><entry><title>Refreshing Lemonade</title><link href="http://blog.linkybook.com/refreshing-lemonade.html" rel="alternate"></link><updated>2010-09-23T14:04:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2010-09-23:refreshing-lemonade.html</id><summary type="html">&lt;p&gt;In other news, todayyesterday marked the &lt;a class="reference external" href="http://blog.jlewopensource.com/2010/07/lemonade-stand-release.html"&gt;final release of Lemonade
+Stand 2.0&lt;/a&gt;. Now running on the &lt;a class="reference external" href="https://fedorahosted.org/fortune_hunter/wiki/FortuneEngine"&gt;Fortune Engine&lt;/a&gt; and containing 0% of
+my code, this marks an important milestone in my open-source
+&lt;a class="reference external" href="http://sugarlabs.org/"&gt;sugar-based&lt;/a&gt; lemonade stand game as it's still getting developed!
+While I can claim none of the credit for the code, it is still
+satisfying to watch my very first open source project still on its feet,
+teetering around like a drunken toddler.&lt;/p&gt;
+</summary><category term="lemonade"></category><category term="FOSSRIT"></category><category term="sugar"></category></entry><entry><title>Wikiotics</title><link href="http://blog.linkybook.com/wikiotics.html" rel="alternate"></link><updated>2010-09-20T19:45:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2010-09-20:wikiotics.html</id><summary type="html">&lt;p&gt;As of Friday, I have been doing some work (along with &lt;a class="reference external" href="http://trosehfoss.blogspot.com/"&gt;Taylor&lt;/a&gt; for a
+new set of people, &lt;a class="reference external" href="http://alpha.wikiotics.org"&gt;Wikiotics&lt;/a&gt;. Their goal is basically to create a
+FLOSS alternative to some of the commercial translation software out
+there, particularly the ever-so-expensive Rosetta Stone. The whole thing
+is built on a custom wiki platform called &lt;a class="reference external" href="http://code.ductus.us/"&gt;Ductus&lt;/a&gt;.
+Today, I cloned their development tree for local development, located at
+&lt;a class="reference external" href="http://gitorious.org/ductus-rit/"&gt;http://gitorious.org/ductus-rit/&lt;/a&gt;. Right now, nothing's been done to
+it, but this will be the staging area for our work here at RIT (and
+anyone who wants to get any additions into our tree) before going off to
+the master tree at ductus.us.
+We're still figuring out where everyone stands with development. I think
+the guys at ductus are pleasantly surprised at how much we already have
+under our belts here at the FOSSBOX. But that's just how we roll here at
+RIT.&lt;/p&gt;
+</summary><category term="wikiotics"></category><category term="FOSSRIT"></category></entry></feed>
