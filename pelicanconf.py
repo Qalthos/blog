@@ -17,4 +17,4 @@ SOCIAL = (('Github', 'http://github.com/Qalthos'),
           ('Google+', 'http://gplus.to/qalthos'),
          )
 
-DEFAULT_PAGINATION = False
+DEFAULT_PAGINATION = 5
