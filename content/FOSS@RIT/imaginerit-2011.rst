@@ -36,8 +36,9 @@ tried to field any questions that popped up at the time to the best of
 my knowledge, though sometimes that wasn't much help. As the day
 progressed, we uncovered a few new bugs in the new system, and have some
 new tasks before the final release.
+
 All in all, a very exciting and fun weekend. We made a few contacts,
-introduced a few more people to FOSS@RIT, and gave away at least 40
+introduced a few more people to FOSS\@RIT, and gave away at least 40
 LiveCDs. I think that qualifies as quite a success.
 
 .. _Rise Above the Crowd: rise.rit.edu

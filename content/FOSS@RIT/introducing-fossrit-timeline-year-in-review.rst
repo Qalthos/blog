@@ -1,5 +1,5 @@
-Introducing: FOSS@RIT Timeline Year in Review
-#############################################
+Introducing: FOSS\@RIT Timeline Year in Review
+##############################################
 :date: 2012-08-22 22:15
 :author: Nathaniel Case
 :tags: data alchemy, jQuery
@@ -7,7 +7,7 @@ Introducing: FOSS@RIT Timeline Year in Review
 Yesterday, I sat down with Remy and went over the last of the things we
 need to do to close out the summer. There was a long list of items,
 split into two sections, each containing the same sort of stuff.
-FOSS@RIT has done a lot of stuff in the past year, and we need to be
+FOSS\@RIT has done a lot of stuff in the past year, and we need to be
 able to tell people about it.
 
 The first section concerned the few things we had done that hadn't yet
