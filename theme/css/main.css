@@ -283,10 +283,23 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 	/* Blogroll */
 	#extras .blogroll {
 		float: left;
-		width: 615px;
+		width: 195px;
 	}
 	
-	#extras .blogroll li {float: left; margin: 0 20px 0 0; width: 185px;}
+	#extras .blogroll li {
+        float: left;
+        margin: 0 20px 0 0;
+        width: 185px;
+    }
+
+    #extras .tagcloud {
+        float: left;
+        width: 420px;
+    }
+
+    #extras .tagcloud li {
+        float: left;
+    }
 	
 	/* Social */
 	#extras .social {
@@ -429,3 +442,24 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 	
 	#add-comment input[type='submit'] {float: right; margin: 0 .5em;}
 	#add-comment * {margin-bottom: .5em;}
+
+#extras .tag-4 a {
+    padding-top: 1.075em;
+    padding-bottom: 1.07em;
+    font-size: 0.6em;
+}
+#extras .tag-3 a {
+    padding-top: 0.625em;
+    padding-bottom: 0.625em;
+    font-size: 0.8em;
+}
+#extras .tag-2 a {
+    padding-top: 0.217em;
+    padding-top: 0.217em;
+    font-size: 1.1em;
+}
+#extras .tag-1 a {
+    padding-top: 0.0em;
+    padding-bottom: 0.0em;
+    font-size: 1.5em;
+}

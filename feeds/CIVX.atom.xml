@@ -6,7 +6,7 @@ knowledge about things, which means very little to anyone, even me.&lt;/p&gt;
 &lt;p&gt;What Knowledge does is it allows you to store anything (or anything
 Python can pickle, at least), as arbitrary collections of Entities and
 Facts.&lt;/p&gt;
-</summary><category term="FOSSRIT"></category><category term="CIVX"></category></entry><entry><title>Multiprocessing the PolyScraper</title><link href="http://blog.linkybook.com/multiprocessing-the-polyscraper.html" rel="alternate"></link><updated>2011-06-29T18:04:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2011-06-29:multiprocessing-the-polyscraper.html</id><summary type="html">&lt;p&gt;Warning: This post was written at 4AM and contains a technical account
+</summary><category term="knowledge"></category></entry><entry><title>Multiprocessing the PolyScraper</title><link href="http://blog.linkybook.com/multiprocessing-the-polyscraper.html" rel="alternate"></link><updated>2011-06-29T18:04:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2011-06-29:multiprocessing-the-polyscraper.html</id><summary type="html">&lt;p&gt;Warning: This post was written at 4AM and contains a technical account
 of what I have been doing attempting to parallelize CIVX's internals. If
 you are looking for a more general overview of what I have been doing
 recently, you are better off looking to another one of my posts.
@@ -48,7 +48,7 @@ At this point, though, I have been working on this project for close to
 20 hours today now. Luke is in town and we're all posted up in Remy's
 new place all hacking on our projects together. With any luck a good
 night's sleep will clear my head and give me new ideas for tomorrow.&lt;/p&gt;
-</summary><category term="hackfest"></category><category term="FOSSRIT"></category><category term="SURS"></category><category term="polyscraper"></category></entry><entry><title>Back up to Speed</title><link href="http://blog.linkybook.com/back-up-to-speed.html" rel="alternate"></link><updated>2011-06-21T22:56:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2011-06-21:back-up-to-speed.html</id><summary type="html">&lt;p&gt;I've almost closed &lt;a class="reference external" href="https://fedorahosted.org/civx/ticket/106"&gt;bug #106&lt;/a&gt;. I've done all I can do for now, until I
+</summary><category term="hackfest"></category><category term="SURS"></category><category term="polyscraper"></category></entry><entry><title>Back up to Speed</title><link href="http://blog.linkybook.com/back-up-to-speed.html" rel="alternate"></link><updated>2011-06-21T22:56:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2011-06-21:back-up-to-speed.html</id><summary type="html">&lt;p&gt;I've almost closed &lt;a class="reference external" href="https://fedorahosted.org/civx/ticket/106"&gt;bug #106&lt;/a&gt;. I've done all I can do for now, until I
 can figure out how to attribute actions to senators. Until then, I
 should comment out the 'actions' tab tomorrow with a note letting
 whoever tries this next what I've already tried.
@@ -136,7 +136,7 @@ that I really understand Python's Unicode in a way I never grasped
 before. This should definitely help in the future as Unicode is a very
 important part of coding portable applications and that's something I
 want to do.&lt;/p&gt;
-</summary><category term="peopledashboard"></category><category term="FOSSRIT"></category><category term="widgets"></category><category term="scrapers"></category><category term="SURS"></category><category term="CIVX"></category></entry><entry><title>Shelves and Shoves</title><link href="http://blog.linkybook.com/shelves-and-shoves.html" rel="alternate"></link><updated>2011-06-21T22:56:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2011-06-21:shelves-and-shoves.html</id><summary type="html">&lt;p&gt;Today is the day to hit &lt;a class="reference external" href="https://fedorahosted.org/civx/ticket/105"&gt;bug #105&lt;/a&gt;, another of the leftover bugs from
+</summary><category term="peopledashboard"></category><category term="widgets"></category><category term="scrapers"></category><category term="SURS"></category></entry><entry><title>Shelves and Shoves</title><link href="http://blog.linkybook.com/shelves-and-shoves.html" rel="alternate"></link><updated>2011-06-21T22:56:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2011-06-21:shelves-and-shoves.html</id><summary type="html">&lt;p&gt;Today is the day to hit &lt;a class="reference external" href="https://fedorahosted.org/civx/ticket/105"&gt;bug #105&lt;/a&gt;, another of the leftover bugs from
 last year.
 The story goes something like this: there's a lot of data on
 nysenate.gov that is nice to have, but asking for that info on every
@@ -186,7 +186,7 @@ pull smaller volumes of data at a time, hopefully speeding up the
 process.
 We'll see where I get tomorrow, but so far I'm feeling pretty good about
 all this.&lt;/p&gt;
-</summary><category term="peopledashboard"></category><category term="FOSSRIT"></category><category term="widgets"></category><category term="scrapers"></category><category term="SURS"></category><category term="CIVX"></category></entry><entry><title>Summer of CIVX</title><link href="http://blog.linkybook.com/summer-of-civx.html" rel="alternate"></link><updated>2011-06-21T22:56:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2011-06-21:summer-of-civx.html</id><summary type="html">&lt;p&gt;So I'm back at RIT for the summer working on CIVX again. There's been a
+</summary><category term="peopledashboard"></category><category term="widgets"></category><category term="scrapers"></category><category term="SURS"></category></entry><entry><title>Summer of CIVX</title><link href="http://blog.linkybook.com/summer-of-civx.html" rel="alternate"></link><updated>2011-06-21T22:56:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2011-06-21:summer-of-civx.html</id><summary type="html">&lt;p&gt;So I'm back at RIT for the summer working on CIVX again. There's been a
 lot of development on Moksha, the software stack CIVX runs on, and not
 all of it was a trivial update. Still, many of the problems I
 encountered were definitely my fault, not the least of which was
@@ -202,7 +202,7 @@ I'm actually surprised how quickly I was able to work this out, though
 of course this is not even remotely new to me. But despite nearly a year
 of inactivity on the project I seem to have gotten back into the swing
 of it pretty well.&lt;/p&gt;
-</summary><category term="peopledashboard"></category><category term="FOSSRIT"></category><category term="widgets"></category><category term="SURS"></category><category term="CIVX"></category></entry><entry><title>The Last Week</title><link href="http://blog.linkybook.com/the-last-week.html" rel="alternate"></link><updated>2011-06-21T22:56:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2011-06-21:the-last-week.html</id><summary type="html">&lt;p&gt;This week has been a mess for a lot of reasons. Let's see what I managed
+</summary><category term="peopledashboard"></category><category term="widgets"></category><category term="SURS"></category></entry><entry><title>The Last Week</title><link href="http://blog.linkybook.com/the-last-week.html" rel="alternate"></link><updated>2011-06-21T22:56:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2011-06-21:the-last-week.html</id><summary type="html">&lt;p&gt;This week has been a mess for a lot of reasons. Let's see what I managed
 to get through so far.
 One of the things I got to look at this week is threebean's mokshactl
 branch of CIVX and Moksha. This is a project to simplify the
@@ -225,7 +225,7 @@ polyscraper, but that's nothing worth mentioning at this point. Between
 that and some internal matters and hours of meetings and my car
 developing a leak in it's brake line, that's all that went down this
 week. Tomorrow I get to drive home and hopefully fix my car properly.&lt;/p&gt;
-</summary><category term="peopledashboard"></category><category term="FOSSRIT"></category><category term="widgets"></category><category term="scrapers"></category><category term="SURS"></category><category term="CIVX"></category><category term="fabulous"></category></entry><entry><title>Grokking the Core</title><link href="http://blog.linkybook.com/grokking-the-core.html" rel="alternate"></link><updated>2011-06-21T22:55:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2011-06-21:grokking-the-core.html</id><summary type="html">&lt;p&gt;This week begins the real dive into the core of what makes CIVX. Today
+</summary><category term="peopledashboard"></category><category term="widgets"></category><category term="scrapers"></category><category term="SURS"></category><category term="fabulous"></category></entry><entry><title>Grokking the Core</title><link href="http://blog.linkybook.com/grokking-the-core.html" rel="alternate"></link><updated>2011-06-21T22:55:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2011-06-21:grokking-the-core.html</id><summary type="html">&lt;p&gt;This week begins the real dive into the core of what makes CIVX. Today
 (and yesterday, though yesterday hardly counts as a real day) were spent
 adding major functionality to the polyscraper, something that's been
 overdue for a long time now.
@@ -258,7 +258,25 @@ understand the underlying structure of everything. Every day I learn
 more about what goes on inside this machine, and every day marks another
 set of tools I've learned to wield. I can't wait to see how far I get by
 the end of the summer.&lt;/p&gt;
-</summary><category term="FOSSRIT"></category><category term="scrapers"></category><category term="SURS"></category><category term="CIVX"></category><category term="polyscraper"></category></entry><entry><title>Almost There...</title><link href="http://blog.linkybook.com/almost-there.html" rel="alternate"></link><updated>2010-09-09T18:11:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2010-09-09:almost-there.html</id><summary type="html">&lt;p&gt;Today I worked my way through more of &lt;a class="reference external" href="http://rebeccanatalie.com"&gt;Rebecca's&lt;/a&gt; changes to the people
+</summary><category term="scrapers"></category><category term="SURS"></category><category term="polyscraper"></category></entry><entry><title>Boston</title><link href="http://blog.linkybook.com/boston.html" rel="alternate"></link><updated>2011-01-23T07:14:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2011-01-23:boston.html</id><summary type="html">&lt;p&gt;So here we are in OLPC HQ, right in the middle of MIT. It's pretty sweet
+having &lt;a class="reference external" href="http://lewk.org/"&gt;Luke&lt;/a&gt; around again to hack CIVX with us.
+I've had a lot to do in the past few days. Remy's been showing me
+scrapers and models, and I've been helping transition &lt;a class="reference external" href="http://foss.rit.edu/user/17"&gt;Kate's&lt;/a&gt; people
+dashboard into an integrated component or integrating &lt;a class="reference external" href="http://rebeccanatalie.com/"&gt;Rebecca's&lt;/a&gt; theme
+changes on the side. It's been hectic and fun and tough, but I finally
+feel like I'm contributing to a project, something with substance and
+goals, not just writing code to accomplish a task like some of my
+previous co-ops. Being in a team this large helps, especially when we
+pull in outside help like Luke, but I think it's mainly Remy's
+infectious excitement for the project. When he gets down to work, one
+can't help but feel his vision and be excited for the possibilities.
+Unfortunately, that means I had precious little time to pay attention to
+the other teams. Three separate groups hacking away at their own
+projects, tossing ideas about and getting input from a few members
+upstream, not to mention the whole OLPC offices around the corner- this
+was a right proper hackfest, and something that makes me excited for the
+future of these projects.&lt;/p&gt;
+</summary><category term="peopledashboard"></category><category term="hackfest"></category><category term="widgets"></category><category term="Boston"></category></entry><entry><title>Almost There...</title><link href="http://blog.linkybook.com/almost-there.html" rel="alternate"></link><updated>2010-09-09T18:11:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2010-09-09:almost-there.html</id><summary type="html">&lt;p&gt;Today I worked my way through more of &lt;a class="reference external" href="http://rebeccanatalie.com"&gt;Rebecca's&lt;/a&gt; changes to the people
 dashboard. It was actually in better condition than I had thought last
 night. The first tab whas the only one with the majority of the changes,
 and most of the changes were easily applied once I understood them-
@@ -273,7 +291,7 @@ really getting into the template version, I began to see what was really
 necessary and not from Rebecca's blinged up copy. There are still a few
 bits missing from the final version, but I think I can get them nailed
 down before I leave today.&lt;/p&gt;
-</summary><category term="peopledashboard"></category><category term="FOSSRIT"></category><category term="CIVX"></category></entry><entry><title>CIVX Stuff</title><link href="http://blog.linkybook.com/civx-stuff.html" rel="alternate"></link><updated>2010-09-09T18:11:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2010-09-09:civx-stuff.html</id><summary type="html">&lt;p&gt;So I've been spending some time finally getting some time to familiarize
+</summary><category term="peopledashboard"></category></entry><entry><title>CIVX Stuff</title><link href="http://blog.linkybook.com/civx-stuff.html" rel="alternate"></link><updated>2010-09-09T18:11:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2010-09-09:civx-stuff.html</id><summary type="html">&lt;p&gt;So I've been spending some time finally getting some time to familiarize
 myself with CIVX and all the parts that make up the system. I'm almost
 comfortable with how the whole thing works together, though I'm not
 entirely clear on how some things work to finally get to the screen.
@@ -295,7 +313,7 @@ down the hall somewhere, getting information has turned into a more
 interesting experience when the necessary parts are in his head.
 I'm looking forward to an exciting next few weeks here, and a fruitful
 next few years with the information learned from this experience.&lt;/p&gt;
-</summary><category term="peopledashboard"></category><category term="FOSSRIT"></category><category term="widgets"></category><category term="CIVX"></category></entry><entry><title>Diving Deep</title><link href="http://blog.linkybook.com/diving-deep.html" rel="alternate"></link><updated>2010-09-09T18:11:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2010-09-09:diving-deep.html</id><summary type="html">&lt;p&gt;Yesterday had been spent working on a proper dev branch to CIVX. Today
+</summary><category term="peopledashboard"></category><category term="widgets"></category></entry><entry><title>Diving Deep</title><link href="http://blog.linkybook.com/diving-deep.html" rel="alternate"></link><updated>2010-09-09T18:11:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2010-09-09:diving-deep.html</id><summary type="html">&lt;p&gt;Yesterday had been spent working on a proper dev branch to CIVX. Today
 we gave it a home.
 Today started off trying to get the current dev CIVX running on our
 server. Now, I had some experience setting up a CIVX instance from
@@ -319,7 +337,7 @@ howdtheyvote.ca data, it went much faster. I need to remember to source
 tg2env when I'm on the server, but mostly, things were good today.
 Tomorrow we put together the pieces of v3, and keep on moving towards
 our goals.&lt;/p&gt;
-</summary><category term="FOSSRIT"></category><category term="scrapers"></category><category term="CIVX"></category></entry><entry><title>Here be Dragons</title><link href="http://blog.linkybook.com/here-be-dragons.html" rel="alternate"></link><updated>2010-09-09T18:11:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2010-09-09:here-be-dragons.html</id><summary type="html">&lt;p&gt;Today was the day we got &lt;a class="reference external" href="http://www.rebeccanatalie.com"&gt;Rebecca&lt;/a&gt; on to a git repo towards
+</summary><category term="scrapers"></category></entry><entry><title>Here be Dragons</title><link href="http://blog.linkybook.com/here-be-dragons.html" rel="alternate"></link><updated>2010-09-09T18:11:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2010-09-09:here-be-dragons.html</id><summary type="html">&lt;p&gt;Today was the day we got &lt;a class="reference external" href="http://www.rebeccanatalie.com"&gt;Rebecca&lt;/a&gt; on to a git repo towards
 implementing her changes to the people dashboard. It's only a halfway
 step, as she isn't entirely using the proper version of the widgets but
 a hacked one that works locally, and needs to be morphed into something
@@ -337,7 +355,7 @@ just for what's in the code. Good old meld, which I had been using, has
 proven itself inadequate to the massive differences between these files.
 Hopefully tomorrow I will have a fresh start from which to sculpt this
 mess I've constructed into its completed form.&lt;/p&gt;
-</summary><category term="peopledashboard"></category><category term="FOSSRIT"></category><category term="CIVX"></category></entry><entry><title>Introducing: GeoPirate!</title><link href="http://blog.linkybook.com/introducing-geopirate.html" rel="alternate"></link><updated>2010-09-09T18:11:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2010-09-09:introducing-geopirate.html</id><summary type="html">&lt;p&gt;So I've recieved my apparently mandated CIVX nickname, despite it
+</summary><category term="peopledashboard"></category></entry><entry><title>Introducing: GeoPirate!</title><link href="http://blog.linkybook.com/introducing-geopirate.html" rel="alternate"></link><updated>2010-09-09T18:11:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2010-09-09:introducing-geopirate.html</id><summary type="html">&lt;p&gt;So I've recieved my apparently mandated CIVX nickname, despite it
 possibly being inaccurate in a week or two. I, along with &lt;a class="reference external" href="http://rebeccanatalie.com/"&gt;Pixel Ninja&lt;/a&gt;
 and &lt;a class="reference external" href="http://foss.rit.edu/user/17"&gt;Python Princess&lt;/a&gt;, have been hacking away at our various tasks
 together for over a week now, and despite the seemingly constant moving
@@ -352,7 +370,7 @@ and that script is a bit harder to hack than the download script. The
 real work was on the documentation, trying to get people to understand
 my reasoning behind the changes and allow for them to continue my work
 without too much difficulty.&lt;/p&gt;
-</summary><category term="FOSSRIT"></category><category term="democracymap"></category><category term="CIVX"></category><category term="geowebdns"></category></entry><entry><title>Just another ten-hour day</title><link href="http://blog.linkybook.com/just-another-ten-hour-day.html" rel="alternate"></link><updated>2010-09-09T18:11:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2010-09-09:just-another-ten-hour-day.html</id><summary type="html">&lt;p&gt;Today was another exciting day in CIVX-land.
+</summary><category term="democracymap"></category><category term="geowebdns"></category></entry><entry><title>Just another ten-hour day</title><link href="http://blog.linkybook.com/just-another-ten-hour-day.html" rel="alternate"></link><updated>2010-09-09T18:11:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2010-09-09:just-another-ten-hour-day.html</id><summary type="html">&lt;p&gt;Today was another exciting day in CIVX-land.
 tl;dr: I spend the day helping other people and being awesome
 It started out with the latest in a series of attempts at getting
 &lt;a class="reference external" href="http://www.rebeccanatalie.com"&gt;Rebecca&lt;/a&gt; to a working CIVX repo. As I work through this with her, I am
@@ -494,7 +512,7 @@ making sure my code was legible.
 At that point, almost ten hours after I had started, I sat back,
 commited my final changes, and decompressed. *This*- this is why I
 love open source.&lt;/p&gt;
-</summary><category term="peopledashboard"></category><category term="FOSSRIT"></category><category term="CIVX"></category></entry><entry><title>More Conference Calls</title><link href="http://blog.linkybook.com/more-conference-calls.html" rel="alternate"></link><updated>2010-09-09T18:11:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2010-09-09:more-conference-calls.html</id><summary type="html">&lt;p&gt;Every time I go through one of these calls I feel like I come out
+</summary><category term="peopledashboard"></category></entry><entry><title>More Conference Calls</title><link href="http://blog.linkybook.com/more-conference-calls.html" rel="alternate"></link><updated>2010-09-09T18:11:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2010-09-09:more-conference-calls.html</id><summary type="html">&lt;p&gt;Every time I go through one of these calls I feel like I come out
 knowing less about the topic discussed. The topics aren't hard, and I
 can now follow along and understand most of what they're talking about,
 but most of the technologies are things I haven't really looked at
@@ -506,7 +524,7 @@ associated documentation got pushed to &lt;a class="reference external" href="ht
 feel pretty good about the changes I made, even if it doesn't prove
 useful to the current task, I have opened up some small part of someone
 else's open source program, and that's really cool.&lt;/p&gt;
-</summary><category term="FOSSRIT"></category><category term="democracymap"></category><category term="CIVX"></category><category term="geowebdns"></category></entry><entry><title>Hello, world...</title><link href="http://blog.linkybook.com/hello-world.html" rel="alternate"></link><updated>2010-09-09T18:10:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2010-09-09:hello-world.html</id><summary type="html">&lt;p&gt;&lt;p&gt;This is my first posting despite having been here for a week, because
+</summary><category term="democracymap"></category><category term="geowebdns"></category></entry><entry><title>Hello, world...</title><link href="http://blog.linkybook.com/hello-world.html" rel="alternate"></link><updated>2010-09-09T18:10:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2010-09-09:hello-world.html</id><summary type="html">&lt;p&gt;This is my first posting despite having been here for a week, because
 the zaniness that was my first week did not allow for such silly things
 as intorductions. Now I finally have some of the infrastructure things
 worked out, and can report on my findings.
@@ -529,4 +547,4 @@ conditionals, and I can never remember quite how variables work. But as
 I work more with this file, I get more comfortable with these
 conventions. Though I still occasionally pine for the occasional
 pythonic statement (and perhaps also for the fjords).&lt;/p&gt;
-&lt;/p&gt;</summary><category term="FOSSRIT"></category><category term="democracymap"></category><category term="CIVX"></category><category term="geowebdns"></category></entry></feed>
+&lt;/p&gt;</summary><category term="democracymap"></category><category term="geowebdns"></category></entry></feed>

@@ -56,7 +56,71 @@ second bot. This second bot has all the work I've been doing lately and,
 some few remaining problems aside, mostly work. Ideally, I will soon
 have a better host for the bot that will let me run Spotify, but for now
 Pandora is working well enough.&lt;/p&gt;
-&lt;/p&gt;</summary><category term="groovebot"></category><category term="FOSSRIT"></category></entry><entry><title>GrooveBot updates</title><link href="http://blog.linkybook.com/groovebot-updates.html" rel="alternate"></link><updated>2011-09-28T01:28:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2011-09-28:groovebot-updates.html</id><summary type="html">&lt;p&gt;Today I'm going to talk about something a bit more understandable, I
+&lt;/p&gt;</summary><category term="groovebot"></category></entry><entry><title>OpenShift Troubles</title><link href="http://blog.linkybook.com/openshift-troubles.html" rel="alternate"></link><updated>2012-02-03T06:47:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2012-02-03:openshift-troubles.html</id><summary type="html">&lt;p&gt;Recently I've been playing with &lt;a class="reference external" href="http://openshift.redhat.com/"&gt;OpenShift&lt;/a&gt;, a new(ish) service from
+Red Hat as a sort of 'push to cloud' deployment strategy. It's
+interesting for people like me who can whip up a site quick, but don't
+necessarily have the framework in place to host it.&lt;/p&gt;
+&lt;p&gt;Due to my work on &lt;a class="reference external" href="http://civx.us/"&gt;CIVX&lt;/a&gt;, I've gotten pretty familiar with
+&lt;a class="reference external" href="http://turbogears.org/"&gt;TurboGears&lt;/a&gt;, and the idea of being able to take a site like that and
+run it without having to set up apache or fiddle with paster sounded
+real nice. Unfortunately, it was not so simple as it seems.&lt;/p&gt;
+&lt;p&gt;First up was to get something, anything, running. For a while, OpenShift
+was throwing a &lt;a class="reference external" href="http://www.flickr.com/photos/girliemac/6509400855/in/set-72157628409467125"&gt;500 error&lt;/a&gt; when you tried to get a new application
+registered. A brief poke into their IRC told had them aware of the
+problem and it was fixed shortly. Next came the other part that should
+have been easy, running TurboGears.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://lewk.org/"&gt;Luke&lt;/a&gt; our favorite wizard around these parts, wrote a bit of &lt;a class="reference external" href="https://github.com/lmacken/openshift-quickstarter"&gt;code&lt;/a&gt;
+to get most of the available applications up and running without too
+much effort, including the currently unsupported TurboGears. Running
+this went off without a problem, but the resulting site gave me another
+happy 500 error. After a consult with Remy, we determined there were
+some missing version requirements that kept the site from running. After
+pulling those edits out of his repo and moving them upstream to Luke's,
+I had a working default TurboGears site.&lt;/p&gt;
+&lt;p&gt;Until I tried to log in. Then I got another 500 error.
+I was beginning to get used to this, but it was still annoying to make a
+small change, then push it to the server and wait for the server to
+update the settings before I could test it. Even more fun was the
+occasional &lt;a class="reference external" href="http://www.flickr.com/photos/girliemac/6540643319/in/set-72157628409467125/"&gt;503 error&lt;/a&gt; when OpenShift couldn't keep up with my rapidly
+building and tearing down sites.&lt;/p&gt;
+&lt;p&gt;Feeling that that was going to be a project by itself, I set about
+moving all my non-db-interfacing files to this new repository. The
+prebuilt version assumes that the site internally is named tg2app, and I
+was having trouble convincing it to go by anything else. Eventually I
+just decided to move files across one by one; first the templates that
+don't care what they're named, then the root controller, than the new
+model and widget. A lot of frustration, many &lt;a class="reference external" href="http://www.flickr.com/photos/girliemac/6508023617/in/set-72157628409467125"&gt;403&lt;/a&gt; and &lt;a class="reference external" href="http://www.flickr.com/photos/girliemac/6508022985/in/set-72157628409467125/"&gt;404&lt;/a&gt; errors
+later, I had something that pretended to work as long as I didn't use
+the database. But since the database is kind of the point of the site I
+was building, this was not exactly acceptable.&lt;/p&gt;
+&lt;p&gt;So back to the drawing board then. I had a hunch something was wrong
+when I saw SQLAlchemy errors scroll by every time I reloaded the site.
+My best guess is that SQLAlchemy is failing to create the tables needed
+to run the site and continuing on blindly. Once I realized that, I
+dumped a test db from my local copy to the mysql db, and suddenly
+everything was working. Or almost everything, anyway.&lt;/p&gt;
+&lt;p&gt;I could read form the db fine, but any time I tried to modify it, I got
+another dreaded 500 error. I poked into everything I could find to try
+to figure out where it was failing, and finally determined it couldn't
+be on my end, as my local copy worked just as expected.&lt;/p&gt;
+&lt;p&gt;Finally I stumbled across the anwser, almost accidentally. When I moved
+the db from local sqlite to mysql, I failed to set the auto increment
+setting on the id of my new databases, so when I neglected to provide an
+id for the new entries I was making, mysql quite rightly complained at
+me. Unfortunately, since I can't find how to re-enable debug mode (nor
+should I really try), I wasn't getting any good error messages.
+So what is the site that has been giving me all these troubles? It's a
+little site I set up to publicly shame Remy into stopping smoking:
+&lt;a class="reference external" href="http://remysmoke-qalthos.rhcloud.com/"&gt;remysmoke-qalthos.rhcloud.com&lt;/a&gt;&lt;/p&gt;
+</summary><category term="FLOSS-seminar"></category><category term="openshift"></category></entry><entry><title>Openshift Troubles Continued</title><link href="http://blog.linkybook.com/openshift-troubles-continued.html" rel="alternate"></link><updated>2012-02-03T06:47:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2012-02-03:openshift-troubles-continued.html</id><summary type="html">&lt;p&gt;I figured out the problem I was having with OpenShift.&lt;/p&gt;
+&lt;p&gt;To put it simply, I didn't pay enough attention.&lt;/p&gt;
+&lt;p&gt;For reference, when moving an existing TurboGears app to OpenShift, make
+sure you add the changes in config/app_cfg.py&lt;/p&gt;
+&lt;p&gt;As soon as I saw that, I felt really silly for missing it. I was so sure
+that I had gotten all the relevant changes, but apparently I somehow
+missed this file.&lt;/p&gt;
+&lt;p&gt;More detailed directions coming soon.&lt;/p&gt;
+&lt;/p&gt;</summary><category term="FLOSS-seminar"></category><category term="openshift"></category></entry><entry><title>GrooveBot updates</title><link href="http://blog.linkybook.com/groovebot-updates.html" rel="alternate"></link><updated>2011-09-28T01:28:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2011-09-28:groovebot-updates.html</id><summary type="html">&lt;p&gt;Today I'm going to talk about something a bit more understandable, I
 hope.&lt;/p&gt;
 &lt;p&gt;Back around the summer of 2010, the FOSSBox wanted some ambient music to
 play in the background. One of the things we wanted was a way to have
@@ -91,14 +155,14 @@ Hopefully, when a new, free music API becomes available that we can hook
 into, it should be easier to reimplement those functions in a more
 general way so that multiple backends can be used for a more varied
 music experience. And then we can get back to the OS grooving.&lt;/p&gt;
-&lt;/p&gt;</summary><category term="groovebot"></category><category term="FOSSRIT"></category></entry><entry><title>pyDex 1.0</title><link href="http://blog.linkybook.com/pydex-10.html" rel="alternate"></link><updated>2011-05-08T03:19:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2011-05-08:pydex-10.html</id><summary type="html">&lt;p&gt;And in mostly unrelated but terribly belated news, I finally released
+&lt;/p&gt;</summary><category term="groovebot"></category></entry><entry><title>pyDex 1.0</title><link href="http://blog.linkybook.com/pydex-10.html" rel="alternate"></link><updated>2011-05-08T03:19:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2011-05-08:pydex-10.html</id><summary type="html">&lt;p&gt;And in mostly unrelated but terribly belated news, I finally released
 &lt;a class="reference external" href="https://gitorious.org/pydex"&gt;pyDex 1.0&lt;/a&gt; this morning. Black/White pokedex, new config system, baby
 pokemon, and game detection, are all new features introduced in this
 version. Old configs should get read properly and get seamlessly updated
 to the new version, though there may be a few bugs in the process.&lt;/p&gt;
 </summary><category term="pyDex"></category></entry><entry><title>Killer Bunnies and the Towering Draw Pile</title><link href="http://blog.linkybook.com/killer-bunnies-and-the-towering-draw-pile.html" rel="alternate"></link><updated>2011-01-23T07:12:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2011-01-23:killer-bunnies-and-the-towering-draw-pile.html</id><summary type="html">&lt;p&gt;There was a hackfest Friday night, and a writeup is coming soon, but
-first a bit of random chatter.
-I have, for a few years, been collecting the various pieces that make up
+first a bit of random chatter.&lt;/p&gt;
+&lt;p&gt;I have, for a few years, been collecting the various pieces that make up
 &lt;a class="reference external" href="http://boardgamegeek.com/boardgame/3699/killer-bunnies-and-the-quest-for-the-magic-carrot"&gt;Killer Bunnies and the Quest for the Magic Carrot&lt;/a&gt;. For Christmas, I
 received the Stainless Steel booster pack, leaving me one short (Ominous
 Onyx) of completing the game's many many expansion packs. In total, my
@@ -108,8 +172,8 @@ be greeted with not just one, but two new expansions, one of which I
 didn't even know existed. I am now the owner of not just the Ominous
 Onyx booster pack, but also the mysterious new Chocolate pack, adding in
 many of the hard-to-find promo cards that Playroom has put out over the
-years.
-We put together the full game, now consisting of 770 playable cards, 11
+years.&lt;/p&gt;
+&lt;p&gt;We put together the full game, now consisting of 770 playable cards, 11
 dice, 9 pawns, a large cardboard ball, and various plastic tokens and
 stands to help try and make sense of all the nonsense. The draw pile
 stacks over a foot high thanks to the thick card construction, and
@@ -120,8 +184,8 @@ switch freely between winning and losing with a few short turns, and
 often quite frequently does. The game is long enough to be satisfying,
 but not so long as to drag on, (as long as people are paying attention)
 and the variety and humor in the cards keeps the game fresh play after
-play.
-Still, my game is not quite complete. One more add-on remains, though
+play.&lt;/p&gt;
+&lt;p&gt;Still, my game is not quite complete. One more add-on remains, though
 not really a necessary one. A spin-off game called Kinder Bunnies also
 exists, aimed at a younger audience with streamlined rules and
 simplified gameplay. It is also completely compatible with the main
@@ -130,10 +194,10 @@ Bunnies from Killer Bunnies. it also would add another ten &amp;quot;Magic
 Carrots&amp;quot; to the game, which are a sort of victory point mechanism, where
 once all the Magic Carrots have been picked up, the game ends. Thus, the
 addition would extend gameplay a bit more and provide new challenges for
-longtime players (not to mention many more dice to play with).
-So that's how I spent my weekend apart from coding like a superstar. But
+longtime players (not to mention many more dice to play with).&lt;/p&gt;
+&lt;p&gt;So that's how I spent my weekend apart from coding like a superstar. But
 don't worry, I'll get to that soon.&lt;/p&gt;
-</summary><category term="personal"></category></entry><entry><title>pyDex on Sugar</title><link href="http://blog.linkybook.com/pydex-on-sugar.html" rel="alternate"></link><updated>2011-01-19T23:51:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2011-01-19:pydex-on-sugar.html</id><summary type="html">&lt;p&gt;A warning, this gets very technical with lots of acronyms and jargon.
+</summary><category term="games"></category></entry><entry><title>pyDex on Sugar</title><link href="http://blog.linkybook.com/pydex-on-sugar.html" rel="alternate"></link><updated>2011-01-19T23:51:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2011-01-19:pydex-on-sugar.html</id><summary type="html">&lt;p&gt;A warning, this gets very technical with lots of acronyms and jargon.
 tl;dr: I have a new pyDex branch which *should* run on the OLPC
 A few days ago, I decided I'd finally see how well pyDex runs on the
 OLPC. Turns out, it runs pretty well, which isn't too surprising as it
@@ -162,10 +226,10 @@ probably get to test it sometime this weekend, maybe even turn it into a
 real activity by then. This is still just a small project, and I doubt
 it will ever go up on Sugar's activities site, but it has given me a
 much better understanding about how non-pygame activities work.&lt;/p&gt;
-</summary><category term="FOSSRIT"></category><category term="sugar"></category><category term="pyDex"></category></entry><entry><title>Huzzah!</title><link href="http://blog.linkybook.com/huzzah.html" rel="alternate"></link><updated>2010-09-06T17:57:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2010-09-06:huzzah.html</id><summary type="html">&lt;p&gt;Here we are, back at the beginning of another school year. It's going to
+</summary><category term="sugar"></category><category term="pyDex"></category></entry><entry><title>Huzzah!</title><link href="http://blog.linkybook.com/huzzah.html" rel="alternate"></link><updated>2010-09-06T17:57:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2010-09-06:huzzah.html</id><summary type="html">&lt;p&gt;Here we are, back at the beginning of another school year. It's going to
 be interesting, I'm still pretty laid back from Fan Expo Canada in
-Toronto.
-My new monitor finally arrived. Well, it arrived Saturday, but the RIT
+Toronto.&lt;/p&gt;
+&lt;p&gt;My new monitor finally arrived. Well, it arrived Saturday, but the RIT
 post office isn't open on weekends over breaks, so I had to wait until
 this morining. Luckily, it seems that the stand on my last monitor which
 made me love it so much is a standard VESA mount, so I detached it from
@@ -174,50 +238,50 @@ and now have a beautiful new screen on the beautiful old stand. The new
 monitor, meanwhile, being an LED-backlit model, is much lighter now than
 it's stand. The speakers seem okay, although they're on the back of the
 monitor (no doubt meant to reflect off the wall behind them) so if I
-want to blast music, I'll just end up blasting Justin instead.
-So I now have two monitors, though I don't know if I'm keeping the
+want to blast music, I'll just end up blasting Justin instead.&lt;/p&gt;
+&lt;p&gt;So I now have two monitors, though I don't know if I'm keeping the
 ancient 15&amp;quot; LCD from home that was serving as a spare. We'll see. In the
 meantime, Minecraft looks better than ever.&lt;/p&gt;
-</summary><category term="personal"></category><category term="RIT"></category></entry><entry><title>Writing and Me</title><link href="http://blog.linkybook.com/writing-and-me.html" rel="alternate"></link><updated>2010-07-21T04:13:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2010-07-21:writing-and-me.html</id><summary type="html">&lt;p&gt;I am not a writer. Had things progressed differently, I might have tried
+</summary><category term="hardware"></category></entry><entry><title>Writing and Me</title><link href="http://blog.linkybook.com/writing-and-me.html" rel="alternate"></link><updated>2010-07-21T04:13:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2010-07-21:writing-and-me.html</id><summary type="html">&lt;p&gt;I am not a writer. Had things progressed differently, I might have tried
 it. I do enjoy the writing process. One important problem is that I hate
 revision. I start from a theoretical perfect model, and slowly write it
 out, far slower than my brain, which can race ahead to new, more
 exciting topics, while I still need to actually write what has been
-planned out before.
-Instead, I am a programmer. Really, the two are not very different. In
+planned out before.&lt;/p&gt;
+&lt;p&gt;Instead, I am a programmer. Really, the two are not very different. In
 programming, however, your audience is a computer, and the computer is
 far less forgiving of unclear communication. I'm not talking about typos
 or misplaced parentheses here, but in the ability of the writer to
-convey their ideas to the audience.
-Programming generally has a very strict syntax compared to speech. Words
+convey their ideas to the audience.&lt;/p&gt;
+&lt;p&gt;Programming generally has a very strict syntax compared to speech. Words
 generally have only one meaning, and if they have more than one, it is
 immediately obvious which one is meant in any situation. Human
 communication, on the other hand, has shades of meaning, imagery, and
 all sorts of other trickery to say the same thing in many ways. Years of
 programming has left my vocabulary a bit dry, opting for specific,
-technical jargon rather than the more general, descriptive prose.
-To put it another way, if my writings were computer code, none of them
+technical jargon rather than the more general, descriptive prose.&lt;/p&gt;
+&lt;p&gt;To put it another way, if my writings were computer code, none of them
 would compile. But then, none of my real code does either, not on the
 first try. The compiler rejects a statement here or there, and when it
 finally runs, the output is all wrong. So I tweak the code, simplify and
 break down long statements, and try to say exactly waht I mean.
 Eventually, the code compiles and runs, and does exactly what I want it
-to.
-How does this relate to being a writer? Well, I follow mostly the same
+to.&lt;/p&gt;
+&lt;p&gt;How does this relate to being a writer? Well, I follow mostly the same
 pattern in my writing. The only difference is that I do it without a
 compiler. I have learned long ago that self-correction is often useless
 for me, I tend to make the same mistakes while reading as I did writing
 it. My best writing comes form when I *do* have a compiler of sorts;
 school assignments where each revision compiles a little further with my
-teacher, and more meaning comes through.
-Unfortunately, I do not write regularly anymore. The days of required
+teacher, and more meaning comes through.&lt;/p&gt;
+&lt;p&gt;Unfortunately, I do not write regularly anymore. The days of required
 writing are almost gone, and I have yet to find a compiler for writing
 which works as well as my teachers. Add to that my dislike of revision
 without glaring errors to fix, and my personal writing tends to throw
-parsing errors in anyone who isn't me.
-Hopefully I'll get better at this. At the very least I hope to catch the
+parsing errors in anyone who isn't me.&lt;/p&gt;
+&lt;p&gt;Hopefully I'll get better at this. At the very least I hope to catch the
 common mistakes here.&lt;/p&gt;
-</summary><category term="personal"></category></entry><entry><title>pyDex Progress</title><link href="http://blog.linkybook.com/pydex-progress.html" rel="alternate"></link><updated>2010-07-10T16:51:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2010-07-10:pydex-progress.html</id><summary type="html">&lt;p&gt;I've finally gotten around to staging and commiting a few enhancements
+</summary><category term="introspective"></category></entry><entry><title>pyDex Progress</title><link href="http://blog.linkybook.com/pydex-progress.html" rel="alternate"></link><updated>2010-07-10T16:51:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:blog.linkybook.com,2010-07-10:pydex-progress.html</id><summary type="html">&lt;p&gt;I've finally gotten around to staging and commiting a few enhancements
 to the &lt;a class="reference external" href="http://gitorious.org/pydex"&gt;pydex repository&lt;/a&gt;. The more advanced stuff like Isshu pokemon
 and the new file format are still in limbo, naturally, and won't get
 moved to master any time soon since they make older files incompatible,

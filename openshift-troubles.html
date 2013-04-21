@@ -23,10 +23,9 @@
                 <h1><a href="./">Why Not Wingnut? </a></h1>
                 <nav><ul>
                                                                                                     <li ><a href="./category/civx.html">CIVX</a></li>
-                                    <li class="active"><a href="./category/fossrit.html">FOSS@RIT</a></li>
-                                    <li ><a href="./category/rit.html">RIT</a></li>
-                                    <li ><a href="./category/innovation.html">innovation</a></li>
-                                    <li ><a href="./category/personal.html">personal</a></li>
+                                    <li ><a href="./category/fossrit.html">FOSS@RIT</a></li>
+                                    <li ><a href="./category/meta.html">meta</a></li>
+                                    <li class="active"><a href="./category/personal.html">personal</a></li>
                                 </ul></nav>
         </header><!-- /#banner -->
         <section id="content" class="body">
@@ -46,36 +45,36 @@
                 <address class="vcard author">
                 By <a class="url fn" href="./author/nathaniel-case.html">Nathaniel Case</a>
         </address>
-        <p>In <a href="./category/fossrit.html">FOSS@RIT</a>. </p>
-<p>tags: <a href="./tag/personal.html">personal</a><a href="./tag/fossrit.html">FOSSRIT</a><a href="./tag/floss-seminar.html">FLOSS-seminar</a><a href="./tag/openshift.html">openshift</a></p>
+        <p>In <a href="./category/personal.html">personal</a>. </p>
+<p>tags: <a href="./tag/floss-seminar.html">FLOSS-seminar</a><a href="./tag/openshift.html">openshift</a></p>
 </footer><!-- /.post-info -->      <p>Recently I've been playing with <a class="reference external" href="http://openshift.redhat.com/">OpenShift</a>, a new(ish) service from
 Red Hat as a sort of 'push to cloud' deployment strategy. It's
 interesting for people like me who can whip up a site quick, but don't
-necessarily have the framework in place to host it.
-Due to my work on <a class="reference external" href="http://civx.us/">CIVX</a>, I've gotten pretty familiar with
+necessarily have the framework in place to host it.</p>
+<p>Due to my work on <a class="reference external" href="http://civx.us/">CIVX</a>, I've gotten pretty familiar with
 <a class="reference external" href="http://turbogears.org/">TurboGears</a>, and the idea of being able to take a site like that and
 run it without having to set up apache or fiddle with paster sounded
-real nice. Unfortunately, it was not so simple as it seems.
-First up was to get something, anything, running. For a while, OpenShift
+real nice. Unfortunately, it was not so simple as it seems.</p>
+<p>First up was to get something, anything, running. For a while, OpenShift
 was throwing a <a class="reference external" href="http://www.flickr.com/photos/girliemac/6509400855/in/set-72157628409467125">500 error</a> when you tried to get a new application
 registered. A brief poke into their IRC told had them aware of the
 problem and it was fixed shortly. Next came the other part that should
-have been easy, running TurboGears.
-<a class="reference external" href="http://lewk.org/">Luke</a> our favorite wizard around these parts, wrote a bit of <a class="reference external" href="https://github.com/lmacken/openshift-quickstarter">code</a>
+have been easy, running TurboGears.</p>
+<p><a class="reference external" href="http://lewk.org/">Luke</a> our favorite wizard around these parts, wrote a bit of <a class="reference external" href="https://github.com/lmacken/openshift-quickstarter">code</a>
 to get most of the available applications up and running without too
 much effort, including the currently unsupported TurboGears. Running
 this went off without a problem, but the resulting site gave me another
 happy 500 error. After a consult with Remy, we determined there were
 some missing version requirements that kept the site from running. After
 pulling those edits out of his repo and moving them upstream to Luke's,
-I had a working default TurboGears site.
-Until I tried to log in. Then I got another 500 error.
+I had a working default TurboGears site.</p>
+<p>Until I tried to log in. Then I got another 500 error.
 I was beginning to get used to this, but it was still annoying to make a
 small change, then push it to the server and wait for the server to
 update the settings before I could test it. Even more fun was the
 occasional <a class="reference external" href="http://www.flickr.com/photos/girliemac/6540643319/in/set-72157628409467125/">503 error</a> when OpenShift couldn't keep up with my rapidly
-building and tearing down sites.
-Feeling that that was going to be a project by itself, I set about
+building and tearing down sites.</p>
+<p>Feeling that that was going to be a project by itself, I set about
 moving all my non-db-interfacing files to this new repository. The
 prebuilt version assumes that the site internally is named tg2app, and I
 was having trouble convincing it to go by anything else. Eventually I
@@ -84,18 +83,18 @@ don't care what they're named, then the root controller, than the new
 model and widget. A lot of frustration, many <a class="reference external" href="http://www.flickr.com/photos/girliemac/6508023617/in/set-72157628409467125">403</a> and <a class="reference external" href="http://www.flickr.com/photos/girliemac/6508022985/in/set-72157628409467125/">404</a> errors
 later, I had something that pretended to work as long as I didn't use
 the database. But since the database is kind of the point of the site I
-was building, this was not exactly acceptable.
-So back to the drawing board then. I had a hunch something was wrong
+was building, this was not exactly acceptable.</p>
+<p>So back to the drawing board then. I had a hunch something was wrong
 when I saw SQLAlchemy errors scroll by every time I reloaded the site.
 My best guess is that SQLAlchemy is failing to create the tables needed
 to run the site and continuing on blindly. Once I realized that, I
 dumped a test db from my local copy to the mysql db, and suddenly
-everything was working. Or almost everything, anyway.
-I could read form the db fine, but any time I tried to modify it, I got
+everything was working. Or almost everything, anyway.</p>
+<p>I could read form the db fine, but any time I tried to modify it, I got
 another dreaded 500 error. I poked into everything I could find to try
 to figure out where it was failing, and finally determined it couldn't
-be on my end, as my local copy worked just as expected.
-Finally I stumbled across the anwser, almost accidentally. When I moved
+be on my end, as my local copy worked just as expected.</p>
+<p>Finally I stumbled across the anwser, almost accidentally. When I moved
 the db from local sqlite to mysql, I failed to set the auto increment
 setting on the id of my new databases, so when I neglected to provide an
 id for the new entries I was making, mysql quite rightly complained at
@@ -116,13 +115,48 @@ little site I set up to publicly shame Remy into stopping smoking:
                                                     <li><a href="http://foss.rit.edu">FOSS@RIT</a></li>
                                                 </ul>
                 </div><!-- /.blogroll -->
+                          <div class="tagcloud">
+            <h2>tag cloud</h2>
+            <ul>
+                              <li class="tag-4"><a href="/tag/rise.html">Rise</a></li>
+                              <li class="tag-4"><a href="/tag/hardware.html">hardware</a></li>
+                              <li class="tag-4"><a href="/tag/fabulous.html">fabulous</a></li>
+                              <li class="tag-4"><a href="/tag/pybotwar.html">pybotwar</a></li>
+                              <li class="tag-4"><a href="/tag/jquery.html">jQuery</a></li>
+                              <li class="tag-2"><a href="/tag/pydex.html">pyDex</a></li>
+                              <li class="tag-4"><a href="/tag/opl.html">OPL</a></li>
+                              <li class="tag-4"><a href="/tag/blog.html">blog</a></li>
+                              <li class="tag-1"><a href="/tag/widgets.html">widgets</a></li>
+                              <li class="tag-4"><a href="/tag/boston.html">Boston</a></li>
+                              <li class="tag-1"><a href="/tag/scrapers.html">scrapers</a></li>
+                              <li class="tag-3"><a href="/tag/groovebot.html">groovebot</a></li>
+                              <li class="tag-1"><a href="/tag/peopledashboard.html">peopledashboard</a></li>
+                              <li class="tag-2"><a href="/tag/openshift.html">openshift</a></li>
+                              <li class="tag-1"><a href="/tag/floss-seminar.html">FLOSS-seminar</a></li>
+                              <li class="tag-1"><a href="/tag/lemonade.html">lemonade</a></li>
+                              <li class="tag-1"><a href="/tag/journalism.html">journalism</a></li>
+                              <li class="tag-4"><a href="/tag/knowledge.html">knowledge</a></li>
+                              <li class="tag-1"><a href="/tag/sugar.html">sugar</a></li>
+                              <li class="tag-4"><a href="/tag/introspective.html">introspective</a></li>
+                              <li class="tag-1"><a href="/tag/hackfest.html">hackfest</a></li>
+                              <li class="tag-4"><a href="/tag/webbotwar.html">webbotwar</a></li>
+                              <li class="tag-2"><a href="/tag/election.html">election</a></li>
+                              <li class="tag-2"><a href="/tag/geowebdns.html">geowebdns</a></li>
+                              <li class="tag-1"><a href="/tag/surs.html">SURS</a></li>
+                              <li class="tag-4"><a href="/tag/games.html">games</a></li>
+                              <li class="tag-2"><a href="/tag/democracymap.html">democracymap</a></li>
+                              <li class="tag-3"><a href="/tag/polyscraper.html">polyscraper</a></li>
+                              <li class="tag-1"><a href="/tag/wikiotics.html">wikiotics</a></li>
+                              <li class="tag-3"><a href="/tag/data alchemy.html">data alchemy</a></li>
+                          </ul>
+          </div>
                                 <div class="social">
                         <h2>social</h2>
                         <ul>
                             <li><a href="http://blog.linkybook.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
                             
-                                                    <li><a href="#">You can add links in your config file</a></li>
-                                                    <li><a href="#">Another social link</a></li>
+                                                    <li><a href="http://github.com/Qalthos">Github</a></li>
+                                                    <li><a href="http://gplus.to/qalthos">Google+</a></li>
                                                 </ul>
                 </div><!-- /.social -->
                 </section><!-- /#extras -->
