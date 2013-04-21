@@ -2,7 +2,7 @@ CIVX Stuff
 ##########
 :date: 2010-09-09 18:11
 :author: Nathaniel Case
-:tags: peopledashboard, FOSSRIT, widgets, CIVX
+:tags: peopledashboard, widgets
 
 So I've been spending some time finally getting some time to familiarize
 myself with CIVX and all the parts that make up the system. I'm almost

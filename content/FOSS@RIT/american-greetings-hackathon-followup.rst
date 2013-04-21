@@ -2,7 +2,7 @@ American Greetings Hackathon Followup
 #####################################
 :date: 2013-01-24 22:33
 :author: Nathaniel Case
-:tags: hackfest, FOSSRIT
+:tags: hackfest
 
 Last weekend was the `American Greetings Hackathon`_, and it was one of
 the most successful yet. We got more than 70 people attending and

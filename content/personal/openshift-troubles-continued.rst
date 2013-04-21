@@ -2,7 +2,7 @@ Openshift Troubles Continued
 ############################
 :date: 2012-02-03 06:47
 :author: Nathaniel Case
-:tags: personal, FOSSRIT, FLOSS-seminar, openshift
+:tags: FLOSS-seminar, openshift
 
 I figured out the problem I was having with OpenShift.
 

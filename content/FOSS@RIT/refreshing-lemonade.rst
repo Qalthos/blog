@@ -2,7 +2,7 @@ Refreshing Lemonade
 ###################
 :date: 2010-09-23 14:04
 :author: Nathaniel Case
-:tags: lemonade, FOSSRIT, sugar
+:tags: lemonade, sugar
 
 In other news, todayyesterday marked the `final release of Lemonade
 Stand 2.0`_. Now running on the `Fortune Engine`_ and containing 0% of

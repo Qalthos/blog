@@ -2,7 +2,7 @@ Lemonade Week... 8?
 ###################
 :date: 2010-10-26 23:59
 :author: Nathaniel Case
-:tags: lemonade, FOSSRIT, sugar
+:tags: lemonade, sugar
 
 So... lots of stuff has happened in the last few weeks.
 First, we have a new background, thanks to JT. In fact, we have three

@@ -2,21 +2,24 @@ OpenShift Troubles
 ##################
 :date: 2012-02-03 06:47
 :author: Nathaniel Case
-:tags: personal, FOSSRIT, FLOSS-seminar, openshift
+:tags: FLOSS-seminar, openshift
 
 Recently I've been playing with `OpenShift`_, a new(ish) service from
 Red Hat as a sort of 'push to cloud' deployment strategy. It's
 interesting for people like me who can whip up a site quick, but don't
 necessarily have the framework in place to host it.
+
 Due to my work on `CIVX`_, I've gotten pretty familiar with
 `TurboGears`_, and the idea of being able to take a site like that and
 run it without having to set up apache or fiddle with paster sounded
 real nice. Unfortunately, it was not so simple as it seems.
+
 First up was to get something, anything, running. For a while, OpenShift
 was throwing a `500 error`_ when you tried to get a new application
 registered. A brief poke into their IRC told had them aware of the
 problem and it was fixed shortly. Next came the other part that should
 have been easy, running TurboGears.
+
 `Luke`_ our favorite wizard around these parts, wrote a bit of `code`_
 to get most of the available applications up and running without too
 much effort, including the currently unsupported TurboGears. Running

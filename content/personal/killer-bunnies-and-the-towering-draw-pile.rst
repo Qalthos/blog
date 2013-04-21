@@ -2,10 +2,11 @@ Killer Bunnies and the Towering Draw Pile
 #########################################
 :date: 2011-01-23 07:12
 :author: Nathaniel Case
-:tags: personal
+:tags: games
 
 There was a hackfest Friday night, and a writeup is coming soon, but
 first a bit of random chatter.
+
 I have, for a few years, been collecting the various pieces that make up
 `Killer Bunnies and the Quest for the Magic Carrot`_. For Christmas, I
 received the Stainless Steel booster pack, leaving me one short (Ominous

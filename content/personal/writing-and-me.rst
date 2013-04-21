@@ -2,7 +2,7 @@ Writing and Me
 ##############
 :date: 2010-07-21 04:13
 :author: Nathaniel Case
-:tags: personal
+:tags: introspective
 
 I am not a writer. Had things progressed differently, I might have tried
 it. I do enjoy the writing process. One important problem is that I hate

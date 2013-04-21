@@ -2,11 +2,12 @@ Huzzah!
 #######
 :date: 2010-09-06 17:57
 :author: Nathaniel Case
-:tags: personal, RIT
+:tags: hardware
 
 Here we are, back at the beginning of another school year. It's going to
 be interesting, I'm still pretty laid back from Fan Expo Canada in
 Toronto.
+
 My new monitor finally arrived. Well, it arrived Saturday, but the RIT
 post office isn't open on weekends over breaks, so I had to wait until
 this morining. Luckily, it seems that the stand on my last monitor which

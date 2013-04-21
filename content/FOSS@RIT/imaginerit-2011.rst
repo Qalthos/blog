@@ -2,7 +2,7 @@ ImagineRIT 2011
 ###############
 :date: 2011-05-08 03:16
 :author: Nathaniel Case
-:tags: journalism, lemonade, FOSSRIT, sugar, RIT, Rise, OPL
+:tags: journalism, lemonade, sugar, Rise, OPL
 
 So I've been absent for a while lately, but with good reason. I've been
 preparing for ImagineRIT, which was held earlier today.

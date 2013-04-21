@@ -2,7 +2,7 @@ Election Aftermath
 ##################
 :date: 2011-03-29 02:59
 :author: Nathaniel Case
-:tags: journalism, FOSSRIT, election
+:tags: journalism, election
 
 So the election was almost a week ago. Here's how our little experiment
 turned out.

@@ -2,7 +2,7 @@ Wikiotics
 #########
 :date: 2010-09-20 19:45
 :author: Nathaniel Case
-:tags: wikiotics, FOSSRIT
+:tags: wikiotics
 
 As of Friday, I have been doing some work (along with `Taylor`_ for a
 new set of people, `Wikiotics`_. Their goal is basically to create a

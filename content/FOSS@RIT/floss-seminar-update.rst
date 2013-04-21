@@ -2,7 +2,7 @@ FLOSS Seminar Update
 ####################
 :date: 2012-01-19 17:46
 :author: Nathaniel Case
-:tags: FOSSRIT, FLOSS-seminar, RIT
+:tags: FLOSS-seminar
 
 So it's week 5, what has been going on?
 

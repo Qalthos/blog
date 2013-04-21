@@ -2,7 +2,7 @@ Lemonade Recap
 ##############
 :date: 2010-11-10 20:26
 :author: Nathaniel Case
-:tags: lemonade, FOSSRIT
+:tags: lemonade
 
 So here we are at the end of the quarter. Have we accomplished our
 goals? I think so.

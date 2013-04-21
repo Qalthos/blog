@@ -2,11 +2,7 @@ Hello, world...
 ###############
 :date: 2010-09-09 18:10
 :author: Nathaniel Case
-:tags: FOSSRIT, democracymap, CIVX, geowebdns
-
-.. raw:: html
-
-   <p>
+:tags: democracymap, geowebdns
 
 This is my first posting despite having been here for a week, because
 the zaniness that was my first week did not allow for such silly things

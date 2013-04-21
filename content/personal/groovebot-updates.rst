@@ -2,7 +2,7 @@ GrooveBot updates
 #################
 :date: 2011-09-28 01:28
 :author: Nathaniel Case
-:tags: groovebot, FOSSRIT
+:tags: groovebot
 
 Today I'm going to talk about something a bit more understandable, I
 hope.

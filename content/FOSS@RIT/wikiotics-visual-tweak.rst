@@ -2,7 +2,7 @@ Wikiotics Visual Tweak
 ######################
 :date: 2010-12-08 23:51
 :author: Nathaniel Case
-:tags: wikiotics, FOSSRIT
+:tags: wikiotics
 
 So `trose`_ and I have been asked to put abow on the Wikiotics work
 while we're between projects. We both hit some bumps at the end of the

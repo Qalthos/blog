@@ -2,7 +2,7 @@ Recent Projects: Groovebot
 ##########################
 :date: 2012-07-24 18:47
 :author: Nathaniel Case
-:tags: groovebot, FOSSRIT
+:tags: groovebot
 
 This is the first of a number of posts meant to overview the things I've
 been doing recently. First up on the list is the long-overdue
