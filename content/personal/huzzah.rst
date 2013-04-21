@@ -18,6 +18,7 @@ monitor, meanwhile, being an LED-backlit model, is much lighter now than
 it's stand. The speakers seem okay, although they're on the back of the
 monitor (no doubt meant to reflect off the wall behind them) so if I
 want to blast music, I'll just end up blasting Justin instead.
+
 So I now have two monitors, though I don't know if I'm keeping the
 ancient 15" LCD from home that was serving as a spare. We'll see. In the
 meantime, Minecraft looks better than ever.

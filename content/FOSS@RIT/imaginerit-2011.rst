@@ -16,6 +16,7 @@ around all the different projects hosted in the FOSSBOX, a brand new
 group would appear and start asking questions. It was tiring, especially
 on about three hours of sleep, but it was quite fun and exciting showing
 off our work to new people.
+
 Of particular interest was Lemonade Stand, which seemed to excite many
 of the children who came around. Most seemed to pick up the game with
 minimal instruction (though it helped that by now I know very well which

@@ -20,10 +20,6 @@ script is `git-subtree`_, which acts like a submodule except it is more
 transparent to the repository which is a plus given OpenShift's odd
 structure.
 
-.. raw:: html
-
-   </p>
-
 Back on topic, when we last left off this topic, I had finally gotten
 OpenShift to acknowledge a project in a directory other than tg2app.
 This is useful because, at least for me, most of my projects are not
@@ -76,9 +72,5 @@ application, not OpenShift), so it looked like I had finally fixed
 deploying a standard TurboGears app. I've no doubt that there's
 something I've left out, but I'm pretty amazed at the progress I've made
 so far, and learned a lot about both OpenShift and TurboGears.
-
-.. raw:: html
-
-   </p>
 
 .. _git-subtree: https://github.com/apenwarr/git-subtree

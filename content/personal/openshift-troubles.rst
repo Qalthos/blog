@@ -28,12 +28,14 @@ happy 500 error. After a consult with Remy, we determined there were
 some missing version requirements that kept the site from running. After
 pulling those edits out of his repo and moving them upstream to Luke's,
 I had a working default TurboGears site.
+
 Until I tried to log in. Then I got another 500 error.
 I was beginning to get used to this, but it was still annoying to make a
 small change, then push it to the server and wait for the server to
 update the settings before I could test it. Even more fun was the
 occasional `503 error`_ when OpenShift couldn't keep up with my rapidly
 building and tearing down sites.
+
 Feeling that that was going to be a project by itself, I set about
 moving all my non-db-interfacing files to this new repository. The
 prebuilt version assumes that the site internally is named tg2app, and I
@@ -44,16 +46,19 @@ model and widget. A lot of frustration, many `403`_ and `404`_ errors
 later, I had something that pretended to work as long as I didn't use
 the database. But since the database is kind of the point of the site I
 was building, this was not exactly acceptable.
+
 So back to the drawing board then. I had a hunch something was wrong
 when I saw SQLAlchemy errors scroll by every time I reloaded the site.
 My best guess is that SQLAlchemy is failing to create the tables needed
 to run the site and continuing on blindly. Once I realized that, I
 dumped a test db from my local copy to the mysql db, and suddenly
 everything was working. Or almost everything, anyway.
+
 I could read form the db fine, but any time I tried to modify it, I got
 another dreaded 500 error. I poked into everything I could find to try
 to figure out where it was failing, and finally determined it couldn't
 be on my end, as my local copy worked just as expected.
+
 Finally I stumbled across the anwser, almost accidentally. When I moved
 the db from local sqlite to mysql, I failed to set the auto increment
 setting on the id of my new databases, so when I neglected to provide an
