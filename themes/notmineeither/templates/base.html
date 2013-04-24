@@ -3,7 +3,7 @@
 <head>
         <title>{% block title %}{{ SITENAME }}{%endblock%}</title>
         <meta charset="utf-8" />
-        {% assets filters="sass", output="css/main.css", "css/main.scss" %}
+        {% assets filters="scss,cssmin", output="css/main.min.css", "css/main.scss" %}
             <link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}" type="text/css" />
         {% endassets %}
         {% if FEED_ALL_ATOM %}
