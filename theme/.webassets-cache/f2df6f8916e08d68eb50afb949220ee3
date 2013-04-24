@@ -32,38 +32,42 @@ body {
 h1 {
   font-size: 2em;
 }
+/* line 38 */
+h1 a:hover {
+  background-color: inherit;
+}
 
-/* line 37 */
+/* line 42 */
 h2 {
   font-size: 1.571em;
 }
 
 /* 22px */
-/* line 38 */
+/* line 43 */
 h3 {
   font-size: 1.429em;
 }
 
 /* 20px */
-/* line 39 */
+/* line 44 */
 h4 {
   font-size: 1.286em;
 }
 
 /* 18px */
-/* line 40 */
+/* line 45 */
 h5 {
   font-size: 1.143em;
 }
 
 /* 16px */
-/* line 41 */
+/* line 46 */
 h6 {
   font-size: 1em;
 }
 
 /* 14px */
-/* line 43 */
+/* line 48 */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   line-height: 1.1;
@@ -71,36 +75,35 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Yanone Kaffeesatz', arial, serif;
 }
 
-/* line 50 */
+/* line 55 */
 h3, h4, h5, h6 {
   margin-top: .8em;
 }
 
-/* line 52 */
+/* line 57 */
 hr {
   border: 2px solid #EEEEEE;
 }
 
 /* Anchors */
-/* line 55 */
+/* line 60 */
 a {
   outline: 0;
 }
-
-/* line 56 */
+/* line 62 */
 a img {
   border: 0px;
   text-decoration: none;
 }
 
-/* line 57 */
+/* line 67 */
 a:link, a:visited {
   color: #43C750;
   padding: 0 1px;
   text-decoration: underline;
 }
 
-/* line 62 */
+/* line 72 */
 a:hover, a:active {
   background-color: #43C750;
   color: #fff;
@@ -108,73 +111,67 @@ a:hover, a:active {
   text-shadow: 1px 1px 1px #333333;
 }
 
-/* line 69 */
-h1 a:hover {
-  background-color: inherit;
-}
-
 /* Paragraphs */
-/* line 74 */
+/* line 80 */
 p {
   margin-bottom: 1.143em;
 }
 
-/* line 76 */
+/* line 82 */
 strong, b {
   font-weight: bold;
 }
 
-/* line 77 */
+/* line 83 */
 em, i {
   font-style: italic;
 }
 
 /* Lists */
-/* line 80 */
+/* line 86 */
 ul {
   list-style: outside disc;
   margin: 1em 0 1.5em 1.5em;
 }
 
-/* line 85 */
+/* line 91 */
 ol {
   list-style: outside decimal;
   margin: 1em 0 1.5em 1.5em;
 }
 
-/* line 90 */
+/* line 96 */
 .post-info {
   float: right;
   margin: 10px;
   padding: 5px;
 }
-
-/* line 96 */
+/* line 100 */
 .post-info p {
   margin-bottom: 1px;
 }
 
-/* line 100 */
+/* line 105 */
 .readmore {
   float: right;
 }
 
-/* line 102 */
+/* line 107 */
 dl {
   margin: 0 0 1.5em 0;
 }
 
-/* line 103 */
+/* line 108 */
 dt {
   font-weight: bold;
 }
 
-/* line 104 */
+/* line 109 */
 dd {
   margin-left: 1.5em;
 }
 
-/* line 106 */
+/* line 111 */
 pre {
   background-color: #eeeeee;
   padding: 10px;
@@ -183,13 +180,13 @@ pre {
 }
 
 /* Quotes */
-/* line 109 */
+/* line 119 */
 blockquote {
   margin: 20px;
   font-style: italic;
 }
 
-/* line 117 */
+/* line 127 */
 div.note {
   float: right;
   margin: 5px;
@@ -198,7 +195,7 @@ div.note {
 }
 
 /* Tables */
-/* line 125 */
+/* line 135 */
 table {
   margin: .5em auto 1.5em auto;
   width: 98%;
@@ -206,38 +203,38 @@ table {
   /* Tbody */
   /* Tfoot */
 }
-/* line 130 */
+/* line 140 */
 table thead th {
   padding: .5em .4em;
   text-align: left;
 }
-/* line 137 */
+/* line 147 */
 table tbody td {
   padding: .5em .4em;
 }
 
 /* HTML5 tags */
-/* line 152 */
+/* line 162 */
 header, section, footer,
 aside, nav, article, figure {
   display: block;
 }
 
 /***** Layout *****/
-/* line 157 */
+/* line 167 */
 .body {
   clear: both;
   margin: 0 auto;
   width: 800px;
 }
 
-/* line 158 */
+/* line 168 */
 img.right, figure.right {
   float: right;
   margin: 0 0 2em 2em;
 }
 
-/* line 159 */
+/* line 169 */
 img.left, figure.left {
   float: left;
   margin: 0 2em 2em 0;
@@ -246,19 +243,19 @@ img.left, figure.left {
 /*
     Header
 *****************/
-/* line 164 */
+/* line 174 */
 #banner {
   margin: 0 auto;
   padding: 2.5em 0 0 0;
   /* Banner */
   /* Main Nav */
 }
-/* line 169 */
+/* line 179 */
 #banner h1 {
   font-size: 3.571em;
   line-height: 0;
 }
-/* line 173 */
+/* line 183 */
 #banner h1 a:link, #banner h1 a:visited {
   color: #000305;
   display: block;
@@ -266,18 +263,18 @@ img.left, figure.left {
   margin: 0 0 .6em .2em;
   text-decoration: none;
 }
-/* line 180 */
+/* line 190 */
 #banner h1 a:hover, #banner h1 a:active {
   background: none;
   color: #43C750;
   text-shadow: none;
 }
-/* line 186 */
+/* line 196 */
 #banner h1 strong {
   font-size: 0.36em;
   font-weight: normal;
 }
-/* line 193 */
+/* line 203 */
 #banner nav {
   background: #000305;
   font-size: 1.143em;
@@ -291,19 +288,19 @@ img.left, figure.left {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
 }
-/* line 207 */
+/* line 217 */
 #banner nav ul {
   list-style: none;
   margin: 0 auto;
   width: 800px;
 }
-/* line 212 */
+/* line 222 */
 #banner nav li {
   float: left;
   display: inline;
   margin: 0;
 }
-/* line 218 */
+/* line 228 */
 #banner nav a:link, #banner nav a:visited {
   color: #fff;
   display: inline-block;
@@ -311,13 +308,13 @@ img.left, figure.left {
   padding: 5px 1.5em;
   text-decoration: none;
 }
-/* line 225 */
+/* line 235 */
 #banner nav a:hover, #banner nav a:active, #banner nav .active a:link, #banner nav .active a:visited {
   background: #44c751;
   color: #fff;
   text-shadow: none !important;
 }
-/* line 231 */
+/* line 241 */
 #banner nav li:first-child a {
   border-top-left-radius: 5px;
   -moz-border-radius-topleft: 5px;
@@ -330,7 +327,7 @@ img.left, figure.left {
 /*
     Featured
 *****************/
-/* line 246 */
+/* line 256 */
 #featured {
   background: #fff;
   margin-bottom: 2em;
@@ -341,35 +338,35 @@ img.left, figure.left {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
 }
-/* line 257 */
+/* line 267 */
 #featured figure {
   border: 2px solid #eee;
   float: right;
   margin: 0.786em 2em 0 5em;
   width: 248px;
 }
-/* line 263 */
+/* line 273 */
 #featured figure img {
   display: block;
   float: right;
 }
-/* line 269 */
+/* line 279 */
 #featured h2 {
   color: #44c751;
   font-size: 1.714em;
   margin-bottom: 0.333em;
 }
-/* line 274 */
+/* line 284 */
 #featured h3 {
   font-size: 1.429em;
   margin-bottom: .5em;
 }
-/* line 277 */
+/* line 287 */
 #featured h3 a:link, #featured h3 a:visited {
   color: #000305;
   text-decoration: none;
 }
-/* line 281 */
+/* line 291 */
 #featured h3 a:hover, #featured h3 a:active {
   color: #fff;
 }
@@ -377,7 +374,7 @@ img.left, figure.left {
 /*
     Body
 *****************/
-/* line 290 */
+/* line 300 */
 #content {
   background: #fff;
   margin-bottom: 2em;
@@ -392,30 +389,30 @@ img.left, figure.left {
 /*
     Extras
 *****************/
-/* line 305 */
+/* line 315 */
 #extras {
   margin: 0 auto 3em auto;
   overflow: hidden;
   /* Blogroll */
   /* Social */
 }
-/* line 309 */
+/* line 319 */
 #extras ul {
   list-style: none;
   margin: 0;
 }
-/* line 313 */
+/* line 323 */
 #extras li {
   border-bottom: 1px solid #fff;
 }
-/* line 316 */
+/* line 326 */
 #extras h2 {
   color: #43C750;
   font-size: 1.429em;
   margin-bottom: .25em;
   padding: 0 3px;
 }
-/* line 323 */
+/* line 333 */
 #extras a:link, #extras a:visited {
   color: #444444;
   display: block;
@@ -423,107 +420,107 @@ img.left, figure.left {
   text-decoration: none;
   padding: .3em .25em;
 }
-/* line 331 */
+/* line 341 */
 #extras a:hover, #extras a:active {
   color: #fff;
 }
-/* line 336 */
+/* line 346 */
 #extras .blogroll {
   float: left;
   width: 195px;
 }
-/* line 340 */
+/* line 350 */
 #extras .blogroll li {
   float: left;
   margin: 0 20px 0 0;
   width: 185px;
 }
-/* line 347 */
+/* line 357 */
 #extras .tagcloud {
   float: left;
   width: 420px;
 }
-/* line 350 */
+/* line 360 */
 #extras .tagcloud li {
   float: left;
 }
-/* line 353 */
+/* line 363 */
 #extras .tagcloud .tag-4 a {
   padding-top: 1.075em;
   padding-bottom: 1.07em;
   font-size: 0.6em;
 }
-/* line 358 */
+/* line 368 */
 #extras .tagcloud .tag-3 a {
   padding-top: 0.625em;
   padding-bottom: 0.625em;
   font-size: 0.8em;
 }
-/* line 363 */
+/* line 373 */
 #extras .tagcloud .tag-2 a {
   padding-top: 0.219em;
   padding-top: 0.219em;
   font-size: 1.1em;
 }
-/* line 368 */
+/* line 378 */
 #extras .tagcloud .tag-1 a {
   padding-top: 0.0em;
   padding-bottom: 0.0em;
   font-size: 1.5em;
 }
-/* line 376 */
+/* line 386 */
 #extras .social {
   float: right;
   width: 175px;
   /* Icons */
 }
-/* line 380 */
+/* line 390 */
 #extras .social a {
   background-repeat: no-repeat;
   background-position: 3px 6px;
   padding-left: 25px;
 }
-/* line 387 */
+/* line 397 */
 #extras .social a[href*='delicious.com'] {
   background-image: url("../images/icons/delicious.png");
 }
-/* line 390 */
+/* line 400 */
 #extras .social a[href*='digg.com'] {
   background-image: url("../images/icons/digg.png");
 }
-/* line 393 */
+/* line 403 */
 #extras .social a[href*='facebook.com'] {
   background-image: url("../images/icons/facebook.png");
 }
-/* line 396 */
+/* line 406 */
 #extras .social a[href*='last.fm'], #extras .social .social a[href*='lastfm.'] {
   background-image: url("../images/icons/lastfm.png");
 }
-/* line 399 */
+/* line 409 */
 #extras .social a[type$='atom+xml'], #extras .social .social a[type$='rss+xml'] {
   background-image: url("../images/icons/rss.png");
 }
-/* line 402 */
+/* line 412 */
 #extras .social a[href*='twitter.com'] {
   background-image: url("../images/icons/twitter.png");
 }
-/* line 405 */
+/* line 415 */
 #extras .social a[href*='linkedin.com'] {
   background-image: url("../images/icons/linkedin.png");
 }
-/* line 408 */
+/* line 418 */
 #extras .social a[href*='gitorious.org'] {
   background-image: url("../images/icons/gitorious.png");
 }
-/* line 411 */
+/* line 421 */
 #extras .social a[href*='github.com'], #extras .social a[href*='git.io'] {
   background-image: url("../images/icons/github.png");
 }
-/* line 414 */
+/* line 424 */
 #extras .social a[href*='gittip.com'] {
   background-image: url("../images/icons/gittip.png");
 }
-/* line 417 */
+/* line 427 */
 #extras .social a[href*='plus.google.com'], #extras .social a[href*='gplus.to'] {
   background-image: url("../images/icons/google-plus.png");
 }
@@ -531,7 +528,7 @@ img.left, figure.left {
 /*
     About
 *****************/
-/* line 426 */
+/* line 436 */
 #about {
   background: #fff;
   font-style: normal;
@@ -544,27 +541,27 @@ img.left, figure.left {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
 }
-/* line 439 */
+/* line 449 */
 #about .primary {
   float: left;
   width: 165px;
 }
-/* line 442 */
+/* line 452 */
 #about .primary strong {
   color: #C64350;
   display: block;
   font-size: 1.286em;
 }
-/* line 448 */
+/* line 458 */
 #about .photo {
   float: left;
   margin: 5px 20px;
 }
-/* line 453 */
+/* line 463 */
 #about .url:link, #about .url:visited {
   text-decoration: none;
 }
-/* line 457 */
+/* line 467 */
 #about .bio {
   float: right;
   width: 500px;
@@ -573,7 +570,7 @@ img.left, figure.left {
 /*
     Footer
 *****************/
-/* line 466 */
+/* line 476 */
 #contentinfo {
   padding-bottom: 2em;
   text-align: right;
@@ -581,83 +578,65 @@ img.left, figure.left {
 
 /***** Sections *****/
 /* Blog */
-/* line 470 */
+/* line 480 */
 .hentry {
   display: block;
   clear: both;
   border-bottom: 1px solid #eee;
   padding: 1.5em 0;
+  /* Content */
+}
+/* line 485 */
+.hentry img {
+  display: none;
+}
+/* line 488 */
+.hentry .post-info * {
+  font-style: normal;
+}
+/* line 492 */
+.hentry footer {
+  margin-bottom: 2em;
+}
+/* line 494 */
+.hentry footer address {
+  display: inline;
 }
 
-/* line 476 */
+/* line 499 */
 li:last-child .hentry, #content > .hentry {
   border: 0;
   margin: 0;
 }
 
-/* line 477 */
+/* line 500 */
 #content > .hentry {
   padding: 1em 0;
 }
 
-/* line 478 */
-.hentry img {
-  display: none;
-}
-
-/* line 479 */
+/* line 501 */
 .entry-title {
   font-size: 3em;
   margin-bottom: 10px;
   margin-top: 0;
 }
-
-/* line 480 */
+/* line 505 */
 .entry-title a:link, .entry-title a:visited {
   text-decoration: none;
   color: #333333;
 }
-
-/* line 481 */
+/* line 509 */
 .entry-title a:visited {
   background-color: #fff;
 }
 
-/* line 483 */
-.hentry .post-info * {
-  font-style: normal;
-}
-
-/* Content */
-/* line 486 */
-.hentry footer {
-  margin-bottom: 2em;
-}
-
-/* line 487 */
-.hentry footer address {
-  display: inline;
-}
-
-/* line 488 */
-#posts-list footer address {
-  display: block;
-}
-
-/* Blog Index */
-/* line 491 */
+/* line 514 */
 #posts-list {
   list-style: none;
   margin: 0;
+  /* Blog Index */
 }
-
-/* line 492 */
-#posts-list .hentry {
-  padding-left: 10px;
-  position: relative;
-}
-
-/* line 494 */
+/* line 518 */
 #posts-list footer {
   left: 10px;
   position: relative;
@@ -665,9 +644,18 @@ li:last-child .hentry, #content > .hentry {
   top: 0.5em;
   width: 190px;
 }
+/* line 524 */
+#posts-list footer address {
+  display: block;
+}
+/* line 530 */
+#posts-list .hentry {
+  padding-left: 10px;
+  position: relative;
+}
 
 /* About the Author */
-/* line 503 */
+/* line 537 */
 #about-author {
   background: #f9f9f9;
   clear: both;
@@ -678,14 +666,14 @@ li:last-child .hentry, #content > .hentry {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
 }
-/* line 514 */
+/* line 548 */
 #about-author strong {
   color: #C64350;
   clear: both;
   display: block;
   font-size: 1.429em;
 }
-/* line 521 */
+/* line 555 */
 #about-author .photo {
   border: 1px solid #ddd;
   float: left;
@@ -693,13 +681,12 @@ li:last-child .hentry, #content > .hentry {
 }
 
 /* Comments */
-/* line 529 */
+/* line 563 */
 #comments-list {
   list-style: none;
   margin: 0 1em;
 }
-
-/* line 530 */
+/* line 567 */
 #comments-list blockquote {
   background: #f8f8f8;
   clear: both;
@@ -710,57 +697,48 @@ li:last-child .hentry, #content > .hentry {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
 }
-
-/* line 541 */
+/* line 578 */
 #comments-list footer {
   color: #888;
   padding: .5em 1em 0 0;
   text-align: right;
 }
-
-/* line 543 */
+/* line 584 */
 #comments-list li:nth-child(2n) blockquote {
   background: #F5f5f5;
 }
 
 /* Add a Comment */
-/* line 546 */
+/* line 591 */
 #add-comment label {
   clear: left;
   float: left;
   text-align: left;
   width: 150px;
 }
-
-/* line 549 */
-#add-comment input[type='text'],
-#add-comment input[type='email'],
-#add-comment input[type='url'] {
+/* line 592 */
+#add-comment input[type='text'], #add-comment input[type='email'], #add-comment input[type='url'] {
   float: left;
   width: 200px;
 }
-
-/* line 551 */
+/* line 595 */
 #add-comment textarea {
   float: left;
   height: 150px;
   width: 495px;
 }
-
-/* line 553 */
+/* line 600 */
 #add-comment p.req {
   clear: both;
   margin: 0 .5em 1em 0;
   text-align: right;
 }
-
-/* line 555 */
+/* line 605 */
 #add-comment input[type='submit'] {
   float: right;
   margin: 0 .5em;
 }
-
-/* line 556 */
+/* line 609 */
 #add-comment * {
   margin-bottom: .5em;
 }
