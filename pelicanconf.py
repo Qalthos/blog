@@ -10,6 +10,8 @@ TIMEZONE = 'America/New_York'
 
 DEFAULT_LANG = u'en'
 
+PLUGINS = ['pelican.plugins.assets']
+
 #THEME = 'notmyidea'
 THEME = 'themes/notmineeither'
 
