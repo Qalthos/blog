@@ -2,6 +2,7 @@ Another Blog
 ############
 :date: 2010-09-07 16:49
 :author: Nathaniel Case
+:email: Qalthos@gmail.com
 :tags: journalism
 
 Just as I get used to this one, another of my classes requires me to

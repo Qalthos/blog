@@ -2,6 +2,7 @@ CIVX Stuff
 ##########
 :date: 2010-09-09 18:11
 :author: Nathaniel Case
+:email: Qalthos@gmail.com
 :tags: peopledashboard, widgets
 
 So I've been spending some time finally getting some time to familiarize

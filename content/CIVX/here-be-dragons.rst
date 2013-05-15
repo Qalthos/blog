@@ -2,6 +2,7 @@ Here be Dragons
 ###############
 :date: 2010-09-09 18:11
 :author: Nathaniel Case
+:email: Qalthos@gmail.com
 :tags: peopledashboard
 
 Today was the day we got `Rebecca`_ on to a git repo towards

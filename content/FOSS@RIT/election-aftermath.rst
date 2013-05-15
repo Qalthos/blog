@@ -2,6 +2,7 @@ Election Aftermath
 ##################
 :date: 2011-03-29 02:59
 :author: Nathaniel Case
+:email: Qalthos@gmail.com
 :tags: journalism, election
 
 So the election was almost a week ago. Here's how our little experiment

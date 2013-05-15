@@ -2,6 +2,7 @@ Huzzah!
 #######
 :date: 2010-09-06 17:57
 :author: Nathaniel Case
+:email: Qalthos@gmail.com
 :tags: hardware
 
 Here we are, back at the beginning of another school year. It's going to

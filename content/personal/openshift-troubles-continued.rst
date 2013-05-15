@@ -2,6 +2,7 @@ Openshift Troubles Continued
 ############################
 :date: 2012-02-03 06:47
 :author: Nathaniel Case
+:email: Qalthos@gmail.com
 :tags: FLOSS-seminar, openshift
 
 I figured out the problem I was having with OpenShift.

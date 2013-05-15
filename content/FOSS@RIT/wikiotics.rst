@@ -2,6 +2,7 @@ Wikiotics
 #########
 :date: 2010-09-20 19:45
 :author: Nathaniel Case
+:email: Qalthos@gmail.com
 :tags: wikiotics
 
 As of Friday, I have been doing some work (along with `Taylor`_ for a

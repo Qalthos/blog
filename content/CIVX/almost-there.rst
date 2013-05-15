@@ -2,6 +2,7 @@ Almost There...
 ###############
 :date: 2010-09-09 18:11
 :author: Nathaniel Case
+:email: Qalthos@gmail.com
 :tags: peopledashboard
 
 Today I worked my way through more of `Rebecca's`_ changes to the people

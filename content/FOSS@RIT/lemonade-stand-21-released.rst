@@ -2,6 +2,7 @@ Lemonade Stand 2.1 Released
 ###########################
 :date: 2010-11-12 07:03
 :author: Nathaniel Case
+:email: Qalthos@gmail.com
 :tags: lemonade
 
 I am proud to announce the immediate availability of Lemonade Stand 2.1,

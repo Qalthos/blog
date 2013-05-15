@@ -2,6 +2,7 @@ Diving Deep
 ###########
 :date: 2010-09-09 18:11
 :author: Nathaniel Case
+:email: Qalthos@gmail.com
 :tags: scrapers
 
 Yesterday had been spent working on a proper dev branch to CIVX. Today

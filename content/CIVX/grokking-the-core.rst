@@ -2,6 +2,7 @@ Grokking the Core
 #################
 :date: 2011-06-21 22:55
 :author: Nathaniel Case
+:email: Qalthos@gmail.com
 :tags: scrapers, SURS, polyscraper
 
 This week begins the real dive into the core of what makes CIVX. Today

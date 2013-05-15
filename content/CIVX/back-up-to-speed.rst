@@ -2,6 +2,7 @@ Back up to Speed
 ################
 :date: 2011-06-21 22:56
 :author: Nathaniel Case
+:email: Qalthos@gmail.com
 :tags: peopledashboard, widgets, scrapers, SURS
 
 I've almost closed `bug #106`_. I've done all I can do for now, until I

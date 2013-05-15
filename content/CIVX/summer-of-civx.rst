@@ -2,6 +2,7 @@ Summer of CIVX
 ##############
 :date: 2011-06-21 22:56
 :author: Nathaniel Case
+:email: Qalthos@gmail.com
 :tags: peopledashboard, widgets, SURS
 
 So I'm back at RIT for the summer working on CIVX again. There's been a

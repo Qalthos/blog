@@ -2,6 +2,7 @@ Boston
 ######
 :date: 2011-01-23 07:14
 :author: Nathaniel Case
+:email: Qalthos@gmail.com
 :tags: peopledashboard, hackfest, widgets, Boston
 
 So here we are in OLPC HQ, right in the middle of MIT. It's pretty sweet

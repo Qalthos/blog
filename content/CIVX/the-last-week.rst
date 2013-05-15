@@ -2,6 +2,7 @@ The Last Week
 #############
 :date: 2011-06-21 22:56
 :author: Nathaniel Case
+:email: Qalthos@gmail.com
 :tags: peopledashboard, widgets, scrapers, SURS, fabulous
 
 This week has been a mess for a lot of reasons. Let's see what I managed

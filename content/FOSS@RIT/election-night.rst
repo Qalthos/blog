@@ -2,6 +2,7 @@ Election Night
 ##############
 :date: 2011-03-29 02:59
 :author: Nathaniel Case
+:email: Qalthos@gmail.com
 :tags: journalism, election
 
 So election night is tonight. I'll have free time soon.

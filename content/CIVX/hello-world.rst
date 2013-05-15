@@ -2,6 +2,7 @@ Hello, world...
 ###############
 :date: 2010-09-09 18:10
 :author: Nathaniel Case
+:email: Qalthos@gmail.com
 :tags: democracymap, geowebdns
 
 This is my first posting despite having been here for a week, because

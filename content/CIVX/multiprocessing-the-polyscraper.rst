@@ -2,6 +2,7 @@ Multiprocessing the PolyScraper
 ###############################
 :date: 2011-06-29 18:04
 :author: Nathaniel Case
+:email: Qalthos@gmail.com
 :tags: hackfest, SURS, polyscraper
 
 Warning: This post was written at 4AM and contains a technical account

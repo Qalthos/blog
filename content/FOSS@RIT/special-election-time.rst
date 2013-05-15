@@ -2,6 +2,7 @@ Special Election Time
 #####################
 :date: 2011-03-29 03:07
 :author: Nathaniel Case
+:email: Qalthos@gmail.com
 :tags: election
 
 Rochester is having a special election tomorrow to choose a new Mayor,

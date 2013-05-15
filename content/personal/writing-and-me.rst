@@ -2,6 +2,7 @@ Writing and Me
 ##############
 :date: 2010-07-21 04:13
 :author: Nathaniel Case
+:email: Qalthos@gmail.com
 :tags: introspective
 
 I am not a writer. Had things progressed differently, I might have tried

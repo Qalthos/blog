@@ -2,6 +2,7 @@ Refreshing Lemonade
 ###################
 :date: 2010-09-23 14:04
 :author: Nathaniel Case
+:email: Qalthos@gmail.com
 :tags: lemonade, sugar
 
 In other news, todayyesterday marked the `final release of Lemonade

@@ -2,6 +2,7 @@ Killer Bunnies and the Towering Draw Pile
 #########################################
 :date: 2011-01-23 07:12
 :author: Nathaniel Case
+:email: Qalthos@gmail.com
 :tags: games
 
 There was a hackfest Friday night, and a writeup is coming soon, but

@@ -2,6 +2,7 @@ Wikiotics Visual Tweak
 ######################
 :date: 2010-12-08 23:51
 :author: Nathaniel Case
+:email: Qalthos@gmail.com
 :tags: wikiotics
 
 So `trose`_ and I have been asked to put abow on the Wikiotics work

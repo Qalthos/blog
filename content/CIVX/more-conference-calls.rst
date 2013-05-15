@@ -2,6 +2,7 @@ More Conference Calls
 #####################
 :date: 2010-09-09 18:11
 :author: Nathaniel Case
+:email: Qalthos@gmail.com
 :tags: democracymap, geowebdns
 
 Every time I go through one of these calls I feel like I come out

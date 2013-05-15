@@ -2,6 +2,7 @@ OpenShift Troubles
 ##################
 :date: 2012-02-03 06:47
 :author: Nathaniel Case
+:email: Qalthos@gmail.com
 :tags: FLOSS-seminar, openshift
 
 Recently I've been playing with `OpenShift`_, a new(ish) service from

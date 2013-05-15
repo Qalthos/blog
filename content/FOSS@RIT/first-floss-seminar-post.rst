@@ -2,6 +2,7 @@ First FLOSS Seminar post
 ########################
 :date: 2011-12-01 20:22
 :author: Nathaniel Case
+:email: Qalthos@gmail.com
 :tags: FLOSS-seminar
 
 So this quarter I am taking a `FLOSS`_ Seminar being taught by `Bean`_

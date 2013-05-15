@@ -2,6 +2,7 @@ American Greetings Hackathon Followup
 #####################################
 :date: 2013-01-24 22:33
 :author: Nathaniel Case
+:email: Qalthos@gmail.com
 :tags: hackfest
 
 Last weekend was the `American Greetings Hackathon`_, and it was one of

@@ -2,6 +2,7 @@ pyDex Progress
 ##############
 :date: 2010-07-10 16:51
 :author: Nathaniel Case
+:email: Qalthos@gmail.com
 :tags: pyDex
 
 I've finally gotten around to staging and commiting a few enhancements

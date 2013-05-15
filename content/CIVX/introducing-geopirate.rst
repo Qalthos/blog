@@ -2,6 +2,7 @@ Introducing: GeoPirate!
 #######################
 :date: 2010-09-09 18:11
 :author: Nathaniel Case
+:email: Qalthos@gmail.com
 :tags: democracymap, geowebdns
 
 So I've recieved my apparently mandated CIVX nickname, despite it

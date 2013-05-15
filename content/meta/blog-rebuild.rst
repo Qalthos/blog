@@ -2,6 +2,7 @@ Blog Rebuild
 ############
 :date: 2013-04-21 18:03
 :author: Nathaniel Case
+:email: Qalthos@gmail.com
 :tags: blog
 
 As you may notice, my blog looks a lot different now. On the recommendation of a few FOSSBoxers, I have moved to `Pelican`_, a Python-based static site generator. The practical upshot of which is that I can now write posts in `reStructuredText`_, keep the posts themsevles in git, and host the whole thing on `GitHub Pages`_.

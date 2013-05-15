@@ -2,6 +2,7 @@ Lemons Taking Off
 #################
 :date: 2010-09-23 14:35
 :author: Nathaniel Case
+:email: Qalthos@gmail.com
 :tags: lemonade, sugar
 
 It looks like Lemonade Stand is taking off for fall quarter's `HFOSS`_

@@ -2,6 +2,7 @@ Recent Projects: Knowledge
 ##########################
 :date: 2012-08-07 23:39
 :author: Nathaniel Case
+:email: Qalthos@gmail.com
 :tags: knowledge
 
 One of the cool features of CIVX that really caught my interest when I

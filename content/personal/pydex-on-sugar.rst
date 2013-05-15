@@ -2,6 +2,7 @@ pyDex on Sugar
 ##############
 :date: 2011-01-19 23:51
 :author: Nathaniel Case
+:email: Qalthos@gmail.com
 :tags: sugar, pyDex
 
 A warning, this gets very technical with lots of acronyms and jargon.

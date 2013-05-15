@@ -2,6 +2,7 @@ Recent Projects: Democrat & Chronicle
 #####################################
 :date: 2012-08-22 22:16
 :author: Nathaniel Case
+:email: Qalthos@gmail.com
 :tags: journalism, data alchemy
 
 One of the new projects I had this summer was a project proposed by the

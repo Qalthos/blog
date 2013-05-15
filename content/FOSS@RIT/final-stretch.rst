@@ -2,6 +2,7 @@ Final Stretch
 #############
 :date: 2012-02-29 16:15
 :author: Nathaniel Case
+:email: Qalthos@gmail.com
 :tags: pybotwar, hackfest, FLOSS-seminar, webbotwar, openshift
 
 So the past two days have been madness trying to get the recently
