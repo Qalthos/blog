@@ -13,11 +13,12 @@ DEFAULT_LANG = u'en'
 THEME = 'themes/notmineeither'
 DEFAULT_PAGINATION = 5
 
+PLUGIN_PATH = '../pelican-plugins'
 PLUGINS = [
-    'pelican-plugins.assets',
-    'pelican-plugins.ditaa',
-    'pelican-plugins.gravatar',
-    'pelican-plugins.related_posts',
+    'assets',
+    'ditaa',
+    'gravatar',
+    'related_posts',
 ]
 
 # Blogroll
