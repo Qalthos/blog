@@ -10,6 +10,7 @@ dashboard. It was actually in better condition than I had thought last
 night. The first tab whas the only one with the majority of the changes,
 and most of the changes were easily applied once I understood them-
 which is what I spent hours yesterday trying to do.
+
 I have a problem with writing quantities of HTML because they end up as
 giant messes. Even XHTML strict isn't enough for me, though it does come
 closer. Invariably, any file of reasonable complexity is going to have
