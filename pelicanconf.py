@@ -5,15 +5,13 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Nathaniel Case'
 SITENAME = u'Why Not Wingnut?'
-#SITEURL = 'http://blog.linkybook.com'
-SITEURL = 'http://qalthos.github.io/blog'
+SITEURL = 'http://0:8000'
 TIMEZONE = 'America/New_York'
 DEFAULT_LANG = u'en'
 
 #THEME = 'notmyidea'
 THEME = 'themes/notmineeither'
 DEFAULT_PAGINATION = 5
-GOOGLE_ANALYTICS = 'UA-40338393-1'
 
 PLUGINS = [
     'pelican-plugins.assets',

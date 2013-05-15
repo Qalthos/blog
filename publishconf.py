@@ -5,7 +5,7 @@ import sys
 sys.path.append('.')
 from pelicanconf import *
 
-SITEURL = 'http://blog.linkybook.com'
+SITEURL = 'http://qalthos.github.io/blog'
 
 DELETE_OUTPUT_DIRECTORY = True
 
@@ -15,4 +15,4 @@ DELETE_OUTPUT_DIRECTORY = True
 #RELATIVE_URLS = False
 
 #DISQUS_SITENAME = ""
-#GOOGLE_ANALYTICS = ""
+GOOGLE_ANALYTICS = 'UA-40338393-1'
