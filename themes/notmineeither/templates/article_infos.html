@@ -1,4 +1,7 @@
 <footer class="post-info">
+        {% if article.author_gravatar %}
+        <p><img src="{{ article.author_gravatar }}" /></p>
+        {% endif %}
         <abbr class="published" title="{{ article.date.isoformat() }}">
                 {{ article.locale_date }}
         </abbr>
