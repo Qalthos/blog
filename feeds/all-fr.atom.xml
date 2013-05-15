@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://0:8000/" rel="alternate"></link><link href="http://0:8000/feeds/all-fr.atom.xml" rel="self"></link><id>http://0:8000/</id><updated>2012-02-29T00:00:00-05:00</updated><entry><title>Deuxième article</title><link href="http://0:8000/second-article-fr.html" rel="alternate"></link><updated>2012-02-29T00:00:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:0:8000,2012-02-29:second-article-fr.html</id><summary type="html">&lt;p&gt;Ceci est un article, en français.&lt;/p&gt;
+</summary><category term="foo"></category><category term="bar"></category><category term="baz"></category></entry></feed>
