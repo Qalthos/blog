@@ -28,17 +28,20 @@ it, or even the best way to do it, but that's just how we roll. The
 eventual structure (all written in delicious `twisted`_ protocols)
 looked something like this:
 
-::
+.. ditaa::
+    :alt: Module diagram
 
- [Nethack Server]
-    -----
-     | |
-     | |
-    [tee]============[controller]
-     | |                 | |
-     | |                 | |
-    -----               -----
- [Nethack Client]     [netHUD]
+    +--------------+
+    |Nethack Server|
+    +----+---------+
+         |
+       +-+-+          +----------+
+       |tee+----------+controller|
+       +-+-+          +-----+----+
+         |                  |
+    +----+---------+    +---+--+
+    |Nethack Client|    |netHUD|
+    +--------------+    +------+
 
 tee.py acted as the proxy and sent any messages received from the
 nethack server to the controller, which cached the current state of all
