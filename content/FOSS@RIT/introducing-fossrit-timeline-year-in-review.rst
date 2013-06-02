@@ -3,7 +3,7 @@ Introducing: FOSS\@RIT Timeline Year in Review
 :date: 2012-08-22 22:15
 :author: Nathaniel Case
 :email: Qalthos@gmail.com
-:tags: data alchemy, jQuery
+:tags: data alchemy, jQuery, timeline
 
 Yesterday, I sat down with Remy and went over the last of the things we
 need to do to close out the summer. There was a long list of items,
