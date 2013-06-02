@@ -3,7 +3,7 @@ Boston
 :date: 2011-01-23 07:14
 :author: Nathaniel Case
 :email: Qalthos@gmail.com
-:tags: peopledashboard, hackfest, widgets, Boston
+:tags: peopledashboard, hackathon, widgets, Boston
 
 So here we are in OLPC HQ, right in the middle of MIT. It's pretty sweet
 having `Luke`_ around again to hack CIVX with us.
@@ -21,7 +21,7 @@ Unfortunately, that means I had precious little time to pay attention to
 the other teams. Three separate groups hacking away at their own
 projects, tossing ideas about and getting input from a few members
 upstream, not to mention the whole OLPC offices around the corner- this
-was a right proper hackfest, and something that makes me excited for the
+was a right proper hackathon, and something that makes me excited for the
 future of these projects.
 
 .. _Luke: http://lewk.org/

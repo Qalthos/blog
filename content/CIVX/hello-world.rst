@@ -7,7 +7,7 @@ Hello, world...
 
 This is my first posting despite having been here for a week, because
 the zaniness that was my first week did not allow for such silly things
-as intorductions. Now I finally have some of the infrastructure things
+as introductions. Now I finally have some of the infrastructure things
 worked out, and can report on my findings.
 Work has been progressing on a scraper for `shapefiles`_ for the Senate.
 I've been fairly successful in getting a large amount of data, (up to

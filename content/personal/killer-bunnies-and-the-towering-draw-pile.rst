@@ -5,7 +5,7 @@ Killer Bunnies and the Towering Draw Pile
 :email: Qalthos@gmail.com
 :tags: games
 
-There was a hackfest Friday night, and a writeup is coming soon, but
+There was a hackathon Friday night, and a write-up is coming soon, but
 first a bit of random chatter.
 
 I have, for a few years, been collecting the various pieces that make up

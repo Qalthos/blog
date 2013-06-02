@@ -3,7 +3,7 @@ TurboGears2 on OpenShift, just like it should be
 :date: 2012-02-03 06:47
 :author: Nathaniel Case
 :email: Qalthos@gmail.com
-:tags: hackfest, FLOSS-seminar, openshift
+:tags: hackathon, FLOSS-seminar, openshift
 
 After much work and many trials, I finally have an app pushed to
 OpenShift with no manual tweaking necessary. As often happens with these
@@ -59,7 +59,7 @@ This had some pretty profound implications. It meant something was
 different during the build hook than in normal execution. Armed with
 this new knowledge, I headed over to OpenShift's IRC channel to get some
 answers (I had actually been in there for some time prior, just not with
-enough information for themore ruby-oriented users to help).
+enough information for the more ruby-oriented users to help).
 
 They told me that yes, indeed there was a difference. During the build
 step, the database is stopped, hence why I could not connect to it.

@@ -7,7 +7,7 @@ Recent Projects: Knowledge
 
 One of the cool features of CIVX that really caught my interest when I
 first started working on it was the `Knowledge DB`_. Using the magic of
-Python, Knowledge is a vertical, polymorphic databse for storing
+Python, Knowledge is a vertical, polymorphic database for storing
 knowledge about things, which means very little to anyone, even me.
 
 What Knowledge does is it allows you to store anything (or anything

@@ -19,7 +19,7 @@ You would have to define all the columns, give it a location to look,
 make sure you understood the site's particular dialect and scrubbed out
 any irregularities in their data. What the poly scraper does is it
 replaces all of those individual scrapers and replaces them with one big
-scraper which is smart enough to deal with any url it finds.
+scraper which is smart enough to deal with any URL it finds.
 What I've been doing is adding new sources of data to the polyscraper.
 In particular, yesterday was spent adding the ability to read files off
 of a local disk and properly store them. This, in turn, exposed a few

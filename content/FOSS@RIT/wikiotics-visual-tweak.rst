@@ -5,7 +5,7 @@ Wikiotics Visual Tweak
 :email: Qalthos@gmail.com
 :tags: wikiotics
 
-So `trose`_ and I have been asked to put abow on the Wikiotics work
+So `trose`_ and I have been asked to put a bow on the Wikiotics work
 while we're between projects. We both hit some bumps at the end of the
 quarter, so there's a few unused hours left to put into this project.
 One of the things we've been tasked with is looking at the CSS and

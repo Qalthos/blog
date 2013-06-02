@@ -13,7 +13,7 @@ the candidates.
 But more exciting than the actual business of an politics is the
 election itself, which gives a great opportunity to introduce `Election
 Scraper 2.0`_.
-You may remeber the old version. It was largely untested, had a few
+You may remember the old version. It was largely untested, had a few
 design issues, and wasn't very pretty to look at. Through the election
 night, I tweaked and honed it, until finally, mere minutes before the
 close of the last poll, it gave a very close approximation to an

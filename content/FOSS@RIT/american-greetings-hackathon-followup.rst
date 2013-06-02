@@ -3,19 +3,19 @@ American Greetings Hackathon Followup
 :date: 2013-01-24 22:33
 :author: Nathaniel Case
 :email: Qalthos@gmail.com
-:tags: hackfest
+:tags: hackathon
 
 Last weekend was the `American Greetings Hackathon`_, and it was one of
 the most successful yet. We got more than 70 people attending and
 working on projects, and most of those projects had at least something
 working by the end of the 24 hours.
 
-I worked with `Ross Delinger`_, with occasional controbutions from `Ryan
+I worked with `Ross Delinger`_, with occasional contributions from `Ryan
 S. Brown`_ on a project eventually called `netHUD`_. The idea was to
 take the new `NetHack 4`_ network `protocol`_ and try to make something
-more than just another interface to nethack.
+more than just another interface to NetHack.
 
-Originally, we set out simply to connect to the nethack server and have
+Originally, we set out simply to connect to the NetHack server and have
 a second channel of information. Ideally, we would make calls to the
 server and have it update us about games in progress. This turned out to
 be problematic for a number of reasons, but the most immediate was that
@@ -32,7 +32,7 @@ looked something like this:
     :alt: Module diagram
 
     +--------------+
-    |Nethack Server|
+    |NetHack Server|
     +----+---------+
          |
        +-+-+          +----------+
@@ -40,18 +40,18 @@ looked something like this:
        +-+-+          +-----+----+
          |                  |
     +----+---------+    +---+--+
-    |Nethack Client|    |netHUD|
+    |NetHack Client|    |netHUD|
     +--------------+    +------+
 
 tee.py acted as the proxy and sent any messages received from the
-nethack server to the controller, which cached the current state of all
+NetHack server to the controller, which cached the current state of all
 the games and sent updates to any listening netHUD instances. This way,
-you connect to nethack as usual and log in, and then in a second window,
+you connect to NetHack as usual and log in, and then in a second window,
 you connect to the server again on the netHUD port and get a slew of
 information about your current inventory, nearby points of interest (eg.
 monsters, items, traps), and other information. There's a lot more we
 could add to this over time; one of the ideas thrown around at the
-beginning was integration with the nethack wiki, providing additional
+beginning was integration with the NetHack wiki, providing additional
 information about items, monsters, even entire levels.
 
 .. raw:: html

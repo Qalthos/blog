@@ -7,7 +7,7 @@ Recent Projects: Democrat & Chronicle
 
 One of the new projects I had this summer was a project proposed by the
 `Democrat & Chronicle`_. The project involved access to a selection of
-emails sent to the Greece school district in the wake of the youtube
+emails sent to the Greece school district in the wake of the YouTube
 video involving several of their students. The idea was that we would
 get a dump of email bodies and try to glean some information out of
 them.
@@ -25,7 +25,7 @@ only exist for Windows machines which, while not surprising, was
 disappointing. This led me to dig out an old VirtualBox VM with Windows
 XP on it, install the Access drivers from Microsoft, and throw
 LibreOffice on it, too. There's other ways I could have gotten this done
-instead of LibreOfiice, but I was still hoping this could be a simple
+instead of LibreOffice, but I was still hoping this could be a simple
 action at the moment.
 
 LibreOffice Base eventually got into the Access file, but then the

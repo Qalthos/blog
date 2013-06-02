@@ -12,10 +12,10 @@ OLPC. Turns out, it runs pretty well, which isn't too surprising as it
 is written in pure pyGTK and Glade, both of which are well supported in
 Sugar.
 So today, I loaded up my dev files and set to work. First, though, I had
-to clean up my dev branch and finish commiting the few hacks I had
+to clean up my dev branch and finish committing the few hacks I had
 accumulated over the last few months. I finally fixed the zero index bug
 and found I had a problem in my new scraper that was causing all the
-evolution problems. In anyt case, that's all fixed, so my dev branch is
+evolution problems. In any case, that's all fixed, so my dev branch is
 nice and clean and almost ready for the Black/White release in a few
 weeks.
 Getting back to Sugar, I finally found `a good tutorial`_ on \*porting\*

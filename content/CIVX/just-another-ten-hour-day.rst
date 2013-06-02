@@ -40,8 +40,8 @@ getting her Mac up to speed was a lot of wait and pray so I switched
 over to Kate's task. Now Kate also has a Mac, but she was set up with
 CIVX long ago and could never quite explain to me how, thanks again to
 arcane commands.
-Anyway, her task involved a particular unicode character in a senator's
-name not playing well with her scraped name-to-url converter magic.
+Anyway, her task involved a particular Unicode character in a senator's
+name not playing well with her scraped name-to-URL converter magic.
 Having only last night read `Falsehoods Programmers Believe About
 Names`_ off StumbleUpon, I immediately recognized this way as a dead
 end. Sure, you could force all the current names into this pattern, but
@@ -52,7 +52,7 @@ each senator had a link to their contact page right in the div we were
 scraping. A bit of poking around later, and I had a 100% reliable link
 to each senator's page, as verified by the senate themselves. Suddenly
 every senator's page worked, without any of this needless mucking about
-in unicode transformations.
+in Unicode transformations.
 Which brought us to our second problem. Most (with one important
 exception) senators have a page hosted on http://www.nysenate.gov, and
 most have a contact page at /senators/first-m-last/contact.
@@ -66,7 +66,7 @@ way.
 I suddenly saw an interesting anomaly. Most senators had the contact
 info were styled exactly the same, despite having quite varying styles
 otherwise. Kate had already seen that most of the addresses are together
-in some sort of paragraph tag, and was trying to regex on the contents
+in some sort of paragraph tag, and was trying to regexp on the contents
 of each paragraph on the page. What she hadn't noticed was that every
 page had a <div class="field-content"> that contained all the contact
 info. Now that, that was something a bit more to go on. Furthermore,
@@ -99,19 +99,19 @@ contact information, this is the worst example against automatically
 generated HTML I have had the misfortune of needing to scrape.
 Problem 1: <p >&nbsp;<p /><br /> I kid you not, this is on the page a
 minimum of 20 times in a row so that his Albany Office is so far below
-the fold so as to be nonexistant. Sometimes there's inline styles,
+the fold so as to be nonexistent. Sometimes there's inline styles,
 sometimes not. One line has a simple space character instead of the
 edgier, hipper &nbsp;. I wanted them all gone.this resulted in five
-separate regexes so python wouldn't get too greedy and remove all the
+separate regexps so python wouldn't get too greedy and remove all the
 content. One to replace &nbsp; with ' ', another to remove all
 whitespace between a closing angle bracket and an opening one, a third
-to remove anything matching style="\*", a fourth to rmove all the (now)
+to remove anything matching style="\*", a fourth to remove all the (now)
 empty paragraphs, and a fifth and final one to turn any group of two or
-more consective break tags into a single tag. It is probably fortunate
+more consecutive break tags into a single tag. It is probably fortunate
 that python would not correctly apply my first attempt which was far
 less readable, and more of a one-liner, as I don't know if I could have
 understood it now had I not broken it into its component parts.
-Problem 2 is a bit more of a WTF moment, both beutiful and frightening,
+Problem 2 is a bit more of a WTF moment, both beautiful and frightening,
 so I will reproduce it here verbatim::
 
     <P style="TEXT-ALIGN: center"><SPAN style="COLOR: #012849; FONT-SIZE:
@@ -145,7 +145,7 @@ everyone else had left. I spent the next half hour checking that my
 sanitizer didn't break existing pages (it did, but only minorly) and
 making sure my code was legible.
 At that point, almost ten hours after I had started, I sat back,
-commited my final changes, and decompressed. \*This\*- this is why I
+committed my final changes, and decompressed. \*This\*- this is why I
 love open source.
 
 .. _Rebecca: http://www.rebeccanatalie.com

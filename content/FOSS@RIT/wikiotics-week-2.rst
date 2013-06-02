@@ -16,7 +16,7 @@ Getting into yet another python codebase so soon was interesting,
 especially when I had to switch back and forth looking at things
 `Taylor`_ was doing.
 That's all I really got into for week one, but now that I'm fairly
-comfortable with the various technolologies being used, I think things
+comfortable with the various technologies being used, I think things
 will really start rolling soon
 
 .. _four week plan: http://alpha.wikiotics.org/wiki/four_week_plan

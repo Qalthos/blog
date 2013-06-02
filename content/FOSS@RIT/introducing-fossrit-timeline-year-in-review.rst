@@ -12,7 +12,7 @@ FOSS\@RIT has done a lot of stuff in the past year, and we need to be
 able to tell people about it.
 
 The first section concerned the few things we had done that hadn't yet
-hit `Timeline`_. This was a fairly sizeable chunk of things, and we
+hit `Timeline`_. This was a fairly sizable chunk of things, and we
 needed a good, rapid-entry way of getting more events in there. No
 problem, I had done some work on that before, I could get it running and
 dump events in there no problem.

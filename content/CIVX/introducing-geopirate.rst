@@ -5,13 +5,13 @@ Introducing: GeoPirate!
 :email: Qalthos@gmail.com
 :tags: democracymap, geowebdns
 
-So I've recieved my apparently mandated CIVX nickname, despite it
+So I've received my apparently mandated CIVX nickname, despite it
 possibly being inaccurate in a week or two. I, along with `Pixel Ninja`_
 and `Python Princess`_, have been hacking away at our various tasks
 together for over a week now, and despite the seemingly constant moving
 from place to place, it's a pretty sweet gig.
 My work yesterday was some final polishing of the getall script, and my
-first real push to the geowebdns repository. I'm also workign on a
+first real push to the geowebdns repository. I'm also working on a
 supplemental, informational guide to maintenance. Unfortunately, my
 changes can't quite replace the old script yet, because the import
 script (the one that actually starts to bring the files into the

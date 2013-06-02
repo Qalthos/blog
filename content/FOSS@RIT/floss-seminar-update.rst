@@ -12,7 +12,7 @@ group's idea is a social update to the venerable likes of `robocode`_,
 though how exactly that is going to pan out is still debatable.
 
 Ideally, this would comprise of a wrapper around the basic game, not
-requring much tweaking of the internals, though a new interface would be
+requiring much tweaking of the internals, though a new interface would be
 required for use on the web. All in all the class is shaping up to be
 pretty interesting.
 

@@ -11,7 +11,7 @@ Toronto.
 
 My new monitor finally arrived. Well, it arrived Saturday, but the RIT
 post office isn't open on weekends over breaks, so I had to wait until
-this morining. Luckily, it seems that the stand on my last monitor which
+this morning. Luckily, it seems that the stand on my last monitor which
 made me love it so much is a standard VESA mount, so I detached it from
 my old monitor, removed the sad excuse of a stand from my new monitor,
 and now have a beautiful new screen on the beautiful old stand. The new

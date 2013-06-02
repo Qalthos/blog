@@ -25,7 +25,7 @@ render the diagram to SVG instead of PNG. SVG is much better for things like
 simple diagrams, as it is web-native, (all it is is a special kind of XML
 document), and it's vector-based, making it inherently scalable for different
 sized displays. As near as I can tell, ditaa appears to use SVG internally, at
-least to some extent. Ideally, I'd like to try to reimplement it in Python, not
+least to some extent. Ideally, I'd like to try to re-implement it in Python, not
 necessarily for any benefit, but because the problem sounds interesting.
 
 .. _ditaa: http://ditaa.sourceforge.net/

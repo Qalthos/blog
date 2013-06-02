@@ -1,19 +1,19 @@
-ImagineRIT 2011
-###############
+Imagine RIT 2011
+################
 :date: 2011-05-08 03:16
 :author: Nathaniel Case
 :email: Qalthos@gmail.com
 :tags: journalism, lemonade, sugar, Rise, OPL
 
 So I've been absent for a while lately, but with good reason. I've been
-preparing for ImagineRIT, which was held earlier today.
+preparing for Imagine RIT, which was held earlier today.
 After pulling possibly my longest day's hack yesterday (1pm to 4am,
 approximately), I woke up at 9 and headed over to the Innovation Center
-to talk to people about FOSS. All day long, the Fossbox was filled with
+to talk to people about FOSS. All day long, the FOSSBox was filled with
 curious people, looking to find out what it is we did. We had kids
 poking around on the OLPCs, checking out our software, and occasionally
 getting lost opening new programs. Every time I finished showing a group
-around all the different projects hosted in the FOSSBOX, a brand new
+around all the different projects hosted in the FOSSBox, a brand new
 group would appear and start asking questions. It was tiring, especially
 on about three hours of sleep, but it was quite fun and exciting showing
 off our work to new people.

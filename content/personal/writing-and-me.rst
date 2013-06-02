@@ -30,7 +30,7 @@ To put it another way, if my writings were computer code, none of them
 would compile. But then, none of my real code does either, not on the
 first try. The compiler rejects a statement here or there, and when it
 finally runs, the output is all wrong. So I tweak the code, simplify and
-break down long statements, and try to say exactly waht I mean.
+break down long statements, and try to say exactly what I mean.
 Eventually, the code compiles and runs, and does exactly what I want it
 to.
 

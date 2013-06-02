@@ -52,7 +52,7 @@ So back to the drawing board then. I had a hunch something was wrong
 when I saw SQLAlchemy errors scroll by every time I reloaded the site.
 My best guess is that SQLAlchemy is failing to create the tables needed
 to run the site and continuing on blindly. Once I realized that, I
-dumped a test db from my local copy to the mysql db, and suddenly
+dumped a test db from my local copy to the MySQL db, and suddenly
 everything was working. Or almost everything, anyway.
 
 I could read form the db fine, but any time I tried to modify it, I got
@@ -60,10 +60,10 @@ another dreaded 500 error. I poked into everything I could find to try
 to figure out where it was failing, and finally determined it couldn't
 be on my end, as my local copy worked just as expected.
 
-Finally I stumbled across the anwser, almost accidentally. When I moved
-the db from local sqlite to mysql, I failed to set the auto increment
+Finally I stumbled across the answer, almost accidentally. When I moved
+the db from local sqlite to MySQL, I failed to set the auto increment
 setting on the id of my new databases, so when I neglected to provide an
-id for the new entries I was making, mysql quite rightly complained at
+id for the new entries I was making, MySQL quite rightly complained at
 me. Unfortunately, since I can't find how to re-enable debug mode (nor
 should I really try), I wasn't getting any good error messages.
 So what is the site that has been giving me all these troubles? It's a

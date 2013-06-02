@@ -10,7 +10,7 @@ been doing recently. First up on the list is the long-overdue
 `Groovebot`_ update.
 
 Before this summer, Groovebot 'worked' on `Spotify`_, and also had a
-fairly useful but undertested `MPD`_ backend that worked for me when I
+fairly useful but under-tested `MPD`_ backend that worked for me when I
 could get MPD running properly. Unfortunately, I no longer had an active
 Spotify subscription, which meant that I couldn't use the Spotify
 backend, and I had moved off of RIT's campus, meaning I no longer had a
@@ -34,11 +34,11 @@ This means I have to respond to every event GStreamer throws out (which
 is a fair number of them), but most of them can be thrown out without
 looking at them. Some more tweaking later, and PandBot was born, able to
 connect to a user's Pandora station, play music, and thumb songs up or
-down based on user respones in the IRC channel.
+down based on user response in the IRC channel.
 
 At this point, I had been writing new bots each time I added a new
 backend, with a lot of repeated code in each, leading to subtle bugs and
-api implementations that were slowly drifting apart based on individual
+API implementations that were slowly drifting apart based on individual
 needs. This made me a little annoyed, but I didn't have any particular
 need to fix it, so I left it alone. Until an accidental click around the
 Spotify website left me with another Premium subscription (and $10
@@ -52,7 +52,7 @@ and use the proper official API instead.
 However, in working on MPD and Pandora bots in the meantime had given me
 a number of ideas and fixes that would be problematic to port back to
 Spotify, which meant I had finally gotten an excuse to try to merge the
-three seperate codebases into one unified version. Starting with MPD and
+three separate codebases into one unified version. Starting with MPD and
 Pandora, I merged the files and ran the result through a three-way diff,
 trying to identify important parts of each bot to make sure each worked
 properly after the merge. Next, I looked into the architecture of

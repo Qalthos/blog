@@ -5,7 +5,7 @@ Refreshing Lemonade
 :email: Qalthos@gmail.com
 :tags: lemonade, sugar
 
-In other news, todayyesterday marked the `final release of Lemonade
+In other news, yesterday marked the `final release of Lemonade
 Stand 2.0`_. Now running on the `Fortune Engine`_ and containing 0% of
 my code, this marks an important milestone in my open-source
 `sugar-based`_ lemonade stand game as it's still getting developed!

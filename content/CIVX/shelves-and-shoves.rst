@@ -16,8 +16,8 @@ fast, but had no persistent storage, so every time the server went down
 it pulled all the info again. And due to the way the scrape was written,
 it pulled all the info for all the senators at once, creating quite a
 bit of lag before the first page showed up. This clearly wasn't going to
-be something we could continue to develpo with.
-Now, I know nothing about caching data, so I did some poiking around in
+be something we could continue to develop with.
+Now, I know nothing about caching data, so I did some poking around in
 CIVX to see how it is done elsewhere. Most of the other caches I found
 in CIVX code were related to caching text feeds, which were not as
 explanatory as I was hoping. Once I felt I had a handle on how things
@@ -37,7 +37,7 @@ for each senator. The first obvious thing I could do is to re-enable the
 memory cache, but this did not seem to help as much as I wanted it to.
 At this point, `Luke`_ popped up in chat to sat that Moksha had a
 `Shove`_ cache it uses for feeds. Sure enough, back in the files I had
-been poking through earlier, there were some refrences to Shove. Back to
+been poking through earlier, there were some references to Shove. Back to
 the net, I started to explore what Shove was and how it could help me.
 It turns out Shove is mostly drop in compatible with shelve, and aims to
 be a more extensible replacement for it. Once I got a handle on how

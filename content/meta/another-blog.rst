@@ -8,7 +8,7 @@ Another Blog
 Just as I get used to this one, another of my classes requires me to
 keep a blog, and to keep it separate from any other blogs we may keep.
 The new blog is linked at left, but anything interesting will get
-crossposted here and it's likely going to go unmaintained at the
+cross-posted here and it's likely going to go unmaintained at the
 conclusion of the quarter.
 
 Anyway, here it is: `other-person.tumblr.com`_

@@ -7,7 +7,7 @@ Almost There...
 
 Today I worked my way through more of `Rebecca's`_ changes to the people
 dashboard. It was actually in better condition than I had thought last
-night. The first tab whas the only one with the majority of the changes,
+night. The first tab was the only one with the majority of the changes,
 and most of the changes were easily applied once I understood them-
 which is what I spent hours yesterday trying to do.
 
