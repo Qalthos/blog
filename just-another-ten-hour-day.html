@@ -83,8 +83,8 @@ getting her Mac up to speed was a lot of wait and pray so I switched
 over to Kate's task. Now Kate also has a Mac, but she was set up with
 CIVX long ago and could never quite explain to me how, thanks again to
 arcane commands.
-Anyway, her task involved a particular unicode character in a senator's
-name not playing well with her scraped name-to-url converter magic.
+Anyway, her task involved a particular Unicode character in a senator's
+name not playing well with her scraped name-to-URL converter magic.
 Having only last night read <a class="reference external" href="http://www.kalzumeus.com/2010/06/17/falsehoods-programmers-believe-about-names/">Falsehoods Programmers Believe About
 Names</a> off StumbleUpon, I immediately recognized this way as a dead
 end. Sure, you could force all the current names into this pattern, but
@@ -95,7 +95,7 @@ each senator had a link to their contact page right in the div we were
 scraping. A bit of poking around later, and I had a 100% reliable link
 to each senator's page, as verified by the senate themselves. Suddenly
 every senator's page worked, without any of this needless mucking about
-in unicode transformations.
+in Unicode transformations.
 Which brought us to our second problem. Most (with one important
 exception) senators have a page hosted on <a class="reference external" href="http://www.nysenate.gov">http://www.nysenate.gov</a>, and
 most have a contact page at /senators/first-m-last/contact.
@@ -109,7 +109,7 @@ way.
 I suddenly saw an interesting anomaly. Most senators had the contact
 info were styled exactly the same, despite having quite varying styles
 otherwise. Kate had already seen that most of the addresses are together
-in some sort of paragraph tag, and was trying to regex on the contents
+in some sort of paragraph tag, and was trying to regexp on the contents
 of each paragraph on the page. What she hadn't noticed was that every
 page had a &lt;div class=&quot;field-content&quot;&gt; that contained all the contact
 info. Now that, that was something a bit more to go on. Furthermore,
@@ -142,19 +142,19 @@ contact information, this is the worst example against automatically
 generated HTML I have had the misfortune of needing to scrape.
 Problem 1: &lt;p &gt;&amp;nbsp;&lt;p /&gt;&lt;br /&gt; I kid you not, this is on the page a
 minimum of 20 times in a row so that his Albany Office is so far below
-the fold so as to be nonexistant. Sometimes there's inline styles,
+the fold so as to be nonexistent. Sometimes there's inline styles,
 sometimes not. One line has a simple space character instead of the
 edgier, hipper &amp;nbsp;. I wanted them all gone.this resulted in five
-separate regexes so python wouldn't get too greedy and remove all the
+separate regexps so python wouldn't get too greedy and remove all the
 content. One to replace &amp;nbsp; with ' ', another to remove all
 whitespace between a closing angle bracket and an opening one, a third
-to remove anything matching style=&quot;*&quot;, a fourth to rmove all the (now)
+to remove anything matching style=&quot;*&quot;, a fourth to remove all the (now)
 empty paragraphs, and a fifth and final one to turn any group of two or
-more consective break tags into a single tag. It is probably fortunate
+more consecutive break tags into a single tag. It is probably fortunate
 that python would not correctly apply my first attempt which was far
 less readable, and more of a one-liner, as I don't know if I could have
 understood it now had I not broken it into its component parts.
-Problem 2 is a bit more of a WTF moment, both beutiful and frightening,
+Problem 2 is a bit more of a WTF moment, both beautiful and frightening,
 so I will reproduce it here verbatim:</p>
 <pre class="literal-block">
 &lt;P style=&quot;TEXT-ALIGN: center&quot;&gt;&lt;SPAN style=&quot;COLOR: #012849; FONT-SIZE:
@@ -188,16 +188,16 @@ everyone else had left. I spent the next half hour checking that my
 sanitizer didn't break existing pages (it did, but only minorly) and
 making sure my code was legible.
 At that point, almost ten hours after I had started, I sat back,
-commited my final changes, and decompressed. *This*- this is why I
+committed my final changes, and decompressed. *This*- this is why I
 love open source.</p>
 
     </div><!-- /.entry-content -->
         <ul>
+            <li><a href="http://qalthos.github.io/blog/civx-stuff.html">CIVX Stuff</a></li>
+            <li><a href="http://qalthos.github.io/blog/back-up-to-speed.html">Back up to Speed</a></li>
             <li><a href="http://qalthos.github.io/blog/the-last-week.html">The Last Week</a></li>
             <li><a href="http://qalthos.github.io/blog/summer-of-civx.html">Summer of CIVX</a></li>
-            <li><a href="http://qalthos.github.io/blog/almost-there.html">Almost There...</a></li>
-            <li><a href="http://qalthos.github.io/blog/back-up-to-speed.html">Back up to Speed</a></li>
-            <li><a href="http://qalthos.github.io/blog/civx-stuff.html">CIVX Stuff</a></li>
+            <li><a href="http://qalthos.github.io/blog/boston.html">Boston</a></li>
         </ul>
         
   </article>
@@ -212,36 +212,36 @@ love open source.</p>
                           <div class="tagcloud">
             <h2>tag cloud</h2>
             <ul>
-                              <li class="tag-2"><a href="/tag/election.html">election</a></li>
-                              <li class="tag-4"><a href="/tag/pybotwar.html">pybotwar</a></li>
-                              <li class="tag-2"><a href="/tag/democracymap.html">democracymap</a></li>
-                              <li class="tag-4"><a href="/tag/rise.html">Rise</a></li>
-                              <li class="tag-3"><a href="/tag/groovebot.html">groovebot</a></li>
-                              <li class="tag-3"><a href="/tag/polyscraper.html">polyscraper</a></li>
-                              <li class="tag-4"><a href="/tag/hackathon.html">hackathon</a></li>
-                              <li class="tag-1"><a href="/tag/sugar.html">sugar</a></li>
-                              <li class="tag-2"><a href="/tag/geowebdns.html">geowebdns</a></li>
-                              <li class="tag-1"><a href="/tag/widgets.html">widgets</a></li>
-                              <li class="tag-4"><a href="/tag/python.html">python</a></li>
-                              <li class="tag-1"><a href="/tag/surs.html">SURS</a></li>
                               <li class="tag-4"><a href="/tag/introspective.html">introspective</a></li>
-                              <li class="tag-1"><a href="/tag/lemonade.html">lemonade</a></li>
-                              <li class="tag-1"><a href="/tag/floss-seminar.html">FLOSS-seminar</a></li>
-                              <li class="tag-2"><a href="/tag/pydex.html">pyDex</a></li>
-                              <li class="tag-4"><a href="/tag/wow.html">wow</a></li>
-                              <li class="tag-4"><a href="/tag/hardware.html">hardware</a></li>
-                              <li class="tag-1"><a href="/tag/wikiotics.html">wikiotics</a></li>
-                              <li class="tag-3"><a href="/tag/blog.html">blog</a></li>
-                              <li class="tag-3"><a href="/tag/data alchemy.html">data alchemy</a></li>
-                              <li class="tag-1"><a href="/tag/hackfest.html">hackfest</a></li>
-                              <li class="tag-1"><a href="/tag/journalism.html">journalism</a></li>
-                              <li class="tag-1"><a href="/tag/scrapers.html">scrapers</a></li>
-                              <li class="tag-4"><a href="/tag/fabulous.html">fabulous</a></li>
+                              <li class="tag-2"><a href="/tag/geowebdns.html">geowebdns</a></li>
                               <li class="tag-1"><a href="/tag/peopledashboard.html">peopledashboard</a></li>
+                              <li class="tag-1"><a href="/tag/sugar.html">sugar</a></li>
+                              <li class="tag-1"><a href="/tag/hackathon.html">hackathon</a></li>
+                              <li class="tag-1"><a href="/tag/widgets.html">widgets</a></li>
+                              <li class="tag-4"><a href="/tag/fabulous.html">fabulous</a></li>
+                              <li class="tag-3"><a href="/tag/groovebot.html">groovebot</a></li>
+                              <li class="tag-3"><a href="/tag/jquery.html">jQuery</a></li>
+                              <li class="tag-1"><a href="/tag/scrapers.html">scrapers</a></li>
                               <li class="tag-4"><a href="/tag/knowledge.html">knowledge</a></li>
-                              <li class="tag-4"><a href="/tag/opl.html">OPL</a></li>
                               <li class="tag-2"><a href="/tag/openshift.html">openshift</a></li>
-                              <li class="tag-4"><a href="/tag/jquery.html">jQuery</a></li>
+                              <li class="tag-3"><a href="/tag/blog.html">blog</a></li>
+                              <li class="tag-1"><a href="/tag/surs.html">SURS</a></li>
+                              <li class="tag-3"><a href="/tag/data alchemy.html">data alchemy</a></li>
+                              <li class="tag-4"><a href="/tag/hardware.html">hardware</a></li>
+                              <li class="tag-2"><a href="/tag/democracymap.html">democracymap</a></li>
+                              <li class="tag-3"><a href="/tag/polyscraper.html">polyscraper</a></li>
+                              <li class="tag-4"><a href="/tag/pybotwar.html">pybotwar</a></li>
+                              <li class="tag-4"><a href="/tag/opl.html">OPL</a></li>
+                              <li class="tag-3"><a href="/tag/timeline.html">timeline</a></li>
+                              <li class="tag-4"><a href="/tag/wow.html">wow</a></li>
+                              <li class="tag-1"><a href="/tag/floss-seminar.html">FLOSS-seminar</a></li>
+                              <li class="tag-1"><a href="/tag/journalism.html">journalism</a></li>
+                              <li class="tag-4"><a href="/tag/rise.html">Rise</a></li>
+                              <li class="tag-1"><a href="/tag/wikiotics.html">wikiotics</a></li>
+                              <li class="tag-1"><a href="/tag/lemonade.html">lemonade</a></li>
+                              <li class="tag-2"><a href="/tag/election.html">election</a></li>
+                              <li class="tag-4"><a href="/tag/python.html">python</a></li>
+                              <li class="tag-2"><a href="/tag/pydex.html">pyDex</a></li>
                           </ul>
           </div>
                                 <div class="social">

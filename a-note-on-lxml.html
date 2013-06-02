@@ -48,7 +48,9 @@
         </address>
         <p>In <a href="http://qalthos.github.io/blog/category/fossrit.html">FOSS@RIT</a>. </p>
 <p>tags: <a href="http://qalthos.github.io/blog/tag/hackathon.html">hackathon</a><a href="http://qalthos.github.io/blog/tag/python.html">python</a><a href="http://qalthos.github.io/blog/tag/wow.html">wow</a></p>
-</footer><!-- /.post-info -->      <p>I've been doing a lot of things with <a class="reference external" href="http://pygal.org">pygal</a> lately. It's a really neat tool
+</footer><!-- /.post-info -->      <p>This post is being written from the <a class="reference external" href="http://hackforchange.org/fossrit-rochester-civic-hackathon">Rochester edition</a> of the
+<a class="reference external" href="http://hackforchange.org">National Day of Civic Hacking</a> hackathon.</p>
+<p>I've been doing a lot of things with <a class="reference external" href="http://pygal.org">pygal</a> lately. It's a really neat tool
 for making SVG graphs in python. One 'problem' is that it needs <a class="reference external" href="http://lxml.de">lxml</a>, and
 that has C extensions that need to be compiled. This isn't too bad, though
 sometimes it makes me stop and install a compiler. The real problem is the
@@ -56,9 +58,23 @@ external header files it needs to compile.</p>
 <p>NOTE: this blog post is entirely the result of my own laziness. Had I simply
 perused the <a class="reference external" href="http://lxml.de/installation.html#installation">documentation</a>, I would have found this much sooner. Thus, this
 post is solely a marker of my own eagerness to get things running quickly.</p>
-<p><tt class="docutils literal">STATIC_DEPS=true</tt></p>
+<p>After I was asked for the third time how to install lxml, I finally decided I
+would figure out how it works so it could be done properly. I did find out
+what the needed package was, but I also found that if the shell variable
+<tt class="docutils literal">STATIC_DEPS=true</tt> was set prior to installation, lxml would seek out and
+download its requirements for you. I don't know how legitimate this is for a
+Python install, but it was certainly quite useful for me and the others
+trying to use lxml. It even works inside a virtualenv, though I don't know why
+it wouldn't.</p>
 
     </div><!-- /.entry-content -->
+        <ul>
+            <li><a href="http://qalthos.github.io/blog/turbogears2-on-openshift-just-like-it-should-be.html">TurboGears2 on OpenShift, just like it should be</a></li>
+            <li><a href="http://qalthos.github.io/blog/final-stretch.html">Final Stretch</a></li>
+            <li><a href="http://qalthos.github.io/blog/national-day-of-civic-hacking-hackathon.html">National Day of Civic Hacking Hackathon</a></li>
+            <li><a href="http://qalthos.github.io/blog/american-greetings-hackathon-followup.html">American Greetings Hackathon Followup</a></li>
+            <li><a href="http://qalthos.github.io/blog/boston.html">Boston</a></li>
+        </ul>
         
   </article>
 </section>
@@ -72,36 +88,36 @@ post is solely a marker of my own eagerness to get things running quickly.</p>
                           <div class="tagcloud">
             <h2>tag cloud</h2>
             <ul>
-                              <li class="tag-2"><a href="/tag/election.html">election</a></li>
-                              <li class="tag-4"><a href="/tag/pybotwar.html">pybotwar</a></li>
-                              <li class="tag-2"><a href="/tag/democracymap.html">democracymap</a></li>
-                              <li class="tag-4"><a href="/tag/rise.html">Rise</a></li>
-                              <li class="tag-3"><a href="/tag/groovebot.html">groovebot</a></li>
-                              <li class="tag-3"><a href="/tag/polyscraper.html">polyscraper</a></li>
-                              <li class="tag-4"><a href="/tag/hackathon.html">hackathon</a></li>
-                              <li class="tag-1"><a href="/tag/sugar.html">sugar</a></li>
-                              <li class="tag-2"><a href="/tag/geowebdns.html">geowebdns</a></li>
-                              <li class="tag-1"><a href="/tag/widgets.html">widgets</a></li>
-                              <li class="tag-4"><a href="/tag/python.html">python</a></li>
-                              <li class="tag-1"><a href="/tag/surs.html">SURS</a></li>
                               <li class="tag-4"><a href="/tag/introspective.html">introspective</a></li>
-                              <li class="tag-1"><a href="/tag/lemonade.html">lemonade</a></li>
-                              <li class="tag-1"><a href="/tag/floss-seminar.html">FLOSS-seminar</a></li>
-                              <li class="tag-2"><a href="/tag/pydex.html">pyDex</a></li>
-                              <li class="tag-4"><a href="/tag/wow.html">wow</a></li>
-                              <li class="tag-4"><a href="/tag/hardware.html">hardware</a></li>
-                              <li class="tag-1"><a href="/tag/wikiotics.html">wikiotics</a></li>
-                              <li class="tag-3"><a href="/tag/blog.html">blog</a></li>
-                              <li class="tag-3"><a href="/tag/data alchemy.html">data alchemy</a></li>
-                              <li class="tag-1"><a href="/tag/hackfest.html">hackfest</a></li>
-                              <li class="tag-1"><a href="/tag/journalism.html">journalism</a></li>
-                              <li class="tag-1"><a href="/tag/scrapers.html">scrapers</a></li>
-                              <li class="tag-4"><a href="/tag/fabulous.html">fabulous</a></li>
+                              <li class="tag-2"><a href="/tag/geowebdns.html">geowebdns</a></li>
                               <li class="tag-1"><a href="/tag/peopledashboard.html">peopledashboard</a></li>
+                              <li class="tag-1"><a href="/tag/sugar.html">sugar</a></li>
+                              <li class="tag-1"><a href="/tag/hackathon.html">hackathon</a></li>
+                              <li class="tag-1"><a href="/tag/widgets.html">widgets</a></li>
+                              <li class="tag-4"><a href="/tag/fabulous.html">fabulous</a></li>
+                              <li class="tag-3"><a href="/tag/groovebot.html">groovebot</a></li>
+                              <li class="tag-3"><a href="/tag/jquery.html">jQuery</a></li>
+                              <li class="tag-1"><a href="/tag/scrapers.html">scrapers</a></li>
                               <li class="tag-4"><a href="/tag/knowledge.html">knowledge</a></li>
-                              <li class="tag-4"><a href="/tag/opl.html">OPL</a></li>
                               <li class="tag-2"><a href="/tag/openshift.html">openshift</a></li>
-                              <li class="tag-4"><a href="/tag/jquery.html">jQuery</a></li>
+                              <li class="tag-3"><a href="/tag/blog.html">blog</a></li>
+                              <li class="tag-1"><a href="/tag/surs.html">SURS</a></li>
+                              <li class="tag-3"><a href="/tag/data alchemy.html">data alchemy</a></li>
+                              <li class="tag-4"><a href="/tag/hardware.html">hardware</a></li>
+                              <li class="tag-2"><a href="/tag/democracymap.html">democracymap</a></li>
+                              <li class="tag-3"><a href="/tag/polyscraper.html">polyscraper</a></li>
+                              <li class="tag-4"><a href="/tag/pybotwar.html">pybotwar</a></li>
+                              <li class="tag-4"><a href="/tag/opl.html">OPL</a></li>
+                              <li class="tag-3"><a href="/tag/timeline.html">timeline</a></li>
+                              <li class="tag-4"><a href="/tag/wow.html">wow</a></li>
+                              <li class="tag-1"><a href="/tag/floss-seminar.html">FLOSS-seminar</a></li>
+                              <li class="tag-1"><a href="/tag/journalism.html">journalism</a></li>
+                              <li class="tag-4"><a href="/tag/rise.html">Rise</a></li>
+                              <li class="tag-1"><a href="/tag/wikiotics.html">wikiotics</a></li>
+                              <li class="tag-1"><a href="/tag/lemonade.html">lemonade</a></li>
+                              <li class="tag-2"><a href="/tag/election.html">election</a></li>
+                              <li class="tag-4"><a href="/tag/python.html">python</a></li>
+                              <li class="tag-2"><a href="/tag/pydex.html">pyDex</a></li>
                           </ul>
           </div>
                                 <div class="social">

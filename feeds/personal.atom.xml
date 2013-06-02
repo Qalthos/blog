@@ -3,7 +3,7 @@
 been doing recently. First up on the list is the long-overdue
 &lt;a class="reference external" href="https://github.com/Qalthos/groovebot"&gt;Groovebot&lt;/a&gt; update.&lt;/p&gt;
 &lt;p&gt;Before this summer, Groovebot 'worked' on &lt;a class="reference external" href="http://spotify.com/"&gt;Spotify&lt;/a&gt;, and also had a
-fairly useful but undertested &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Music_Player_Daemon"&gt;MPD&lt;/a&gt; backend that worked for me when I
+fairly useful but under-tested &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Music_Player_Daemon"&gt;MPD&lt;/a&gt; backend that worked for me when I
 could get MPD running properly. Unfortunately, I no longer had an active
 Spotify subscription, which meant that I couldn't use the Spotify
 backend, and I had moved off of RIT's campus, meaning I no longer had a
@@ -25,10 +25,10 @@ This means I have to respond to every event GStreamer throws out (which
 is a fair number of them), but most of them can be thrown out without
 looking at them. Some more tweaking later, and PandBot was born, able to
 connect to a user's Pandora station, play music, and thumb songs up or
-down based on user respones in the IRC channel.&lt;/p&gt;
+down based on user response in the IRC channel.&lt;/p&gt;
 &lt;p&gt;At this point, I had been writing new bots each time I added a new
 backend, with a lot of repeated code in each, leading to subtle bugs and
-api implementations that were slowly drifting apart based on individual
+API implementations that were slowly drifting apart based on individual
 needs. This made me a little annoyed, but I didn't have any particular
 need to fix it, so I left it alone. Until an accidental click around the
 Spotify website left me with another Premium subscription (and $10
@@ -41,7 +41,7 @@ and use the proper official API instead.&lt;/p&gt;
 &lt;p&gt;However, in working on MPD and Pandora bots in the meantime had given me
 a number of ideas and fixes that would be problematic to port back to
 Spotify, which meant I had finally gotten an excuse to try to merge the
-three seperate codebases into one unified version. Starting with MPD and
+three separate codebases into one unified version. Starting with MPD and
 Pandora, I merged the files and ran the result through a three-way diff,
 trying to identify important parts of each bot to make sure each worked
 properly after the merge. Next, I looked into the architecture of
@@ -97,16 +97,16 @@ was building, this was not exactly acceptable.&lt;/p&gt;
 when I saw SQLAlchemy errors scroll by every time I reloaded the site.
 My best guess is that SQLAlchemy is failing to create the tables needed
 to run the site and continuing on blindly. Once I realized that, I
-dumped a test db from my local copy to the mysql db, and suddenly
+dumped a test db from my local copy to the MySQL db, and suddenly
 everything was working. Or almost everything, anyway.&lt;/p&gt;
 &lt;p&gt;I could read form the db fine, but any time I tried to modify it, I got
 another dreaded 500 error. I poked into everything I could find to try
 to figure out where it was failing, and finally determined it couldn't
 be on my end, as my local copy worked just as expected.&lt;/p&gt;
-&lt;p&gt;Finally I stumbled across the anwser, almost accidentally. When I moved
-the db from local sqlite to mysql, I failed to set the auto increment
+&lt;p&gt;Finally I stumbled across the answer, almost accidentally. When I moved
+the db from local sqlite to MySQL, I failed to set the auto increment
 setting on the id of my new databases, so when I neglected to provide an
-id for the new entries I was making, mysql quite rightly complained at
+id for the new entries I was making, MySQL quite rightly complained at
 me. Unfortunately, since I can't find how to re-enable debug mode (nor
 should I really try), I wasn't getting any good error messages.
 So what is the site that has been giving me all these troubles? It's a
@@ -160,7 +160,7 @@ music experience. And then we can get back to the OS grooving.&lt;/p&gt;
 pokemon, and game detection, are all new features introduced in this
 version. Old configs should get read properly and get seamlessly updated
 to the new version, though there may be a few bugs in the process.&lt;/p&gt;
-</summary><category term="pyDex"></category></entry><entry><title>Killer Bunnies and the Towering Draw Pile</title><link href="http://qalthos.github.io/blog/killer-bunnies-and-the-towering-draw-pile.html" rel="alternate"></link><updated>2011-01-23T07:12:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-01-23:killer-bunnies-and-the-towering-draw-pile.html</id><summary type="html">&lt;p&gt;There was a hackfest Friday night, and a writeup is coming soon, but
+</summary><category term="pyDex"></category></entry><entry><title>Killer Bunnies and the Towering Draw Pile</title><link href="http://qalthos.github.io/blog/killer-bunnies-and-the-towering-draw-pile.html" rel="alternate"></link><updated>2011-01-23T07:12:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-01-23:killer-bunnies-and-the-towering-draw-pile.html</id><summary type="html">&lt;p&gt;There was a hackathon Friday night, and a write-up is coming soon, but
 first a bit of random chatter.&lt;/p&gt;
 &lt;p&gt;I have, for a few years, been collecting the various pieces that make up
 &lt;a class="reference external" href="http://boardgamegeek.com/boardgame/3699/killer-bunnies-and-the-quest-for-the-magic-carrot"&gt;Killer Bunnies and the Quest for the Magic Carrot&lt;/a&gt;. For Christmas, I
@@ -204,10 +204,10 @@ OLPC. Turns out, it runs pretty well, which isn't too surprising as it
 is written in pure pyGTK and Glade, both of which are well supported in
 Sugar.
 So today, I loaded up my dev files and set to work. First, though, I had
-to clean up my dev branch and finish commiting the few hacks I had
+to clean up my dev branch and finish committing the few hacks I had
 accumulated over the last few months. I finally fixed the zero index bug
 and found I had a problem in my new scraper that was causing all the
-evolution problems. In anyt case, that's all fixed, so my dev branch is
+evolution problems. In any case, that's all fixed, so my dev branch is
 nice and clean and almost ready for the Black/White release in a few
 weeks.
 Getting back to Sugar, I finally found &lt;a class="reference external" href="http://magazine.redhat.com/2007/04/26/building-the-xo-porting-a-pygtk-game-to-sugar-part-two/"&gt;a good tutorial&lt;/a&gt; on *porting*
@@ -231,7 +231,7 @@ be interesting, I'm still pretty laid back from Fan Expo Canada in
 Toronto.&lt;/p&gt;
 &lt;p&gt;My new monitor finally arrived. Well, it arrived Saturday, but the RIT
 post office isn't open on weekends over breaks, so I had to wait until
-this morining. Luckily, it seems that the stand on my last monitor which
+this morning. Luckily, it seems that the stand on my last monitor which
 made me love it so much is a standard VESA mount, so I detached it from
 my old monitor, removed the sad excuse of a stand from my new monitor,
 and now have a beautiful new screen on the beautiful old stand. The new
@@ -264,7 +264,7 @@ technical jargon rather than the more general, descriptive prose.&lt;/p&gt;
 would compile. But then, none of my real code does either, not on the
 first try. The compiler rejects a statement here or there, and when it
 finally runs, the output is all wrong. So I tweak the code, simplify and
-break down long statements, and try to say exactly waht I mean.
+break down long statements, and try to say exactly what I mean.
 Eventually, the code compiles and runs, and does exactly what I want it
 to.&lt;/p&gt;
 &lt;p&gt;How does this relate to being a writer? Well, I follow mostly the same
@@ -281,7 +281,7 @@ without glaring errors to fix, and my personal writing tends to throw
 parsing errors in anyone who isn't me.&lt;/p&gt;
 &lt;p&gt;Hopefully I'll get better at this. At the very least I hope to catch the
 common mistakes here.&lt;/p&gt;
-</summary><category term="introspective"></category></entry><entry><title>pyDex Progress</title><link href="http://qalthos.github.io/blog/pydex-progress.html" rel="alternate"></link><updated>2010-07-10T16:51:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-07-10:pydex-progress.html</id><summary type="html">&lt;p&gt;I've finally gotten around to staging and commiting a few enhancements
+</summary><category term="introspective"></category></entry><entry><title>pyDex Progress</title><link href="http://qalthos.github.io/blog/pydex-progress.html" rel="alternate"></link><updated>2010-07-10T16:51:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-07-10:pydex-progress.html</id><summary type="html">&lt;p&gt;I've finally gotten around to staging and committing a few enhancements
 to the &lt;a class="reference external" href="http://gitorious.org/pydex"&gt;pydex repository&lt;/a&gt;. The more advanced stuff like Isshu pokemon
 and the new file format are still in limbo, naturally, and won't get
 moved to master any time soon since they make older files incompatible,
@@ -290,6 +290,6 @@ I'm also beginning to wonder about dynamically limiting the National
 Pokedex based on the game setting, once that actually does something.
 I've only played Gen IV extensively, but after loading up Yellow on a
 whim, I see how this could be useful. But I'm more concerned with
-bugfixing 1.0 so that it can see the light of daythan tacking on more
+bugfixing 1.0 so that it can see the light of day than tacking on more
 features right now.&lt;/p&gt;
 </summary><category term="pyDex"></category></entry></feed>

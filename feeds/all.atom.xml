@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://qalthos.github.io/blog/" rel="alternate"></link><link href="http://qalthos.github.io/blog/feeds/all.atom.xml" rel="self"></link><id>http://qalthos.github.io/blog/</id><updated>2013-06-01T20:46:00-04:00</updated><entry><title>A note on lxml</title><link href="http://qalthos.github.io/blog/a-note-on-lxml.html" rel="alternate"></link><updated>2013-06-01T20:46:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2013-06-01:a-note-on-lxml.html</id><summary type="html">&lt;p&gt;I've been doing a lot of things with &lt;a class="reference external" href="http://pygal.org"&gt;pygal&lt;/a&gt; lately. It's a really neat tool
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://qalthos.github.io/blog/" rel="alternate"></link><link href="http://qalthos.github.io/blog/feeds/all.atom.xml" rel="self"></link><id>http://qalthos.github.io/blog/</id><updated>2013-06-02T12:00:00-04:00</updated><entry><title>National Day of Civic Hacking Hackathon</title><link href="http://qalthos.github.io/blog/national-day-of-civic-hacking-hackathon.html" rel="alternate"></link><updated>2013-06-02T12:00:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2013-06-02:national-day-of-civic-hacking-hackathon.html</id><summary type="html">&lt;p&gt;One of the projects I worked on during the &lt;a class="reference external" href="http://hackforchange.org/fossrit-rochester-civic-hackathon"&gt;Rochester edition&lt;/a&gt; of the
+&lt;a class="reference external" href="http://hackforchange.org"&gt;National Day of Civic Hacking&lt;/a&gt; hackathon was not actually anything intended
+for the hackathon, but a short project I wrote last summer.&lt;/p&gt;
+</summary><category term="hackathon"></category><category term="timeline"></category><category term="jQuery"></category></entry><entry><title>A note on lxml</title><link href="http://qalthos.github.io/blog/a-note-on-lxml.html" rel="alternate"></link><updated>2013-06-01T20:46:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2013-06-01:a-note-on-lxml.html</id><summary type="html">&lt;p&gt;This post is being written from the &lt;a class="reference external" href="http://hackforchange.org/fossrit-rochester-civic-hackathon"&gt;Rochester edition&lt;/a&gt; of the
+&lt;a class="reference external" href="http://hackforchange.org"&gt;National Day of Civic Hacking&lt;/a&gt; hackathon.&lt;/p&gt;
+&lt;p&gt;I've been doing a lot of things with &lt;a class="reference external" href="http://pygal.org"&gt;pygal&lt;/a&gt; lately. It's a really neat tool
 for making SVG graphs in python. One 'problem' is that it needs &lt;a class="reference external" href="http://lxml.de"&gt;lxml&lt;/a&gt;, and
 that has C extensions that need to be compiled. This isn't too bad, though
 sometimes it makes me stop and install a compiler. The real problem is the
@@ -7,7 +12,14 @@ external header files it needs to compile.&lt;/p&gt;
 &lt;p&gt;NOTE: this blog post is entirely the result of my own laziness. Had I simply
 perused the &lt;a class="reference external" href="http://lxml.de/installation.html#installation"&gt;documentation&lt;/a&gt;, I would have found this much sooner. Thus, this
 post is solely a marker of my own eagerness to get things running quickly.&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;STATIC_DEPS=true&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;After I was asked for the third time how to install lxml, I finally decided I
+would figure out how it works so it could be done properly. I did find out
+what the needed package was, but I also found that if the shell variable
+&lt;tt class="docutils literal"&gt;STATIC_DEPS=true&lt;/tt&gt; was set prior to installation, lxml would seek out and
+download its requirements for you. I don't know how legitimate this is for a
+Python install, but it was certainly quite useful for me and the others
+trying to use lxml. It even works inside a virtualenv, though I don't know why
+it wouldn't.&lt;/p&gt;
 </summary><category term="hackathon"></category><category term="python"></category><category term="wow"></category></entry><entry><title>ditaa Addition</title><link href="http://qalthos.github.io/blog/ditaa-addition.html" rel="alternate"></link><updated>2013-05-15T00:00:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2013-05-15:ditaa-addition.html</id><summary type="html">&lt;p&gt;Recently, while wandering around the Internet, I found a neat little project
 called  &lt;a class="reference external" href="http://ditaa.sourceforge.net/"&gt;ditaa&lt;/a&gt;. The basic idea is it takes a textual representation of a
 diagram, and turns it into a real image. My first thought was that this looked
@@ -25,20 +37,29 @@ render the diagram to SVG instead of PNG. SVG is much better for things like
 simple diagrams, as it is web-native, (all it is is a special kind of XML
 document), and it's vector-based, making it inherently scalable for different
 sized displays. As near as I can tell, ditaa appears to use SVG internally, at
-least to some extent. Ideally, I'd like to try to reimplement it in Python, not
+least to some extent. Ideally, I'd like to try to re-implement it in Python, not
 necessarily for any benefit, but because the problem sounds interesting.&lt;/p&gt;
-</summary><category term="blog"></category></entry><entry><title>Blog Rebuild</title><link href="http://qalthos.github.io/blog/blog-rebuild.html" rel="alternate"></link><updated>2013-04-21T18:03:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2013-04-21:blog-rebuild.html</id><summary type="html">&lt;p&gt;As you may notice, my blog looks a lot different now. On the recommendation of a few FOSSBoxers, I have moved to &lt;a class="reference external" href="http://blog.getpelican.com/"&gt;Pelican&lt;/a&gt;, a Python-based static site generator. The practical upshot of which is that I can now write posts in &lt;a class="reference external" href="http://docutils.sourceforge.net/rst.html"&gt;reStructuredText&lt;/a&gt;, keep the posts themsevles in git, and host the whole thing on &lt;a class="reference external" href="http://pages.github.com/"&gt;GitHub Pages&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;While all of my posts have been successfully moved, not every one has survived intact. in particular, paragraph splits in a number of older blogs have been lost. I will try to rectify those as they crop up, but there's a lot to go through.&lt;/p&gt;
-&lt;p&gt;One of the casualties of the move was the comments. Pelican does not handle comments on its own, and while I can hook up a specialized service like Disqus, I've decided that it isn't worth the effort at present.&lt;/p&gt;
+</summary><category term="blog"></category></entry><entry><title>Blog Rebuild</title><link href="http://qalthos.github.io/blog/blog-rebuild.html" rel="alternate"></link><updated>2013-04-21T18:03:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2013-04-21:blog-rebuild.html</id><summary type="html">&lt;p&gt;As you may notice, my blog looks a lot different now. On the recommendation of
+a few FOSSBoxers, I have moved to &lt;a class="reference external" href="http://blog.getpelican.com/"&gt;Pelican&lt;/a&gt;, a Python-based static site
+generator. The practical upshot of which is that I can now write posts in
+&lt;a class="reference external" href="http://docutils.sourceforge.net/rst.html"&gt;reStructuredText&lt;/a&gt;, keep the posts themselves in git, and host the whole thing
+on &lt;a class="reference external" href="http://pages.github.com/"&gt;GitHub Pages&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;While all of my posts have been successfully moved, not every one has survived
+intact. in particular, paragraph splits in a number of older blogs have been
+lost. I will try to rectify those as they crop up, but there's a lot to go
+through.&lt;/p&gt;
+&lt;p&gt;One of the casualties of the move was the comments. Pelican does not handle
+comments on its own, and while I can hook up a specialized service like Disqus,
+I've decided that it isn't worth the effort at present.&lt;/p&gt;
 </summary><category term="blog"></category></entry><entry><title>American Greetings Hackathon Followup</title><link href="http://qalthos.github.io/blog/american-greetings-hackathon-followup.html" rel="alternate"></link><updated>2013-01-24T22:33:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2013-01-24:american-greetings-hackathon-followup.html</id><summary type="html">&lt;p&gt;Last weekend was the &lt;a class="reference external" href="http://foss.rit.edu/node/425"&gt;American Greetings Hackathon&lt;/a&gt;, and it was one of
 the most successful yet. We got more than 70 people attending and
 working on projects, and most of those projects had at least something
 working by the end of the 24 hours.&lt;/p&gt;
-&lt;p&gt;I worked with &lt;a class="reference external" href="http://blog.helixoide.com/"&gt;Ross Delinger&lt;/a&gt;, with occasional controbutions from &lt;a class="reference external" href="http://www.ryansb.com/"&gt;Ryan
+&lt;p&gt;I worked with &lt;a class="reference external" href="http://blog.helixoide.com/"&gt;Ross Delinger&lt;/a&gt;, with occasional contributions from &lt;a class="reference external" href="http://www.ryansb.com/"&gt;Ryan
 S. Brown&lt;/a&gt; on a project eventually called &lt;a class="reference external" href="http://github.com/ryansb/hetHUD"&gt;netHUD&lt;/a&gt;. The idea was to
 take the new &lt;a class="reference external" href="http://nethackwiki.com/wiki/NetHack_4"&gt;NetHack 4&lt;/a&gt; network &lt;a class="reference external" href="http://nethackwiki.com/wiki/NetHack_4_Network_Protocol"&gt;protocol&lt;/a&gt; and try to make something
-more than just another interface to nethack.&lt;/p&gt;
-&lt;p&gt;Originally, we set out simply to connect to the nethack server and have
+more than just another interface to NetHack.&lt;/p&gt;
+&lt;p&gt;Originally, we set out simply to connect to the NetHack server and have
 a second channel of information. Ideally, we would make calls to the
 server and have it update us about games in progress. This turned out to
 be problematic for a number of reasons, but the most immediate was that
@@ -49,20 +70,20 @@ meant writing a server proxy. This may not have been the only way to do
 it, or even the best way to do it, but that's just how we roll. The
 eventual structure (all written in delicious &lt;a class="reference external" href="http://www.twistedmatrix.com"&gt;twisted&lt;/a&gt; protocols)
 looked something like this:&lt;/p&gt;
-&lt;img alt="Module diagram" class="ditaa" src="static/images/299c3683.png" /&gt;
+&lt;img alt="Module diagram" class="ditaa" src="static/images/04bc3643.png" /&gt;
 &lt;p&gt;tee.py acted as the proxy and sent any messages received from the
-nethack server to the controller, which cached the current state of all
+NetHack server to the controller, which cached the current state of all
 the games and sent updates to any listening netHUD instances. This way,
-you connect to nethack as usual and log in, and then in a second window,
+you connect to NetHack as usual and log in, and then in a second window,
 you connect to the server again on the netHUD port and get a slew of
 information about your current inventory, nearby points of interest (eg.
 monsters, items, traps), and other information. There's a lot more we
 could add to this over time; one of the ideas thrown around at the
-beginning was integration with the nethack wiki, providing additional
+beginning was integration with the NetHack wiki, providing additional
 information about items, monsters, even entire levels.&lt;/p&gt;
-&lt;/p&gt;</summary><category term="hackfest"></category></entry><entry><title>Recent Projects: Democrat &amp; Chronicle</title><link href="http://qalthos.github.io/blog/recent-projects-democrat-chronicle.html" rel="alternate"></link><updated>2012-08-22T22:16:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2012-08-22:recent-projects-democrat-chronicle.html</id><summary type="html">&lt;p&gt;One of the new projects I had this summer was a project proposed by the
+&lt;/p&gt;</summary><category term="hackathon"></category></entry><entry><title>Recent Projects: Democrat &amp; Chronicle</title><link href="http://qalthos.github.io/blog/recent-projects-democrat-chronicle.html" rel="alternate"></link><updated>2012-08-22T22:16:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2012-08-22:recent-projects-democrat-chronicle.html</id><summary type="html">&lt;p&gt;One of the new projects I had this summer was a project proposed by the
 &lt;a class="reference external" href="http://www.democratandchronicle.com/"&gt;Democrat &amp;amp; Chronicle&lt;/a&gt;. The project involved access to a selection of
-emails sent to the Greece school district in the wake of the youtube
+emails sent to the Greece school district in the wake of the YouTube
 video involving several of their students. The idea was that we would
 get a dump of email bodies and try to glean some information out of
 them.&lt;/p&gt;
@@ -78,7 +99,7 @@ only exist for Windows machines which, while not surprising, was
 disappointing. This led me to dig out an old VirtualBox VM with Windows
 XP on it, install the Access drivers from Microsoft, and throw
 LibreOffice on it, too. There's other ways I could have gotten this done
-instead of LibreOfiice, but I was still hoping this could be a simple
+instead of LibreOffice, but I was still hoping this could be a simple
 action at the moment.&lt;/p&gt;
 &lt;p&gt;LibreOffice Base eventually got into the Access file, but then the
 troubles started again. It initially prompted me to save a LibreOffice
@@ -115,7 +136,7 @@ split into two sections, each containing the same sort of stuff.
 FOSS&amp;#64;RIT has done a lot of stuff in the past year, and we need to be
 able to tell people about it.&lt;/p&gt;
 &lt;p&gt;The first section concerned the few things we had done that hadn't yet
-hit &lt;a class="reference external" href="http://foss.rit.edu/timeline/"&gt;Timeline&lt;/a&gt;. This was a fairly sizeable chunk of things, and we
+hit &lt;a class="reference external" href="http://foss.rit.edu/timeline/"&gt;Timeline&lt;/a&gt;. This was a fairly sizable chunk of things, and we
 needed a good, rapid-entry way of getting more events in there. No
 problem, I had done some work on that before, I could get it running and
 dump events in there no problem.&lt;/p&gt;
@@ -140,9 +161,9 @@ timeline page, and I'd rather have them all use one common file than
 make a new one each year, but it works, it's fairly similar to what was
 handwritten last year, and it gets updated every time something gets
 added to Timeline.&lt;/p&gt;
-&lt;/p&gt;</summary><category term="data alchemy"></category><category term="jQuery"></category></entry><entry><title>Recent Projects: Knowledge</title><link href="http://qalthos.github.io/blog/recent-projects-knowledge.html" rel="alternate"></link><updated>2012-08-07T23:39:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2012-08-07:recent-projects-knowledge.html</id><summary type="html">&lt;p&gt;One of the cool features of CIVX that really caught my interest when I
+&lt;/p&gt;</summary><category term="data alchemy"></category><category term="jQuery"></category><category term="timeline"></category></entry><entry><title>Recent Projects: Knowledge</title><link href="http://qalthos.github.io/blog/recent-projects-knowledge.html" rel="alternate"></link><updated>2012-08-07T23:39:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2012-08-07:recent-projects-knowledge.html</id><summary type="html">&lt;p&gt;One of the cool features of CIVX that really caught my interest when I
 first started working on it was the &lt;a class="reference external" href="https://github.com/FOSSRIT/knowledge"&gt;Knowledge DB&lt;/a&gt;. Using the magic of
-Python, Knowledge is a vertical, polymorphic databse for storing
+Python, Knowledge is a vertical, polymorphic database for storing
 knowledge about things, which means very little to anyone, even me.&lt;/p&gt;
 &lt;p&gt;What Knowledge does is it allows you to store anything (or anything
 Python can pickle, at least), as arbitrary collections of Entities and
@@ -151,7 +172,7 @@ Facts.&lt;/p&gt;
 been doing recently. First up on the list is the long-overdue
 &lt;a class="reference external" href="https://github.com/Qalthos/groovebot"&gt;Groovebot&lt;/a&gt; update.&lt;/p&gt;
 &lt;p&gt;Before this summer, Groovebot 'worked' on &lt;a class="reference external" href="http://spotify.com/"&gt;Spotify&lt;/a&gt;, and also had a
-fairly useful but undertested &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Music_Player_Daemon"&gt;MPD&lt;/a&gt; backend that worked for me when I
+fairly useful but under-tested &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Music_Player_Daemon"&gt;MPD&lt;/a&gt; backend that worked for me when I
 could get MPD running properly. Unfortunately, I no longer had an active
 Spotify subscription, which meant that I couldn't use the Spotify
 backend, and I had moved off of RIT's campus, meaning I no longer had a
@@ -173,10 +194,10 @@ This means I have to respond to every event GStreamer throws out (which
 is a fair number of them), but most of them can be thrown out without
 looking at them. Some more tweaking later, and PandBot was born, able to
 connect to a user's Pandora station, play music, and thumb songs up or
-down based on user respones in the IRC channel.&lt;/p&gt;
+down based on user response in the IRC channel.&lt;/p&gt;
 &lt;p&gt;At this point, I had been writing new bots each time I added a new
 backend, with a lot of repeated code in each, leading to subtle bugs and
-api implementations that were slowly drifting apart based on individual
+API implementations that were slowly drifting apart based on individual
 needs. This made me a little annoyed, but I didn't have any particular
 need to fix it, so I left it alone. Until an accidental click around the
 Spotify website left me with another Premium subscription (and $10
@@ -189,7 +210,7 @@ and use the proper official API instead.&lt;/p&gt;
 &lt;p&gt;However, in working on MPD and Pandora bots in the meantime had given me
 a number of ideas and fixes that would be problematic to port back to
 Spotify, which meant I had finally gotten an excuse to try to merge the
-three seperate codebases into one unified version. Starting with MPD and
+three separate codebases into one unified version. Starting with MPD and
 Pandora, I merged the files and ran the result through a three-way diff,
 trying to identify important parts of each bot to make sure each worked
 properly after the merge. Next, I looked into the architecture of
@@ -243,7 +264,7 @@ other yet. As well, there are brand new pretty images for the robots and
 the turrets.&lt;/p&gt;
 &lt;p&gt;There's a few outstanding problems left, but (as long as I don't push
 anything broken) you can have a look at webbotwar in action &lt;a class="reference external" href="webbotwar-qalthos.rhcloud.com"&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;/p&gt;</summary><category term="pybotwar"></category><category term="hackfest"></category><category term="FLOSS-seminar"></category><category term="webbotwar"></category><category term="openshift"></category></entry><entry><title>OpenShift Troubles</title><link href="http://qalthos.github.io/blog/openshift-troubles.html" rel="alternate"></link><updated>2012-02-03T06:47:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2012-02-03:openshift-troubles.html</id><summary type="html">&lt;p&gt;Recently I've been playing with &lt;a class="reference external" href="http://openshift.redhat.com/"&gt;OpenShift&lt;/a&gt;, a new(ish) service from
+&lt;/p&gt;</summary><category term="pybotwar"></category><category term="hackathon"></category><category term="FLOSS-seminar"></category><category term="webbotwar"></category><category term="openshift"></category></entry><entry><title>OpenShift Troubles</title><link href="http://qalthos.github.io/blog/openshift-troubles.html" rel="alternate"></link><updated>2012-02-03T06:47:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2012-02-03:openshift-troubles.html</id><summary type="html">&lt;p&gt;Recently I've been playing with &lt;a class="reference external" href="http://openshift.redhat.com/"&gt;OpenShift&lt;/a&gt;, a new(ish) service from
 Red Hat as a sort of 'push to cloud' deployment strategy. It's
 interesting for people like me who can whip up a site quick, but don't
 necessarily have the framework in place to host it.&lt;/p&gt;
@@ -284,16 +305,16 @@ was building, this was not exactly acceptable.&lt;/p&gt;
 when I saw SQLAlchemy errors scroll by every time I reloaded the site.
 My best guess is that SQLAlchemy is failing to create the tables needed
 to run the site and continuing on blindly. Once I realized that, I
-dumped a test db from my local copy to the mysql db, and suddenly
+dumped a test db from my local copy to the MySQL db, and suddenly
 everything was working. Or almost everything, anyway.&lt;/p&gt;
 &lt;p&gt;I could read form the db fine, but any time I tried to modify it, I got
 another dreaded 500 error. I poked into everything I could find to try
 to figure out where it was failing, and finally determined it couldn't
 be on my end, as my local copy worked just as expected.&lt;/p&gt;
-&lt;p&gt;Finally I stumbled across the anwser, almost accidentally. When I moved
-the db from local sqlite to mysql, I failed to set the auto increment
+&lt;p&gt;Finally I stumbled across the answer, almost accidentally. When I moved
+the db from local sqlite to MySQL, I failed to set the auto increment
 setting on the id of my new databases, so when I neglected to provide an
-id for the new entries I was making, mysql quite rightly complained at
+id for the new entries I was making, MySQL quite rightly complained at
 me. Unfortunately, since I can't find how to re-enable debug mode (nor
 should I really try), I wasn't getting any good error messages.
 So what is the site that has been giving me all these troubles? It's a
@@ -353,7 +374,7 @@ just at the point I would do anything just to see if it would work.&lt;/p&gt;
 different during the build hook than in normal execution. Armed with
 this new knowledge, I headed over to OpenShift's IRC channel to get some
 answers (I had actually been in there for some time prior, just not with
-enough information for themore ruby-oriented users to help).&lt;/p&gt;
+enough information for the more ruby-oriented users to help).&lt;/p&gt;
 &lt;p&gt;They told me that yes, indeed there was a difference. During the build
 step, the database is stopped, hence why I could not connect to it.
 There were, however, hooks for deploy and post_deploy, during both of
@@ -366,12 +387,12 @@ application, not OpenShift), so it looked like I had finally fixed
 deploying a standard TurboGears app. I've no doubt that there's
 something I've left out, but I'm pretty amazed at the progress I've made
 so far, and learned a lot about both OpenShift and TurboGears.&lt;/p&gt;
-</summary><category term="hackfest"></category><category term="FLOSS-seminar"></category><category term="openshift"></category></entry><entry><title>FLOSS Seminar Update</title><link href="http://qalthos.github.io/blog/floss-seminar-update.html" rel="alternate"></link><updated>2012-01-19T17:46:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2012-01-19:floss-seminar-update.html</id><summary type="html">&lt;p&gt;So it's week 5, what has been going on?&lt;/p&gt;
+</summary><category term="hackathon"></category><category term="FLOSS-seminar"></category><category term="openshift"></category></entry><entry><title>FLOSS Seminar Update</title><link href="http://qalthos.github.io/blog/floss-seminar-update.html" rel="alternate"></link><updated>2012-01-19T17:46:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2012-01-19:floss-seminar-update.html</id><summary type="html">&lt;p&gt;So it's week 5, what has been going on?&lt;/p&gt;
 &lt;p&gt;The class has split into three groups, working on different games. My
 group's idea is a social update to the venerable likes of &lt;a class="reference external" href="http://robocode.sourceforge.net/"&gt;robocode&lt;/a&gt;,
 though how exactly that is going to pan out is still debatable.&lt;/p&gt;
 &lt;p&gt;Ideally, this would comprise of a wrapper around the basic game, not
-requring much tweaking of the internals, though a new interface would be
+requiring much tweaking of the internals, though a new interface would be
 required for use on the web. All in all the class is shaping up to be
 pretty interesting.&lt;/p&gt;
 &lt;/p&gt;</summary><category term="FLOSS-seminar"></category></entry><entry><title>First FLOSS Seminar post</title><link href="http://qalthos.github.io/blog/first-floss-seminar-post.html" rel="alternate"></link><updated>2011-12-01T20:22:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-12-01:first-floss-seminar-post.html</id><summary type="html">&lt;p&gt;So this quarter I am taking a &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Free_and_open_source_software#FLOSS"&gt;FLOSS&lt;/a&gt; Seminar being taught by &lt;a class="reference external" href="http://threebean.org"&gt;Bean&lt;/a&gt;
@@ -456,7 +477,7 @@ At this point, though, I have been working on this project for close to
 20 hours today now. Luke is in town and we're all posted up in Remy's
 new place all hacking on our projects together. With any luck a good
 night's sleep will clear my head and give me new ideas for tomorrow.&lt;/p&gt;
-</summary><category term="hackfest"></category><category term="SURS"></category><category term="polyscraper"></category></entry><entry><title>Back up to Speed</title><link href="http://qalthos.github.io/blog/back-up-to-speed.html" rel="alternate"></link><updated>2011-06-21T22:56:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-06-21:back-up-to-speed.html</id><summary type="html">&lt;p&gt;I've almost closed &lt;a class="reference external" href="https://fedorahosted.org/civx/ticket/106"&gt;bug #106&lt;/a&gt;. I've done all I can do for now, until I
+</summary><category term="hackathon"></category><category term="SURS"></category><category term="polyscraper"></category></entry><entry><title>Back up to Speed</title><link href="http://qalthos.github.io/blog/back-up-to-speed.html" rel="alternate"></link><updated>2011-06-21T22:56:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-06-21:back-up-to-speed.html</id><summary type="html">&lt;p&gt;I've almost closed &lt;a class="reference external" href="https://fedorahosted.org/civx/ticket/106"&gt;bug #106&lt;/a&gt;. I've done all I can do for now, until I
 can figure out how to attribute actions to senators. Until then, I
 should comment out the 'actions' tab tomorrow with a note letting
 whoever tries this next what I've already tried.
@@ -555,8 +576,8 @@ fast, but had no persistent storage, so every time the server went down
 it pulled all the info again. And due to the way the scrape was written,
 it pulled all the info for all the senators at once, creating quite a
 bit of lag before the first page showed up. This clearly wasn't going to
-be something we could continue to develpo with.
-Now, I know nothing about caching data, so I did some poiking around in
+be something we could continue to develop with.
+Now, I know nothing about caching data, so I did some poking around in
 CIVX to see how it is done elsewhere. Most of the other caches I found
 in CIVX code were related to caching text feeds, which were not as
 explanatory as I was hoping. Once I felt I had a handle on how things
@@ -576,7 +597,7 @@ for each senator. The first obvious thing I could do is to re-enable the
 memory cache, but this did not seem to help as much as I wanted it to.
 At this point, &lt;a class="reference external" href="lewk.org"&gt;Luke&lt;/a&gt; popped up in chat to sat that Moksha had a
 &lt;a class="reference external" href="http://pypi.python.org/pypi/shove"&gt;Shove&lt;/a&gt; cache it uses for feeds. Sure enough, back in the files I had
-been poking through earlier, there were some refrences to Shove. Back to
+been poking through earlier, there were some references to Shove. Back to
 the net, I started to explore what Shove was and how it could help me.
 It turns out Shove is mostly drop in compatible with shelve, and aims to
 be a more extensible replacement for it. Once I got a handle on how
@@ -647,7 +668,7 @@ You would have to define all the columns, give it a location to look,
 make sure you understood the site's particular dialect and scrubbed out
 any irregularities in their data. What the poly scraper does is it
 replaces all of those individual scrapers and replaces them with one big
-scraper which is smart enough to deal with any url it finds.
+scraper which is smart enough to deal with any URL it finds.
 What I've been doing is adding new sources of data to the polyscraper.
 In particular, yesterday was spent adding the ability to read files off
 of a local disk and properly store them. This, in turn, exposed a few
@@ -671,15 +692,15 @@ the end of the summer.&lt;/p&gt;
 pokemon, and game detection, are all new features introduced in this
 version. Old configs should get read properly and get seamlessly updated
 to the new version, though there may be a few bugs in the process.&lt;/p&gt;
-</summary><category term="pyDex"></category></entry><entry><title>ImagineRIT 2011</title><link href="http://qalthos.github.io/blog/imaginerit-2011.html" rel="alternate"></link><updated>2011-05-08T03:16:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-05-08:imaginerit-2011.html</id><summary type="html">&lt;p&gt;So I've been absent for a while lately, but with good reason. I've been
-preparing for ImagineRIT, which was held earlier today.
+</summary><category term="pyDex"></category></entry><entry><title>Imagine RIT 2011</title><link href="http://qalthos.github.io/blog/imagine-rit-2011.html" rel="alternate"></link><updated>2011-05-08T03:16:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-05-08:imagine-rit-2011.html</id><summary type="html">&lt;p&gt;So I've been absent for a while lately, but with good reason. I've been
+preparing for Imagine RIT, which was held earlier today.
 After pulling possibly my longest day's hack yesterday (1pm to 4am,
 approximately), I woke up at 9 and headed over to the Innovation Center
-to talk to people about FOSS. All day long, the Fossbox was filled with
+to talk to people about FOSS. All day long, the FOSSBox was filled with
 curious people, looking to find out what it is we did. We had kids
 poking around on the OLPCs, checking out our software, and occasionally
 getting lost opening new programs. Every time I finished showing a group
-around all the different projects hosted in the FOSSBOX, a brand new
+around all the different projects hosted in the FOSSBox, a brand new
 group would appear and start asking questions. It was tiring, especially
 on about three hours of sleep, but it was quite fun and exciting showing
 off our work to new people.&lt;/p&gt;
@@ -714,7 +735,7 @@ the candidates.
 But more exciting than the actual business of an politics is the
 election itself, which gives a great opportunity to introduce &lt;a class="reference external" href="http://foss.rit.edu/election/"&gt;Election
 Scraper 2.0&lt;/a&gt;.
-You may remeber the old version. It was largely untested, had a few
+You may remember the old version. It was largely untested, had a few
 design issues, and wasn't very pretty to look at. Through the election
 night, I tweaked and honed it, until finally, mere minutes before the
 close of the last poll, it gave a very close approximation to an
@@ -783,7 +804,7 @@ the school to some of the public who perhaps hadn't heard about what
 we're doing here. And that is cool.&lt;/p&gt;
 </summary><category term="journalism"></category><category term="election"></category></entry><entry><title>Election Night</title><link href="http://qalthos.github.io/blog/election-night.html" rel="alternate"></link><updated>2011-03-29T02:59:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-03-29:election-night.html</id><summary type="html">&lt;p&gt;So election night is tonight. I'll have free time soon.
 The main reason for my lack of time lately has to do with the election.
-On wednesday, just before I was going to classes, I got a call from Remy
+On Wednesday, just before I was going to classes, I got a call from Remy
 asking what my schedule was and if I'd like to take a trip to WXXI to
 talk with Rachel Ward and at their election coverage.
 A few hours later, we're in the lobby of WXXI, being mistaken for
@@ -792,7 +813,7 @@ and waiting for Rachel to come down.
 We took a quick tour of the facilities, met a few other people, and got
 down to business. Monroe County's Board of Elections hosts a server with
 the live election information on a static ip and takes it down once the
-election is done. Further, this information is released ing the form of
+election is done. Further, this information is released in the form of
 a flash app, making it harder to move the information.
 After a short discussion, we decided that we weren't going to get
 anywhere without making a call to the BoE. Rachel did her magic on the
@@ -801,7 +822,7 @@ To make a long story short, this flash application is driven by an XML
 file (actually two) and that the system was provided by the company who
 made the machines and was pretty much a black box as far as they were
 concerned.
-A short bit of googling later, I had identified another location that
+A short bit of Googling later, I had identified another location that
 used these machines: London, Ontario. using their XML files as a base, I
 made a quick scraper that spat out a basic table of races and
 candidates. It wasn't pretty, but it worked.
@@ -813,11 +834,11 @@ and started the countdown.
 The current version of the scraper is now running on
 &lt;a class="reference external" href="http://foss.rit.edu/election/"&gt;http://foss.rit.edu/election/&lt;/a&gt; and should update its information every 30
 seconds, once information exists.&lt;/p&gt;
-</summary><category term="journalism"></category><category term="election"></category></entry><entry><title>Winter Hackathon 2</title><link href="http://qalthos.github.io/blog/winter-hackathon-2.html" rel="alternate"></link><updated>2011-02-19T02:58:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-02-19:winter-hackathon-2.html</id><summary type="html">&lt;p&gt;So I was gonna do a writeup about the winter hackathon.
+</summary><category term="journalism"></category><category term="election"></category></entry><entry><title>Winter Hackathon 2</title><link href="http://qalthos.github.io/blog/winter-hackathon-2.html" rel="alternate"></link><updated>2011-02-19T02:58:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-02-19:winter-hackathon-2.html</id><summary type="html">&lt;p&gt;So I was gonna do a write-up about the winter hackathon.
 That didn't happen too much.
 But there's another one going on now.
 ^__^&lt;/p&gt;
-</summary><category term="hackfest"></category></entry><entry><title>Boston</title><link href="http://qalthos.github.io/blog/boston.html" rel="alternate"></link><updated>2011-01-23T07:14:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-01-23:boston.html</id><summary type="html">&lt;p&gt;So here we are in OLPC HQ, right in the middle of MIT. It's pretty sweet
+</summary><category term="hackathon"></category></entry><entry><title>Boston</title><link href="http://qalthos.github.io/blog/boston.html" rel="alternate"></link><updated>2011-01-23T07:14:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-01-23:boston.html</id><summary type="html">&lt;p&gt;So here we are in OLPC HQ, right in the middle of MIT. It's pretty sweet
 having &lt;a class="reference external" href="http://lewk.org/"&gt;Luke&lt;/a&gt; around again to hack CIVX with us.
 I've had a lot to do in the past few days. Remy's been showing me
 scrapers and models, and I've been helping transition &lt;a class="reference external" href="http://foss.rit.edu/user/17"&gt;Kate's&lt;/a&gt; people
@@ -833,9 +854,9 @@ Unfortunately, that means I had precious little time to pay attention to
 the other teams. Three separate groups hacking away at their own
 projects, tossing ideas about and getting input from a few members
 upstream, not to mention the whole OLPC offices around the corner- this
-was a right proper hackfest, and something that makes me excited for the
+was a right proper hackathon, and something that makes me excited for the
 future of these projects.&lt;/p&gt;
-</summary><category term="peopledashboard"></category><category term="hackfest"></category><category term="widgets"></category><category term="Boston"></category></entry><entry><title>Killer Bunnies and the Towering Draw Pile</title><link href="http://qalthos.github.io/blog/killer-bunnies-and-the-towering-draw-pile.html" rel="alternate"></link><updated>2011-01-23T07:12:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-01-23:killer-bunnies-and-the-towering-draw-pile.html</id><summary type="html">&lt;p&gt;There was a hackfest Friday night, and a writeup is coming soon, but
+</summary><category term="peopledashboard"></category><category term="hackathon"></category><category term="widgets"></category><category term="Boston"></category></entry><entry><title>Killer Bunnies and the Towering Draw Pile</title><link href="http://qalthos.github.io/blog/killer-bunnies-and-the-towering-draw-pile.html" rel="alternate"></link><updated>2011-01-23T07:12:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-01-23:killer-bunnies-and-the-towering-draw-pile.html</id><summary type="html">&lt;p&gt;There was a hackathon Friday night, and a write-up is coming soon, but
 first a bit of random chatter.&lt;/p&gt;
 &lt;p&gt;I have, for a few years, been collecting the various pieces that make up
 &lt;a class="reference external" href="http://boardgamegeek.com/boardgame/3699/killer-bunnies-and-the-quest-for-the-magic-carrot"&gt;Killer Bunnies and the Quest for the Magic Carrot&lt;/a&gt;. For Christmas, I
@@ -879,10 +900,10 @@ OLPC. Turns out, it runs pretty well, which isn't too surprising as it
 is written in pure pyGTK and Glade, both of which are well supported in
 Sugar.
 So today, I loaded up my dev files and set to work. First, though, I had
-to clean up my dev branch and finish commiting the few hacks I had
+to clean up my dev branch and finish committing the few hacks I had
 accumulated over the last few months. I finally fixed the zero index bug
 and found I had a problem in my new scraper that was causing all the
-evolution problems. In anyt case, that's all fixed, so my dev branch is
+evolution problems. In any case, that's all fixed, so my dev branch is
 nice and clean and almost ready for the Black/White release in a few
 weeks.
 Getting back to Sugar, I finally found &lt;a class="reference external" href="http://magazine.redhat.com/2007/04/26/building-the-xo-porting-a-pygtk-game-to-sugar-part-two/"&gt;a good tutorial&lt;/a&gt; on *porting*
@@ -901,7 +922,7 @@ probably get to test it sometime this weekend, maybe even turn it into a
 real activity by then. This is still just a small project, and I doubt
 it will ever go up on Sugar's activities site, but it has given me a
 much better understanding about how non-pygame activities work.&lt;/p&gt;
-</summary><category term="sugar"></category><category term="pyDex"></category></entry><entry><title>Wikiotics Visual Tweak</title><link href="http://qalthos.github.io/blog/wikiotics-visual-tweak.html" rel="alternate"></link><updated>2010-12-08T23:51:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-12-08:wikiotics-visual-tweak.html</id><summary type="html">&lt;p&gt;So &lt;a class="reference external" href="http://trosehfoss.blogspot.com/"&gt;trose&lt;/a&gt; and I have been asked to put abow on the Wikiotics work
+</summary><category term="sugar"></category><category term="pyDex"></category></entry><entry><title>Wikiotics Visual Tweak</title><link href="http://qalthos.github.io/blog/wikiotics-visual-tweak.html" rel="alternate"></link><updated>2010-12-08T23:51:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-12-08:wikiotics-visual-tweak.html</id><summary type="html">&lt;p&gt;So &lt;a class="reference external" href="http://trosehfoss.blogspot.com/"&gt;trose&lt;/a&gt; and I have been asked to put a bow on the Wikiotics work
 while we're between projects. We both hit some bumps at the end of the
 quarter, so there's a few unused hours left to put into this project.
 One of the things we've been tasked with is looking at the CSS and
@@ -1003,7 +1024,7 @@ Getting into yet another python codebase so soon was interesting,
 especially when I had to switch back and forth looking at things
 &lt;a class="reference external" href="http://trosehfoss.blogspot.com/"&gt;Taylor&lt;/a&gt; was doing.
 That's all I really got into for week one, but now that I'm fairly
-comfortable with the various technolologies being used, I think things
+comfortable with the various technologies being used, I think things
 will really start rolling soon&lt;/p&gt;
 </summary><category term="wikiotics"></category></entry><entry><title>Lemons Taking Off</title><link href="http://qalthos.github.io/blog/lemons-taking-off.html" rel="alternate"></link><updated>2010-09-23T14:35:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-09-23:lemons-taking-off.html</id><summary type="html">&lt;p&gt;It looks like Lemonade Stand is taking off for fall quarter's &lt;a class="reference external" href="http://teachingopensource.org/index.php/RIT/The_Course"&gt;HFOSS&lt;/a&gt;
 class. This is quite exciting and there's a number of things I'm looking
@@ -1016,7 +1037,7 @@ The 2.1 release, meanwhile, I would like to focus on usability and
 graphics, as those have been being worked on for the longest so far.
 Whether any of this will work out the way I'm imagining is debatable,
 but I've got a plan and two &lt;a class="reference external" href="http://smw-os.blogspot.com/"&gt;awesome&lt;/a&gt; &lt;a class="reference external" href="http://jtmengel.blogspot.com"&gt;people&lt;/a&gt; working on it with me&lt;/p&gt;
-</summary><category term="lemonade"></category><category term="sugar"></category></entry><entry><title>Refreshing Lemonade</title><link href="http://qalthos.github.io/blog/refreshing-lemonade.html" rel="alternate"></link><updated>2010-09-23T14:04:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-09-23:refreshing-lemonade.html</id><summary type="html">&lt;p&gt;In other news, todayyesterday marked the &lt;a class="reference external" href="http://blog.jlewopensource.com/2010/07/lemonade-stand-release.html"&gt;final release of Lemonade
+</summary><category term="lemonade"></category><category term="sugar"></category></entry><entry><title>Refreshing Lemonade</title><link href="http://qalthos.github.io/blog/refreshing-lemonade.html" rel="alternate"></link><updated>2010-09-23T14:04:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-09-23:refreshing-lemonade.html</id><summary type="html">&lt;p&gt;In other news, yesterday marked the &lt;a class="reference external" href="http://blog.jlewopensource.com/2010/07/lemonade-stand-release.html"&gt;final release of Lemonade
 Stand 2.0&lt;/a&gt;. Now running on the &lt;a class="reference external" href="https://fedorahosted.org/fortune_hunter/wiki/FortuneEngine"&gt;Fortune Engine&lt;/a&gt; and containing 0% of
 my code, this marks an important milestone in my open-source
 &lt;a class="reference external" href="http://sugarlabs.org/"&gt;sugar-based&lt;/a&gt; lemonade stand game as it's still getting developed!
@@ -1039,7 +1060,7 @@ under our belts here at the FOSSBOX. But that's just how we roll here at
 RIT.&lt;/p&gt;
 </summary><category term="wikiotics"></category></entry><entry><title>Almost There...</title><link href="http://qalthos.github.io/blog/almost-there.html" rel="alternate"></link><updated>2010-09-09T18:11:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-09-09:almost-there.html</id><summary type="html">&lt;p&gt;Today I worked my way through more of &lt;a class="reference external" href="http://rebeccanatalie.com"&gt;Rebecca's&lt;/a&gt; changes to the people
 dashboard. It was actually in better condition than I had thought last
-night. The first tab whas the only one with the majority of the changes,
+night. The first tab was the only one with the majority of the changes,
 and most of the changes were easily applied once I understood them-
 which is what I spent hours yesterday trying to do.&lt;/p&gt;
 &lt;p&gt;I have a problem with writing quantities of HTML because they end up as
@@ -1116,13 +1137,13 @@ just for what's in the code. Good old meld, which I had been using, has
 proven itself inadequate to the massive differences between these files.
 Hopefully tomorrow I will have a fresh start from which to sculpt this
 mess I've constructed into its completed form.&lt;/p&gt;
-</summary><category term="peopledashboard"></category></entry><entry><title>Introducing: GeoPirate!</title><link href="http://qalthos.github.io/blog/introducing-geopirate.html" rel="alternate"></link><updated>2010-09-09T18:11:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-09-09:introducing-geopirate.html</id><summary type="html">&lt;p&gt;So I've recieved my apparently mandated CIVX nickname, despite it
+</summary><category term="peopledashboard"></category></entry><entry><title>Introducing: GeoPirate!</title><link href="http://qalthos.github.io/blog/introducing-geopirate.html" rel="alternate"></link><updated>2010-09-09T18:11:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-09-09:introducing-geopirate.html</id><summary type="html">&lt;p&gt;So I've received my apparently mandated CIVX nickname, despite it
 possibly being inaccurate in a week or two. I, along with &lt;a class="reference external" href="http://rebeccanatalie.com/"&gt;Pixel Ninja&lt;/a&gt;
 and &lt;a class="reference external" href="http://foss.rit.edu/user/17"&gt;Python Princess&lt;/a&gt;, have been hacking away at our various tasks
 together for over a week now, and despite the seemingly constant moving
 from place to place, it's a pretty sweet gig.
 My work yesterday was some final polishing of the getall script, and my
-first real push to the geowebdns repository. I'm also workign on a
+first real push to the geowebdns repository. I'm also working on a
 supplemental, informational guide to maintenance. Unfortunately, my
 changes can't quite replace the old script yet, because the import
 script (the one that actually starts to bring the files into the
@@ -1166,8 +1187,8 @@ getting her Mac up to speed was a lot of wait and pray so I switched
 over to Kate's task. Now Kate also has a Mac, but she was set up with
 CIVX long ago and could never quite explain to me how, thanks again to
 arcane commands.
-Anyway, her task involved a particular unicode character in a senator's
-name not playing well with her scraped name-to-url converter magic.
+Anyway, her task involved a particular Unicode character in a senator's
+name not playing well with her scraped name-to-URL converter magic.
 Having only last night read &lt;a class="reference external" href="http://www.kalzumeus.com/2010/06/17/falsehoods-programmers-believe-about-names/"&gt;Falsehoods Programmers Believe About
 Names&lt;/a&gt; off StumbleUpon, I immediately recognized this way as a dead
 end. Sure, you could force all the current names into this pattern, but
@@ -1178,7 +1199,7 @@ each senator had a link to their contact page right in the div we were
 scraping. A bit of poking around later, and I had a 100% reliable link
 to each senator's page, as verified by the senate themselves. Suddenly
 every senator's page worked, without any of this needless mucking about
-in unicode transformations.
+in Unicode transformations.
 Which brought us to our second problem. Most (with one important
 exception) senators have a page hosted on &lt;a class="reference external" href="http://www.nysenate.gov"&gt;http://www.nysenate.gov&lt;/a&gt;, and
 most have a contact page at /senators/first-m-last/contact.
@@ -1192,7 +1213,7 @@ way.
 I suddenly saw an interesting anomaly. Most senators had the contact
 info were styled exactly the same, despite having quite varying styles
 otherwise. Kate had already seen that most of the addresses are together
-in some sort of paragraph tag, and was trying to regex on the contents
+in some sort of paragraph tag, and was trying to regexp on the contents
 of each paragraph on the page. What she hadn't noticed was that every
 page had a &amp;lt;div class=&amp;quot;field-content&amp;quot;&amp;gt; that contained all the contact
 info. Now that, that was something a bit more to go on. Furthermore,
@@ -1225,19 +1246,19 @@ contact information, this is the worst example against automatically
 generated HTML I have had the misfortune of needing to scrape.
 Problem 1: &amp;lt;p &amp;gt;&amp;amp;nbsp;&amp;lt;p /&amp;gt;&amp;lt;br /&amp;gt; I kid you not, this is on the page a
 minimum of 20 times in a row so that his Albany Office is so far below
-the fold so as to be nonexistant. Sometimes there's inline styles,
+the fold so as to be nonexistent. Sometimes there's inline styles,
 sometimes not. One line has a simple space character instead of the
 edgier, hipper &amp;amp;nbsp;. I wanted them all gone.this resulted in five
-separate regexes so python wouldn't get too greedy and remove all the
+separate regexps so python wouldn't get too greedy and remove all the
 content. One to replace &amp;amp;nbsp; with ' ', another to remove all
 whitespace between a closing angle bracket and an opening one, a third
-to remove anything matching style=&amp;quot;*&amp;quot;, a fourth to rmove all the (now)
+to remove anything matching style=&amp;quot;*&amp;quot;, a fourth to remove all the (now)
 empty paragraphs, and a fifth and final one to turn any group of two or
-more consective break tags into a single tag. It is probably fortunate
+more consecutive break tags into a single tag. It is probably fortunate
 that python would not correctly apply my first attempt which was far
 less readable, and more of a one-liner, as I don't know if I could have
 understood it now had I not broken it into its component parts.
-Problem 2 is a bit more of a WTF moment, both beutiful and frightening,
+Problem 2 is a bit more of a WTF moment, both beautiful and frightening,
 so I will reproduce it here verbatim:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 &amp;lt;P style=&amp;quot;TEXT-ALIGN: center&amp;quot;&amp;gt;&amp;lt;SPAN style=&amp;quot;COLOR: #012849; FONT-SIZE:
@@ -1271,7 +1292,7 @@ everyone else had left. I spent the next half hour checking that my
 sanitizer didn't break existing pages (it did, but only minorly) and
 making sure my code was legible.
 At that point, almost ten hours after I had started, I sat back,
-commited my final changes, and decompressed. *This*- this is why I
+committed my final changes, and decompressed. *This*- this is why I
 love open source.&lt;/p&gt;
 </summary><category term="peopledashboard"></category></entry><entry><title>More Conference Calls</title><link href="http://qalthos.github.io/blog/more-conference-calls.html" rel="alternate"></link><updated>2010-09-09T18:11:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-09-09:more-conference-calls.html</id><summary type="html">&lt;p&gt;Every time I go through one of these calls I feel like I come out
 knowing less about the topic discussed. The topics aren't hard, and I
@@ -1287,7 +1308,7 @@ useful to the current task, I have opened up some small part of someone
 else's open source program, and that's really cool.&lt;/p&gt;
 </summary><category term="democracymap"></category><category term="geowebdns"></category></entry><entry><title>Hello, world...</title><link href="http://qalthos.github.io/blog/hello-world.html" rel="alternate"></link><updated>2010-09-09T18:10:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-09-09:hello-world.html</id><summary type="html">&lt;p&gt;This is my first posting despite having been here for a week, because
 the zaniness that was my first week did not allow for such silly things
-as intorductions. Now I finally have some of the infrastructure things
+as introductions. Now I finally have some of the infrastructure things
 worked out, and can report on my findings.
 Work has been progressing on a scraper for &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Shapefile"&gt;shapefiles&lt;/a&gt; for the Senate.
 I've been fairly successful in getting a large amount of data, (up to
@@ -1311,7 +1332,7 @@ pythonic statement (and perhaps also for the fjords).&lt;/p&gt;
 &lt;/p&gt;</summary><category term="democracymap"></category><category term="geowebdns"></category></entry><entry><title>Another Blog</title><link href="http://qalthos.github.io/blog/another-blog.html" rel="alternate"></link><updated>2010-09-07T16:49:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-09-07:another-blog.html</id><summary type="html">&lt;p&gt;Just as I get used to this one, another of my classes requires me to
 keep a blog, and to keep it separate from any other blogs we may keep.
 The new blog is linked at left, but anything interesting will get
-crossposted here and it's likely going to go unmaintained at the
+cross-posted here and it's likely going to go unmaintained at the
 conclusion of the quarter.&lt;/p&gt;
 &lt;p&gt;Anyway, here it is: &lt;a class="reference external" href="other-person.tumblr.com"&gt;other-person.tumblr.com&lt;/a&gt;&lt;/p&gt;
 </summary><category term="journalism"></category></entry><entry><title>Huzzah!</title><link href="http://qalthos.github.io/blog/huzzah.html" rel="alternate"></link><updated>2010-09-06T17:57:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-09-06:huzzah.html</id><summary type="html">&lt;p&gt;Here we are, back at the beginning of another school year. It's going to
@@ -1319,7 +1340,7 @@ be interesting, I'm still pretty laid back from Fan Expo Canada in
 Toronto.&lt;/p&gt;
 &lt;p&gt;My new monitor finally arrived. Well, it arrived Saturday, but the RIT
 post office isn't open on weekends over breaks, so I had to wait until
-this morining. Luckily, it seems that the stand on my last monitor which
+this morning. Luckily, it seems that the stand on my last monitor which
 made me love it so much is a standard VESA mount, so I detached it from
 my old monitor, removed the sad excuse of a stand from my new monitor,
 and now have a beautiful new screen on the beautiful old stand. The new
@@ -1352,7 +1373,7 @@ technical jargon rather than the more general, descriptive prose.&lt;/p&gt;
 would compile. But then, none of my real code does either, not on the
 first try. The compiler rejects a statement here or there, and when it
 finally runs, the output is all wrong. So I tweak the code, simplify and
-break down long statements, and try to say exactly waht I mean.
+break down long statements, and try to say exactly what I mean.
 Eventually, the code compiles and runs, and does exactly what I want it
 to.&lt;/p&gt;
 &lt;p&gt;How does this relate to being a writer? Well, I follow mostly the same
@@ -1369,7 +1390,7 @@ without glaring errors to fix, and my personal writing tends to throw
 parsing errors in anyone who isn't me.&lt;/p&gt;
 &lt;p&gt;Hopefully I'll get better at this. At the very least I hope to catch the
 common mistakes here.&lt;/p&gt;
-</summary><category term="introspective"></category></entry><entry><title>pyDex Progress</title><link href="http://qalthos.github.io/blog/pydex-progress.html" rel="alternate"></link><updated>2010-07-10T16:51:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-07-10:pydex-progress.html</id><summary type="html">&lt;p&gt;I've finally gotten around to staging and commiting a few enhancements
+</summary><category term="introspective"></category></entry><entry><title>pyDex Progress</title><link href="http://qalthos.github.io/blog/pydex-progress.html" rel="alternate"></link><updated>2010-07-10T16:51:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-07-10:pydex-progress.html</id><summary type="html">&lt;p&gt;I've finally gotten around to staging and committing a few enhancements
 to the &lt;a class="reference external" href="http://gitorious.org/pydex"&gt;pydex repository&lt;/a&gt;. The more advanced stuff like Isshu pokemon
 and the new file format are still in limbo, naturally, and won't get
 moved to master any time soon since they make older files incompatible,
@@ -1378,6 +1399,6 @@ I'm also beginning to wonder about dynamically limiting the National
 Pokedex based on the game setting, once that actually does something.
 I've only played Gen IV extensively, but after loading up Yellow on a
 whim, I see how this could be useful. But I'm more concerned with
-bugfixing 1.0 so that it can see the light of daythan tacking on more
+bugfixing 1.0 so that it can see the light of day than tacking on more
 features right now.&lt;/p&gt;
 </summary><category term="pyDex"></category></entry></feed>

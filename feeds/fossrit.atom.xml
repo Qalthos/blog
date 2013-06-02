@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://qalthos.github.io/blog/" rel="alternate"></link><link href="http://qalthos.github.io/blog/feeds/fossrit.atom.xml" rel="self"></link><id>http://qalthos.github.io/blog/</id><updated>2013-06-01T20:46:00-04:00</updated><entry><title>A note on lxml</title><link href="http://qalthos.github.io/blog/a-note-on-lxml.html" rel="alternate"></link><updated>2013-06-01T20:46:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2013-06-01:a-note-on-lxml.html</id><summary type="html">&lt;p&gt;I've been doing a lot of things with &lt;a class="reference external" href="http://pygal.org"&gt;pygal&lt;/a&gt; lately. It's a really neat tool
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://qalthos.github.io/blog/" rel="alternate"></link><link href="http://qalthos.github.io/blog/feeds/fossrit.atom.xml" rel="self"></link><id>http://qalthos.github.io/blog/</id><updated>2013-06-02T12:00:00-04:00</updated><entry><title>National Day of Civic Hacking Hackathon</title><link href="http://qalthos.github.io/blog/national-day-of-civic-hacking-hackathon.html" rel="alternate"></link><updated>2013-06-02T12:00:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2013-06-02:national-day-of-civic-hacking-hackathon.html</id><summary type="html">&lt;p&gt;One of the projects I worked on during the &lt;a class="reference external" href="http://hackforchange.org/fossrit-rochester-civic-hackathon"&gt;Rochester edition&lt;/a&gt; of the
+&lt;a class="reference external" href="http://hackforchange.org"&gt;National Day of Civic Hacking&lt;/a&gt; hackathon was not actually anything intended
+for the hackathon, but a short project I wrote last summer.&lt;/p&gt;
+</summary><category term="hackathon"></category><category term="timeline"></category><category term="jQuery"></category></entry><entry><title>A note on lxml</title><link href="http://qalthos.github.io/blog/a-note-on-lxml.html" rel="alternate"></link><updated>2013-06-01T20:46:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2013-06-01:a-note-on-lxml.html</id><summary type="html">&lt;p&gt;This post is being written from the &lt;a class="reference external" href="http://hackforchange.org/fossrit-rochester-civic-hackathon"&gt;Rochester edition&lt;/a&gt; of the
+&lt;a class="reference external" href="http://hackforchange.org"&gt;National Day of Civic Hacking&lt;/a&gt; hackathon.&lt;/p&gt;
+&lt;p&gt;I've been doing a lot of things with &lt;a class="reference external" href="http://pygal.org"&gt;pygal&lt;/a&gt; lately. It's a really neat tool
 for making SVG graphs in python. One 'problem' is that it needs &lt;a class="reference external" href="http://lxml.de"&gt;lxml&lt;/a&gt;, and
 that has C extensions that need to be compiled. This isn't too bad, though
 sometimes it makes me stop and install a compiler. The real problem is the
@@ -7,16 +12,23 @@ external header files it needs to compile.&lt;/p&gt;
 &lt;p&gt;NOTE: this blog post is entirely the result of my own laziness. Had I simply
 perused the &lt;a class="reference external" href="http://lxml.de/installation.html#installation"&gt;documentation&lt;/a&gt;, I would have found this much sooner. Thus, this
 post is solely a marker of my own eagerness to get things running quickly.&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;STATIC_DEPS=true&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;After I was asked for the third time how to install lxml, I finally decided I
+would figure out how it works so it could be done properly. I did find out
+what the needed package was, but I also found that if the shell variable
+&lt;tt class="docutils literal"&gt;STATIC_DEPS=true&lt;/tt&gt; was set prior to installation, lxml would seek out and
+download its requirements for you. I don't know how legitimate this is for a
+Python install, but it was certainly quite useful for me and the others
+trying to use lxml. It even works inside a virtualenv, though I don't know why
+it wouldn't.&lt;/p&gt;
 </summary><category term="hackathon"></category><category term="python"></category><category term="wow"></category></entry><entry><title>American Greetings Hackathon Followup</title><link href="http://qalthos.github.io/blog/american-greetings-hackathon-followup.html" rel="alternate"></link><updated>2013-01-24T22:33:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2013-01-24:american-greetings-hackathon-followup.html</id><summary type="html">&lt;p&gt;Last weekend was the &lt;a class="reference external" href="http://foss.rit.edu/node/425"&gt;American Greetings Hackathon&lt;/a&gt;, and it was one of
 the most successful yet. We got more than 70 people attending and
 working on projects, and most of those projects had at least something
 working by the end of the 24 hours.&lt;/p&gt;
-&lt;p&gt;I worked with &lt;a class="reference external" href="http://blog.helixoide.com/"&gt;Ross Delinger&lt;/a&gt;, with occasional controbutions from &lt;a class="reference external" href="http://www.ryansb.com/"&gt;Ryan
+&lt;p&gt;I worked with &lt;a class="reference external" href="http://blog.helixoide.com/"&gt;Ross Delinger&lt;/a&gt;, with occasional contributions from &lt;a class="reference external" href="http://www.ryansb.com/"&gt;Ryan
 S. Brown&lt;/a&gt; on a project eventually called &lt;a class="reference external" href="http://github.com/ryansb/hetHUD"&gt;netHUD&lt;/a&gt;. The idea was to
 take the new &lt;a class="reference external" href="http://nethackwiki.com/wiki/NetHack_4"&gt;NetHack 4&lt;/a&gt; network &lt;a class="reference external" href="http://nethackwiki.com/wiki/NetHack_4_Network_Protocol"&gt;protocol&lt;/a&gt; and try to make something
-more than just another interface to nethack.&lt;/p&gt;
-&lt;p&gt;Originally, we set out simply to connect to the nethack server and have
+more than just another interface to NetHack.&lt;/p&gt;
+&lt;p&gt;Originally, we set out simply to connect to the NetHack server and have
 a second channel of information. Ideally, we would make calls to the
 server and have it update us about games in progress. This turned out to
 be problematic for a number of reasons, but the most immediate was that
@@ -27,20 +39,20 @@ meant writing a server proxy. This may not have been the only way to do
 it, or even the best way to do it, but that's just how we roll. The
 eventual structure (all written in delicious &lt;a class="reference external" href="http://www.twistedmatrix.com"&gt;twisted&lt;/a&gt; protocols)
 looked something like this:&lt;/p&gt;
-&lt;img alt="Module diagram" class="ditaa" src="static/images/299c3683.png" /&gt;
+&lt;img alt="Module diagram" class="ditaa" src="static/images/04bc3643.png" /&gt;
 &lt;p&gt;tee.py acted as the proxy and sent any messages received from the
-nethack server to the controller, which cached the current state of all
+NetHack server to the controller, which cached the current state of all
 the games and sent updates to any listening netHUD instances. This way,
-you connect to nethack as usual and log in, and then in a second window,
+you connect to NetHack as usual and log in, and then in a second window,
 you connect to the server again on the netHUD port and get a slew of
 information about your current inventory, nearby points of interest (eg.
 monsters, items, traps), and other information. There's a lot more we
 could add to this over time; one of the ideas thrown around at the
-beginning was integration with the nethack wiki, providing additional
+beginning was integration with the NetHack wiki, providing additional
 information about items, monsters, even entire levels.&lt;/p&gt;
-&lt;/p&gt;</summary><category term="hackfest"></category></entry><entry><title>Recent Projects: Democrat &amp; Chronicle</title><link href="http://qalthos.github.io/blog/recent-projects-democrat-chronicle.html" rel="alternate"></link><updated>2012-08-22T22:16:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2012-08-22:recent-projects-democrat-chronicle.html</id><summary type="html">&lt;p&gt;One of the new projects I had this summer was a project proposed by the
+&lt;/p&gt;</summary><category term="hackathon"></category></entry><entry><title>Recent Projects: Democrat &amp; Chronicle</title><link href="http://qalthos.github.io/blog/recent-projects-democrat-chronicle.html" rel="alternate"></link><updated>2012-08-22T22:16:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2012-08-22:recent-projects-democrat-chronicle.html</id><summary type="html">&lt;p&gt;One of the new projects I had this summer was a project proposed by the
 &lt;a class="reference external" href="http://www.democratandchronicle.com/"&gt;Democrat &amp;amp; Chronicle&lt;/a&gt;. The project involved access to a selection of
-emails sent to the Greece school district in the wake of the youtube
+emails sent to the Greece school district in the wake of the YouTube
 video involving several of their students. The idea was that we would
 get a dump of email bodies and try to glean some information out of
 them.&lt;/p&gt;
@@ -56,7 +68,7 @@ only exist for Windows machines which, while not surprising, was
 disappointing. This led me to dig out an old VirtualBox VM with Windows
 XP on it, install the Access drivers from Microsoft, and throw
 LibreOffice on it, too. There's other ways I could have gotten this done
-instead of LibreOfiice, but I was still hoping this could be a simple
+instead of LibreOffice, but I was still hoping this could be a simple
 action at the moment.&lt;/p&gt;
 &lt;p&gt;LibreOffice Base eventually got into the Access file, but then the
 troubles started again. It initially prompted me to save a LibreOffice
@@ -93,7 +105,7 @@ split into two sections, each containing the same sort of stuff.
 FOSS&amp;#64;RIT has done a lot of stuff in the past year, and we need to be
 able to tell people about it.&lt;/p&gt;
 &lt;p&gt;The first section concerned the few things we had done that hadn't yet
-hit &lt;a class="reference external" href="http://foss.rit.edu/timeline/"&gt;Timeline&lt;/a&gt;. This was a fairly sizeable chunk of things, and we
+hit &lt;a class="reference external" href="http://foss.rit.edu/timeline/"&gt;Timeline&lt;/a&gt;. This was a fairly sizable chunk of things, and we
 needed a good, rapid-entry way of getting more events in there. No
 problem, I had done some work on that before, I could get it running and
 dump events in there no problem.&lt;/p&gt;
@@ -118,7 +130,7 @@ timeline page, and I'd rather have them all use one common file than
 make a new one each year, but it works, it's fairly similar to what was
 handwritten last year, and it gets updated every time something gets
 added to Timeline.&lt;/p&gt;
-&lt;/p&gt;</summary><category term="data alchemy"></category><category term="jQuery"></category></entry><entry><title>Final Stretch</title><link href="http://qalthos.github.io/blog/final-stretch.html" rel="alternate"></link><updated>2012-02-29T16:15:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2012-02-29:final-stretch.html</id><summary type="html">&lt;p&gt;So the past two days have been madness trying to get the recently
+&lt;/p&gt;</summary><category term="data alchemy"></category><category term="jQuery"></category><category term="timeline"></category></entry><entry><title>Final Stretch</title><link href="http://qalthos.github.io/blog/final-stretch.html" rel="alternate"></link><updated>2012-02-29T16:15:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2012-02-29:final-stretch.html</id><summary type="html">&lt;p&gt;So the past two days have been madness trying to get the recently
 christened WebBotWar (or just WebBot) to actually work on the web.&lt;/p&gt;
 &lt;p&gt;We had it working locally some time last week (I think... the days are
 really starting to mush together), but OpenShift was a whole other
@@ -157,7 +169,7 @@ other yet. As well, there are brand new pretty images for the robots and
 the turrets.&lt;/p&gt;
 &lt;p&gt;There's a few outstanding problems left, but (as long as I don't push
 anything broken) you can have a look at webbotwar in action &lt;a class="reference external" href="webbotwar-qalthos.rhcloud.com"&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;/p&gt;</summary><category term="pybotwar"></category><category term="hackfest"></category><category term="FLOSS-seminar"></category><category term="webbotwar"></category><category term="openshift"></category></entry><entry><title>TurboGears2 on OpenShift, just like it should be</title><link href="http://qalthos.github.io/blog/turbogears2-on-openshift-just-like-it-should-be.html" rel="alternate"></link><updated>2012-02-03T06:47:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2012-02-03:turbogears2-on-openshift-just-like-it-should-be.html</id><summary type="html">&lt;p&gt;After much work and many trials, I finally have an app pushed to
+&lt;/p&gt;</summary><category term="pybotwar"></category><category term="hackathon"></category><category term="FLOSS-seminar"></category><category term="webbotwar"></category><category term="openshift"></category></entry><entry><title>TurboGears2 on OpenShift, just like it should be</title><link href="http://qalthos.github.io/blog/turbogears2-on-openshift-just-like-it-should-be.html" rel="alternate"></link><updated>2012-02-03T06:47:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2012-02-03:turbogears2-on-openshift-just-like-it-should-be.html</id><summary type="html">&lt;p&gt;After much work and many trials, I finally have an app pushed to
 OpenShift with no manual tweaking necessary. As often happens with these
 things, the solution was much simpler than expected.&lt;/p&gt;
 &lt;p&gt;Note: I still don't have a foolproof 'follow this' solution ready, as
@@ -203,7 +215,7 @@ just at the point I would do anything just to see if it would work.&lt;/p&gt;
 different during the build hook than in normal execution. Armed with
 this new knowledge, I headed over to OpenShift's IRC channel to get some
 answers (I had actually been in there for some time prior, just not with
-enough information for themore ruby-oriented users to help).&lt;/p&gt;
+enough information for the more ruby-oriented users to help).&lt;/p&gt;
 &lt;p&gt;They told me that yes, indeed there was a difference. During the build
 step, the database is stopped, hence why I could not connect to it.
 There were, however, hooks for deploy and post_deploy, during both of
@@ -216,12 +228,12 @@ application, not OpenShift), so it looked like I had finally fixed
 deploying a standard TurboGears app. I've no doubt that there's
 something I've left out, but I'm pretty amazed at the progress I've made
 so far, and learned a lot about both OpenShift and TurboGears.&lt;/p&gt;
-</summary><category term="hackfest"></category><category term="FLOSS-seminar"></category><category term="openshift"></category></entry><entry><title>FLOSS Seminar Update</title><link href="http://qalthos.github.io/blog/floss-seminar-update.html" rel="alternate"></link><updated>2012-01-19T17:46:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2012-01-19:floss-seminar-update.html</id><summary type="html">&lt;p&gt;So it's week 5, what has been going on?&lt;/p&gt;
+</summary><category term="hackathon"></category><category term="FLOSS-seminar"></category><category term="openshift"></category></entry><entry><title>FLOSS Seminar Update</title><link href="http://qalthos.github.io/blog/floss-seminar-update.html" rel="alternate"></link><updated>2012-01-19T17:46:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2012-01-19:floss-seminar-update.html</id><summary type="html">&lt;p&gt;So it's week 5, what has been going on?&lt;/p&gt;
 &lt;p&gt;The class has split into three groups, working on different games. My
 group's idea is a social update to the venerable likes of &lt;a class="reference external" href="http://robocode.sourceforge.net/"&gt;robocode&lt;/a&gt;,
 though how exactly that is going to pan out is still debatable.&lt;/p&gt;
 &lt;p&gt;Ideally, this would comprise of a wrapper around the basic game, not
-requring much tweaking of the internals, though a new interface would be
+requiring much tweaking of the internals, though a new interface would be
 required for use on the web. All in all the class is shaping up to be
 pretty interesting.&lt;/p&gt;
 &lt;/p&gt;</summary><category term="FLOSS-seminar"></category></entry><entry><title>First FLOSS Seminar post</title><link href="http://qalthos.github.io/blog/first-floss-seminar-post.html" rel="alternate"></link><updated>2011-12-01T20:22:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-12-01:first-floss-seminar-post.html</id><summary type="html">&lt;p&gt;So this quarter I am taking a &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Free_and_open_source_software#FLOSS"&gt;FLOSS&lt;/a&gt; Seminar being taught by &lt;a class="reference external" href="http://threebean.org"&gt;Bean&lt;/a&gt;
@@ -229,15 +241,15 @@ which should be pretty awesome. As a graduate student (as well as a
 fairly advanced FLOSS citizen) there are a few extra things going to be
 required of me, and we're working on ironing out the exact details now.
 It looks like it's going to be a really cool quarter.&lt;/p&gt;
-</summary><category term="FLOSS-seminar"></category></entry><entry><title>ImagineRIT 2011</title><link href="http://qalthos.github.io/blog/imaginerit-2011.html" rel="alternate"></link><updated>2011-05-08T03:16:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-05-08:imaginerit-2011.html</id><summary type="html">&lt;p&gt;So I've been absent for a while lately, but with good reason. I've been
-preparing for ImagineRIT, which was held earlier today.
+</summary><category term="FLOSS-seminar"></category></entry><entry><title>Imagine RIT 2011</title><link href="http://qalthos.github.io/blog/imagine-rit-2011.html" rel="alternate"></link><updated>2011-05-08T03:16:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-05-08:imagine-rit-2011.html</id><summary type="html">&lt;p&gt;So I've been absent for a while lately, but with good reason. I've been
+preparing for Imagine RIT, which was held earlier today.
 After pulling possibly my longest day's hack yesterday (1pm to 4am,
 approximately), I woke up at 9 and headed over to the Innovation Center
-to talk to people about FOSS. All day long, the Fossbox was filled with
+to talk to people about FOSS. All day long, the FOSSBox was filled with
 curious people, looking to find out what it is we did. We had kids
 poking around on the OLPCs, checking out our software, and occasionally
 getting lost opening new programs. Every time I finished showing a group
-around all the different projects hosted in the FOSSBOX, a brand new
+around all the different projects hosted in the FOSSBox, a brand new
 group would appear and start asking questions. It was tiring, especially
 on about three hours of sleep, but it was quite fun and exciting showing
 off our work to new people.&lt;/p&gt;
@@ -272,7 +284,7 @@ the candidates.
 But more exciting than the actual business of an politics is the
 election itself, which gives a great opportunity to introduce &lt;a class="reference external" href="http://foss.rit.edu/election/"&gt;Election
 Scraper 2.0&lt;/a&gt;.
-You may remeber the old version. It was largely untested, had a few
+You may remember the old version. It was largely untested, had a few
 design issues, and wasn't very pretty to look at. Through the election
 night, I tweaked and honed it, until finally, mere minutes before the
 close of the last poll, it gave a very close approximation to an
@@ -341,7 +353,7 @@ the school to some of the public who perhaps hadn't heard about what
 we're doing here. And that is cool.&lt;/p&gt;
 </summary><category term="journalism"></category><category term="election"></category></entry><entry><title>Election Night</title><link href="http://qalthos.github.io/blog/election-night.html" rel="alternate"></link><updated>2011-03-29T02:59:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-03-29:election-night.html</id><summary type="html">&lt;p&gt;So election night is tonight. I'll have free time soon.
 The main reason for my lack of time lately has to do with the election.
-On wednesday, just before I was going to classes, I got a call from Remy
+On Wednesday, just before I was going to classes, I got a call from Remy
 asking what my schedule was and if I'd like to take a trip to WXXI to
 talk with Rachel Ward and at their election coverage.
 A few hours later, we're in the lobby of WXXI, being mistaken for
@@ -350,7 +362,7 @@ and waiting for Rachel to come down.
 We took a quick tour of the facilities, met a few other people, and got
 down to business. Monroe County's Board of Elections hosts a server with
 the live election information on a static ip and takes it down once the
-election is done. Further, this information is released ing the form of
+election is done. Further, this information is released in the form of
 a flash app, making it harder to move the information.
 After a short discussion, we decided that we weren't going to get
 anywhere without making a call to the BoE. Rachel did her magic on the
@@ -359,7 +371,7 @@ To make a long story short, this flash application is driven by an XML
 file (actually two) and that the system was provided by the company who
 made the machines and was pretty much a black box as far as they were
 concerned.
-A short bit of googling later, I had identified another location that
+A short bit of Googling later, I had identified another location that
 used these machines: London, Ontario. using their XML files as a base, I
 made a quick scraper that spat out a basic table of races and
 candidates. It wasn't pretty, but it worked.
@@ -371,11 +383,11 @@ and started the countdown.
 The current version of the scraper is now running on
 &lt;a class="reference external" href="http://foss.rit.edu/election/"&gt;http://foss.rit.edu/election/&lt;/a&gt; and should update its information every 30
 seconds, once information exists.&lt;/p&gt;
-</summary><category term="journalism"></category><category term="election"></category></entry><entry><title>Winter Hackathon 2</title><link href="http://qalthos.github.io/blog/winter-hackathon-2.html" rel="alternate"></link><updated>2011-02-19T02:58:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-02-19:winter-hackathon-2.html</id><summary type="html">&lt;p&gt;So I was gonna do a writeup about the winter hackathon.
+</summary><category term="journalism"></category><category term="election"></category></entry><entry><title>Winter Hackathon 2</title><link href="http://qalthos.github.io/blog/winter-hackathon-2.html" rel="alternate"></link><updated>2011-02-19T02:58:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-02-19:winter-hackathon-2.html</id><summary type="html">&lt;p&gt;So I was gonna do a write-up about the winter hackathon.
 That didn't happen too much.
 But there's another one going on now.
 ^__^&lt;/p&gt;
-</summary><category term="hackfest"></category></entry><entry><title>Wikiotics Visual Tweak</title><link href="http://qalthos.github.io/blog/wikiotics-visual-tweak.html" rel="alternate"></link><updated>2010-12-08T23:51:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-12-08:wikiotics-visual-tweak.html</id><summary type="html">&lt;p&gt;So &lt;a class="reference external" href="http://trosehfoss.blogspot.com/"&gt;trose&lt;/a&gt; and I have been asked to put abow on the Wikiotics work
+</summary><category term="hackathon"></category></entry><entry><title>Wikiotics Visual Tweak</title><link href="http://qalthos.github.io/blog/wikiotics-visual-tweak.html" rel="alternate"></link><updated>2010-12-08T23:51:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-12-08:wikiotics-visual-tweak.html</id><summary type="html">&lt;p&gt;So &lt;a class="reference external" href="http://trosehfoss.blogspot.com/"&gt;trose&lt;/a&gt; and I have been asked to put a bow on the Wikiotics work
 while we're between projects. We both hit some bumps at the end of the
 quarter, so there's a few unused hours left to put into this project.
 One of the things we've been tasked with is looking at the CSS and
@@ -477,7 +489,7 @@ Getting into yet another python codebase so soon was interesting,
 especially when I had to switch back and forth looking at things
 &lt;a class="reference external" href="http://trosehfoss.blogspot.com/"&gt;Taylor&lt;/a&gt; was doing.
 That's all I really got into for week one, but now that I'm fairly
-comfortable with the various technolologies being used, I think things
+comfortable with the various technologies being used, I think things
 will really start rolling soon&lt;/p&gt;
 </summary><category term="wikiotics"></category></entry><entry><title>Lemons Taking Off</title><link href="http://qalthos.github.io/blog/lemons-taking-off.html" rel="alternate"></link><updated>2010-09-23T14:35:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-09-23:lemons-taking-off.html</id><summary type="html">&lt;p&gt;It looks like Lemonade Stand is taking off for fall quarter's &lt;a class="reference external" href="http://teachingopensource.org/index.php/RIT/The_Course"&gt;HFOSS&lt;/a&gt;
 class. This is quite exciting and there's a number of things I'm looking
@@ -490,7 +502,7 @@ The 2.1 release, meanwhile, I would like to focus on usability and
 graphics, as those have been being worked on for the longest so far.
 Whether any of this will work out the way I'm imagining is debatable,
 but I've got a plan and two &lt;a class="reference external" href="http://smw-os.blogspot.com/"&gt;awesome&lt;/a&gt; &lt;a class="reference external" href="http://jtmengel.blogspot.com"&gt;people&lt;/a&gt; working on it with me&lt;/p&gt;
-</summary><category term="lemonade"></category><category term="sugar"></category></entry><entry><title>Refreshing Lemonade</title><link href="http://qalthos.github.io/blog/refreshing-lemonade.html" rel="alternate"></link><updated>2010-09-23T14:04:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-09-23:refreshing-lemonade.html</id><summary type="html">&lt;p&gt;In other news, todayyesterday marked the &lt;a class="reference external" href="http://blog.jlewopensource.com/2010/07/lemonade-stand-release.html"&gt;final release of Lemonade
+</summary><category term="lemonade"></category><category term="sugar"></category></entry><entry><title>Refreshing Lemonade</title><link href="http://qalthos.github.io/blog/refreshing-lemonade.html" rel="alternate"></link><updated>2010-09-23T14:04:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-09-23:refreshing-lemonade.html</id><summary type="html">&lt;p&gt;In other news, yesterday marked the &lt;a class="reference external" href="http://blog.jlewopensource.com/2010/07/lemonade-stand-release.html"&gt;final release of Lemonade
 Stand 2.0&lt;/a&gt;. Now running on the &lt;a class="reference external" href="https://fedorahosted.org/fortune_hunter/wiki/FortuneEngine"&gt;Fortune Engine&lt;/a&gt; and containing 0% of
 my code, this marks an important milestone in my open-source
 &lt;a class="reference external" href="http://sugarlabs.org/"&gt;sugar-based&lt;/a&gt; lemonade stand game as it's still getting developed!

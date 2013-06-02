@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://qalthos.github.io/blog/" rel="alternate"></link><link href="http://qalthos.github.io/blog/feeds/civx.atom.xml" rel="self"></link><id>http://qalthos.github.io/blog/</id><updated>2012-08-07T23:39:00-04:00</updated><entry><title>Recent Projects: Knowledge</title><link href="http://qalthos.github.io/blog/recent-projects-knowledge.html" rel="alternate"></link><updated>2012-08-07T23:39:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2012-08-07:recent-projects-knowledge.html</id><summary type="html">&lt;p&gt;One of the cool features of CIVX that really caught my interest when I
 first started working on it was the &lt;a class="reference external" href="https://github.com/FOSSRIT/knowledge"&gt;Knowledge DB&lt;/a&gt;. Using the magic of
-Python, Knowledge is a vertical, polymorphic databse for storing
+Python, Knowledge is a vertical, polymorphic database for storing
 knowledge about things, which means very little to anyone, even me.&lt;/p&gt;
 &lt;p&gt;What Knowledge does is it allows you to store anything (or anything
 Python can pickle, at least), as arbitrary collections of Entities and
@@ -48,7 +48,7 @@ At this point, though, I have been working on this project for close to
 20 hours today now. Luke is in town and we're all posted up in Remy's
 new place all hacking on our projects together. With any luck a good
 night's sleep will clear my head and give me new ideas for tomorrow.&lt;/p&gt;
-</summary><category term="hackfest"></category><category term="SURS"></category><category term="polyscraper"></category></entry><entry><title>Back up to Speed</title><link href="http://qalthos.github.io/blog/back-up-to-speed.html" rel="alternate"></link><updated>2011-06-21T22:56:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-06-21:back-up-to-speed.html</id><summary type="html">&lt;p&gt;I've almost closed &lt;a class="reference external" href="https://fedorahosted.org/civx/ticket/106"&gt;bug #106&lt;/a&gt;. I've done all I can do for now, until I
+</summary><category term="hackathon"></category><category term="SURS"></category><category term="polyscraper"></category></entry><entry><title>Back up to Speed</title><link href="http://qalthos.github.io/blog/back-up-to-speed.html" rel="alternate"></link><updated>2011-06-21T22:56:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-06-21:back-up-to-speed.html</id><summary type="html">&lt;p&gt;I've almost closed &lt;a class="reference external" href="https://fedorahosted.org/civx/ticket/106"&gt;bug #106&lt;/a&gt;. I've done all I can do for now, until I
 can figure out how to attribute actions to senators. Until then, I
 should comment out the 'actions' tab tomorrow with a note letting
 whoever tries this next what I've already tried.
@@ -147,8 +147,8 @@ fast, but had no persistent storage, so every time the server went down
 it pulled all the info again. And due to the way the scrape was written,
 it pulled all the info for all the senators at once, creating quite a
 bit of lag before the first page showed up. This clearly wasn't going to
-be something we could continue to develpo with.
-Now, I know nothing about caching data, so I did some poiking around in
+be something we could continue to develop with.
+Now, I know nothing about caching data, so I did some poking around in
 CIVX to see how it is done elsewhere. Most of the other caches I found
 in CIVX code were related to caching text feeds, which were not as
 explanatory as I was hoping. Once I felt I had a handle on how things
@@ -168,7 +168,7 @@ for each senator. The first obvious thing I could do is to re-enable the
 memory cache, but this did not seem to help as much as I wanted it to.
 At this point, &lt;a class="reference external" href="lewk.org"&gt;Luke&lt;/a&gt; popped up in chat to sat that Moksha had a
 &lt;a class="reference external" href="http://pypi.python.org/pypi/shove"&gt;Shove&lt;/a&gt; cache it uses for feeds. Sure enough, back in the files I had
-been poking through earlier, there were some refrences to Shove. Back to
+been poking through earlier, there were some references to Shove. Back to
 the net, I started to explore what Shove was and how it could help me.
 It turns out Shove is mostly drop in compatible with shelve, and aims to
 be a more extensible replacement for it. Once I got a handle on how
@@ -239,7 +239,7 @@ You would have to define all the columns, give it a location to look,
 make sure you understood the site's particular dialect and scrubbed out
 any irregularities in their data. What the poly scraper does is it
 replaces all of those individual scrapers and replaces them with one big
-scraper which is smart enough to deal with any url it finds.
+scraper which is smart enough to deal with any URL it finds.
 What I've been doing is adding new sources of data to the polyscraper.
 In particular, yesterday was spent adding the ability to read files off
 of a local disk and properly store them. This, in turn, exposed a few
@@ -274,11 +274,11 @@ Unfortunately, that means I had precious little time to pay attention to
 the other teams. Three separate groups hacking away at their own
 projects, tossing ideas about and getting input from a few members
 upstream, not to mention the whole OLPC offices around the corner- this
-was a right proper hackfest, and something that makes me excited for the
+was a right proper hackathon, and something that makes me excited for the
 future of these projects.&lt;/p&gt;
-</summary><category term="peopledashboard"></category><category term="hackfest"></category><category term="widgets"></category><category term="Boston"></category></entry><entry><title>Almost There...</title><link href="http://qalthos.github.io/blog/almost-there.html" rel="alternate"></link><updated>2010-09-09T18:11:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-09-09:almost-there.html</id><summary type="html">&lt;p&gt;Today I worked my way through more of &lt;a class="reference external" href="http://rebeccanatalie.com"&gt;Rebecca's&lt;/a&gt; changes to the people
+</summary><category term="peopledashboard"></category><category term="hackathon"></category><category term="widgets"></category><category term="Boston"></category></entry><entry><title>Almost There...</title><link href="http://qalthos.github.io/blog/almost-there.html" rel="alternate"></link><updated>2010-09-09T18:11:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-09-09:almost-there.html</id><summary type="html">&lt;p&gt;Today I worked my way through more of &lt;a class="reference external" href="http://rebeccanatalie.com"&gt;Rebecca's&lt;/a&gt; changes to the people
 dashboard. It was actually in better condition than I had thought last
-night. The first tab whas the only one with the majority of the changes,
+night. The first tab was the only one with the majority of the changes,
 and most of the changes were easily applied once I understood them-
 which is what I spent hours yesterday trying to do.&lt;/p&gt;
 &lt;p&gt;I have a problem with writing quantities of HTML because they end up as
@@ -355,13 +355,13 @@ just for what's in the code. Good old meld, which I had been using, has
 proven itself inadequate to the massive differences between these files.
 Hopefully tomorrow I will have a fresh start from which to sculpt this
 mess I've constructed into its completed form.&lt;/p&gt;
-</summary><category term="peopledashboard"></category></entry><entry><title>Introducing: GeoPirate!</title><link href="http://qalthos.github.io/blog/introducing-geopirate.html" rel="alternate"></link><updated>2010-09-09T18:11:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-09-09:introducing-geopirate.html</id><summary type="html">&lt;p&gt;So I've recieved my apparently mandated CIVX nickname, despite it
+</summary><category term="peopledashboard"></category></entry><entry><title>Introducing: GeoPirate!</title><link href="http://qalthos.github.io/blog/introducing-geopirate.html" rel="alternate"></link><updated>2010-09-09T18:11:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-09-09:introducing-geopirate.html</id><summary type="html">&lt;p&gt;So I've received my apparently mandated CIVX nickname, despite it
 possibly being inaccurate in a week or two. I, along with &lt;a class="reference external" href="http://rebeccanatalie.com/"&gt;Pixel Ninja&lt;/a&gt;
 and &lt;a class="reference external" href="http://foss.rit.edu/user/17"&gt;Python Princess&lt;/a&gt;, have been hacking away at our various tasks
 together for over a week now, and despite the seemingly constant moving
 from place to place, it's a pretty sweet gig.
 My work yesterday was some final polishing of the getall script, and my
-first real push to the geowebdns repository. I'm also workign on a
+first real push to the geowebdns repository. I'm also working on a
 supplemental, informational guide to maintenance. Unfortunately, my
 changes can't quite replace the old script yet, because the import
 script (the one that actually starts to bring the files into the
@@ -405,8 +405,8 @@ getting her Mac up to speed was a lot of wait and pray so I switched
 over to Kate's task. Now Kate also has a Mac, but she was set up with
 CIVX long ago and could never quite explain to me how, thanks again to
 arcane commands.
-Anyway, her task involved a particular unicode character in a senator's
-name not playing well with her scraped name-to-url converter magic.
+Anyway, her task involved a particular Unicode character in a senator's
+name not playing well with her scraped name-to-URL converter magic.
 Having only last night read &lt;a class="reference external" href="http://www.kalzumeus.com/2010/06/17/falsehoods-programmers-believe-about-names/"&gt;Falsehoods Programmers Believe About
 Names&lt;/a&gt; off StumbleUpon, I immediately recognized this way as a dead
 end. Sure, you could force all the current names into this pattern, but
@@ -417,7 +417,7 @@ each senator had a link to their contact page right in the div we were
 scraping. A bit of poking around later, and I had a 100% reliable link
 to each senator's page, as verified by the senate themselves. Suddenly
 every senator's page worked, without any of this needless mucking about
-in unicode transformations.
+in Unicode transformations.
 Which brought us to our second problem. Most (with one important
 exception) senators have a page hosted on &lt;a class="reference external" href="http://www.nysenate.gov"&gt;http://www.nysenate.gov&lt;/a&gt;, and
 most have a contact page at /senators/first-m-last/contact.
@@ -431,7 +431,7 @@ way.
 I suddenly saw an interesting anomaly. Most senators had the contact
 info were styled exactly the same, despite having quite varying styles
 otherwise. Kate had already seen that most of the addresses are together
-in some sort of paragraph tag, and was trying to regex on the contents
+in some sort of paragraph tag, and was trying to regexp on the contents
 of each paragraph on the page. What she hadn't noticed was that every
 page had a &amp;lt;div class=&amp;quot;field-content&amp;quot;&amp;gt; that contained all the contact
 info. Now that, that was something a bit more to go on. Furthermore,
@@ -464,19 +464,19 @@ contact information, this is the worst example against automatically
 generated HTML I have had the misfortune of needing to scrape.
 Problem 1: &amp;lt;p &amp;gt;&amp;amp;nbsp;&amp;lt;p /&amp;gt;&amp;lt;br /&amp;gt; I kid you not, this is on the page a
 minimum of 20 times in a row so that his Albany Office is so far below
-the fold so as to be nonexistant. Sometimes there's inline styles,
+the fold so as to be nonexistent. Sometimes there's inline styles,
 sometimes not. One line has a simple space character instead of the
 edgier, hipper &amp;amp;nbsp;. I wanted them all gone.this resulted in five
-separate regexes so python wouldn't get too greedy and remove all the
+separate regexps so python wouldn't get too greedy and remove all the
 content. One to replace &amp;amp;nbsp; with ' ', another to remove all
 whitespace between a closing angle bracket and an opening one, a third
-to remove anything matching style=&amp;quot;*&amp;quot;, a fourth to rmove all the (now)
+to remove anything matching style=&amp;quot;*&amp;quot;, a fourth to remove all the (now)
 empty paragraphs, and a fifth and final one to turn any group of two or
-more consective break tags into a single tag. It is probably fortunate
+more consecutive break tags into a single tag. It is probably fortunate
 that python would not correctly apply my first attempt which was far
 less readable, and more of a one-liner, as I don't know if I could have
 understood it now had I not broken it into its component parts.
-Problem 2 is a bit more of a WTF moment, both beutiful and frightening,
+Problem 2 is a bit more of a WTF moment, both beautiful and frightening,
 so I will reproduce it here verbatim:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 &amp;lt;P style=&amp;quot;TEXT-ALIGN: center&amp;quot;&amp;gt;&amp;lt;SPAN style=&amp;quot;COLOR: #012849; FONT-SIZE:
@@ -510,7 +510,7 @@ everyone else had left. I spent the next half hour checking that my
 sanitizer didn't break existing pages (it did, but only minorly) and
 making sure my code was legible.
 At that point, almost ten hours after I had started, I sat back,
-commited my final changes, and decompressed. *This*- this is why I
+committed my final changes, and decompressed. *This*- this is why I
 love open source.&lt;/p&gt;
 </summary><category term="peopledashboard"></category></entry><entry><title>More Conference Calls</title><link href="http://qalthos.github.io/blog/more-conference-calls.html" rel="alternate"></link><updated>2010-09-09T18:11:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-09-09:more-conference-calls.html</id><summary type="html">&lt;p&gt;Every time I go through one of these calls I feel like I come out
 knowing less about the topic discussed. The topics aren't hard, and I
@@ -526,7 +526,7 @@ useful to the current task, I have opened up some small part of someone
 else's open source program, and that's really cool.&lt;/p&gt;
 </summary><category term="democracymap"></category><category term="geowebdns"></category></entry><entry><title>Hello, world...</title><link href="http://qalthos.github.io/blog/hello-world.html" rel="alternate"></link><updated>2010-09-09T18:10:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-09-09:hello-world.html</id><summary type="html">&lt;p&gt;This is my first posting despite having been here for a week, because
 the zaniness that was my first week did not allow for such silly things
-as intorductions. Now I finally have some of the infrastructure things
+as introductions. Now I finally have some of the infrastructure things
 worked out, and can report on my findings.
 Work has been progressing on a scraper for &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Shapefile"&gt;shapefiles&lt;/a&gt; for the Senate.
 I've been fairly successful in getting a large amount of data, (up to

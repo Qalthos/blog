@@ -89,16 +89,16 @@ was building, this was not exactly acceptable.</p>
 when I saw SQLAlchemy errors scroll by every time I reloaded the site.
 My best guess is that SQLAlchemy is failing to create the tables needed
 to run the site and continuing on blindly. Once I realized that, I
-dumped a test db from my local copy to the mysql db, and suddenly
+dumped a test db from my local copy to the MySQL db, and suddenly
 everything was working. Or almost everything, anyway.</p>
 <p>I could read form the db fine, but any time I tried to modify it, I got
 another dreaded 500 error. I poked into everything I could find to try
 to figure out where it was failing, and finally determined it couldn't
 be on my end, as my local copy worked just as expected.</p>
-<p>Finally I stumbled across the anwser, almost accidentally. When I moved
-the db from local sqlite to mysql, I failed to set the auto increment
+<p>Finally I stumbled across the answer, almost accidentally. When I moved
+the db from local sqlite to MySQL, I failed to set the auto increment
 setting on the id of my new databases, so when I neglected to provide an
-id for the new entries I was making, mysql quite rightly complained at
+id for the new entries I was making, MySQL quite rightly complained at
 me. Unfortunately, since I can't find how to re-enable debug mode (nor
 should I really try), I wasn't getting any good error messages.
 So what is the site that has been giving me all these troubles? It's a
@@ -108,8 +108,8 @@ little site I set up to publicly shame Remy into stopping smoking:
     </div><!-- /.entry-content -->
         <ul>
             <li><a href="http://qalthos.github.io/blog/turbogears2-on-openshift-just-like-it-should-be.html">TurboGears2 on OpenShift, just like it should be</a></li>
-            <li><a href="http://qalthos.github.io/blog/openshift-troubles-continued.html">Openshift Troubles Continued</a></li>
             <li><a href="http://qalthos.github.io/blog/final-stretch.html">Final Stretch</a></li>
+            <li><a href="http://qalthos.github.io/blog/openshift-troubles-continued.html">Openshift Troubles Continued</a></li>
             <li><a href="http://qalthos.github.io/blog/first-floss-seminar-post.html">First FLOSS Seminar post</a></li>
             <li><a href="http://qalthos.github.io/blog/floss-seminar-update.html">FLOSS Seminar Update</a></li>
         </ul>
@@ -126,36 +126,36 @@ little site I set up to publicly shame Remy into stopping smoking:
                           <div class="tagcloud">
             <h2>tag cloud</h2>
             <ul>
-                              <li class="tag-2"><a href="/tag/election.html">election</a></li>
-                              <li class="tag-4"><a href="/tag/pybotwar.html">pybotwar</a></li>
-                              <li class="tag-2"><a href="/tag/democracymap.html">democracymap</a></li>
-                              <li class="tag-4"><a href="/tag/rise.html">Rise</a></li>
-                              <li class="tag-3"><a href="/tag/groovebot.html">groovebot</a></li>
-                              <li class="tag-3"><a href="/tag/polyscraper.html">polyscraper</a></li>
-                              <li class="tag-4"><a href="/tag/hackathon.html">hackathon</a></li>
-                              <li class="tag-1"><a href="/tag/sugar.html">sugar</a></li>
-                              <li class="tag-2"><a href="/tag/geowebdns.html">geowebdns</a></li>
-                              <li class="tag-1"><a href="/tag/widgets.html">widgets</a></li>
-                              <li class="tag-4"><a href="/tag/python.html">python</a></li>
-                              <li class="tag-1"><a href="/tag/surs.html">SURS</a></li>
                               <li class="tag-4"><a href="/tag/introspective.html">introspective</a></li>
-                              <li class="tag-1"><a href="/tag/lemonade.html">lemonade</a></li>
-                              <li class="tag-1"><a href="/tag/floss-seminar.html">FLOSS-seminar</a></li>
-                              <li class="tag-2"><a href="/tag/pydex.html">pyDex</a></li>
-                              <li class="tag-4"><a href="/tag/wow.html">wow</a></li>
-                              <li class="tag-4"><a href="/tag/hardware.html">hardware</a></li>
-                              <li class="tag-1"><a href="/tag/wikiotics.html">wikiotics</a></li>
-                              <li class="tag-3"><a href="/tag/blog.html">blog</a></li>
-                              <li class="tag-3"><a href="/tag/data alchemy.html">data alchemy</a></li>
-                              <li class="tag-1"><a href="/tag/hackfest.html">hackfest</a></li>
-                              <li class="tag-1"><a href="/tag/journalism.html">journalism</a></li>
-                              <li class="tag-1"><a href="/tag/scrapers.html">scrapers</a></li>
-                              <li class="tag-4"><a href="/tag/fabulous.html">fabulous</a></li>
+                              <li class="tag-2"><a href="/tag/geowebdns.html">geowebdns</a></li>
                               <li class="tag-1"><a href="/tag/peopledashboard.html">peopledashboard</a></li>
+                              <li class="tag-1"><a href="/tag/sugar.html">sugar</a></li>
+                              <li class="tag-1"><a href="/tag/hackathon.html">hackathon</a></li>
+                              <li class="tag-1"><a href="/tag/widgets.html">widgets</a></li>
+                              <li class="tag-4"><a href="/tag/fabulous.html">fabulous</a></li>
+                              <li class="tag-3"><a href="/tag/groovebot.html">groovebot</a></li>
+                              <li class="tag-3"><a href="/tag/jquery.html">jQuery</a></li>
+                              <li class="tag-1"><a href="/tag/scrapers.html">scrapers</a></li>
                               <li class="tag-4"><a href="/tag/knowledge.html">knowledge</a></li>
-                              <li class="tag-4"><a href="/tag/opl.html">OPL</a></li>
                               <li class="tag-2"><a href="/tag/openshift.html">openshift</a></li>
-                              <li class="tag-4"><a href="/tag/jquery.html">jQuery</a></li>
+                              <li class="tag-3"><a href="/tag/blog.html">blog</a></li>
+                              <li class="tag-1"><a href="/tag/surs.html">SURS</a></li>
+                              <li class="tag-3"><a href="/tag/data alchemy.html">data alchemy</a></li>
+                              <li class="tag-4"><a href="/tag/hardware.html">hardware</a></li>
+                              <li class="tag-2"><a href="/tag/democracymap.html">democracymap</a></li>
+                              <li class="tag-3"><a href="/tag/polyscraper.html">polyscraper</a></li>
+                              <li class="tag-4"><a href="/tag/pybotwar.html">pybotwar</a></li>
+                              <li class="tag-4"><a href="/tag/opl.html">OPL</a></li>
+                              <li class="tag-3"><a href="/tag/timeline.html">timeline</a></li>
+                              <li class="tag-4"><a href="/tag/wow.html">wow</a></li>
+                              <li class="tag-1"><a href="/tag/floss-seminar.html">FLOSS-seminar</a></li>
+                              <li class="tag-1"><a href="/tag/journalism.html">journalism</a></li>
+                              <li class="tag-4"><a href="/tag/rise.html">Rise</a></li>
+                              <li class="tag-1"><a href="/tag/wikiotics.html">wikiotics</a></li>
+                              <li class="tag-1"><a href="/tag/lemonade.html">lemonade</a></li>
+                              <li class="tag-2"><a href="/tag/election.html">election</a></li>
+                              <li class="tag-4"><a href="/tag/python.html">python</a></li>
+                              <li class="tag-2"><a href="/tag/pydex.html">pyDex</a></li>
                           </ul>
           </div>
                                 <div class="social">

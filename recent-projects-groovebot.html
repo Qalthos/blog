@@ -52,7 +52,7 @@
 been doing recently. First up on the list is the long-overdue
 <a class="reference external" href="https://github.com/Qalthos/groovebot">Groovebot</a> update.</p>
 <p>Before this summer, Groovebot 'worked' on <a class="reference external" href="http://spotify.com/">Spotify</a>, and also had a
-fairly useful but undertested <a class="reference external" href="http://en.wikipedia.org/wiki/Music_Player_Daemon">MPD</a> backend that worked for me when I
+fairly useful but under-tested <a class="reference external" href="http://en.wikipedia.org/wiki/Music_Player_Daemon">MPD</a> backend that worked for me when I
 could get MPD running properly. Unfortunately, I no longer had an active
 Spotify subscription, which meant that I couldn't use the Spotify
 backend, and I had moved off of RIT's campus, meaning I no longer had a
@@ -74,10 +74,10 @@ This means I have to respond to every event GStreamer throws out (which
 is a fair number of them), but most of them can be thrown out without
 looking at them. Some more tweaking later, and PandBot was born, able to
 connect to a user's Pandora station, play music, and thumb songs up or
-down based on user respones in the IRC channel.</p>
+down based on user response in the IRC channel.</p>
 <p>At this point, I had been writing new bots each time I added a new
 backend, with a lot of repeated code in each, leading to subtle bugs and
-api implementations that were slowly drifting apart based on individual
+API implementations that were slowly drifting apart based on individual
 needs. This made me a little annoyed, but I didn't have any particular
 need to fix it, so I left it alone. Until an accidental click around the
 Spotify website left me with another Premium subscription (and $10
@@ -90,7 +90,7 @@ and use the proper official API instead.</p>
 <p>However, in working on MPD and Pandora bots in the meantime had given me
 a number of ideas and fixes that would be problematic to port back to
 Spotify, which meant I had finally gotten an excuse to try to merge the
-three seperate codebases into one unified version. Starting with MPD and
+three separate codebases into one unified version. Starting with MPD and
 Pandora, I merged the files and ran the result through a three-way diff,
 trying to identify important parts of each bot to make sure each worked
 properly after the merge. Next, I looked into the architecture of
@@ -123,36 +123,36 @@ Pandora is working well enough.</p>
                           <div class="tagcloud">
             <h2>tag cloud</h2>
             <ul>
-                              <li class="tag-2"><a href="/tag/election.html">election</a></li>
-                              <li class="tag-4"><a href="/tag/pybotwar.html">pybotwar</a></li>
-                              <li class="tag-2"><a href="/tag/democracymap.html">democracymap</a></li>
-                              <li class="tag-4"><a href="/tag/rise.html">Rise</a></li>
-                              <li class="tag-3"><a href="/tag/groovebot.html">groovebot</a></li>
-                              <li class="tag-3"><a href="/tag/polyscraper.html">polyscraper</a></li>
-                              <li class="tag-4"><a href="/tag/hackathon.html">hackathon</a></li>
-                              <li class="tag-1"><a href="/tag/sugar.html">sugar</a></li>
-                              <li class="tag-2"><a href="/tag/geowebdns.html">geowebdns</a></li>
-                              <li class="tag-1"><a href="/tag/widgets.html">widgets</a></li>
-                              <li class="tag-4"><a href="/tag/python.html">python</a></li>
-                              <li class="tag-1"><a href="/tag/surs.html">SURS</a></li>
                               <li class="tag-4"><a href="/tag/introspective.html">introspective</a></li>
-                              <li class="tag-1"><a href="/tag/lemonade.html">lemonade</a></li>
-                              <li class="tag-1"><a href="/tag/floss-seminar.html">FLOSS-seminar</a></li>
-                              <li class="tag-2"><a href="/tag/pydex.html">pyDex</a></li>
-                              <li class="tag-4"><a href="/tag/wow.html">wow</a></li>
-                              <li class="tag-4"><a href="/tag/hardware.html">hardware</a></li>
-                              <li class="tag-1"><a href="/tag/wikiotics.html">wikiotics</a></li>
-                              <li class="tag-3"><a href="/tag/blog.html">blog</a></li>
-                              <li class="tag-3"><a href="/tag/data alchemy.html">data alchemy</a></li>
-                              <li class="tag-1"><a href="/tag/hackfest.html">hackfest</a></li>
-                              <li class="tag-1"><a href="/tag/journalism.html">journalism</a></li>
-                              <li class="tag-1"><a href="/tag/scrapers.html">scrapers</a></li>
-                              <li class="tag-4"><a href="/tag/fabulous.html">fabulous</a></li>
+                              <li class="tag-2"><a href="/tag/geowebdns.html">geowebdns</a></li>
                               <li class="tag-1"><a href="/tag/peopledashboard.html">peopledashboard</a></li>
+                              <li class="tag-1"><a href="/tag/sugar.html">sugar</a></li>
+                              <li class="tag-1"><a href="/tag/hackathon.html">hackathon</a></li>
+                              <li class="tag-1"><a href="/tag/widgets.html">widgets</a></li>
+                              <li class="tag-4"><a href="/tag/fabulous.html">fabulous</a></li>
+                              <li class="tag-3"><a href="/tag/groovebot.html">groovebot</a></li>
+                              <li class="tag-3"><a href="/tag/jquery.html">jQuery</a></li>
+                              <li class="tag-1"><a href="/tag/scrapers.html">scrapers</a></li>
                               <li class="tag-4"><a href="/tag/knowledge.html">knowledge</a></li>
-                              <li class="tag-4"><a href="/tag/opl.html">OPL</a></li>
                               <li class="tag-2"><a href="/tag/openshift.html">openshift</a></li>
-                              <li class="tag-4"><a href="/tag/jquery.html">jQuery</a></li>
+                              <li class="tag-3"><a href="/tag/blog.html">blog</a></li>
+                              <li class="tag-1"><a href="/tag/surs.html">SURS</a></li>
+                              <li class="tag-3"><a href="/tag/data alchemy.html">data alchemy</a></li>
+                              <li class="tag-4"><a href="/tag/hardware.html">hardware</a></li>
+                              <li class="tag-2"><a href="/tag/democracymap.html">democracymap</a></li>
+                              <li class="tag-3"><a href="/tag/polyscraper.html">polyscraper</a></li>
+                              <li class="tag-4"><a href="/tag/pybotwar.html">pybotwar</a></li>
+                              <li class="tag-4"><a href="/tag/opl.html">OPL</a></li>
+                              <li class="tag-3"><a href="/tag/timeline.html">timeline</a></li>
+                              <li class="tag-4"><a href="/tag/wow.html">wow</a></li>
+                              <li class="tag-1"><a href="/tag/floss-seminar.html">FLOSS-seminar</a></li>
+                              <li class="tag-1"><a href="/tag/journalism.html">journalism</a></li>
+                              <li class="tag-4"><a href="/tag/rise.html">Rise</a></li>
+                              <li class="tag-1"><a href="/tag/wikiotics.html">wikiotics</a></li>
+                              <li class="tag-1"><a href="/tag/lemonade.html">lemonade</a></li>
+                              <li class="tag-2"><a href="/tag/election.html">election</a></li>
+                              <li class="tag-4"><a href="/tag/python.html">python</a></li>
+                              <li class="tag-2"><a href="/tag/pydex.html">pyDex</a></li>
                           </ul>
           </div>
                                 <div class="social">

@@ -16,15 +16,24 @@ render the diagram to SVG instead of PNG. SVG is much better for things like
 simple diagrams, as it is web-native, (all it is is a special kind of XML
 document), and it's vector-based, making it inherently scalable for different
 sized displays. As near as I can tell, ditaa appears to use SVG internally, at
-least to some extent. Ideally, I'd like to try to reimplement it in Python, not
+least to some extent. Ideally, I'd like to try to re-implement it in Python, not
 necessarily for any benefit, but because the problem sounds interesting.&lt;/p&gt;
-</summary><category term="blog"></category></entry><entry><title>Blog Rebuild</title><link href="http://qalthos.github.io/blog/blog-rebuild.html" rel="alternate"></link><updated>2013-04-21T18:03:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2013-04-21:blog-rebuild.html</id><summary type="html">&lt;p&gt;As you may notice, my blog looks a lot different now. On the recommendation of a few FOSSBoxers, I have moved to &lt;a class="reference external" href="http://blog.getpelican.com/"&gt;Pelican&lt;/a&gt;, a Python-based static site generator. The practical upshot of which is that I can now write posts in &lt;a class="reference external" href="http://docutils.sourceforge.net/rst.html"&gt;reStructuredText&lt;/a&gt;, keep the posts themsevles in git, and host the whole thing on &lt;a class="reference external" href="http://pages.github.com/"&gt;GitHub Pages&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;While all of my posts have been successfully moved, not every one has survived intact. in particular, paragraph splits in a number of older blogs have been lost. I will try to rectify those as they crop up, but there's a lot to go through.&lt;/p&gt;
-&lt;p&gt;One of the casualties of the move was the comments. Pelican does not handle comments on its own, and while I can hook up a specialized service like Disqus, I've decided that it isn't worth the effort at present.&lt;/p&gt;
+</summary><category term="blog"></category></entry><entry><title>Blog Rebuild</title><link href="http://qalthos.github.io/blog/blog-rebuild.html" rel="alternate"></link><updated>2013-04-21T18:03:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2013-04-21:blog-rebuild.html</id><summary type="html">&lt;p&gt;As you may notice, my blog looks a lot different now. On the recommendation of
+a few FOSSBoxers, I have moved to &lt;a class="reference external" href="http://blog.getpelican.com/"&gt;Pelican&lt;/a&gt;, a Python-based static site
+generator. The practical upshot of which is that I can now write posts in
+&lt;a class="reference external" href="http://docutils.sourceforge.net/rst.html"&gt;reStructuredText&lt;/a&gt;, keep the posts themselves in git, and host the whole thing
+on &lt;a class="reference external" href="http://pages.github.com/"&gt;GitHub Pages&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;While all of my posts have been successfully moved, not every one has survived
+intact. in particular, paragraph splits in a number of older blogs have been
+lost. I will try to rectify those as they crop up, but there's a lot to go
+through.&lt;/p&gt;
+&lt;p&gt;One of the casualties of the move was the comments. Pelican does not handle
+comments on its own, and while I can hook up a specialized service like Disqus,
+I've decided that it isn't worth the effort at present.&lt;/p&gt;
 </summary><category term="blog"></category></entry><entry><title>Another Blog</title><link href="http://qalthos.github.io/blog/another-blog.html" rel="alternate"></link><updated>2010-09-07T16:49:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-09-07:another-blog.html</id><summary type="html">&lt;p&gt;Just as I get used to this one, another of my classes requires me to
 keep a blog, and to keep it separate from any other blogs we may keep.
 The new blog is linked at left, but anything interesting will get
-crossposted here and it's likely going to go unmaintained at the
+cross-posted here and it's likely going to go unmaintained at the
 conclusion of the quarter.&lt;/p&gt;
 &lt;p&gt;Anyway, here it is: &lt;a class="reference external" href="other-person.tumblr.com"&gt;other-person.tumblr.com&lt;/a&gt;&lt;/p&gt;
 </summary><category term="journalism"></category></entry></feed>
