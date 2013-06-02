@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://qalthos.github.io/blog/" rel="alternate"></link><link href="http://qalthos.github.io/blog/feeds/all-en.atom.xml" rel="self"></link><id>http://qalthos.github.io/blog/</id><updated>2013-05-15T00:00:00-04:00</updated><entry><title>ditaa Addition</title><link href="http://qalthos.github.io/blog/ditaa-addition.html" rel="alternate"></link><updated>2013-05-15T00:00:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2013-05-15:ditaa-addition.html</id><summary type="html">&lt;p&gt;Recently, while wandering around the Internet, I found a neat little project
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://qalthos.github.io/blog/" rel="alternate"></link><link href="http://qalthos.github.io/blog/feeds/all-en.atom.xml" rel="self"></link><id>http://qalthos.github.io/blog/</id><updated>2013-06-01T20:46:00-04:00</updated><entry><title>A note on lxml</title><link href="http://qalthos.github.io/blog/a-note-on-lxml.html" rel="alternate"></link><updated>2013-06-01T20:46:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2013-06-01:a-note-on-lxml.html</id><summary type="html">&lt;p&gt;I've been doing a lot of things with &lt;a class="reference external" href="http://pygal.org"&gt;pygal&lt;/a&gt; lately. It's a really neat tool
+for making SVG graphs in python. One 'problem' is that it needs &lt;a class="reference external" href="http://lxml.de"&gt;lxml&lt;/a&gt;, and
+that has C extensions that need to be compiled. This isn't too bad, though
+sometimes it makes me stop and install a compiler. The real problem is the
+external header files it needs to compile.&lt;/p&gt;
+&lt;p&gt;NOTE: this blog post is entirely the result of my own laziness. Had I simply
+perused the &lt;a class="reference external" href="http://lxml.de/installation.html#installation"&gt;documentation&lt;/a&gt;, I would have found this much sooner. Thus, this
+post is solely a marker of my own eagerness to get things running quickly.&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;STATIC_DEPS=true&lt;/tt&gt;&lt;/p&gt;
+</summary><category term="hackathon"></category><category term="python"></category><category term="wow"></category></entry><entry><title>ditaa Addition</title><link href="http://qalthos.github.io/blog/ditaa-addition.html" rel="alternate"></link><updated>2013-05-15T00:00:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2013-05-15:ditaa-addition.html</id><summary type="html">&lt;p&gt;Recently, while wandering around the Internet, I found a neat little project
 called  &lt;a class="reference external" href="http://ditaa.sourceforge.net/"&gt;ditaa&lt;/a&gt;. The basic idea is it takes a textual representation of a
 diagram, and turns it into a real image. My first thought was that this looked
 real neat for use in this blog.&lt;/p&gt;
@@ -714,9 +723,9 @@ We probably won't have that many problems this time around. But who
 knows? I'm looking forward to an exciting night in any case, and I'll be
 ready to fix any problems as they come.&lt;/p&gt;
 </summary><category term="election"></category></entry><entry><title>Election Aftermath</title><link href="http://qalthos.github.io/blog/election-aftermath.html" rel="alternate"></link><updated>2011-03-29T02:59:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-03-29:election-aftermath.html</id><summary type="html">&lt;p&gt;So the election was almost a week ago. Here's how our little experiment
-turned out.
-&lt;a class="reference external" href="http://farm2.static.flickr.com/1386/5143595646_9e4e56f556.jpg"&gt;|image0|&lt;/a&gt;
-The evening started out rather slowly, with information trickling in
+turned out.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://farm2.static.flickr.com/1386/5143595646_9e4e56f556.jpg"&gt;|image0|&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The evening started out rather slowly, with information trickling in
 about races that were all but confirmed. We had the Innovation Center's
 display set up with various maps and information, and my page in the
 center in five columns, all showing zero votes.
@@ -724,12 +733,12 @@ We waited until the polls closed at 9PM, and then we waited some more
 for the information to travel to the Board of Elections and make it onto
 the XML file. Even at this point, I still didn't know if the scraper was
 going to work, so I was checking the &lt;a class="reference external" href="http://66.192.47.50/flashresults.html"&gt;official unofficial results page&lt;/a&gt;
-to make sure they didn't have anything we didn't.
-When the first results popped on the screen, it was amazing. When
+to make sure they didn't have anything we didn't.&lt;/p&gt;
+&lt;p&gt;When the first results popped on the screen, it was amazing. When
 results kept pouring in, it was even more impressive. When we finally
 figured out that all those numbers were wrong, it was time to start
-getting things fixed.
-There were several differences from what the Canadian data had led me to
+getting things fixed.&lt;/p&gt;
+&lt;p&gt;There were several differences from what the Canadian data had led me to
 expect, and so I spent most of the night fixing small problems as they
 showed up. First, votes in NYS are tallied by party, even if multiple
 parties are running the same candidate. This was quite different from
@@ -739,8 +748,8 @@ like Paladino was beating Cuomo in Monroe County almost 4 to 1. Checking
 back with the flash page revealed that I was only counting one party for
 each candidate, and whichever came last would show up on the screen. I
 had to keep a running count for each candidate rather than throwing out
-old data when going through the file.
-Having fixed that, and seeing that the numbers now matched what was
+old data when going through the file.&lt;/p&gt;
+&lt;p&gt;Having fixed that, and seeing that the numbers now matched what was
 coming out of the flash page, I settled back down and watched the third
 parties fight for 50,000 votes. That is, until someone pointed out to me
 that Andrew Cuomo was currently listed with 1.7 million votes for Monroe
@@ -750,23 +759,23 @@ haste to keep count of how many votes a candidate got from each party, I
 was not clearing these numbers once the file was done being read. This
 was probably the hardest fix I had to make during the night, as it broke
 some of the models I had naively put forth on how the program should
-run.
-I eventually ended up with a workable solution, though I was sad to see
+run.&lt;/p&gt;
+&lt;p&gt;I eventually ended up with a workable solution, though I was sad to see
 the third party numbers were much lower now. There remained only one
 small problem, being that most vote totals seemed to be exactly twice
 what the flash site claimed they were. Finally, I realized that there
 was a master 'total votes' line for each candidate which made most of
 the hacks and shims I had written into my scraper obsolete. Instead, I
 could simply show only this total line and everything would be right
-again.
-This was an amazing experience, especially how the work I was doing was
+again.&lt;/p&gt;
+&lt;p&gt;This was an amazing experience, especially how the work I was doing was
 being picked up by people outside of RIT. Having to think fast on my
 feet was a new one too. I, like most programmers, usually like to
 examine a problem in detail and have time to test theories before
 publishing changes. Here, I was coding just about as fast as I could to
 fix each bug that turned up, and we managed to make it work before the
-last precincts rolled in.
-But even more than that, this was an opportunity to take the skills and
+last precincts rolled in.&lt;/p&gt;
+&lt;p&gt;But even more than that, this was an opportunity to take the skills and
 tools I've been accumulating through my time at RIT and make them do
 something more than just a class assignment. This wasn't just another
 program to be written and forgotten, this was something that represented

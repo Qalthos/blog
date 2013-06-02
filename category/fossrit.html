@@ -33,8 +33,44 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="http://qalthos.github.io/blog/american-greetings-hackathon-followup.html">American Greetings Hackathon Followup</a></h1> 
+                    <h1 class="entry-title"><a href="http://qalthos.github.io/blog/a-note-on-lxml.html">A note on lxml</a></h1> 
                     <footer class="post-info">
+                <p><img src="http://www.gravatar.com/avatar/3a3baabff105b46a458688ecf49901af" /></p>
+                <abbr class="published" title="2013-06-01T20:46:00">
+                Sat 01 June 2013
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="http://qalthos.github.io/blog/author/nathaniel-case.html">Nathaniel Case</a>
+        </address>
+        <p>In <a href="http://qalthos.github.io/blog/category/fossrit.html">FOSS@RIT</a>. </p>
+<p>tags: <a href="http://qalthos.github.io/blog/tag/hackathon.html">hackathon</a><a href="http://qalthos.github.io/blog/tag/python.html">python</a><a href="http://qalthos.github.io/blog/tag/wow.html">wow</a></p>
+</footer><!-- /.post-info --><p>I've been doing a lot of things with <a class="reference external" href="http://pygal.org">pygal</a> lately. It's a really neat tool
+for making SVG graphs in python. One 'problem' is that it needs <a class="reference external" href="http://lxml.de">lxml</a>, and
+that has C extensions that need to be compiled. This isn't too bad, though
+sometimes it makes me stop and install a compiler. The real problem is the
+external header files it needs to compile.</p>
+<p>NOTE: this blog post is entirely the result of my own laziness. Had I simply
+perused the <a class="reference external" href="http://lxml.de/installation.html#installation">documentation</a>, I would have found this much sooner. Thus, this
+post is solely a marker of my own eagerness to get things running quickly.</p>
+<p><tt class="docutils literal">STATIC_DEPS=true</tt></p>
+                </article>
+                            </aside><!-- /#featured -->
+                            <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+                                                
+
+                 
+                        <li><article class="hentry">    
+                <header>
+                    <h1><a href="http://qalthos.github.io/blog/american-greetings-hackathon-followup.html" rel="bookmark"
+                           title="Permalink to American Greetings Hackathon Followup">American Greetings Hackathon Followup</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
                 <p><img src="http://www.gravatar.com/avatar/3a3baabff105b46a458688ecf49901af" /></p>
                 <abbr class="published" title="2013-01-24T22:33:00">
                 Thu 24 January 2013
@@ -45,43 +81,15 @@
         </address>
         <p>In <a href="http://qalthos.github.io/blog/category/fossrit.html">FOSS@RIT</a>. </p>
 <p>tags: <a href="http://qalthos.github.io/blog/tag/hackfest.html">hackfest</a></p>
-</footer><!-- /.post-info --><p>Last weekend was the <a class="reference external" href="http://foss.rit.edu/node/425">American Greetings Hackathon</a>, and it was one of
+</footer><!-- /.post-info -->                <p>Last weekend was the <a class="reference external" href="http://foss.rit.edu/node/425">American Greetings Hackathon</a>, and it was one of
 the most successful yet. We got more than 70 people attending and
 working on projects, and most of those projects had at least something
 working by the end of the 24 hours.</p>
-<p>I worked with <a class="reference external" href="http://blog.helixoide.com/">Ross Delinger</a>, with occasional controbutions from <a class="reference external" href="http://www.ryansb.com/">Ryan
-S. Brown</a> on a project eventually called <a class="reference external" href="http://github.com/ryansb/hetHUD">netHUD</a>. The idea was to
-take the new <a class="reference external" href="http://nethackwiki.com/wiki/NetHack_4">NetHack 4</a> network <a class="reference external" href="http://nethackwiki.com/wiki/NetHack_4_Network_Protocol">protocol</a> and try to make something
-more than just another interface to nethack.</p>
-<p>Originally, we set out simply to connect to the nethack server and have
-a second channel of information. Ideally, we would make calls to the
-server and have it update us about games in progress. This turned out to
-be problematic for a number of reasons, but the most immediate was that
-we could not get two simultaneous connections to the server.</p>
-<p>This meant we had to redesign our service. Instead of being a second
-stream, we would need to piggyback on the initial connection, which
-meant writing a server proxy. This may not have been the only way to do
-it, or even the best way to do it, but that's just how we roll. The
-eventual structure (all written in delicious <a class="reference external" href="http://www.twistedmatrix.com">twisted</a> protocols)
-looked something like this:</p>
-<img alt="Module diagram" class="ditaa" src="static/images/299c3683.png" />
-<p>tee.py acted as the proxy and sent any messages received from the
-nethack server to the controller, which cached the current state of all
-the games and sent updates to any listening netHUD instances. This way,
-you connect to nethack as usual and log in, and then in a second window,
-you connect to the server again on the netHUD port and get a slew of
-information about your current inventory, nearby points of interest (eg.
-monsters, items, traps), and other information. There's a lot more we
-could add to this over time; one of the ideas thrown around at the
-beginning was integration with the nethack wiki, providing additional
-information about items, monsters, even entire levels.</p>
-</p>                </article>
-                            </aside><!-- /#featured -->
-                            <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
-                                                
+<p>I worked with <a class="reference external" href="http://blog.helixoide.com/">Ross Delinger</a>, with ...</p>
+                <a class="readmore" href="http://qalthos.github.io/blog/american-greetings-hackathon-followup.html">read more</a>
+                                </div><!-- /.entry-content -->
+            </article></li>
+                            
 
                  
                         <li><article class="hentry">    
@@ -166,35 +174,6 @@ thing ...</p>
                 <a class="readmore" href="http://qalthos.github.io/blog/final-stretch.html">read more</a>
                                 </div><!-- /.entry-content -->
             </article></li>
-                            
-
-                 
-                        <li><article class="hentry">    
-                <header>
-                    <h1><a href="http://qalthos.github.io/blog/turbogears2-on-openshift-just-like-it-should-be.html" rel="bookmark"
-                           title="Permalink to TurboGears2 on OpenShift, just like it should be">TurboGears2 on OpenShift, just like it should be</a></h1>
-                </header>
-                
-                <div class="entry-content">
-                <footer class="post-info">
-                <p><img src="http://www.gravatar.com/avatar/3a3baabff105b46a458688ecf49901af" /></p>
-                <abbr class="published" title="2012-02-03T06:47:00">
-                Fri 03 February 2012
-        </abbr>
-
-                <address class="vcard author">
-                By <a class="url fn" href="http://qalthos.github.io/blog/author/nathaniel-case.html">Nathaniel Case</a>
-        </address>
-        <p>In <a href="http://qalthos.github.io/blog/category/fossrit.html">FOSS@RIT</a>. </p>
-<p>tags: <a href="http://qalthos.github.io/blog/tag/hackfest.html">hackfest</a><a href="http://qalthos.github.io/blog/tag/floss-seminar.html">FLOSS-seminar</a><a href="http://qalthos.github.io/blog/tag/openshift.html">openshift</a></p>
-</footer><!-- /.post-info -->                <p>After much work and many trials, I finally have an app pushed to
-OpenShift with no manual tweaking necessary. As often happens with these
-things, the solution was much simpler than expected.</p>
-<p>Note: I still don't have a foolproof 'follow this' solution ready, as
-the one I built works ...</p>
-                <a class="readmore" href="http://qalthos.github.io/blog/turbogears2-on-openshift-just-like-it-should-be.html">read more</a>
-                                </div><!-- /.entry-content -->
-            </article></li>
                             </ol><!-- /#posts-list -->
                             <p class="paginator">
         Page 1 / 5
@@ -212,35 +191,35 @@ the one I built works ...</p>
             <h2>tag cloud</h2>
             <ul>
                               <li class="tag-2"><a href="/tag/election.html">election</a></li>
-                              <li class="tag-4"><a href="/tag/knowledge.html">knowledge</a></li>
-                              <li class="tag-3"><a href="/tag/blog.html">blog</a></li>
-                              <li class="tag-1"><a href="/tag/lemonade.html">lemonade</a></li>
-                              <li class="tag-2"><a href="/tag/openshift.html">openshift</a></li>
-                              <li class="tag-1"><a href="/tag/floss-seminar.html">FLOSS-seminar</a></li>
-                              <li class="tag-4"><a href="/tag/fabulous.html">fabulous</a></li>
-                              <li class="tag-1"><a href="/tag/wikiotics.html">wikiotics</a></li>
-                              <li class="tag-1"><a href="/tag/peopledashboard.html">peopledashboard</a></li>
-                              <li class="tag-3"><a href="/tag/groovebot.html">groovebot</a></li>
-                              <li class="tag-2"><a href="/tag/democracymap.html">democracymap</a></li>
-                              <li class="tag-4"><a href="/tag/opl.html">OPL</a></li>
-                              <li class="tag-4"><a href="/tag/hardware.html">hardware</a></li>
-                              <li class="tag-1"><a href="/tag/surs.html">SURS</a></li>
-                              <li class="tag-1"><a href="/tag/widgets.html">widgets</a></li>
-                              <li class="tag-4"><a href="/tag/rise.html">Rise</a></li>
-                              <li class="tag-4"><a href="/tag/games.html">games</a></li>
-                              <li class="tag-4"><a href="/tag/webbotwar.html">webbotwar</a></li>
-                              <li class="tag-3"><a href="/tag/polyscraper.html">polyscraper</a></li>
                               <li class="tag-4"><a href="/tag/pybotwar.html">pybotwar</a></li>
-                              <li class="tag-3"><a href="/tag/data alchemy.html">data alchemy</a></li>
+                              <li class="tag-2"><a href="/tag/democracymap.html">democracymap</a></li>
+                              <li class="tag-4"><a href="/tag/rise.html">Rise</a></li>
+                              <li class="tag-3"><a href="/tag/groovebot.html">groovebot</a></li>
+                              <li class="tag-3"><a href="/tag/polyscraper.html">polyscraper</a></li>
+                              <li class="tag-4"><a href="/tag/hackathon.html">hackathon</a></li>
                               <li class="tag-1"><a href="/tag/sugar.html">sugar</a></li>
-                              <li class="tag-1"><a href="/tag/journalism.html">journalism</a></li>
-                              <li class="tag-4"><a href="/tag/boston.html">Boston</a></li>
-                              <li class="tag-4"><a href="/tag/introspective.html">introspective</a></li>
-                              <li class="tag-4"><a href="/tag/jquery.html">jQuery</a></li>
-                              <li class="tag-1"><a href="/tag/hackfest.html">hackfest</a></li>
                               <li class="tag-2"><a href="/tag/geowebdns.html">geowebdns</a></li>
+                              <li class="tag-1"><a href="/tag/widgets.html">widgets</a></li>
+                              <li class="tag-4"><a href="/tag/python.html">python</a></li>
+                              <li class="tag-1"><a href="/tag/surs.html">SURS</a></li>
+                              <li class="tag-4"><a href="/tag/introspective.html">introspective</a></li>
+                              <li class="tag-1"><a href="/tag/lemonade.html">lemonade</a></li>
+                              <li class="tag-1"><a href="/tag/floss-seminar.html">FLOSS-seminar</a></li>
                               <li class="tag-2"><a href="/tag/pydex.html">pyDex</a></li>
+                              <li class="tag-4"><a href="/tag/wow.html">wow</a></li>
+                              <li class="tag-4"><a href="/tag/hardware.html">hardware</a></li>
+                              <li class="tag-1"><a href="/tag/wikiotics.html">wikiotics</a></li>
+                              <li class="tag-3"><a href="/tag/blog.html">blog</a></li>
+                              <li class="tag-3"><a href="/tag/data alchemy.html">data alchemy</a></li>
+                              <li class="tag-1"><a href="/tag/hackfest.html">hackfest</a></li>
+                              <li class="tag-1"><a href="/tag/journalism.html">journalism</a></li>
                               <li class="tag-1"><a href="/tag/scrapers.html">scrapers</a></li>
+                              <li class="tag-4"><a href="/tag/fabulous.html">fabulous</a></li>
+                              <li class="tag-1"><a href="/tag/peopledashboard.html">peopledashboard</a></li>
+                              <li class="tag-4"><a href="/tag/knowledge.html">knowledge</a></li>
+                              <li class="tag-4"><a href="/tag/opl.html">OPL</a></li>
+                              <li class="tag-2"><a href="/tag/openshift.html">openshift</a></li>
+                              <li class="tag-4"><a href="/tag/jquery.html">jQuery</a></li>
                           </ul>
           </div>
                                 <div class="social">
