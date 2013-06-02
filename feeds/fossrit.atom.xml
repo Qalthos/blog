@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://qalthos.github.io/blog/" rel="alternate"></link><link href="http://qalthos.github.io/blog/feeds/fossrit.atom.xml" rel="self"></link><id>http://qalthos.github.io/blog/</id><updated>2013-06-02T12:00:00-04:00</updated><entry><title>National Day of Civic Hacking Hackathon</title><link href="http://qalthos.github.io/blog/national-day-of-civic-hacking-hackathon.html" rel="alternate"></link><updated>2013-06-02T12:00:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2013-06-02:national-day-of-civic-hacking-hackathon.html</id><summary type="html">&lt;p&gt;One of the projects I worked on during the &lt;a class="reference external" href="http://hackforchange.org/fossrit-rochester-civic-hackathon"&gt;Rochester edition&lt;/a&gt; of the
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://qalthos.github.io/blog/" rel="alternate"></link><link href="http://qalthos.github.io/blog/feeds/fossrit.atom.xml" rel="self"></link><id>http://qalthos.github.io/blog/</id><updated>2013-06-02T03:18:00-04:00</updated><entry><title>National Day of Civic Hacking</title><link href="http://qalthos.github.io/blog/national-day-of-civic-hacking.html" rel="alternate"></link><updated>2013-06-02T03:18:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2013-06-02:national-day-of-civic-hacking.html</id><summary type="html">&lt;p&gt;One of the projects I worked on during the &lt;a class="reference external" href="http://hackforchange.org/fossrit-rochester-civic-hackathon"&gt;Rochester edition&lt;/a&gt; of the
 &lt;a class="reference external" href="http://hackforchange.org"&gt;National Day of Civic Hacking&lt;/a&gt; hackathon was not actually anything intended
 for the hackathon, but a short project I wrote last summer.&lt;/p&gt;
+&lt;p&gt;If you remember from &lt;a class="reference external" href="introducing-fossrit-timeline-year-in-review.html"&gt;my last post&lt;/a&gt; on the subject, I had made three files,
+one for each of the years that the FOSSBox had been keeping track of its
+activities on the &lt;a class="reference external" href="http://foss.rit.edu/timeline"&gt;timeline&lt;/a&gt;. The files were very silly- all the data was
+loaded on the fly from a JSON file, so the only thing in the files was the structure and the 'decoration' text.&lt;/p&gt;
+&lt;p&gt;Clearly this was not something that could stand. Today I finally managet to get
+all the files together into one page. Now, when the page loads, it scans the
+JSON file for all years mentioned, and populates a drop-down list with all the
+years it has found. the first (and usually latest) year's data is then loaded
+onto the page.&lt;/p&gt;
+&lt;p&gt;When the user clicks on another year from the list, the content is reloaded with
+data from the apropriate year. If you want to see it in action, the new review
+page for timeline now lives &lt;a class="reference external" href="http://foss.rit.edu/timeline/summary.html"&gt;here&lt;/a&gt;.&lt;/p&gt;
 </summary><category term="hackathon"></category><category term="timeline"></category><category term="jQuery"></category></entry><entry><title>A note on lxml</title><link href="http://qalthos.github.io/blog/a-note-on-lxml.html" rel="alternate"></link><updated>2013-06-01T20:46:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2013-06-01:a-note-on-lxml.html</id><summary type="html">&lt;p&gt;This post is being written from the &lt;a class="reference external" href="http://hackforchange.org/fossrit-rochester-civic-hackathon"&gt;Rochester edition&lt;/a&gt; of the
 &lt;a class="reference external" href="http://hackforchange.org"&gt;National Day of Civic Hacking&lt;/a&gt; hackathon.&lt;/p&gt;
 &lt;p&gt;I've been doing a lot of things with &lt;a class="reference external" href="http://pygal.org"&gt;pygal&lt;/a&gt; lately. It's a really neat tool

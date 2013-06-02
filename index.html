@@ -33,10 +33,10 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="http://qalthos.github.io/blog/national-day-of-civic-hacking-hackathon.html">National Day of Civic Hacking Hackathon</a></h1> 
+                    <h1 class="entry-title"><a href="http://qalthos.github.io/blog/national-day-of-civic-hacking.html">National Day of Civic Hacking</a></h1> 
                     <footer class="post-info">
                 <p><img src="http://www.gravatar.com/avatar/3a3baabff105b46a458688ecf49901af" /></p>
-                <abbr class="published" title="2013-06-02T12:00:00">
+                <abbr class="published" title="2013-06-02T03:18:00">
                 Sun 02 June 2013
         </abbr>
 
@@ -48,6 +48,18 @@
 </footer><!-- /.post-info --><p>One of the projects I worked on during the <a class="reference external" href="http://hackforchange.org/fossrit-rochester-civic-hackathon">Rochester edition</a> of the
 <a class="reference external" href="http://hackforchange.org">National Day of Civic Hacking</a> hackathon was not actually anything intended
 for the hackathon, but a short project I wrote last summer.</p>
+<p>If you remember from <a class="reference external" href="introducing-fossrit-timeline-year-in-review.html">my last post</a> on the subject, I had made three files,
+one for each of the years that the FOSSBox had been keeping track of its
+activities on the <a class="reference external" href="http://foss.rit.edu/timeline">timeline</a>. The files were very silly- all the data was
+loaded on the fly from a JSON file, so the only thing in the files was the structure and the 'decoration' text.</p>
+<p>Clearly this was not something that could stand. Today I finally managet to get
+all the files together into one page. Now, when the page loads, it scans the
+JSON file for all years mentioned, and populates a drop-down list with all the
+years it has found. the first (and usually latest) year's data is then loaded
+onto the page.</p>
+<p>When the user clicks on another year from the list, the content is reloaded with
+data from the apropriate year. If you want to see it in action, the new review
+page for timeline now lives <a class="reference external" href="http://foss.rit.edu/timeline/summary.html">here</a>.</p>
                 </article>
                             </aside><!-- /#featured -->
                             <section id="content" class="body">
@@ -185,36 +197,36 @@ working by the end of the 24 hours.</p>
                           <div class="tagcloud">
             <h2>tag cloud</h2>
             <ul>
-                              <li class="tag-4"><a href="/tag/knowledge.html">knowledge</a></li>
-                              <li class="tag-2"><a href="/tag/openshift.html">openshift</a></li>
-                              <li class="tag-3"><a href="/tag/data alchemy.html">data alchemy</a></li>
-                              <li class="tag-2"><a href="/tag/democracymap.html">democracymap</a></li>
-                              <li class="tag-4"><a href="/tag/rise.html">Rise</a></li>
-                              <li class="tag-1"><a href="/tag/peopledashboard.html">peopledashboard</a></li>
-                              <li class="tag-1"><a href="/tag/surs.html">SURS</a></li>
-                              <li class="tag-1"><a href="/tag/scrapers.html">scrapers</a></li>
-                              <li class="tag-4"><a href="/tag/fabulous.html">fabulous</a></li>
-                              <li class="tag-4"><a href="/tag/opl.html">OPL</a></li>
-                              <li class="tag-3"><a href="/tag/jquery.html">jQuery</a></li>
-                              <li class="tag-2"><a href="/tag/pydex.html">pyDex</a></li>
-                              <li class="tag-4"><a href="/tag/wow.html">wow</a></li>
-                              <li class="tag-4"><a href="/tag/python.html">python</a></li>
-                              <li class="tag-4"><a href="/tag/pybotwar.html">pybotwar</a></li>
-                              <li class="tag-3"><a href="/tag/blog.html">blog</a></li>
-                              <li class="tag-2"><a href="/tag/election.html">election</a></li>
-                              <li class="tag-3"><a href="/tag/polyscraper.html">polyscraper</a></li>
-                              <li class="tag-4"><a href="/tag/hardware.html">hardware</a></li>
-                              <li class="tag-1"><a href="/tag/widgets.html">widgets</a></li>
-                              <li class="tag-1"><a href="/tag/floss-seminar.html">FLOSS-seminar</a></li>
-                              <li class="tag-4"><a href="/tag/introspective.html">introspective</a></li>
-                              <li class="tag-1"><a href="/tag/wikiotics.html">wikiotics</a></li>
-                              <li class="tag-1"><a href="/tag/lemonade.html">lemonade</a></li>
-                              <li class="tag-1"><a href="/tag/sugar.html">sugar</a></li>
-                              <li class="tag-3"><a href="/tag/groovebot.html">groovebot</a></li>
-                              <li class="tag-2"><a href="/tag/geowebdns.html">geowebdns</a></li>
-                              <li class="tag-1"><a href="/tag/hackathon.html">hackathon</a></li>
                               <li class="tag-1"><a href="/tag/journalism.html">journalism</a></li>
+                              <li class="tag-1"><a href="/tag/hackathon.html">hackathon</a></li>
+                              <li class="tag-3"><a href="/tag/groovebot.html">groovebot</a></li>
+                              <li class="tag-1"><a href="/tag/peopledashboard.html">peopledashboard</a></li>
+                              <li class="tag-2"><a href="/tag/election.html">election</a></li>
+                              <li class="tag-1"><a href="/tag/sugar.html">sugar</a></li>
+                              <li class="tag-3"><a href="/tag/polyscraper.html">polyscraper</a></li>
+                              <li class="tag-4"><a href="/tag/fabulous.html">fabulous</a></li>
+                              <li class="tag-2"><a href="/tag/geowebdns.html">geowebdns</a></li>
+                              <li class="tag-2"><a href="/tag/democracymap.html">democracymap</a></li>
+                              <li class="tag-1"><a href="/tag/lemonade.html">lemonade</a></li>
+                              <li class="tag-1"><a href="/tag/scrapers.html">scrapers</a></li>
+                              <li class="tag-3"><a href="/tag/data alchemy.html">data alchemy</a></li>
+                              <li class="tag-4"><a href="/tag/hardware.html">hardware</a></li>
+                              <li class="tag-4"><a href="/tag/wow.html">wow</a></li>
+                              <li class="tag-1"><a href="/tag/wikiotics.html">wikiotics</a></li>
+                              <li class="tag-1"><a href="/tag/floss-seminar.html">FLOSS-seminar</a></li>
+                              <li class="tag-3"><a href="/tag/blog.html">blog</a></li>
                               <li class="tag-3"><a href="/tag/timeline.html">timeline</a></li>
+                              <li class="tag-4"><a href="/tag/rise.html">Rise</a></li>
+                              <li class="tag-4"><a href="/tag/opl.html">OPL</a></li>
+                              <li class="tag-4"><a href="/tag/knowledge.html">knowledge</a></li>
+                              <li class="tag-4"><a href="/tag/introspective.html">introspective</a></li>
+                              <li class="tag-1"><a href="/tag/surs.html">SURS</a></li>
+                              <li class="tag-3"><a href="/tag/jquery.html">jQuery</a></li>
+                              <li class="tag-1"><a href="/tag/widgets.html">widgets</a></li>
+                              <li class="tag-4"><a href="/tag/python.html">python</a></li>
+                              <li class="tag-2"><a href="/tag/openshift.html">openshift</a></li>
+                              <li class="tag-4"><a href="/tag/pybotwar.html">pybotwar</a></li>
+                              <li class="tag-2"><a href="/tag/pydex.html">pyDex</a></li>
                           </ul>
           </div>
                                 <div class="social">
