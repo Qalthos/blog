@@ -21,6 +21,9 @@ PLUGINS = [
     'related_posts',
 ]
 
+MENUITEMS = (('resume', 'http://qalthos.github.io/resume/resume.pdf'),
+            )
+
 # Blogroll
 LINKS =  (('FOSS@RIT', 'http://foss.rit.edu'),
          )
