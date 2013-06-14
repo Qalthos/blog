@@ -1,12 +1,13 @@
 Diving Deep
 ###########
-:date: 2010-09-09 18:11
+:date: 2010-06-30 16:55
 :author: Nathaniel Case
 :email: Qalthos@gmail.com
 :tags: scrapers
 
 Yesterday had been spent working on a proper dev branch to CIVX. Today
 we gave it a home.
+
 Today started off trying to get the current dev CIVX running on our
 server. Now, I had some experience setting up a CIVX instance from
 getting one running on my box, but my box is mine and I know what's on
@@ -19,6 +20,7 @@ things weren't happening properly when we had neglected to run a command
 or two. `Luke`_ set us straight at every turn, and I can now say that I
 actually understand what most of those commands do with respect to the
 rest of the system.
+
 The second half of the day was a bit more interesting. Once CIVX was
 running, my attention was turned to the scrapers. Most of the scrapers
 are v2 scrapers, and one of our tasks for the summer is to get things

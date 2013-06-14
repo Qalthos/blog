@@ -1,6 +1,6 @@
 Introducing: GeoPirate!
 #######################
-:date: 2010-09-09 18:11
+:date: 2010-06-23 07:15
 :author: Nathaniel Case
 :email: Qalthos@gmail.com
 :tags: democracymap, geowebdns
@@ -10,6 +10,7 @@ possibly being inaccurate in a week or two. I, along with `Pixel Ninja`_
 and `Python Princess`_, have been hacking away at our various tasks
 together for over a week now, and despite the seemingly constant moving
 from place to place, it's a pretty sweet gig.
+
 My work yesterday was some final polishing of the getall script, and my
 first real push to the geowebdns repository. I'm also working on a
 supplemental, informational guide to maintenance. Unfortunately, my
