@@ -14,7 +14,7 @@
 /* Imports */
 /***** Global *****/
 /* Body */
-/* line 25 */
+/* line 27 */
 body {
   background: #f5f4ef;
   color: #000305;
@@ -28,46 +28,46 @@ body {
 }
 
 /* Headings */
-/* line 37 */
+/* line 39 */
 h1 {
   font-size: 2em;
 }
-/* line 39 */
+/* line 41 */
 h1 a:hover {
   background-color: inherit;
 }
 
-/* line 43 */
+/* line 45 */
 h2 {
   font-size: 1.571em;
 }
 
 /* 22px */
-/* line 44 */
+/* line 46 */
 h3 {
   font-size: 1.429em;
 }
 
 /* 20px */
-/* line 45 */
+/* line 47 */
 h4 {
   font-size: 1.286em;
 }
 
 /* 18px */
-/* line 46 */
+/* line 48 */
 h5 {
   font-size: 1.143em;
 }
 
 /* 16px */
-/* line 47 */
+/* line 49 */
 h6 {
   font-size: 1em;
 }
 
 /* 14px */
-/* line 49 */
+/* line 51 */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   line-height: 1.1;
@@ -75,103 +75,103 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Yanone Kaffeesatz", arial, serif;
 }
 
-/* line 56 */
+/* line 58 */
 h3, h4, h5, h6 {
   margin-top: .8em;
 }
 
-/* line 58 */
+/* line 60 */
 hr {
   border: 2px solid #eeeeee;
 }
 
 /* Anchors */
-/* line 61 */
+/* line 63 */
 a {
   outline: 0;
 }
-/* line 63 */
+/* line 65 */
 a img {
   border: 0px;
   text-decoration: none;
 }
 
-/* line 68 */
+/* line 70 */
 a:link, a:visited {
-  color: #43C750;
+  color: #43c750;
   padding: 0 1px;
   text-decoration: underline;
 }
 
-/* line 73 */
+/* line 75 */
 a:hover, a:active {
-  background-color: #43C750;
+  background-color: #43c750;
   color: #fff;
   text-decoration: none;
   text-shadow: 1px 1px 1px #333333;
 }
 
 /* Paragraphs */
-/* line 81 */
+/* line 83 */
 p {
   margin-bottom: 1.143em;
 }
 
-/* line 83 */
+/* line 85 */
 strong, b {
   font-weight: bold;
 }
 
-/* line 84 */
+/* line 86 */
 em, i {
   font-style: italic;
 }
 
 /* Lists */
-/* line 87 */
+/* line 89 */
 ul {
   list-style: outside disc;
   margin: 1em 0 1.5em 1.5em;
 }
 
-/* line 92 */
+/* line 94 */
 ol {
   list-style: outside decimal;
   margin: 1em 0 1.5em 1.5em;
 }
 
-/* line 97 */
+/* line 99 */
 .post-info {
   float: right;
   margin: 10px;
   padding: 5px;
 }
-/* line 101 */
+/* line 103 */
 .post-info p {
   margin-bottom: 1px;
 }
 
-/* line 106 */
+/* line 108 */
 .readmore {
   float: right;
 }
 
-/* line 108 */
+/* line 110 */
 dl {
   margin: 0 0 1.5em 0;
 }
 
-/* line 109 */
+/* line 111 */
 dt {
   font-weight: bold;
 }
 
-/* line 110 */
+/* line 112 */
 dd {
   margin-left: 1.5em;
 }
 
-/* line 112 */
+/* line 114 */
 pre {
   background-color: #eeeeee;
   padding: 10px;
@@ -180,13 +180,13 @@ pre {
 }
 
 /* Quotes */
-/* line 120 */
+/* line 122 */
 blockquote {
   margin: 20px;
   font-style: italic;
 }
 
-/* line 128 */
+/* line 130 */
 div.note {
   float: right;
   margin: 5px;
@@ -195,7 +195,7 @@ div.note {
 }
 
 /* Tables */
-/* line 136 */
+/* line 138 */
 table {
   margin: 0.5em auto 1.5em auto;
   width: 98%;
@@ -203,38 +203,38 @@ table {
   /* Tbody */
   /* Tfoot */
 }
-/* line 141 */
+/* line 143 */
 table thead th {
   padding: 0.5em 0.4em;
   text-align: left;
 }
-/* line 148 */
+/* line 150 */
 table tbody td {
   padding: 0.5em 0.4em;
 }
 
 /* HTML5 tags */
-/* line 163 */
+/* line 165 */
 header, section, footer,
 aside, nav, article, figure {
   display: block;
 }
 
 /***** Layout *****/
-/* line 168 */
+/* line 170 */
 .body {
   clear: both;
   margin: 0 auto;
   width: 800px;
 }
 
-/* line 169 */
+/* line 171 */
 img.right, figure.right {
   float: right;
   margin: 0 0 2em 2em;
 }
 
-/* line 170 */
+/* line 172 */
 img.left, figure.left {
   float: left;
   margin: 0 2em 2em 0;
@@ -243,19 +243,19 @@ img.left, figure.left {
 /*
     Header
 *****************/
-/* line 175 */
+/* line 177 */
 #banner {
   margin: 0 auto;
   padding: 2.5em 0 0 0;
   /* Banner */
   /* Main Nav */
 }
-/* line 180 */
+/* line 182 */
 #banner h1 {
   font-size: 3.571em;
   line-height: 0;
 }
-/* line 184 */
+/* line 186 */
 #banner h1 a:link, #banner h1 a:visited {
   color: #000305;
   display: block;
@@ -263,18 +263,18 @@ img.left, figure.left {
   margin: 0 0 0.6em 0.2em;
   text-decoration: none;
 }
-/* line 191 */
+/* line 193 */
 #banner h1 a:hover, #banner h1 a:active {
   background: none;
-  color: #43C750;
+  color: #43c750;
   text-shadow: none;
 }
-/* line 197 */
+/* line 199 */
 #banner h1 strong {
   font-size: 0.36em;
   font-weight: normal;
 }
-/* line 204 */
+/* line 206 */
 #banner nav {
   background: #000305;
   font-size: 1.143em;
@@ -288,19 +288,19 @@ img.left, figure.left {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
 }
-/* line 218 */
+/* line 220 */
 #banner nav ul {
   list-style: none;
   margin: 0 auto;
   width: 800px;
 }
-/* line 223 */
+/* line 225 */
 #banner nav li {
   float: left;
   display: inline;
   margin: 0;
 }
-/* line 229 */
+/* line 231 */
 #banner nav a:link, #banner nav a:visited {
   color: #fff;
   display: inline-block;
@@ -308,13 +308,12 @@ img.left, figure.left {
   padding: 5px 1.5em;
   text-decoration: none;
 }
-/* line 236 */
+/* line 238 */
 #banner nav a:hover, #banner nav a:active, #banner nav .active a:link, #banner nav .active a:visited {
   background: #44c751;
-  color: #fff;
   text-shadow: none !important;
 }
-/* line 242 */
+/* line 243 */
 #banner nav li:first-child a {
   border-top-left-radius: 5px;
   -moz-border-radius-topleft: 5px;
@@ -327,9 +326,9 @@ img.left, figure.left {
 /*
     Featured
 *****************/
-/* line 257 */
+/* line 258 */
 #featured {
-  background: #fff;
+  background: white;
   margin-bottom: 2em;
   overflow: hidden;
   padding: 20px;
@@ -338,35 +337,35 @@ img.left, figure.left {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
 }
-/* line 268 */
+/* line 269 */
 #featured figure {
   border: 2px solid #eeeeee;
   float: right;
   margin: 0.786em 2em 0 5em;
   width: 248px;
 }
-/* line 274 */
+/* line 275 */
 #featured figure img {
   display: block;
   float: right;
 }
-/* line 280 */
+/* line 281 */
 #featured h2 {
   color: #44c751;
   font-size: 1.714em;
   margin-bottom: 0.333em;
 }
-/* line 285 */
+/* line 286 */
 #featured h3 {
   font-size: 1.429em;
   margin-bottom: .5em;
 }
-/* line 288 */
+/* line 289 */
 #featured h3 a:link, #featured h3 a:visited {
   color: #000305;
   text-decoration: none;
 }
-/* line 292 */
+/* line 293 */
 #featured h3 a:hover, #featured h3 a:active {
   color: #fff;
 }
@@ -374,9 +373,9 @@ img.left, figure.left {
 /*
     Body
 *****************/
-/* line 301 */
+/* line 302 */
 #content {
-  background: #fff;
+  background: white;
   margin-bottom: 2em;
   overflow: hidden;
   padding: 20px 20px;
@@ -389,30 +388,30 @@ img.left, figure.left {
 /*
     Extras
 *****************/
-/* line 316 */
+/* line 317 */
 #extras {
   margin: 0 auto 3em auto;
   overflow: hidden;
   /* Blogroll */
   /* Social */
 }
-/* line 320 */
+/* line 321 */
 #extras ul {
   list-style: none;
   margin: 0;
 }
-/* line 324 */
+/* line 325 */
 #extras li {
   border-bottom: 1px solid white;
 }
-/* line 327 */
+/* line 328 */
 #extras h2 {
-  color: #43C750;
+  color: #43c750;
   font-size: 1.429em;
   margin-bottom: .25em;
   padding: 0 3px;
 }
-/* line 334 */
+/* line 335 */
 #extras a:link, #extras a:visited {
   color: #444444;
   display: block;
@@ -420,105 +419,105 @@ img.left, figure.left {
   text-decoration: none;
   padding: 0.3em 0.25em;
 }
-/* line 342 */
+/* line 343 */
 #extras a:hover, #extras a:active {
   color: #fff;
 }
-/* line 347 */
+/* line 348 */
 #extras .blogroll {
   float: left;
   width: 195px;
 }
-/* line 351 */
+/* line 352 */
 #extras .blogroll li {
   float: left;
   margin: 0 20px 0 0;
   width: 185px;
 }
-/* line 358 */
+/* line 359 */
 #extras .tagcloud {
   float: left;
   width: 420px;
   line-height: 1.8em;
 }
-/* line 362 */
+/* line 363 */
 #extras .tagcloud li {
   float: left;
 }
-/* line 365 */
+/* line 366 */
 #extras .tagcloud a {
   padding-top: 0;
   padding-bottom: 0;
 }
-/* line 369 */
+/* line 370 */
 #extras .tagcloud .tag-4 a {
   font-size: 0.6em;
 }
-/* line 372 */
+/* line 373 */
 #extras .tagcloud .tag-3 a {
   font-size: 0.8em;
 }
-/* line 375 */
+/* line 376 */
 #extras .tagcloud .tag-2 a {
   font-size: 1.1em;
 }
-/* line 378 */
+/* line 379 */
 #extras .tagcloud .tag-1 a {
   font-size: 1.5em;
 }
-/* line 384 */
+/* line 385 */
 #extras .social {
   float: right;
   width: 175px;
   /* Icons */
 }
-/* line 388 */
+/* line 389 */
 #extras .social a {
   background-repeat: no-repeat;
   background-position: 3px 6px;
   padding-left: 25px;
 }
-/* line 395 */
+/* line 396 */
 #extras .social a[href*='delicious.com'] {
   background-image: url("../images/icons/delicious.png");
 }
-/* line 398 */
+/* line 399 */
 #extras .social a[href*='digg.com'] {
   background-image: url("../images/icons/digg.png");
 }
-/* line 401 */
+/* line 402 */
 #extras .social a[href*='facebook.com'] {
   background-image: url("../images/icons/facebook.png");
 }
-/* line 404 */
+/* line 405 */
 #extras .social a[href*='last.fm'], #extras .social .social a[href*='lastfm.'] {
   background-image: url("../images/icons/lastfm.png");
 }
-/* line 407 */
+/* line 408 */
 #extras .social a[type$='atom+xml'], #extras .social .social a[type$='rss+xml'] {
   background-image: url("../images/icons/rss.png");
 }
-/* line 410 */
+/* line 411 */
 #extras .social a[href*='twitter.com'] {
   background-image: url("../images/icons/twitter.png");
 }
-/* line 413 */
+/* line 414 */
 #extras .social a[href*='linkedin.com'] {
   background-image: url("../images/icons/linkedin.png");
 }
-/* line 416 */
+/* line 417 */
 #extras .social a[href*='gitorious.org'] {
   background-image: url("../images/icons/gitorious.png");
 }
-/* line 419 */
+/* line 420 */
 #extras .social a[href*='github.com'], #extras .social a[href*='git.io'] {
   background-image: url("../images/icons/github.png");
 }
-/* line 422 */
+/* line 423 */
 #extras .social a[href*='gittip.com'] {
   background-image: url("../images/icons/gittip.png");
 }
-/* line 425 */
+/* line 426 */
 #extras .social a[href*='plus.google.com'], #extras .social a[href*='gplus.to'] {
   background-image: url("../images/icons/google-plus.png");
 }
@@ -526,9 +525,9 @@ img.left, figure.left {
 /*
     About
 *****************/
-/* line 434 */
+/* line 435 */
 #about {
-  background: #fff;
+  background: white;
   font-style: normal;
   margin-bottom: 2em;
   overflow: hidden;
@@ -539,27 +538,27 @@ img.left, figure.left {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
 }
-/* line 447 */
+/* line 448 */
 #about .primary {
   float: left;
   width: 165px;
 }
-/* line 450 */
+/* line 451 */
 #about .primary strong {
   color: #C64350;
   display: block;
   font-size: 1.286em;
 }
-/* line 456 */
+/* line 457 */
 #about .photo {
   float: left;
   margin: 5px 20px;
 }
-/* line 461 */
+/* line 462 */
 #about .url:link, #about .url:visited {
   text-decoration: none;
 }
-/* line 465 */
+/* line 466 */
 #about .bio {
   float: right;
   width: 500px;
@@ -568,7 +567,7 @@ img.left, figure.left {
 /*
     Footer
 *****************/
-/* line 474 */
+/* line 475 */
 #contentinfo {
   padding-bottom: 2em;
   text-align: right;
@@ -576,7 +575,7 @@ img.left, figure.left {
 
 /***** Sections *****/
 /* Blog */
-/* line 478 */
+/* line 479 */
 .hentry {
   display: block;
   clear: both;
@@ -584,58 +583,58 @@ img.left, figure.left {
   padding: 1.5em 0;
   /* Content */
 }
-/* line 483 */
+/* line 484 */
 .hentry img {
   display: none;
 }
-/* line 486 */
+/* line 487 */
 .hentry .post-info * {
   font-style: normal;
 }
-/* line 490 */
+/* line 491 */
 .hentry footer {
   margin: 0;
   padding: 0;
 }
-/* line 493 */
+/* line 494 */
 .hentry footer address {
   display: inline;
 }
 
-/* line 498 */
+/* line 499 */
 li:last-child .hentry, #content > .hentry {
   border: 0;
   margin: 0;
 }
 
-/* line 499 */
+/* line 500 */
 #content > .hentry {
   padding: 1em 0;
 }
 
-/* line 500 */
+/* line 501 */
 .entry-title {
   font-size: 3em;
   margin-bottom: 10px;
   margin-top: 0;
 }
-/* line 504 */
+/* line 505 */
 .entry-title a:link, .entry-title a:visited {
   text-decoration: none;
   color: #333333;
 }
-/* line 508 */
+/* line 509 */
 .entry-title a:visited {
   background-color: #fff;
 }
 
-/* line 513 */
+/* line 514 */
 #posts-list {
   list-style: none;
   margin: 0;
   /* Blog Index */
 }
-/* line 517 */
+/* line 518 */
 #posts-list footer {
   left: 10px;
   position: relative;
@@ -643,18 +642,18 @@ li:last-child .hentry, #content > .hentry {
   top: 0.5em;
   width: 190px;
 }
-/* line 523 */
+/* line 524 */
 #posts-list footer address {
   display: block;
 }
-/* line 529 */
+/* line 530 */
 #posts-list .hentry {
   padding-left: 10px;
   position: relative;
 }
 
 /* About the Author */
-/* line 536 */
+/* line 537 */
 #about-author {
   background: #f9f9f9;
   clear: both;
@@ -665,14 +664,14 @@ li:last-child .hentry, #content > .hentry {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
 }
-/* line 547 */
+/* line 548 */
 #about-author strong {
   color: #C64350;
   clear: both;
   display: block;
   font-size: 1.429em;
 }
-/* line 554 */
+/* line 555 */
 #about-author .photo {
   border: 1px solid #dddddd;
   float: left;
@@ -680,12 +679,12 @@ li:last-child .hentry, #content > .hentry {
 }
 
 /* Comments */
-/* line 562 */
+/* line 563 */
 #comments-list {
   list-style: none;
   margin: 0 1em;
 }
-/* line 566 */
+/* line 567 */
 #comments-list blockquote {
   background: #f8f8f8;
   clear: both;
@@ -696,48 +695,48 @@ li:last-child .hentry, #content > .hentry {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
 }
-/* line 577 */
+/* line 578 */
 #comments-list footer {
   color: #888;
   padding: 0.5em 1em 0 0;
   text-align: right;
 }
-/* line 583 */
+/* line 584 */
 #comments-list li:nth-child(2n) blockquote {
   background: #F5f5f5;
 }
 
 /* Add a Comment */
-/* line 590 */
+/* line 591 */
 #add-comment label {
   clear: left;
   float: left;
   text-align: left;
   width: 150px;
 }
-/* line 591 */
+/* line 592 */
 #add-comment input[type='text'], #add-comment input[type='email'], #add-comment input[type='url'] {
   float: left;
   width: 200px;
 }
-/* line 594 */
+/* line 595 */
 #add-comment textarea {
   float: left;
   height: 150px;
   width: 495px;
 }
-/* line 599 */
+/* line 600 */
 #add-comment p.req {
   clear: both;
   margin: 0 0.5em 1em 0;
   text-align: right;
 }
-/* line 604 */
+/* line 605 */
 #add-comment input[type='submit'] {
   float: right;
   margin: 0 0.5em;
 }
-/* line 608 */
+/* line 609 */
 #add-comment * {
   margin-bottom: .5em;
 }
