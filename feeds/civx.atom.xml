@@ -294,14 +294,14 @@ down before I leave today.&lt;/p&gt;
 </summary><category term="peopledashboard"></category></entry><entry><title>CIVX Stuff</title><link href="http://qalthos.github.io/blog/civx-stuff.html" rel="alternate"></link><updated>2010-09-09T18:11:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-09-09:civx-stuff.html</id><summary type="html">&lt;p&gt;So I've been spending some time finally getting some time to familiarize
 myself with CIVX and all the parts that make up the system. I'm almost
 comfortable with how the whole thing works together, though I'm not
-entirely clear on how some things work to finally get to the screen.
-Still, I got things running, both the current CIVX build and &lt;a class="reference external" href="http://foss.rit.edu/user/17"&gt;Kate's&lt;/a&gt;
+entirely clear on how some things work to finally get to the screen.&lt;/p&gt;
+&lt;p&gt;Still, I got things running, both the current CIVX build and &lt;a class="reference external" href="http://foss.rit.edu/user/17"&gt;Kate's&lt;/a&gt;
 widget, though getting the two together is harder than it seems like it
 should be. On the other hand, I tweaked the GettingStarted page of the
 CIVX wiki to smooth out a few bumps I ran into during the install
 process. The Ubuntu instructions are still broken, but I plan going to
-look into that in the future.
-In terms of actually getting things done, I haven't done much of
+look into that in the future.&lt;/p&gt;
+&lt;p&gt;In terms of actually getting things done, I haven't done much of
 substance. I've been immersing myself in CIVX, git, pep8, and all the
 different things that go into the FOSS BOX. While I've been in the open
 source community for a while now (and my very first project is almost
@@ -310,34 +310,10 @@ that was running in full swing with established work. Somehow this seems
 different than the places I've worked previously... though that could
 simply be the distributed nature of the work. With &lt;a class="reference external" href="http://lewk.org"&gt;Luke&lt;/a&gt; no longer
 down the hall somewhere, getting information has turned into a more
-interesting experience when the necessary parts are in his head.
-I'm looking forward to an exciting next few weeks here, and a fruitful
+interesting experience when the necessary parts are in his head.&lt;/p&gt;
+&lt;p&gt;I'm looking forward to an exciting next few weeks here, and a fruitful
 next few years with the information learned from this experience.&lt;/p&gt;
-</summary><category term="peopledashboard"></category><category term="widgets"></category></entry><entry><title>Diving Deep</title><link href="http://qalthos.github.io/blog/diving-deep.html" rel="alternate"></link><updated>2010-09-09T18:11:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-09-09:diving-deep.html</id><summary type="html">&lt;p&gt;Yesterday had been spent working on a proper dev branch to CIVX. Today
-we gave it a home.
-Today started off trying to get the current dev CIVX running on our
-server. Now, I had some experience setting up a CIVX instance from
-getting one running on my box, but my box is mine and I know what's on
-it. This server is not, so we had a few troubles along the way. Once
-again the instructions proved insufficient (though not actually bad per
-se). The server was running Python 2.4 by default, and one of the
-scripts wanted to be run from Python 2.6, as it was pulling a few things
-from future. Remy and I spent more than a little while wondering why
-things weren't happening properly when we had neglected to run a command
-or two. &lt;a class="reference external" href="&amp;quot;http://lewk.org"&gt;Luke&lt;/a&gt; set us straight at every turn, and I can now say that I
-actually understand what most of those commands do with respect to the
-rest of the system.
-The second half of the day was a bit more interesting. Once CIVX was
-running, my attention was turned to the scrapers. Most of the scrapers
-are v2 scrapers, and one of our tasks for the summer is to get things
-running up to v3. On the first try getting the stimulus watcher scraper
-running, we had a few problems remembering where everything went and
-where to call what when. On the second shot getting a scraper for
-howdtheyvote.ca data, it went much faster. I need to remember to source
-tg2env when I'm on the server, but mostly, things were good today.
-Tomorrow we put together the pieces of v3, and keep on moving towards
-our goals.&lt;/p&gt;
-</summary><category term="scrapers"></category></entry><entry><title>Here be Dragons</title><link href="http://qalthos.github.io/blog/here-be-dragons.html" rel="alternate"></link><updated>2010-09-09T18:11:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-09-09:here-be-dragons.html</id><summary type="html">&lt;p&gt;Today was the day we got &lt;a class="reference external" href="http://www.rebeccanatalie.com"&gt;Rebecca&lt;/a&gt; on to a git repo towards
+</summary><category term="peopledashboard"></category><category term="widgets"></category></entry><entry><title>Here be Dragons</title><link href="http://qalthos.github.io/blog/here-be-dragons.html" rel="alternate"></link><updated>2010-09-09T18:11:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-09-09:here-be-dragons.html</id><summary type="html">&lt;p&gt;Today was the day we got &lt;a class="reference external" href="http://www.rebeccanatalie.com"&gt;Rebecca&lt;/a&gt; on to a git repo towards
 implementing her changes to the people dashboard. It's only a halfway
 step, as she isn't entirely using the proper version of the widgets but
 a hacked one that works locally, and needs to be morphed into something
@@ -355,22 +331,7 @@ just for what's in the code. Good old meld, which I had been using, has
 proven itself inadequate to the massive differences between these files.
 Hopefully tomorrow I will have a fresh start from which to sculpt this
 mess I've constructed into its completed form.&lt;/p&gt;
-</summary><category term="peopledashboard"></category></entry><entry><title>Introducing: GeoPirate!</title><link href="http://qalthos.github.io/blog/introducing-geopirate.html" rel="alternate"></link><updated>2010-09-09T18:11:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-09-09:introducing-geopirate.html</id><summary type="html">&lt;p&gt;So I've received my apparently mandated CIVX nickname, despite it
-possibly being inaccurate in a week or two. I, along with &lt;a class="reference external" href="http://rebeccanatalie.com/"&gt;Pixel Ninja&lt;/a&gt;
-and &lt;a class="reference external" href="http://foss.rit.edu/user/17"&gt;Python Princess&lt;/a&gt;, have been hacking away at our various tasks
-together for over a week now, and despite the seemingly constant moving
-from place to place, it's a pretty sweet gig.
-My work yesterday was some final polishing of the getall script, and my
-first real push to the geowebdns repository. I'm also working on a
-supplemental, informational guide to maintenance. Unfortunately, my
-changes can't quite replace the old script yet, because the import
-script (the one that actually starts to bring the files into the
-database and do something with them) is hardcoded to the current files
-and that script is a bit harder to hack than the download script. The
-real work was on the documentation, trying to get people to understand
-my reasoning behind the changes and allow for them to continue my work
-without too much difficulty.&lt;/p&gt;
-</summary><category term="democracymap"></category><category term="geowebdns"></category></entry><entry><title>Just another ten-hour day</title><link href="http://qalthos.github.io/blog/just-another-ten-hour-day.html" rel="alternate"></link><updated>2010-09-09T18:11:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-09-09:just-another-ten-hour-day.html</id><summary type="html">&lt;p&gt;Today was another exciting day in CIVX-land.
+</summary><category term="peopledashboard"></category></entry><entry><title>Just another ten-hour day</title><link href="http://qalthos.github.io/blog/just-another-ten-hour-day.html" rel="alternate"></link><updated>2010-09-09T18:11:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-09-09:just-another-ten-hour-day.html</id><summary type="html">&lt;p&gt;Today was another exciting day in CIVX-land.
 tl;dr: I spend the day helping other people and being awesome
 It started out with the latest in a series of attempts at getting
 &lt;a class="reference external" href="http://www.rebeccanatalie.com"&gt;Rebecca&lt;/a&gt; to a working CIVX repo. As I work through this with her, I am
@@ -512,23 +473,62 @@ making sure my code was legible.
 At that point, almost ten hours after I had started, I sat back,
 committed my final changes, and decompressed. *This*- this is why I
 love open source.&lt;/p&gt;
-</summary><category term="peopledashboard"></category></entry><entry><title>More Conference Calls</title><link href="http://qalthos.github.io/blog/more-conference-calls.html" rel="alternate"></link><updated>2010-09-09T18:11:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-09-09:more-conference-calls.html</id><summary type="html">&lt;p&gt;Every time I go through one of these calls I feel like I come out
+</summary><category term="peopledashboard"></category></entry><entry><title>Diving Deep</title><link href="http://qalthos.github.io/blog/diving-deep.html" rel="alternate"></link><updated>2010-06-30T16:55:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-06-30:diving-deep.html</id><summary type="html">&lt;p&gt;Yesterday had been spent working on a proper dev branch to CIVX. Today
+we gave it a home.&lt;/p&gt;
+&lt;p&gt;Today started off trying to get the current dev CIVX running on our
+server. Now, I had some experience setting up a CIVX instance from
+getting one running on my box, but my box is mine and I know what's on
+it. This server is not, so we had a few troubles along the way. Once
+again the instructions proved insufficient (though not actually bad per
+se). The server was running Python 2.4 by default, and one of the
+scripts wanted to be run from Python 2.6, as it was pulling a few things
+from future. Remy and I spent more than a little while wondering why
+things weren't happening properly when we had neglected to run a command
+or two. &lt;a class="reference external" href="&amp;quot;http://lewk.org"&gt;Luke&lt;/a&gt; set us straight at every turn, and I can now say that I
+actually understand what most of those commands do with respect to the
+rest of the system.&lt;/p&gt;
+&lt;p&gt;The second half of the day was a bit more interesting. Once CIVX was
+running, my attention was turned to the scrapers. Most of the scrapers
+are v2 scrapers, and one of our tasks for the summer is to get things
+running up to v3. On the first try getting the stimulus watcher scraper
+running, we had a few problems remembering where everything went and
+where to call what when. On the second shot getting a scraper for
+howdtheyvote.ca data, it went much faster. I need to remember to source
+tg2env when I'm on the server, but mostly, things were good today.
+Tomorrow we put together the pieces of v3, and keep on moving towards
+our goals.&lt;/p&gt;
+</summary><category term="scrapers"></category></entry><entry><title>More Conference Calls</title><link href="http://qalthos.github.io/blog/more-conference-calls.html" rel="alternate"></link><updated>2010-06-24T12:10:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-06-24:more-conference-calls.html</id><summary type="html">&lt;p&gt;Every time I go through one of these calls I feel like I come out
 knowing less about the topic discussed. The topics aren't hard, and I
 can now follow along and understand most of what they're talking about,
 but most of the technologies are things I haven't really looked at
 before. It's interesting, and it's exciting, but it's a little wearying
 too. The majority of the talks seem to revolve around the use of Amazon
-EC2 instances, of which I know nothing.
-On my own tasks, the semifinal versions of the getall script and the
+EC2 instances, of which I know nothing.&lt;/p&gt;
+&lt;p&gt;On my own tasks, the semifinal versions of the getall script and the
 associated documentation got pushed to &lt;a class="reference external" href="http://bitbucket.org/slinkp/geowebdns"&gt;geowebdns&lt;/a&gt;' repository today. I
 feel pretty good about the changes I made, even if it doesn't prove
 useful to the current task, I have opened up some small part of someone
 else's open source program, and that's really cool.&lt;/p&gt;
-</summary><category term="democracymap"></category><category term="geowebdns"></category></entry><entry><title>Hello, world...</title><link href="http://qalthos.github.io/blog/hello-world.html" rel="alternate"></link><updated>2010-09-09T18:10:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-09-09:hello-world.html</id><summary type="html">&lt;p&gt;This is my first posting despite having been here for a week, because
+</summary><category term="democracymap"></category><category term="geowebdns"></category></entry><entry><title>Introducing: GeoPirate!</title><link href="http://qalthos.github.io/blog/introducing-geopirate.html" rel="alternate"></link><updated>2010-06-23T07:15:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-06-23:introducing-geopirate.html</id><summary type="html">&lt;p&gt;So I've received my apparently mandated CIVX nickname, despite it
+possibly being inaccurate in a week or two. I, along with &lt;a class="reference external" href="http://rebeccanatalie.com/"&gt;Pixel Ninja&lt;/a&gt;
+and &lt;a class="reference external" href="http://foss.rit.edu/user/17"&gt;Python Princess&lt;/a&gt;, have been hacking away at our various tasks
+together for over a week now, and despite the seemingly constant moving
+from place to place, it's a pretty sweet gig.&lt;/p&gt;
+&lt;p&gt;My work yesterday was some final polishing of the getall script, and my
+first real push to the geowebdns repository. I'm also working on a
+supplemental, informational guide to maintenance. Unfortunately, my
+changes can't quite replace the old script yet, because the import
+script (the one that actually starts to bring the files into the
+database and do something with them) is hardcoded to the current files
+and that script is a bit harder to hack than the download script. The
+real work was on the documentation, trying to get people to understand
+my reasoning behind the changes and allow for them to continue my work
+without too much difficulty.&lt;/p&gt;
+</summary><category term="democracymap"></category><category term="geowebdns"></category></entry><entry><title>Hello, world...</title><link href="http://qalthos.github.io/blog/hello-world.html" rel="alternate"></link><updated>2010-06-21T14:53:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-06-21:hello-world.html</id><summary type="html">&lt;p&gt;This is my first posting despite having been here for a week, because
 the zaniness that was my first week did not allow for such silly things
 as introductions. Now I finally have some of the infrastructure things
-worked out, and can report on my findings.
-Work has been progressing on a scraper for &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Shapefile"&gt;shapefiles&lt;/a&gt; for the Senate.
+worked out, and can report on my findings.&lt;/p&gt;
+&lt;p&gt;Work has been progressing on a scraper for &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Shapefile"&gt;shapefiles&lt;/a&gt; for the Senate.
 I've been fairly successful in getting a large amount of data, (up to
 7.6 GB of zip files!) so my task today was to clean up the script and
 make it readable to commit it back upstream. I had started by adding
@@ -539,12 +539,12 @@ into a simple&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 'for URL in $URL_LIST; download $URL $FILE; done'
 &lt;/pre&gt;
-&lt;p&gt;Well, I think it's simpler...
-Each time I tweak away at this file, my bash skill gets better and
+&lt;p&gt;Well, I think it's simpler...&lt;/p&gt;
+&lt;p&gt;Each time I tweak away at this file, my bash skill gets better and
 better, but whether any of this is going to stick around is another
 question. I always forget the simple bashisms, like for loops and
 conditionals, and I can never remember quite how variables work. But as
 I work more with this file, I get more comfortable with these
 conventions. Though I still occasionally pine for the occasional
 pythonic statement (and perhaps also for the fjords).&lt;/p&gt;
-&lt;/p&gt;</summary><category term="democracymap"></category><category term="geowebdns"></category></entry></feed>
+</summary><category term="democracymap"></category><category term="geowebdns"></category></entry></feed>

@@ -7,8 +7,9 @@
     Autor URI: http://enrique-ramirez.com
 */
 
+$background: #F5F4EF;
 $text: #000305;
-$green: #44C751;
+$hover: #44C751;
 $green_text: #43C750;
 $title: #333333;
 $footer_link: #444444;
@@ -22,7 +23,7 @@ $footer_link: #444444;
 /***** Global *****/
 /* Body */
 body {
-    background: #F5F4EF;
+    background: $background;
     color: $text;
     font-size: 87.5%; /* Base font size: 14px */
     font-family: 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -233,7 +234,7 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
             text-decoration: none;
         }
         a:hover, a:active, .active a:link, .active a:visited {
-            background: $green;
+            background: $hover;
             color: #fff;
             text-shadow: none !important;
         }
@@ -277,7 +278,7 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
     }
 
     h2 {
-        color: $green;
+        color: $hover;
         font-size: 1.714em;
         margin-bottom: 0.333em;
     }
@@ -357,27 +358,24 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
     .tagcloud {
         float: left;
         width: 420px;
+        line-height: 1.8em;
         li {
             float: left;
         }
+        a {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
         .tag-4 a {
-            padding-top: 1.075em;
-            padding-bottom: 1.07em;
             font-size: 0.6em;
         }
         .tag-3 a {
-            padding-top: 0.625em;
-            padding-bottom: 0.625em;
             font-size: 0.8em;
         }
         .tag-2 a {
-            padding-top: 0.219em;
-            padding-top: 0.219em;
             font-size: 1.1em;
         }
         .tag-1 a {
-            padding-top: 0.0em;
-            padding-bottom: 0.0em;
             font-size: 1.5em;
         }
     }
@@ -490,7 +488,8 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
     }
     /* Content */
     footer {
-        margin-bottom: 2em;
+        margin: 0;
+        padding: 0;
         address {
             display: inline;
         }

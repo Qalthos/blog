@@ -14,13 +14,13 @@
 /* Imports */
 /***** Global *****/
 /* Body */
-/* line 24 */
+/* line 25 */
 body {
-  background: #F5F4EF;
+  background: #f5f4ef;
   color: #000305;
   font-size: 87.5%;
   /* Base font size: 14px */
-  font-family: 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: "Trebuchet MS", Trebuchet, "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
   line-height: 1.429;
   margin: 0;
   padding: 0;
@@ -28,82 +28,82 @@ body {
 }
 
 /* Headings */
-/* line 36 */
+/* line 37 */
 h1 {
   font-size: 2em;
 }
-/* line 38 */
+/* line 39 */
 h1 a:hover {
   background-color: inherit;
 }
 
-/* line 42 */
+/* line 43 */
 h2 {
   font-size: 1.571em;
 }
 
 /* 22px */
-/* line 43 */
+/* line 44 */
 h3 {
   font-size: 1.429em;
 }
 
 /* 20px */
-/* line 44 */
+/* line 45 */
 h4 {
   font-size: 1.286em;
 }
 
 /* 18px */
-/* line 45 */
+/* line 46 */
 h5 {
   font-size: 1.143em;
 }
 
 /* 16px */
-/* line 46 */
+/* line 47 */
 h6 {
   font-size: 1em;
 }
 
 /* 14px */
-/* line 48 */
+/* line 49 */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   line-height: 1.1;
   margin-bottom: .8em;
-  font-family: 'Yanone Kaffeesatz', arial, serif;
+  font-family: "Yanone Kaffeesatz", arial, serif;
 }
 
-/* line 55 */
+/* line 56 */
 h3, h4, h5, h6 {
   margin-top: .8em;
 }
 
-/* line 57 */
+/* line 58 */
 hr {
-  border: 2px solid #EEEEEE;
+  border: 2px solid #eeeeee;
 }
 
 /* Anchors */
-/* line 60 */
+/* line 61 */
 a {
   outline: 0;
 }
-/* line 62 */
+/* line 63 */
 a img {
   border: 0px;
   text-decoration: none;
 }
 
-/* line 67 */
+/* line 68 */
 a:link, a:visited {
   color: #43C750;
   padding: 0 1px;
   text-decoration: underline;
 }
 
-/* line 72 */
+/* line 73 */
 a:hover, a:active {
   background-color: #43C750;
   color: #fff;
@@ -112,66 +112,66 @@ a:hover, a:active {
 }
 
 /* Paragraphs */
-/* line 80 */
+/* line 81 */
 p {
   margin-bottom: 1.143em;
 }
 
-/* line 82 */
+/* line 83 */
 strong, b {
   font-weight: bold;
 }
 
-/* line 83 */
+/* line 84 */
 em, i {
   font-style: italic;
 }
 
 /* Lists */
-/* line 86 */
+/* line 87 */
 ul {
   list-style: outside disc;
   margin: 1em 0 1.5em 1.5em;
 }
 
-/* line 91 */
+/* line 92 */
 ol {
   list-style: outside decimal;
   margin: 1em 0 1.5em 1.5em;
 }
 
-/* line 96 */
+/* line 97 */
 .post-info {
   float: right;
   margin: 10px;
   padding: 5px;
 }
-/* line 100 */
+/* line 101 */
 .post-info p {
   margin-bottom: 1px;
 }
 
-/* line 105 */
+/* line 106 */
 .readmore {
   float: right;
 }
 
-/* line 107 */
+/* line 108 */
 dl {
   margin: 0 0 1.5em 0;
 }
 
-/* line 108 */
+/* line 109 */
 dt {
   font-weight: bold;
 }
 
-/* line 109 */
+/* line 110 */
 dd {
   margin-left: 1.5em;
 }
 
-/* line 111 */
+/* line 112 */
 pre {
   background-color: #eeeeee;
   padding: 10px;
@@ -180,13 +180,13 @@ pre {
 }
 
 /* Quotes */
-/* line 119 */
+/* line 120 */
 blockquote {
   margin: 20px;
   font-style: italic;
 }
 
-/* line 127 */
+/* line 128 */
 div.note {
   float: right;
   margin: 5px;
@@ -195,46 +195,46 @@ div.note {
 }
 
 /* Tables */
-/* line 135 */
+/* line 136 */
 table {
-  margin: .5em auto 1.5em auto;
+  margin: 0.5em auto 1.5em auto;
   width: 98%;
   /* Thead */
   /* Tbody */
   /* Tfoot */
 }
-/* line 140 */
+/* line 141 */
 table thead th {
-  padding: .5em .4em;
+  padding: 0.5em 0.4em;
   text-align: left;
 }
-/* line 147 */
+/* line 148 */
 table tbody td {
-  padding: .5em .4em;
+  padding: 0.5em 0.4em;
 }
 
 /* HTML5 tags */
-/* line 162 */
+/* line 163 */
 header, section, footer,
 aside, nav, article, figure {
   display: block;
 }
 
 /***** Layout *****/
-/* line 167 */
+/* line 168 */
 .body {
   clear: both;
   margin: 0 auto;
   width: 800px;
 }
 
-/* line 168 */
+/* line 169 */
 img.right, figure.right {
   float: right;
   margin: 0 0 2em 2em;
 }
 
-/* line 169 */
+/* line 170 */
 img.left, figure.left {
   float: left;
   margin: 0 2em 2em 0;
@@ -243,38 +243,38 @@ img.left, figure.left {
 /*
     Header
 *****************/
-/* line 174 */
+/* line 175 */
 #banner {
   margin: 0 auto;
   padding: 2.5em 0 0 0;
   /* Banner */
   /* Main Nav */
 }
-/* line 179 */
+/* line 180 */
 #banner h1 {
   font-size: 3.571em;
   line-height: 0;
 }
-/* line 183 */
+/* line 184 */
 #banner h1 a:link, #banner h1 a:visited {
   color: #000305;
   display: block;
   font-weight: bold;
-  margin: 0 0 .6em .2em;
+  margin: 0 0 0.6em 0.2em;
   text-decoration: none;
 }
-/* line 190 */
+/* line 191 */
 #banner h1 a:hover, #banner h1 a:active {
   background: none;
   color: #43C750;
   text-shadow: none;
 }
-/* line 196 */
+/* line 197 */
 #banner h1 strong {
   font-size: 0.36em;
   font-weight: normal;
 }
-/* line 203 */
+/* line 204 */
 #banner nav {
   background: #000305;
   font-size: 1.143em;
@@ -288,19 +288,19 @@ img.left, figure.left {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
 }
-/* line 217 */
+/* line 218 */
 #banner nav ul {
   list-style: none;
   margin: 0 auto;
   width: 800px;
 }
-/* line 222 */
+/* line 223 */
 #banner nav li {
   float: left;
   display: inline;
   margin: 0;
 }
-/* line 228 */
+/* line 229 */
 #banner nav a:link, #banner nav a:visited {
   color: #fff;
   display: inline-block;
@@ -308,13 +308,13 @@ img.left, figure.left {
   padding: 5px 1.5em;
   text-decoration: none;
 }
-/* line 235 */
+/* line 236 */
 #banner nav a:hover, #banner nav a:active, #banner nav .active a:link, #banner nav .active a:visited {
   background: #44c751;
   color: #fff;
   text-shadow: none !important;
 }
-/* line 241 */
+/* line 242 */
 #banner nav li:first-child a {
   border-top-left-radius: 5px;
   -moz-border-radius-topleft: 5px;
@@ -327,7 +327,7 @@ img.left, figure.left {
 /*
     Featured
 *****************/
-/* line 256 */
+/* line 257 */
 #featured {
   background: #fff;
   margin-bottom: 2em;
@@ -338,35 +338,35 @@ img.left, figure.left {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
 }
-/* line 267 */
+/* line 268 */
 #featured figure {
-  border: 2px solid #eee;
+  border: 2px solid #eeeeee;
   float: right;
   margin: 0.786em 2em 0 5em;
   width: 248px;
 }
-/* line 273 */
+/* line 274 */
 #featured figure img {
   display: block;
   float: right;
 }
-/* line 279 */
+/* line 280 */
 #featured h2 {
   color: #44c751;
   font-size: 1.714em;
   margin-bottom: 0.333em;
 }
-/* line 284 */
+/* line 285 */
 #featured h3 {
   font-size: 1.429em;
   margin-bottom: .5em;
 }
-/* line 287 */
+/* line 288 */
 #featured h3 a:link, #featured h3 a:visited {
   color: #000305;
   text-decoration: none;
 }
-/* line 291 */
+/* line 292 */
 #featured h3 a:hover, #featured h3 a:active {
   color: #fff;
 }
@@ -374,7 +374,7 @@ img.left, figure.left {
 /*
     Body
 *****************/
-/* line 300 */
+/* line 301 */
 #content {
   background: #fff;
   margin-bottom: 2em;
@@ -389,138 +389,136 @@ img.left, figure.left {
 /*
     Extras
 *****************/
-/* line 315 */
+/* line 316 */
 #extras {
   margin: 0 auto 3em auto;
   overflow: hidden;
   /* Blogroll */
   /* Social */
 }
-/* line 319 */
+/* line 320 */
 #extras ul {
   list-style: none;
   margin: 0;
 }
-/* line 323 */
+/* line 324 */
 #extras li {
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid white;
 }
-/* line 326 */
+/* line 327 */
 #extras h2 {
   color: #43C750;
   font-size: 1.429em;
   margin-bottom: .25em;
   padding: 0 3px;
 }
-/* line 333 */
+/* line 334 */
 #extras a:link, #extras a:visited {
   color: #444444;
   display: block;
-  border-bottom: 1px solid #F4E3E3;
+  border-bottom: 1px solid #f4e3e3;
   text-decoration: none;
-  padding: .3em .25em;
+  padding: 0.3em 0.25em;
 }
-/* line 341 */
+/* line 342 */
 #extras a:hover, #extras a:active {
   color: #fff;
 }
-/* line 346 */
+/* line 347 */
 #extras .blogroll {
   float: left;
   width: 195px;
 }
-/* line 350 */
+/* line 351 */
 #extras .blogroll li {
   float: left;
   margin: 0 20px 0 0;
   width: 185px;
 }
-/* line 357 */
+/* line 358 */
 #extras .tagcloud {
   float: left;
   width: 420px;
+  line-height: 1.8em;
 }
-/* line 360 */
+/* line 362 */
 #extras .tagcloud li {
   float: left;
 }
-/* line 363 */
+/* line 365 */
+#extras .tagcloud a {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+/* line 369 */
 #extras .tagcloud .tag-4 a {
-  padding-top: 1.075em;
-  padding-bottom: 1.07em;
   font-size: 0.6em;
 }
-/* line 368 */
+/* line 372 */
 #extras .tagcloud .tag-3 a {
-  padding-top: 0.625em;
-  padding-bottom: 0.625em;
   font-size: 0.8em;
 }
-/* line 373 */
+/* line 375 */
 #extras .tagcloud .tag-2 a {
-  padding-top: 0.219em;
-  padding-top: 0.219em;
   font-size: 1.1em;
 }
 /* line 378 */
 #extras .tagcloud .tag-1 a {
-  padding-top: 0.0em;
-  padding-bottom: 0.0em;
   font-size: 1.5em;
 }
-/* line 386 */
+/* line 384 */
 #extras .social {
   float: right;
   width: 175px;
   /* Icons */
 }
-/* line 390 */
+/* line 388 */
 #extras .social a {
   background-repeat: no-repeat;
   background-position: 3px 6px;
   padding-left: 25px;
 }
-/* line 397 */
+/* line 395 */
 #extras .social a[href*='delicious.com'] {
   background-image: url("../images/icons/delicious.png");
 }
-/* line 400 */
+/* line 398 */
 #extras .social a[href*='digg.com'] {
   background-image: url("../images/icons/digg.png");
 }
-/* line 403 */
+/* line 401 */
 #extras .social a[href*='facebook.com'] {
   background-image: url("../images/icons/facebook.png");
 }
-/* line 406 */
+/* line 404 */
 #extras .social a[href*='last.fm'], #extras .social .social a[href*='lastfm.'] {
   background-image: url("../images/icons/lastfm.png");
 }
-/* line 409 */
+/* line 407 */
 #extras .social a[type$='atom+xml'], #extras .social .social a[type$='rss+xml'] {
   background-image: url("../images/icons/rss.png");
 }
-/* line 412 */
+/* line 410 */
 #extras .social a[href*='twitter.com'] {
   background-image: url("../images/icons/twitter.png");
 }
-/* line 415 */
+/* line 413 */
 #extras .social a[href*='linkedin.com'] {
   background-image: url("../images/icons/linkedin.png");
 }
-/* line 418 */
+/* line 416 */
 #extras .social a[href*='gitorious.org'] {
   background-image: url("../images/icons/gitorious.png");
 }
-/* line 421 */
+/* line 419 */
 #extras .social a[href*='github.com'], #extras .social a[href*='git.io'] {
   background-image: url("../images/icons/github.png");
 }
-/* line 424 */
+/* line 422 */
 #extras .social a[href*='gittip.com'] {
   background-image: url("../images/icons/gittip.png");
 }
-/* line 427 */
+/* line 425 */
 #extras .social a[href*='plus.google.com'], #extras .social a[href*='gplus.to'] {
   background-image: url("../images/icons/google-plus.png");
 }
@@ -528,7 +526,7 @@ img.left, figure.left {
 /*
     About
 *****************/
-/* line 436 */
+/* line 434 */
 #about {
   background: #fff;
   font-style: normal;
@@ -541,27 +539,27 @@ img.left, figure.left {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
 }
-/* line 449 */
+/* line 447 */
 #about .primary {
   float: left;
   width: 165px;
 }
-/* line 452 */
+/* line 450 */
 #about .primary strong {
   color: #C64350;
   display: block;
   font-size: 1.286em;
 }
-/* line 458 */
+/* line 456 */
 #about .photo {
   float: left;
   margin: 5px 20px;
 }
-/* line 463 */
+/* line 461 */
 #about .url:link, #about .url:visited {
   text-decoration: none;
 }
-/* line 467 */
+/* line 465 */
 #about .bio {
   float: right;
   width: 500px;
@@ -570,7 +568,7 @@ img.left, figure.left {
 /*
     Footer
 *****************/
-/* line 476 */
+/* line 474 */
 #contentinfo {
   padding-bottom: 2em;
   text-align: right;
@@ -578,65 +576,66 @@ img.left, figure.left {
 
 /***** Sections *****/
 /* Blog */
-/* line 480 */
+/* line 478 */
 .hentry {
   display: block;
   clear: both;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #eeeeee;
   padding: 1.5em 0;
   /* Content */
 }
-/* line 485 */
+/* line 483 */
 .hentry img {
   display: none;
 }
-/* line 488 */
+/* line 486 */
 .hentry .post-info * {
   font-style: normal;
 }
-/* line 492 */
+/* line 490 */
 .hentry footer {
-  margin-bottom: 2em;
+  margin: 0;
+  padding: 0;
 }
-/* line 494 */
+/* line 493 */
 .hentry footer address {
   display: inline;
 }
 
-/* line 499 */
+/* line 498 */
 li:last-child .hentry, #content > .hentry {
   border: 0;
   margin: 0;
 }
 
-/* line 500 */
+/* line 499 */
 #content > .hentry {
   padding: 1em 0;
 }
 
-/* line 501 */
+/* line 500 */
 .entry-title {
   font-size: 3em;
   margin-bottom: 10px;
   margin-top: 0;
 }
-/* line 505 */
+/* line 504 */
 .entry-title a:link, .entry-title a:visited {
   text-decoration: none;
   color: #333333;
 }
-/* line 509 */
+/* line 508 */
 .entry-title a:visited {
   background-color: #fff;
 }
 
-/* line 514 */
+/* line 513 */
 #posts-list {
   list-style: none;
   margin: 0;
   /* Blog Index */
 }
-/* line 518 */
+/* line 517 */
 #posts-list footer {
   left: 10px;
   position: relative;
@@ -644,18 +643,18 @@ li:last-child .hentry, #content > .hentry {
   top: 0.5em;
   width: 190px;
 }
-/* line 524 */
+/* line 523 */
 #posts-list footer address {
   display: block;
 }
-/* line 530 */
+/* line 529 */
 #posts-list .hentry {
   padding-left: 10px;
   position: relative;
 }
 
 /* About the Author */
-/* line 537 */
+/* line 536 */
 #about-author {
   background: #f9f9f9;
   clear: both;
@@ -666,27 +665,27 @@ li:last-child .hentry, #content > .hentry {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
 }
-/* line 548 */
+/* line 547 */
 #about-author strong {
   color: #C64350;
   clear: both;
   display: block;
   font-size: 1.429em;
 }
-/* line 555 */
+/* line 554 */
 #about-author .photo {
-  border: 1px solid #ddd;
+  border: 1px solid #dddddd;
   float: left;
   margin: 5px 1em 0 0;
 }
 
 /* Comments */
-/* line 563 */
+/* line 562 */
 #comments-list {
   list-style: none;
   margin: 0 1em;
 }
-/* line 567 */
+/* line 566 */
 #comments-list blockquote {
   background: #f8f8f8;
   clear: both;
@@ -697,48 +696,48 @@ li:last-child .hentry, #content > .hentry {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
 }
-/* line 578 */
+/* line 577 */
 #comments-list footer {
   color: #888;
-  padding: .5em 1em 0 0;
+  padding: 0.5em 1em 0 0;
   text-align: right;
 }
-/* line 584 */
+/* line 583 */
 #comments-list li:nth-child(2n) blockquote {
   background: #F5f5f5;
 }
 
 /* Add a Comment */
-/* line 591 */
+/* line 590 */
 #add-comment label {
   clear: left;
   float: left;
   text-align: left;
   width: 150px;
 }
-/* line 592 */
+/* line 591 */
 #add-comment input[type='text'], #add-comment input[type='email'], #add-comment input[type='url'] {
   float: left;
   width: 200px;
 }
-/* line 595 */
+/* line 594 */
 #add-comment textarea {
   float: left;
   height: 150px;
   width: 495px;
 }
-/* line 600 */
+/* line 599 */
 #add-comment p.req {
   clear: both;
-  margin: 0 .5em 1em 0;
+  margin: 0 0.5em 1em 0;
   text-align: right;
 }
-/* line 605 */
+/* line 604 */
 #add-comment input[type='submit'] {
   float: right;
-  margin: 0 .5em;
+  margin: 0 0.5em;
 }
-/* line 609 */
+/* line 608 */
 #add-comment * {
   margin-bottom: .5em;
 }
