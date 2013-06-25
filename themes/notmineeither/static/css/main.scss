@@ -7,10 +7,13 @@
     Autor URI: http://enrique-ramirez.com
 */
 
-$text: #000305;
-$green: #44C751;
-$green_text: #43C750;
+$background: #F5F4EF;
+$content: #FFFFFF;
+$hover: #44C751;
+
 $title: #333333;
+$text: #000305;
+$link: #43C750;
 $footer_link: #444444;
 
 /* Imports */
@@ -22,7 +25,7 @@ $footer_link: #444444;
 /***** Global *****/
 /* Body */
 body {
-    background: #F5F4EF;
+    background: $background;
     color: $text;
     font-size: 87.5%; /* Base font size: 14px */
     font-family: 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -65,12 +68,12 @@ a {
     }
 }
 a:link, a:visited {
-    color: #43C750;
+    color: $link;
     padding: 0 1px;
     text-decoration: underline;
 }
 a:hover, a:active {
-    background-color: #43C750;
+    background-color: $link;
     color: #fff;
     text-decoration: none;
     text-shadow: 1px 1px 1px $title;
@@ -189,7 +192,7 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
         }
         a:hover, a:active {
             background: none;
-            color: #43C750;
+            color: $link;
             text-shadow: none;
         }
 
@@ -233,8 +236,7 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
             text-decoration: none;
         }
         a:hover, a:active, .active a:link, .active a:visited {
-            background: $green;
-            color: #fff;
+            background: $hover;
             text-shadow: none !important;
         }
 
@@ -254,7 +256,7 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
     Featured
 *****************/
 #featured {
-    background: #fff;
+    background: $content;
     margin-bottom: 2em;
     overflow: hidden;
     padding: 20px;
@@ -277,7 +279,7 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
     }
 
     h2 {
-        color: $green;
+        color: $hover;
         font-size: 1.714em;
         margin-bottom: 0.333em;
     }
@@ -298,7 +300,7 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
     Body
 *****************/
 #content {
-    background: #fff;
+    background: $content;
     margin-bottom: 2em;
     overflow: hidden;
     padding: 20px 20px;
@@ -324,7 +326,7 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
         border-bottom: 1px solid #fff;
     }
     h2 {
-        color: #43C750;
+        color: $link;
         font-size: 1.429em;
         margin-bottom: .25em;
         padding: 0 3px;
@@ -431,7 +433,7 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
     About
 *****************/
 #about {
-    background: #fff;
+    background: $content;
     font-style: normal;
     margin-bottom: 2em;
     overflow: hidden;
