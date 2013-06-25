@@ -21,6 +21,7 @@ PLUGINS = [
     'related_posts',
 ]
 
+DISPLAY_PAGES_ON_MENU = True
 MENUITEMS = (('resume', 'http://qalthos.github.io/resume/resume.pdf'),
             )
 
