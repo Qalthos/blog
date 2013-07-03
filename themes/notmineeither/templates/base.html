@@ -64,7 +64,7 @@
       <h2>tag cloud</h2>
       <ul>
         {% for tag in tag_cloud %}
-          <li class="tag-{{ tag.1 }}"><a href="/tag/{{ tag.0.name.lower() }}.html">{{ tag.0 }}</a></li>
+          <li class="tag-{{ tag.1 }}"><a href="{{ SITEURL }}/tag/{{ tag.0.name.lower() }}.html">{{ tag.0 }}</a></li>
         {% endfor %}
       </ul>
     </div>
