@@ -331,8 +331,8 @@ just for what's in the code. Good old meld, which I had been using, has
 proven itself inadequate to the massive differences between these files.
 Hopefully tomorrow I will have a fresh start from which to sculpt this
 mess I've constructed into its completed form.&lt;/p&gt;
-</summary><category term="peopledashboard"></category></entry><entry><title>Just another ten-hour day</title><link href="http://qalthos.github.io/blog/just-another-ten-hour-day.html" rel="alternate"></link><updated>2010-09-09T18:11:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-09-09:just-another-ten-hour-day.html</id><summary type="html">&lt;p&gt;Today was another exciting day in CIVX-land.
-tl;dr: I spend the day helping other people and being awesome
+</summary><category term="peopledashboard"></category></entry><entry><title>Just another ten-hour day</title><link href="http://qalthos.github.io/blog/just-another-ten-hour-day.html" rel="alternate"></link><updated>2010-09-09T18:11:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-09-09:just-another-ten-hour-day.html</id><summary type="html">&lt;p&gt;Today was another exciting day in CIVX-land.&lt;/p&gt;
+&lt;p&gt;tl;dr: I spend the day helping other people and being awesome
 It started out with the latest in a series of attempts at getting
 &lt;a class="reference external" href="http://www.rebeccanatalie.com"&gt;Rebecca&lt;/a&gt; to a working CIVX repo. As I work through this with her, I am
 slowly working out how all this works together (though admittedly it is
@@ -343,8 +343,8 @@ installing python packages to /usr/local, something generally undesired
 for a development environment). After some question of whether Rebecca
 had sudo permission, we eventually discovered she did, and a short sudo
 easy_install virtualenv later, we were ready to start installing the
-CIVX stack.
-If you haven't read the &lt;a class="reference external" href="https://fedorahosted.org/civx/wiki/Setup"&gt;CIVX developer's guide&lt;/a&gt; (and I think it's
+CIVX stack.&lt;/p&gt;
+&lt;p&gt;If you haven't read the &lt;a class="reference external" href="https://fedorahosted.org/civx/wiki/Setup"&gt;CIVX developer's guide&lt;/a&gt; (and I think it's
 probably safe to assume you haven't), it's a bit of a mess. Not actually
 bad, but short and disorganized. This isn't too bad when you've got a
 small, fairly tight development group with the main brain usually a ping
@@ -355,8 +355,8 @@ added areas whenever there was a question of how to do what that
 eventually came down to 'ask Luke'. Any time an arcane set of commands
 came up I tried to get them on the page with as much information as I
 could figure out, hopefully someone will take pity on my notes and make
-them more descriptive.
-Around this time &lt;a class="reference external" href="http://foss.rit.edu/user/17"&gt;Kate&lt;/a&gt; also had a few questions for me, most of which
+them more descriptive.&lt;/p&gt;
+&lt;p&gt;Around this time &lt;a class="reference external" href="http://foss.rit.edu/user/17"&gt;Kate&lt;/a&gt; also had a few questions for me, most of which
 I could figure out. However, I was still trying to get Rebecca running
 and hadn't even touched my own computer more than to turn on IRC and
 look a few thins up for Rebecca. Kate was having some trouble as she was
@@ -365,8 +365,8 @@ neither of which I had done before. Rebecca had other things to do, and
 getting her Mac up to speed was a lot of wait and pray so I switched
 over to Kate's task. Now Kate also has a Mac, but she was set up with
 CIVX long ago and could never quite explain to me how, thanks again to
-arcane commands.
-Anyway, her task involved a particular Unicode character in a senator's
+arcane commands.&lt;/p&gt;
+&lt;p&gt;Anyway, her task involved a particular Unicode character in a senator's
 name not playing well with her scraped name-to-URL converter magic.
 Having only last night read &lt;a class="reference external" href="http://www.kalzumeus.com/2010/06/17/falsehoods-programmers-believe-about-names/"&gt;Falsehoods Programmers Believe About
 Names&lt;/a&gt; off StumbleUpon, I immediately recognized this way as a dead
@@ -378,8 +378,8 @@ each senator had a link to their contact page right in the div we were
 scraping. A bit of poking around later, and I had a 100% reliable link
 to each senator's page, as verified by the senate themselves. Suddenly
 every senator's page worked, without any of this needless mucking about
-in Unicode transformations.
-Which brought us to our second problem. Most (with one important
+in Unicode transformations.&lt;/p&gt;
+&lt;p&gt;Which brought us to our second problem. Most (with one important
 exception) senators have a page hosted on &lt;a class="reference external" href="http://www.nysenate.gov"&gt;http://www.nysenate.gov&lt;/a&gt;, and
 most have a contact page at /senators/first-m-last/contact.
 What that page contains, however, seems largely up to each senator. Kate
@@ -388,8 +388,8 @@ unmaintainable regular expression which she used to mangle each page
 into a regular form. However, as we poked further and further, we found
 more and more inconsistencies and exceptions to the regular expression.
 Clearly this was completely the wrong way again, but what was the right
-way.
-I suddenly saw an interesting anomaly. Most senators had the contact
+way.&lt;/p&gt;
+&lt;p&gt;I suddenly saw an interesting anomaly. Most senators had the contact
 info were styled exactly the same, despite having quite varying styles
 otherwise. Kate had already seen that most of the addresses are together
 in some sort of paragraph tag, and was trying to regexp on the contents
@@ -401,14 +401,14 @@ minimum was their District Office and their Albany Office. Furthermore,
 it was already in some form of HTML, which Kate had previously been
 stripping and rebuilding manually. If we simply took this HTML as-is and
 plugged it into CIVX's contact page, instantly every senator had exactly
-what we (and they) wanted!
-Well, almost.
-It was about at this point that Rebecca went home for the day, CIVX not
+what we (and they) wanted!&lt;/p&gt;
+&lt;p&gt;Well, almost.&lt;/p&gt;
+&lt;p&gt;It was about at this point that Rebecca went home for the day, CIVX not
 yet working. a few important packages were missing from &lt;a class="reference external" href="http://pypi.python.org/pypi"&gt;pypi&lt;/a&gt;, keeping
 us from completing the CIVX setup step so she could get cracking on real
 CIVX, without needing me to merge every change she wanted to push. Still
-this left me with more time to work on the regular expressions.
-Now, most senators worked flawlessly, with two obvious exceptions. the
+this left me with more time to work on the regular expressions.&lt;/p&gt;
+&lt;p&gt;Now, most senators worked flawlessly, with two obvious exceptions. the
 first, and the one I didn't want to tackle just yet, was the senator I
 mentioned briefly above, the page of &lt;a class="reference external" href="http://www.kemphannon.com/"&gt;Sen. Kemp Hannon&lt;/a&gt;. Notice
 anything different about his page? Well, for one, it's not hosted on
@@ -416,14 +416,14 @@ nysenate.gov, and for another, he has no explicit contact page. The
 first made our scraper entirely useless without coding in an exception
 for senators with separate websites, and the second made such an
 exception next to impossible to make general, without reverting back to
-the 'check each paragraph for addresses' method.
-So Kemp was put on the backburner for now. The other one, which failed
+the 'check each paragraph for addresses' method.&lt;/p&gt;
+&lt;p&gt;So Kemp was put on the backburner for now. The other one, which failed
 somewhat more spectacularly, didn't even break. Rather, the contact page
 of &lt;a class="reference external" href="http://www.nysenate.gov/senator/john-j-flanagan/contact"&gt;Sen. John J. Flanagan&lt;/a&gt;. Putting aside for the moment the excess
 content in the div, including the NYS seal, and a few lines about
 contact information, this is the worst example against automatically
-generated HTML I have had the misfortune of needing to scrape.
-Problem 1: &amp;lt;p &amp;gt;&amp;amp;nbsp;&amp;lt;p /&amp;gt;&amp;lt;br /&amp;gt; I kid you not, this is on the page a
+generated HTML I have had the misfortune of needing to scrape.&lt;/p&gt;
+&lt;p&gt;Problem 1: &amp;lt;p &amp;gt;&amp;amp;nbsp;&amp;lt;p /&amp;gt;&amp;lt;br /&amp;gt; I kid you not, this is on the page a
 minimum of 20 times in a row so that his Albany Office is so far below
 the fold so as to be nonexistent. Sometimes there's inline styles,
 sometimes not. One line has a simple space character instead of the
@@ -458,22 +458,22 @@ FAX&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/span&
 P(text-align) &amp;gt; SPAN(color, font-size) &amp;gt; SPAN &amp;gt; SPAN &amp;gt; SPAN(line-height,
 font-family, color, font-size, a bunch of other font styles) &amp;gt;
 SPAN &amp;gt; STRONG &amp;gt; SPAN(font-family) &amp;gt;
-SPAN(color, font-size) &amp;gt; SPAN(font-family)
-Naturally, my first order of business was to remove every single span
+SPAN(color, font-size) &amp;gt; SPAN(font-family)&lt;/p&gt;
+&lt;p&gt;Naturally, my first order of business was to remove every single span
 from the HTML we take in. Because, frankly, this is preposterous. We
 already (by problem 1) strip out all the style information, because
 frankly, we don't need it, so this mess just turns into six nested
 spans, not a very useful thing. Suddenly, the HTML coming out of the
 sanitizer is much more compact, and not just because of all the breaks
-and paragraphs I took out.
-By the time I finished with this, it was about an hour after most
+and paragraphs I took out.&lt;/p&gt;
+&lt;p&gt;By the time I finished with this, it was about an hour after most
 everyone else had left. I spent the next half hour checking that my
 sanitizer didn't break existing pages (it did, but only minorly) and
-making sure my code was legible.
-At that point, almost ten hours after I had started, I sat back,
+making sure my code was legible.&lt;/p&gt;
+&lt;p&gt;At that point, almost ten hours after I had started, I sat back,
 committed my final changes, and decompressed. *This*- this is why I
 love open source.&lt;/p&gt;
-</summary><category term="peopledashboard"></category></entry><entry><title>Diving Deep</title><link href="http://qalthos.github.io/blog/diving-deep.html" rel="alternate"></link><updated>2010-06-30T16:55:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-06-30:diving-deep.html</id><summary type="html">&lt;p&gt;Yesterday had been spent working on a proper dev branch to CIVX. Today
+</summary><category term="peopledashboard"></category><category term="wat"></category></entry><entry><title>Diving Deep</title><link href="http://qalthos.github.io/blog/diving-deep.html" rel="alternate"></link><updated>2010-06-30T16:55:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-06-30:diving-deep.html</id><summary type="html">&lt;p&gt;Yesterday had been spent working on a proper dev branch to CIVX. Today
 we gave it a home.&lt;/p&gt;
 &lt;p&gt;Today started off trying to get the current dev CIVX running on our
 server. Now, I had some experience setting up a CIVX instance from

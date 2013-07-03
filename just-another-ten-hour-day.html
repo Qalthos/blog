@@ -3,7 +3,7 @@
 <head>
   <title>Just another ten-hour day</title>
   <meta charset="utf-8" />
-      <link rel="stylesheet" href="http://qalthos.github.io/blog/theme/css/main.min.css?5ff7bc13" type="text/css" />
+      <link rel="stylesheet" href="http://qalthos.github.io/blog/theme/css/main.min.css?e2893169" type="text/css" />
         <link href="http://qalthos.github.io/blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Why Not Wingnut? Atom Feed" />
     
   <!--[if IE]>
@@ -29,8 +29,7 @@
               <li ><a href="http://qalthos.github.io/blog/category/fossrit.html">FOSS@RIT</a></li>
               <li ><a href="http://qalthos.github.io/blog/category/meta.html">meta</a></li>
               <li ><a href="http://qalthos.github.io/blog/category/personal.html">personal</a></li>
-                              <li><a href="http://qalthos.github.io/blog/pages/links.html">links</a></li>
-                            <li><a href="http://qalthos.github.io/resume/resume.pdf">resume</a></li>
+                                        <li><a href="http://qalthos.github.io/resume/resume.pdf">resume</a></li>
           </ul></nav>
   </header><!-- /#banner -->
   <section id="content" class="body">
@@ -53,9 +52,9 @@
                 By <a class="url fn" href="http://qalthos.github.io/blog/author/nathaniel-case.html">Nathaniel Case</a>
         </address>
         <p>In <a href="http://qalthos.github.io/blog/category/civx.html">CIVX</a>. </p>
-<p>tags: <a href="http://qalthos.github.io/blog/tag/peopledashboard.html">peopledashboard</a></p>
-</footer><!-- /.post-info -->      <p>Today was another exciting day in CIVX-land.
-tl;dr: I spend the day helping other people and being awesome
+<p>tags: <a href="http://qalthos.github.io/blog/tag/peopledashboard.html">peopledashboard</a><a href="http://qalthos.github.io/blog/tag/wat.html">wat</a></p>
+</footer><!-- /.post-info -->      <p>Today was another exciting day in CIVX-land.</p>
+<p>tl;dr: I spend the day helping other people and being awesome
 It started out with the latest in a series of attempts at getting
 <a class="reference external" href="http://www.rebeccanatalie.com">Rebecca</a> to a working CIVX repo. As I work through this with her, I am
 slowly working out how all this works together (though admittedly it is
@@ -66,8 +65,8 @@ installing python packages to /usr/local, something generally undesired
 for a development environment). After some question of whether Rebecca
 had sudo permission, we eventually discovered she did, and a short sudo
 easy_install virtualenv later, we were ready to start installing the
-CIVX stack.
-If you haven't read the <a class="reference external" href="https://fedorahosted.org/civx/wiki/Setup">CIVX developer's guide</a> (and I think it's
+CIVX stack.</p>
+<p>If you haven't read the <a class="reference external" href="https://fedorahosted.org/civx/wiki/Setup">CIVX developer's guide</a> (and I think it's
 probably safe to assume you haven't), it's a bit of a mess. Not actually
 bad, but short and disorganized. This isn't too bad when you've got a
 small, fairly tight development group with the main brain usually a ping
@@ -78,8 +77,8 @@ added areas whenever there was a question of how to do what that
 eventually came down to 'ask Luke'. Any time an arcane set of commands
 came up I tried to get them on the page with as much information as I
 could figure out, hopefully someone will take pity on my notes and make
-them more descriptive.
-Around this time <a class="reference external" href="http://foss.rit.edu/user/17">Kate</a> also had a few questions for me, most of which
+them more descriptive.</p>
+<p>Around this time <a class="reference external" href="http://foss.rit.edu/user/17">Kate</a> also had a few questions for me, most of which
 I could figure out. However, I was still trying to get Rebecca running
 and hadn't even touched my own computer more than to turn on IRC and
 look a few thins up for Rebecca. Kate was having some trouble as she was
@@ -88,8 +87,8 @@ neither of which I had done before. Rebecca had other things to do, and
 getting her Mac up to speed was a lot of wait and pray so I switched
 over to Kate's task. Now Kate also has a Mac, but she was set up with
 CIVX long ago and could never quite explain to me how, thanks again to
-arcane commands.
-Anyway, her task involved a particular Unicode character in a senator's
+arcane commands.</p>
+<p>Anyway, her task involved a particular Unicode character in a senator's
 name not playing well with her scraped name-to-URL converter magic.
 Having only last night read <a class="reference external" href="http://www.kalzumeus.com/2010/06/17/falsehoods-programmers-believe-about-names/">Falsehoods Programmers Believe About
 Names</a> off StumbleUpon, I immediately recognized this way as a dead
@@ -101,8 +100,8 @@ each senator had a link to their contact page right in the div we were
 scraping. A bit of poking around later, and I had a 100% reliable link
 to each senator's page, as verified by the senate themselves. Suddenly
 every senator's page worked, without any of this needless mucking about
-in Unicode transformations.
-Which brought us to our second problem. Most (with one important
+in Unicode transformations.</p>
+<p>Which brought us to our second problem. Most (with one important
 exception) senators have a page hosted on <a class="reference external" href="http://www.nysenate.gov">http://www.nysenate.gov</a>, and
 most have a contact page at /senators/first-m-last/contact.
 What that page contains, however, seems largely up to each senator. Kate
@@ -111,8 +110,8 @@ unmaintainable regular expression which she used to mangle each page
 into a regular form. However, as we poked further and further, we found
 more and more inconsistencies and exceptions to the regular expression.
 Clearly this was completely the wrong way again, but what was the right
-way.
-I suddenly saw an interesting anomaly. Most senators had the contact
+way.</p>
+<p>I suddenly saw an interesting anomaly. Most senators had the contact
 info were styled exactly the same, despite having quite varying styles
 otherwise. Kate had already seen that most of the addresses are together
 in some sort of paragraph tag, and was trying to regexp on the contents
@@ -124,14 +123,14 @@ minimum was their District Office and their Albany Office. Furthermore,
 it was already in some form of HTML, which Kate had previously been
 stripping and rebuilding manually. If we simply took this HTML as-is and
 plugged it into CIVX's contact page, instantly every senator had exactly
-what we (and they) wanted!
-Well, almost.
-It was about at this point that Rebecca went home for the day, CIVX not
+what we (and they) wanted!</p>
+<p>Well, almost.</p>
+<p>It was about at this point that Rebecca went home for the day, CIVX not
 yet working. a few important packages were missing from <a class="reference external" href="http://pypi.python.org/pypi">pypi</a>, keeping
 us from completing the CIVX setup step so she could get cracking on real
 CIVX, without needing me to merge every change she wanted to push. Still
-this left me with more time to work on the regular expressions.
-Now, most senators worked flawlessly, with two obvious exceptions. the
+this left me with more time to work on the regular expressions.</p>
+<p>Now, most senators worked flawlessly, with two obvious exceptions. the
 first, and the one I didn't want to tackle just yet, was the senator I
 mentioned briefly above, the page of <a class="reference external" href="http://www.kemphannon.com/">Sen. Kemp Hannon</a>. Notice
 anything different about his page? Well, for one, it's not hosted on
@@ -139,14 +138,14 @@ nysenate.gov, and for another, he has no explicit contact page. The
 first made our scraper entirely useless without coding in an exception
 for senators with separate websites, and the second made such an
 exception next to impossible to make general, without reverting back to
-the 'check each paragraph for addresses' method.
-So Kemp was put on the backburner for now. The other one, which failed
+the 'check each paragraph for addresses' method.</p>
+<p>So Kemp was put on the backburner for now. The other one, which failed
 somewhat more spectacularly, didn't even break. Rather, the contact page
 of <a class="reference external" href="http://www.nysenate.gov/senator/john-j-flanagan/contact">Sen. John J. Flanagan</a>. Putting aside for the moment the excess
 content in the div, including the NYS seal, and a few lines about
 contact information, this is the worst example against automatically
-generated HTML I have had the misfortune of needing to scrape.
-Problem 1: &lt;p &gt;&amp;nbsp;&lt;p /&gt;&lt;br /&gt; I kid you not, this is on the page a
+generated HTML I have had the misfortune of needing to scrape.</p>
+<p>Problem 1: &lt;p &gt;&amp;nbsp;&lt;p /&gt;&lt;br /&gt; I kid you not, this is on the page a
 minimum of 20 times in a row so that his Albany Office is so far below
 the fold so as to be nonexistent. Sometimes there's inline styles,
 sometimes not. One line has a simple space character instead of the
@@ -181,29 +180,29 @@ FAX&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 P(text-align) &gt; SPAN(color, font-size) &gt; SPAN &gt; SPAN &gt; SPAN(line-height,
 font-family, color, font-size, a bunch of other font styles) &gt;
 SPAN &gt; STRONG &gt; SPAN(font-family) &gt;
-SPAN(color, font-size) &gt; SPAN(font-family)
-Naturally, my first order of business was to remove every single span
+SPAN(color, font-size) &gt; SPAN(font-family)</p>
+<p>Naturally, my first order of business was to remove every single span
 from the HTML we take in. Because, frankly, this is preposterous. We
 already (by problem 1) strip out all the style information, because
 frankly, we don't need it, so this mess just turns into six nested
 spans, not a very useful thing. Suddenly, the HTML coming out of the
 sanitizer is much more compact, and not just because of all the breaks
-and paragraphs I took out.
-By the time I finished with this, it was about an hour after most
+and paragraphs I took out.</p>
+<p>By the time I finished with this, it was about an hour after most
 everyone else had left. I spent the next half hour checking that my
 sanitizer didn't break existing pages (it did, but only minorly) and
-making sure my code was legible.
-At that point, almost ten hours after I had started, I sat back,
+making sure my code was legible.</p>
+<p>At that point, almost ten hours after I had started, I sat back,
 committed my final changes, and decompressed. *This*- this is why I
 love open source.</p>
 
     </div><!-- /.entry-content -->
         <ul>
-            <li><a href="http://qalthos.github.io/blog/summer-of-civx.html">Summer of CIVX</a></li>
-            <li><a href="http://qalthos.github.io/blog/almost-there.html">Almost There...</a></li>
-            <li><a href="http://qalthos.github.io/blog/back-up-to-speed.html">Back up to Speed</a></li>
-            <li><a href="http://qalthos.github.io/blog/civx-stuff.html">CIVX Stuff</a></li>
             <li><a href="http://qalthos.github.io/blog/boston.html">Boston</a></li>
+            <li><a href="http://qalthos.github.io/blog/summer-of-civx.html">Summer of CIVX</a></li>
+            <li><a href="http://qalthos.github.io/blog/the-last-week.html">The Last Week</a></li>
+            <li><a href="http://qalthos.github.io/blog/civx-stuff.html">CIVX Stuff</a></li>
+            <li><a href="http://qalthos.github.io/blog/shelves-and-shoves.html">Shelves and Shoves</a></li>
         </ul>
         
   </article>
@@ -218,36 +217,36 @@ love open source.</p>
         <div class="tagcloud">
       <h2>tag cloud</h2>
       <ul>
+                  <li class="tag-2"><a href="/tag/geowebdns.html">geowebdns</a></li>
+                  <li class="tag-3"><a href="/tag/wat.html">wat</a></li>
+                  <li class="tag-4"><a href="/tag/rise.html">Rise</a></li>
+                  <li class="tag-1"><a href="/tag/sugar.html">sugar</a></li>
+                  <li class="tag-4"><a href="/tag/introspective.html">introspective</a></li>
+                  <li class="tag-4"><a href="/tag/knowledge.html">knowledge</a></li>
+                  <li class="tag-3"><a href="/tag/jquery.html">jQuery</a></li>
+                  <li class="tag-1"><a href="/tag/scrapers.html">scrapers</a></li>
+                  <li class="tag-1"><a href="/tag/wikiotics.html">wikiotics</a></li>
+                  <li class="tag-1"><a href="/tag/peopledashboard.html">peopledashboard</a></li>
+                  <li class="tag-3"><a href="/tag/blog.html">blog</a></li>
+                  <li class="tag-1"><a href="/tag/journalism.html">journalism</a></li>
+                  <li class="tag-1"><a href="/tag/lemonade.html">lemonade</a></li>
+                  <li class="tag-4"><a href="/tag/pybotwar.html">pybotwar</a></li>
+                  <li class="tag-2"><a href="/tag/democracymap.html">democracymap</a></li>
+                  <li class="tag-2"><a href="/tag/openshift.html">openshift</a></li>
+                  <li class="tag-4"><a href="/tag/python.html">python</a></li>
+                  <li class="tag-4"><a href="/tag/hardware.html">hardware</a></li>
+                  <li class="tag-3"><a href="/tag/timeline.html">timeline</a></li>
+                  <li class="tag-3"><a href="/tag/groovebot.html">groovebot</a></li>
+                  <li class="tag-1"><a href="/tag/hackathon.html">hackathon</a></li>
+                  <li class="tag-3"><a href="/tag/data alchemy.html">data alchemy</a></li>
+                  <li class="tag-1"><a href="/tag/floss-seminar.html">FLOSS-seminar</a></li>
+                  <li class="tag-2"><a href="/tag/election.html">election</a></li>
+                  <li class="tag-4"><a href="/tag/opl.html">OPL</a></li>
+                  <li class="tag-3"><a href="/tag/polyscraper.html">polyscraper</a></li>
+                  <li class="tag-4"><a href="/tag/fabulous.html">fabulous</a></li>
                   <li class="tag-1"><a href="/tag/widgets.html">widgets</a></li>
                   <li class="tag-1"><a href="/tag/surs.html">SURS</a></li>
-                  <li class="tag-1"><a href="/tag/hackathon.html">hackathon</a></li>
-                  <li class="tag-4"><a href="/tag/introspective.html">introspective</a></li>
-                  <li class="tag-3"><a href="/tag/timeline.html">timeline</a></li>
-                  <li class="tag-1"><a href="/tag/wikiotics.html">wikiotics</a></li>
-                  <li class="tag-4"><a href="/tag/rise.html">Rise</a></li>
-                  <li class="tag-2"><a href="/tag/geowebdns.html">geowebdns</a></li>
-                  <li class="tag-3"><a href="/tag/blog.html">blog</a></li>
-                  <li class="tag-2"><a href="/tag/democracymap.html">democracymap</a></li>
-                  <li class="tag-4"><a href="/tag/python.html">python</a></li>
-                  <li class="tag-4"><a href="/tag/fabulous.html">fabulous</a></li>
-                  <li class="tag-3"><a href="/tag/groovebot.html">groovebot</a></li>
-                  <li class="tag-1"><a href="/tag/journalism.html">journalism</a></li>
-                  <li class="tag-1"><a href="/tag/floss-seminar.html">FLOSS-seminar</a></li>
-                  <li class="tag-4"><a href="/tag/wow.html">wow</a></li>
-                  <li class="tag-2"><a href="/tag/election.html">election</a></li>
-                  <li class="tag-3"><a href="/tag/polyscraper.html">polyscraper</a></li>
-                  <li class="tag-2"><a href="/tag/openshift.html">openshift</a></li>
-                  <li class="tag-4"><a href="/tag/hardware.html">hardware</a></li>
-                  <li class="tag-1"><a href="/tag/sugar.html">sugar</a></li>
-                  <li class="tag-3"><a href="/tag/jquery.html">jQuery</a></li>
                   <li class="tag-2"><a href="/tag/pydex.html">pyDex</a></li>
-                  <li class="tag-4"><a href="/tag/knowledge.html">knowledge</a></li>
-                  <li class="tag-1"><a href="/tag/lemonade.html">lemonade</a></li>
-                  <li class="tag-3"><a href="/tag/data alchemy.html">data alchemy</a></li>
-                  <li class="tag-4"><a href="/tag/pybotwar.html">pybotwar</a></li>
-                  <li class="tag-1"><a href="/tag/peopledashboard.html">peopledashboard</a></li>
-                  <li class="tag-4"><a href="/tag/opl.html">OPL</a></li>
-                  <li class="tag-1"><a href="/tag/scrapers.html">scrapers</a></li>
               </ul>
     </div>
         <div class="social">

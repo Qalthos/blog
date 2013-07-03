@@ -20,7 +20,7 @@ body {
   color: #000305;
   font-size: 87.5%;
   /* Base font size: 14px */
-  font-family: "Trebuchet MS", Trebuchet, "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-family: 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   line-height: 1.429;
   margin: 0;
   padding: 0;
@@ -72,7 +72,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   line-height: 1.1;
   margin-bottom: .8em;
-  font-family: "Yanone Kaffeesatz", arial, serif;
+  font-family: 'Yanone Kaffeesatz', arial, serif;
 }
 
 /* line 58 */
@@ -82,7 +82,7 @@ h3, h4, h5, h6 {
 
 /* line 60 */
 hr {
-  border: 2px solid #eeeeee;
+  border: 2px solid #EEEEEE;
 }
 
 /* Anchors */
@@ -197,7 +197,7 @@ div.note {
 /* Tables */
 /* line 138 */
 table {
-  margin: 0.5em auto 1.5em auto;
+  margin: .5em auto 1.5em auto;
   width: 98%;
   /* Thead */
   /* Tbody */
@@ -205,12 +205,12 @@ table {
 }
 /* line 143 */
 table thead th {
-  padding: 0.5em 0.4em;
+  padding: .5em .4em;
   text-align: left;
 }
 /* line 150 */
 table tbody td {
-  padding: 0.5em 0.4em;
+  padding: .5em .4em;
 }
 
 /* HTML5 tags */
@@ -260,7 +260,7 @@ img.left, figure.left {
   color: #000305;
   display: block;
   font-weight: bold;
-  margin: 0 0 0.6em 0.2em;
+  margin: 0 0 .6em .2em;
   text-decoration: none;
 }
 /* line 193 */
@@ -339,7 +339,7 @@ img.left, figure.left {
 }
 /* line 269 */
 #featured figure {
-  border: 2px solid #eeeeee;
+  border: 2px solid #eee;
   float: right;
   margin: 0.786em 2em 0 5em;
   width: 248px;
@@ -402,7 +402,7 @@ img.left, figure.left {
 }
 /* line 325 */
 #extras li {
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid #fff;
 }
 /* line 328 */
 #extras h2 {
@@ -415,9 +415,9 @@ img.left, figure.left {
 #extras a:link, #extras a:visited {
   color: #444444;
   display: block;
-  border-bottom: 1px solid #f4e3e3;
+  border-bottom: 1px solid #F4E3E3;
   text-decoration: none;
-  padding: 0.3em 0.25em;
+  padding: .3em .25em;
 }
 /* line 343 */
 #extras a:hover, #extras a:active {
@@ -579,7 +579,7 @@ img.left, figure.left {
 .hentry {
   display: block;
   clear: both;
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid #eee;
   padding: 1.5em 0;
   /* Content */
 }
@@ -673,7 +673,7 @@ li:last-child .hentry, #content > .hentry {
 }
 /* line 555 */
 #about-author .photo {
-  border: 1px solid #dddddd;
+  border: 1px solid #ddd;
   float: left;
   margin: 5px 1em 0 0;
 }
@@ -698,7 +698,7 @@ li:last-child .hentry, #content > .hentry {
 /* line 578 */
 #comments-list footer {
   color: #888;
-  padding: 0.5em 1em 0 0;
+  padding: .5em 1em 0 0;
   text-align: right;
 }
 /* line 584 */
@@ -728,13 +728,13 @@ li:last-child .hentry, #content > .hentry {
 /* line 600 */
 #add-comment p.req {
   clear: both;
-  margin: 0 0.5em 1em 0;
+  margin: 0 .5em 1em 0;
   text-align: right;
 }
 /* line 605 */
 #add-comment input[type='submit'] {
   float: right;
-  margin: 0 0.5em;
+  margin: 0 .5em;
 }
 /* line 609 */
 #add-comment * {
