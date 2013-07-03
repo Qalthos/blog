@@ -3,7 +3,7 @@ A note on lxml
 :date: 2013-06-01 20:46
 :author: Nathaniel Case
 :email: Qalthos@gmail.com
-:tags: hackathon, python, wow
+:tags: hackathon, python, wat
 
 This post is being written from the `Rochester edition`_ of the
 `National Day of Civic Hacking`_ hackathon.

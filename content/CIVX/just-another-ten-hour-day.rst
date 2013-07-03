@@ -3,9 +3,10 @@ Just another ten-hour day
 :date: 2010-09-09 18:11
 :author: Nathaniel Case
 :email: Qalthos@gmail.com
-:tags: peopledashboard
+:tags: peopledashboard, wat
 
 Today was another exciting day in CIVX-land.
+
 tl;dr: I spend the day helping other people and being awesome
 It started out with the latest in a series of attempts at getting
 `Rebecca`_ to a working CIVX repo. As I work through this with her, I am
@@ -18,6 +19,7 @@ for a development environment). After some question of whether Rebecca
 had sudo permission, we eventually discovered she did, and a short sudo
 easy\_install virtualenv later, we were ready to start installing the
 CIVX stack.
+
 If you haven't read the `CIVX developer's guide`_ (and I think it's
 probably safe to assume you haven't), it's a bit of a mess. Not actually
 bad, but short and disorganized. This isn't too bad when you've got a
@@ -30,6 +32,7 @@ eventually came down to 'ask Luke'. Any time an arcane set of commands
 came up I tried to get them on the page with as much information as I
 could figure out, hopefully someone will take pity on my notes and make
 them more descriptive.
+
 Around this time `Kate`_ also had a few questions for me, most of which
 I could figure out. However, I was still trying to get Rebecca running
 and hadn't even touched my own computer more than to turn on IRC and
@@ -40,6 +43,7 @@ getting her Mac up to speed was a lot of wait and pray so I switched
 over to Kate's task. Now Kate also has a Mac, but she was set up with
 CIVX long ago and could never quite explain to me how, thanks again to
 arcane commands.
+
 Anyway, her task involved a particular Unicode character in a senator's
 name not playing well with her scraped name-to-URL converter magic.
 Having only last night read `Falsehoods Programmers Believe About
@@ -53,6 +57,7 @@ scraping. A bit of poking around later, and I had a 100% reliable link
 to each senator's page, as verified by the senate themselves. Suddenly
 every senator's page worked, without any of this needless mucking about
 in Unicode transformations.
+
 Which brought us to our second problem. Most (with one important
 exception) senators have a page hosted on http://www.nysenate.gov, and
 most have a contact page at /senators/first-m-last/contact.
@@ -63,6 +68,7 @@ into a regular form. However, as we poked further and further, we found
 more and more inconsistencies and exceptions to the regular expression.
 Clearly this was completely the wrong way again, but what was the right
 way.
+
 I suddenly saw an interesting anomaly. Most senators had the contact
 info were styled exactly the same, despite having quite varying styles
 otherwise. Kate had already seen that most of the addresses are together
@@ -76,12 +82,15 @@ it was already in some form of HTML, which Kate had previously been
 stripping and rebuilding manually. If we simply took this HTML as-is and
 plugged it into CIVX's contact page, instantly every senator had exactly
 what we (and they) wanted!
+
 Well, almost.
+
 It was about at this point that Rebecca went home for the day, CIVX not
 yet working. a few important packages were missing from `pypi`_, keeping
 us from completing the CIVX setup step so she could get cracking on real
 CIVX, without needing me to merge every change she wanted to push. Still
 this left me with more time to work on the regular expressions.
+
 Now, most senators worked flawlessly, with two obvious exceptions. the
 first, and the one I didn't want to tackle just yet, was the senator I
 mentioned briefly above, the page of `Sen. Kemp Hannon`_. Notice
@@ -91,12 +100,14 @@ first made our scraper entirely useless without coding in an exception
 for senators with separate websites, and the second made such an
 exception next to impossible to make general, without reverting back to
 the 'check each paragraph for addresses' method.
+
 So Kemp was put on the backburner for now. The other one, which failed
 somewhat more spectacularly, didn't even break. Rather, the contact page
 of `Sen. John J. Flanagan`_. Putting aside for the moment the excess
 content in the div, including the NYS seal, and a few lines about
 contact information, this is the worst example against automatically
 generated HTML I have had the misfortune of needing to scrape.
+
 Problem 1: <p >&nbsp;<p /><br /> I kid you not, this is on the page a
 minimum of 20 times in a row so that his Albany Office is so far below
 the fold so as to be nonexistent. Sometimes there's inline styles,
@@ -133,6 +144,7 @@ P(text-align) > SPAN(color, font-size) > SPAN > SPAN > SPAN(line-height,
 font-family, color, font-size, a bunch of other font styles) >
 SPAN > STRONG > SPAN(font-family) >
 SPAN(color, font-size) > SPAN(font-family)
+
 Naturally, my first order of business was to remove every single span
 from the HTML we take in. Because, frankly, this is preposterous. We
 already (by problem 1) strip out all the style information, because
@@ -140,10 +152,12 @@ frankly, we don't need it, so this mess just turns into six nested
 spans, not a very useful thing. Suddenly, the HTML coming out of the
 sanitizer is much more compact, and not just because of all the breaks
 and paragraphs I took out.
+
 By the time I finished with this, it was about an hour after most
 everyone else had left. I spent the next half hour checking that my
 sanitizer didn't break existing pages (it did, but only minorly) and
 making sure my code was legible.
+
 At that point, almost ten hours after I had started, I sat back,
 committed my final changes, and decompressed. \*This\*- this is why I
 love open source.
