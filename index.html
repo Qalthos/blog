@@ -37,8 +37,67 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="http://qalthos.github.io/blog/national-day-of-civic-hacking.html">National Day of Civic Hacking</a></h1> 
+                    <h1 class="entry-title"><a href="http://qalthos.github.io/blog/remysmoke-improving.html">Remysmoke Improving</a></h1> 
                     <footer class="post-info">
+                <p><img src="http://www.gravatar.com/avatar/3a3baabff105b46a458688ecf49901af" /></p>
+                <abbr class="published" title="2013-07-26T03:44:00">
+                Fri 26 July 2013
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="http://qalthos.github.io/blog/author/nathaniel-case.html">Nathaniel Case</a>
+        </address>
+        <p>In <a href="http://qalthos.github.io/blog/category/personal.html">personal</a>. </p>
+<p>tags: <a href="http://qalthos.github.io/blog/tag/remysmoke.html">remysmoke</a></p>
+</footer><!-- /.post-info --><p><a class="reference external" href="http://remysmoke.linkybook.com/">Remysmoke</a> has had a few updates over the past week, and I think they've gone
+pretty well. Remysmoke is now at version 1.2, here's the changelog for the past
+few versions:</p>
+<div class="section" id="remysmoke-1-0">
+<h2>Remysmoke 1.0</h2>
+<ul class="simple">
+<li>Moved graphs from tw2-protoviz to <a class="reference external" href="http://pygal.org/">pygal</a>.</li>
+<li>Moved smoke input form from tw2-forms to hand-crafted HTML5 forms.</li>
+<li>Completely removed Toscawidgets and ToscaWidgets2 from Remysmoke (including
+some very old boilerplate TurboGears code).</li>
+</ul>
+</div>
+<div class="section" id="remysmoke-1-1">
+<h2>Remysmoke 1.1</h2>
+<ul class="simple">
+<li>Updated codebase to TurboGears 2.3.</li>
+<li>Redeployed Remysmoke on <a class="reference external" href="http://openshift.com/">OpenShift</a> Python 2.7 Cartridge (was Python 2.6).</li>
+</ul>
+</div>
+<div class="section" id="remysmoke-1-2">
+<h2>Remysmoke 1.2</h2>
+<ul class="simple">
+<li>Cleaned up login and smoke forms to be more consistent.</li>
+<li>Themed form checkboxes to be consistent with the rest of the UI.</li>
+<li>Added new theming for disabled input boxes.</li>
+<li>Added new 'unsmoke' option, allowing a user to attest that they have not
+smoked that day.</li>
+</ul>
+<p>Remysmoke 1.2 went live late last night, and a  hotfix 1.2.1 will be up shortly
+with an OpenShift-specific patch dealing with overriding the database location
+at runtime.</p>
+</div>
+                </article>
+                            </aside><!-- /#featured -->
+                            <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+                                                
+
+                 
+                        <li><article class="hentry">    
+                <header>
+                    <h1><a href="http://qalthos.github.io/blog/national-day-of-civic-hacking.html" rel="bookmark"
+                           title="Permalink to National Day of Civic Hacking">National Day of Civic Hacking</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
                 <p><img src="http://www.gravatar.com/avatar/3a3baabff105b46a458688ecf49901af" /></p>
                 <abbr class="published" title="2013-06-02T03:18:00">
                 Sun 02 June 2013
@@ -49,28 +108,14 @@
         </address>
         <p>In <a href="http://qalthos.github.io/blog/category/fossrit.html">FOSS@RIT</a>. </p>
 <p>tags: <a href="http://qalthos.github.io/blog/tag/hackathon.html">hackathon</a><a href="http://qalthos.github.io/blog/tag/timeline.html">timeline</a><a href="http://qalthos.github.io/blog/tag/jquery.html">jQuery</a></p>
-</footer><!-- /.post-info --><p>One of the projects I worked on during the <a class="reference external" href="http://hackforchange.org/fossrit-rochester-civic-hackathon">Rochester edition</a> of the
+</footer><!-- /.post-info -->                <p>One of the projects I worked on during the <a class="reference external" href="http://hackforchange.org/fossrit-rochester-civic-hackathon">Rochester edition</a> of the
 <a class="reference external" href="http://hackforchange.org">National Day of Civic Hacking</a> hackathon was not actually anything intended
 for the hackathon, but a short project I wrote last summer.</p>
-<p>If you remember from <a class="reference external" href="introducing-fossrit-timeline-year-in-review.html">my last post</a> on the subject, I had made three files,
-one for each of the years that the FOSSBox had been keeping track of its
-activities on the <a class="reference external" href="http://foss.rit.edu/timeline">timeline</a>. The files were very silly- all the data was
-loaded on the fly from a JSON file, so the only thing in the files was the structure and the 'decoration' text.</p>
-<p>Clearly this was not something that could stand. Today I finally managet to get
-all the files together into one page. Now, when the page loads, it scans the
-JSON file for all years mentioned, and populates a drop-down list with all the
-years it has found. the first (and usually latest) year's data is then loaded
-onto the page.</p>
-<p>When the user clicks on another year from the list, the content is reloaded with
-data from the apropriate year. If you want to see it in action, the new review
-page for timeline now lives <a class="reference external" href="http://foss.rit.edu/timeline/summary.html">here</a>.</p>
-                </article>
-                            </aside><!-- /#featured -->
-                            <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
-                                                
+<p>If you remember from <a class="reference external" href="introducing-fossrit-timeline-year-in-review.html">my last post</a> on the subject, I had made three files ...</p>
+                <a class="readmore" href="http://qalthos.github.io/blog/national-day-of-civic-hacking.html">read more</a>
+                                </div><!-- /.entry-content -->
+            </article></li>
+                            
 
                  
                         <li><article class="hentry">    
@@ -156,35 +201,6 @@ generator. The practical upshot of which is that I can now write posts in
                 <a class="readmore" href="http://qalthos.github.io/blog/blog-rebuild.html">read more</a>
                                 </div><!-- /.entry-content -->
             </article></li>
-                            
-
-                 
-                        <li><article class="hentry">    
-                <header>
-                    <h1><a href="http://qalthos.github.io/blog/american-greetings-hackathon-followup.html" rel="bookmark"
-                           title="Permalink to American Greetings Hackathon Followup">American Greetings Hackathon Followup</a></h1>
-                </header>
-                
-                <div class="entry-content">
-                <footer class="post-info">
-                <p><img src="http://www.gravatar.com/avatar/3a3baabff105b46a458688ecf49901af" /></p>
-                <abbr class="published" title="2013-01-24T22:33:00">
-                Thu 24 January 2013
-        </abbr>
-
-                <address class="vcard author">
-                By <a class="url fn" href="http://qalthos.github.io/blog/author/nathaniel-case.html">Nathaniel Case</a>
-        </address>
-        <p>In <a href="http://qalthos.github.io/blog/category/fossrit.html">FOSS@RIT</a>. </p>
-<p>tags: <a href="http://qalthos.github.io/blog/tag/hackathon.html">hackathon</a></p>
-</footer><!-- /.post-info -->                <p>Last weekend was the <a class="reference external" href="http://foss.rit.edu/node/425">American Greetings Hackathon</a>, and it was one of
-the most successful yet. We got more than 70 people attending and
-working on projects, and most of those projects had at least something
-working by the end of the 24 hours.</p>
-<p>I worked with <a class="reference external" href="http://blog.helixoide.com/">Ross Delinger</a>, with ...</p>
-                <a class="readmore" href="http://qalthos.github.io/blog/american-greetings-hackathon-followup.html">read more</a>
-                                </div><!-- /.entry-content -->
-            </article></li>
                             </ol><!-- /#posts-list -->
                             <p class="paginator">
         Page 1 / 11
@@ -201,36 +217,36 @@ working by the end of the 24 hours.</p>
         <div class="tagcloud">
       <h2>tag cloud</h2>
       <ul>
-                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/rise.html">Rise</a></li>
-                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/blog.html">blog</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/widgets.html">widgets</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/sugar.html">sugar</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/scrapers.html">scrapers</a></li>
-                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/opl.html">OPL</a></li>
                   <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/timeline.html">timeline</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/journalism.html">journalism</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/wikiotics.html">wikiotics</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/floss-seminar.html">FLOSS-seminar</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/surs.html">SURS</a></li>
-                  <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/openshift.html">openshift</a></li>
-                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/data alchemy.html">data alchemy</a></li>
-                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/introspective.html">introspective</a></li>
-                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/pybotwar.html">pybotwar</a></li>
-                  <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/pydex.html">pyDex</a></li>
-                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/python.html">python</a></li>
-                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/hardware.html">hardware</a></li>
-                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/polyscraper.html">polyscraper</a></li>
-                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/knowledge.html">knowledge</a></li>
                   <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/democracymap.html">democracymap</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/hackathon.html">hackathon</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/peopledashboard.html">peopledashboard</a></li>
-                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/fabulous.html">fabulous</a></li>
-                  <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/election.html">election</a></li>
-                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/groovebot.html">groovebot</a></li>
-                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/wat.html">wat</a></li>
-                  <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/geowebdns.html">geowebdns</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/lemonade.html">lemonade</a></li>
+                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/remysmoke.html">remysmoke</a></li>
                   <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/jquery.html">jQuery</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/sugar.html">sugar</a></li>
+                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/fabulous.html">fabulous</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/hackathon.html">hackathon</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/lemonade.html">lemonade</a></li>
+                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/data alchemy.html">data alchemy</a></li>
+                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/knowledge.html">knowledge</a></li>
+                  <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/pydex.html">pyDex</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/wikiotics.html">wikiotics</a></li>
+                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/blog.html">blog</a></li>
+                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/opl.html">OPL</a></li>
+                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/python.html">python</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/scrapers.html">scrapers</a></li>
+                  <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/geowebdns.html">geowebdns</a></li>
+                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/wat.html">wat</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/surs.html">SURS</a></li>
+                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/pybotwar.html">pybotwar</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/journalism.html">journalism</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/widgets.html">widgets</a></li>
+                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/hardware.html">hardware</a></li>
+                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/groovebot.html">groovebot</a></li>
+                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/rise.html">Rise</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/floss-seminar.html">FLOSS-seminar</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/peopledashboard.html">peopledashboard</a></li>
+                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/polyscraper.html">polyscraper</a></li>
+                  <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/election.html">election</a></li>
+                  <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/openshift.html">openshift</a></li>
               </ul>
     </div>
         <div class="social">

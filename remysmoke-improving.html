@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Here be Dragons</title>
+  <title>Remysmoke Improving</title>
   <meta charset="utf-8" />
       <link rel="stylesheet" href="http://qalthos.github.io/blog/theme/css/main.min.css?e2893169" type="text/css" />
         <link href="http://qalthos.github.io/blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Why Not Wingnut? Atom Feed" />
@@ -25,10 +25,10 @@
     <header id="banner" class="body">
     <h1><a href="http://qalthos.github.io/blog/">Why Not Wingnut? </a></h1>
     <nav><ul>
-              <li class="active"><a href="http://qalthos.github.io/blog/category/civx.html">CIVX</a></li>
+              <li ><a href="http://qalthos.github.io/blog/category/civx.html">CIVX</a></li>
               <li ><a href="http://qalthos.github.io/blog/category/fossrit.html">FOSS@RIT</a></li>
               <li ><a href="http://qalthos.github.io/blog/category/meta.html">meta</a></li>
-              <li ><a href="http://qalthos.github.io/blog/category/personal.html">personal</a></li>
+              <li class="active"><a href="http://qalthos.github.io/blog/category/personal.html">personal</a></li>
                                         <li><a href="http://qalthos.github.io/resume/resume.pdf">resume</a></li>
           </ul></nav>
   </header><!-- /#banner -->
@@ -36,50 +36,57 @@
   <article>
     <header>
       <h1 class="entry-title">
-        <a href="http://qalthos.github.io/blog/here-be-dragons.html" rel="bookmark"
-           title="Permalink to Here be Dragons">Here be Dragons</a>
+        <a href="http://qalthos.github.io/blog/remysmoke-improving.html" rel="bookmark"
+           title="Permalink to Remysmoke Improving">Remysmoke Improving</a>
       </h1>
     </header>
 
     <div class="entry-content">
       <footer class="post-info">
                 <p><img src="http://www.gravatar.com/avatar/3a3baabff105b46a458688ecf49901af" /></p>
-                <abbr class="published" title="2010-09-09T18:11:00">
-                Thu 09 September 2010
+                <abbr class="published" title="2013-07-26T03:44:00">
+                Fri 26 July 2013
         </abbr>
 
                 <address class="vcard author">
                 By <a class="url fn" href="http://qalthos.github.io/blog/author/nathaniel-case.html">Nathaniel Case</a>
         </address>
-        <p>In <a href="http://qalthos.github.io/blog/category/civx.html">CIVX</a>. </p>
-<p>tags: <a href="http://qalthos.github.io/blog/tag/peopledashboard.html">peopledashboard</a></p>
-</footer><!-- /.post-info -->      <p>Today was the day we got <a class="reference external" href="http://www.rebeccanatalie.com">Rebecca</a> on to a git repo towards
-implementing her changes to the people dashboard. It's only a halfway
-step, as she isn't entirely using the proper version of the widgets but
-a hacked one that works locally, and needs to be morphed into something
-that will work in the context of the CIVX stack. Hopefully soon she will
-be up to speed and be able to make a more direct submission in the near
-future.
-As it stands, this is good stuff, and the end result is definitely
-usable, even if it's not in the format we want it just yet. Translating
-one to the other has proven tiresome as well; I spent the better part of
-three hours just to clean up the first of our tabs. There are a few
-items I think might not be translatable, things that mainly live in
-Moksha, but we'll get to that when we get to that. Right now, I need a
-graphical diff viewer that cares neither for whitespace nor line breaks,
-just for what's in the code. Good old meld, which I had been using, has
-proven itself inadequate to the massive differences between these files.
-Hopefully tomorrow I will have a fresh start from which to sculpt this
-mess I've constructed into its completed form.</p>
+        <p>In <a href="http://qalthos.github.io/blog/category/personal.html">personal</a>. </p>
+<p>tags: <a href="http://qalthos.github.io/blog/tag/remysmoke.html">remysmoke</a></p>
+</footer><!-- /.post-info -->      <p><a class="reference external" href="http://remysmoke.linkybook.com/">Remysmoke</a> has had a few updates over the past week, and I think they've gone
+pretty well. Remysmoke is now at version 1.2, here's the changelog for the past
+few versions:</p>
+<div class="section" id="remysmoke-1-0">
+<h2>Remysmoke 1.0</h2>
+<ul class="simple">
+<li>Moved graphs from tw2-protoviz to <a class="reference external" href="http://pygal.org/">pygal</a>.</li>
+<li>Moved smoke input form from tw2-forms to hand-crafted HTML5 forms.</li>
+<li>Completely removed Toscawidgets and ToscaWidgets2 from Remysmoke (including
+some very old boilerplate TurboGears code).</li>
+</ul>
+</div>
+<div class="section" id="remysmoke-1-1">
+<h2>Remysmoke 1.1</h2>
+<ul class="simple">
+<li>Updated codebase to TurboGears 2.3.</li>
+<li>Redeployed Remysmoke on <a class="reference external" href="http://openshift.com/">OpenShift</a> Python 2.7 Cartridge (was Python 2.6).</li>
+</ul>
+</div>
+<div class="section" id="remysmoke-1-2">
+<h2>Remysmoke 1.2</h2>
+<ul class="simple">
+<li>Cleaned up login and smoke forms to be more consistent.</li>
+<li>Themed form checkboxes to be consistent with the rest of the UI.</li>
+<li>Added new theming for disabled input boxes.</li>
+<li>Added new 'unsmoke' option, allowing a user to attest that they have not
+smoked that day.</li>
+</ul>
+<p>Remysmoke 1.2 went live late last night, and a  hotfix 1.2.1 will be up shortly
+with an OpenShift-specific patch dealing with overriding the database location
+at runtime.</p>
+</div>
 
     </div><!-- /.entry-content -->
-        <ul>
-            <li><a href="http://qalthos.github.io/blog/civx-stuff.html">CIVX Stuff</a></li>
-            <li><a href="http://qalthos.github.io/blog/the-last-week.html">The Last Week</a></li>
-            <li><a href="http://qalthos.github.io/blog/summer-of-civx.html">Summer of CIVX</a></li>
-            <li><a href="http://qalthos.github.io/blog/just-another-ten-hour-day.html">Just another ten-hour day</a></li>
-            <li><a href="http://qalthos.github.io/blog/almost-there.html">Almost There...</a></li>
-        </ul>
         
   </article>
 </section>
