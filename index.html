@@ -37,8 +37,68 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="http://qalthos.github.io/blog/remysmoke-improving.html">Remysmoke Improving</a></h1> 
+                    <h1 class="entry-title"><a href="http://qalthos.github.io/blog/building-a-schoolserver.html">Building a Schoolserver</a></h1> 
                     <footer class="post-info">
+                <p><img src="http://www.gravatar.com/avatar/3a3baabff105b46a458688ecf49901af" /></p>
+                <abbr class="published" title="2013-08-05T02:04:00">
+                Mon 05 August 2013
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="http://qalthos.github.io/blog/author/nathaniel-case.html">Nathaniel Case</a>
+        </address>
+        <p>In <a href="http://qalthos.github.io/blog/category/fossrit.html">FOSS@RIT</a>. </p>
+<p>tags: <a href="http://qalthos.github.io/blog/tag/sugar.html">sugar</a><a href="http://qalthos.github.io/blog/tag/schoolserver.html">schoolserver</a></p>
+</footer><!-- /.post-info --><p>One of my tasks for this summer has been to try and get the FOSSBox's
+schoolserver up and running again. We previouly had one a number of years ago,
+but the hardware failed some time ago and the system itself was running a
+hacked-together Debian build and did not have access to some of the actual
+schoolserver scripts.</p>
+<p>I first attempted to run the <a class="reference external" href="http://wiki.laptop.org/go/XS_Installing_Software_0.7">instructions</a> for the latest proper release of
+the XO Schoolserver (henceforth XS), but this did not end very well. For one,
+the instructions (and many automated scripts) assume you have two network
+cards: one for the internal LAN to which the XO laptops connect, and another
+connecting to the Internet. This assumption that the XS would be the gateway
+device for a network of XO laptops would be fine in most deployments where
+there is no existing infrastructure to get in the way, but at RIT where there
+is not only significant infrastructure, but infrastructure I cannot easily
+modify or control, it is less applicable.</p>
+<p>Here are the steps I have taken to turn a fresh CentOS/RHEL server into an XS:</p>
+<ol class="arabic simple">
+<li>Set up <a class="reference external" href="http://fedoraproject.org/wiki/EPEL">EPEL</a>.</li>
+<li>Add the <a class="reference external" href="http://wiki.laptop.org/go/XS_Installing_Software_0.7#Installing_on_top_of_existing_OS_installation">OLPC-XS repository</a> to your yum config.</li>
+<li><tt class="docutils literal">yum install ejabberd idmgr <span class="pre">ds-backup-server</span> <span class="pre">xs-activity-server</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">xs-domain-config</span> &lt;domain name&gt;</tt></li>
+<li><tt class="docutils literal"><span class="pre">xs-setup</span></tt></li>
+<li>Use <tt class="docutils literal"><span class="pre">system-config-firewall-tui</span></tt> to unblock ports 22, 80, 8080, 5222, 5223,
+and 4369</li>
+</ol>
+<p><tt class="docutils literal"><span class="pre">xs-setup</span></tt> is the most trying of the commands, because it does a lot of
+background work to set up the OLPC versions of many config files (while still
+leaing the originals in place).</p>
+<p>There's more to it, <tt class="docutils literal"><span class="pre">xs-setup</span></tt> tends to have some annoying side effects,
+some of the config files need to be manually updated, but this is the general
+idea. This post will be further updated as time goes on.</p>
+<p>The main problem seen so far is that this is being set up on a RHEL server
+backed by XEN, and the OLPC-XS repository keeps wanting to install an
+incompatible kernel, hosing the system on a regular basis.</p>
+                </article>
+                            </aside><!-- /#featured -->
+                            <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+                                                
+
+                 
+                        <li><article class="hentry">    
+                <header>
+                    <h1><a href="http://qalthos.github.io/blog/remysmoke-improving.html" rel="bookmark"
+                           title="Permalink to Remysmoke Improving">Remysmoke Improving</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
                 <p><img src="http://www.gravatar.com/avatar/3a3baabff105b46a458688ecf49901af" /></p>
                 <abbr class="published" title="2013-07-26T03:44:00">
                 Fri 26 July 2013
@@ -49,45 +109,18 @@
         </address>
         <p>In <a href="http://qalthos.github.io/blog/category/personal.html">personal</a>. </p>
 <p>tags: <a href="http://qalthos.github.io/blog/tag/remysmoke.html">remysmoke</a></p>
-</footer><!-- /.post-info --><p><a class="reference external" href="http://remysmoke.linkybook.com/">Remysmoke</a> has had a few updates over the past week, and I think they've gone
+</footer><!-- /.post-info -->                <p><a class="reference external" href="http://remysmoke.linkybook.com/">Remysmoke</a> has had a few updates over the past week, and I think they've gone
 pretty well. Remysmoke is now at version 1.2, here's the changelog for the past
 few versions:</p>
 <div class="section" id="remysmoke-1-0">
 <h2>Remysmoke 1.0</h2>
 <ul class="simple">
 <li>Moved graphs from tw2-protoviz to <a class="reference external" href="http://pygal.org/">pygal</a>.</li>
-<li>Moved smoke input form from tw2-forms to hand-crafted HTML5 forms.</li>
-<li>Completely removed Toscawidgets and ToscaWidgets2 from Remysmoke (including
-some very old boilerplate TurboGears code).</li>
-</ul>
-</div>
-<div class="section" id="remysmoke-1-1">
-<h2>Remysmoke 1.1</h2>
-<ul class="simple">
-<li>Updated codebase to TurboGears 2.3.</li>
-<li>Redeployed Remysmoke on <a class="reference external" href="http://openshift.com/">OpenShift</a> Python 2.7 Cartridge (was Python 2.6).</li>
-</ul>
-</div>
-<div class="section" id="remysmoke-1-2">
-<h2>Remysmoke 1.2</h2>
-<ul class="simple">
-<li>Cleaned up login and smoke forms to be more consistent.</li>
-<li>Themed form checkboxes to be consistent with the rest of the UI.</li>
-<li>Added new theming for disabled input boxes.</li>
-<li>Added new 'unsmoke' option, allowing a user to attest that they have not
-smoked that day.</li>
-</ul>
-<p>Remysmoke 1.2 went live late last night, and a  hotfix 1.2.1 will be up shortly
-with an OpenShift-specific patch dealing with overriding the database location
-at runtime.</p>
-</div>
-                </article>
-                            </aside><!-- /#featured -->
-                            <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
-                                                
+<li>Moved smoke input form from tw2-forms to ...</li></ul></div>
+                <a class="readmore" href="http://qalthos.github.io/blog/remysmoke-improving.html">read more</a>
+                                </div><!-- /.entry-content -->
+            </article></li>
+                            
 
                  
                         <li><article class="hentry">    
@@ -173,34 +206,6 @@ real neat for use in this blog.</p>
                 <a class="readmore" href="http://qalthos.github.io/blog/ditaa-addition.html">read more</a>
                                 </div><!-- /.entry-content -->
             </article></li>
-                            
-
-                 
-                        <li><article class="hentry">    
-                <header>
-                    <h1><a href="http://qalthos.github.io/blog/blog-rebuild.html" rel="bookmark"
-                           title="Permalink to Blog Rebuild">Blog Rebuild</a></h1>
-                </header>
-                
-                <div class="entry-content">
-                <footer class="post-info">
-                <p><img src="http://www.gravatar.com/avatar/3a3baabff105b46a458688ecf49901af" /></p>
-                <abbr class="published" title="2013-04-21T18:03:00">
-                Sun 21 April 2013
-        </abbr>
-
-                <address class="vcard author">
-                By <a class="url fn" href="http://qalthos.github.io/blog/author/nathaniel-case.html">Nathaniel Case</a>
-        </address>
-        <p>In <a href="http://qalthos.github.io/blog/category/meta.html">meta</a>. </p>
-<p>tags: <a href="http://qalthos.github.io/blog/tag/blog.html">blog</a></p>
-</footer><!-- /.post-info -->                <p>As you may notice, my blog looks a lot different now. On the recommendation of
-a few FOSSBoxers, I have moved to <a class="reference external" href="http://blog.getpelican.com/">Pelican</a>, a Python-based static site
-generator. The practical upshot of which is that I can now write posts in
-<a class="reference external" href="http://docutils.sourceforge.net/rst.html">reStructuredText</a>, keep the posts themselves in git, and host ...</p>
-                <a class="readmore" href="http://qalthos.github.io/blog/blog-rebuild.html">read more</a>
-                                </div><!-- /.entry-content -->
-            </article></li>
                             </ol><!-- /#posts-list -->
                             <p class="paginator">
         Page 1 / 11
@@ -217,36 +222,36 @@ generator. The practical upshot of which is that I can now write posts in
         <div class="tagcloud">
       <h2>tag cloud</h2>
       <ul>
-                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/timeline.html">timeline</a></li>
-                  <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/democracymap.html">democracymap</a></li>
                   <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/remysmoke.html">remysmoke</a></li>
-                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/jquery.html">jQuery</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/sugar.html">sugar</a></li>
-                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/fabulous.html">fabulous</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/hackathon.html">hackathon</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/lemonade.html">lemonade</a></li>
-                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/data alchemy.html">data alchemy</a></li>
-                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/knowledge.html">knowledge</a></li>
-                  <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/pydex.html">pyDex</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/wikiotics.html">wikiotics</a></li>
-                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/blog.html">blog</a></li>
-                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/opl.html">OPL</a></li>
-                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/python.html">python</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/scrapers.html">scrapers</a></li>
-                  <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/geowebdns.html">geowebdns</a></li>
                   <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/wat.html">wat</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/journalism.html">journalism</a></li>
+                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/python.html">python</a></li>
+                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/schoolserver.html">schoolserver</a></li>
+                  <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/geowebdns.html">geowebdns</a></li>
+                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/rise.html">Rise</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/hackathon.html">hackathon</a></li>
+                  <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/pydex.html">pyDex</a></li>
+                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/blog.html">blog</a></li>
+                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/groovebot.html">groovebot</a></li>
+                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/knowledge.html">knowledge</a></li>
                   <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/surs.html">SURS</a></li>
                   <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/pybotwar.html">pybotwar</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/journalism.html">journalism</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/widgets.html">widgets</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/scrapers.html">scrapers</a></li>
                   <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/hardware.html">hardware</a></li>
-                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/groovebot.html">groovebot</a></li>
-                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/rise.html">Rise</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/floss-seminar.html">FLOSS-seminar</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/peopledashboard.html">peopledashboard</a></li>
-                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/polyscraper.html">polyscraper</a></li>
+                  <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/democracymap.html">democracymap</a></li>
                   <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/election.html">election</a></li>
+                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/polyscraper.html">polyscraper</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/floss-seminar.html">FLOSS-seminar</a></li>
                   <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/openshift.html">openshift</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/wikiotics.html">wikiotics</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/lemonade.html">lemonade</a></li>
+                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/data alchemy.html">data alchemy</a></li>
+                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/timeline.html">timeline</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/widgets.html">widgets</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/sugar.html">sugar</a></li>
+                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/jquery.html">jQuery</a></li>
+                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/fabulous.html">fabulous</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/peopledashboard.html">peopledashboard</a></li>
               </ul>
     </div>
         <div class="social">
