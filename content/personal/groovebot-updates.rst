@@ -47,10 +47,6 @@ into, it should be easier to reimplement those functions in a more
 general way so that multiple backends can be used for a more varied
 music experience. And then we can get back to the OS grooving.
 
-.. raw:: html
-
-   </p>
-
 .. _Jlew: http://jlewopensource.com/
 .. _GrooveShark: http://www.grooveshark.com/
 .. _GrooveBot: https://gitorious.org/jlew/groovebot
