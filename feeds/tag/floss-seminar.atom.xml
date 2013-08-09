@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://qalthos.github.io/blog/" rel="alternate"></link><link href="http://qalthos.github.io/blog/feeds/tag/floss-seminar.atom.xml" rel="self"></link><id>http://qalthos.github.io/blog/</id><updated>2012-02-29T16:15:00-05:00</updated><entry><title>Final Stretch</title><link href="http://qalthos.github.io/blog/final-stretch.html" rel="alternate"></link><updated>2012-02-29T16:15:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2012-02-29:final-stretch.html</id><summary type="html">&lt;p&gt;So the past two days have been madness trying to get the recently
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://qalthos.github.io/blog/" rel="alternate"></link><link href="http://qalthos.github.io/blog/feeds/tag/floss-seminar.atom.xml" rel="self"></link><id>http://qalthos.github.io/blog/</id><updated>2012-02-29T16:15:00-05:00</updated><entry><title>Final Stretch</title><link href="http://qalthos.github.io/blog/FOSS@RIT/final-stretch.html" rel="alternate"></link><updated>2012-02-29T16:15:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2012-02-29:FOSS@RIT/final-stretch.html</id><summary type="html">&lt;p&gt;So the past two days have been madness trying to get the recently
 christened WebBotWar (or just WebBot) to actually work on the web.&lt;/p&gt;
 &lt;p&gt;We had it working locally some time last week (I think... the days are
 really starting to mush together), but OpenShift was a whole other
@@ -38,7 +38,7 @@ other yet. As well, there are brand new pretty images for the robots and
 the turrets.&lt;/p&gt;
 &lt;p&gt;There's a few outstanding problems left, but (as long as I don't push
 anything broken) you can have a look at webbotwar in action &lt;a class="reference external" href="webbotwar-qalthos.rhcloud.com"&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;/p&gt;</summary><category term="pybotwar"></category><category term="hackathon"></category><category term="FLOSS-seminar"></category><category term="webbotwar"></category><category term="openshift"></category></entry><entry><title>OpenShift Troubles</title><link href="http://qalthos.github.io/blog/openshift-troubles.html" rel="alternate"></link><updated>2012-02-03T06:47:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2012-02-03:openshift-troubles.html</id><summary type="html">&lt;p&gt;Recently I've been playing with &lt;a class="reference external" href="http://openshift.redhat.com/"&gt;OpenShift&lt;/a&gt;, a new(ish) service from
+&lt;/p&gt;</summary><category term="pybotwar"></category><category term="hackathon"></category><category term="FLOSS-seminar"></category><category term="webbotwar"></category><category term="openshift"></category></entry><entry><title>OpenShift Troubles</title><link href="http://qalthos.github.io/blog/personal/openshift-troubles.html" rel="alternate"></link><updated>2012-02-03T06:47:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2012-02-03:personal/openshift-troubles.html</id><summary type="html">&lt;p&gt;Recently I've been playing with &lt;a class="reference external" href="http://openshift.redhat.com/"&gt;OpenShift&lt;/a&gt;, a new(ish) service from
 Red Hat as a sort of 'push to cloud' deployment strategy. It's
 interesting for people like me who can whip up a site quick, but don't
 necessarily have the framework in place to host it.&lt;/p&gt;
@@ -94,7 +94,7 @@ should I really try), I wasn't getting any good error messages.
 So what is the site that has been giving me all these troubles? It's a
 little site I set up to publicly shame Remy into stopping smoking:
 &lt;a class="reference external" href="http://remysmoke-qalthos.rhcloud.com/"&gt;remysmoke-qalthos.rhcloud.com&lt;/a&gt;&lt;/p&gt;
-</summary><category term="FLOSS-seminar"></category><category term="openshift"></category></entry><entry><title>Openshift Troubles Continued</title><link href="http://qalthos.github.io/blog/openshift-troubles-continued.html" rel="alternate"></link><updated>2012-02-03T06:47:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2012-02-03:openshift-troubles-continued.html</id><summary type="html">&lt;p&gt;I figured out the problem I was having with OpenShift.&lt;/p&gt;
+</summary><category term="FLOSS-seminar"></category><category term="openshift"></category></entry><entry><title>Openshift Troubles Continued</title><link href="http://qalthos.github.io/blog/personal/openshift-troubles-continued.html" rel="alternate"></link><updated>2012-02-03T06:47:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2012-02-03:personal/openshift-troubles-continued.html</id><summary type="html">&lt;p&gt;I figured out the problem I was having with OpenShift.&lt;/p&gt;
 &lt;p&gt;To put it simply, I didn't pay enough attention.&lt;/p&gt;
 &lt;p&gt;For reference, when moving an existing TurboGears app to OpenShift, make
 sure you add the changes in config/app_cfg.py&lt;/p&gt;
@@ -102,7 +102,7 @@ sure you add the changes in config/app_cfg.py&lt;/p&gt;
 that I had gotten all the relevant changes, but apparently I somehow
 missed this file.&lt;/p&gt;
 &lt;p&gt;More detailed directions coming soon.&lt;/p&gt;
-&lt;/p&gt;</summary><category term="FLOSS-seminar"></category><category term="openshift"></category></entry><entry><title>TurboGears2 on OpenShift, just like it should be</title><link href="http://qalthos.github.io/blog/turbogears2-on-openshift-just-like-it-should-be.html" rel="alternate"></link><updated>2012-02-03T06:47:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2012-02-03:turbogears2-on-openshift-just-like-it-should-be.html</id><summary type="html">&lt;p&gt;After much work and many trials, I finally have an app pushed to
+&lt;/p&gt;</summary><category term="FLOSS-seminar"></category><category term="openshift"></category></entry><entry><title>TurboGears2 on OpenShift, just like it should be</title><link href="http://qalthos.github.io/blog/FOSS@RIT/turbogears2-on-openshift-just-like-it-should-be.html" rel="alternate"></link><updated>2012-02-03T06:47:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2012-02-03:FOSS@RIT/turbogears2-on-openshift-just-like-it-should-be.html</id><summary type="html">&lt;p&gt;After much work and many trials, I finally have an app pushed to
 OpenShift with no manual tweaking necessary. As often happens with these
 things, the solution was much simpler than expected.&lt;/p&gt;
 &lt;p&gt;Note: I still don't have a foolproof 'follow this' solution ready, as
@@ -161,7 +161,7 @@ application, not OpenShift), so it looked like I had finally fixed
 deploying a standard TurboGears app. I've no doubt that there's
 something I've left out, but I'm pretty amazed at the progress I've made
 so far, and learned a lot about both OpenShift and TurboGears.&lt;/p&gt;
-</summary><category term="hackathon"></category><category term="FLOSS-seminar"></category><category term="openshift"></category></entry><entry><title>FLOSS Seminar Update</title><link href="http://qalthos.github.io/blog/floss-seminar-update.html" rel="alternate"></link><updated>2012-01-19T17:46:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2012-01-19:floss-seminar-update.html</id><summary type="html">&lt;p&gt;So it's week 5, what has been going on?&lt;/p&gt;
+</summary><category term="hackathon"></category><category term="FLOSS-seminar"></category><category term="openshift"></category></entry><entry><title>FLOSS Seminar Update</title><link href="http://qalthos.github.io/blog/FOSS@RIT/floss-seminar-update.html" rel="alternate"></link><updated>2012-01-19T17:46:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2012-01-19:FOSS@RIT/floss-seminar-update.html</id><summary type="html">&lt;p&gt;So it's week 5, what has been going on?&lt;/p&gt;
 &lt;p&gt;The class has split into three groups, working on different games. My
 group's idea is a social update to the venerable likes of &lt;a class="reference external" href="http://robocode.sourceforge.net/"&gt;robocode&lt;/a&gt;,
 though how exactly that is going to pan out is still debatable.&lt;/p&gt;
@@ -169,7 +169,7 @@ though how exactly that is going to pan out is still debatable.&lt;/p&gt;
 requiring much tweaking of the internals, though a new interface would be
 required for use on the web. All in all the class is shaping up to be
 pretty interesting.&lt;/p&gt;
-&lt;/p&gt;</summary><category term="FLOSS-seminar"></category></entry><entry><title>First FLOSS Seminar post</title><link href="http://qalthos.github.io/blog/first-floss-seminar-post.html" rel="alternate"></link><updated>2011-12-01T20:22:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-12-01:first-floss-seminar-post.html</id><summary type="html">&lt;p&gt;So this quarter I am taking a &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Free_and_open_source_software#FLOSS"&gt;FLOSS&lt;/a&gt; Seminar being taught by &lt;a class="reference external" href="http://threebean.org"&gt;Bean&lt;/a&gt;
+&lt;/p&gt;</summary><category term="FLOSS-seminar"></category></entry><entry><title>First FLOSS Seminar post</title><link href="http://qalthos.github.io/blog/FOSS@RIT/first-floss-seminar-post.html" rel="alternate"></link><updated>2011-12-01T20:22:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-12-01:FOSS@RIT/first-floss-seminar-post.html</id><summary type="html">&lt;p&gt;So this quarter I am taking a &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Free_and_open_source_software#FLOSS"&gt;FLOSS&lt;/a&gt; Seminar being taught by &lt;a class="reference external" href="http://threebean.org"&gt;Bean&lt;/a&gt;
 which should be pretty awesome. As a graduate student (as well as a
 fairly advanced FLOSS citizen) there are a few extra things going to be
 required of me, and we're working on ironing out the exact details now.
