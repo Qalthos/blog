@@ -36,3 +36,6 @@ SOCIAL = (('Github', 'http://github.com/Qalthos'),
 # Tag Cloud
 TAG_CLOUD_STEPS = 4
 TAG_CLOUD_MAX_ITEMS = 30
+
+#CATEGORY_FEED_ATOM = ('feeds/%s.atom.xml')
+TAG_FEED_ATOM = ('feeds/tag/%s.atom.xml')
