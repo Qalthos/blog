@@ -37,5 +37,10 @@ SOCIAL = (('Github', 'http://github.com/Qalthos'),
 TAG_CLOUD_STEPS = 4
 TAG_CLOUD_MAX_ITEMS = 30
 
+# Feed settings
 #CATEGORY_FEED_ATOM = ('feeds/%s.atom.xml')
 TAG_FEED_ATOM = ('feeds/tag/%s.atom.xml')
+
+# Generated page settings
+ARTICLE_URL = ('{category}/{slug}.html')
+ARTICLE_SAVE_AS = ('{category}/{slug}.html')
