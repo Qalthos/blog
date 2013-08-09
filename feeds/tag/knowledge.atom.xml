@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://qalthos.github.io/blog/" rel="alternate"></link><link href="http://qalthos.github.io/blog/feeds/tag/knowledge.atom.xml" rel="self"></link><id>http://qalthos.github.io/blog/</id><updated>2012-08-07T23:39:00-04:00</updated><entry><title>Recent Projects: Knowledge</title><link href="http://qalthos.github.io/blog/recent-projects-knowledge.html" rel="alternate"></link><updated>2012-08-07T23:39:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2012-08-07:recent-projects-knowledge.html</id><summary type="html">&lt;p&gt;One of the cool features of CIVX that really caught my interest when I
+first started working on it was the &lt;a class="reference external" href="https://github.com/FOSSRIT/knowledge"&gt;Knowledge DB&lt;/a&gt;. Using the magic of
+Python, Knowledge is a vertical, polymorphic database for storing
+knowledge about things, which means very little to anyone, even me.&lt;/p&gt;
+&lt;p&gt;What Knowledge does is it allows you to store anything (or anything
+Python can pickle, at least), as arbitrary collections of Entities and
+Facts.&lt;/p&gt;
+</summary><category term="knowledge"></category></entry></feed>

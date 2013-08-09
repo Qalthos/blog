@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://qalthos.github.io/blog/" rel="alternate"></link><link href="http://qalthos.github.io/blog/feeds/tag/remysmoke.atom.xml" rel="self"></link><id>http://qalthos.github.io/blog/</id><updated>2013-07-26T03:44:00-04:00</updated><entry><title>Remysmoke Improving</title><link href="http://qalthos.github.io/blog/remysmoke-improving.html" rel="alternate"></link><updated>2013-07-26T03:44:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2013-07-26:remysmoke-improving.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://remysmoke.linkybook.com/"&gt;Remysmoke&lt;/a&gt; has had a few updates over the past week, and I think they've gone
+pretty well. Remysmoke is now at version 1.2, here's the changelog for the past
+few versions:&lt;/p&gt;
+&lt;div class="section" id="remysmoke-1-0"&gt;
+&lt;h2&gt;Remysmoke 1.0&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Moved graphs from tw2-protoviz to &lt;a class="reference external" href="http://pygal.org/"&gt;pygal&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Moved smoke input form from tw2-forms to hand-crafted HTML5 forms.&lt;/li&gt;
+&lt;li&gt;Completely removed Toscawidgets and ToscaWidgets2 from Remysmoke (including
+some very old boilerplate TurboGears code).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="remysmoke-1-1"&gt;
+&lt;h2&gt;Remysmoke 1.1&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Updated codebase to TurboGears 2.3.&lt;/li&gt;
+&lt;li&gt;Redeployed Remysmoke on &lt;a class="reference external" href="http://openshift.com/"&gt;OpenShift&lt;/a&gt; Python 2.7 Cartridge (was Python 2.6).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="remysmoke-1-2"&gt;
+&lt;h2&gt;Remysmoke 1.2&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Cleaned up login and smoke forms to be more consistent.&lt;/li&gt;
+&lt;li&gt;Themed form checkboxes to be consistent with the rest of the UI.&lt;/li&gt;
+&lt;li&gt;Added new theming for disabled input boxes.&lt;/li&gt;
+&lt;li&gt;Added new 'unsmoke' option, allowing a user to attest that they have not
+smoked that day.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Remysmoke 1.2 went live late last night, and a  hotfix 1.2.1 will be up shortly
+with an OpenShift-specific patch dealing with overriding the database location
+at runtime.&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="remysmoke"></category></entry></feed>

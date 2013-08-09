@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://qalthos.github.io/blog/" rel="alternate"></link><link href="http://qalthos.github.io/blog/feeds/tag/sugar.atom.xml" rel="self"></link><id>http://qalthos.github.io/blog/</id><updated>2013-08-05T02:04:00-04:00</updated><entry><title>Building a Schoolserver</title><link href="http://qalthos.github.io/blog/building-a-schoolserver.html" rel="alternate"></link><updated>2013-08-05T02:04:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2013-08-05:building-a-schoolserver.html</id><summary type="html">&lt;p&gt;One of my tasks for this summer has been to try and get the FOSSBox's
+schoolserver up and running again. We previouly had one a number of years ago,
+but the hardware failed some time ago and the system itself was running a
+hacked-together Debian build and did not have access to some of the actual
+schoolserver scripts.&lt;/p&gt;
+&lt;p&gt;I first attempted to run the &lt;a class="reference external" href="http://wiki.laptop.org/go/XS_Installing_Software_0.7"&gt;instructions&lt;/a&gt; for the latest proper release of
+the XO Schoolserver (henceforth XS), but this did not end very well. For one,
+the instructions (and many automated scripts) assume you have two network
+cards: one for the internal LAN to which the XO laptops connect, and another
+connecting to the Internet. This assumption that the XS would be the gateway
+device for a network of XO laptops would be fine in most deployments where
+there is no existing infrastructure to get in the way, but at RIT where there
+is not only significant infrastructure, but infrastructure I cannot easily
+modify or control, it is less applicable.&lt;/p&gt;
+&lt;p&gt;Here are the steps I have taken to turn a fresh CentOS/RHEL server into an XS:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Set up &lt;a class="reference external" href="http://fedoraproject.org/wiki/EPEL"&gt;EPEL&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Add the &lt;a class="reference external" href="http://wiki.laptop.org/go/XS_Installing_Software_0.7#Installing_on_top_of_existing_OS_installation"&gt;OLPC-XS repository&lt;/a&gt; to your yum config.&lt;/li&gt;
+&lt;li&gt;&lt;tt class="docutils literal"&gt;yum install ejabberd idmgr &lt;span class="pre"&gt;ds-backup-server&lt;/span&gt; &lt;span class="pre"&gt;xs-activity-server&lt;/span&gt;&lt;/tt&gt;&lt;/li&gt;
+&lt;li&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;xs-domain-config&lt;/span&gt; &amp;lt;domain name&amp;gt;&lt;/tt&gt;&lt;/li&gt;
+&lt;li&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;xs-setup&lt;/span&gt;&lt;/tt&gt;&lt;/li&gt;
+&lt;li&gt;Use &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;system-config-firewall-tui&lt;/span&gt;&lt;/tt&gt; to unblock ports 22, 80, 8080, 5222, 5223,
+and 4369&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;xs-setup&lt;/span&gt;&lt;/tt&gt; is the most trying of the commands, because it does a lot of
+background work to set up the OLPC versions of many config files (while still
+leaing the originals in place).&lt;/p&gt;
+&lt;p&gt;There's more to it, &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;xs-setup&lt;/span&gt;&lt;/tt&gt; tends to have some annoying side effects,
+some of the config files need to be manually updated, but this is the general
+idea. This post will be further updated as time goes on.&lt;/p&gt;
+&lt;p&gt;The main problem seen so far is that this is being set up on a RHEL server
+backed by XEN, and the OLPC-XS repository keeps wanting to install an
+incompatible kernel, hosing the system on a regular basis.&lt;/p&gt;
+</summary><category term="sugar"></category><category term="schoolserver"></category></entry><entry><title>Imagine RIT 2011</title><link href="http://qalthos.github.io/blog/imagine-rit-2011.html" rel="alternate"></link><updated>2011-05-08T03:16:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-05-08:imagine-rit-2011.html</id><summary type="html">&lt;p&gt;So I've been absent for a while lately, but with good reason. I've been
+preparing for Imagine RIT, which was held earlier today.
+After pulling possibly my longest day's hack yesterday (1pm to 4am,
+approximately), I woke up at 9 and headed over to the Innovation Center
+to talk to people about FOSS. All day long, the FOSSBox was filled with
+curious people, looking to find out what it is we did. We had kids
+poking around on the OLPCs, checking out our software, and occasionally
+getting lost opening new programs. Every time I finished showing a group
+around all the different projects hosted in the FOSSBox, a brand new
+group would appear and start asking questions. It was tiring, especially
+on about three hours of sleep, but it was quite fun and exciting showing
+off our work to new people.&lt;/p&gt;
+&lt;p&gt;Of particular interest was Lemonade Stand, which seemed to excite many
+of the children who came around. Most seemed to pick up the game with
+minimal instruction (though it helped that by now I know very well which
+areas to explain... they should get tightened in the future) and most
+had lots of fun despite the large quantities of math involved.
+And the backdrop to all this was &lt;a class="reference external" href="rise.rit.edu"&gt;Rise Above the Crowd&lt;/a&gt;, the project I
+was spending so much time polishing yesterday. I don't know if I could
+explain what exactly Rise is, other than a real-time journalism and news
+collection framework, which doesn't really explain anything. Basically,
+users submit stories and photos to Rise, which in turn keep track of
+popular and recent content and display this information to strategically
+placed screens throughout the campus. After a few hiccoughs, the servers
+were online and serving data to the public, who then voted on their
+favorite stories. At the FOSSBOX, we had the projector set up serving
+the HD display mode so people could see what was current while they were
+there. Since I was the one most familiar with the system at the time, I
+tried to field any questions that popped up at the time to the best of
+my knowledge, though sometimes that wasn't much help. As the day
+progressed, we uncovered a few new bugs in the new system, and have some
+new tasks before the final release.&lt;/p&gt;
+&lt;p&gt;All in all, a very exciting and fun weekend. We made a few contacts,
+introduced a few more people to FOSS&amp;#64;RIT, and gave away at least 40
+LiveCDs. I think that qualifies as quite a success.&lt;/p&gt;
+</summary><category term="journalism"></category><category term="lemonade"></category><category term="sugar"></category><category term="Rise"></category><category term="OPL"></category></entry><entry><title>pyDex on Sugar</title><link href="http://qalthos.github.io/blog/pydex-on-sugar.html" rel="alternate"></link><updated>2011-01-19T23:51:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-01-19:pydex-on-sugar.html</id><summary type="html">&lt;p&gt;A warning, this gets very technical with lots of acronyms and jargon.
+tl;dr: I have a new pyDex branch which *should* run on the OLPC
+A few days ago, I decided I'd finally see how well pyDex runs on the
+OLPC. Turns out, it runs pretty well, which isn't too surprising as it
+is written in pure pyGTK and Glade, both of which are well supported in
+Sugar.
+So today, I loaded up my dev files and set to work. First, though, I had
+to clean up my dev branch and finish committing the few hacks I had
+accumulated over the last few months. I finally fixed the zero index bug
+and found I had a problem in my new scraper that was causing all the
+evolution problems. In any case, that's all fixed, so my dev branch is
+nice and clean and almost ready for the Black/White release in a few
+weeks.
+Getting back to Sugar, I finally found &lt;a class="reference external" href="http://magazine.redhat.com/2007/04/26/building-the-xo-porting-a-pygtk-game-to-sugar-part-two/"&gt;a good tutorial&lt;/a&gt; on *porting*
+a pyGTK program rather than writing a new one. While admittedly I
+haven't looked very hard, I had had a bit of a problem getting past the
+example activity before, probably due to my use of Glade as I cannot
+replace my top window as easily when it is automatically pulled from
+Glade's XML and I really don't feel like defining everything in code.
+The most useful thing I found in this tutorial is sending different
+parents to the main panel depending on where it is called from. So if we
+call the program normally, main_window is still loaded from Glade, but
+if Sugar loads it, we use their prebuilt panel.
+It still needs to be tested, and I need to add actual activity
+information (and an icon eventually), but I think it should work. I'll
+probably get to test it sometime this weekend, maybe even turn it into a
+real activity by then. This is still just a small project, and I doubt
+it will ever go up on Sugar's activities site, but it has given me a
+much better understanding about how non-pygame activities work.&lt;/p&gt;
+</summary><category term="sugar"></category><category term="pyDex"></category></entry><entry><title>Lemonade Week... 8?</title><link href="http://qalthos.github.io/blog/lemonade-week-8.html" rel="alternate"></link><updated>2010-10-26T23:59:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-10-26:lemonade-week-8.html</id><summary type="html">&lt;p&gt;So... lots of stuff has happened in the last few weeks.
+First, we have a new background, thanks to JT. In fact, we have three
+now, and as of five minutes ago, a different one will show up depending
+on the current weather.
+There's also been a lot of behind-the-scenes updates to make adding new
+events and weather types easier in the future. Generally, all that kind
+of stuff goes in constants.py, but that might have to change if we need
+to add too much more stuff.
+We've got a few exciting ideas we hope to get done in the next few
+weeks, and I look forward to seeing what we can get done.&lt;/p&gt;
+</summary><category term="lemonade"></category><category term="sugar"></category></entry><entry><title>Lemons Taking Off</title><link href="http://qalthos.github.io/blog/lemons-taking-off.html" rel="alternate"></link><updated>2010-09-23T14:35:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-09-23:lemons-taking-off.html</id><summary type="html">&lt;p&gt;It looks like Lemonade Stand is taking off for fall quarter's &lt;a class="reference external" href="http://teachingopensource.org/index.php/RIT/The_Course"&gt;HFOSS&lt;/a&gt;
+class. This is quite exciting and there's a number of things I'm looking
+to get in for a 2.2 release
+* More events
+* Fluctuating prices
+* Loyalty and advertising
+among &lt;a class="reference external" href="http://wiki.sugarlabs.org/go/Lemonade_Stand#Additional_Ideas_.26_Features"&gt;others&lt;/a&gt;.
+The 2.1 release, meanwhile, I would like to focus on usability and
+graphics, as those have been being worked on for the longest so far.
+Whether any of this will work out the way I'm imagining is debatable,
+but I've got a plan and two &lt;a class="reference external" href="http://smw-os.blogspot.com/"&gt;awesome&lt;/a&gt; &lt;a class="reference external" href="http://jtmengel.blogspot.com"&gt;people&lt;/a&gt; working on it with me&lt;/p&gt;
+</summary><category term="lemonade"></category><category term="sugar"></category></entry><entry><title>Refreshing Lemonade</title><link href="http://qalthos.github.io/blog/refreshing-lemonade.html" rel="alternate"></link><updated>2010-09-23T14:04:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-09-23:refreshing-lemonade.html</id><summary type="html">&lt;p&gt;In other news, yesterday marked the &lt;a class="reference external" href="http://blog.jlewopensource.com/2010/07/lemonade-stand-release.html"&gt;final release of Lemonade
+Stand 2.0&lt;/a&gt;. Now running on the &lt;a class="reference external" href="https://fedorahosted.org/fortune_hunter/wiki/FortuneEngine"&gt;Fortune Engine&lt;/a&gt; and containing 0% of
+my code, this marks an important milestone in my open-source
+&lt;a class="reference external" href="http://sugarlabs.org/"&gt;sugar-based&lt;/a&gt; lemonade stand game as it's still getting developed!
+While I can claim none of the credit for the code, it is still
+satisfying to watch my very first open source project still on its feet,
+teetering around like a drunken toddler.&lt;/p&gt;
+</summary><category term="lemonade"></category><category term="sugar"></category></entry></feed>

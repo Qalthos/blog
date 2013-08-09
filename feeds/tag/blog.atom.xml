@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://qalthos.github.io/blog/" rel="alternate"></link><link href="http://qalthos.github.io/blog/feeds/tag/blog.atom.xml" rel="self"></link><id>http://qalthos.github.io/blog/</id><updated>2013-05-15T00:00:00-04:00</updated><entry><title>ditaa Addition</title><link href="http://qalthos.github.io/blog/ditaa-addition.html" rel="alternate"></link><updated>2013-05-15T00:00:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2013-05-15:ditaa-addition.html</id><summary type="html">&lt;p&gt;Recently, while wandering around the Internet, I found a neat little project
+called  &lt;a class="reference external" href="http://ditaa.sourceforge.net/"&gt;ditaa&lt;/a&gt;. The basic idea is it takes a textual representation of a
+diagram, and turns it into a real image. My first thought was that this looked
+real neat for use in this blog.&lt;/p&gt;
+&lt;p&gt;I write this now not in HTML directly, but in &lt;a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html"&gt;reStructured Text&lt;/a&gt;, a somewhat
+less verbose markup language native to Python. Thankfully, someone had already
+made a &lt;a class="reference external" href="https://gist.github.com/dvarrazzo/3807373"&gt;directive&lt;/a&gt; for ditaa diagrams to be embedded in reST and get rendered
+to an image in the final page. With this in hand, I managed to cobble together
+a plugin for pelican to add that directive to my posts.&lt;/p&gt;
+&lt;p&gt;There's only one live example at the moment, which is my
+&lt;a class="reference external" href="american-greetings-hackathon-followup.html"&gt;American Greetings hackathon&lt;/a&gt; post. The plugin itself has been added to my
+fork of &lt;a class="reference external" href="http://github.com/Qalthos/pelican-plugins"&gt;pelican-plugins&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;It's not all great, though. One thing I would really like is the ability to
+render the diagram to SVG instead of PNG. SVG is much better for things like
+simple diagrams, as it is web-native, (all it is is a special kind of XML
+document), and it's vector-based, making it inherently scalable for different
+sized displays. As near as I can tell, ditaa appears to use SVG internally, at
+least to some extent. Ideally, I'd like to try to re-implement it in Python, not
+necessarily for any benefit, but because the problem sounds interesting.&lt;/p&gt;
+</summary><category term="blog"></category></entry><entry><title>Blog Rebuild</title><link href="http://qalthos.github.io/blog/blog-rebuild.html" rel="alternate"></link><updated>2013-04-21T18:03:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2013-04-21:blog-rebuild.html</id><summary type="html">&lt;p&gt;As you may notice, my blog looks a lot different now. On the recommendation of
+a few FOSSBoxers, I have moved to &lt;a class="reference external" href="http://blog.getpelican.com/"&gt;Pelican&lt;/a&gt;, a Python-based static site
+generator. The practical upshot of which is that I can now write posts in
+&lt;a class="reference external" href="http://docutils.sourceforge.net/rst.html"&gt;reStructuredText&lt;/a&gt;, keep the posts themselves in git, and host the whole thing
+on &lt;a class="reference external" href="http://pages.github.com/"&gt;GitHub Pages&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;While all of my posts have been successfully moved, not every one has survived
+intact. in particular, paragraph splits in a number of older blogs have been
+lost. I will try to rectify those as they crop up, but there's a lot to go
+through.&lt;/p&gt;
+&lt;p&gt;One of the casualties of the move was the comments. Pelican does not handle
+comments on its own, and while I can hook up a specialized service like Disqus,
+I've decided that it isn't worth the effort at present.&lt;/p&gt;
+</summary><category term="blog"></category></entry></feed>

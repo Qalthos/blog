@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://qalthos.github.io/blog/" rel="alternate"></link><link href="http://qalthos.github.io/blog/feeds/tag/polyscraper.atom.xml" rel="self"></link><id>http://qalthos.github.io/blog/</id><updated>2011-06-29T18:04:00-04:00</updated><entry><title>Multiprocessing the PolyScraper</title><link href="http://qalthos.github.io/blog/multiprocessing-the-polyscraper.html" rel="alternate"></link><updated>2011-06-29T18:04:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-06-29:multiprocessing-the-polyscraper.html</id><summary type="html">&lt;p&gt;Warning: This post was written at 4AM and contains a technical account
+of what I have been doing attempting to parallelize CIVX's internals. If
+you are looking for a more general overview of what I have been doing
+recently, you are better off looking to another one of my posts.
+Recently, I have been working on CIVX's PolyScraper, a neat little piece
+of code designed to be able to read and understand structured text
+without knowing how the text is structured beforehand. On Thursday, I
+let a test scrape of a rather large dataset start, figuring it would
+finish sometime over the weekend and I'd be able to pick it up on
+Monday. Then Monday rolled around, and the scrape was still running.
+Worse, it didn't seem to be taking full advantage of the available
+resources. Running as it was on the boat, it had four cores at its
+disposal, however it was steadfastly using only one core.
+Now PolyScraping is not an inherently parallelizable task, but on large
+datasets it should benefit from some kind of parallelization,
+particularly when using large numbers of small files (less so with small
+numbers of large files, those types of tasks are usually sequential as
+you have a smaller number of resources blocking on read IO). Clearly
+there were other things to look into, but if I could do this, this would
+mean a huge win for offline scraping, which was one of the things I had
+enabled with my addition of local file support to the PolyScraper.
+This all led me to &lt;a class="reference external" href="http://docs.python.org/library/multiprocessing.html"&gt;multiprocessing&lt;/a&gt;, a library I'd been wanting to try
+out in python for some time now. Without going into too much detail,
+multiprocessing attempts to get around the &lt;a class="reference external" href="http://docs.python.org/glossary.html#term-global-interpreter-lock"&gt;Global Interpreter Lock&lt;/a&gt; by
+spawning subprocesses instead of threads.
+The first attempt was written pretty quickly, as I still remember a lot
+from my Parallel Computing class from a while ago. Indeed the main
+problem turned out to be SQLAlchemy, or, more specifically our use of
+sqlite for a backend db. Sqlite is not the most robust of databases and
+can't really handle multiple processes attempting to write to the db at
+once. Luke suggested (and I would love to try) moving over to Postgres
+as we will eventually be doing on the boat, but unfortunately the boat
+has been 'stuck ashore' for some time now due to an extended outage in
+CSH's network.
+In the meantime I have been whittling the process down to what I think
+is the essentials. In the process I have made a complete mess of the
+code concerning the PolyScraper, but I should be able to make things at
+least look like the way they were before too long.
+At this point, though, I have been working on this project for close to
+20 hours today now. Luke is in town and we're all posted up in Remy's
+new place all hacking on our projects together. With any luck a good
+night's sleep will clear my head and give me new ideas for tomorrow.&lt;/p&gt;
+</summary><category term="hackathon"></category><category term="SURS"></category><category term="polyscraper"></category></entry><entry><title>Grokking the Core</title><link href="http://qalthos.github.io/blog/grokking-the-core.html" rel="alternate"></link><updated>2011-06-21T22:55:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-06-21:grokking-the-core.html</id><summary type="html">&lt;p&gt;This week begins the real dive into the core of what makes CIVX. Today
+(and yesterday, though yesterday hardly counts as a real day) were spent
+adding major functionality to the polyscraper, something that's been
+overdue for a long time now.
+But what is this magical polyscraper? Well, in short, it's magic. A lot
+of magic, actually, and that's half the problem. You see, in ye olden
+days of CIVX, each data source had to have its own scraper, and these
+were called whenever CIVX decided its data was old enough to get shoved
+out and replaced with new data. This was all well and fine, except that
+it took a very long time to get a scraper written for a new data source.
+You would have to define all the columns, give it a location to look,
+make sure you understood the site's particular dialect and scrubbed out
+any irregularities in their data. What the poly scraper does is it
+replaces all of those individual scrapers and replaces them with one big
+scraper which is smart enough to deal with any URL it finds.
+What I've been doing is adding new sources of data to the polyscraper.
+In particular, yesterday was spent adding the ability to read files off
+of a local disk and properly store them. This, in turn, exposed a few
+holes in the underlying framework which needed to be patched. However,
+this is a vitally important function, as things like the SunlightNY
+scraper I wrote last year works outside of CIVX proper (in Java, no
+less) and cannot be thrown into the polyscraper as easily. But I can
+download the files locally, and then work on them when it is convenient.
+With proper message passing, I can even seamlessly tell the polyscraper
+to pick up the files as soon as they are downloaded.
+Previously to this I had been working at the periphery of CIVX, adding
+functionality to widgets and individual scrapers. This is my first real
+push into the core functionality of CIVX, and it is good to see that I
+really have picked enough up in all this time to really start to
+understand the underlying structure of everything. Every day I learn
+more about what goes on inside this machine, and every day marks another
+set of tools I've learned to wield. I can't wait to see how far I get by
+the end of the summer.&lt;/p&gt;
+</summary><category term="scrapers"></category><category term="SURS"></category><category term="polyscraper"></category></entry></feed>

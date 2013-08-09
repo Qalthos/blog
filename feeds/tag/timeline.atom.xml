@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://qalthos.github.io/blog/" rel="alternate"></link><link href="http://qalthos.github.io/blog/feeds/tag/timeline.atom.xml" rel="self"></link><id>http://qalthos.github.io/blog/</id><updated>2013-06-02T03:18:00-04:00</updated><entry><title>National Day of Civic Hacking</title><link href="http://qalthos.github.io/blog/national-day-of-civic-hacking.html" rel="alternate"></link><updated>2013-06-02T03:18:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2013-06-02:national-day-of-civic-hacking.html</id><summary type="html">&lt;p&gt;One of the projects I worked on during the &lt;a class="reference external" href="http://hackforchange.org/fossrit-rochester-civic-hackathon"&gt;Rochester edition&lt;/a&gt; of the
+&lt;a class="reference external" href="http://hackforchange.org"&gt;National Day of Civic Hacking&lt;/a&gt; hackathon was not actually anything intended
+for the hackathon, but a short project I wrote last summer.&lt;/p&gt;
+&lt;p&gt;If you remember from &lt;a class="reference external" href="introducing-fossrit-timeline-year-in-review.html"&gt;my last post&lt;/a&gt; on the subject, I had made three files,
+one for each of the years that the FOSSBox had been keeping track of its
+activities on the &lt;a class="reference external" href="http://foss.rit.edu/timeline"&gt;timeline&lt;/a&gt;. The files were very silly- all the data was
+loaded on the fly from a JSON file, so the only thing in the files was the structure and the 'decoration' text.&lt;/p&gt;
+&lt;p&gt;Clearly this was not something that could stand. Today I finally managet to get
+all the files together into one page. Now, when the page loads, it scans the
+JSON file for all years mentioned, and populates a drop-down list with all the
+years it has found. the first (and usually latest) year's data is then loaded
+onto the page.&lt;/p&gt;
+&lt;p&gt;When the user clicks on another year from the list, the content is reloaded with
+data from the apropriate year. If you want to see it in action, the new review
+page for timeline now lives &lt;a class="reference external" href="http://foss.rit.edu/timeline/summary.html"&gt;here&lt;/a&gt;.&lt;/p&gt;
+</summary><category term="hackathon"></category><category term="timeline"></category><category term="jQuery"></category></entry><entry><title>Introducing: FOSS@RIT Timeline Year in Review</title><link href="http://qalthos.github.io/blog/introducing-fossrit-timeline-year-in-review.html" rel="alternate"></link><updated>2012-08-22T22:15:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2012-08-22:introducing-fossrit-timeline-year-in-review.html</id><summary type="html">&lt;p&gt;Yesterday, I sat down with Remy and went over the last of the things we
+need to do to close out the summer. There was a long list of items,
+split into two sections, each containing the same sort of stuff.
+FOSS&amp;#64;RIT has done a lot of stuff in the past year, and we need to be
+able to tell people about it.&lt;/p&gt;
+&lt;p&gt;The first section concerned the few things we had done that hadn't yet
+hit &lt;a class="reference external" href="http://foss.rit.edu/timeline/"&gt;Timeline&lt;/a&gt;. This was a fairly sizable chunk of things, and we
+needed a good, rapid-entry way of getting more events in there. No
+problem, I had done some work on that before, I could get it running and
+dump events in there no problem.&lt;/p&gt;
+&lt;p&gt;The second (and slightly longer) list dealt with things we needed to
+compile some information about as a sort of &amp;quot;here's what we've done&amp;quot;
+report. The list of things that needed to be in that was... just about
+the same as the last one. Remy planned to go through the Timeline site
+and add entries from it, categorize them, and push it to foss.rit.edu.&lt;/p&gt;
+&lt;p&gt;This deeply concerned me on two distinct levels. First was the part of
+me that never liked writing. I've mentioned it here once before, and I
+feel I've gotten better since then, but the concept of wading through
+all that data to write a report was not something that made me happy.
+The other part was that all the things in the second list had to be
+added to the timeline at some point anyway, or were likewise available
+from other sources. When Remy showed me what he had written for 2010, it
+was obvious this could be easily replicated in code.&lt;/p&gt;
+&lt;p&gt;About an hour of JavaScript wrangling later, I had made &lt;a class="reference external" href="http://foss.rit.edu/timeline/2011.html"&gt;this&lt;/a&gt;. Also
+&lt;a class="reference external" href="http://foss.rit.edu/timeline/2010.html"&gt;this&lt;/a&gt;, and if you're reading this from about a year in the future,
+&lt;a class="reference external" href="http://foss.rit.edu/timeline/2012.html"&gt;this&lt;/a&gt; should even exist. It's still needs some tweaking, the years are
+hardcoded in the documents, the pages aren't linked from the main
+timeline page, and I'd rather have them all use one common file than
+make a new one each year, but it works, it's fairly similar to what was
+handwritten last year, and it gets updated every time something gets
+added to Timeline.&lt;/p&gt;
+&lt;/p&gt;</summary><category term="data alchemy"></category><category term="jQuery"></category><category term="timeline"></category></entry></feed>

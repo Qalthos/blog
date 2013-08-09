@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://qalthos.github.io/blog/" rel="alternate"></link><link href="http://qalthos.github.io/blog/feeds/tag/pydex.atom.xml" rel="self"></link><id>http://qalthos.github.io/blog/</id><updated>2011-05-08T03:19:00-04:00</updated><entry><title>pyDex 1.0</title><link href="http://qalthos.github.io/blog/pydex-10.html" rel="alternate"></link><updated>2011-05-08T03:19:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-05-08:pydex-10.html</id><summary type="html">&lt;p&gt;And in mostly unrelated but terribly belated news, I finally released
+&lt;a class="reference external" href="https://gitorious.org/pydex"&gt;pyDex 1.0&lt;/a&gt; this morning. Black/White pokedex, new config system, baby
+pokemon, and game detection, are all new features introduced in this
+version. Old configs should get read properly and get seamlessly updated
+to the new version, though there may be a few bugs in the process.&lt;/p&gt;
+</summary><category term="pyDex"></category></entry><entry><title>pyDex on Sugar</title><link href="http://qalthos.github.io/blog/pydex-on-sugar.html" rel="alternate"></link><updated>2011-01-19T23:51:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-01-19:pydex-on-sugar.html</id><summary type="html">&lt;p&gt;A warning, this gets very technical with lots of acronyms and jargon.
+tl;dr: I have a new pyDex branch which *should* run on the OLPC
+A few days ago, I decided I'd finally see how well pyDex runs on the
+OLPC. Turns out, it runs pretty well, which isn't too surprising as it
+is written in pure pyGTK and Glade, both of which are well supported in
+Sugar.
+So today, I loaded up my dev files and set to work. First, though, I had
+to clean up my dev branch and finish committing the few hacks I had
+accumulated over the last few months. I finally fixed the zero index bug
+and found I had a problem in my new scraper that was causing all the
+evolution problems. In any case, that's all fixed, so my dev branch is
+nice and clean and almost ready for the Black/White release in a few
+weeks.
+Getting back to Sugar, I finally found &lt;a class="reference external" href="http://magazine.redhat.com/2007/04/26/building-the-xo-porting-a-pygtk-game-to-sugar-part-two/"&gt;a good tutorial&lt;/a&gt; on *porting*
+a pyGTK program rather than writing a new one. While admittedly I
+haven't looked very hard, I had had a bit of a problem getting past the
+example activity before, probably due to my use of Glade as I cannot
+replace my top window as easily when it is automatically pulled from
+Glade's XML and I really don't feel like defining everything in code.
+The most useful thing I found in this tutorial is sending different
+parents to the main panel depending on where it is called from. So if we
+call the program normally, main_window is still loaded from Glade, but
+if Sugar loads it, we use their prebuilt panel.
+It still needs to be tested, and I need to add actual activity
+information (and an icon eventually), but I think it should work. I'll
+probably get to test it sometime this weekend, maybe even turn it into a
+real activity by then. This is still just a small project, and I doubt
+it will ever go up on Sugar's activities site, but it has given me a
+much better understanding about how non-pygame activities work.&lt;/p&gt;
+</summary><category term="sugar"></category><category term="pyDex"></category></entry><entry><title>pyDex Progress</title><link href="http://qalthos.github.io/blog/pydex-progress.html" rel="alternate"></link><updated>2010-07-10T16:51:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-07-10:pydex-progress.html</id><summary type="html">&lt;p&gt;I've finally gotten around to staging and committing a few enhancements
+to the &lt;a class="reference external" href="http://gitorious.org/pydex"&gt;pydex repository&lt;/a&gt;. The more advanced stuff like Isshu pokemon
+and the new file format are still in limbo, naturally, and won't get
+moved to master any time soon since they make older files incompatible,
+though I hope to at least be able to read them for the time being.
+I'm also beginning to wonder about dynamically limiting the National
+Pokedex based on the game setting, once that actually does something.
+I've only played Gen IV extensively, but after loading up Yellow on a
+whim, I see how this could be useful. But I'm more concerned with
+bugfixing 1.0 so that it can see the light of day than tacking on more
+features right now.&lt;/p&gt;
+</summary><category term="pyDex"></category></entry></feed>

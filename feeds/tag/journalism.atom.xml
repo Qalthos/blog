@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://qalthos.github.io/blog/" rel="alternate"></link><link href="http://qalthos.github.io/blog/feeds/tag/journalism.atom.xml" rel="self"></link><id>http://qalthos.github.io/blog/</id><updated>2012-08-22T22:16:00-04:00</updated><entry><title>Recent Projects: Democrat &amp; Chronicle</title><link href="http://qalthos.github.io/blog/recent-projects-democrat-chronicle.html" rel="alternate"></link><updated>2012-08-22T22:16:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2012-08-22:recent-projects-democrat-chronicle.html</id><summary type="html">&lt;p&gt;One of the new projects I had this summer was a project proposed by the
+&lt;a class="reference external" href="http://www.democratandchronicle.com/"&gt;Democrat &amp;amp; Chronicle&lt;/a&gt;. The project involved access to a selection of
+emails sent to the Greece school district in the wake of the YouTube
+video involving several of their students. The idea was that we would
+get a dump of email bodies and try to glean some information out of
+them.&lt;/p&gt;
+&lt;p&gt;The first hurdle, unfortunately, was getting at the information. Shortly
+after we were approached with the request, I received an Access file
+containing around 5000 email bodies to go through. Being what we are,
+most of the resources in the FOSSBox are oriented around Linux, and no
+one about had a copy of Access installed to get the data into a more
+friendly format.&lt;/p&gt;
+&lt;p&gt;In theory, there are ODBC drivers for access databases, just like there
+are for any other database system. In practice, however, they seem to
+only exist for Windows machines which, while not surprising, was
+disappointing. This led me to dig out an old VirtualBox VM with Windows
+XP on it, install the Access drivers from Microsoft, and throw
+LibreOffice on it, too. There's other ways I could have gotten this done
+instead of LibreOffice, but I was still hoping this could be a simple
+action at the moment.&lt;/p&gt;
+&lt;p&gt;LibreOffice Base eventually got into the Access file, but then the
+troubles started again. It initially prompted me to save a LibreOffice
+database file, which sounded great to me... it could export it
+immediately, then I could copy it over and finish the task in Linux.
+Unfortunately, all this file did was create a small wrapper around the
+Access file, telling LibreOffice where the file was located, and what
+was needed to open it. So now I was back to trying to export the data.
+LibreOffice, though, was not willing to play along. I admit I am less
+than familiar with the Base component of LibreOffice, however some
+exploration and more searching online led me to believe I could not do
+the simple translation of data from one format to another from within
+Base.&lt;/p&gt;
+&lt;p&gt;Instead, I needed to select the table I was interested in (the only
+table in the database), tell LibreOffice to copy the table, then open a
+new spreadsheet in LibreOffice Calc and save the data that way. While
+this makes some sense to me (Base being simply for basic interaction
+with databases, Calc for manipulating raw data), I was dismayed that I
+could not find some way to export a single table to a common data
+format, like CSV, instead of having to go through yet another step. In
+any case, once I dumped the data into Calc, I could easily save it to
+CSV, drop that into my real computer, stop the VM, and get to work for
+real.&lt;/p&gt;
+&lt;p&gt;The end result is &lt;a class="reference external" href="https://github.com/Qalthos/mail_scrape"&gt;this&lt;/a&gt;. I'm not sure it will ever be of any
+particular use to anyone other than myself to remind me how to use the
+Python NLTK module (whose documentation seems to be geared more towards
+researchers than those already familiar with Python), and is hardcoded
+to certain facets of the data I was given, but it does manage to do a
+few things, and at each step it dumps the state of the data to a file so
+I can inspect the process and consider possible improvements.&lt;/p&gt;
+&lt;/p&gt;</summary><category term="journalism"></category><category term="data alchemy"></category></entry><entry><title>Imagine RIT 2011</title><link href="http://qalthos.github.io/blog/imagine-rit-2011.html" rel="alternate"></link><updated>2011-05-08T03:16:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-05-08:imagine-rit-2011.html</id><summary type="html">&lt;p&gt;So I've been absent for a while lately, but with good reason. I've been
+preparing for Imagine RIT, which was held earlier today.
+After pulling possibly my longest day's hack yesterday (1pm to 4am,
+approximately), I woke up at 9 and headed over to the Innovation Center
+to talk to people about FOSS. All day long, the FOSSBox was filled with
+curious people, looking to find out what it is we did. We had kids
+poking around on the OLPCs, checking out our software, and occasionally
+getting lost opening new programs. Every time I finished showing a group
+around all the different projects hosted in the FOSSBox, a brand new
+group would appear and start asking questions. It was tiring, especially
+on about three hours of sleep, but it was quite fun and exciting showing
+off our work to new people.&lt;/p&gt;
+&lt;p&gt;Of particular interest was Lemonade Stand, which seemed to excite many
+of the children who came around. Most seemed to pick up the game with
+minimal instruction (though it helped that by now I know very well which
+areas to explain... they should get tightened in the future) and most
+had lots of fun despite the large quantities of math involved.
+And the backdrop to all this was &lt;a class="reference external" href="rise.rit.edu"&gt;Rise Above the Crowd&lt;/a&gt;, the project I
+was spending so much time polishing yesterday. I don't know if I could
+explain what exactly Rise is, other than a real-time journalism and news
+collection framework, which doesn't really explain anything. Basically,
+users submit stories and photos to Rise, which in turn keep track of
+popular and recent content and display this information to strategically
+placed screens throughout the campus. After a few hiccoughs, the servers
+were online and serving data to the public, who then voted on their
+favorite stories. At the FOSSBOX, we had the projector set up serving
+the HD display mode so people could see what was current while they were
+there. Since I was the one most familiar with the system at the time, I
+tried to field any questions that popped up at the time to the best of
+my knowledge, though sometimes that wasn't much help. As the day
+progressed, we uncovered a few new bugs in the new system, and have some
+new tasks before the final release.&lt;/p&gt;
+&lt;p&gt;All in all, a very exciting and fun weekend. We made a few contacts,
+introduced a few more people to FOSS&amp;#64;RIT, and gave away at least 40
+LiveCDs. I think that qualifies as quite a success.&lt;/p&gt;
+</summary><category term="journalism"></category><category term="lemonade"></category><category term="sugar"></category><category term="Rise"></category><category term="OPL"></category></entry><entry><title>Election Aftermath</title><link href="http://qalthos.github.io/blog/election-aftermath.html" rel="alternate"></link><updated>2011-03-29T02:59:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-03-29:election-aftermath.html</id><summary type="html">&lt;p&gt;So the election was almost a week ago. Here's how our little experiment
+turned out.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://farm2.static.flickr.com/1386/5143595646_9e4e56f556.jpg"&gt;|image0|&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The evening started out rather slowly, with information trickling in
+about races that were all but confirmed. We had the Innovation Center's
+display set up with various maps and information, and my page in the
+center in five columns, all showing zero votes.
+We waited until the polls closed at 9PM, and then we waited some more
+for the information to travel to the Board of Elections and make it onto
+the XML file. Even at this point, I still didn't know if the scraper was
+going to work, so I was checking the &lt;a class="reference external" href="http://66.192.47.50/flashresults.html"&gt;official unofficial results page&lt;/a&gt;
+to make sure they didn't have anything we didn't.&lt;/p&gt;
+&lt;p&gt;When the first results popped on the screen, it was amazing. When
+results kept pouring in, it was even more impressive. When we finally
+figured out that all those numbers were wrong, it was time to start
+getting things fixed.&lt;/p&gt;
+&lt;p&gt;There were several differences from what the Canadian data had led me to
+expect, and so I spent most of the night fixing small problems as they
+showed up. First, votes in NYS are tallied by party, even if multiple
+parties are running the same candidate. This was quite different from
+what I had been led to expect, and so the numbers we started out with
+were quite.. bizarre. Before we realized what was going on, it looked
+like Paladino was beating Cuomo in Monroe County almost 4 to 1. Checking
+back with the flash page revealed that I was only counting one party for
+each candidate, and whichever came last would show up on the screen. I
+had to keep a running count for each candidate rather than throwing out
+old data when going through the file.&lt;/p&gt;
+&lt;p&gt;Having fixed that, and seeing that the numbers now matched what was
+coming out of the flash page, I settled back down and watched the third
+parties fight for 50,000 votes. That is, until someone pointed out to me
+that Andrew Cuomo was currently listed with 1.7 million votes for Monroe
+County alone. Seeing as how the total population of the area is only
+about 1 million, there was clearly something wrong. It seems that in my
+haste to keep count of how many votes a candidate got from each party, I
+was not clearing these numbers once the file was done being read. This
+was probably the hardest fix I had to make during the night, as it broke
+some of the models I had naively put forth on how the program should
+run.&lt;/p&gt;
+&lt;p&gt;I eventually ended up with a workable solution, though I was sad to see
+the third party numbers were much lower now. There remained only one
+small problem, being that most vote totals seemed to be exactly twice
+what the flash site claimed they were. Finally, I realized that there
+was a master 'total votes' line for each candidate which made most of
+the hacks and shims I had written into my scraper obsolete. Instead, I
+could simply show only this total line and everything would be right
+again.&lt;/p&gt;
+&lt;p&gt;This was an amazing experience, especially how the work I was doing was
+being picked up by people outside of RIT. Having to think fast on my
+feet was a new one too. I, like most programmers, usually like to
+examine a problem in detail and have time to test theories before
+publishing changes. Here, I was coding just about as fast as I could to
+fix each bug that turned up, and we managed to make it work before the
+last precincts rolled in.&lt;/p&gt;
+&lt;p&gt;But even more than that, this was an opportunity to take the skills and
+tools I've been accumulating through my time at RIT and make them do
+something more than just a class assignment. This wasn't just another
+program to be written and forgotten, this was something that represented
+the school to some of the public who perhaps hadn't heard about what
+we're doing here. And that is cool.&lt;/p&gt;
+</summary><category term="journalism"></category><category term="election"></category></entry><entry><title>Election Night</title><link href="http://qalthos.github.io/blog/election-night.html" rel="alternate"></link><updated>2011-03-29T02:59:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-03-29:election-night.html</id><summary type="html">&lt;p&gt;So election night is tonight. I'll have free time soon.
+The main reason for my lack of time lately has to do with the election.
+On Wednesday, just before I was going to classes, I got a call from Remy
+asking what my schedule was and if I'd like to take a trip to WXXI to
+talk with Rachel Ward and at their election coverage.
+A few hours later, we're in the lobby of WXXI, being mistaken for
+musicians (as anyone who meets Remy for the first time is likely to do),
+and waiting for Rachel to come down.
+We took a quick tour of the facilities, met a few other people, and got
+down to business. Monroe County's Board of Elections hosts a server with
+the live election information on a static ip and takes it down once the
+election is done. Further, this information is released in the form of
+a flash app, making it harder to move the information.
+After a short discussion, we decided that we weren't going to get
+anywhere without making a call to the BoE. Rachel did her magic on the
+phone, getting more information out of them than I ever could have done.
+To make a long story short, this flash application is driven by an XML
+file (actually two) and that the system was provided by the company who
+made the machines and was pretty much a black box as far as they were
+concerned.
+A short bit of Googling later, I had identified another location that
+used these machines: London, Ontario. using their XML files as a base, I
+made a quick scraper that spat out a basic table of races and
+candidates. It wasn't pretty, but it worked.
+Over the next few days, I poked and prodded at it, adding features and
+eventually moving to an HTML output and checking against a few more
+locations, and cleaned up the code some more. We met with Rachel once
+more yesterday, set the site up to be running on innovationtrail.org,
+and started the countdown.
+The current version of the scraper is now running on
+&lt;a class="reference external" href="http://foss.rit.edu/election/"&gt;http://foss.rit.edu/election/&lt;/a&gt; and should update its information every 30
+seconds, once information exists.&lt;/p&gt;
+</summary><category term="journalism"></category><category term="election"></category></entry><entry><title>Another Blog</title><link href="http://qalthos.github.io/blog/another-blog.html" rel="alternate"></link><updated>2010-09-07T16:49:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-09-07:another-blog.html</id><summary type="html">&lt;p&gt;Just as I get used to this one, another of my classes requires me to
+keep a blog, and to keep it separate from any other blogs we may keep.
+The new blog is linked at left, but anything interesting will get
+cross-posted here and it's likely going to go unmaintained at the
+conclusion of the quarter.&lt;/p&gt;
+&lt;p&gt;Anyway, here it is: &lt;a class="reference external" href="other-person.tumblr.com"&gt;other-person.tumblr.com&lt;/a&gt;&lt;/p&gt;
+</summary><category term="journalism"></category></entry></feed>

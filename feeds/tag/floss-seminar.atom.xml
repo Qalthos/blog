@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://qalthos.github.io/blog/" rel="alternate"></link><link href="http://qalthos.github.io/blog/feeds/tag/floss-seminar.atom.xml" rel="self"></link><id>http://qalthos.github.io/blog/</id><updated>2012-02-29T16:15:00-05:00</updated><entry><title>Final Stretch</title><link href="http://qalthos.github.io/blog/final-stretch.html" rel="alternate"></link><updated>2012-02-29T16:15:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2012-02-29:final-stretch.html</id><summary type="html">&lt;p&gt;So the past two days have been madness trying to get the recently
+christened WebBotWar (or just WebBot) to actually work on the web.&lt;/p&gt;
+&lt;p&gt;We had it working locally some time last week (I think... the days are
+really starting to mush together), but OpenShift was a whole other
+thing. This boiled down to two basic problems we had:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;pybotwar depended on pyBox2D, which needs to compile, which doesn't
+work well even when you have control of the machine&lt;/li&gt;
+&lt;li&gt;We were relying on memcached to provide cheap communication between
+the pybotwar process and the frontend. As near as I can tell,
+memcached is not actually supported on OpenShift Express, though that
+might not actually be true.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The first was surprisingly easy to fix, though it took me some time to
+actually think of the solution. In the final setup, there are
+essentially three repositories: our modified pybotwar, the TG2 webbot
+frontend, and a meta-repository containing both of the previous two in
+the proper places. This third repo is not meant to be actually used to
+develop, its only purpose is to be pushed to OpenShift and act as a
+quick pull for someone looking to run WebBotWar themselves. The
+practical upshot of this is that if we commit pyBox2D inside the
+pybotwar directory of our meta-repo, pybotwar can find its dependencies,
+and no one else needs to have to bother with it.&lt;/p&gt;
+&lt;p&gt;The second problem was more tricky, and eventually resulted in a rather
+simple patch that just happened to take me around 12 hours to get right.
+A quick Google of OpenShift Express Python and &lt;a class="reference external" href="http://en.wikipedia.org/wiki/NoSQL"&gt;NoSQL&lt;/a&gt; led me to
+MongoDB, which has some benefits and drawbacks compared to just shoving
+bits into memory, but seems to work very well in practice and is
+probably the right way to go regardless. To be perfectly fair, memcached
+&lt;em&gt;is&lt;/em&gt; a type of NoSQL, but MongoDB is actually supported by OpenShift in
+an easily-installable manner, and despite its more finicky syntax, it
+works, which is something I failed to get with memcached.&lt;/p&gt;
+&lt;p&gt;Meanwhile, the rest of my team was hard at work making massive progress
+on other fronts. Facebook authentication works, as does uploading custom
+robot definitions, though I don't think the two are plugged into each
+other yet. As well, there are brand new pretty images for the robots and
+the turrets.&lt;/p&gt;
+&lt;p&gt;There's a few outstanding problems left, but (as long as I don't push
+anything broken) you can have a look at webbotwar in action &lt;a class="reference external" href="webbotwar-qalthos.rhcloud.com"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/p&gt;</summary><category term="pybotwar"></category><category term="hackathon"></category><category term="FLOSS-seminar"></category><category term="webbotwar"></category><category term="openshift"></category></entry><entry><title>OpenShift Troubles</title><link href="http://qalthos.github.io/blog/openshift-troubles.html" rel="alternate"></link><updated>2012-02-03T06:47:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2012-02-03:openshift-troubles.html</id><summary type="html">&lt;p&gt;Recently I've been playing with &lt;a class="reference external" href="http://openshift.redhat.com/"&gt;OpenShift&lt;/a&gt;, a new(ish) service from
+Red Hat as a sort of 'push to cloud' deployment strategy. It's
+interesting for people like me who can whip up a site quick, but don't
+necessarily have the framework in place to host it.&lt;/p&gt;
+&lt;p&gt;Due to my work on &lt;a class="reference external" href="http://civx.us/"&gt;CIVX&lt;/a&gt;, I've gotten pretty familiar with
+&lt;a class="reference external" href="http://turbogears.org/"&gt;TurboGears&lt;/a&gt;, and the idea of being able to take a site like that and
+run it without having to set up apache or fiddle with paster sounded
+real nice. Unfortunately, it was not so simple as it seems.&lt;/p&gt;
+&lt;p&gt;First up was to get something, anything, running. For a while, OpenShift
+was throwing a &lt;a class="reference external" href="http://www.flickr.com/photos/girliemac/6509400855/in/set-72157628409467125"&gt;500 error&lt;/a&gt; when you tried to get a new application
+registered. A brief poke into their IRC told had them aware of the
+problem and it was fixed shortly. Next came the other part that should
+have been easy, running TurboGears.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://lewk.org/"&gt;Luke&lt;/a&gt; our favorite wizard around these parts, wrote a bit of &lt;a class="reference external" href="https://github.com/lmacken/openshift-quickstarter"&gt;code&lt;/a&gt;
+to get most of the available applications up and running without too
+much effort, including the currently unsupported TurboGears. Running
+this went off without a problem, but the resulting site gave me another
+happy 500 error. After a consult with Remy, we determined there were
+some missing version requirements that kept the site from running. After
+pulling those edits out of his repo and moving them upstream to Luke's,
+I had a working default TurboGears site.&lt;/p&gt;
+&lt;p&gt;Until I tried to log in. Then I got another 500 error.
+I was beginning to get used to this, but it was still annoying to make a
+small change, then push it to the server and wait for the server to
+update the settings before I could test it. Even more fun was the
+occasional &lt;a class="reference external" href="http://www.flickr.com/photos/girliemac/6540643319/in/set-72157628409467125/"&gt;503 error&lt;/a&gt; when OpenShift couldn't keep up with my rapidly
+building and tearing down sites.&lt;/p&gt;
+&lt;p&gt;Feeling that that was going to be a project by itself, I set about
+moving all my non-db-interfacing files to this new repository. The
+prebuilt version assumes that the site internally is named tg2app, and I
+was having trouble convincing it to go by anything else. Eventually I
+just decided to move files across one by one; first the templates that
+don't care what they're named, then the root controller, than the new
+model and widget. A lot of frustration, many &lt;a class="reference external" href="http://www.flickr.com/photos/girliemac/6508023617/in/set-72157628409467125"&gt;403&lt;/a&gt; and &lt;a class="reference external" href="http://www.flickr.com/photos/girliemac/6508022985/in/set-72157628409467125/"&gt;404&lt;/a&gt; errors
+later, I had something that pretended to work as long as I didn't use
+the database. But since the database is kind of the point of the site I
+was building, this was not exactly acceptable.&lt;/p&gt;
+&lt;p&gt;So back to the drawing board then. I had a hunch something was wrong
+when I saw SQLAlchemy errors scroll by every time I reloaded the site.
+My best guess is that SQLAlchemy is failing to create the tables needed
+to run the site and continuing on blindly. Once I realized that, I
+dumped a test db from my local copy to the MySQL db, and suddenly
+everything was working. Or almost everything, anyway.&lt;/p&gt;
+&lt;p&gt;I could read form the db fine, but any time I tried to modify it, I got
+another dreaded 500 error. I poked into everything I could find to try
+to figure out where it was failing, and finally determined it couldn't
+be on my end, as my local copy worked just as expected.&lt;/p&gt;
+&lt;p&gt;Finally I stumbled across the answer, almost accidentally. When I moved
+the db from local sqlite to MySQL, I failed to set the auto increment
+setting on the id of my new databases, so when I neglected to provide an
+id for the new entries I was making, MySQL quite rightly complained at
+me. Unfortunately, since I can't find how to re-enable debug mode (nor
+should I really try), I wasn't getting any good error messages.
+So what is the site that has been giving me all these troubles? It's a
+little site I set up to publicly shame Remy into stopping smoking:
+&lt;a class="reference external" href="http://remysmoke-qalthos.rhcloud.com/"&gt;remysmoke-qalthos.rhcloud.com&lt;/a&gt;&lt;/p&gt;
+</summary><category term="FLOSS-seminar"></category><category term="openshift"></category></entry><entry><title>Openshift Troubles Continued</title><link href="http://qalthos.github.io/blog/openshift-troubles-continued.html" rel="alternate"></link><updated>2012-02-03T06:47:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2012-02-03:openshift-troubles-continued.html</id><summary type="html">&lt;p&gt;I figured out the problem I was having with OpenShift.&lt;/p&gt;
+&lt;p&gt;To put it simply, I didn't pay enough attention.&lt;/p&gt;
+&lt;p&gt;For reference, when moving an existing TurboGears app to OpenShift, make
+sure you add the changes in config/app_cfg.py&lt;/p&gt;
+&lt;p&gt;As soon as I saw that, I felt really silly for missing it. I was so sure
+that I had gotten all the relevant changes, but apparently I somehow
+missed this file.&lt;/p&gt;
+&lt;p&gt;More detailed directions coming soon.&lt;/p&gt;
+&lt;/p&gt;</summary><category term="FLOSS-seminar"></category><category term="openshift"></category></entry><entry><title>TurboGears2 on OpenShift, just like it should be</title><link href="http://qalthos.github.io/blog/turbogears2-on-openshift-just-like-it-should-be.html" rel="alternate"></link><updated>2012-02-03T06:47:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2012-02-03:turbogears2-on-openshift-just-like-it-should-be.html</id><summary type="html">&lt;p&gt;After much work and many trials, I finally have an app pushed to
+OpenShift with no manual tweaking necessary. As often happens with these
+things, the solution was much simpler than expected.&lt;/p&gt;
+&lt;p&gt;Note: I still don't have a foolproof 'follow this' solution ready, as
+the one I built works exactly as I want it to, but:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;It needs a lot of love and cleanup&lt;/li&gt;
+&lt;li&gt;It requires an external git script that isn't well documented&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The first isn't much of a problem, and can be worked out over the next
+few days. I'm more worried about the second one. For the curious, the
+script is &lt;a class="reference external" href="https://github.com/apenwarr/git-subtree"&gt;git-subtree&lt;/a&gt;, which acts like a submodule except it is more
+transparent to the repository which is a plus given OpenShift's odd
+structure.&lt;/p&gt;
+&lt;p&gt;Back on topic, when we last left off this topic, I had finally gotten
+OpenShift to acknowledge a project in a directory other than tg2app.
+This is useful because, at least for me, most of my projects are not
+named tg2app. That turned out to be stupid problem I had made for
+myself, but unfortunately, the next problem to tackle was not.&lt;/p&gt;
+&lt;p&gt;You see, when setting up an app on OpenShift, you have very little
+control over the actual environment the app is running in (this isn't
+entirely true, but is a useful fiction, especially as the service is
+likely to become more 'plug-and-go'). One of the few ways you can retain
+control is through a series of post-commit hooks, one of which was
+starting off the problematic section of code. When you first push your
+code to OpenShift, it needs to set up your database so it is ready to
+store information and do other databasey things.&lt;/p&gt;
+&lt;p&gt;Naturally, this wasn't happening.&lt;/p&gt;
+&lt;p&gt;First up was a problem with OpenShift. Python's default egg cache (not
+too important, it's a place python can use to extract files from
+installed packages temporarily) is not writable in OpenShift, so that
+needs to be set before anything else will work. Next, the proper MySQL
+library is not installed by TurboGears by default (the default is to use
+sqlite), so that had to be added to the requires list.&lt;/p&gt;
+&lt;p&gt;And then I hit yet another wall. Despite everything being set up
+properly, I could not connect to the MySQL database on OpenShift. It
+wasn't a problem with MySQL, because I could connect fine with the MySQL
+client. It wasn't even a problem with SQLAlchemy, because I was able to
+connect from a short example script. Finally, in a fit of insanity, I
+tried running the build script directly. I'm not even sure why, I was
+just at the point I would do anything just to see if it would work.&lt;/p&gt;
+&lt;p&gt;And, strangely enough, &lt;em&gt;it did&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;This had some pretty profound implications. It meant something was
+different during the build hook than in normal execution. Armed with
+this new knowledge, I headed over to OpenShift's IRC channel to get some
+answers (I had actually been in there for some time prior, just not with
+enough information for the more ruby-oriented users to help).&lt;/p&gt;
+&lt;p&gt;They told me that yes, indeed there was a difference. During the build
+step, the database is stopped, hence why I could not connect to it.
+There were, however, hooks for deploy and post_deploy, during both of
+which the database would be running. I moved the calls needing database
+access to deploy, and suddenly everything worked! I made a few more
+changes, cleaned up my tree, and tested it on a new app I wanted to get
+on OpenShift, and it (mostly) worked. There were a few problems left,
+but they seemed to be mostly my fault (and problems with the
+application, not OpenShift), so it looked like I had finally fixed
+deploying a standard TurboGears app. I've no doubt that there's
+something I've left out, but I'm pretty amazed at the progress I've made
+so far, and learned a lot about both OpenShift and TurboGears.&lt;/p&gt;
+</summary><category term="hackathon"></category><category term="FLOSS-seminar"></category><category term="openshift"></category></entry><entry><title>FLOSS Seminar Update</title><link href="http://qalthos.github.io/blog/floss-seminar-update.html" rel="alternate"></link><updated>2012-01-19T17:46:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2012-01-19:floss-seminar-update.html</id><summary type="html">&lt;p&gt;So it's week 5, what has been going on?&lt;/p&gt;
+&lt;p&gt;The class has split into three groups, working on different games. My
+group's idea is a social update to the venerable likes of &lt;a class="reference external" href="http://robocode.sourceforge.net/"&gt;robocode&lt;/a&gt;,
+though how exactly that is going to pan out is still debatable.&lt;/p&gt;
+&lt;p&gt;Ideally, this would comprise of a wrapper around the basic game, not
+requiring much tweaking of the internals, though a new interface would be
+required for use on the web. All in all the class is shaping up to be
+pretty interesting.&lt;/p&gt;
+&lt;/p&gt;</summary><category term="FLOSS-seminar"></category></entry><entry><title>First FLOSS Seminar post</title><link href="http://qalthos.github.io/blog/first-floss-seminar-post.html" rel="alternate"></link><updated>2011-12-01T20:22:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-12-01:first-floss-seminar-post.html</id><summary type="html">&lt;p&gt;So this quarter I am taking a &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Free_and_open_source_software#FLOSS"&gt;FLOSS&lt;/a&gt; Seminar being taught by &lt;a class="reference external" href="http://threebean.org"&gt;Bean&lt;/a&gt;
+which should be pretty awesome. As a graduate student (as well as a
+fairly advanced FLOSS citizen) there are a few extra things going to be
+required of me, and we're working on ironing out the exact details now.
+It looks like it's going to be a really cool quarter.&lt;/p&gt;
+</summary><category term="FLOSS-seminar"></category></entry></feed>

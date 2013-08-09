@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://qalthos.github.io/blog/" rel="alternate"></link><link href="http://qalthos.github.io/blog/feeds/tag/hackathon.atom.xml" rel="self"></link><id>http://qalthos.github.io/blog/</id><updated>2013-06-02T03:18:00-04:00</updated><entry><title>National Day of Civic Hacking</title><link href="http://qalthos.github.io/blog/national-day-of-civic-hacking.html" rel="alternate"></link><updated>2013-06-02T03:18:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2013-06-02:national-day-of-civic-hacking.html</id><summary type="html">&lt;p&gt;One of the projects I worked on during the &lt;a class="reference external" href="http://hackforchange.org/fossrit-rochester-civic-hackathon"&gt;Rochester edition&lt;/a&gt; of the
+&lt;a class="reference external" href="http://hackforchange.org"&gt;National Day of Civic Hacking&lt;/a&gt; hackathon was not actually anything intended
+for the hackathon, but a short project I wrote last summer.&lt;/p&gt;
+&lt;p&gt;If you remember from &lt;a class="reference external" href="introducing-fossrit-timeline-year-in-review.html"&gt;my last post&lt;/a&gt; on the subject, I had made three files,
+one for each of the years that the FOSSBox had been keeping track of its
+activities on the &lt;a class="reference external" href="http://foss.rit.edu/timeline"&gt;timeline&lt;/a&gt;. The files were very silly- all the data was
+loaded on the fly from a JSON file, so the only thing in the files was the structure and the 'decoration' text.&lt;/p&gt;
+&lt;p&gt;Clearly this was not something that could stand. Today I finally managet to get
+all the files together into one page. Now, when the page loads, it scans the
+JSON file for all years mentioned, and populates a drop-down list with all the
+years it has found. the first (and usually latest) year's data is then loaded
+onto the page.&lt;/p&gt;
+&lt;p&gt;When the user clicks on another year from the list, the content is reloaded with
+data from the apropriate year. If you want to see it in action, the new review
+page for timeline now lives &lt;a class="reference external" href="http://foss.rit.edu/timeline/summary.html"&gt;here&lt;/a&gt;.&lt;/p&gt;
+</summary><category term="hackathon"></category><category term="timeline"></category><category term="jQuery"></category></entry><entry><title>A note on lxml</title><link href="http://qalthos.github.io/blog/a-note-on-lxml.html" rel="alternate"></link><updated>2013-06-01T20:46:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2013-06-01:a-note-on-lxml.html</id><summary type="html">&lt;p&gt;This post is being written from the &lt;a class="reference external" href="http://hackforchange.org/fossrit-rochester-civic-hackathon"&gt;Rochester edition&lt;/a&gt; of the
+&lt;a class="reference external" href="http://hackforchange.org"&gt;National Day of Civic Hacking&lt;/a&gt; hackathon.&lt;/p&gt;
+&lt;p&gt;I've been doing a lot of things with &lt;a class="reference external" href="http://pygal.org"&gt;pygal&lt;/a&gt; lately. It's a really neat tool
+for making SVG graphs in python. One 'problem' is that it needs &lt;a class="reference external" href="http://lxml.de"&gt;lxml&lt;/a&gt;, and
+that has C extensions that need to be compiled. This isn't too bad, though
+sometimes it makes me stop and install a compiler. The real problem is the
+external header files it needs to compile.&lt;/p&gt;
+&lt;p&gt;NOTE: this blog post is entirely the result of my own laziness. Had I simply
+perused the &lt;a class="reference external" href="http://lxml.de/installation.html#installation"&gt;documentation&lt;/a&gt;, I would have found this much sooner. Thus, this
+post is solely a marker of my own eagerness to get things running quickly.&lt;/p&gt;
+&lt;p&gt;After I was asked for the third time how to install lxml, I finally decided I
+would figure out how it works so it could be done properly. I did find out
+what the needed package was, but I also found that if the shell variable
+&lt;tt class="docutils literal"&gt;STATIC_DEPS=true&lt;/tt&gt; was set prior to installation, lxml would seek out and
+download its requirements for you. I don't know how legitimate this is for a
+Python install, but it was certainly quite useful for me and the others
+trying to use lxml. It even works inside a virtualenv, though I don't know why
+it wouldn't.&lt;/p&gt;
+</summary><category term="hackathon"></category><category term="python"></category><category term="wat"></category></entry><entry><title>American Greetings Hackathon Followup</title><link href="http://qalthos.github.io/blog/american-greetings-hackathon-followup.html" rel="alternate"></link><updated>2013-01-24T22:33:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2013-01-24:american-greetings-hackathon-followup.html</id><summary type="html">&lt;p&gt;Last weekend was the &lt;a class="reference external" href="http://foss.rit.edu/node/425"&gt;American Greetings Hackathon&lt;/a&gt;, and it was one of
+the most successful yet. We got more than 70 people attending and
+working on projects, and most of those projects had at least something
+working by the end of the 24 hours.&lt;/p&gt;
+&lt;p&gt;I worked with &lt;a class="reference external" href="http://blog.helixoide.com/"&gt;Ross Delinger&lt;/a&gt;, with occasional contributions from &lt;a class="reference external" href="http://www.ryansb.com/"&gt;Ryan
+S. Brown&lt;/a&gt; on a project eventually called &lt;a class="reference external" href="http://github.com/ryansb/hetHUD"&gt;netHUD&lt;/a&gt;. The idea was to
+take the new &lt;a class="reference external" href="http://nethackwiki.com/wiki/NetHack_4"&gt;NetHack 4&lt;/a&gt; network &lt;a class="reference external" href="http://nethackwiki.com/wiki/NetHack_4_Network_Protocol"&gt;protocol&lt;/a&gt; and try to make something
+more than just another interface to NetHack.&lt;/p&gt;
+&lt;p&gt;Originally, we set out simply to connect to the NetHack server and have
+a second channel of information. Ideally, we would make calls to the
+server and have it update us about games in progress. This turned out to
+be problematic for a number of reasons, but the most immediate was that
+we could not get two simultaneous connections to the server.&lt;/p&gt;
+&lt;p&gt;This meant we had to redesign our service. Instead of being a second
+stream, we would need to piggyback on the initial connection, which
+meant writing a server proxy. This may not have been the only way to do
+it, or even the best way to do it, but that's just how we roll. The
+eventual structure (all written in delicious &lt;a class="reference external" href="http://www.twistedmatrix.com"&gt;twisted&lt;/a&gt; protocols)
+looked something like this:&lt;/p&gt;
+&lt;img alt="Module diagram" class="ditaa" src="static/images/04bc3643.png" /&gt;
+&lt;p&gt;tee.py acted as the proxy and sent any messages received from the
+NetHack server to the controller, which cached the current state of all
+the games and sent updates to any listening netHUD instances. This way,
+you connect to NetHack as usual and log in, and then in a second window,
+you connect to the server again on the netHUD port and get a slew of
+information about your current inventory, nearby points of interest (eg.
+monsters, items, traps), and other information. There's a lot more we
+could add to this over time; one of the ideas thrown around at the
+beginning was integration with the NetHack wiki, providing additional
+information about items, monsters, even entire levels.&lt;/p&gt;
+&lt;/p&gt;</summary><category term="hackathon"></category></entry><entry><title>Final Stretch</title><link href="http://qalthos.github.io/blog/final-stretch.html" rel="alternate"></link><updated>2012-02-29T16:15:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2012-02-29:final-stretch.html</id><summary type="html">&lt;p&gt;So the past two days have been madness trying to get the recently
+christened WebBotWar (or just WebBot) to actually work on the web.&lt;/p&gt;
+&lt;p&gt;We had it working locally some time last week (I think... the days are
+really starting to mush together), but OpenShift was a whole other
+thing. This boiled down to two basic problems we had:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;pybotwar depended on pyBox2D, which needs to compile, which doesn't
+work well even when you have control of the machine&lt;/li&gt;
+&lt;li&gt;We were relying on memcached to provide cheap communication between
+the pybotwar process and the frontend. As near as I can tell,
+memcached is not actually supported on OpenShift Express, though that
+might not actually be true.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The first was surprisingly easy to fix, though it took me some time to
+actually think of the solution. In the final setup, there are
+essentially three repositories: our modified pybotwar, the TG2 webbot
+frontend, and a meta-repository containing both of the previous two in
+the proper places. This third repo is not meant to be actually used to
+develop, its only purpose is to be pushed to OpenShift and act as a
+quick pull for someone looking to run WebBotWar themselves. The
+practical upshot of this is that if we commit pyBox2D inside the
+pybotwar directory of our meta-repo, pybotwar can find its dependencies,
+and no one else needs to have to bother with it.&lt;/p&gt;
+&lt;p&gt;The second problem was more tricky, and eventually resulted in a rather
+simple patch that just happened to take me around 12 hours to get right.
+A quick Google of OpenShift Express Python and &lt;a class="reference external" href="http://en.wikipedia.org/wiki/NoSQL"&gt;NoSQL&lt;/a&gt; led me to
+MongoDB, which has some benefits and drawbacks compared to just shoving
+bits into memory, but seems to work very well in practice and is
+probably the right way to go regardless. To be perfectly fair, memcached
+&lt;em&gt;is&lt;/em&gt; a type of NoSQL, but MongoDB is actually supported by OpenShift in
+an easily-installable manner, and despite its more finicky syntax, it
+works, which is something I failed to get with memcached.&lt;/p&gt;
+&lt;p&gt;Meanwhile, the rest of my team was hard at work making massive progress
+on other fronts. Facebook authentication works, as does uploading custom
+robot definitions, though I don't think the two are plugged into each
+other yet. As well, there are brand new pretty images for the robots and
+the turrets.&lt;/p&gt;
+&lt;p&gt;There's a few outstanding problems left, but (as long as I don't push
+anything broken) you can have a look at webbotwar in action &lt;a class="reference external" href="webbotwar-qalthos.rhcloud.com"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/p&gt;</summary><category term="pybotwar"></category><category term="hackathon"></category><category term="FLOSS-seminar"></category><category term="webbotwar"></category><category term="openshift"></category></entry><entry><title>TurboGears2 on OpenShift, just like it should be</title><link href="http://qalthos.github.io/blog/turbogears2-on-openshift-just-like-it-should-be.html" rel="alternate"></link><updated>2012-02-03T06:47:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2012-02-03:turbogears2-on-openshift-just-like-it-should-be.html</id><summary type="html">&lt;p&gt;After much work and many trials, I finally have an app pushed to
+OpenShift with no manual tweaking necessary. As often happens with these
+things, the solution was much simpler than expected.&lt;/p&gt;
+&lt;p&gt;Note: I still don't have a foolproof 'follow this' solution ready, as
+the one I built works exactly as I want it to, but:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;It needs a lot of love and cleanup&lt;/li&gt;
+&lt;li&gt;It requires an external git script that isn't well documented&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The first isn't much of a problem, and can be worked out over the next
+few days. I'm more worried about the second one. For the curious, the
+script is &lt;a class="reference external" href="https://github.com/apenwarr/git-subtree"&gt;git-subtree&lt;/a&gt;, which acts like a submodule except it is more
+transparent to the repository which is a plus given OpenShift's odd
+structure.&lt;/p&gt;
+&lt;p&gt;Back on topic, when we last left off this topic, I had finally gotten
+OpenShift to acknowledge a project in a directory other than tg2app.
+This is useful because, at least for me, most of my projects are not
+named tg2app. That turned out to be stupid problem I had made for
+myself, but unfortunately, the next problem to tackle was not.&lt;/p&gt;
+&lt;p&gt;You see, when setting up an app on OpenShift, you have very little
+control over the actual environment the app is running in (this isn't
+entirely true, but is a useful fiction, especially as the service is
+likely to become more 'plug-and-go'). One of the few ways you can retain
+control is through a series of post-commit hooks, one of which was
+starting off the problematic section of code. When you first push your
+code to OpenShift, it needs to set up your database so it is ready to
+store information and do other databasey things.&lt;/p&gt;
+&lt;p&gt;Naturally, this wasn't happening.&lt;/p&gt;
+&lt;p&gt;First up was a problem with OpenShift. Python's default egg cache (not
+too important, it's a place python can use to extract files from
+installed packages temporarily) is not writable in OpenShift, so that
+needs to be set before anything else will work. Next, the proper MySQL
+library is not installed by TurboGears by default (the default is to use
+sqlite), so that had to be added to the requires list.&lt;/p&gt;
+&lt;p&gt;And then I hit yet another wall. Despite everything being set up
+properly, I could not connect to the MySQL database on OpenShift. It
+wasn't a problem with MySQL, because I could connect fine with the MySQL
+client. It wasn't even a problem with SQLAlchemy, because I was able to
+connect from a short example script. Finally, in a fit of insanity, I
+tried running the build script directly. I'm not even sure why, I was
+just at the point I would do anything just to see if it would work.&lt;/p&gt;
+&lt;p&gt;And, strangely enough, &lt;em&gt;it did&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;This had some pretty profound implications. It meant something was
+different during the build hook than in normal execution. Armed with
+this new knowledge, I headed over to OpenShift's IRC channel to get some
+answers (I had actually been in there for some time prior, just not with
+enough information for the more ruby-oriented users to help).&lt;/p&gt;
+&lt;p&gt;They told me that yes, indeed there was a difference. During the build
+step, the database is stopped, hence why I could not connect to it.
+There were, however, hooks for deploy and post_deploy, during both of
+which the database would be running. I moved the calls needing database
+access to deploy, and suddenly everything worked! I made a few more
+changes, cleaned up my tree, and tested it on a new app I wanted to get
+on OpenShift, and it (mostly) worked. There were a few problems left,
+but they seemed to be mostly my fault (and problems with the
+application, not OpenShift), so it looked like I had finally fixed
+deploying a standard TurboGears app. I've no doubt that there's
+something I've left out, but I'm pretty amazed at the progress I've made
+so far, and learned a lot about both OpenShift and TurboGears.&lt;/p&gt;
+</summary><category term="hackathon"></category><category term="FLOSS-seminar"></category><category term="openshift"></category></entry><entry><title>Multiprocessing the PolyScraper</title><link href="http://qalthos.github.io/blog/multiprocessing-the-polyscraper.html" rel="alternate"></link><updated>2011-06-29T18:04:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-06-29:multiprocessing-the-polyscraper.html</id><summary type="html">&lt;p&gt;Warning: This post was written at 4AM and contains a technical account
+of what I have been doing attempting to parallelize CIVX's internals. If
+you are looking for a more general overview of what I have been doing
+recently, you are better off looking to another one of my posts.
+Recently, I have been working on CIVX's PolyScraper, a neat little piece
+of code designed to be able to read and understand structured text
+without knowing how the text is structured beforehand. On Thursday, I
+let a test scrape of a rather large dataset start, figuring it would
+finish sometime over the weekend and I'd be able to pick it up on
+Monday. Then Monday rolled around, and the scrape was still running.
+Worse, it didn't seem to be taking full advantage of the available
+resources. Running as it was on the boat, it had four cores at its
+disposal, however it was steadfastly using only one core.
+Now PolyScraping is not an inherently parallelizable task, but on large
+datasets it should benefit from some kind of parallelization,
+particularly when using large numbers of small files (less so with small
+numbers of large files, those types of tasks are usually sequential as
+you have a smaller number of resources blocking on read IO). Clearly
+there were other things to look into, but if I could do this, this would
+mean a huge win for offline scraping, which was one of the things I had
+enabled with my addition of local file support to the PolyScraper.
+This all led me to &lt;a class="reference external" href="http://docs.python.org/library/multiprocessing.html"&gt;multiprocessing&lt;/a&gt;, a library I'd been wanting to try
+out in python for some time now. Without going into too much detail,
+multiprocessing attempts to get around the &lt;a class="reference external" href="http://docs.python.org/glossary.html#term-global-interpreter-lock"&gt;Global Interpreter Lock&lt;/a&gt; by
+spawning subprocesses instead of threads.
+The first attempt was written pretty quickly, as I still remember a lot
+from my Parallel Computing class from a while ago. Indeed the main
+problem turned out to be SQLAlchemy, or, more specifically our use of
+sqlite for a backend db. Sqlite is not the most robust of databases and
+can't really handle multiple processes attempting to write to the db at
+once. Luke suggested (and I would love to try) moving over to Postgres
+as we will eventually be doing on the boat, but unfortunately the boat
+has been 'stuck ashore' for some time now due to an extended outage in
+CSH's network.
+In the meantime I have been whittling the process down to what I think
+is the essentials. In the process I have made a complete mess of the
+code concerning the PolyScraper, but I should be able to make things at
+least look like the way they were before too long.
+At this point, though, I have been working on this project for close to
+20 hours today now. Luke is in town and we're all posted up in Remy's
+new place all hacking on our projects together. With any luck a good
+night's sleep will clear my head and give me new ideas for tomorrow.&lt;/p&gt;
+</summary><category term="hackathon"></category><category term="SURS"></category><category term="polyscraper"></category></entry><entry><title>Winter Hackathon 2</title><link href="http://qalthos.github.io/blog/winter-hackathon-2.html" rel="alternate"></link><updated>2011-02-19T02:58:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-02-19:winter-hackathon-2.html</id><summary type="html">&lt;p&gt;So I was gonna do a write-up about the winter hackathon.
+That didn't happen too much.
+But there's another one going on now.
+^__^&lt;/p&gt;
+</summary><category term="hackathon"></category></entry><entry><title>Boston</title><link href="http://qalthos.github.io/blog/boston.html" rel="alternate"></link><updated>2011-01-23T07:14:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-01-23:boston.html</id><summary type="html">&lt;p&gt;So here we are in OLPC HQ, right in the middle of MIT. It's pretty sweet
+having &lt;a class="reference external" href="http://lewk.org/"&gt;Luke&lt;/a&gt; around again to hack CIVX with us.
+I've had a lot to do in the past few days. Remy's been showing me
+scrapers and models, and I've been helping transition &lt;a class="reference external" href="http://foss.rit.edu/user/17"&gt;Kate's&lt;/a&gt; people
+dashboard into an integrated component or integrating &lt;a class="reference external" href="http://rebeccanatalie.com/"&gt;Rebecca's&lt;/a&gt; theme
+changes on the side. It's been hectic and fun and tough, but I finally
+feel like I'm contributing to a project, something with substance and
+goals, not just writing code to accomplish a task like some of my
+previous co-ops. Being in a team this large helps, especially when we
+pull in outside help like Luke, but I think it's mainly Remy's
+infectious excitement for the project. When he gets down to work, one
+can't help but feel his vision and be excited for the possibilities.
+Unfortunately, that means I had precious little time to pay attention to
+the other teams. Three separate groups hacking away at their own
+projects, tossing ideas about and getting input from a few members
+upstream, not to mention the whole OLPC offices around the corner- this
+was a right proper hackathon, and something that makes me excited for the
+future of these projects.&lt;/p&gt;
+</summary><category term="peopledashboard"></category><category term="hackathon"></category><category term="widgets"></category><category term="Boston"></category></entry></feed>
