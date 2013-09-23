@@ -13,7 +13,7 @@ open-source project.
 There are several reasons I haven't written this up earlier. One of the reasons
 was the web server configuration file was more complex than I was used to, so
 in order to get the server running quickly, I made a new config file for port
-8080. Unfortuantely, due to various arcane networking policies, while this
+8080. Unfortunately, due to various arcane networking policies, while this
 allowed anyone inside RIT to access the server, it was still not available to
 the outside world.
 
@@ -62,7 +62,7 @@ As I was also trying to move MediaGoblin to a subdirectory, I also added the
        uWSGI_modifier1 30;
     }
 
-Second, I altered the ``lazystarter.sh`` file to accomodate being run with
+Second, I altered the ``lazystarter.sh`` file to accommodate being run with
 uWSGI. This is a bit complicated as ``lazyserver.sh``, ``lazystarter.sh``, and
 ``lazycelery.sh`` are all actually the same file, with certain things changing
 depending on the name by which it is invoked. I changed two sections [#]_, first::
@@ -104,9 +104,9 @@ MediaGoblin from paste.ini, while using uWSGI to do all the heavy lifting.
 The socket still needs to be defined with the command, though, with
 ``./lazyserver.sh --socket 127.0.0.1:26543`` or whatever socket you are using.
 
-As a side note, this also allows us to use your system's uWSGI `emporer`_ to
-manage brining up the uWSGI process for you. If you are running `celery as a
-seperate process`_, this still needs to be done somehow, but otherwise (or if
+As a side note, this also allows us to use your system's uWSGI `emperor`_ to
+manage bringing up the uWSGI process for you. If you are running `celery as a
+separate process`_, this still needs to be done somehow, but otherwise (or if
 you've kept ``CELERY_ALWAYS_EAGER=true``), then MediaGoblin should be managed
 automatically. This is the format I eventually settled upon, using the
 following uWSGI ini file::
@@ -127,15 +127,15 @@ What Next?
 
 As far as I can tell, this should have been all we needed to get running.
 Well, this wouldn't have been necessary either, except for some of the
-reprocussions of the other big problem that reared it's head, SELinux.
+repercussions of the other big problem that reared it's head, SELinux.
 
-But that is aonther post that will have to wait.
+But that is another post that will have to wait.
 
 .. _MediaGoblin: http://mediagoblin.org
 .. _here: http://yacht.rit.edu/mediagoblin/
 .. _instructions: https://mediagoblin.readthedocs.org/en/v0.5.0/siteadmin/deploying.html
-.. _emporer: http://uWSGI-docs.readthedocs.org/en/latest/Emperor.html
-.. _celery as a seperate process: http://mediagoblin.readthedocs.org/en/v0.5.0/siteadmin/production-deployments.html#separate-celery
+.. _emperor: http://uWSGI-docs.readthedocs.org/en/latest/Emperor.html
+.. _celery as a separate process: http://mediagoblin.readthedocs.org/en/v0.5.0/siteadmin/production-deployments.html#separate-celery
 .. [#] This statement is not entirely accurate. I actually made a new link
        named ``lazyuwsgi.sh`` and added the sections instead of altering the
        existing ones. This format was chosen for clarity.
