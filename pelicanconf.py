@@ -27,10 +27,11 @@ MENUITEMS = (('resume', 'http://qalthos.github.io/resume/resume.pdf'),
 
 # Blogroll
 LINKS =  (('FOSS@RIT', 'http://foss.rit.edu'),
+           ('FOSSBox Planet', 'http://yacht.rit.edu/planet/'),
          )
 # Social widget
 SOCIAL = (('Github', 'http://github.com/Qalthos'),
-          ('Google+', 'http://gplus.to/qalthos'),
+           ('Google+', 'http://gplus.to/qalthos'),
          )
 
 # Tag Cloud
