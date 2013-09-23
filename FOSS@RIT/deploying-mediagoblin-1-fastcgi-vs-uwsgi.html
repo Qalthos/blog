@@ -60,7 +60,7 @@ open-source project.</p>
 <p>There are several reasons I haven't written this up earlier. One of the reasons
 was the web server configuration file was more complex than I was used to, so
 in order to get the server running quickly, I made a new config file for port
-8080. Unfortuantely, due to various arcane networking policies, while this
+8080. Unfortunately, due to various arcane networking policies, while this
 allowed anyone inside RIT to access the server, it was still not available to
 the outside world.</p>
 <p>Also, though the instructions were very clear, they used a few things I had not
@@ -103,7 +103,7 @@ location /mediagoblin/ {
    uWSGI_modifier1 30;
 }
 </pre>
-<p>Second, I altered the <tt class="docutils literal">lazystarter.sh</tt> file to accomodate being run with
+<p>Second, I altered the <tt class="docutils literal">lazystarter.sh</tt> file to accommodate being run with
 uWSGI. This is a bit complicated as <tt class="docutils literal">lazyserver.sh</tt>, <tt class="docutils literal">lazystarter.sh</tt>, and
 <tt class="docutils literal">lazycelery.sh</tt> are all actually the same file, with certain things changing
 depending on the name by which it is invoked. I changed two sections <a class="footnote-reference" href="#id2" id="id1">[1]</a>, first:</p>
@@ -144,9 +144,9 @@ case &quot;$selfname&quot; in
 MediaGoblin from paste.ini, while using uWSGI to do all the heavy lifting.
 The socket still needs to be defined with the command, though, with
 <tt class="docutils literal">./lazyserver.sh <span class="pre">--socket</span> 127.0.0.1:26543</tt> or whatever socket you are using.</p>
-<p>As a side note, this also allows us to use your system's uWSGI <a class="reference external" href="http://uWSGI-docs.readthedocs.org/en/latest/Emperor.html">emporer</a> to
-manage brining up the uWSGI process for you. If you are running <a class="reference external" href="http://mediagoblin.readthedocs.org/en/v0.5.0/siteadmin/production-deployments.html#separate-celery">celery as a
-seperate process</a>, this still needs to be done somehow, but otherwise (or if
+<p>As a side note, this also allows us to use your system's uWSGI <a class="reference external" href="http://uWSGI-docs.readthedocs.org/en/latest/Emperor.html">emperor</a> to
+manage bringing up the uWSGI process for you. If you are running <a class="reference external" href="http://mediagoblin.readthedocs.org/en/v0.5.0/siteadmin/production-deployments.html#separate-celery">celery as a
+separate process</a>, this still needs to be done somehow, but otherwise (or if
 you've kept <tt class="docutils literal">CELERY_ALWAYS_EAGER=true</tt>), then MediaGoblin should be managed
 automatically. This is the format I eventually settled upon, using the
 following uWSGI ini file:</p>
@@ -167,8 +167,8 @@ uwsgi:
 <h2>What Next?</h2>
 <p>As far as I can tell, this should have been all we needed to get running.
 Well, this wouldn't have been necessary either, except for some of the
-reprocussions of the other big problem that reared it's head, SELinux.</p>
-<p>But that is aonther post that will have to wait.</p>
+repercussions of the other big problem that reared it's head, SELinux.</p>
+<p>But that is another post that will have to wait.</p>
 <table class="docutils footnote" frame="void" id="id2" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
@@ -194,36 +194,36 @@ existing ones. This format was chosen for clarity.</td></tr>
         <div class="tagcloud">
       <h2>tag cloud</h2>
       <ul>
-                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/blog.html">blog</a></li>
-                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/yacht.html">yacht</a></li>
-                  <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/pydex.html">pyDex</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/widgets.html">widgets</a></li>
-                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/remysmoke.html">remysmoke</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/peopledashboard.html">peopledashboard</a></li>
-                  <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/election.html">election</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/wikiotics.html">wikiotics</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/surs.html">SURS</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/hackathon.html">hackathon</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/journalism.html">journalism</a></li>
-                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/jquery.html">jQuery</a></li>
                   <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/pybotwar.html">pybotwar</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/sugar.html">sugar</a></li>
-                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/hardware.html">hardware</a></li>
-                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/knowledge.html">knowledge</a></li>
-                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/timeline.html">timeline</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/floss-seminar.html">FLOSS-seminar</a></li>
                   <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/mediagoblin.html">mediagoblin</a></li>
-                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/fabulous.html">fabulous</a></li>
-                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/polyscraper.html">polyscraper</a></li>
+                  <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/pydex.html">pyDex</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/wikiotics.html">wikiotics</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/peopledashboard.html">peopledashboard</a></li>
+                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/wat.html">wat</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/scrapers.html">scrapers</a></li>
+                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/hardware.html">hardware</a></li>
+                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/blog.html">blog</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/lemonade.html">lemonade</a></li>
+                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/timeline.html">timeline</a></li>
+                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/yacht.html">yacht</a></li>
                   <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/democracymap.html">democracymap</a></li>
+                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/remysmoke.html">remysmoke</a></li>
+                  <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/geowebdns.html">geowebdns</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/sugar.html">sugar</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/journalism.html">journalism</a></li>
+                  <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/election.html">election</a></li>
                   <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/rise.html">Rise</a></li>
                   <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/openshift.html">openshift</a></li>
-                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/wat.html">wat</a></li>
-                  <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/geowebdns.html">geowebdns</a></li>
+                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/jquery.html">jQuery</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/hackathon.html">hackathon</a></li>
                   <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/data alchemy.html">data alchemy</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/floss-seminar.html">FLOSS-seminar</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/scrapers.html">scrapers</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/lemonade.html">lemonade</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/surs.html">SURS</a></li>
                   <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/groovebot.html">groovebot</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/widgets.html">widgets</a></li>
+                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/polyscraper.html">polyscraper</a></li>
+                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/fabulous.html">fabulous</a></li>
+                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/knowledge.html">knowledge</a></li>
               </ul>
     </div>
         <div class="social">

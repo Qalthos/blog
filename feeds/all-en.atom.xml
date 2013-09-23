@@ -6,7 +6,7 @@ open-source project.&lt;/p&gt;
 &lt;p&gt;There are several reasons I haven't written this up earlier. One of the reasons
 was the web server configuration file was more complex than I was used to, so
 in order to get the server running quickly, I made a new config file for port
-8080. Unfortuantely, due to various arcane networking policies, while this
+8080. Unfortunately, due to various arcane networking policies, while this
 allowed anyone inside RIT to access the server, it was still not available to
 the outside world.&lt;/p&gt;
 &lt;p&gt;Also, though the instructions were very clear, they used a few things I had not
@@ -49,7 +49,7 @@ location /mediagoblin/ {
    uWSGI_modifier1 30;
 }
 &lt;/pre&gt;
-&lt;p&gt;Second, I altered the &lt;tt class="docutils literal"&gt;lazystarter.sh&lt;/tt&gt; file to accomodate being run with
+&lt;p&gt;Second, I altered the &lt;tt class="docutils literal"&gt;lazystarter.sh&lt;/tt&gt; file to accommodate being run with
 uWSGI. This is a bit complicated as &lt;tt class="docutils literal"&gt;lazyserver.sh&lt;/tt&gt;, &lt;tt class="docutils literal"&gt;lazystarter.sh&lt;/tt&gt;, and
 &lt;tt class="docutils literal"&gt;lazycelery.sh&lt;/tt&gt; are all actually the same file, with certain things changing
 depending on the name by which it is invoked. I changed two sections &lt;a class="footnote-reference" href="#id2" id="id1"&gt;[1]&lt;/a&gt;, first:&lt;/p&gt;
@@ -90,9 +90,9 @@ case &amp;quot;$selfname&amp;quot; in
 MediaGoblin from paste.ini, while using uWSGI to do all the heavy lifting.
 The socket still needs to be defined with the command, though, with
 &lt;tt class="docutils literal"&gt;./lazyserver.sh &lt;span class="pre"&gt;--socket&lt;/span&gt; 127.0.0.1:26543&lt;/tt&gt; or whatever socket you are using.&lt;/p&gt;
-&lt;p&gt;As a side note, this also allows us to use your system's uWSGI &lt;a class="reference external" href="http://uWSGI-docs.readthedocs.org/en/latest/Emperor.html"&gt;emporer&lt;/a&gt; to
-manage brining up the uWSGI process for you. If you are running &lt;a class="reference external" href="http://mediagoblin.readthedocs.org/en/v0.5.0/siteadmin/production-deployments.html#separate-celery"&gt;celery as a
-seperate process&lt;/a&gt;, this still needs to be done somehow, but otherwise (or if
+&lt;p&gt;As a side note, this also allows us to use your system's uWSGI &lt;a class="reference external" href="http://uWSGI-docs.readthedocs.org/en/latest/Emperor.html"&gt;emperor&lt;/a&gt; to
+manage bringing up the uWSGI process for you. If you are running &lt;a class="reference external" href="http://mediagoblin.readthedocs.org/en/v0.5.0/siteadmin/production-deployments.html#separate-celery"&gt;celery as a
+separate process&lt;/a&gt;, this still needs to be done somehow, but otherwise (or if
 you've kept &lt;tt class="docutils literal"&gt;CELERY_ALWAYS_EAGER=true&lt;/tt&gt;), then MediaGoblin should be managed
 automatically. This is the format I eventually settled upon, using the
 following uWSGI ini file:&lt;/p&gt;
@@ -113,8 +113,8 @@ uwsgi:
 &lt;h2&gt;What Next?&lt;/h2&gt;
 &lt;p&gt;As far as I can tell, this should have been all we needed to get running.
 Well, this wouldn't have been necessary either, except for some of the
-reprocussions of the other big problem that reared it's head, SELinux.&lt;/p&gt;
-&lt;p&gt;But that is aonther post that will have to wait.&lt;/p&gt;
+repercussions of the other big problem that reared it's head, SELinux.&lt;/p&gt;
+&lt;p&gt;But that is another post that will have to wait.&lt;/p&gt;
 &lt;table class="docutils footnote" frame="void" id="id2" rules="none"&gt;
 &lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
 &lt;tbody valign="top"&gt;
