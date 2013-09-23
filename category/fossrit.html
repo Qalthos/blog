@@ -4,8 +4,8 @@
   <title>Why Not Wingnut? - FOSS@RIT</title>
   <meta charset="utf-8" />
       <link rel="stylesheet" href="http://qalthos.github.io/blog/theme/css/main.min.css?e2893169" type="text/css" />
-        <link href="http://qalthos.github.io/blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Why Not Wingnut? Atom Feed" />
-    
+              <link href="http://qalthos.github.io/blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Why Not Wingnut? Atom Feed" />
+          
   <!--[if IE]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
@@ -37,8 +37,160 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="http://qalthos.github.io/blog/FOSS@RIT/building-a-schoolserver.html">Building a Schoolserver</a></h1> 
+                    <h1 class="entry-title"><a href="http://qalthos.github.io/blog/FOSS@RIT/deploying-mediagoblin-1-fastcgi-vs-uwsgi.html">Deploying MediaGoblin 1: FastCGI vs uWSGI</a></h1> 
                     <footer class="post-info">
+                <p><img src="http://www.gravatar.com/avatar/3a3baabff105b46a458688ecf49901af" /></p>
+                <abbr class="published" title="2013-09-23T13:20:00">
+                Mon 23 September 2013
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="http://qalthos.github.io/blog/author/nathaniel-case.html">Nathaniel Case</a>
+        </address>
+        <p>In <a href="http://qalthos.github.io/blog/category/fossrit.html">FOSS@RIT</a>. </p>
+<p>tags: <a href="http://qalthos.github.io/blog/tag/mediagoblin.html">mediagoblin</a><a href="http://qalthos.github.io/blog/tag/yacht.html">yacht</a><a href="http://qalthos.github.io/blog/tag/uwsgi.html">uWSGI</a></p>
+</footer><!-- /.post-info --><p>Last week I did a thing I really wasn't expecting to. I deployed
+<a class="reference external" href="http://mediagoblin.org">MediaGoblin</a> to FOSS&#64;RIT's yacht server <a class="reference external" href="http://yacht.rit.edu/mediagoblin/">here</a>. The initial setup and
+<a class="reference external" href="https://mediagoblin.readthedocs.org/en/v0.5.0/siteadmin/deploying.html">instructions</a> are some of the clearest and straightforward I have seen in an
+open-source project.</p>
+<p>There are several reasons I haven't written this up earlier. One of the reasons
+was the web server configuration file was more complex than I was used to, so
+in order to get the server running quickly, I made a new config file for port
+8080. Unfortuantely, due to various arcane networking policies, while this
+allowed anyone inside RIT to access the server, it was still not available to
+the outside world.</p>
+<p>Also, though the instructions were very clear, they used a few things I had not
+used before, and a few things that weren't used in the way I was used to them.
+This is the first blog post on the subject, detailing my confusion with
+FastCGI and its eventual replacement with uWSGI.</p>
+<div class="section" id="what-the-flup">
+<h2>What the <tt class="docutils literal">flup</tt>?</h2>
+<p>MediaGoblin, as documented, uses FastCGI to route requests from the web server
+to MediaGoblin. The CGI in FastCGI refers to the 'Common Gateway Interface',
+a standard developed to allow web servers to act as 'gateways' to serve not
+just files but the output of executable programs. The MediaGoblin docs describe
+how to use a python module called <tt class="docutils literal">flup</tt> to enable this communication.</p>
+<p>There's a bit more to it than that, but in Python land, this
+turns out to be a more questionable prospect than it might seem. Python already
+has its own gateway interface (called the web server gateway interface, or
+WSGI) which it is using to talk to FastCGI to have the WSGI turned into CGI so
+that it can be interpreted by the server and turned into a web page. This would
+be fine except that there are other WSGI-specific modules which can translate
+the WSGI into a web page directly.</p>
+<p>At this point, I assume that you are either skipping ahead past things you
+already know or are horribly lost, so I'll just say that I eventually moved
+MediaGoblin from the <tt class="docutils literal"><span class="pre">paste-&gt;flup-&gt;FastCGI-&gt;nginx</span></tt> contraption it was to a more
+comprehensible <tt class="docutils literal"><span class="pre">uWSGI-&gt;nginx</span></tt>, and this is how I did it.</p>
+</div>
+<div class="section" id="enter-uwsgi">
+<h2>Enter uWSGI</h2>
+<p>First, I changed the nginx config to talk to uWSGI instead of FastCGI.
+As I was also trying to move MediaGoblin to a subdirectory, I also added the
+<tt class="docutils literal">uWSGI_modifier1</tt> line and altered <tt class="docutils literal">SCRIPT_NAME</tt> accordingly:</p>
+<pre class="literal-block">
+# Load MediaGoblin via uWSGI
+location /mediagoblin/ {
+   include uWSGI_params;
+   uWSGI_pass 127.0.0.1:26543;
+
+   # our understanding vs nginx's handling of script_name vs
+   # path_info don't match :)
+   uWSGI_param SCRIPT_NAME &quot;/mediagoblin&quot;;
+   uWSGI_modifier1 30;
+}
+</pre>
+<p>Second, I altered the <tt class="docutils literal">lazystarter.sh</tt> file to accomodate being run with
+uWSGI. This is a bit complicated as <tt class="docutils literal">lazyserver.sh</tt>, <tt class="docutils literal">lazystarter.sh</tt>, and
+<tt class="docutils literal">lazycelery.sh</tt> are all actually the same file, with certain things changing
+depending on the name by which it is invoked. I changed two sections <a class="footnote-reference" href="#id2" id="id1">[1]</a>, first:</p>
+<pre class="literal-block">
+local_bin=&quot;./bin&quot;
+case &quot;$selfname&quot; in
+    lazyserver.sh)
+        starter_cmd=paster
+        ini_prefix=paste
+        ;;
+</pre>
+<p>became:</p>
+<pre class="literal-block">
+local_bin=&quot;./bin&quot;
+case &quot;$selfname&quot; in
+    lazyserver.sh)
+        starter_cmd=uwsgi
+        ini_prefix=paste
+        ;;
+</pre>
+<p>And then near the very end of the file:</p>
+<pre class="literal-block">
+export CELERY_ALWAYS_EAGER=true
+case &quot;$selfname&quot; in
+    lazyserver.sh)
+        $starter serve &quot;$ini_file&quot; &quot;$&#64;&quot; --reload
+        ;;
+</pre>
+<p>became:</p>
+<pre class="literal-block">
+export CELERY_ALWAYS_EAGER=true
+case &quot;$selfname&quot; in
+    lazyserver.sh)
+        $starter --plugin python --virtualenv . --ini-paste &quot;$ini_file&quot; &quot;$&#64;&quot;
+        ;;
+</pre>
+<p>This method allows you to keep using all the information on how to run
+MediaGoblin from paste.ini, while using uWSGI to do all the heavy lifting.
+The socket still needs to be defined with the command, though, with
+<tt class="docutils literal">./lazyserver.sh <span class="pre">--socket</span> 127.0.0.1:26543</tt> or whatever socket you are using.</p>
+<p>As a side note, this also allows us to use your system's uWSGI <a class="reference external" href="http://uWSGI-docs.readthedocs.org/en/latest/Emperor.html">emporer</a> to
+manage brining up the uWSGI process for you. If you are running <a class="reference external" href="http://mediagoblin.readthedocs.org/en/v0.5.0/siteadmin/production-deployments.html#separate-celery">celery as a
+seperate process</a>, this still needs to be done somehow, but otherwise (or if
+you've kept <tt class="docutils literal">CELERY_ALWAYS_EAGER=true</tt>), then MediaGoblin should be managed
+automatically. This is the format I eventually settled upon, using the
+following uWSGI ini file:</p>
+<pre class="literal-block">
+uwsgi:
+    plugin: python
+    uid: mediagoblin
+    gid: mediagoblin
+    socket: 127.0.0.1:26543
+    virtualenv: /srv/www/mediagoblin
+    chdir: /srv/www/mediagoblin
+    env: CELERY_ALWAYS_EAGER=false
+    ini-paste: /srv/www/mediagoblin/paste.ini
+    logto: /srv/www/mediagoblin/mg.log
+</pre>
+</div>
+<div class="section" id="what-next">
+<h2>What Next?</h2>
+<p>As far as I can tell, this should have been all we needed to get running.
+Well, this wouldn't have been necessary either, except for some of the
+reprocussions of the other big problem that reared it's head, SELinux.</p>
+<p>But that is aonther post that will have to wait.</p>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>This statement is not entirely accurate. I actually made a new link
+named <tt class="docutils literal">lazyuwsgi.sh</tt> and added the sections instead of altering the
+existing ones. This format was chosen for clarity.</td></tr>
+</tbody>
+</table>
+</div>
+                </article>
+                            </aside><!-- /#featured -->
+                            <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+                                                
+
+                 
+                        <li><article class="hentry">    
+                <header>
+                    <h1><a href="http://qalthos.github.io/blog/FOSS@RIT/building-a-schoolserver.html" rel="bookmark"
+                           title="Permalink to Building a Schoolserver">Building a Schoolserver</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
                 <p><img src="http://www.gravatar.com/avatar/3a3baabff105b46a458688ecf49901af" /></p>
                 <abbr class="published" title="2013-08-05T02:04:00">
                 Mon 05 August 2013
@@ -49,46 +201,14 @@
         </address>
         <p>In <a href="http://qalthos.github.io/blog/category/fossrit.html">FOSS@RIT</a>. </p>
 <p>tags: <a href="http://qalthos.github.io/blog/tag/sugar.html">sugar</a><a href="http://qalthos.github.io/blog/tag/schoolserver.html">schoolserver</a></p>
-</footer><!-- /.post-info --><p>One of my tasks for this summer has been to try and get the FOSSBox's
+</footer><!-- /.post-info -->                <p>One of my tasks for this summer has been to try and get the FOSSBox's
 schoolserver up and running again. We previouly had one a number of years ago,
 but the hardware failed some time ago and the system itself was running a
-hacked-together Debian build and did not have access to some of the actual
-schoolserver scripts.</p>
-<p>I first attempted to run the <a class="reference external" href="http://wiki.laptop.org/go/XS_Installing_Software_0.7">instructions</a> for the latest proper release of
-the XO Schoolserver (henceforth XS), but this did not end very well. For one,
-the instructions (and many automated scripts) assume you have two network
-cards: one for the internal LAN to which the XO laptops connect, and another
-connecting to the Internet. This assumption that the XS would be the gateway
-device for a network of XO laptops would be fine in most deployments where
-there is no existing infrastructure to get in the way, but at RIT where there
-is not only significant infrastructure, but infrastructure I cannot easily
-modify or control, it is less applicable.</p>
-<p>Here are the steps I have taken to turn a fresh CentOS/RHEL server into an XS:</p>
-<ol class="arabic simple">
-<li>Set up <a class="reference external" href="http://fedoraproject.org/wiki/EPEL">EPEL</a>.</li>
-<li>Add the <a class="reference external" href="http://wiki.laptop.org/go/XS_Installing_Software_0.7#Installing_on_top_of_existing_OS_installation">OLPC-XS repository</a> to your yum config.</li>
-<li><tt class="docutils literal">yum install ejabberd idmgr <span class="pre">ds-backup-server</span> <span class="pre">xs-activity-server</span></tt></li>
-<li><tt class="docutils literal"><span class="pre">xs-domain-config</span> &lt;domain name&gt;</tt></li>
-<li><tt class="docutils literal"><span class="pre">xs-setup</span></tt></li>
-<li>Use <tt class="docutils literal"><span class="pre">system-config-firewall-tui</span></tt> to unblock ports 22, 80, 8080, 5222, 5223,
-and 4369</li>
-</ol>
-<p><tt class="docutils literal"><span class="pre">xs-setup</span></tt> is the most trying of the commands, because it does a lot of
-background work to set up the OLPC versions of many config files (while still
-leaing the originals in place).</p>
-<p>There's more to it, <tt class="docutils literal"><span class="pre">xs-setup</span></tt> tends to have some annoying side effects,
-some of the config files need to be manually updated, but this is the general
-idea. This post will be further updated as time goes on.</p>
-<p>The main problem seen so far is that this is being set up on a RHEL server
-backed by XEN, and the OLPC-XS repository keeps wanting to install an
-incompatible kernel, hosing the system on a regular basis.</p>
-                </article>
-                            </aside><!-- /#featured -->
-                            <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
-                                                
+hacked-together Debian build and did not ...</p>
+                <a class="readmore" href="http://qalthos.github.io/blog/FOSS@RIT/building-a-schoolserver.html">read more</a>
+                                </div><!-- /.entry-content -->
+            </article></li>
+                            
 
                  
                         <li><article class="hentry">    
@@ -174,37 +294,9 @@ working by the end of the 24 hours.</p>
                 <a class="readmore" href="http://qalthos.github.io/blog/FOSS@RIT/american-greetings-hackathon-followup.html">read more</a>
                                 </div><!-- /.entry-content -->
             </article></li>
-                            
-
-                 
-                        <li><article class="hentry">    
-                <header>
-                    <h1><a href="http://qalthos.github.io/blog/FOSS@RIT/recent-projects-democrat-chronicle.html" rel="bookmark"
-                           title="Permalink to Recent Projects: Democrat & Chronicle">Recent Projects: Democrat &amp; Chronicle</a></h1>
-                </header>
-                
-                <div class="entry-content">
-                <footer class="post-info">
-                <p><img src="http://www.gravatar.com/avatar/3a3baabff105b46a458688ecf49901af" /></p>
-                <abbr class="published" title="2012-08-22T22:16:00">
-                Wed 22 August 2012
-        </abbr>
-
-                <address class="vcard author">
-                By <a class="url fn" href="http://qalthos.github.io/blog/author/nathaniel-case.html">Nathaniel Case</a>
-        </address>
-        <p>In <a href="http://qalthos.github.io/blog/category/fossrit.html">FOSS@RIT</a>. </p>
-<p>tags: <a href="http://qalthos.github.io/blog/tag/journalism.html">journalism</a><a href="http://qalthos.github.io/blog/tag/data-alchemy.html">data alchemy</a></p>
-</footer><!-- /.post-info -->                <p>One of the new projects I had this summer was a project proposed by the
-<a class="reference external" href="http://www.democratandchronicle.com/">Democrat &amp; Chronicle</a>. The project involved access to a selection of
-emails sent to the Greece school district in the wake of the YouTube
-video involving several of their students. The idea was that we would ...</p>
-                <a class="readmore" href="http://qalthos.github.io/blog/FOSS@RIT/recent-projects-democrat-chronicle.html">read more</a>
-                                </div><!-- /.entry-content -->
-            </article></li>
                             </ol><!-- /#posts-list -->
                             <p class="paginator">
-        Page 1 / 5
+        Page 1 / 6
             <a href="http://qalthos.github.io/blog/category/fossrit2.html">&raquo;</a>
     </p>
                         </section><!-- /#content -->
@@ -213,41 +305,42 @@ video involving several of their students. The idea was that we would ...</p>
       <h2>blogroll</h2>
       <ul>
               <li><a href="http://foss.rit.edu">FOSS@RIT</a></li>
+              <li><a href="http://yacht.rit.edu/planet/">FOSSBox Planet</a></li>
             </ul>
     </div><!-- /.blogroll -->
         <div class="tagcloud">
       <h2>tag cloud</h2>
       <ul>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/peopledashboard.html">peopledashboard</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/hackathon.html">hackathon</a></li>
-                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/rise.html">Rise</a></li>
-                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/polyscraper.html">polyscraper</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/lemonade.html">lemonade</a></li>
-                  <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/election.html">election</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/widgets.html">widgets</a></li>
-                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/pybotwar.html">pybotwar</a></li>
-                  <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/pydex.html">pyDex</a></li>
-                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/knowledge.html">knowledge</a></li>
-                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/groovebot.html">groovebot</a></li>
-                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/remysmoke.html">remysmoke</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/surs.html">SURS</a></li>
-                  <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/openshift.html">openshift</a></li>
-                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/wat.html">wat</a></li>
                   <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/timeline.html">timeline</a></li>
-                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/schoolserver.html">schoolserver</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/scrapers.html">scrapers</a></li>
-                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/blog.html">blog</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/wikiotics.html">wikiotics</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/sugar.html">sugar</a></li>
                   <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/journalism.html">journalism</a></li>
+                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/yacht.html">yacht</a></li>
+                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/rise.html">Rise</a></li>
+                  <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/election.html">election</a></li>
+                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/hardware.html">hardware</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/widgets.html">widgets</a></li>
+                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/jquery.html">jQuery</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/lemonade.html">lemonade</a></li>
+                  <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/pydex.html">pyDex</a></li>
                   <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/democracymap.html">democracymap</a></li>
                   <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/fabulous.html">fabulous</a></li>
-                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/python.html">python</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/floss-seminar.html">FLOSS-seminar</a></li>
-                  <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/geowebdns.html">geowebdns</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/sugar.html">sugar</a></li>
-                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/jquery.html">jQuery</a></li>
+                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/blog.html">blog</a></li>
+                  <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/openshift.html">openshift</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/surs.html">SURS</a></li>
                   <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/data alchemy.html">data alchemy</a></li>
-                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/hardware.html">hardware</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/wikiotics.html">wikiotics</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/floss-seminar.html">FLOSS-seminar</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/hackathon.html">hackathon</a></li>
+                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/wat.html">wat</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/scrapers.html">scrapers</a></li>
+                  <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/geowebdns.html">geowebdns</a></li>
+                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/groovebot.html">groovebot</a></li>
+                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/remysmoke.html">remysmoke</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/peopledashboard.html">peopledashboard</a></li>
+                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/pybotwar.html">pybotwar</a></li>
+                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/knowledge.html">knowledge</a></li>
+                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/mediagoblin.html">mediagoblin</a></li>
+                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/polyscraper.html">polyscraper</a></li>
               </ul>
     </div>
         <div class="social">
