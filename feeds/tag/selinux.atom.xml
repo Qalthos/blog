@@ -1,127 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://qalthos.github.io/blog/" rel="alternate"></link><link href="http://qalthos.github.io/blog/feeds/tag/selinux.atom.xml" rel="self"></link><id>http://qalthos.github.io/blog/</id><updated>2013-09-25T17:06:58-04:00</updated><entry><title>Deploying MediaGoblin 2: SELinux</title><link href="http://qalthos.github.io/blog/FOSS@RIT/deploying-mediagoblin-2-selinux.html" rel="alternate"></link><updated>2013-09-25T17:06:58-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2013-09-25:FOSS@RIT/deploying-mediagoblin-2-selinux.html</id><summary type="html">&lt;p&gt;Last week I did a thing I really wasn't expecting to. I deployed
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://qalthos.github.io/blog/" rel="alternate"></link><link href="http://qalthos.github.io/blog/feeds/tag/selinux.atom.xml" rel="self"></link><id>http://qalthos.github.io/blog/</id><updated>2013-09-26T23:30:03-04:00</updated><entry><title>Deploying MediaGoblin 2: SELinux</title><link href="http://qalthos.github.io/blog/FOSS@RIT/deploying-mediagoblin-2-selinux.html" rel="alternate"></link><updated>2013-09-26T23:30:03-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2013-09-26:FOSS@RIT/deploying-mediagoblin-2-selinux.html</id><summary type="html">&lt;p&gt;Last week I did a thing I really wasn't expecting to. I deployed
 &lt;a class="reference external" href="http://mediagoblin.org"&gt;MediaGoblin&lt;/a&gt; to FOSS&amp;#64;RIT's yacht server &lt;a class="reference external" href="http://yacht.rit.edu/mediagoblin/"&gt;here&lt;/a&gt;. The initial setup and
 &lt;a class="reference external" href="https://mediagoblin.readthedocs.org/en/v0.5.0/siteadmin/deploying.html"&gt;instructions&lt;/a&gt; are some of the clearest and straightforward I have seen in an
 open-source project.&lt;/p&gt;
-&lt;p&gt;There are several reasons I haven't written this up earlier. One of the reasons
-was the web server configuration file was more complex than I was used to, so
-in order to get the server running quickly, I made a new config file for port
-8080. Unfortunately, due to various arcane networking policies, while this
-allowed anyone inside RIT to access the server, it was still not available to
-the outside world.&lt;/p&gt;
-&lt;p&gt;Also, though the instructions were very clear, they used a few things I had not
-used before, and a few things that weren't used in the way I was used to them.
-This is the first blog post on the subject, detailing my confusion with
-FastCGI and its eventual replacement with uWSGI.&lt;/p&gt;
-&lt;div class="section" id="what-the-flup"&gt;
-&lt;h2&gt;What the &lt;tt class="docutils literal"&gt;flup&lt;/tt&gt;?&lt;/h2&gt;
-&lt;p&gt;MediaGoblin, as documented, uses FastCGI to route requests from the web server
-to MediaGoblin. The CGI in FastCGI refers to the 'Common Gateway Interface',
-a standard developed to allow web servers to act as 'gateways' to serve not
-just files but the output of executable programs. The MediaGoblin docs describe
-how to use a python module called &lt;tt class="docutils literal"&gt;flup&lt;/tt&gt; to enable this communication.&lt;/p&gt;
-&lt;p&gt;There's a bit more to it than that, but in Python land, this
-turns out to be a more questionable prospect than it might seem. Python already
-has its own gateway interface (called the web server gateway interface, or
-WSGI) which it is using to talk to FastCGI to have the WSGI turned into CGI so
-that it can be interpreted by the server and turned into a web page. This would
-be fine except that there are other WSGI-specific modules which can translate
-the WSGI into a web page directly.&lt;/p&gt;
-&lt;p&gt;At this point, I assume that you are either skipping ahead past things you
-already know or are horribly lost, so I'll just say that I eventually moved
-MediaGoblin from the &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;paste-&amp;gt;flup-&amp;gt;FastCGI-&amp;gt;nginx&lt;/span&gt;&lt;/tt&gt; contraption it was to a more
-comprehensible &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;uWSGI-&amp;gt;nginx&lt;/span&gt;&lt;/tt&gt;, and this is how I did it.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="enter-uwsgi"&gt;
-&lt;h2&gt;Enter uWSGI&lt;/h2&gt;
-&lt;p&gt;First, I changed the nginx config to talk to uWSGI instead of FastCGI.
-As I was also trying to move MediaGoblin to a subdirectory, I also added the
-&lt;tt class="docutils literal"&gt;uWSGI_modifier1&lt;/tt&gt; line and altered &lt;tt class="docutils literal"&gt;SCRIPT_NAME&lt;/tt&gt; accordingly:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-# Load MediaGoblin via uWSGI
-location /mediagoblin/ {
-   include uWSGI_params;
-   uWSGI_pass 127.0.0.1:26543;
-
-   # our understanding vs nginx's handling of script_name vs
-   # path_info don't match :)
-   uWSGI_param SCRIPT_NAME &amp;quot;/mediagoblin&amp;quot;;
-   uWSGI_modifier1 30;
-}
-&lt;/pre&gt;
-&lt;p&gt;Second, I altered the &lt;tt class="docutils literal"&gt;lazystarter.sh&lt;/tt&gt; file to accommodate being run with
-uWSGI. This is a bit complicated as &lt;tt class="docutils literal"&gt;lazyserver.sh&lt;/tt&gt;, &lt;tt class="docutils literal"&gt;lazystarter.sh&lt;/tt&gt;, and
-&lt;tt class="docutils literal"&gt;lazycelery.sh&lt;/tt&gt; are all actually the same file, with certain things changing
-depending on the name by which it is invoked. I changed two sections &lt;a class="footnote-reference" href="#id2" id="id1"&gt;[1]&lt;/a&gt;, first:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-local_bin=&amp;quot;./bin&amp;quot;
-case &amp;quot;$selfname&amp;quot; in
-    lazyserver.sh)
-        starter_cmd=paster
-        ini_prefix=paste
-        ;;
-&lt;/pre&gt;
-&lt;p&gt;became:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-local_bin=&amp;quot;./bin&amp;quot;
-case &amp;quot;$selfname&amp;quot; in
-    lazyserver.sh)
-        starter_cmd=uwsgi
-        ini_prefix=paste
-        ;;
-&lt;/pre&gt;
-&lt;p&gt;And then near the very end of the file:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-export CELERY_ALWAYS_EAGER=true
-case &amp;quot;$selfname&amp;quot; in
-    lazyserver.sh)
-        $starter serve &amp;quot;$ini_file&amp;quot; &amp;quot;$&amp;#64;&amp;quot; --reload
-        ;;
-&lt;/pre&gt;
-&lt;p&gt;became:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-export CELERY_ALWAYS_EAGER=true
-case &amp;quot;$selfname&amp;quot; in
-    lazyserver.sh)
-        $starter --plugin python --virtualenv . --ini-paste &amp;quot;$ini_file&amp;quot; &amp;quot;$&amp;#64;&amp;quot;
-        ;;
-&lt;/pre&gt;
-&lt;p&gt;This method allows you to keep using all the information on how to run
-MediaGoblin from paste.ini, while using uWSGI to do all the heavy lifting.
-The socket still needs to be defined with the command, though, with
-&lt;tt class="docutils literal"&gt;./lazyserver.sh &lt;span class="pre"&gt;--socket&lt;/span&gt; 127.0.0.1:26543&lt;/tt&gt; or whatever socket you are using.&lt;/p&gt;
-&lt;p&gt;As a side note, this also allows us to use your system's uWSGI &lt;a class="reference external" href="http://uWSGI-docs.readthedocs.org/en/latest/Emperor.html"&gt;emperor&lt;/a&gt; to
-manage bringing up the uWSGI process for you. If you are running &lt;a class="reference external" href="http://mediagoblin.readthedocs.org/en/v0.5.0/siteadmin/production-deployments.html#separate-celery"&gt;celery as a
-separate process&lt;/a&gt;, this still needs to be done somehow, but otherwise (or if
-you've kept &lt;tt class="docutils literal"&gt;CELERY_ALWAYS_EAGER=true&lt;/tt&gt;), then MediaGoblin should be managed
-automatically. This is the format I eventually settled upon, using the
-following uWSGI ini file:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-uwsgi:
-    plugin: python
-    uid: mediagoblin
-    gid: mediagoblin
-    socket: 127.0.0.1:26543
-    virtualenv: /srv/www/mediagoblin
-    chdir: /srv/www/mediagoblin
-    env: CELERY_ALWAYS_EAGER=false
-    ini-paste: /srv/www/mediagoblin/paste.ini
-    logto: /srv/www/mediagoblin/mg.log
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div class="section" id="what-next"&gt;
-&lt;h2&gt;What Next?&lt;/h2&gt;
-&lt;p&gt;As far as I can tell, this should have been all we needed to get running.
-Well, this wouldn't have been necessary either, except for some of the
-repercussions of the other big problem that reared it's head, SELinux.&lt;/p&gt;
-&lt;p&gt;But that is another post that will have to wait.&lt;/p&gt;
-&lt;table class="docutils footnote" frame="void" id="id2" rules="none"&gt;
+&lt;table class="docutils footnote" frame="void" id="id1" rules="none"&gt;
 &lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
 &lt;tbody valign="top"&gt;
-&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;This statement is not entirely accurate. I actually made a new link
+&lt;tr&gt;&lt;td class="label"&gt;[1]&lt;/td&gt;&lt;td&gt;This statement is not entirely accurate. I actually made a new link
 named &lt;tt class="docutils literal"&gt;lazyuwsgi.sh&lt;/tt&gt; and added the sections instead of altering the
 existing ones. This format was chosen for clarity.&lt;/td&gt;&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;/div&gt;
 </summary><category term="mediagoblin"></category><category term="yacht"></category><category term="SELinux"></category></entry></feed>

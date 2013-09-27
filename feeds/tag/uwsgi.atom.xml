@@ -37,55 +37,51 @@ comprehensible &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;uWSGI-
 &lt;p&gt;First, I changed the nginx config to talk to uWSGI instead of FastCGI.
 As I was also trying to move MediaGoblin to a subdirectory, I also added the
 &lt;tt class="docutils literal"&gt;uWSGI_modifier1&lt;/tt&gt; line and altered &lt;tt class="docutils literal"&gt;SCRIPT_NAME&lt;/tt&gt; accordingly:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-# Load MediaGoblin via uWSGI
-location /mediagoblin/ {
-   include uWSGI_params;
-   uWSGI_pass 127.0.0.1:26543;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;# Load MediaGoblin via uWSGI&lt;/span&gt;
+&lt;span class="k"&gt;location&lt;/span&gt; &lt;span class="s"&gt;/mediagoblin/&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+   &lt;span class="kn"&gt;include&lt;/span&gt; &lt;span class="s"&gt;uWSGI_params&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+   &lt;span class="kn"&gt;uWSGI_pass&lt;/span&gt; &lt;span class="n"&gt;127.0.0.1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;26543&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 
-   # our understanding vs nginx's handling of script_name vs
-   # path_info don't match :)
-   uWSGI_param SCRIPT_NAME &amp;quot;/mediagoblin&amp;quot;;
-   uWSGI_modifier1 30;
-}
-&lt;/pre&gt;
+   &lt;span class="c1"&gt;# our understanding vs nginx&amp;#39;s handling of script_name vs&lt;/span&gt;
+   &lt;span class="c1"&gt;# path_info don&amp;#39;t match :)&lt;/span&gt;
+   &lt;span class="kn"&gt;uWSGI_param&lt;/span&gt; &lt;span class="s"&gt;SCRIPT_NAME&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;/mediagoblin&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+   &lt;span class="kn"&gt;uWSGI_modifier1&lt;/span&gt; &lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Second, I altered the &lt;tt class="docutils literal"&gt;lazystarter.sh&lt;/tt&gt; file to accommodate being run with
 uWSGI. This is a bit complicated as &lt;tt class="docutils literal"&gt;lazyserver.sh&lt;/tt&gt;, &lt;tt class="docutils literal"&gt;lazystarter.sh&lt;/tt&gt;, and
 &lt;tt class="docutils literal"&gt;lazycelery.sh&lt;/tt&gt; are all actually the same file, with certain things changing
-depending on the name by which it is invoked. I changed two sections &lt;a class="footnote-reference" href="#id2" id="id1"&gt;[1]&lt;/a&gt;, first:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-local_bin=&amp;quot;./bin&amp;quot;
-case &amp;quot;$selfname&amp;quot; in
-    lazyserver.sh)
-        starter_cmd=paster
-        ini_prefix=paste
+depending on the name by which it is invoked. I changed two sections &lt;a class="footnote-reference" href="#id2" id="id1"&gt;[1]&lt;/a&gt;,
+first:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;local_bin&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;./bin&amp;quot;&lt;/span&gt;
+&lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$selfname&amp;quot;&lt;/span&gt; in
+    lazyserver.sh&lt;span class="o"&gt;)&lt;/span&gt;
+        &lt;span class="nv"&gt;starter_cmd&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;paster
+        &lt;span class="nv"&gt;ini_prefix&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;paste
         ;;
-&lt;/pre&gt;
+&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;became:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-local_bin=&amp;quot;./bin&amp;quot;
-case &amp;quot;$selfname&amp;quot; in
-    lazyserver.sh)
-        starter_cmd=uwsgi
-        ini_prefix=paste
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;local_bin&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;./bin&amp;quot;&lt;/span&gt;
+&lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$selfname&amp;quot;&lt;/span&gt; in
+    lazyserver.sh&lt;span class="o"&gt;)&lt;/span&gt;
+        &lt;span class="nv"&gt;starter_cmd&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;uwsgi
+        &lt;span class="nv"&gt;ini_prefix&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;paste
         ;;
-&lt;/pre&gt;
+&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;And then near the very end of the file:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-export CELERY_ALWAYS_EAGER=true
-case &amp;quot;$selfname&amp;quot; in
-    lazyserver.sh)
-        $starter serve &amp;quot;$ini_file&amp;quot; &amp;quot;$&amp;#64;&amp;quot; --reload
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;CELERY_ALWAYS_EAGER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
+&lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$selfname&amp;quot;&lt;/span&gt; in
+    lazyserver.sh&lt;span class="o"&gt;)&lt;/span&gt;
+        &lt;span class="nv"&gt;$starter&lt;/span&gt; serve &lt;span class="s2"&gt;&amp;quot;$ini_file&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$@&amp;quot;&lt;/span&gt; --reload
         ;;
-&lt;/pre&gt;
+&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;became:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-export CELERY_ALWAYS_EAGER=true
-case &amp;quot;$selfname&amp;quot; in
-    lazyserver.sh)
-        $starter --plugin python --virtualenv . --ini-paste &amp;quot;$ini_file&amp;quot; &amp;quot;$&amp;#64;&amp;quot;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;CELERY_ALWAYS_EAGER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
+&lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$selfname&amp;quot;&lt;/span&gt; in
+    lazyserver.sh&lt;span class="o"&gt;)&lt;/span&gt;
+        &lt;span class="nv"&gt;$starter&lt;/span&gt; --plugin python --virtualenv . --ini-paste &lt;span class="s2"&gt;&amp;quot;$ini_file&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$@&amp;quot;&lt;/span&gt;
         ;;
-&lt;/pre&gt;
+&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This method allows you to keep using all the information on how to run
 MediaGoblin from paste.ini, while using uWSGI to do all the heavy lifting.
 The socket still needs to be defined with the command, though, with
@@ -96,18 +92,16 @@ separate process&lt;/a&gt;, this still needs to be done somehow, but otherwise (
 you've kept &lt;tt class="docutils literal"&gt;CELERY_ALWAYS_EAGER=true&lt;/tt&gt;), then MediaGoblin should be managed
 automatically. This is the format I eventually settled upon, using the
 following uWSGI ini file:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-uwsgi:
-    plugin: python
-    uid: mediagoblin
-    gid: mediagoblin
-    socket: 127.0.0.1:26543
-    virtualenv: /srv/www/mediagoblin
-    chdir: /srv/www/mediagoblin
-    env: CELERY_ALWAYS_EAGER=false
-    ini-paste: /srv/www/mediagoblin/paste.ini
-    logto: /srv/www/mediagoblin/mg.log
-&lt;/pre&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;[uwsgi]&lt;/span&gt;
+&lt;span class="na"&gt;plugin&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;python&lt;/span&gt;
+&lt;span class="na"&gt;uid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;mediagoblin&lt;/span&gt;
+&lt;span class="na"&gt;gid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;mediagoblin&lt;/span&gt;
+&lt;span class="na"&gt;socket&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;127.0.0.1:26543&lt;/span&gt;
+&lt;span class="na"&gt;virtualenv&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;/srv/www/mediagoblin&lt;/span&gt;
+&lt;span class="na"&gt;chdir&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;/srv/www/mediagoblin&lt;/span&gt;
+&lt;span class="na"&gt;ini-paste&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;/srv/www/mediagoblin/paste.ini&lt;/span&gt;
+&lt;span class="na"&gt;logto&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;/srv/www/mediagoblin/mg.log&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="what-next"&gt;
 &lt;h2&gt;What Next?&lt;/h2&gt;

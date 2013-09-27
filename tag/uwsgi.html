@@ -89,55 +89,51 @@ comprehensible <tt class="docutils literal"><span class="pre">uWSGI-&gt;nginx</s
 <p>First, I changed the nginx config to talk to uWSGI instead of FastCGI.
 As I was also trying to move MediaGoblin to a subdirectory, I also added the
 <tt class="docutils literal">uWSGI_modifier1</tt> line and altered <tt class="docutils literal">SCRIPT_NAME</tt> accordingly:</p>
-<pre class="literal-block">
-# Load MediaGoblin via uWSGI
-location /mediagoblin/ {
-   include uWSGI_params;
-   uWSGI_pass 127.0.0.1:26543;
+<div class="highlight"><pre><span class="c1"># Load MediaGoblin via uWSGI</span>
+<span class="k">location</span> <span class="s">/mediagoblin/</span> <span class="p">{</span>
+   <span class="kn">include</span> <span class="s">uWSGI_params</span><span class="p">;</span>
+   <span class="kn">uWSGI_pass</span> <span class="n">127.0.0.1</span><span class="p">:</span><span class="mi">26543</span><span class="p">;</span>
 
-   # our understanding vs nginx's handling of script_name vs
-   # path_info don't match :)
-   uWSGI_param SCRIPT_NAME &quot;/mediagoblin&quot;;
-   uWSGI_modifier1 30;
-}
-</pre>
+   <span class="c1"># our understanding vs nginx&#39;s handling of script_name vs</span>
+   <span class="c1"># path_info don&#39;t match :)</span>
+   <span class="kn">uWSGI_param</span> <span class="s">SCRIPT_NAME</span> <span class="s">&quot;/mediagoblin&quot;</span><span class="p">;</span>
+   <span class="kn">uWSGI_modifier1</span> <span class="mi">30</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
 <p>Second, I altered the <tt class="docutils literal">lazystarter.sh</tt> file to accommodate being run with
 uWSGI. This is a bit complicated as <tt class="docutils literal">lazyserver.sh</tt>, <tt class="docutils literal">lazystarter.sh</tt>, and
 <tt class="docutils literal">lazycelery.sh</tt> are all actually the same file, with certain things changing
-depending on the name by which it is invoked. I changed two sections <a class="footnote-reference" href="#id2" id="id1">[1]</a>, first:</p>
-<pre class="literal-block">
-local_bin=&quot;./bin&quot;
-case &quot;$selfname&quot; in
-    lazyserver.sh)
-        starter_cmd=paster
-        ini_prefix=paste
+depending on the name by which it is invoked. I changed two sections <a class="footnote-reference" href="#id2" id="id1">[1]</a>,
+first:</p>
+<div class="highlight"><pre><span class="nv">local_bin</span><span class="o">=</span><span class="s2">&quot;./bin&quot;</span>
+<span class="k">case</span> <span class="s2">&quot;$selfname&quot;</span> in
+    lazyserver.sh<span class="o">)</span>
+        <span class="nv">starter_cmd</span><span class="o">=</span>paster
+        <span class="nv">ini_prefix</span><span class="o">=</span>paste
         ;;
-</pre>
+</pre></div>
 <p>became:</p>
-<pre class="literal-block">
-local_bin=&quot;./bin&quot;
-case &quot;$selfname&quot; in
-    lazyserver.sh)
-        starter_cmd=uwsgi
-        ini_prefix=paste
+<div class="highlight"><pre><span class="nv">local_bin</span><span class="o">=</span><span class="s2">&quot;./bin&quot;</span>
+<span class="k">case</span> <span class="s2">&quot;$selfname&quot;</span> in
+    lazyserver.sh<span class="o">)</span>
+        <span class="nv">starter_cmd</span><span class="o">=</span>uwsgi
+        <span class="nv">ini_prefix</span><span class="o">=</span>paste
         ;;
-</pre>
+</pre></div>
 <p>And then near the very end of the file:</p>
-<pre class="literal-block">
-export CELERY_ALWAYS_EAGER=true
-case &quot;$selfname&quot; in
-    lazyserver.sh)
-        $starter serve &quot;$ini_file&quot; &quot;$&#64;&quot; --reload
+<div class="highlight"><pre><span class="nb">export </span><span class="nv">CELERY_ALWAYS_EAGER</span><span class="o">=</span><span class="nb">true</span>
+<span class="k">case</span> <span class="s2">&quot;$selfname&quot;</span> in
+    lazyserver.sh<span class="o">)</span>
+        <span class="nv">$starter</span> serve <span class="s2">&quot;$ini_file&quot;</span> <span class="s2">&quot;$@&quot;</span> --reload
         ;;
-</pre>
+</pre></div>
 <p>became:</p>
-<pre class="literal-block">
-export CELERY_ALWAYS_EAGER=true
-case &quot;$selfname&quot; in
-    lazyserver.sh)
-        $starter --plugin python --virtualenv . --ini-paste &quot;$ini_file&quot; &quot;$&#64;&quot;
+<div class="highlight"><pre><span class="nb">export </span><span class="nv">CELERY_ALWAYS_EAGER</span><span class="o">=</span><span class="nb">true</span>
+<span class="k">case</span> <span class="s2">&quot;$selfname&quot;</span> in
+    lazyserver.sh<span class="o">)</span>
+        <span class="nv">$starter</span> --plugin python --virtualenv . --ini-paste <span class="s2">&quot;$ini_file&quot;</span> <span class="s2">&quot;$@&quot;</span>
         ;;
-</pre>
+</pre></div>
 <p>This method allows you to keep using all the information on how to run
 MediaGoblin from paste.ini, while using uWSGI to do all the heavy lifting.
 The socket still needs to be defined with the command, though, with
@@ -148,18 +144,16 @@ separate process</a>, this still needs to be done somehow, but otherwise (or if
 you've kept <tt class="docutils literal">CELERY_ALWAYS_EAGER=true</tt>), then MediaGoblin should be managed
 automatically. This is the format I eventually settled upon, using the
 following uWSGI ini file:</p>
-<pre class="literal-block">
-uwsgi:
-    plugin: python
-    uid: mediagoblin
-    gid: mediagoblin
-    socket: 127.0.0.1:26543
-    virtualenv: /srv/www/mediagoblin
-    chdir: /srv/www/mediagoblin
-    env: CELERY_ALWAYS_EAGER=false
-    ini-paste: /srv/www/mediagoblin/paste.ini
-    logto: /srv/www/mediagoblin/mg.log
-</pre>
+<div class="highlight"><pre><span class="k">[uwsgi]</span>
+<span class="na">plugin</span><span class="o">=</span><span class="s">python</span>
+<span class="na">uid</span><span class="o">=</span><span class="s">mediagoblin</span>
+<span class="na">gid</span><span class="o">=</span><span class="s">mediagoblin</span>
+<span class="na">socket</span><span class="o">=</span><span class="s">127.0.0.1:26543</span>
+<span class="na">virtualenv</span><span class="o">=</span><span class="s">/srv/www/mediagoblin</span>
+<span class="na">chdir</span><span class="o">=</span><span class="s">/srv/www/mediagoblin</span>
+<span class="na">ini-paste</span><span class="o">=</span><span class="s">/srv/www/mediagoblin/paste.ini</span>
+<span class="na">logto</span><span class="o">=</span><span class="s">/srv/www/mediagoblin/mg.log</span>
+</pre></div>
 </div>
 <div class="section" id="what-next">
 <h2>What Next?</h2>
@@ -194,36 +188,36 @@ existing ones. This format was chosen for clarity.</td></tr>
         <div class="tagcloud">
       <h2>tag cloud</h2>
       <ul>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/wikiotics.html">wikiotics</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/sugar.html">sugar</a></li>
-                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/jquery.html">jQuery</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/peopledashboard.html">peopledashboard</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/lemonade.html">lemonade</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/journalism.html">journalism</a></li>
-                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/selinux.html">SELinux</a></li>
-                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/mediagoblin.html">mediagoblin</a></li>
-                  <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/openshift.html">openshift</a></li>
-                  <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/election.html">election</a></li>
-                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/timeline.html">timeline</a></li>
-                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/data alchemy.html">data alchemy</a></li>
-                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/groovebot.html">groovebot</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/hackathon.html">hackathon</a></li>
                   <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/democracymap.html">democracymap</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/surs.html">SURS</a></li>
-                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/rise.html">Rise</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/wikiotics.html">wikiotics</a></li>
                   <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/hardware.html">hardware</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/scrapers.html">scrapers</a></li>
-                  <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/geowebdns.html">geowebdns</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/widgets.html">widgets</a></li>
-                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/fabulous.html">fabulous</a></li>
-                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/blog.html">blog</a></li>
-                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/remysmoke.html">remysmoke</a></li>
-                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/knowledge.html">knowledge</a></li>
+                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/rise.html">Rise</a></li>
+                  <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/openshift.html">openshift</a></li>
                   <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/pydex.html">pyDex</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/peopledashboard.html">peopledashboard</a></li>
+                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/groovebot.html">groovebot</a></li>
                   <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/yacht.html">yacht</a></li>
+                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/selinux.html">SELinux</a></li>
+                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/data alchemy.html">data alchemy</a></li>
                   <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/floss-seminar.html">FLOSS-seminar</a></li>
-                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/polyscraper.html">polyscraper</a></li>
+                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/mediagoblin.html">mediagoblin</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/journalism.html">journalism</a></li>
+                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/remysmoke.html">remysmoke</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/sugar.html">sugar</a></li>
                   <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/wat.html">wat</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/scrapers.html">scrapers</a></li>
+                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/knowledge.html">knowledge</a></li>
+                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/fabulous.html">fabulous</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/surs.html">SURS</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/lemonade.html">lemonade</a></li>
+                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/jquery.html">jQuery</a></li>
+                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/blog.html">blog</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/widgets.html">widgets</a></li>
+                  <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/geowebdns.html">geowebdns</a></li>
+                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/timeline.html">timeline</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/hackathon.html">hackathon</a></li>
+                  <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/election.html">election</a></li>
+                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/polyscraper.html">polyscraper</a></li>
               </ul>
     </div>
         <div class="social">
