@@ -49,7 +49,9 @@ Enter uWSGI
 
 First, I changed the nginx config to talk to uWSGI instead of FastCGI.
 As I was also trying to move MediaGoblin to a subdirectory, I also added the
-``uWSGI_modifier1`` line and altered ``SCRIPT_NAME`` accordingly::
+``uWSGI_modifier1`` line and altered ``SCRIPT_NAME`` accordingly:
+
+.. code-block:: nginx
 
     # Load MediaGoblin via uWSGI
     location /mediagoblin/ {
@@ -65,7 +67,10 @@ As I was also trying to move MediaGoblin to a subdirectory, I also added the
 Second, I altered the ``lazystarter.sh`` file to accommodate being run with
 uWSGI. This is a bit complicated as ``lazyserver.sh``, ``lazystarter.sh``, and
 ``lazycelery.sh`` are all actually the same file, with certain things changing
-depending on the name by which it is invoked. I changed two sections [#]_, first::
+depending on the name by which it is invoked. I changed two sections [#]_,
+first:
+
+.. code-block:: bash
 
     local_bin="./bin"
     case "$selfname" in
@@ -74,7 +79,9 @@ depending on the name by which it is invoked. I changed two sections [#]_, first
             ini_prefix=paste
             ;;
 
-became::
+became:
+
+.. code-block:: bash
 
     local_bin="./bin"
     case "$selfname" in
@@ -83,7 +90,9 @@ became::
             ini_prefix=paste
             ;;
 
-And then near the very end of the file::
+And then near the very end of the file:
+
+.. code-block:: bash
 
     export CELERY_ALWAYS_EAGER=true
     case "$selfname" in
@@ -91,7 +100,9 @@ And then near the very end of the file::
             $starter serve "$ini_file" "$@" --reload
             ;;
 
-became::
+became:
+
+.. code-block:: bash
 
     export CELERY_ALWAYS_EAGER=true
     case "$selfname" in
@@ -109,18 +120,19 @@ manage bringing up the uWSGI process for you. If you are running `celery as a
 separate process`_, this still needs to be done somehow, but otherwise (or if
 you've kept ``CELERY_ALWAYS_EAGER=true``), then MediaGoblin should be managed
 automatically. This is the format I eventually settled upon, using the
-following uWSGI ini file::
+following uWSGI ini file:
 
-    uwsgi:
-        plugin: python
-        uid: mediagoblin
-        gid: mediagoblin
-        socket: 127.0.0.1:26543
-        virtualenv: /srv/www/mediagoblin
-        chdir: /srv/www/mediagoblin
-        env: CELERY_ALWAYS_EAGER=false
-        ini-paste: /srv/www/mediagoblin/paste.ini
-        logto: /srv/www/mediagoblin/mg.log
+.. code-block:: ini
+
+    [uwsgi]
+    plugin=python
+    uid=mediagoblin
+    gid=mediagoblin
+    socket=127.0.0.1:26543
+    virtualenv=/srv/www/mediagoblin
+    chdir=/srv/www/mediagoblin
+    ini-paste=/srv/www/mediagoblin/paste.ini
+    logto=/srv/www/mediagoblin/mg.log
 
 What Next?
 ----------
