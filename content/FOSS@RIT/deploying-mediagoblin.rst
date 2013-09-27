@@ -141,13 +141,14 @@ As far as I can tell, this should have been all we needed to get running.
 Well, this wouldn't have been necessary either, except for some of the
 repercussions of the other big problem that reared it's head, SELinux.
 
-But that is another post that will have to wait.
+But that is `another post`_.
 
 .. _MediaGoblin: http://mediagoblin.org
 .. _here: http://yacht.rit.edu/mediagoblin/
 .. _instructions: https://mediagoblin.readthedocs.org/en/v0.5.0/siteadmin/deploying.html
 .. _emperor: http://uWSGI-docs.readthedocs.org/en/latest/Emperor.html
 .. _celery as a separate process: http://mediagoblin.readthedocs.org/en/v0.5.0/siteadmin/production-deployments.html#separate-celery
+.. _another post: deploying-mediagoblin-2-selinux.html
 .. [#] This statement is not entirely accurate. I actually made a new link
        named ``lazyuwsgi.sh`` and added the sections instead of altering the
        existing ones. This format was chosen for clarity.
