@@ -3,11 +3,13 @@
 
 {% block feed %}
   {% if FEED_ALL_ATOM %}
-    <link href="{{ FEED_DOMAIN }}/tag/{{ tag }}.atom.xml" type="application/atom+xml"
-          rel="alternate" title="{{ SITENAME }} {{ tag }} Atom Feed" />
+    <link href="{{ FEED_DOMAIN }}/feeds/tag/{{ tag }}.atom.xml"
+          type="application/atom+xml" rel="alternate"
+          title="{{ SITENAME }} {{ tag }} Atom Feed" />
   {% endif %}
   {% if FEED_ALL_RSS %}
-    <link href="{{ FEED_DOMAIN }}/tag/{{ tag }}.rss" type="application/rss+xml"
-          rel="alternate" title="{{ SITENAME }} {{ tag }} RSS Feed" />
+    <link href="{{ FEED_DOMAIN }}/feeds/tag/{{ tag }}.rss"
+          type="application/rss+xml" rel="alternate"
+          title="{{ SITENAME }} {{ tag }} RSS Feed" />
   {% endif %}
 {% endblock %}
