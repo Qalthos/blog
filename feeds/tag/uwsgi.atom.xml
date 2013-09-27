@@ -108,7 +108,7 @@ following uWSGI ini file:&lt;/p&gt;
 &lt;p&gt;As far as I can tell, this should have been all we needed to get running.
 Well, this wouldn't have been necessary either, except for some of the
 repercussions of the other big problem that reared it's head, SELinux.&lt;/p&gt;
-&lt;p&gt;But that is another post that will have to wait.&lt;/p&gt;
+&lt;p&gt;But that is &lt;a class="reference external" href="deploying-mediagoblin-2-selinux.html"&gt;another post&lt;/a&gt;.&lt;/p&gt;
 &lt;table class="docutils footnote" frame="void" id="id2" rules="none"&gt;
 &lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
 &lt;tbody valign="top"&gt;
