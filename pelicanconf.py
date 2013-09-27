@@ -8,6 +8,7 @@ SITENAME = u'Why Not Wingnut?'
 SITEURL = 'http://0:8000'
 TIMEZONE = 'America/New_York'
 DEFAULT_LANG = u'en'
+DEFAULT_DATE = 'fs'
 
 #THEME = 'notmyidea'
 THEME = 'themes/notmineeither'
