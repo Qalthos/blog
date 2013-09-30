@@ -221,33 +221,35 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
             list-style: none;
             margin: 0 auto;
             width: 800px;
-        }
-        li {
-            float: left;
-            display: inline;
-            margin: 0;
-        }
 
-        a:link, a:visited {
-            color: #fff;
-            display: inline-block;
-            height: 30px;
-            padding: 5px 1.5em;
-            text-decoration: none;
-        }
-        a:hover, a:active, .active a:link, .active a:visited {
-            background: $hover;
-            text-shadow: none !important;
-        }
+            li {
+                float: left;
+                display: inline;
+                margin: 0;
 
-        li:first-child a {
-            border-top-left-radius: 5px;
-            -moz-border-radius-topleft: 5px;
-            -webkit-border-top-left-radius: 5px;
+                a:link, a:visited {
+                    color: #fff;
+                    display: inline-block;
+                    height: 30px;
+                    padding: 5px 1.5em;
+                    text-decoration: none;
+                }
+            }
 
-            border-bottom-left-radius: 5px;
-            -moz-border-radius-bottomleft: 5px;
-            -webkit-border-bottom-left-radius: 5px;
+            a:hover, a:active, .active a:link, .active a:visited {
+                background: $hover;
+                text-shadow: none !important;
+            }
+
+            li:first-child a {
+                border-top-left-radius: 5px;
+                -moz-border-radius-topleft: 5px;
+                -webkit-border-top-left-radius: 5px;
+
+                border-bottom-left-radius: 5px;
+                -moz-border-radius-bottomleft: 5px;
+                -webkit-border-bottom-left-radius: 5px;
+            }
         }
     }
 }
