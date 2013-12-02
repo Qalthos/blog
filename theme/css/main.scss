@@ -175,19 +175,21 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
     Header
 *****************/
 #banner {
-    margin: 0 auto;
-    padding: 2.5em 0 0 0;
+    float: left;
+    width: 180px;
+    clear: none;
+    margin: 0 20px 0 0;
 
     /* Banner */
     h1 {
         font-size: 3.571em;
-        line-height: 0;
+        margin-bottom: 0px;
 
         a:link, a:visited {
             color: $text;
             display: block;
             font-weight: bold;
-            margin: 0 0 .6em .2em;
+            margin: 0 0 .1em .2em;
             text-decoration: none;
         }
         a:hover, a:active {
@@ -206,12 +208,10 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
     nav {
         background: $text;
         font-size: 1.143em;
-        height: 40px;
         line-height: 30px;
         margin: 0 auto 2em auto;
         padding: 0;
         text-align: center;
-        width: 800px;
 
         border-radius: 5px;
         -moz-border-radius: 5px;
@@ -220,18 +220,17 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
         ul {
             list-style: none;
             margin: 0 auto;
-            width: 800px;
 
             li {
-                float: left;
-                display: inline;
                 margin: 0;
-
+                a {
+                    width: 180px;
+                }
                 a:link, a:visited {
                     color: #fff;
                     display: inline-block;
                     height: 30px;
-                    padding: 5px 1.5em;
+                    padding: 5px 0;
                     text-decoration: none;
                 }
             }
@@ -246,12 +245,27 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
                 -moz-border-radius-topleft: 5px;
                 -webkit-border-top-left-radius: 5px;
 
+                border-top-right-radius: 5px;
+                -moz-border-radius-topright: 5px;
+                -webkit-border-top-right-radius: 5px;
+            }
+            li:last-child a {
                 border-bottom-left-radius: 5px;
                 -moz-border-radius-bottomleft: 5px;
                 -webkit-border-bottom-left-radius: 5px;
+
+                border-bottom-right-radius: 5px;
+                -moz-border-radius-bottomright: 5px;
+                -webkit-border-bottom-right-radius: 5px;
             }
         }
     }
+}
+
+#banner + aside, #banner + section {
+    width: 560px;
+    clear: none;
+    margin-top: 10px;
 }
 
 /*
