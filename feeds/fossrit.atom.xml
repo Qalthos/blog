@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://qalthos.github.io/blog/" rel="alternate"></link><link href="http://qalthos.github.io/blog/feeds/fossrit.atom.xml" rel="self"></link><id>http://qalthos.github.io/blog/</id><updated>2013-12-02T18:07:43-05:00</updated><entry><title>Charsheet 1.0</title><link href="http://qalthos.github.io/blog/FOSS@RIT/charsheet-10.html" rel="alternate"></link><updated>2013-12-02T18:07:43-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2013-12-02:FOSS@RIT/charsheet-10.html</id><summary type="html">&lt;p&gt;I've been doing some work for &lt;a class="reference external" href="https://charsheet-qalthos.rhcloud.com"&gt;Charsheet&lt;/a&gt; recently, fixing old bugs and adding
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://qalthos.github.io/blog/" rel="alternate"></link><link href="http://qalthos.github.io/blog/feeds/fossrit.atom.xml" rel="self"></link><id>http://qalthos.github.io/blog/</id><updated>2014-01-07T23:13:03-05:00</updated><entry><title>Charsheet 1.0</title><link href="http://qalthos.github.io/blog/FOSS@RIT/charsheet-10.html" rel="alternate"></link><updated>2014-01-07T23:13:03-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2014-01-07:FOSS@RIT/charsheet-10.html</id><summary type="html">&lt;p&gt;I've been doing some work for &lt;a class="reference external" href="https://charsheet-qalthos.rhcloud.com"&gt;Charsheet&lt;/a&gt; recently, fixing old bugs and adding
 new features. I figured it was about time for a 1.0, so I tagged it and released
 it to the wild. Many thanks to &lt;a class="reference external" href="http://oddshocks.com"&gt;oddshocks&lt;/a&gt; not only for the original 0.1
 version of charsheet, but for continued assistance in massaging the site into
@@ -39,7 +39,7 @@ forms.&lt;/td&gt;&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/div&gt;
-</summary><category term="charsheet"></category><category term="openshift"></category></entry><entry><title>Deploying MediaGoblin 2: SELinux</title><link href="http://qalthos.github.io/blog/FOSS@RIT/deploying-mediagoblin-2-selinux.html" rel="alternate"></link><updated>2013-09-27T00:28:39-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2013-09-27:FOSS@RIT/deploying-mediagoblin-2-selinux.html</id><summary type="html">&lt;p&gt;So, &lt;a class="reference external" href="deploying-mediagoblin-1-fastcgi-vs-uwsgi.html"&gt;earlier&lt;/a&gt;, I wrote about my experience deploying &lt;a class="reference external" href="http://mediagoblin.org"&gt;MediaGoblin&lt;/a&gt;. None of
+</summary><category term="charsheet"></category><category term="openshift"></category></entry><entry><title>Deploying MediaGoblin 2: SELinux</title><link href="http://qalthos.github.io/blog/FOSS@RIT/deploying-mediagoblin-2-selinux.html" rel="alternate"></link><updated>2014-01-07T23:13:03-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2014-01-07:FOSS@RIT/deploying-mediagoblin-2-selinux.html</id><summary type="html">&lt;p&gt;So, &lt;a class="reference external" href="deploying-mediagoblin-1-fastcgi-vs-uwsgi.html"&gt;earlier&lt;/a&gt;, I wrote about my experience deploying &lt;a class="reference external" href="http://mediagoblin.org"&gt;MediaGoblin&lt;/a&gt;. None of
 this was necessary, I was mostly trying to diagnose some problems I was having
 and found uWSGI a more comfortable environment than FastCGI.&lt;/p&gt;
 &lt;p&gt;And what problem was this, you ask? Well, when I first ran through the
@@ -269,7 +269,27 @@ meant writing a server proxy. This may not have been the only way to do
 it, or even the best way to do it, but that's just how we roll. The
 eventual structure (all written in delicious &lt;a class="reference external" href="http://www.twistedmatrix.com"&gt;twisted&lt;/a&gt; protocols)
 looked something like this:&lt;/p&gt;
-&lt;img alt="Module diagram" class="ditaa" src="static/images/04bc3643.png" /&gt;
+&lt;div class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: ERROR/3 (&lt;tt class="docutils"&gt;/home/nate/workspace/personal/blog/content/FOSS&amp;#64;RIT/american-greetings-hackathon-followup.rst&lt;/tt&gt;, line 31)&lt;/p&gt;
+&lt;p&gt;Failed to run ditaa: [Errno 2] No such file or directory&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+.. ditaa::
+    :alt: Module diagram
+
+    +--------------+
+    |NetHack Server|
+    +----+---------+
+         |
+       +-+-+          +----------+
+       |tee+----------+controller|
+       +-+-+          +-----+----+
+         |                  |
+    +----+---------+    +---+--+
+    |NetHack Client|    |netHUD|
+    +--------------+    +------+
+
+&lt;/pre&gt;
+&lt;/div&gt;
 &lt;p&gt;tee.py acted as the proxy and sent any messages received from the
 NetHack server to the controller, which cached the current state of all
 the games and sent updates to any listening netHUD instances. This way,
