@@ -269,7 +269,7 @@ meant writing a server proxy. This may not have been the only way to do
 it, or even the best way to do it, but that's just how we roll. The
 eventual structure (all written in delicious &lt;a class="reference external" href="http://www.twistedmatrix.com"&gt;twisted&lt;/a&gt; protocols)
 looked something like this:&lt;/p&gt;
-&lt;img alt="Module diagram" class="ditaa" src="static/images/04bc3643.png" /&gt;
+&lt;img alt="Module diagram" class="ditaa" src="images/netHUD module diagram.png" /&gt;
 &lt;p&gt;tee.py acted as the proxy and sent any messages received from the
 NetHack server to the controller, which cached the current state of all
 the games and sent updates to any listening netHUD instances. This way,
