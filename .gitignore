@@ -1,7 +1,6 @@
-*.pyc
-*.py~
 *~
-*.swp
-output
+*.sw?
+*.pyc
 *.pid
-images
+output
+cache
