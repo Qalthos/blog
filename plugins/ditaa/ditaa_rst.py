@@ -21,7 +21,7 @@ class DiTAA(Directive):
         'no-antialias', 'no-separation', 'round-corners', 'no-shadows', ]
 
     option_spec = {
-        # 'name': directives.uri,   # sanitize me
+        'name': directives.unchanged,
         'class': directives.class_option,
         'alt': directives.unchanged,
         'scale': directives.percentage,

@@ -29,6 +29,7 @@ eventual structure (all written in delicious `twisted`_ protocols)
 looked something like this:
 
 .. ditaa::
+    :name: netHUD module diagram
     :alt: Module diagram
 
     +--------------+
