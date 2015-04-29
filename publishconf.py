@@ -7,6 +7,11 @@ from pelicanconf import *
 
 SITEURL = 'http://qalthos.github.io/blog'
 
+STATIC_PATHS = ['extra/CNAME']
+EXTRA_PATH_METADATA = {
+    'extra/CNAME': {'path': 'CNAME'},
+}
+
 DELETE_OUTPUT_DIRECTORY = True
 
 # Following items are often useful when publishing

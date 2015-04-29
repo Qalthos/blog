@@ -22,9 +22,6 @@ PLUGINS = [
     'related_posts',
 ]
 
-STATIC_PATHS = ['extra/CNAME']
-EXTRA_STATIC_METADATA = {'extra/CNAME': {'path': 'CNAME'},}
-
 DISPLAY_PAGES_ON_MENU = True
 MENUITEMS = (('resume', 'http://qalthos.github.io/resume/resume.pdf'),
             )
