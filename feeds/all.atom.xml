@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://qalthos.github.io/blog/" rel="alternate"></link><link href="http://qalthos.github.io/blog/feeds/all.atom.xml" rel="self"></link><id>http://qalthos.github.io/blog/</id><updated>2014-01-07T23:13:03-05:00</updated><entry><title>Charsheet 1.0</title><link href="http://qalthos.github.io/blog/FOSS@RIT/charsheet-10.html" rel="alternate"></link><updated>2014-01-07T23:13:03-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2014-01-07:FOSS@RIT/charsheet-10.html</id><summary type="html">&lt;p&gt;I've been doing some work for &lt;a class="reference external" href="https://charsheet-qalthos.rhcloud.com"&gt;Charsheet&lt;/a&gt; recently, fixing old bugs and adding
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://qalthos.github.io/blog/" rel="alternate"></link><link href="http://qalthos.github.io/blog/feeds/all.atom.xml" rel="self"></link><id>http://qalthos.github.io/blog/</id><updated>2015-04-29T16:30:58-04:00</updated><entry><title>Deploying MediaGoblin 2: SELinux</title><link href="http://qalthos.github.io/blog/FOSS@RIT/deploying-mediagoblin-2-selinux.html" rel="alternate"></link><updated>2015-04-29T16:30:58-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2015-04-29:FOSS@RIT/deploying-mediagoblin-2-selinux.html</id><summary type="html">&lt;p&gt;So, &lt;a class="reference external" href="deploying-mediagoblin-1-fastcgi-vs-uwsgi.html"&gt;earlier&lt;/a&gt;, I wrote about my experience deploying &lt;a class="reference external" href="http://mediagoblin.org"&gt;MediaGoblin&lt;/a&gt;. None of
+this was necessary, I was mostly trying to diagnose some problems I was having
+and found uWSGI a more comfortable environment than FastCGI.&lt;/p&gt;
+&lt;p&gt;And what problem was this, you ask? Well, when I first ran through the
+installation instructions, everything worked swimmingly (the port issues
+mentioned aside). The server it was running on, however, was running Fedora 17,
+while Fedora 20 has just reached alpha status recently. So, in the interest of
+retaining compatibility and security fixes, there was a fun afternoon of double
+distribution updates.&lt;/p&gt;
+&lt;p&gt;At first, everything seemed to be working fine, but then MediaGoblin began
+inexplicably throwing 'permission denied' errors. As usually happens in these
+cases, the culprit was SELinux, an additional security layer which normally
+transparently protects your system, until something unexpected shows up.&lt;/p&gt;
+&lt;p&gt;I don't pretend to understand SELinux, but I do understand the security
+improvements it brings. Plus I don't want to disable it on a system I don't
+own.&lt;/p&gt;
+&lt;p&gt;Long, boring story short (and it was very long, being noticed first, and not
+fixed until well after I figured out how to get uWSGI running), I got something
+reasonably close to what I think I'm supposed to do. The key was the command
+&lt;tt class="docutils literal"&gt;setsebool &lt;span class="pre"&gt;-P&lt;/span&gt; httpd_can_network_connect on&lt;/tt&gt;, which re-enabled the ability for
+nginx to talk to programs on a network socket, as in the MediaGoblin
+documentation.&lt;/p&gt;
+&lt;p&gt;I initially changed to a file-based Unix socket, but I could not, for the life
+of me figure out how to enable this simply without changing a large number of
+SELinux booleans. There may be some simpler way of accomplishing this, but alas,
+in this case SELinux has once again bested me.&lt;/p&gt;
+</summary><category term="mediagoblin"></category><category term="yacht"></category><category term="SELinux"></category></entry><entry><title>Charsheet 1.0</title><link href="http://qalthos.github.io/blog/FOSS@RIT/charsheet-10.html" rel="alternate"></link><updated>2015-04-29T16:30:58-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2015-04-29:FOSS@RIT/charsheet-10.html</id><summary type="html">&lt;p&gt;I've been doing some work for &lt;a class="reference external" href="https://charsheet-qalthos.rhcloud.com"&gt;Charsheet&lt;/a&gt; recently, fixing old bugs and adding
 new features. I figured it was about time for a 1.0, so I tagged it and released
 it to the wild. Many thanks to &lt;a class="reference external" href="http://oddshocks.com"&gt;oddshocks&lt;/a&gt; not only for the original 0.1
 version of charsheet, but for continued assistance in massaging the site into
@@ -39,33 +65,7 @@ forms.&lt;/td&gt;&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/div&gt;
-</summary><category term="charsheet"></category><category term="openshift"></category></entry><entry><title>Deploying MediaGoblin 2: SELinux</title><link href="http://qalthos.github.io/blog/FOSS@RIT/deploying-mediagoblin-2-selinux.html" rel="alternate"></link><updated>2014-01-07T23:13:03-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2014-01-07:FOSS@RIT/deploying-mediagoblin-2-selinux.html</id><summary type="html">&lt;p&gt;So, &lt;a class="reference external" href="deploying-mediagoblin-1-fastcgi-vs-uwsgi.html"&gt;earlier&lt;/a&gt;, I wrote about my experience deploying &lt;a class="reference external" href="http://mediagoblin.org"&gt;MediaGoblin&lt;/a&gt;. None of
-this was necessary, I was mostly trying to diagnose some problems I was having
-and found uWSGI a more comfortable environment than FastCGI.&lt;/p&gt;
-&lt;p&gt;And what problem was this, you ask? Well, when I first ran through the
-installation instructions, everything worked swimmingly (the port issues
-mentioned aside). The server it was running on, however, was running Fedora 17,
-while Fedora 20 has just reached alpha status recently. So, in the interest of
-retaining compatibility and security fixes, there was a fun afternoon of double
-distribution updates.&lt;/p&gt;
-&lt;p&gt;At first, everything seemed to be working fine, but then MediaGoblin began
-inexplicably throwing 'permission denied' errors. As usually happens in these
-cases, the culprit was SELinux, an additional security layer which normally
-transparently protects your system, until something unexpected shows up.&lt;/p&gt;
-&lt;p&gt;I don't pretend to understand SELinux, but I do understand the security
-improvements it brings. Plus I don't want to disable it on a system I don't
-own.&lt;/p&gt;
-&lt;p&gt;Long, boring story short (and it was very long, being noticed first, and not
-fixed until well after I figured out how to get uWSGI running), I got something
-reasonably close to what I think I'm supposed to do. The key was the command
-&lt;tt class="docutils literal"&gt;setsebool &lt;span class="pre"&gt;-P&lt;/span&gt; httpd_can_network_connect on&lt;/tt&gt;, which re-enabled the ability for
-nginx to talk to programs on a network socket, as in the MediaGoblin
-documentation.&lt;/p&gt;
-&lt;p&gt;I initially changed to a file-based Unix socket, but I could not, for the life
-of me figure out how to enable this simply without changing a large number of
-SELinux booleans. There may be some simpler way of accomplishing this, but alas,
-in this case SELinux has once again bested me.&lt;/p&gt;
-</summary><category term="mediagoblin"></category><category term="yacht"></category><category term="SELinux"></category></entry><entry><title>Deploying MediaGoblin 1: FastCGI vs uWSGI</title><link href="http://qalthos.github.io/blog/FOSS@RIT/deploying-mediagoblin-1-fastcgi-vs-uwsgi.html" rel="alternate"></link><updated>2013-09-23T13:20:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2013-09-23:FOSS@RIT/deploying-mediagoblin-1-fastcgi-vs-uwsgi.html</id><summary type="html">&lt;p&gt;Last week I did a thing I really wasn't expecting to. I deployed
+</summary><category term="charsheet"></category><category term="openshift"></category></entry><entry><title>Deploying MediaGoblin 1: FastCGI vs uWSGI</title><link href="http://qalthos.github.io/blog/FOSS@RIT/deploying-mediagoblin-1-fastcgi-vs-uwsgi.html" rel="alternate"></link><updated>2013-09-23T13:20:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2013-09-23:FOSS@RIT/deploying-mediagoblin-1-fastcgi-vs-uwsgi.html</id><summary type="html">&lt;p&gt;Last week I did a thing I really wasn't expecting to. I deployed
 &lt;a class="reference external" href="http://mediagoblin.org"&gt;MediaGoblin&lt;/a&gt; to FOSS&amp;#64;RIT's yacht server &lt;a class="reference external" href="http://yacht.rit.edu/mediagoblin/"&gt;here&lt;/a&gt;. The initial setup and
 &lt;a class="reference external" href="https://mediagoblin.readthedocs.org/en/v0.5.0/siteadmin/deploying.html"&gt;instructions&lt;/a&gt; are some of the clearest and straightforward I have seen in an
 open-source project.&lt;/p&gt;
