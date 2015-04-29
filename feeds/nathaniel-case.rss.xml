@@ -44,7 +44,7 @@ forms.&lt;/td&gt;&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Wed, 29 Apr 2015 16:33:46 -0400</pubDate><guid>tag:nathanielca.se,2015-04-29:fossrit/charsheet-10.html</guid><category>charsheet</category><category>openshift</category></item><item><title>Deploying MediaGoblin 2: SELinux</title><link>http://nathanielca.se/fossrit/deploying-mediagoblin-2-selinux.html</link><description>&lt;p&gt;So, &lt;a class="reference external" href="deploying-mediagoblin-1-fastcgi-vs-uwsgi.html"&gt;earlier&lt;/a&gt;, I wrote about my experience deploying &lt;a class="reference external" href="http://mediagoblin.org"&gt;MediaGoblin&lt;/a&gt;. None of
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Mon, 02 Dec 2013 17:24:00 -0500</pubDate><guid>tag:nathanielca.se,2013-12-02:fossrit/charsheet-10.html</guid><category>charsheet</category><category>openshift</category></item><item><title>Deploying MediaGoblin 2: SELinux</title><link>http://nathanielca.se/fossrit/deploying-mediagoblin-2-selinux.html</link><description>&lt;p&gt;So, &lt;a class="reference external" href="deploying-mediagoblin-1-fastcgi-vs-uwsgi.html"&gt;earlier&lt;/a&gt;, I wrote about my experience deploying &lt;a class="reference external" href="http://mediagoblin.org"&gt;MediaGoblin&lt;/a&gt;. None of
 this was necessary, I was mostly trying to diagnose some problems I was having
 and found uWSGI a more comfortable environment than FastCGI.&lt;/p&gt;
 &lt;p&gt;And what problem was this, you ask? Well, when I first ran through the
