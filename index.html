@@ -37,49 +37,8 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="http://qalthos.github.io/blog/personal/pycon-2014.html">PyCon 2014</a></h1> 
+                    <h1 class="entry-title"><a href="http://qalthos.github.io/blog/FOSS@RIT/charsheet-10.html">Charsheet 1.0</a></h1> 
                     <footer class="post-info">
-                <abbr class="published" title="2014-04-14T00:26:40.933334">
-                Mon 14 April 2014
-        </abbr>
-
-                <address class="vcard author">
-                By <a class="url fn" href="http://qalthos.github.io/blog/author/nathaniel-case.html">Nathaniel Case</a>
-        </address>
-        <p>In <a href="http://qalthos.github.io/blog/category/personal.html">personal</a>. </p>
-<p>tags: <a href="http://qalthos.github.io/blog/tag/pycon.html">PyCon</a><a href="http://qalthos.github.io/blog/tag/montreal.html">Montréal</a><a href="http://qalthos.github.io/blog/tag/education.html">education</a></p>
-</footer><!-- /.post-info --><p>This is a thing that happened.</p>
-<div class="section" id="thursday">
-<h2>Thursday</h2>
-<p>The Education Summit happened.
-Lots of interesting talks and discussions about various things.</p>
-</div>
-<div class="section" id="friday">
-<h2>Friday</h2>
-</div>
-<div class="section" id="saturday">
-<h2>Saturday</h2>
-</div>
-<div class="section" id="sunday">
-<h2>Sunday</h2>
-</div>
-                </article>
-                            </aside><!-- /#featured -->
-                            <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
-                                                
-
-                 
-                        <li><article class="hentry">    
-                <header>
-                    <h1><a href="http://qalthos.github.io/blog/FOSS@RIT/charsheet-10.html" rel="bookmark"
-                           title="Permalink to Charsheet 1.0">Charsheet 1.0</a></h1>
-                </header>
-                
-                <div class="entry-content">
-                <footer class="post-info">
                 <p><img src="http://www.gravatar.com/avatar/3a3baabff105b46a458688ecf49901af" /></p>
                 <abbr class="published" title="2014-01-07T23:13:03.467393">
                 Tue 07 January 2014
@@ -90,14 +49,53 @@ Lots of interesting talks and discussions about various things.</p>
         </address>
         <p>In <a href="http://qalthos.github.io/blog/category/fossrit.html">FOSS@RIT</a>. </p>
 <p>tags: <a href="http://qalthos.github.io/blog/tag/charsheet.html">charsheet</a><a href="http://qalthos.github.io/blog/tag/openshift.html">openshift</a></p>
-</footer><!-- /.post-info -->                <p>I've been doing some work for <a class="reference external" href="https://charsheet-qalthos.rhcloud.com">Charsheet</a> recently, fixing old bugs and adding
+</footer><!-- /.post-info --><p>I've been doing some work for <a class="reference external" href="https://charsheet-qalthos.rhcloud.com">Charsheet</a> recently, fixing old bugs and adding
 new features. I figured it was about time for a 1.0, so I tagged it and released
 it to the wild. Many thanks to <a class="reference external" href="http://oddshocks.com">oddshocks</a> not only for the original 0.1
-version of charsheet ...</p>
-                <a class="readmore" href="http://qalthos.github.io/blog/FOSS@RIT/charsheet-10.html">read more</a>
-                                </div><!-- /.entry-content -->
-            </article></li>
-                            
+version of charsheet, but for continued assistance in massaging the site into
+something cool.</p>
+<div class="section" id="notable-features">
+<h2>Notable Features</h2>
+<ul class="simple">
+<li>Character classes! You are now given a class based on your favorite language
+(by klocs <a class="footnote-reference" href="#kloc" id="id1">[1]</a>), and your top two stats on the page.</li>
+<li>Fixing Github integration. This was technically fixed in August, but it was
+not finalized or pushed upstream until a few weeks ago.
+- Github backend switched from pygithub3 back to pygithub</li>
+<li>Completely removed tw2 from the site <a class="footnote-reference" href="#tw2" id="id2">[2]</a></li>
+<li>Charsheet will now deploy on Openshift!
+- But not with a MySQL database. This is a known <a class="reference external" href="https://github.com/civx/knowledge/issues/5">bug</a> with knowledge.</li>
+<li>Gnu-cat Will no longer stick around when the back button is pressed
+- Yes, it is actually called GNU-cat.</li>
+<li>Fixed some incompatibilities with Pyramid 1.5</li>
+</ul>
+<p>There's more, but that is the big stuff I'm seeing from the git log. In any
+case, the site is live, so just hop over to
+<a class="reference external" href="https://charsheet-qalthos.rhcloud.com">https://charsheet-qalthos.rhcloud.com</a> and put in your Github, Ohloh, and/or
+Coderwall username(s) and see what your coder character sheet looks like!</p>
+<table class="docutils footnote" frame="void" id="kloc" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Kilo-Lines Of Code, or a unit of 1000 lines of code for the
+uninitiated.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="tw2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>This bears some explanation, but it was just tw2.forms, and the forms were
+static, meaning they were quite underutilized. Forms are now pure HTML
+forms.</td></tr>
+</tbody>
+</table>
+</div>
+                </article>
+                            </aside><!-- /#featured -->
+                            <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+                                                
 
                  
                         <li><article class="hentry">    
@@ -183,6 +181,38 @@ hacked-together Debian build and did not ...</p>
                 <a class="readmore" href="http://qalthos.github.io/blog/FOSS@RIT/building-a-schoolserver.html">read more</a>
                                 </div><!-- /.entry-content -->
             </article></li>
+                            
+
+                 
+                        <li><article class="hentry">    
+                <header>
+                    <h1><a href="http://qalthos.github.io/blog/personal/remysmoke-improving.html" rel="bookmark"
+                           title="Permalink to Remysmoke Improving">Remysmoke Improving</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+                <p><img src="http://www.gravatar.com/avatar/3a3baabff105b46a458688ecf49901af" /></p>
+                <abbr class="published" title="2013-07-26T03:44:00">
+                Fri 26 July 2013
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="http://qalthos.github.io/blog/author/nathaniel-case.html">Nathaniel Case</a>
+        </address>
+        <p>In <a href="http://qalthos.github.io/blog/category/personal.html">personal</a>. </p>
+<p>tags: <a href="http://qalthos.github.io/blog/tag/remysmoke.html">remysmoke</a></p>
+</footer><!-- /.post-info -->                <p><a class="reference external" href="http://remysmoke.linkybook.com/">Remysmoke</a> has had a few updates over the past week, and I think they've gone
+pretty well. Remysmoke is now at version 1.2, here's the changelog for the past
+few versions:</p>
+<div class="section" id="remysmoke-1-0">
+<h2>Remysmoke 1.0</h2>
+<ul class="simple">
+<li>Moved graphs from tw2-protoviz to <a class="reference external" href="http://pygal.org/">pygal</a>.</li>
+<li>Moved smoke input form from tw2-forms to ...</li></ul></div>
+                <a class="readmore" href="http://qalthos.github.io/blog/personal/remysmoke-improving.html">read more</a>
+                                </div><!-- /.entry-content -->
+            </article></li>
                             </ol><!-- /#posts-list -->
                             <p class="paginator">
         Page 1 / 12
@@ -200,36 +230,36 @@ hacked-together Debian build and did not ...</p>
         <div class="tagcloud">
       <h2>tag cloud</h2>
       <ul>
-                  <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/election.html">election</a></li>
-                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/wat.html">wat</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/widgets.html">widgets</a></li>
+                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/knowledge.html">knowledge</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/sugar.html">sugar</a></li>
                   <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/floss-seminar.html">FLOSS-seminar</a></li>
+                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/remysmoke.html">remysmoke</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/lemonade.html">lemonade</a></li>
+                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/wat.html">wat</a></li>
+                  <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/election.html">election</a></li>
+                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/yacht.html">yacht</a></li>
+                  <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/geowebdns.html">geowebdns</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/scrapers.html">scrapers</a></li>
+                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/fabulous.html">fabulous</a></li>
+                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/groovebot.html">groovebot</a></li>
+                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/timeline.html">timeline</a></li>
+                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/mediagoblin.html">mediagoblin</a></li>
+                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/data alchemy.html">data alchemy</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/openshift.html">openshift</a></li>
+                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/hardware.html">hardware</a></li>
+                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/schoolserver.html">schoolserver</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/wikiotics.html">wikiotics</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/peopledashboard.html">peopledashboard</a></li>
+                  <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/democracymap.html">democracymap</a></li>
+                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/selinux.html">SELinux</a></li>
+                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/jquery.html">jQuery</a></li>
+                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/blog.html">blog</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/hackathon.html">hackathon</a></li>
                   <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/pydex.html">pyDex</a></li>
                   <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/polyscraper.html">polyscraper</a></li>
-                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/knowledge.html">knowledge</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/openshift.html">openshift</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/sugar.html">sugar</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/wikiotics.html">wikiotics</a></li>
-                  <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/geowebdns.html">geowebdns</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/hackathon.html">hackathon</a></li>
-                  <li class="tag-2"><a href="http://qalthos.github.io/blog/tag/democracymap.html">democracymap</a></li>
                   <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/surs.html">SURS</a></li>
-                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/yacht.html">yacht</a></li>
-                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/fabulous.html">fabulous</a></li>
+                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/widgets.html">widgets</a></li>
                   <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/journalism.html">journalism</a></li>
-                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/mediagoblin.html">mediagoblin</a></li>
-                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/blog.html">blog</a></li>
-                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/remysmoke.html">remysmoke</a></li>
-                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/schoolserver.html">schoolserver</a></li>
-                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/education.html">education</a></li>
-                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/timeline.html">timeline</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/scrapers.html">scrapers</a></li>
-                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/data alchemy.html">data alchemy</a></li>
-                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/jquery.html">jQuery</a></li>
-                  <li class="tag-4"><a href="http://qalthos.github.io/blog/tag/hardware.html">hardware</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/lemonade.html">lemonade</a></li>
-                  <li class="tag-1"><a href="http://qalthos.github.io/blog/tag/peopledashboard.html">peopledashboard</a></li>
-                  <li class="tag-3"><a href="http://qalthos.github.io/blog/tag/groovebot.html">groovebot</a></li>
               </ul>
     </div>
         <div class="social">

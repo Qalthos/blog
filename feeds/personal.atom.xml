@@ -1,20 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://qalthos.github.io/blog/" rel="alternate"></link><link href="http://qalthos.github.io/blog/feeds/personal.atom.xml" rel="self"></link><id>http://qalthos.github.io/blog/</id><updated>2014-04-14T00:26:40-04:00</updated><entry><title>PyCon 2014</title><link href="http://qalthos.github.io/blog/personal/pycon-2014.html" rel="alternate"></link><updated>2014-04-14T00:26:40-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2014-04-14:personal/pycon-2014.html</id><summary type="html">&lt;p&gt;This is a thing that happened.&lt;/p&gt;
-&lt;div class="section" id="thursday"&gt;
-&lt;h2&gt;Thursday&lt;/h2&gt;
-&lt;p&gt;The Education Summit happened.
-Lots of interesting talks and discussions about various things.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="friday"&gt;
-&lt;h2&gt;Friday&lt;/h2&gt;
-&lt;/div&gt;
-&lt;div class="section" id="saturday"&gt;
-&lt;h2&gt;Saturday&lt;/h2&gt;
-&lt;/div&gt;
-&lt;div class="section" id="sunday"&gt;
-&lt;h2&gt;Sunday&lt;/h2&gt;
-&lt;/div&gt;
-</summary><category term="PyCon"></category><category term="Montréal"></category><category term="education"></category></entry><entry><title>Remysmoke Improving</title><link href="http://qalthos.github.io/blog/personal/remysmoke-improving.html" rel="alternate"></link><updated>2013-07-26T03:44:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2013-07-26:personal/remysmoke-improving.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://remysmoke.linkybook.com/"&gt;Remysmoke&lt;/a&gt; has had a few updates over the past week, and I think they've gone
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://qalthos.github.io/blog/" rel="alternate"></link><link href="http://qalthos.github.io/blog/feeds/personal.atom.xml" rel="self"></link><id>http://qalthos.github.io/blog/</id><updated>2013-07-26T03:44:00-04:00</updated><entry><title>Remysmoke Improving</title><link href="http://qalthos.github.io/blog/personal/remysmoke-improving.html" rel="alternate"></link><updated>2013-07-26T03:44:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2013-07-26:personal/remysmoke-improving.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://remysmoke.linkybook.com/"&gt;Remysmoke&lt;/a&gt; has had a few updates over the past week, and I think they've gone
 pretty well. Remysmoke is now at version 1.2, here's the changelog for the past
 few versions:&lt;/p&gt;
 &lt;div class="section" id="remysmoke-1-0"&gt;
