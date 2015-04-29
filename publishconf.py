@@ -7,7 +7,7 @@ from pelicanconf import *
 
 SITEURL = 'http://nathanielca.se'
 
-STATIC_PATHS = ['extra/CNAME']
+STATIC_PATHS += ['extra/CNAME']
 EXTRA_PATH_METADATA = {
     'extra/CNAME': {'path': 'CNAME'},
 }

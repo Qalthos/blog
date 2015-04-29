@@ -21,6 +21,7 @@ PLUGINS = [
     'gravatar',
     'related_posts',
 ]
+STATIC_PATHS = ['images']
 
 DISPLAY_PAGES_ON_MENU = True
 MENUITEMS = (('resume', 'http://qalthos.github.io/resume/resume.pdf'),
