@@ -75,7 +75,7 @@ class DiTAA(Directive):
         else:
             if p.returncode == 0:
                 url = name
-                urlpath = 'images'
+                urlpath = '/images'
                 if not urlpath and path != '.':
                     urlpath = path
                 if urlpath:
