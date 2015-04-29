@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://qalthos.github.io/blog/" rel="alternate"></link><link href="http://qalthos.github.io/blog/feeds/tag/peopledashboard.atom.xml" rel="self"></link><id>http://qalthos.github.io/blog/</id><updated>2011-06-21T22:56:00-04:00</updated><entry><title>Back up to Speed</title><link href="http://qalthos.github.io/blog/CIVX/back-up-to-speed.html" rel="alternate"></link><updated>2011-06-21T22:56:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-06-21:CIVX/back-up-to-speed.html</id><summary type="html">&lt;p&gt;I've almost closed &lt;a class="reference external" href="https://fedorahosted.org/civx/ticket/106"&gt;bug #106&lt;/a&gt;. I've done all I can do for now, until I
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://nathanielca.se/" rel="alternate"></link><link href="http://nathanielca.se/feeds/tag/peopledashboard.atom.xml" rel="self"></link><id>http://nathanielca.se/</id><updated>2011-06-21T22:56:00-04:00</updated><entry><title>Back up to Speed</title><link href="http://nathanielca.se/civx/back-up-to-speed.html" rel="alternate"></link><updated>2011-06-21T22:56:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-06-21:civx/back-up-to-speed.html</id><summary type="html">&lt;p&gt;I've almost closed &lt;a class="reference external" href="https://fedorahosted.org/civx/ticket/106"&gt;bug #106&lt;/a&gt;. I've done all I can do for now, until I
 can figure out how to attribute actions to senators. Until then, I
 should comment out the 'actions' tab tomorrow with a note letting
 whoever tries this next what I've already tried.
@@ -87,7 +87,7 @@ that I really understand Python's Unicode in a way I never grasped
 before. This should definitely help in the future as Unicode is a very
 important part of coding portable applications and that's something I
 want to do.&lt;/p&gt;
-</summary><category term="peopledashboard"></category><category term="widgets"></category><category term="scrapers"></category><category term="SURS"></category></entry><entry><title>Shelves and Shoves</title><link href="http://qalthos.github.io/blog/CIVX/shelves-and-shoves.html" rel="alternate"></link><updated>2011-06-21T22:56:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-06-21:CIVX/shelves-and-shoves.html</id><summary type="html">&lt;p&gt;Today is the day to hit &lt;a class="reference external" href="https://fedorahosted.org/civx/ticket/105"&gt;bug #105&lt;/a&gt;, another of the leftover bugs from
+</summary><category term="peopledashboard"></category><category term="widgets"></category><category term="scrapers"></category><category term="SURS"></category></entry><entry><title>Shelves and Shoves</title><link href="http://nathanielca.se/civx/shelves-and-shoves.html" rel="alternate"></link><updated>2011-06-21T22:56:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-06-21:civx/shelves-and-shoves.html</id><summary type="html">&lt;p&gt;Today is the day to hit &lt;a class="reference external" href="https://fedorahosted.org/civx/ticket/105"&gt;bug #105&lt;/a&gt;, another of the leftover bugs from
 last year.
 The story goes something like this: there's a lot of data on
 nysenate.gov that is nice to have, but asking for that info on every
@@ -137,7 +137,7 @@ pull smaller volumes of data at a time, hopefully speeding up the
 process.
 We'll see where I get tomorrow, but so far I'm feeling pretty good about
 all this.&lt;/p&gt;
-</summary><category term="peopledashboard"></category><category term="widgets"></category><category term="scrapers"></category><category term="SURS"></category></entry><entry><title>Summer of CIVX</title><link href="http://qalthos.github.io/blog/CIVX/summer-of-civx.html" rel="alternate"></link><updated>2011-06-21T22:56:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-06-21:CIVX/summer-of-civx.html</id><summary type="html">&lt;p&gt;So I'm back at RIT for the summer working on CIVX again. There's been a
+</summary><category term="peopledashboard"></category><category term="widgets"></category><category term="scrapers"></category><category term="SURS"></category></entry><entry><title>Summer of CIVX</title><link href="http://nathanielca.se/civx/summer-of-civx.html" rel="alternate"></link><updated>2011-06-21T22:56:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-06-21:civx/summer-of-civx.html</id><summary type="html">&lt;p&gt;So I'm back at RIT for the summer working on CIVX again. There's been a
 lot of development on Moksha, the software stack CIVX runs on, and not
 all of it was a trivial update. Still, many of the problems I
 encountered were definitely my fault, not the least of which was
@@ -153,7 +153,7 @@ I'm actually surprised how quickly I was able to work this out, though
 of course this is not even remotely new to me. But despite nearly a year
 of inactivity on the project I seem to have gotten back into the swing
 of it pretty well.&lt;/p&gt;
-</summary><category term="peopledashboard"></category><category term="widgets"></category><category term="SURS"></category></entry><entry><title>The Last Week</title><link href="http://qalthos.github.io/blog/CIVX/the-last-week.html" rel="alternate"></link><updated>2011-06-21T22:56:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-06-21:CIVX/the-last-week.html</id><summary type="html">&lt;p&gt;This week has been a mess for a lot of reasons. Let's see what I managed
+</summary><category term="peopledashboard"></category><category term="widgets"></category><category term="SURS"></category></entry><entry><title>The Last Week</title><link href="http://nathanielca.se/civx/the-last-week.html" rel="alternate"></link><updated>2011-06-21T22:56:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-06-21:civx/the-last-week.html</id><summary type="html">&lt;p&gt;This week has been a mess for a lot of reasons. Let's see what I managed
 to get through so far.
 One of the things I got to look at this week is threebean's mokshactl
 branch of CIVX and Moksha. This is a project to simplify the
@@ -176,7 +176,7 @@ polyscraper, but that's nothing worth mentioning at this point. Between
 that and some internal matters and hours of meetings and my car
 developing a leak in it's brake line, that's all that went down this
 week. Tomorrow I get to drive home and hopefully fix my car properly.&lt;/p&gt;
-</summary><category term="peopledashboard"></category><category term="widgets"></category><category term="scrapers"></category><category term="SURS"></category><category term="fabulous"></category></entry><entry><title>Boston</title><link href="http://qalthos.github.io/blog/CIVX/boston.html" rel="alternate"></link><updated>2011-01-23T07:14:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-01-23:CIVX/boston.html</id><summary type="html">&lt;p&gt;So here we are in OLPC HQ, right in the middle of MIT. It's pretty sweet
+</summary><category term="peopledashboard"></category><category term="widgets"></category><category term="scrapers"></category><category term="SURS"></category><category term="fabulous"></category></entry><entry><title>Boston</title><link href="http://nathanielca.se/civx/boston.html" rel="alternate"></link><updated>2011-01-23T07:14:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-01-23:civx/boston.html</id><summary type="html">&lt;p&gt;So here we are in OLPC HQ, right in the middle of MIT. It's pretty sweet
 having &lt;a class="reference external" href="http://lewk.org/"&gt;Luke&lt;/a&gt; around again to hack CIVX with us.
 I've had a lot to do in the past few days. Remy's been showing me
 scrapers and models, and I've been helping transition &lt;a class="reference external" href="http://foss.rit.edu/user/17"&gt;Kate's&lt;/a&gt; people
@@ -194,7 +194,7 @@ projects, tossing ideas about and getting input from a few members
 upstream, not to mention the whole OLPC offices around the corner- this
 was a right proper hackathon, and something that makes me excited for the
 future of these projects.&lt;/p&gt;
-</summary><category term="peopledashboard"></category><category term="hackathon"></category><category term="widgets"></category><category term="Boston"></category></entry><entry><title>Almost There...</title><link href="http://qalthos.github.io/blog/CIVX/almost-there.html" rel="alternate"></link><updated>2010-09-09T18:11:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-09-09:CIVX/almost-there.html</id><summary type="html">&lt;p&gt;Today I worked my way through more of &lt;a class="reference external" href="http://rebeccanatalie.com"&gt;Rebecca's&lt;/a&gt; changes to the people
+</summary><category term="peopledashboard"></category><category term="hackathon"></category><category term="widgets"></category><category term="Boston"></category></entry><entry><title>Almost There...</title><link href="http://nathanielca.se/civx/almost-there.html" rel="alternate"></link><updated>2010-09-09T18:11:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2010-09-09:civx/almost-there.html</id><summary type="html">&lt;p&gt;Today I worked my way through more of &lt;a class="reference external" href="http://rebeccanatalie.com"&gt;Rebecca's&lt;/a&gt; changes to the people
 dashboard. It was actually in better condition than I had thought last
 night. The first tab was the only one with the majority of the changes,
 and most of the changes were easily applied once I understood them-
@@ -209,7 +209,7 @@ really getting into the template version, I began to see what was really
 necessary and not from Rebecca's blinged up copy. There are still a few
 bits missing from the final version, but I think I can get them nailed
 down before I leave today.&lt;/p&gt;
-</summary><category term="peopledashboard"></category></entry><entry><title>CIVX Stuff</title><link href="http://qalthos.github.io/blog/CIVX/civx-stuff.html" rel="alternate"></link><updated>2010-09-09T18:11:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-09-09:CIVX/civx-stuff.html</id><summary type="html">&lt;p&gt;So I've been spending some time finally getting some time to familiarize
+</summary><category term="peopledashboard"></category></entry><entry><title>CIVX Stuff</title><link href="http://nathanielca.se/civx/civx-stuff.html" rel="alternate"></link><updated>2010-09-09T18:11:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2010-09-09:civx/civx-stuff.html</id><summary type="html">&lt;p&gt;So I've been spending some time finally getting some time to familiarize
 myself with CIVX and all the parts that make up the system. I'm almost
 comfortable with how the whole thing works together, though I'm not
 entirely clear on how some things work to finally get to the screen.&lt;/p&gt;
@@ -231,7 +231,7 @@ down the hall somewhere, getting information has turned into a more
 interesting experience when the necessary parts are in his head.&lt;/p&gt;
 &lt;p&gt;I'm looking forward to an exciting next few weeks here, and a fruitful
 next few years with the information learned from this experience.&lt;/p&gt;
-</summary><category term="peopledashboard"></category><category term="widgets"></category></entry><entry><title>Here be Dragons</title><link href="http://qalthos.github.io/blog/CIVX/here-be-dragons.html" rel="alternate"></link><updated>2010-09-09T18:11:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-09-09:CIVX/here-be-dragons.html</id><summary type="html">&lt;p&gt;Today was the day we got &lt;a class="reference external" href="http://www.rebeccanatalie.com"&gt;Rebecca&lt;/a&gt; on to a git repo towards
+</summary><category term="peopledashboard"></category><category term="widgets"></category></entry><entry><title>Here be Dragons</title><link href="http://nathanielca.se/civx/here-be-dragons.html" rel="alternate"></link><updated>2010-09-09T18:11:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2010-09-09:civx/here-be-dragons.html</id><summary type="html">&lt;p&gt;Today was the day we got &lt;a class="reference external" href="http://www.rebeccanatalie.com"&gt;Rebecca&lt;/a&gt; on to a git repo towards
 implementing her changes to the people dashboard. It's only a halfway
 step, as she isn't entirely using the proper version of the widgets but
 a hacked one that works locally, and needs to be morphed into something
@@ -249,7 +249,7 @@ just for what's in the code. Good old meld, which I had been using, has
 proven itself inadequate to the massive differences between these files.
 Hopefully tomorrow I will have a fresh start from which to sculpt this
 mess I've constructed into its completed form.&lt;/p&gt;
-</summary><category term="peopledashboard"></category></entry><entry><title>Just another ten-hour day</title><link href="http://qalthos.github.io/blog/CIVX/just-another-ten-hour-day.html" rel="alternate"></link><updated>2010-09-09T18:11:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-09-09:CIVX/just-another-ten-hour-day.html</id><summary type="html">&lt;p&gt;Today was another exciting day in CIVX-land.&lt;/p&gt;
+</summary><category term="peopledashboard"></category></entry><entry><title>Just another ten-hour day</title><link href="http://nathanielca.se/civx/just-another-ten-hour-day.html" rel="alternate"></link><updated>2010-09-09T18:11:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2010-09-09:civx/just-another-ten-hour-day.html</id><summary type="html">&lt;p&gt;Today was another exciting day in CIVX-land.&lt;/p&gt;
 &lt;p&gt;tl;dr: I spend the day helping other people and being awesome
 It started out with the latest in a series of attempts at getting
 &lt;a class="reference external" href="http://www.rebeccanatalie.com"&gt;Rebecca&lt;/a&gt; to a working CIVX repo. As I work through this with her, I am

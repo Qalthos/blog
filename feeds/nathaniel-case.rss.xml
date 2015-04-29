@@ -1,0 +1,1666 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Why Not Wingnut?</title><link>http://nathanielca.se/</link><description></description><atom:link href="http://nathanielca.se/feeds/nathaniel-case.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 29 Apr 2015 16:33:46 -0400</lastBuildDate><item><title>Charsheet 1.0</title><link>http://nathanielca.se/fossrit/charsheet-10.html</link><description>&lt;p&gt;I've been doing some work for &lt;a class="reference external" href="https://charsheet-qalthos.rhcloud.com"&gt;Charsheet&lt;/a&gt; recently, fixing old bugs and adding
+new features. I figured it was about time for a 1.0, so I tagged it and released
+it to the wild. Many thanks to &lt;a class="reference external" href="http://oddshocks.com"&gt;oddshocks&lt;/a&gt; not only for the original 0.1
+version of charsheet, but for continued assistance in massaging the site into
+something cool.&lt;/p&gt;
+&lt;div class="section" id="notable-features"&gt;
+&lt;h2&gt;Notable Features&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Character classes! You are now given a class based on your favorite language
+(by klocs &lt;a class="footnote-reference" href="#kloc" id="id1"&gt;[1]&lt;/a&gt;), and your top two stats on the page.&lt;/li&gt;
+&lt;li&gt;Fixing Github integration. This was technically fixed in August, but it was
+not finalized or pushed upstream until a few weeks ago.
+- Github backend switched from pygithub3 back to pygithub&lt;/li&gt;
+&lt;li&gt;Completely removed tw2 from the site &lt;a class="footnote-reference" href="#tw2" id="id2"&gt;[2]&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Charsheet will now deploy on Openshift!
+- But not with a MySQL database. This is a known &lt;a class="reference external" href="https://github.com/civx/knowledge/issues/5"&gt;bug&lt;/a&gt; with knowledge.&lt;/li&gt;
+&lt;li&gt;Gnu-cat Will no longer stick around when the back button is pressed
+- Yes, it is actually called GNU-cat.&lt;/li&gt;
+&lt;li&gt;Fixed some incompatibilities with Pyramid 1.5&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There's more, but that is the big stuff I'm seeing from the git log. In any
+case, the site is live, so just hop over to
+&lt;a class="reference external" href="https://charsheet-qalthos.rhcloud.com"&gt;https://charsheet-qalthos.rhcloud.com&lt;/a&gt; and put in your Github, Ohloh, and/or
+Coderwall username(s) and see what your coder character sheet looks like!&lt;/p&gt;
+&lt;table class="docutils footnote" frame="void" id="kloc" rules="none"&gt;
+&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Kilo-Lines Of Code, or a unit of 1000 lines of code for the
+uninitiated.&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;table class="docutils footnote" frame="void" id="tw2" rules="none"&gt;
+&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id2"&gt;[2]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;This bears some explanation, but it was just tw2.forms, and the forms were
+static, meaning they were quite underutilized. Forms are now pure HTML
+forms.&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Wed, 29 Apr 2015 16:33:46 -0400</pubDate><guid>tag:nathanielca.se,2015-04-29:fossrit/charsheet-10.html</guid><category>charsheet</category><category>openshift</category></item><item><title>Deploying MediaGoblin 2: SELinux</title><link>http://nathanielca.se/fossrit/deploying-mediagoblin-2-selinux.html</link><description>&lt;p&gt;So, &lt;a class="reference external" href="deploying-mediagoblin-1-fastcgi-vs-uwsgi.html"&gt;earlier&lt;/a&gt;, I wrote about my experience deploying &lt;a class="reference external" href="http://mediagoblin.org"&gt;MediaGoblin&lt;/a&gt;. None of
+this was necessary, I was mostly trying to diagnose some problems I was having
+and found uWSGI a more comfortable environment than FastCGI.&lt;/p&gt;
+&lt;p&gt;And what problem was this, you ask? Well, when I first ran through the
+installation instructions, everything worked swimmingly (the port issues
+mentioned aside). The server it was running on, however, was running Fedora 17,
+while Fedora 20 has just reached alpha status recently. So, in the interest of
+retaining compatibility and security fixes, there was a fun afternoon of double
+distribution updates.&lt;/p&gt;
+&lt;p&gt;At first, everything seemed to be working fine, but then MediaGoblin began
+inexplicably throwing 'permission denied' errors. As usually happens in these
+cases, the culprit was SELinux, an additional security layer which normally
+transparently protects your system, until something unexpected shows up.&lt;/p&gt;
+&lt;p&gt;I don't pretend to understand SELinux, but I do understand the security
+improvements it brings. Plus I don't want to disable it on a system I don't
+own.&lt;/p&gt;
+&lt;p&gt;Long, boring story short (and it was very long, being noticed first, and not
+fixed until well after I figured out how to get uWSGI running), I got something
+reasonably close to what I think I'm supposed to do. The key was the command
+&lt;tt class="docutils literal"&gt;setsebool &lt;span class="pre"&gt;-P&lt;/span&gt; httpd_can_network_connect on&lt;/tt&gt;, which re-enabled the ability for
+nginx to talk to programs on a network socket, as in the MediaGoblin
+documentation.&lt;/p&gt;
+&lt;p&gt;I initially changed to a file-based Unix socket, but I could not, for the life
+of me figure out how to enable this simply without changing a large number of
+SELinux booleans. There may be some simpler way of accomplishing this, but alas,
+in this case SELinux has once again bested me.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Wed, 29 Apr 2015 16:33:46 -0400</pubDate><guid>tag:nathanielca.se,2015-04-29:fossrit/deploying-mediagoblin-2-selinux.html</guid><category>mediagoblin</category><category>yacht</category><category>SELinux</category></item><item><title>Deploying MediaGoblin 1: FastCGI vs uWSGI</title><link>http://nathanielca.se/fossrit/deploying-mediagoblin-1-fastcgi-vs-uwsgi.html</link><description>&lt;p&gt;Last week I did a thing I really wasn't expecting to. I deployed
+&lt;a class="reference external" href="http://mediagoblin.org"&gt;MediaGoblin&lt;/a&gt; to FOSS&amp;#64;RIT's yacht server &lt;a class="reference external" href="http://yacht.rit.edu/mediagoblin/"&gt;here&lt;/a&gt;. The initial setup and
+&lt;a class="reference external" href="https://mediagoblin.readthedocs.org/en/v0.5.0/siteadmin/deploying.html"&gt;instructions&lt;/a&gt; are some of the clearest and straightforward I have seen in an
+open-source project.&lt;/p&gt;
+&lt;p&gt;There are several reasons I haven't written this up earlier. One of the reasons
+was the web server configuration file was more complex than I was used to, so
+in order to get the server running quickly, I made a new config file for port
+8080. Unfortunately, due to various arcane networking policies, while this
+allowed anyone inside RIT to access the server, it was still not available to
+the outside world.&lt;/p&gt;
+&lt;p&gt;Also, though the instructions were very clear, they used a few things I had not
+used before, and a few things that weren't used in the way I was used to them.
+This is the first blog post on the subject, detailing my confusion with
+FastCGI and its eventual replacement with uWSGI.&lt;/p&gt;
+&lt;div class="section" id="what-the-flup"&gt;
+&lt;h2&gt;What the &lt;tt class="docutils literal"&gt;flup&lt;/tt&gt;?&lt;/h2&gt;
+&lt;p&gt;MediaGoblin, as documented, uses FastCGI to route requests from the web server
+to MediaGoblin. The CGI in FastCGI refers to the 'Common Gateway Interface',
+a standard developed to allow web servers to act as 'gateways' to serve not
+just files but the output of executable programs. The MediaGoblin docs describe
+how to use a python module called &lt;tt class="docutils literal"&gt;flup&lt;/tt&gt; to enable this communication.&lt;/p&gt;
+&lt;p&gt;There's a bit more to it than that, but in Python land, this
+turns out to be a more questionable prospect than it might seem. Python already
+has its own gateway interface (called the web server gateway interface, or
+WSGI) which it is using to talk to FastCGI to have the WSGI turned into CGI so
+that it can be interpreted by the server and turned into a web page. This would
+be fine except that there are other WSGI-specific modules which can translate
+the WSGI into a web page directly.&lt;/p&gt;
+&lt;p&gt;At this point, I assume that you are either skipping ahead past things you
+already know or are horribly lost, so I'll just say that I eventually moved
+MediaGoblin from the &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;paste-&amp;gt;flup-&amp;gt;FastCGI-&amp;gt;nginx&lt;/span&gt;&lt;/tt&gt; contraption it was to a more
+comprehensible &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;uWSGI-&amp;gt;nginx&lt;/span&gt;&lt;/tt&gt;, and this is how I did it.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="enter-uwsgi"&gt;
+&lt;h2&gt;Enter uWSGI&lt;/h2&gt;
+&lt;p&gt;First, I changed the nginx config to talk to uWSGI instead of FastCGI.
+As I was also trying to move MediaGoblin to a subdirectory, I also added the
+&lt;tt class="docutils literal"&gt;uWSGI_modifier1&lt;/tt&gt; line and altered &lt;tt class="docutils literal"&gt;SCRIPT_NAME&lt;/tt&gt; accordingly:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;# Load MediaGoblin via uWSGI&lt;/span&gt;
+&lt;span class="k"&gt;location&lt;/span&gt; &lt;span class="s"&gt;/mediagoblin/&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+   &lt;span class="kn"&gt;include&lt;/span&gt; &lt;span class="s"&gt;uWSGI_params&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+   &lt;span class="kn"&gt;uWSGI_pass&lt;/span&gt; &lt;span class="n"&gt;127.0.0.1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;26543&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+   &lt;span class="c1"&gt;# our understanding vs nginx&amp;#39;s handling of script_name vs&lt;/span&gt;
+   &lt;span class="c1"&gt;# path_info don&amp;#39;t match :)&lt;/span&gt;
+   &lt;span class="kn"&gt;uWSGI_param&lt;/span&gt; &lt;span class="s"&gt;SCRIPT_NAME&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;/mediagoblin&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+   &lt;span class="kn"&gt;uWSGI_modifier1&lt;/span&gt; &lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Second, I altered the &lt;tt class="docutils literal"&gt;lazystarter.sh&lt;/tt&gt; file to accommodate being run with
+uWSGI. This is a bit complicated as &lt;tt class="docutils literal"&gt;lazyserver.sh&lt;/tt&gt;, &lt;tt class="docutils literal"&gt;lazystarter.sh&lt;/tt&gt;, and
+&lt;tt class="docutils literal"&gt;lazycelery.sh&lt;/tt&gt; are all actually the same file, with certain things changing
+depending on the name by which it is invoked. I changed two sections &lt;a class="footnote-reference" href="#id2" id="id1"&gt;[1]&lt;/a&gt;,
+first:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;local_bin&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;./bin&amp;quot;&lt;/span&gt;
+&lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$selfname&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; in
+    lazyserver.sh&lt;span class="o"&gt;)&lt;/span&gt;
+        &lt;span class="nv"&gt;starter_cmd&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;paster
+        &lt;span class="nv"&gt;ini_prefix&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;paste
+        &lt;span class="p"&gt;;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;became:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;local_bin&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;./bin&amp;quot;&lt;/span&gt;
+&lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$selfname&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; in
+    lazyserver.sh&lt;span class="o"&gt;)&lt;/span&gt;
+        &lt;span class="nv"&gt;starter_cmd&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;uwsgi
+        &lt;span class="nv"&gt;ini_prefix&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;paste
+        &lt;span class="p"&gt;;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And then near the very end of the file:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;CELERY_ALWAYS_EAGER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
+&lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$selfname&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; in
+    lazyserver.sh&lt;span class="o"&gt;)&lt;/span&gt;
+        &lt;span class="nv"&gt;$starter&lt;/span&gt; serve &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$ini_file&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$@&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; --reload
+        &lt;span class="p"&gt;;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;became:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;CELERY_ALWAYS_EAGER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
+&lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$selfname&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; in
+    lazyserver.sh&lt;span class="o"&gt;)&lt;/span&gt;
+        &lt;span class="nv"&gt;$starter&lt;/span&gt; --plugin python --virtualenv . --ini-paste &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$ini_file&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$@&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+        &lt;span class="p"&gt;;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This method allows you to keep using all the information on how to run
+MediaGoblin from paste.ini, while using uWSGI to do all the heavy lifting.
+The socket still needs to be defined with the command, though, with
+&lt;tt class="docutils literal"&gt;./lazyserver.sh &lt;span class="pre"&gt;--socket&lt;/span&gt; 127.0.0.1:26543&lt;/tt&gt; or whatever socket you are using.&lt;/p&gt;
+&lt;p&gt;As a side note, this also allows us to use your system's uWSGI &lt;a class="reference external" href="http://uWSGI-docs.readthedocs.org/en/latest/Emperor.html"&gt;emperor&lt;/a&gt; to
+manage bringing up the uWSGI process for you. If you are running &lt;a class="reference external" href="http://mediagoblin.readthedocs.org/en/v0.5.0/siteadmin/production-deployments.html#separate-celery"&gt;celery as a
+separate process&lt;/a&gt;, this still needs to be done somehow, but otherwise (or if
+you've kept &lt;tt class="docutils literal"&gt;CELERY_ALWAYS_EAGER=true&lt;/tt&gt;), then MediaGoblin should be managed
+automatically. This is the format I eventually settled upon, using the
+following uWSGI ini file:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;[uwsgi]&lt;/span&gt;
+&lt;span class="na"&gt;plugin&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;python&lt;/span&gt;
+&lt;span class="na"&gt;uid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;mediagoblin&lt;/span&gt;
+&lt;span class="na"&gt;gid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;mediagoblin&lt;/span&gt;
+&lt;span class="na"&gt;socket&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;127.0.0.1:26543&lt;/span&gt;
+&lt;span class="na"&gt;virtualenv&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;/srv/www/mediagoblin&lt;/span&gt;
+&lt;span class="na"&gt;chdir&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;/srv/www/mediagoblin&lt;/span&gt;
+&lt;span class="na"&gt;ini-paste&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;/srv/www/mediagoblin/paste.ini&lt;/span&gt;
+&lt;span class="na"&gt;logto&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;/srv/www/mediagoblin/mg.log&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="what-next"&gt;
+&lt;h2&gt;What Next?&lt;/h2&gt;
+&lt;p&gt;As far as I can tell, this should have been all we needed to get running.
+Well, this wouldn't have been necessary either, except for some of the
+repercussions of the other big problem that reared it's head, SELinux.&lt;/p&gt;
+&lt;p&gt;But that is &lt;a class="reference external" href="deploying-mediagoblin-2-selinux.html"&gt;another post&lt;/a&gt;.&lt;/p&gt;
+&lt;table class="docutils footnote" frame="void" id="id2" rules="none"&gt;
+&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;This statement is not entirely accurate. I actually made a new link
+named &lt;tt class="docutils literal"&gt;lazyuwsgi.sh&lt;/tt&gt; and added the sections instead of altering the
+existing ones. This format was chosen for clarity.&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Mon, 23 Sep 2013 13:20:00 -0400</pubDate><guid>tag:nathanielca.se,2013-09-23:fossrit/deploying-mediagoblin-1-fastcgi-vs-uwsgi.html</guid><category>mediagoblin</category><category>yacht</category><category>uWSGI</category></item><item><title>Building a Schoolserver</title><link>http://nathanielca.se/fossrit/building-a-schoolserver.html</link><description>&lt;p&gt;One of my tasks for this summer has been to try and get the FOSSBox's
+schoolserver up and running again. We previouly had one a number of years ago,
+but the hardware failed some time ago and the system itself was running a
+hacked-together Debian build and did not have access to some of the actual
+schoolserver scripts.&lt;/p&gt;
+&lt;p&gt;I first attempted to run the &lt;a class="reference external" href="http://wiki.laptop.org/go/XS_Installing_Software_0.7"&gt;instructions&lt;/a&gt; for the latest proper release of
+the XO Schoolserver (henceforth XS), but this did not end very well. For one,
+the instructions (and many automated scripts) assume you have two network
+cards: one for the internal LAN to which the XO laptops connect, and another
+connecting to the Internet. This assumption that the XS would be the gateway
+device for a network of XO laptops would be fine in most deployments where
+there is no existing infrastructure to get in the way, but at RIT where there
+is not only significant infrastructure, but infrastructure I cannot easily
+modify or control, it is less applicable.&lt;/p&gt;
+&lt;p&gt;Here are the steps I have taken to turn a fresh CentOS/RHEL server into an XS:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Set up &lt;a class="reference external" href="http://fedoraproject.org/wiki/EPEL"&gt;EPEL&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Add the &lt;a class="reference external" href="http://wiki.laptop.org/go/XS_Installing_Software_0.7#Installing_on_top_of_existing_OS_installation"&gt;OLPC-XS repository&lt;/a&gt; to your yum config.&lt;/li&gt;
+&lt;li&gt;&lt;tt class="docutils literal"&gt;yum install ejabberd idmgr &lt;span class="pre"&gt;ds-backup-server&lt;/span&gt; &lt;span class="pre"&gt;xs-activity-server&lt;/span&gt;&lt;/tt&gt;&lt;/li&gt;
+&lt;li&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;xs-domain-config&lt;/span&gt; &amp;lt;domain name&amp;gt;&lt;/tt&gt;&lt;/li&gt;
+&lt;li&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;xs-setup&lt;/span&gt;&lt;/tt&gt;&lt;/li&gt;
+&lt;li&gt;Use &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;system-config-firewall-tui&lt;/span&gt;&lt;/tt&gt; to unblock ports 22, 80, 8080, 5222, 5223,
+and 4369&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;xs-setup&lt;/span&gt;&lt;/tt&gt; is the most trying of the commands, because it does a lot of
+background work to set up the OLPC versions of many config files (while still
+leaing the originals in place).&lt;/p&gt;
+&lt;p&gt;There's more to it, &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;xs-setup&lt;/span&gt;&lt;/tt&gt; tends to have some annoying side effects,
+some of the config files need to be manually updated, but this is the general
+idea. This post will be further updated as time goes on.&lt;/p&gt;
+&lt;p&gt;The main problem seen so far is that this is being set up on a RHEL server
+backed by XEN, and the OLPC-XS repository keeps wanting to install an
+incompatible kernel, hosing the system on a regular basis.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Mon, 05 Aug 2013 02:04:00 -0400</pubDate><guid>tag:nathanielca.se,2013-08-05:fossrit/building-a-schoolserver.html</guid><category>sugar</category><category>schoolserver</category></item><item><title>Remysmoke Improving</title><link>http://nathanielca.se/personal/remysmoke-improving.html</link><description>&lt;p&gt;&lt;a class="reference external" href="http://remysmoke.linkybook.com/"&gt;Remysmoke&lt;/a&gt; has had a few updates over the past week, and I think they've gone
+pretty well. Remysmoke is now at version 1.2, here's the changelog for the past
+few versions:&lt;/p&gt;
+&lt;div class="section" id="remysmoke-1-0"&gt;
+&lt;h2&gt;Remysmoke 1.0&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Moved graphs from tw2-protoviz to &lt;a class="reference external" href="http://pygal.org/"&gt;pygal&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Moved smoke input form from tw2-forms to hand-crafted HTML5 forms.&lt;/li&gt;
+&lt;li&gt;Completely removed Toscawidgets and ToscaWidgets2 from Remysmoke (including
+some very old boilerplate TurboGears code).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="remysmoke-1-1"&gt;
+&lt;h2&gt;Remysmoke 1.1&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Updated codebase to TurboGears 2.3.&lt;/li&gt;
+&lt;li&gt;Redeployed Remysmoke on &lt;a class="reference external" href="http://openshift.com/"&gt;OpenShift&lt;/a&gt; Python 2.7 Cartridge (was Python 2.6).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="remysmoke-1-2"&gt;
+&lt;h2&gt;Remysmoke 1.2&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Cleaned up login and smoke forms to be more consistent.&lt;/li&gt;
+&lt;li&gt;Themed form checkboxes to be consistent with the rest of the UI.&lt;/li&gt;
+&lt;li&gt;Added new theming for disabled input boxes.&lt;/li&gt;
+&lt;li&gt;Added new 'unsmoke' option, allowing a user to attest that they have not
+smoked that day.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Remysmoke 1.2 went live late last night, and a  hotfix 1.2.1 will be up shortly
+with an OpenShift-specific patch dealing with overriding the database location
+at runtime.&lt;/p&gt;
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Fri, 26 Jul 2013 03:44:00 -0400</pubDate><guid>tag:nathanielca.se,2013-07-26:personal/remysmoke-improving.html</guid><category>remysmoke</category></item><item><title>National Day of Civic Hacking</title><link>http://nathanielca.se/fossrit/national-day-of-civic-hacking.html</link><description>&lt;p&gt;One of the projects I worked on during the &lt;a class="reference external" href="http://hackforchange.org/fossrit-rochester-civic-hackathon"&gt;Rochester edition&lt;/a&gt; of the
+&lt;a class="reference external" href="http://hackforchange.org"&gt;National Day of Civic Hacking&lt;/a&gt; hackathon was not actually anything intended
+for the hackathon, but a short project I wrote last summer.&lt;/p&gt;
+&lt;p&gt;If you remember from &lt;a class="reference external" href="introducing-fossrit-timeline-year-in-review.html"&gt;my last post&lt;/a&gt; on the subject, I had made three files,
+one for each of the years that the FOSSBox had been keeping track of its
+activities on the &lt;a class="reference external" href="http://foss.rit.edu/timeline"&gt;timeline&lt;/a&gt;. The files were very silly- all the data was
+loaded on the fly from a JSON file, so the only thing in the files was the structure and the 'decoration' text.&lt;/p&gt;
+&lt;p&gt;Clearly this was not something that could stand. Today I finally managet to get
+all the files together into one page. Now, when the page loads, it scans the
+JSON file for all years mentioned, and populates a drop-down list with all the
+years it has found. the first (and usually latest) year's data is then loaded
+onto the page.&lt;/p&gt;
+&lt;p&gt;When the user clicks on another year from the list, the content is reloaded with
+data from the apropriate year. If you want to see it in action, the new review
+page for timeline now lives &lt;a class="reference external" href="http://foss.rit.edu/timeline/summary.html"&gt;here&lt;/a&gt;.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Sun, 02 Jun 2013 03:18:00 -0400</pubDate><guid>tag:nathanielca.se,2013-06-02:fossrit/national-day-of-civic-hacking.html</guid><category>hackathon</category><category>timeline</category><category>jQuery</category></item><item><title>A note on lxml</title><link>http://nathanielca.se/fossrit/a-note-on-lxml.html</link><description>&lt;p&gt;This post is being written from the &lt;a class="reference external" href="http://hackforchange.org/fossrit-rochester-civic-hackathon"&gt;Rochester edition&lt;/a&gt; of the
+&lt;a class="reference external" href="http://hackforchange.org"&gt;National Day of Civic Hacking&lt;/a&gt; hackathon.&lt;/p&gt;
+&lt;p&gt;I've been doing a lot of things with &lt;a class="reference external" href="http://pygal.org"&gt;pygal&lt;/a&gt; lately. It's a really neat tool
+for making SVG graphs in python. One 'problem' is that it needs &lt;a class="reference external" href="http://lxml.de"&gt;lxml&lt;/a&gt;, and
+that has C extensions that need to be compiled. This isn't too bad, though
+sometimes it makes me stop and install a compiler. The real problem is the
+external header files it needs to compile.&lt;/p&gt;
+&lt;p&gt;NOTE: this blog post is entirely the result of my own laziness. Had I simply
+perused the &lt;a class="reference external" href="http://lxml.de/installation.html#installation"&gt;documentation&lt;/a&gt;, I would have found this much sooner. Thus, this
+post is solely a marker of my own eagerness to get things running quickly.&lt;/p&gt;
+&lt;p&gt;After I was asked for the third time how to install lxml, I finally decided I
+would figure out how it works so it could be done properly. I did find out
+what the needed package was, but I also found that if the shell variable
+&lt;tt class="docutils literal"&gt;STATIC_DEPS=true&lt;/tt&gt; was set prior to installation, lxml would seek out and
+download its requirements for you. I don't know how legitimate this is for a
+Python install, but it was certainly quite useful for me and the others
+trying to use lxml. It even works inside a virtualenv, though I don't know why
+it wouldn't.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Sat, 01 Jun 2013 20:46:00 -0400</pubDate><guid>tag:nathanielca.se,2013-06-01:fossrit/a-note-on-lxml.html</guid><category>hackathon</category><category>python</category><category>wat</category></item><item><title>ditaa Addition</title><link>http://nathanielca.se/meta/ditaa-addition.html</link><description>&lt;p&gt;Recently, while wandering around the Internet, I found a neat little project
+called  &lt;a class="reference external" href="http://ditaa.sourceforge.net/"&gt;ditaa&lt;/a&gt;. The basic idea is it takes a textual representation of a
+diagram, and turns it into a real image. My first thought was that this looked
+real neat for use in this blog.&lt;/p&gt;
+&lt;p&gt;I write this now not in HTML directly, but in &lt;a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html"&gt;reStructured Text&lt;/a&gt;, a somewhat
+less verbose markup language native to Python. Thankfully, someone had already
+made a &lt;a class="reference external" href="https://gist.github.com/dvarrazzo/3807373"&gt;directive&lt;/a&gt; for ditaa diagrams to be embedded in reST and get rendered
+to an image in the final page. With this in hand, I managed to cobble together
+a plugin for pelican to add that directive to my posts.&lt;/p&gt;
+&lt;p&gt;There's only one live example at the moment, which is my
+&lt;a class="reference external" href="american-greetings-hackathon-followup.html"&gt;American Greetings hackathon&lt;/a&gt; post. The plugin itself has been added to my
+fork of &lt;a class="reference external" href="http://github.com/Qalthos/pelican-plugins"&gt;pelican-plugins&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;It's not all great, though. One thing I would really like is the ability to
+render the diagram to SVG instead of PNG. SVG is much better for things like
+simple diagrams, as it is web-native, (all it is is a special kind of XML
+document), and it's vector-based, making it inherently scalable for different
+sized displays. As near as I can tell, ditaa appears to use SVG internally, at
+least to some extent. Ideally, I'd like to try to re-implement it in Python, not
+necessarily for any benefit, but because the problem sounds interesting.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Wed, 15 May 2013 00:00:00 -0400</pubDate><guid>tag:nathanielca.se,2013-05-15:meta/ditaa-addition.html</guid><category>blog</category></item><item><title>Blog Rebuild</title><link>http://nathanielca.se/meta/blog-rebuild.html</link><description>&lt;p&gt;As you may notice, my blog looks a lot different now. On the recommendation of
+a few FOSSBoxers, I have moved to &lt;a class="reference external" href="http://blog.getpelican.com/"&gt;Pelican&lt;/a&gt;, a Python-based static site
+generator. The practical upshot of which is that I can now write posts in
+&lt;a class="reference external" href="http://docutils.sourceforge.net/rst.html"&gt;reStructuredText&lt;/a&gt;, keep the posts themselves in git, and host the whole thing
+on &lt;a class="reference external" href="http://pages.github.com/"&gt;GitHub Pages&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;While all of my posts have been successfully moved, not every one has survived
+intact. in particular, paragraph splits in a number of older blogs have been
+lost. I will try to rectify those as they crop up, but there's a lot to go
+through.&lt;/p&gt;
+&lt;p&gt;One of the casualties of the move was the comments. Pelican does not handle
+comments on its own, and while I can hook up a specialized service like Disqus,
+I've decided that it isn't worth the effort at present.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Sun, 21 Apr 2013 18:03:00 -0400</pubDate><guid>tag:nathanielca.se,2013-04-21:meta/blog-rebuild.html</guid><category>blog</category></item><item><title>American Greetings Hackathon Followup</title><link>http://nathanielca.se/fossrit/american-greetings-hackathon-followup.html</link><description>&lt;p&gt;Last weekend was the &lt;a class="reference external" href="http://foss.rit.edu/node/425"&gt;American Greetings Hackathon&lt;/a&gt;, and it was one of
+the most successful yet. We got more than 70 people attending and
+working on projects, and most of those projects had at least something
+working by the end of the 24 hours.&lt;/p&gt;
+&lt;p&gt;I worked with &lt;a class="reference external" href="http://blog.helixoide.com/"&gt;Ross Delinger&lt;/a&gt;, with occasional contributions from &lt;a class="reference external" href="http://www.ryansb.com/"&gt;Ryan
+S. Brown&lt;/a&gt; on a project eventually called &lt;a class="reference external" href="http://github.com/ryansb/hetHUD"&gt;netHUD&lt;/a&gt;. The idea was to
+take the new &lt;a class="reference external" href="http://nethackwiki.com/wiki/NetHack_4"&gt;NetHack 4&lt;/a&gt; network &lt;a class="reference external" href="http://nethackwiki.com/wiki/NetHack_4_Network_Protocol"&gt;protocol&lt;/a&gt; and try to make something
+more than just another interface to NetHack.&lt;/p&gt;
+&lt;p&gt;Originally, we set out simply to connect to the NetHack server and have
+a second channel of information. Ideally, we would make calls to the
+server and have it update us about games in progress. This turned out to
+be problematic for a number of reasons, but the most immediate was that
+we could not get two simultaneous connections to the server.&lt;/p&gt;
+&lt;p&gt;This meant we had to redesign our service. Instead of being a second
+stream, we would need to piggyback on the initial connection, which
+meant writing a server proxy. This may not have been the only way to do
+it, or even the best way to do it, but that's just how we roll. The
+eventual structure (all written in delicious &lt;a class="reference external" href="http://www.twistedmatrix.com"&gt;twisted&lt;/a&gt; protocols)
+looked something like this:&lt;/p&gt;
+&lt;img alt="Module diagram" class="ditaa" src="static/images/04bc3643.png" /&gt;
+&lt;p&gt;tee.py acted as the proxy and sent any messages received from the
+NetHack server to the controller, which cached the current state of all
+the games and sent updates to any listening netHUD instances. This way,
+you connect to NetHack as usual and log in, and then in a second window,
+you connect to the server again on the netHUD port and get a slew of
+information about your current inventory, nearby points of interest (eg.
+monsters, items, traps), and other information. There's a lot more we
+could add to this over time; one of the ideas thrown around at the
+beginning was integration with the NetHack wiki, providing additional
+information about items, monsters, even entire levels.&lt;/p&gt;
+&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Thu, 24 Jan 2013 22:33:00 -0500</pubDate><guid>tag:nathanielca.se,2013-01-24:fossrit/american-greetings-hackathon-followup.html</guid><category>hackathon</category></item><item><title>Recent Projects: Democrat &amp; Chronicle</title><link>http://nathanielca.se/fossrit/recent-projects-democrat-chronicle.html</link><description>&lt;p&gt;One of the new projects I had this summer was a project proposed by the
+&lt;a class="reference external" href="http://www.democratandchronicle.com/"&gt;Democrat &amp;amp; Chronicle&lt;/a&gt;. The project involved access to a selection of
+emails sent to the Greece school district in the wake of the YouTube
+video involving several of their students. The idea was that we would
+get a dump of email bodies and try to glean some information out of
+them.&lt;/p&gt;
+&lt;p&gt;The first hurdle, unfortunately, was getting at the information. Shortly
+after we were approached with the request, I received an Access file
+containing around 5000 email bodies to go through. Being what we are,
+most of the resources in the FOSSBox are oriented around Linux, and no
+one about had a copy of Access installed to get the data into a more
+friendly format.&lt;/p&gt;
+&lt;p&gt;In theory, there are ODBC drivers for access databases, just like there
+are for any other database system. In practice, however, they seem to
+only exist for Windows machines which, while not surprising, was
+disappointing. This led me to dig out an old VirtualBox VM with Windows
+XP on it, install the Access drivers from Microsoft, and throw
+LibreOffice on it, too. There's other ways I could have gotten this done
+instead of LibreOffice, but I was still hoping this could be a simple
+action at the moment.&lt;/p&gt;
+&lt;p&gt;LibreOffice Base eventually got into the Access file, but then the
+troubles started again. It initially prompted me to save a LibreOffice
+database file, which sounded great to me... it could export it
+immediately, then I could copy it over and finish the task in Linux.
+Unfortunately, all this file did was create a small wrapper around the
+Access file, telling LibreOffice where the file was located, and what
+was needed to open it. So now I was back to trying to export the data.
+LibreOffice, though, was not willing to play along. I admit I am less
+than familiar with the Base component of LibreOffice, however some
+exploration and more searching online led me to believe I could not do
+the simple translation of data from one format to another from within
+Base.&lt;/p&gt;
+&lt;p&gt;Instead, I needed to select the table I was interested in (the only
+table in the database), tell LibreOffice to copy the table, then open a
+new spreadsheet in LibreOffice Calc and save the data that way. While
+this makes some sense to me (Base being simply for basic interaction
+with databases, Calc for manipulating raw data), I was dismayed that I
+could not find some way to export a single table to a common data
+format, like CSV, instead of having to go through yet another step. In
+any case, once I dumped the data into Calc, I could easily save it to
+CSV, drop that into my real computer, stop the VM, and get to work for
+real.&lt;/p&gt;
+&lt;p&gt;The end result is &lt;a class="reference external" href="https://github.com/Qalthos/mail_scrape"&gt;this&lt;/a&gt;. I'm not sure it will ever be of any
+particular use to anyone other than myself to remind me how to use the
+Python NLTK module (whose documentation seems to be geared more towards
+researchers than those already familiar with Python), and is hardcoded
+to certain facets of the data I was given, but it does manage to do a
+few things, and at each step it dumps the state of the data to a file so
+I can inspect the process and consider possible improvements.&lt;/p&gt;
+&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Wed, 22 Aug 2012 22:16:00 -0400</pubDate><guid>tag:nathanielca.se,2012-08-22:fossrit/recent-projects-democrat-chronicle.html</guid><category>journalism</category><category>data alchemy</category></item><item><title>Introducing: FOSS@RIT Timeline Year in Review</title><link>http://nathanielca.se/fossrit/introducing-fossrit-timeline-year-in-review.html</link><description>&lt;p&gt;Yesterday, I sat down with Remy and went over the last of the things we
+need to do to close out the summer. There was a long list of items,
+split into two sections, each containing the same sort of stuff.
+FOSS&amp;#64;RIT has done a lot of stuff in the past year, and we need to be
+able to tell people about it.&lt;/p&gt;
+&lt;p&gt;The first section concerned the few things we had done that hadn't yet
+hit &lt;a class="reference external" href="http://foss.rit.edu/timeline/"&gt;Timeline&lt;/a&gt;. This was a fairly sizable chunk of things, and we
+needed a good, rapid-entry way of getting more events in there. No
+problem, I had done some work on that before, I could get it running and
+dump events in there no problem.&lt;/p&gt;
+&lt;p&gt;The second (and slightly longer) list dealt with things we needed to
+compile some information about as a sort of &amp;quot;here's what we've done&amp;quot;
+report. The list of things that needed to be in that was... just about
+the same as the last one. Remy planned to go through the Timeline site
+and add entries from it, categorize them, and push it to foss.rit.edu.&lt;/p&gt;
+&lt;p&gt;This deeply concerned me on two distinct levels. First was the part of
+me that never liked writing. I've mentioned it here once before, and I
+feel I've gotten better since then, but the concept of wading through
+all that data to write a report was not something that made me happy.
+The other part was that all the things in the second list had to be
+added to the timeline at some point anyway, or were likewise available
+from other sources. When Remy showed me what he had written for 2010, it
+was obvious this could be easily replicated in code.&lt;/p&gt;
+&lt;p&gt;About an hour of JavaScript wrangling later, I had made &lt;a class="reference external" href="http://foss.rit.edu/timeline/2011.html"&gt;this&lt;/a&gt;. Also
+&lt;a class="reference external" href="http://foss.rit.edu/timeline/2010.html"&gt;this&lt;/a&gt;, and if you're reading this from about a year in the future,
+&lt;a class="reference external" href="http://foss.rit.edu/timeline/2012.html"&gt;this&lt;/a&gt; should even exist. It's still needs some tweaking, the years are
+hardcoded in the documents, the pages aren't linked from the main
+timeline page, and I'd rather have them all use one common file than
+make a new one each year, but it works, it's fairly similar to what was
+handwritten last year, and it gets updated every time something gets
+added to Timeline.&lt;/p&gt;
+&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Wed, 22 Aug 2012 22:15:00 -0400</pubDate><guid>tag:nathanielca.se,2012-08-22:fossrit/introducing-fossrit-timeline-year-in-review.html</guid><category>data alchemy</category><category>jQuery</category><category>timeline</category></item><item><title>Recent Projects: Knowledge</title><link>http://nathanielca.se/civx/recent-projects-knowledge.html</link><description>&lt;p&gt;One of the cool features of CIVX that really caught my interest when I
+first started working on it was the &lt;a class="reference external" href="https://github.com/FOSSRIT/knowledge"&gt;Knowledge DB&lt;/a&gt;. Using the magic of
+Python, Knowledge is a vertical, polymorphic database for storing
+knowledge about things, which means very little to anyone, even me.&lt;/p&gt;
+&lt;p&gt;What Knowledge does is it allows you to store anything (or anything
+Python can pickle, at least), as arbitrary collections of Entities and
+Facts.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Tue, 07 Aug 2012 23:39:00 -0400</pubDate><guid>tag:nathanielca.se,2012-08-07:civx/recent-projects-knowledge.html</guid><category>knowledge</category></item><item><title>Recent Projects: Groovebot</title><link>http://nathanielca.se/personal/recent-projects-groovebot.html</link><description>&lt;p&gt;This is the first of a number of posts meant to overview the things I've
+been doing recently. First up on the list is the long-overdue
+&lt;a class="reference external" href="https://github.com/Qalthos/groovebot"&gt;Groovebot&lt;/a&gt; update.&lt;/p&gt;
+&lt;p&gt;Before this summer, Groovebot 'worked' on &lt;a class="reference external" href="http://spotify.com/"&gt;Spotify&lt;/a&gt;, and also had a
+fairly useful but under-tested &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Music_Player_Daemon"&gt;MPD&lt;/a&gt; backend that worked for me when I
+could get MPD running properly. Unfortunately, I no longer had an active
+Spotify subscription, which meant that I couldn't use the Spotify
+backend, and I had moved off of RIT's campus, meaning I no longer had a
+~100Mb connection to my fileserver, so streaming files that way was more
+problematic.&lt;/p&gt;
+&lt;p&gt;While looking around for other things I could use to get Groovebot
+running on, I rediscovered &lt;a class="reference external" href="http://kevinmehall.net/p/pithos/"&gt;Pithos&lt;/a&gt;, a Python frontend to Pandora.
+Using Pithos as an authenticator, I could get URLs to music files that I
+could play if I could figure out how to play them in Python. As a
+temporary test, I just sent them to mplayer to play the files. This
+worked well enough, but had the same problem I had encountered with
+Spotify, namely that I could not get a callback properly positioned to
+fire when the song finished.&lt;/p&gt;
+&lt;p&gt;I put the project aside for a time, until &lt;a class="reference external" href="http://www.jlewopensource.com/"&gt;Justin&lt;/a&gt; pointed out
+GStreamer is made to do this sort of thing. With this in mind, I took
+another look at the task, first trying to run GStreamer in its own event
+loop on top of Twisted, then giving up and processing events on a tick.
+This means I have to respond to every event GStreamer throws out (which
+is a fair number of them), but most of them can be thrown out without
+looking at them. Some more tweaking later, and PandBot was born, able to
+connect to a user's Pandora station, play music, and thumb songs up or
+down based on user response in the IRC channel.&lt;/p&gt;
+&lt;p&gt;At this point, I had been writing new bots each time I added a new
+backend, with a lot of repeated code in each, leading to subtle bugs and
+API implementations that were slowly drifting apart based on individual
+needs. This made me a little annoyed, but I didn't have any particular
+need to fix it, so I left it alone. Until an accidental click around the
+Spotify website left me with another Premium subscription (and $10
+poorer...) I poked around on SpotBot to see if it still worked. Turns
+out it did... just not on the DJ computer in the FOSSBox. Turns out that
+spytify, the python bindings for &lt;a class="reference external" href="http://despotify.se/"&gt;despotify&lt;/a&gt; have gotten a little stale
+in the interim, and no longer compile with modern versions of Cython.
+This meant I should probably break down and get an API key from Spotify
+and use the proper official API instead.&lt;/p&gt;
+&lt;p&gt;However, in working on MPD and Pandora bots in the meantime had given me
+a number of ideas and fixes that would be problematic to port back to
+Spotify, which meant I had finally gotten an excuse to try to merge the
+three separate codebases into one unified version. Starting with MPD and
+Pandora, I merged the files and ran the result through a three-way diff,
+trying to identify important parts of each bot to make sure each worked
+properly after the merge. Next, I looked into the architecture of
+pyspotify, and immediately ran into some trouble. pyspotify works
+differently to the backends I had been used to, having its own threading
+I would need to juggle alongside my own. Additionally, the code is not
+thread safe, which is a problem with the heavily-threaded Groovebot
+code.&lt;/p&gt;
+&lt;p&gt;So now, the status is that we are down to two bots. One is the ancient
+Grooveshark code that is in need of updating and integrating with the
+second bot. This second bot has all the work I've been doing lately and,
+some few remaining problems aside, mostly work. Ideally, I will soon
+have a better host for the bot that will let me run Spotify, but for now
+Pandora is working well enough.&lt;/p&gt;
+&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Tue, 24 Jul 2012 18:47:00 -0400</pubDate><guid>tag:nathanielca.se,2012-07-24:personal/recent-projects-groovebot.html</guid><category>groovebot</category></item><item><title>Final Stretch</title><link>http://nathanielca.se/fossrit/final-stretch.html</link><description>&lt;p&gt;So the past two days have been madness trying to get the recently
+christened WebBotWar (or just WebBot) to actually work on the web.&lt;/p&gt;
+&lt;p&gt;We had it working locally some time last week (I think... the days are
+really starting to mush together), but OpenShift was a whole other
+thing. This boiled down to two basic problems we had:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;pybotwar depended on pyBox2D, which needs to compile, which doesn't
+work well even when you have control of the machine&lt;/li&gt;
+&lt;li&gt;We were relying on memcached to provide cheap communication between
+the pybotwar process and the frontend. As near as I can tell,
+memcached is not actually supported on OpenShift Express, though that
+might not actually be true.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The first was surprisingly easy to fix, though it took me some time to
+actually think of the solution. In the final setup, there are
+essentially three repositories: our modified pybotwar, the TG2 webbot
+frontend, and a meta-repository containing both of the previous two in
+the proper places. This third repo is not meant to be actually used to
+develop, its only purpose is to be pushed to OpenShift and act as a
+quick pull for someone looking to run WebBotWar themselves. The
+practical upshot of this is that if we commit pyBox2D inside the
+pybotwar directory of our meta-repo, pybotwar can find its dependencies,
+and no one else needs to have to bother with it.&lt;/p&gt;
+&lt;p&gt;The second problem was more tricky, and eventually resulted in a rather
+simple patch that just happened to take me around 12 hours to get right.
+A quick Google of OpenShift Express Python and &lt;a class="reference external" href="http://en.wikipedia.org/wiki/NoSQL"&gt;NoSQL&lt;/a&gt; led me to
+MongoDB, which has some benefits and drawbacks compared to just shoving
+bits into memory, but seems to work very well in practice and is
+probably the right way to go regardless. To be perfectly fair, memcached
+&lt;em&gt;is&lt;/em&gt; a type of NoSQL, but MongoDB is actually supported by OpenShift in
+an easily-installable manner, and despite its more finicky syntax, it
+works, which is something I failed to get with memcached.&lt;/p&gt;
+&lt;p&gt;Meanwhile, the rest of my team was hard at work making massive progress
+on other fronts. Facebook authentication works, as does uploading custom
+robot definitions, though I don't think the two are plugged into each
+other yet. As well, there are brand new pretty images for the robots and
+the turrets.&lt;/p&gt;
+&lt;p&gt;There's a few outstanding problems left, but (as long as I don't push
+anything broken) you can have a look at webbotwar in action &lt;a class="reference external" href="webbotwar-qalthos.rhcloud.com"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Wed, 29 Feb 2012 16:15:00 -0500</pubDate><guid>tag:nathanielca.se,2012-02-29:fossrit/final-stretch.html</guid><category>pybotwar</category><category>hackathon</category><category>FLOSS-seminar</category><category>webbotwar</category><category>openshift</category></item><item><title>OpenShift Troubles</title><link>http://nathanielca.se/personal/openshift-troubles.html</link><description>&lt;p&gt;Recently I've been playing with &lt;a class="reference external" href="http://openshift.redhat.com/"&gt;OpenShift&lt;/a&gt;, a new(ish) service from
+Red Hat as a sort of 'push to cloud' deployment strategy. It's
+interesting for people like me who can whip up a site quick, but don't
+necessarily have the framework in place to host it.&lt;/p&gt;
+&lt;p&gt;Due to my work on &lt;a class="reference external" href="http://civx.us/"&gt;CIVX&lt;/a&gt;, I've gotten pretty familiar with
+&lt;a class="reference external" href="http://turbogears.org/"&gt;TurboGears&lt;/a&gt;, and the idea of being able to take a site like that and
+run it without having to set up apache or fiddle with paster sounded
+real nice. Unfortunately, it was not so simple as it seems.&lt;/p&gt;
+&lt;p&gt;First up was to get something, anything, running. For a while, OpenShift
+was throwing a &lt;a class="reference external" href="http://www.flickr.com/photos/girliemac/6509400855/in/set-72157628409467125"&gt;500 error&lt;/a&gt; when you tried to get a new application
+registered. A brief poke into their IRC told had them aware of the
+problem and it was fixed shortly. Next came the other part that should
+have been easy, running TurboGears.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://lewk.org/"&gt;Luke&lt;/a&gt; our favorite wizard around these parts, wrote a bit of &lt;a class="reference external" href="https://github.com/lmacken/openshift-quickstarter"&gt;code&lt;/a&gt;
+to get most of the available applications up and running without too
+much effort, including the currently unsupported TurboGears. Running
+this went off without a problem, but the resulting site gave me another
+happy 500 error. After a consult with Remy, we determined there were
+some missing version requirements that kept the site from running. After
+pulling those edits out of his repo and moving them upstream to Luke's,
+I had a working default TurboGears site.&lt;/p&gt;
+&lt;p&gt;Until I tried to log in. Then I got another 500 error.
+I was beginning to get used to this, but it was still annoying to make a
+small change, then push it to the server and wait for the server to
+update the settings before I could test it. Even more fun was the
+occasional &lt;a class="reference external" href="http://www.flickr.com/photos/girliemac/6540643319/in/set-72157628409467125/"&gt;503 error&lt;/a&gt; when OpenShift couldn't keep up with my rapidly
+building and tearing down sites.&lt;/p&gt;
+&lt;p&gt;Feeling that that was going to be a project by itself, I set about
+moving all my non-db-interfacing files to this new repository. The
+prebuilt version assumes that the site internally is named tg2app, and I
+was having trouble convincing it to go by anything else. Eventually I
+just decided to move files across one by one; first the templates that
+don't care what they're named, then the root controller, than the new
+model and widget. A lot of frustration, many &lt;a class="reference external" href="http://www.flickr.com/photos/girliemac/6508023617/in/set-72157628409467125"&gt;403&lt;/a&gt; and &lt;a class="reference external" href="http://www.flickr.com/photos/girliemac/6508022985/in/set-72157628409467125/"&gt;404&lt;/a&gt; errors
+later, I had something that pretended to work as long as I didn't use
+the database. But since the database is kind of the point of the site I
+was building, this was not exactly acceptable.&lt;/p&gt;
+&lt;p&gt;So back to the drawing board then. I had a hunch something was wrong
+when I saw SQLAlchemy errors scroll by every time I reloaded the site.
+My best guess is that SQLAlchemy is failing to create the tables needed
+to run the site and continuing on blindly. Once I realized that, I
+dumped a test db from my local copy to the MySQL db, and suddenly
+everything was working. Or almost everything, anyway.&lt;/p&gt;
+&lt;p&gt;I could read form the db fine, but any time I tried to modify it, I got
+another dreaded 500 error. I poked into everything I could find to try
+to figure out where it was failing, and finally determined it couldn't
+be on my end, as my local copy worked just as expected.&lt;/p&gt;
+&lt;p&gt;Finally I stumbled across the answer, almost accidentally. When I moved
+the db from local sqlite to MySQL, I failed to set the auto increment
+setting on the id of my new databases, so when I neglected to provide an
+id for the new entries I was making, MySQL quite rightly complained at
+me. Unfortunately, since I can't find how to re-enable debug mode (nor
+should I really try), I wasn't getting any good error messages.
+So what is the site that has been giving me all these troubles? It's a
+little site I set up to publicly shame Remy into stopping smoking:
+&lt;a class="reference external" href="http://remysmoke-qalthos.rhcloud.com/"&gt;remysmoke-qalthos.rhcloud.com&lt;/a&gt;&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Fri, 03 Feb 2012 06:47:00 -0500</pubDate><guid>tag:nathanielca.se,2012-02-03:personal/openshift-troubles.html</guid><category>FLOSS-seminar</category><category>openshift</category></item><item><title>Openshift Troubles Continued</title><link>http://nathanielca.se/personal/openshift-troubles-continued.html</link><description>&lt;p&gt;I figured out the problem I was having with OpenShift.&lt;/p&gt;
+&lt;p&gt;To put it simply, I didn't pay enough attention.&lt;/p&gt;
+&lt;p&gt;For reference, when moving an existing TurboGears app to OpenShift, make
+sure you add the changes in config/app_cfg.py&lt;/p&gt;
+&lt;p&gt;As soon as I saw that, I felt really silly for missing it. I was so sure
+that I had gotten all the relevant changes, but apparently I somehow
+missed this file.&lt;/p&gt;
+&lt;p&gt;More detailed directions coming soon.&lt;/p&gt;
+&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Fri, 03 Feb 2012 06:47:00 -0500</pubDate><guid>tag:nathanielca.se,2012-02-03:personal/openshift-troubles-continued.html</guid><category>FLOSS-seminar</category><category>openshift</category></item><item><title>TurboGears2 on OpenShift, just like it should be</title><link>http://nathanielca.se/fossrit/turbogears2-on-openshift-just-like-it-should-be.html</link><description>&lt;p&gt;After much work and many trials, I finally have an app pushed to
+OpenShift with no manual tweaking necessary. As often happens with these
+things, the solution was much simpler than expected.&lt;/p&gt;
+&lt;p&gt;Note: I still don't have a foolproof 'follow this' solution ready, as
+the one I built works exactly as I want it to, but:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;It needs a lot of love and cleanup&lt;/li&gt;
+&lt;li&gt;It requires an external git script that isn't well documented&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The first isn't much of a problem, and can be worked out over the next
+few days. I'm more worried about the second one. For the curious, the
+script is &lt;a class="reference external" href="https://github.com/apenwarr/git-subtree"&gt;git-subtree&lt;/a&gt;, which acts like a submodule except it is more
+transparent to the repository which is a plus given OpenShift's odd
+structure.&lt;/p&gt;
+&lt;p&gt;Back on topic, when we last left off this topic, I had finally gotten
+OpenShift to acknowledge a project in a directory other than tg2app.
+This is useful because, at least for me, most of my projects are not
+named tg2app. That turned out to be stupid problem I had made for
+myself, but unfortunately, the next problem to tackle was not.&lt;/p&gt;
+&lt;p&gt;You see, when setting up an app on OpenShift, you have very little
+control over the actual environment the app is running in (this isn't
+entirely true, but is a useful fiction, especially as the service is
+likely to become more 'plug-and-go'). One of the few ways you can retain
+control is through a series of post-commit hooks, one of which was
+starting off the problematic section of code. When you first push your
+code to OpenShift, it needs to set up your database so it is ready to
+store information and do other databasey things.&lt;/p&gt;
+&lt;p&gt;Naturally, this wasn't happening.&lt;/p&gt;
+&lt;p&gt;First up was a problem with OpenShift. Python's default egg cache (not
+too important, it's a place python can use to extract files from
+installed packages temporarily) is not writable in OpenShift, so that
+needs to be set before anything else will work. Next, the proper MySQL
+library is not installed by TurboGears by default (the default is to use
+sqlite), so that had to be added to the requires list.&lt;/p&gt;
+&lt;p&gt;And then I hit yet another wall. Despite everything being set up
+properly, I could not connect to the MySQL database on OpenShift. It
+wasn't a problem with MySQL, because I could connect fine with the MySQL
+client. It wasn't even a problem with SQLAlchemy, because I was able to
+connect from a short example script. Finally, in a fit of insanity, I
+tried running the build script directly. I'm not even sure why, I was
+just at the point I would do anything just to see if it would work.&lt;/p&gt;
+&lt;p&gt;And, strangely enough, &lt;em&gt;it did&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;This had some pretty profound implications. It meant something was
+different during the build hook than in normal execution. Armed with
+this new knowledge, I headed over to OpenShift's IRC channel to get some
+answers (I had actually been in there for some time prior, just not with
+enough information for the more ruby-oriented users to help).&lt;/p&gt;
+&lt;p&gt;They told me that yes, indeed there was a difference. During the build
+step, the database is stopped, hence why I could not connect to it.
+There were, however, hooks for deploy and post_deploy, during both of
+which the database would be running. I moved the calls needing database
+access to deploy, and suddenly everything worked! I made a few more
+changes, cleaned up my tree, and tested it on a new app I wanted to get
+on OpenShift, and it (mostly) worked. There were a few problems left,
+but they seemed to be mostly my fault (and problems with the
+application, not OpenShift), so it looked like I had finally fixed
+deploying a standard TurboGears app. I've no doubt that there's
+something I've left out, but I'm pretty amazed at the progress I've made
+so far, and learned a lot about both OpenShift and TurboGears.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Fri, 03 Feb 2012 06:47:00 -0500</pubDate><guid>tag:nathanielca.se,2012-02-03:fossrit/turbogears2-on-openshift-just-like-it-should-be.html</guid><category>hackathon</category><category>FLOSS-seminar</category><category>openshift</category></item><item><title>FLOSS Seminar Update</title><link>http://nathanielca.se/fossrit/floss-seminar-update.html</link><description>&lt;p&gt;So it's week 5, what has been going on?&lt;/p&gt;
+&lt;p&gt;The class has split into three groups, working on different games. My
+group's idea is a social update to the venerable likes of &lt;a class="reference external" href="http://robocode.sourceforge.net/"&gt;robocode&lt;/a&gt;,
+though how exactly that is going to pan out is still debatable.&lt;/p&gt;
+&lt;p&gt;Ideally, this would comprise of a wrapper around the basic game, not
+requiring much tweaking of the internals, though a new interface would be
+required for use on the web. All in all the class is shaping up to be
+pretty interesting.&lt;/p&gt;
+&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Thu, 19 Jan 2012 17:46:00 -0500</pubDate><guid>tag:nathanielca.se,2012-01-19:fossrit/floss-seminar-update.html</guid><category>FLOSS-seminar</category></item><item><title>First FLOSS Seminar post</title><link>http://nathanielca.se/fossrit/first-floss-seminar-post.html</link><description>&lt;p&gt;So this quarter I am taking a &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Free_and_open_source_software#FLOSS"&gt;FLOSS&lt;/a&gt; Seminar being taught by &lt;a class="reference external" href="http://threebean.org"&gt;Bean&lt;/a&gt;
+which should be pretty awesome. As a graduate student (as well as a
+fairly advanced FLOSS citizen) there are a few extra things going to be
+required of me, and we're working on ironing out the exact details now.
+It looks like it's going to be a really cool quarter.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Thu, 01 Dec 2011 20:22:00 -0500</pubDate><guid>tag:nathanielca.se,2011-12-01:fossrit/first-floss-seminar-post.html</guid><category>FLOSS-seminar</category></item><item><title>GrooveBot updates</title><link>http://nathanielca.se/personal/groovebot-updates.html</link><description>&lt;p&gt;Today I'm going to talk about something a bit more understandable, I
+hope.&lt;/p&gt;
+&lt;p&gt;Back around the summer of 2010, the FOSSBox wanted some ambient music to
+play in the background. One of the things we wanted was a way to have
+control over the songs played be available to anyone, even if they
+weren't here to listen with us. &lt;a class="reference external" href="http://jlewopensource.com/"&gt;Jlew&lt;/a&gt; was working on some IRC bots at
+the time, so he wrote up a bot that could hook into the &lt;a class="reference external" href="http://www.grooveshark.com/"&gt;GrooveShark&lt;/a&gt;
+API and play music that users requested through IRC. It was cool, when
+it worked, and it was fun having community control over song selections,
+even when that sometimes led to a bit of musical griefing.&lt;/p&gt;
+&lt;p&gt;Then GrooveShark kept changing it's API without warning, then they
+changed their pricing for access to said API, and then the bot stopped
+working. Plans to build a more robust bot around &lt;a class="reference external" href="https://gitorious.org/jlew/groovebot"&gt;GrooveBot&lt;/a&gt;, as it was
+now called, were scrapped, and the FOSSBox was quiet once more.&lt;/p&gt;
+&lt;p&gt;Then &lt;a class="reference external" href="http://turntable.fm/"&gt;turntable.fm&lt;/a&gt; happened. While we are not their optimal use-case,
+it did allow us a measure of community choice in our songs, and
+generally got us back to playing some sweet tunes while we work, with
+the added bonus that anyone could run it, not just people with premium
+access. Everything was pretty good, all things considered, and we could
+continue on with our lives.&lt;/p&gt;
+&lt;p&gt;Except for one thing.&lt;/p&gt;
+&lt;p&gt;Now with GrooveBot, you could send all kinds of commands to the bot and
+it would tell you what songs were playing, queue additional songs, pause
+or resume playback, and so on, all from the IRC windows we were already
+using to communicate with people outside of the area. I don't expect any
+of this to be available for Turntable any time soon, but there is one
+function that I have sorely missed. And that is the ability to change
+the volume from my computer without having to get up and manually prod
+whoever's running the audio.&lt;/p&gt;
+&lt;p&gt;So now there is a stripped version of GrooveBot on gitorious called
+volbot, and all he does is respond to requests to change the volume.
+Hopefully, when a new, free music API becomes available that we can hook
+into, it should be easier to reimplement those functions in a more
+general way so that multiple backends can be used for a more varied
+music experience. And then we can get back to the OS grooving.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Wed, 28 Sep 2011 01:28:00 -0400</pubDate><guid>tag:nathanielca.se,2011-09-28:personal/groovebot-updates.html</guid><category>groovebot</category></item><item><title>Multiprocessing the PolyScraper</title><link>http://nathanielca.se/civx/multiprocessing-the-polyscraper.html</link><description>&lt;p&gt;Warning: This post was written at 4AM and contains a technical account
+of what I have been doing attempting to parallelize CIVX's internals. If
+you are looking for a more general overview of what I have been doing
+recently, you are better off looking to another one of my posts.
+Recently, I have been working on CIVX's PolyScraper, a neat little piece
+of code designed to be able to read and understand structured text
+without knowing how the text is structured beforehand. On Thursday, I
+let a test scrape of a rather large dataset start, figuring it would
+finish sometime over the weekend and I'd be able to pick it up on
+Monday. Then Monday rolled around, and the scrape was still running.
+Worse, it didn't seem to be taking full advantage of the available
+resources. Running as it was on the boat, it had four cores at its
+disposal, however it was steadfastly using only one core.
+Now PolyScraping is not an inherently parallelizable task, but on large
+datasets it should benefit from some kind of parallelization,
+particularly when using large numbers of small files (less so with small
+numbers of large files, those types of tasks are usually sequential as
+you have a smaller number of resources blocking on read IO). Clearly
+there were other things to look into, but if I could do this, this would
+mean a huge win for offline scraping, which was one of the things I had
+enabled with my addition of local file support to the PolyScraper.
+This all led me to &lt;a class="reference external" href="http://docs.python.org/library/multiprocessing.html"&gt;multiprocessing&lt;/a&gt;, a library I'd been wanting to try
+out in python for some time now. Without going into too much detail,
+multiprocessing attempts to get around the &lt;a class="reference external" href="http://docs.python.org/glossary.html#term-global-interpreter-lock"&gt;Global Interpreter Lock&lt;/a&gt; by
+spawning subprocesses instead of threads.
+The first attempt was written pretty quickly, as I still remember a lot
+from my Parallel Computing class from a while ago. Indeed the main
+problem turned out to be SQLAlchemy, or, more specifically our use of
+sqlite for a backend db. Sqlite is not the most robust of databases and
+can't really handle multiple processes attempting to write to the db at
+once. Luke suggested (and I would love to try) moving over to Postgres
+as we will eventually be doing on the boat, but unfortunately the boat
+has been 'stuck ashore' for some time now due to an extended outage in
+CSH's network.
+In the meantime I have been whittling the process down to what I think
+is the essentials. In the process I have made a complete mess of the
+code concerning the PolyScraper, but I should be able to make things at
+least look like the way they were before too long.
+At this point, though, I have been working on this project for close to
+20 hours today now. Luke is in town and we're all posted up in Remy's
+new place all hacking on our projects together. With any luck a good
+night's sleep will clear my head and give me new ideas for tomorrow.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Wed, 29 Jun 2011 18:04:00 -0400</pubDate><guid>tag:nathanielca.se,2011-06-29:civx/multiprocessing-the-polyscraper.html</guid><category>hackathon</category><category>SURS</category><category>polyscraper</category></item><item><title>Back up to Speed</title><link>http://nathanielca.se/civx/back-up-to-speed.html</link><description>&lt;p&gt;I've almost closed &lt;a class="reference external" href="https://fedorahosted.org/civx/ticket/106"&gt;bug #106&lt;/a&gt;. I've done all I can do for now, until I
+can figure out how to attribute actions to senators. Until then, I
+should comment out the 'actions' tab tomorrow with a note letting
+whoever tries this next what I've already tried.
+There is still some work to do in this code, particularly with fixing
+the hacky Assembly scraping I wrote last year which also broke. However,
+considering that the Assembly is not currently one of the bits we are
+trying to expose (and they don't have a nice public API like the
+Senate), it probably won't get done for a little while.
+When I left yesterday, I had exposed the senator's social page, but none
+of the other tabs were showing up. The problem for this turned out to be
+that the image representing the tab was corrupted and the text beneath
+it was white, making it overall look like the tab was invisible. Once I
+got a new image for the tab, they all suddenly appeared, though only the
+bills had any information.
+The next thing to fix was the scraping of the committees, whose pages
+had also changed subtly in the past few months. Fixing this was much
+less annoying than building them the first time, and I was able to
+remove a lot of old shims in the code from when I was first being
+introduced to &lt;a class="reference external" href="http://www.crummy.com/software/BeautifulSoup/"&gt;BeautifulSoup&lt;/a&gt;. Some of my later changes made this
+particularly easy, and since BeautifulSoup is so powerful, I was able to
+restore access to the data with relative ease. As a bonus, as soon as I
+had committees back up, the tabs for votes and meetings came with it for
+free. Suddenly, I was almost there!
+The final problem I encountered today is actually not a new one, but one
+we struggled with last year, and one I now feel confident I have
+actually fixed and understand now. Once I got all the data pulling
+again, a few of the pages would crash the server with
+UnicodeDecodeErrors.
+As a warning, some heavy Python is about to come down
+UnicodeDecodeError is an error which happens (generally) when attempting
+to decode a string into a Unicode object. This is generally a great
+thing to do, as Python strings are generally encoded in the relatively
+restrictive ASCII, which does not have characters for any of the more
+exciting characters like accents and non-latin symbols. Unicode has no
+such restrictions, and indeed has data for many, many more symbols, at
+the cost of a few more bits of storage per character.
+So why were we getting this error? The relevant line of code was 's =
+unicode(s)' and was contained within &lt;a class="reference external" href="http://pythonpaste.org/webob/#introduction"&gt;WebOb&lt;/a&gt; code, not something I was
+going to be able to modify successfully. Still, even this shouldn't be a
+problem. The purpose of this function is to turn strings to Unicode
+strings.
+Except I didn't have a string, I already had a Unicode string.
+Even this shouldn't be a problem, except that unicode() tries to
+interpret its input as a string and then turn it into a Unicode string.
+And while Unicode strings can be easily represented as normal strings,
+the default of the unicode() function is to try to interpret those
+strings as ASCII strings, and I had accents in the strings. These
+strings were representing the names of the senators, so I had to make
+sure it came out right.
+In order to solve this, I had to reversibly represent these names as a
+sequence of ASCII characters.
+There are a few ways to replace out-of-bound characters when changing
+strings into lesser encodings, and I had two useful ones to chose from.
+The obvious one to chose was to change the characters into XML character
+entities, however this quickly turned out to be insufficient. While
+&amp;amp;#233; correctly showed up as é on the page, this string is used to
+represent the name everywhere, including in the internal URL
+representing the page. And the ampersand was quickly stripped out as a
+broken argument to the URL, leading to a page for a nonexistent Senator.
+Looking through the code, there were three distinct uses for the name
+string. The first, which had started all this, was as an ASCII key to a
+dictionary which needed to be authoritative but not necessarily
+accurate. In other words, I needed it to be the same everywhere, but it
+didn't necessarily need to be the correct name of the senator. The
+second was the use on the generated web page, which needed to be as
+accurate as possible to the Senator's actual name, as it is going to be
+viewed publicly. The third, and the current stickler was the name in the
+URL. Again, this had to be authoritative but not necessarily accurate.
+This one, however, had to also only include web-safe characters, of
+which &amp;amp;, # and ; do not qualify.
+I mulled this over for a while, thinking up more and more elaborate
+schemes for intercepting the names before they reached critical areas,
+but none of it was terribly good coding practice. After far too much
+thinking, I realized the obvious answer: have separate internal and
+external names. The system still relies on the senator's name, which is
+still a questionable practice given the multiple spellings of names that
+occasionally pop up, (but mostly because I remember &lt;a class="reference external" href="http://www.kalzumeus.com/2010/06/17/falsehoods-programmers-believe-about-names/"&gt;this post&lt;/a&gt;, which
+is something you should always keep in mind when programming around
+names. The display name, on the other hand, has none of the restrictions
+on characters (though it still needs to be ASCII to display properly),
+but by using XML entities, we can make any character we want without
+problems.
+This was a long path to take to get back to where we were, but I think
+that I really understand Python's Unicode in a way I never grasped
+before. This should definitely help in the future as Unicode is a very
+important part of coding portable applications and that's something I
+want to do.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Tue, 21 Jun 2011 22:56:00 -0400</pubDate><guid>tag:nathanielca.se,2011-06-21:civx/back-up-to-speed.html</guid><category>peopledashboard</category><category>widgets</category><category>scrapers</category><category>SURS</category></item><item><title>Shelves and Shoves</title><link>http://nathanielca.se/civx/shelves-and-shoves.html</link><description>&lt;p&gt;Today is the day to hit &lt;a class="reference external" href="https://fedorahosted.org/civx/ticket/105"&gt;bug #105&lt;/a&gt;, another of the leftover bugs from
+last year.
+The story goes something like this: there's a lot of data on
+nysenate.gov that is nice to have, but asking for that info on every
+call is a little cumbersome. We want to cache as much of the data as we
+can, particularly the stuff that's not going to change in the next week
+or longer. Previously, I had implemented a simple pylons cache which was
+fast, but had no persistent storage, so every time the server went down
+it pulled all the info again. And due to the way the scrape was written,
+it pulled all the info for all the senators at once, creating quite a
+bit of lag before the first page showed up. This clearly wasn't going to
+be something we could continue to develop with.
+Now, I know nothing about caching data, so I did some poking around in
+CIVX to see how it is done elsewhere. Most of the other caches I found
+in CIVX code were related to caching text feeds, which were not as
+explanatory as I was hoping. Once I felt I had a handle on how things
+were done there, I began to try to implement some of it, only to be
+shown &lt;a class="reference external" href="http://threebean.wordpress.com/2011/06/08/cached-function-calls-with-expiration-in-python-with-shelve-and-decorator/"&gt;this post&lt;/a&gt; on &lt;a class="reference external" href="http://docs.python.org/library/shelve.html"&gt;shelve&lt;/a&gt;, a Python library for storing arbitrary
+data. Combined with the decorator, this seemed to do exactly what I
+wanted, namely provide a permanent storage area for a bunch of data with
+a configurable expire time. I dumped the code into the dashboard, hooked
+the proper inputs up and let it run. The results were... promising, but
+not astonishing. The file storage worked, once the data was cached, we
+stopped looking to nysenate.gov for data and instead used our own data,
+even after server restarts.
+The problem was that the file storage seemed to be slower than the
+previous memory cache. This is all perfectly reasonable, since disk
+access is much slower than memory, and a lot of data has to get pulled
+for each senator. The first obvious thing I could do is to re-enable the
+memory cache, but this did not seem to help as much as I wanted it to.
+At this point, &lt;a class="reference external" href="lewk.org"&gt;Luke&lt;/a&gt; popped up in chat to sat that Moksha had a
+&lt;a class="reference external" href="http://pypi.python.org/pypi/shove"&gt;Shove&lt;/a&gt; cache it uses for feeds. Sure enough, back in the files I had
+been poking through earlier, there were some references to Shove. Back to
+the net, I started to explore what Shove was and how it could help me.
+It turns out Shove is mostly drop in compatible with shelve, and aims to
+be a more extensible replacement for it. Once I got a handle on how
+Shove works differently from shelve (answer, not very), I made a few
+tiny tweaks and got a version successfully working with Shove and a
+sqlite backend. This didn't make the end result any faster (well maybe a
+little, but not much), but there is a lot of room for improvement,
+particularly if I can hook into Moksha's own stores. Further, Shove has
+its own abilities to cache items in memory in addition to storing them,
+which I would like to look into. The best route for efficiencies, I
+think is to change how the data gets stored in the cache. Currently all
+the data gets pulled at once, which was done to pacify the pylons cache.
+However, if I can get individual caches for each senator, then I can
+pull smaller volumes of data at a time, hopefully speeding up the
+process.
+We'll see where I get tomorrow, but so far I'm feeling pretty good about
+all this.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Tue, 21 Jun 2011 22:56:00 -0400</pubDate><guid>tag:nathanielca.se,2011-06-21:civx/shelves-and-shoves.html</guid><category>peopledashboard</category><category>widgets</category><category>scrapers</category><category>SURS</category></item><item><title>Summer of CIVX</title><link>http://nathanielca.se/civx/summer-of-civx.html</link><description>&lt;p&gt;So I'm back at RIT for the summer working on CIVX again. There's been a
+lot of development on Moksha, the software stack CIVX runs on, and not
+all of it was a trivial update. Still, many of the problems I
+encountered were definitely my fault, not the least of which was
+forgetting Arch Linux has switched to Python 3.
+Once I was up, I looked into fixing the people dashboard we worked on
+last summer. In the meantime, the NYS Senate updated their API for
+getting open government data, so I had to figure out the new scheme and
+try to make it work. Complicating this is that they still don't have
+easy access to grabbing all the current senators, and the page we look
+at to get this information changed enough to stop the script from
+completing.
+I'm actually surprised how quickly I was able to work this out, though
+of course this is not even remotely new to me. But despite nearly a year
+of inactivity on the project I seem to have gotten back into the swing
+of it pretty well.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Tue, 21 Jun 2011 22:56:00 -0400</pubDate><guid>tag:nathanielca.se,2011-06-21:civx/summer-of-civx.html</guid><category>peopledashboard</category><category>widgets</category><category>SURS</category></item><item><title>The Last Week</title><link>http://nathanielca.se/civx/the-last-week.html</link><description>&lt;p&gt;This week has been a mess for a lot of reasons. Let's see what I managed
+to get through so far.
+One of the things I got to look at this week is threebean's mokshactl
+branch of CIVX and Moksha. This is a project to simplify the
+administration of a Moksha installation. The project grew out of an
+attempt to easily package Moksha and grew into a much larger system
+capable of managing most aspects of CIVX at once, and in a very pretty
+package, too. It has a few problems, but for the most part, it performs
+quite well, and best of all, it will even integrate itself with Moksha,
+controlling the necessary aspects of Moksha as well.
+In less exciting news, I poked around in the people dashboard while I
+had some time and got Assembly members working again. It didn't take
+much as I had expected, but served to keep me on task while Remy was in
+one of the never ending series of meetings he's had this week.
+On a lighter side of things, I put some &lt;a class="reference external" href="http://lobstertech.com/fabulous.html"&gt;fabulous&lt;/a&gt; in the CIVX shell
+today as I was working in it. The mokshactl branch is already
+fabuloused, and once you see that, there's no coming back. fabulous
+makes things very pretty with only a little work.
+Other than that not a lot has gone down. Some work has gone into the
+polyscraper, but that's nothing worth mentioning at this point. Between
+that and some internal matters and hours of meetings and my car
+developing a leak in it's brake line, that's all that went down this
+week. Tomorrow I get to drive home and hopefully fix my car properly.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Tue, 21 Jun 2011 22:56:00 -0400</pubDate><guid>tag:nathanielca.se,2011-06-21:civx/the-last-week.html</guid><category>peopledashboard</category><category>widgets</category><category>scrapers</category><category>SURS</category><category>fabulous</category></item><item><title>Grokking the Core</title><link>http://nathanielca.se/civx/grokking-the-core.html</link><description>&lt;p&gt;This week begins the real dive into the core of what makes CIVX. Today
+(and yesterday, though yesterday hardly counts as a real day) were spent
+adding major functionality to the polyscraper, something that's been
+overdue for a long time now.
+But what is this magical polyscraper? Well, in short, it's magic. A lot
+of magic, actually, and that's half the problem. You see, in ye olden
+days of CIVX, each data source had to have its own scraper, and these
+were called whenever CIVX decided its data was old enough to get shoved
+out and replaced with new data. This was all well and fine, except that
+it took a very long time to get a scraper written for a new data source.
+You would have to define all the columns, give it a location to look,
+make sure you understood the site's particular dialect and scrubbed out
+any irregularities in their data. What the poly scraper does is it
+replaces all of those individual scrapers and replaces them with one big
+scraper which is smart enough to deal with any URL it finds.
+What I've been doing is adding new sources of data to the polyscraper.
+In particular, yesterday was spent adding the ability to read files off
+of a local disk and properly store them. This, in turn, exposed a few
+holes in the underlying framework which needed to be patched. However,
+this is a vitally important function, as things like the SunlightNY
+scraper I wrote last year works outside of CIVX proper (in Java, no
+less) and cannot be thrown into the polyscraper as easily. But I can
+download the files locally, and then work on them when it is convenient.
+With proper message passing, I can even seamlessly tell the polyscraper
+to pick up the files as soon as they are downloaded.
+Previously to this I had been working at the periphery of CIVX, adding
+functionality to widgets and individual scrapers. This is my first real
+push into the core functionality of CIVX, and it is good to see that I
+really have picked enough up in all this time to really start to
+understand the underlying structure of everything. Every day I learn
+more about what goes on inside this machine, and every day marks another
+set of tools I've learned to wield. I can't wait to see how far I get by
+the end of the summer.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Tue, 21 Jun 2011 22:55:00 -0400</pubDate><guid>tag:nathanielca.se,2011-06-21:civx/grokking-the-core.html</guid><category>scrapers</category><category>SURS</category><category>polyscraper</category></item><item><title>pyDex 1.0</title><link>http://nathanielca.se/personal/pydex-10.html</link><description>&lt;p&gt;And in mostly unrelated but terribly belated news, I finally released
+&lt;a class="reference external" href="https://gitorious.org/pydex"&gt;pyDex 1.0&lt;/a&gt; this morning. Black/White pokedex, new config system, baby
+pokemon, and game detection, are all new features introduced in this
+version. Old configs should get read properly and get seamlessly updated
+to the new version, though there may be a few bugs in the process.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Sun, 08 May 2011 03:19:00 -0400</pubDate><guid>tag:nathanielca.se,2011-05-08:personal/pydex-10.html</guid><category>pyDex</category></item><item><title>Imagine RIT 2011</title><link>http://nathanielca.se/fossrit/imagine-rit-2011.html</link><description>&lt;p&gt;So I've been absent for a while lately, but with good reason. I've been
+preparing for Imagine RIT, which was held earlier today.
+After pulling possibly my longest day's hack yesterday (1pm to 4am,
+approximately), I woke up at 9 and headed over to the Innovation Center
+to talk to people about FOSS. All day long, the FOSSBox was filled with
+curious people, looking to find out what it is we did. We had kids
+poking around on the OLPCs, checking out our software, and occasionally
+getting lost opening new programs. Every time I finished showing a group
+around all the different projects hosted in the FOSSBox, a brand new
+group would appear and start asking questions. It was tiring, especially
+on about three hours of sleep, but it was quite fun and exciting showing
+off our work to new people.&lt;/p&gt;
+&lt;p&gt;Of particular interest was Lemonade Stand, which seemed to excite many
+of the children who came around. Most seemed to pick up the game with
+minimal instruction (though it helped that by now I know very well which
+areas to explain... they should get tightened in the future) and most
+had lots of fun despite the large quantities of math involved.
+And the backdrop to all this was &lt;a class="reference external" href="rise.rit.edu"&gt;Rise Above the Crowd&lt;/a&gt;, the project I
+was spending so much time polishing yesterday. I don't know if I could
+explain what exactly Rise is, other than a real-time journalism and news
+collection framework, which doesn't really explain anything. Basically,
+users submit stories and photos to Rise, which in turn keep track of
+popular and recent content and display this information to strategically
+placed screens throughout the campus. After a few hiccoughs, the servers
+were online and serving data to the public, who then voted on their
+favorite stories. At the FOSSBOX, we had the projector set up serving
+the HD display mode so people could see what was current while they were
+there. Since I was the one most familiar with the system at the time, I
+tried to field any questions that popped up at the time to the best of
+my knowledge, though sometimes that wasn't much help. As the day
+progressed, we uncovered a few new bugs in the new system, and have some
+new tasks before the final release.&lt;/p&gt;
+&lt;p&gt;All in all, a very exciting and fun weekend. We made a few contacts,
+introduced a few more people to FOSS&amp;#64;RIT, and gave away at least 40
+LiveCDs. I think that qualifies as quite a success.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Sun, 08 May 2011 03:16:00 -0400</pubDate><guid>tag:nathanielca.se,2011-05-08:fossrit/imagine-rit-2011.html</guid><category>journalism</category><category>lemonade</category><category>sugar</category><category>Rise</category><category>OPL</category></item><item><title>Special Election Time</title><link>http://nathanielca.se/fossrit/special-election-time.html</link><description>&lt;p&gt;Rochester is having a special election tomorrow to choose a new Mayor,
+as the previous Mayor, Robert Duffy, is now the Lieutenant Governor of
+New York. I've been following the race with some interest despite not
+being registered to vote in this area, especially since I know one of
+the candidates.
+But more exciting than the actual business of an politics is the
+election itself, which gives a great opportunity to introduce &lt;a class="reference external" href="http://foss.rit.edu/election/"&gt;Election
+Scraper 2.0&lt;/a&gt;.
+You may remember the old version. It was largely untested, had a few
+design issues, and wasn't very pretty to look at. Through the election
+night, I tweaked and honed it, until finally, mere minutes before the
+close of the last poll, it gave a very close approximation to an
+accurate number.
+We probably won't have that many problems this time around. But who
+knows? I'm looking forward to an exciting night in any case, and I'll be
+ready to fix any problems as they come.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Tue, 29 Mar 2011 03:07:00 -0400</pubDate><guid>tag:nathanielca.se,2011-03-29:fossrit/special-election-time.html</guid><category>election</category></item><item><title>Election Aftermath</title><link>http://nathanielca.se/fossrit/election-aftermath.html</link><description>&lt;p&gt;So the election was almost a week ago. Here's how our little experiment
+turned out.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://farm2.static.flickr.com/1386/5143595646_9e4e56f556.jpg"&gt;|image0|&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The evening started out rather slowly, with information trickling in
+about races that were all but confirmed. We had the Innovation Center's
+display set up with various maps and information, and my page in the
+center in five columns, all showing zero votes.
+We waited until the polls closed at 9PM, and then we waited some more
+for the information to travel to the Board of Elections and make it onto
+the XML file. Even at this point, I still didn't know if the scraper was
+going to work, so I was checking the &lt;a class="reference external" href="http://66.192.47.50/flashresults.html"&gt;official unofficial results page&lt;/a&gt;
+to make sure they didn't have anything we didn't.&lt;/p&gt;
+&lt;p&gt;When the first results popped on the screen, it was amazing. When
+results kept pouring in, it was even more impressive. When we finally
+figured out that all those numbers were wrong, it was time to start
+getting things fixed.&lt;/p&gt;
+&lt;p&gt;There were several differences from what the Canadian data had led me to
+expect, and so I spent most of the night fixing small problems as they
+showed up. First, votes in NYS are tallied by party, even if multiple
+parties are running the same candidate. This was quite different from
+what I had been led to expect, and so the numbers we started out with
+were quite.. bizarre. Before we realized what was going on, it looked
+like Paladino was beating Cuomo in Monroe County almost 4 to 1. Checking
+back with the flash page revealed that I was only counting one party for
+each candidate, and whichever came last would show up on the screen. I
+had to keep a running count for each candidate rather than throwing out
+old data when going through the file.&lt;/p&gt;
+&lt;p&gt;Having fixed that, and seeing that the numbers now matched what was
+coming out of the flash page, I settled back down and watched the third
+parties fight for 50,000 votes. That is, until someone pointed out to me
+that Andrew Cuomo was currently listed with 1.7 million votes for Monroe
+County alone. Seeing as how the total population of the area is only
+about 1 million, there was clearly something wrong. It seems that in my
+haste to keep count of how many votes a candidate got from each party, I
+was not clearing these numbers once the file was done being read. This
+was probably the hardest fix I had to make during the night, as it broke
+some of the models I had naively put forth on how the program should
+run.&lt;/p&gt;
+&lt;p&gt;I eventually ended up with a workable solution, though I was sad to see
+the third party numbers were much lower now. There remained only one
+small problem, being that most vote totals seemed to be exactly twice
+what the flash site claimed they were. Finally, I realized that there
+was a master 'total votes' line for each candidate which made most of
+the hacks and shims I had written into my scraper obsolete. Instead, I
+could simply show only this total line and everything would be right
+again.&lt;/p&gt;
+&lt;p&gt;This was an amazing experience, especially how the work I was doing was
+being picked up by people outside of RIT. Having to think fast on my
+feet was a new one too. I, like most programmers, usually like to
+examine a problem in detail and have time to test theories before
+publishing changes. Here, I was coding just about as fast as I could to
+fix each bug that turned up, and we managed to make it work before the
+last precincts rolled in.&lt;/p&gt;
+&lt;p&gt;But even more than that, this was an opportunity to take the skills and
+tools I've been accumulating through my time at RIT and make them do
+something more than just a class assignment. This wasn't just another
+program to be written and forgotten, this was something that represented
+the school to some of the public who perhaps hadn't heard about what
+we're doing here. And that is cool.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Tue, 29 Mar 2011 02:59:00 -0400</pubDate><guid>tag:nathanielca.se,2011-03-29:fossrit/election-aftermath.html</guid><category>journalism</category><category>election</category></item><item><title>Election Night</title><link>http://nathanielca.se/fossrit/election-night.html</link><description>&lt;p&gt;So election night is tonight. I'll have free time soon.
+The main reason for my lack of time lately has to do with the election.
+On Wednesday, just before I was going to classes, I got a call from Remy
+asking what my schedule was and if I'd like to take a trip to WXXI to
+talk with Rachel Ward and at their election coverage.
+A few hours later, we're in the lobby of WXXI, being mistaken for
+musicians (as anyone who meets Remy for the first time is likely to do),
+and waiting for Rachel to come down.
+We took a quick tour of the facilities, met a few other people, and got
+down to business. Monroe County's Board of Elections hosts a server with
+the live election information on a static ip and takes it down once the
+election is done. Further, this information is released in the form of
+a flash app, making it harder to move the information.
+After a short discussion, we decided that we weren't going to get
+anywhere without making a call to the BoE. Rachel did her magic on the
+phone, getting more information out of them than I ever could have done.
+To make a long story short, this flash application is driven by an XML
+file (actually two) and that the system was provided by the company who
+made the machines and was pretty much a black box as far as they were
+concerned.
+A short bit of Googling later, I had identified another location that
+used these machines: London, Ontario. using their XML files as a base, I
+made a quick scraper that spat out a basic table of races and
+candidates. It wasn't pretty, but it worked.
+Over the next few days, I poked and prodded at it, adding features and
+eventually moving to an HTML output and checking against a few more
+locations, and cleaned up the code some more. We met with Rachel once
+more yesterday, set the site up to be running on innovationtrail.org,
+and started the countdown.
+The current version of the scraper is now running on
+&lt;a class="reference external" href="http://foss.rit.edu/election/"&gt;http://foss.rit.edu/election/&lt;/a&gt; and should update its information every 30
+seconds, once information exists.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Tue, 29 Mar 2011 02:59:00 -0400</pubDate><guid>tag:nathanielca.se,2011-03-29:fossrit/election-night.html</guid><category>journalism</category><category>election</category></item><item><title>Winter Hackathon 2</title><link>http://nathanielca.se/fossrit/winter-hackathon-2.html</link><description>&lt;p&gt;So I was gonna do a write-up about the winter hackathon.
+That didn't happen too much.
+But there's another one going on now.
+^__^&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Sat, 19 Feb 2011 02:58:00 -0500</pubDate><guid>tag:nathanielca.se,2011-02-19:fossrit/winter-hackathon-2.html</guid><category>hackathon</category></item><item><title>Boston</title><link>http://nathanielca.se/civx/boston.html</link><description>&lt;p&gt;So here we are in OLPC HQ, right in the middle of MIT. It's pretty sweet
+having &lt;a class="reference external" href="http://lewk.org/"&gt;Luke&lt;/a&gt; around again to hack CIVX with us.
+I've had a lot to do in the past few days. Remy's been showing me
+scrapers and models, and I've been helping transition &lt;a class="reference external" href="http://foss.rit.edu/user/17"&gt;Kate's&lt;/a&gt; people
+dashboard into an integrated component or integrating &lt;a class="reference external" href="http://rebeccanatalie.com/"&gt;Rebecca's&lt;/a&gt; theme
+changes on the side. It's been hectic and fun and tough, but I finally
+feel like I'm contributing to a project, something with substance and
+goals, not just writing code to accomplish a task like some of my
+previous co-ops. Being in a team this large helps, especially when we
+pull in outside help like Luke, but I think it's mainly Remy's
+infectious excitement for the project. When he gets down to work, one
+can't help but feel his vision and be excited for the possibilities.
+Unfortunately, that means I had precious little time to pay attention to
+the other teams. Three separate groups hacking away at their own
+projects, tossing ideas about and getting input from a few members
+upstream, not to mention the whole OLPC offices around the corner- this
+was a right proper hackathon, and something that makes me excited for the
+future of these projects.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Sun, 23 Jan 2011 07:14:00 -0500</pubDate><guid>tag:nathanielca.se,2011-01-23:civx/boston.html</guid><category>peopledashboard</category><category>hackathon</category><category>widgets</category><category>Boston</category></item><item><title>Killer Bunnies and the Towering Draw Pile</title><link>http://nathanielca.se/personal/killer-bunnies-and-the-towering-draw-pile.html</link><description>&lt;p&gt;There was a hackathon Friday night, and a write-up is coming soon, but
+first a bit of random chatter.&lt;/p&gt;
+&lt;p&gt;I have, for a few years, been collecting the various pieces that make up
+&lt;a class="reference external" href="http://boardgamegeek.com/boardgame/3699/killer-bunnies-and-the-quest-for-the-magic-carrot"&gt;Killer Bunnies and the Quest for the Magic Carrot&lt;/a&gt;. For Christmas, I
+received the Stainless Steel booster pack, leaving me one short (Ominous
+Onyx) of completing the game's many many expansion packs. In total, my
+game had over 650 cards and was disturbingly fun to play.
+Yesterday, I was surprised upon reaching my friend Eric's apartment to
+be greeted with not just one, but two new expansions, one of which I
+didn't even know existed. I am now the owner of not just the Ominous
+Onyx booster pack, but also the mysterious new Chocolate pack, adding in
+many of the hard-to-find promo cards that Playroom has put out over the
+years.&lt;/p&gt;
+&lt;p&gt;We put together the full game, now consisting of 770 playable cards, 11
+dice, 9 pawns, a large cardboard ball, and various plastic tokens and
+stands to help try and make sense of all the nonsense. The draw pile
+stacks over a foot high thanks to the thick card construction, and
+shuffling amounts to little more than a best-effort situation. The game
+is frankly insane and a blast to play, with a breadth of randomness not
+normally found in such games. While strategy is important, one can
+switch freely between winning and losing with a few short turns, and
+often quite frequently does. The game is long enough to be satisfying,
+but not so long as to drag on, (as long as people are paying attention)
+and the variety and humor in the cards keeps the game fresh play after
+play.&lt;/p&gt;
+&lt;p&gt;Still, my game is not quite complete. One more add-on remains, though
+not really a necessary one. A spin-off game called Kinder Bunnies also
+exists, aimed at a younger audience with streamlined rules and
+simplified gameplay. It is also completely compatible with the main
+Killer Bunnies game, with a few cards directly referencing Kinder
+Bunnies from Killer Bunnies. it also would add another ten &amp;quot;Magic
+Carrots&amp;quot; to the game, which are a sort of victory point mechanism, where
+once all the Magic Carrots have been picked up, the game ends. Thus, the
+addition would extend gameplay a bit more and provide new challenges for
+longtime players (not to mention many more dice to play with).&lt;/p&gt;
+&lt;p&gt;So that's how I spent my weekend apart from coding like a superstar. But
+don't worry, I'll get to that soon.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Sun, 23 Jan 2011 07:12:00 -0500</pubDate><guid>tag:nathanielca.se,2011-01-23:personal/killer-bunnies-and-the-towering-draw-pile.html</guid><category>games</category></item><item><title>pyDex on Sugar</title><link>http://nathanielca.se/personal/pydex-on-sugar.html</link><description>&lt;p&gt;A warning, this gets very technical with lots of acronyms and jargon.
+tl;dr: I have a new pyDex branch which *should* run on the OLPC
+A few days ago, I decided I'd finally see how well pyDex runs on the
+OLPC. Turns out, it runs pretty well, which isn't too surprising as it
+is written in pure pyGTK and Glade, both of which are well supported in
+Sugar.
+So today, I loaded up my dev files and set to work. First, though, I had
+to clean up my dev branch and finish committing the few hacks I had
+accumulated over the last few months. I finally fixed the zero index bug
+and found I had a problem in my new scraper that was causing all the
+evolution problems. In any case, that's all fixed, so my dev branch is
+nice and clean and almost ready for the Black/White release in a few
+weeks.
+Getting back to Sugar, I finally found &lt;a class="reference external" href="http://magazine.redhat.com/2007/04/26/building-the-xo-porting-a-pygtk-game-to-sugar-part-two/"&gt;a good tutorial&lt;/a&gt; on *porting*
+a pyGTK program rather than writing a new one. While admittedly I
+haven't looked very hard, I had had a bit of a problem getting past the
+example activity before, probably due to my use of Glade as I cannot
+replace my top window as easily when it is automatically pulled from
+Glade's XML and I really don't feel like defining everything in code.
+The most useful thing I found in this tutorial is sending different
+parents to the main panel depending on where it is called from. So if we
+call the program normally, main_window is still loaded from Glade, but
+if Sugar loads it, we use their prebuilt panel.
+It still needs to be tested, and I need to add actual activity
+information (and an icon eventually), but I think it should work. I'll
+probably get to test it sometime this weekend, maybe even turn it into a
+real activity by then. This is still just a small project, and I doubt
+it will ever go up on Sugar's activities site, but it has given me a
+much better understanding about how non-pygame activities work.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Wed, 19 Jan 2011 23:51:00 -0500</pubDate><guid>tag:nathanielca.se,2011-01-19:personal/pydex-on-sugar.html</guid><category>sugar</category><category>pyDex</category></item><item><title>Wikiotics Visual Tweak</title><link>http://nathanielca.se/fossrit/wikiotics-visual-tweak.html</link><description>&lt;p&gt;So &lt;a class="reference external" href="http://trosehfoss.blogspot.com/"&gt;trose&lt;/a&gt; and I have been asked to put a bow on the Wikiotics work
+while we're between projects. We both hit some bumps at the end of the
+quarter, so there's a few unused hours left to put into this project.
+One of the things we've been tasked with is looking at the CSS and
+seeing if there is anything we can do to it to make it look a little
+better. Now, neither trose nor I are designers by any stretch of the
+imagination, but we've got a few ideas that might go a ways to making
+Wikiotics look more attractive.
+&lt;a class="reference external" href="http://3.bp.blogspot.com/_NuCXZozR8O8/TQAXjymF2KI/AAAAAAAAAi8/02g5WgJiCj0/s320/Screenshot-Wikiotics%2B-%2BNamoroka-1.png"&gt;|image0|&lt;/a&gt;
+This is how Wikiotics looks today. The different actions possible on a
+page are hanging out awkwardly in the center, and there's no clear
+division between the header and the content. After looking at this for a
+while, trose and I decided that we would emulate a few of the more
+reasonable designs of the more common wiki systems out there.
+&lt;a class="reference external" href="http://4.bp.blogspot.com/_NuCXZozR8O8/TQAXkGhFoPI/AAAAAAAAAjE/lnUp7vNtbAI/s320/Screenshot-Wikiotics%2B-%2BNamoroka.png"&gt;|image1|&lt;/a&gt;
+This is how Wikiotics looks on our local git. The 'tabs' have been moved
+to the right, and pushed further into the top bar (maybe too much).
+Further, the active tab bleeds into the content area, which is lightly
+colored to mark it as a separate area from the header and footer areas.
+The changed text and color on the top bar are not our doing, this
+appears to be a side-effect of running a subinstance of another page as
+we are, as is the case with the red link color.
+These changes are a small step, but I think they go some way towards
+making Wikiotics a bit more approachable to outsiders. There are a few
+more things to be done on Friday, but I don't think we're yet done
+looking at this.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Wed, 08 Dec 2010 23:51:00 -0500</pubDate><guid>tag:nathanielca.se,2010-12-08:fossrit/wikiotics-visual-tweak.html</guid><category>wikiotics</category></item><item><title>Wikiotics at the Constellation Commons</title><link>http://nathanielca.se/fossrit/wikiotics-at-the-constellation-commons.html</link><description>&lt;p&gt;This happened quite some time ago now, but with the election coverage I
+haven't had much time to get this out.
+Two weeks ago, Taylor and I were asked to appear at the opening of the
+Constellation Commons for Global Learning, to show off Wikiotics as a
+student project and set up Wikiotics on all the computers. We got to
+show the site off to President Destler and to a few foreign language
+professors who were all quite excited about such a thing existing.
+In all we showed off the project to a fair number of people and got a
+very positive reaction from most of them. I don't know if we've seen any
+more users from this, but it seems to me it should help spread the word
+about Wikiotics.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Wed, 08 Dec 2010 23:30:00 -0500</pubDate><guid>tag:nathanielca.se,2010-12-08:fossrit/wikiotics-at-the-constellation-commons.html</guid><category>wikiotics</category></item><item><title>Lemonade Stand 2.1 Released</title><link>http://nathanielca.se/fossrit/lemonade-stand-21-released.html</link><description>&lt;p&gt;I am proud to announce the immediate availability of Lemonade Stand 2.1,
+with a quarter's worth of work and effort behind it.
+There are few gameplay changes in this release, but it feels like a
+brand new game thanks to the wonderful new art assets courtesy of &lt;a class="reference external" href="http://jtmengel.blogspot.com/"&gt;JT&lt;/a&gt;.
+There's also the beginning of a help system, and many generalizations in
+the code to make adding new features even easier than before.
+We're a little late for a midnight release, but for my first real game
+release, I don't think we did half bad.
+&lt;a class="reference external" href="http://activities.sugarlabs.org/en-US/sugar/addon/4321"&gt;http://activities.sugarlabs.org/en-US/sugar/addon/4321&lt;/a&gt;&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Fri, 12 Nov 2010 07:03:00 -0500</pubDate><guid>tag:nathanielca.se,2010-11-12:fossrit/lemonade-stand-21-released.html</guid><category>lemonade</category></item><item><title>Lemonade Recap</title><link>http://nathanielca.se/fossrit/lemonade-recap.html</link><description>&lt;p&gt;So here we are at the end of the quarter. Have we accomplished our
+goals? I think so.
+We've gotten a lot done in the last ten weeks. We got some new images,
+we got some new ideas into the game, and on the whole, it looks much
+better. The game is slowly taking shape into something people might
+actually want to play.&lt;/p&gt;
+&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;But let's compare what we've actually done to our goals. The first goal
+was to get an updated background image with prettier graphics that
+changed with the weather. This is definitely done, and has been for a
+week or two. We've since invented a few more graphics that need to be
+included in the main screen, but the placeholders we have should do for
+now.&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;Second, we wanted to get a graphical store in place and working. That's
+almost done, and should be finished before the end of the week. The
+store is fully functional, it just needs a few tweaks and some feedback
+on the user's current inventory. For the time being that can be fixed
+until we can get a more permanent solution later.&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;Finally, the overlooked problem we were ignoring this whole time, an in
+game help system. This is moving along, not well, but it should be
+functional by our release.&lt;/p&gt;
+&lt;/div&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Wed, 10 Nov 2010 20:26:00 -0500</pubDate><guid>tag:nathanielca.se,2010-11-10:fossrit/lemonade-recap.html</guid><category>lemonade</category></item><item><title>Lemonade Week... 8?</title><link>http://nathanielca.se/fossrit/lemonade-week-8.html</link><description>&lt;p&gt;So... lots of stuff has happened in the last few weeks.
+First, we have a new background, thanks to JT. In fact, we have three
+now, and as of five minutes ago, a different one will show up depending
+on the current weather.
+There's also been a lot of behind-the-scenes updates to make adding new
+events and weather types easier in the future. Generally, all that kind
+of stuff goes in constants.py, but that might have to change if we need
+to add too much more stuff.
+We've got a few exciting ideas we hope to get done in the next few
+weeks, and I look forward to seeing what we can get done.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Tue, 26 Oct 2010 23:59:00 -0400</pubDate><guid>tag:nathanielca.se,2010-10-26:fossrit/lemonade-week-8.html</guid><category>lemonade</category><category>sugar</category></item><item><title>Updating git</title><link>http://nathanielca.se/fossrit/updating-git.html</link><description>&lt;p&gt;We here at RIT are working on our own branch of Ductus, and Ductus got a
+big addition over the weekend, namespaces. Unfortunately, our repository
+didn't know anything about that and needed to be updated.
+Now, I'm not a novice to using git, nor are any of the people in the
+FOSSBOX. But we'd never had to worry about upstream repositories, for
+all of our projects, we *were* upstream.
+Taylor and I finally worked it out*, and now we're trying to fix all
+the problems that came up with the new hotness as best as we can. but
+even when you feel comfortable with something, you can never quite
+escape the possibility that something you hadn't considered might show
+up.
+* The process, for reference, as near as I can figure
+git remote add
+git pull
+git push&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Mon, 04 Oct 2010 19:39:00 -0400</pubDate><guid>tag:nathanielca.se,2010-10-04:fossrit/updating-git.html</guid><category>wikiotics</category></item><item><title>Wikiotics Week 2</title><link>http://nathanielca.se/fossrit/wikiotics-week-2.html</link><description>&lt;p&gt;We're into week 2 of Wikiotics' &lt;a class="reference external" href="http://alpha.wikiotics.org/wiki/four_week_plan"&gt;four week plan&lt;/a&gt; to push Wikiotics
+development, so I thought I'd get out all the stuff I did last week.
+First, in order to get myself acquainted with the user interface I
+translated (badly) the introduction lesson into &lt;a class="reference external" href="http://alpha.wikiotics.org/wiki/Russian_lessons"&gt;Russian&lt;/a&gt; (and later
+tapped &lt;a class="reference external" href="http://rockettium.net/wordpress/"&gt;Ellen Rocket's&lt;/a&gt; German prowess for a &lt;a class="reference external" href="http://alpha.wikiotics.org/wiki/German_lessons"&gt;German&lt;/a&gt; one).
+Later I was asked to look into creoleparser to see if I could fix &lt;a class="reference external" href="http://code.google.com/p/creoleparser/issues/detail?id=42"&gt;bug
+42&lt;/a&gt; to disable external image loading, which we also want for Ductus.
+Getting into yet another python codebase so soon was interesting,
+especially when I had to switch back and forth looking at things
+&lt;a class="reference external" href="http://trosehfoss.blogspot.com/"&gt;Taylor&lt;/a&gt; was doing.
+That's all I really got into for week one, but now that I'm fairly
+comfortable with the various technologies being used, I think things
+will really start rolling soon&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Wed, 29 Sep 2010 18:36:00 -0400</pubDate><guid>tag:nathanielca.se,2010-09-29:fossrit/wikiotics-week-2.html</guid><category>wikiotics</category></item><item><title>Lemons Taking Off</title><link>http://nathanielca.se/fossrit/lemons-taking-off.html</link><description>&lt;p&gt;It looks like Lemonade Stand is taking off for fall quarter's &lt;a class="reference external" href="http://teachingopensource.org/index.php/RIT/The_Course"&gt;HFOSS&lt;/a&gt;
+class. This is quite exciting and there's a number of things I'm looking
+to get in for a 2.2 release
+* More events
+* Fluctuating prices
+* Loyalty and advertising
+among &lt;a class="reference external" href="http://wiki.sugarlabs.org/go/Lemonade_Stand#Additional_Ideas_.26_Features"&gt;others&lt;/a&gt;.
+The 2.1 release, meanwhile, I would like to focus on usability and
+graphics, as those have been being worked on for the longest so far.
+Whether any of this will work out the way I'm imagining is debatable,
+but I've got a plan and two &lt;a class="reference external" href="http://smw-os.blogspot.com/"&gt;awesome&lt;/a&gt; &lt;a class="reference external" href="http://jtmengel.blogspot.com"&gt;people&lt;/a&gt; working on it with me&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Thu, 23 Sep 2010 14:35:00 -0400</pubDate><guid>tag:nathanielca.se,2010-09-23:fossrit/lemons-taking-off.html</guid><category>lemonade</category><category>sugar</category></item><item><title>Refreshing Lemonade</title><link>http://nathanielca.se/fossrit/refreshing-lemonade.html</link><description>&lt;p&gt;In other news, yesterday marked the &lt;a class="reference external" href="http://blog.jlewopensource.com/2010/07/lemonade-stand-release.html"&gt;final release of Lemonade
+Stand 2.0&lt;/a&gt;. Now running on the &lt;a class="reference external" href="https://fedorahosted.org/fortune_hunter/wiki/FortuneEngine"&gt;Fortune Engine&lt;/a&gt; and containing 0% of
+my code, this marks an important milestone in my open-source
+&lt;a class="reference external" href="http://sugarlabs.org/"&gt;sugar-based&lt;/a&gt; lemonade stand game as it's still getting developed!
+While I can claim none of the credit for the code, it is still
+satisfying to watch my very first open source project still on its feet,
+teetering around like a drunken toddler.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Thu, 23 Sep 2010 14:04:00 -0400</pubDate><guid>tag:nathanielca.se,2010-09-23:fossrit/refreshing-lemonade.html</guid><category>lemonade</category><category>sugar</category></item><item><title>Wikiotics</title><link>http://nathanielca.se/fossrit/wikiotics.html</link><description>&lt;p&gt;As of Friday, I have been doing some work (along with &lt;a class="reference external" href="http://trosehfoss.blogspot.com/"&gt;Taylor&lt;/a&gt; for a
+new set of people, &lt;a class="reference external" href="http://alpha.wikiotics.org"&gt;Wikiotics&lt;/a&gt;. Their goal is basically to create a
+FLOSS alternative to some of the commercial translation software out
+there, particularly the ever-so-expensive Rosetta Stone. The whole thing
+is built on a custom wiki platform called &lt;a class="reference external" href="http://code.ductus.us/"&gt;Ductus&lt;/a&gt;.
+Today, I cloned their development tree for local development, located at
+&lt;a class="reference external" href="http://gitorious.org/ductus-rit/"&gt;http://gitorious.org/ductus-rit/&lt;/a&gt;. Right now, nothing's been done to
+it, but this will be the staging area for our work here at RIT (and
+anyone who wants to get any additions into our tree) before going off to
+the master tree at ductus.us.
+We're still figuring out where everyone stands with development. I think
+the guys at ductus are pleasantly surprised at how much we already have
+under our belts here at the FOSSBOX. But that's just how we roll here at
+RIT.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Mon, 20 Sep 2010 19:45:00 -0400</pubDate><guid>tag:nathanielca.se,2010-09-20:fossrit/wikiotics.html</guid><category>wikiotics</category></item><item><title>Almost There...</title><link>http://nathanielca.se/civx/almost-there.html</link><description>&lt;p&gt;Today I worked my way through more of &lt;a class="reference external" href="http://rebeccanatalie.com"&gt;Rebecca's&lt;/a&gt; changes to the people
+dashboard. It was actually in better condition than I had thought last
+night. The first tab was the only one with the majority of the changes,
+and most of the changes were easily applied once I understood them-
+which is what I spent hours yesterday trying to do.&lt;/p&gt;
+&lt;p&gt;I have a problem with writing quantities of HTML because they end up as
+giant messes. Even XHTML strict isn't enough for me, though it does come
+closer. Invariably, any file of reasonable complexity is going to have
+whitespace inconsistencies, mislaid elements, or even entire sections
+forgotten. This morning I took a fresh look at the generated HTML and
+dashboard.mak and tried simply to understand their structure. After
+really getting into the template version, I began to see what was really
+necessary and not from Rebecca's blinged up copy. There are still a few
+bits missing from the final version, but I think I can get them nailed
+down before I leave today.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Thu, 09 Sep 2010 18:11:00 -0400</pubDate><guid>tag:nathanielca.se,2010-09-09:civx/almost-there.html</guid><category>peopledashboard</category></item><item><title>CIVX Stuff</title><link>http://nathanielca.se/civx/civx-stuff.html</link><description>&lt;p&gt;So I've been spending some time finally getting some time to familiarize
+myself with CIVX and all the parts that make up the system. I'm almost
+comfortable with how the whole thing works together, though I'm not
+entirely clear on how some things work to finally get to the screen.&lt;/p&gt;
+&lt;p&gt;Still, I got things running, both the current CIVX build and &lt;a class="reference external" href="http://foss.rit.edu/user/17"&gt;Kate's&lt;/a&gt;
+widget, though getting the two together is harder than it seems like it
+should be. On the other hand, I tweaked the GettingStarted page of the
+CIVX wiki to smooth out a few bumps I ran into during the install
+process. The Ubuntu instructions are still broken, but I plan going to
+look into that in the future.&lt;/p&gt;
+&lt;p&gt;In terms of actually getting things done, I haven't done much of
+substance. I've been immersing myself in CIVX, git, pep8, and all the
+different things that go into the FOSS BOX. While I've been in the open
+source community for a while now (and my very first project is almost
+1.5 years old), I've never really tried to insert myself into a project
+that was running in full swing with established work. Somehow this seems
+different than the places I've worked previously... though that could
+simply be the distributed nature of the work. With &lt;a class="reference external" href="http://lewk.org"&gt;Luke&lt;/a&gt; no longer
+down the hall somewhere, getting information has turned into a more
+interesting experience when the necessary parts are in his head.&lt;/p&gt;
+&lt;p&gt;I'm looking forward to an exciting next few weeks here, and a fruitful
+next few years with the information learned from this experience.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Thu, 09 Sep 2010 18:11:00 -0400</pubDate><guid>tag:nathanielca.se,2010-09-09:civx/civx-stuff.html</guid><category>peopledashboard</category><category>widgets</category></item><item><title>Here be Dragons</title><link>http://nathanielca.se/civx/here-be-dragons.html</link><description>&lt;p&gt;Today was the day we got &lt;a class="reference external" href="http://www.rebeccanatalie.com"&gt;Rebecca&lt;/a&gt; on to a git repo towards
+implementing her changes to the people dashboard. It's only a halfway
+step, as she isn't entirely using the proper version of the widgets but
+a hacked one that works locally, and needs to be morphed into something
+that will work in the context of the CIVX stack. Hopefully soon she will
+be up to speed and be able to make a more direct submission in the near
+future.
+As it stands, this is good stuff, and the end result is definitely
+usable, even if it's not in the format we want it just yet. Translating
+one to the other has proven tiresome as well; I spent the better part of
+three hours just to clean up the first of our tabs. There are a few
+items I think might not be translatable, things that mainly live in
+Moksha, but we'll get to that when we get to that. Right now, I need a
+graphical diff viewer that cares neither for whitespace nor line breaks,
+just for what's in the code. Good old meld, which I had been using, has
+proven itself inadequate to the massive differences between these files.
+Hopefully tomorrow I will have a fresh start from which to sculpt this
+mess I've constructed into its completed form.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Thu, 09 Sep 2010 18:11:00 -0400</pubDate><guid>tag:nathanielca.se,2010-09-09:civx/here-be-dragons.html</guid><category>peopledashboard</category></item><item><title>Just another ten-hour day</title><link>http://nathanielca.se/civx/just-another-ten-hour-day.html</link><description>&lt;p&gt;Today was another exciting day in CIVX-land.&lt;/p&gt;
+&lt;p&gt;tl;dr: I spend the day helping other people and being awesome
+It started out with the latest in a series of attempts at getting
+&lt;a class="reference external" href="http://www.rebeccanatalie.com"&gt;Rebecca&lt;/a&gt; to a working CIVX repo. As I work through this with her, I am
+slowly working out how all this works together (though admittedly it is
+largely me flailing while Rebecca watches). With &lt;a class="reference external" href="http://lewk.org"&gt;Luke's&lt;/a&gt; help, I
+eventually realized that the only thing really needed for CIVX to run is
+python-virtualenv (it can run without, but that involves actually
+installing python packages to /usr/local, something generally undesired
+for a development environment). After some question of whether Rebecca
+had sudo permission, we eventually discovered she did, and a short sudo
+easy_install virtualenv later, we were ready to start installing the
+CIVX stack.&lt;/p&gt;
+&lt;p&gt;If you haven't read the &lt;a class="reference external" href="https://fedorahosted.org/civx/wiki/Setup"&gt;CIVX developer's guide&lt;/a&gt; (and I think it's
+probably safe to assume you haven't), it's a bit of a mess. Not actually
+bad, but short and disorganized. This isn't too bad when you've got a
+small, fairly tight development group with the main brain usually a ping
+away on IRC, but as people are finding CIVX, I have taken it upon myself
+to document every bump in my path. When I was first thrust into CIVX,
+the page was much sparser with less detail and fewer sections, I have
+added areas whenever there was a question of how to do what that
+eventually came down to 'ask Luke'. Any time an arcane set of commands
+came up I tried to get them on the page with as much information as I
+could figure out, hopefully someone will take pity on my notes and make
+them more descriptive.&lt;/p&gt;
+&lt;p&gt;Around this time &lt;a class="reference external" href="http://foss.rit.edu/user/17"&gt;Kate&lt;/a&gt; also had a few questions for me, most of which
+I could figure out. However, I was still trying to get Rebecca running
+and hadn't even touched my own computer more than to turn on IRC and
+look a few thins up for Rebecca. Kate was having some trouble as she was
+trying to scrape information off the NYS Senate page of senators,
+neither of which I had done before. Rebecca had other things to do, and
+getting her Mac up to speed was a lot of wait and pray so I switched
+over to Kate's task. Now Kate also has a Mac, but she was set up with
+CIVX long ago and could never quite explain to me how, thanks again to
+arcane commands.&lt;/p&gt;
+&lt;p&gt;Anyway, her task involved a particular Unicode character in a senator's
+name not playing well with her scraped name-to-URL converter magic.
+Having only last night read &lt;a class="reference external" href="http://www.kalzumeus.com/2010/06/17/falsehoods-programmers-believe-about-names/"&gt;Falsehoods Programmers Believe About
+Names&lt;/a&gt; off StumbleUpon, I immediately recognized this way as a dead
+end. Sure, you could force all the current names into this pattern, but
+it would never last. Some day, a senator would show up such that the
+senate's conversion script and ours didn't match, and then that senator
+would disappear from CIVX. After a bit of poking, however, I found that
+each senator had a link to their contact page right in the div we were
+scraping. A bit of poking around later, and I had a 100% reliable link
+to each senator's page, as verified by the senate themselves. Suddenly
+every senator's page worked, without any of this needless mucking about
+in Unicode transformations.&lt;/p&gt;
+&lt;p&gt;Which brought us to our second problem. Most (with one important
+exception) senators have a page hosted on &lt;a class="reference external" href="http://www.nysenate.gov"&gt;http://www.nysenate.gov&lt;/a&gt;, and
+most have a contact page at /senators/first-m-last/contact.
+What that page contains, however, seems largely up to each senator. Kate
+had (and was quite proud of) her 4-line, incredibly complex and
+unmaintainable regular expression which she used to mangle each page
+into a regular form. However, as we poked further and further, we found
+more and more inconsistencies and exceptions to the regular expression.
+Clearly this was completely the wrong way again, but what was the right
+way.&lt;/p&gt;
+&lt;p&gt;I suddenly saw an interesting anomaly. Most senators had the contact
+info were styled exactly the same, despite having quite varying styles
+otherwise. Kate had already seen that most of the addresses are together
+in some sort of paragraph tag, and was trying to regexp on the contents
+of each paragraph on the page. What she hadn't noticed was that every
+page had a &amp;lt;div class=&amp;quot;field-content&amp;quot;&amp;gt; that contained all the contact
+info. Now that, that was something a bit more to go on. Furthermore,
+this contained all the contact info- occasionally more, but always the
+minimum was their District Office and their Albany Office. Furthermore,
+it was already in some form of HTML, which Kate had previously been
+stripping and rebuilding manually. If we simply took this HTML as-is and
+plugged it into CIVX's contact page, instantly every senator had exactly
+what we (and they) wanted!&lt;/p&gt;
+&lt;p&gt;Well, almost.&lt;/p&gt;
+&lt;p&gt;It was about at this point that Rebecca went home for the day, CIVX not
+yet working. a few important packages were missing from &lt;a class="reference external" href="http://pypi.python.org/pypi"&gt;pypi&lt;/a&gt;, keeping
+us from completing the CIVX setup step so she could get cracking on real
+CIVX, without needing me to merge every change she wanted to push. Still
+this left me with more time to work on the regular expressions.&lt;/p&gt;
+&lt;p&gt;Now, most senators worked flawlessly, with two obvious exceptions. the
+first, and the one I didn't want to tackle just yet, was the senator I
+mentioned briefly above, the page of &lt;a class="reference external" href="http://www.kemphannon.com/"&gt;Sen. Kemp Hannon&lt;/a&gt;. Notice
+anything different about his page? Well, for one, it's not hosted on
+nysenate.gov, and for another, he has no explicit contact page. The
+first made our scraper entirely useless without coding in an exception
+for senators with separate websites, and the second made such an
+exception next to impossible to make general, without reverting back to
+the 'check each paragraph for addresses' method.&lt;/p&gt;
+&lt;p&gt;So Kemp was put on the backburner for now. The other one, which failed
+somewhat more spectacularly, didn't even break. Rather, the contact page
+of &lt;a class="reference external" href="http://www.nysenate.gov/senator/john-j-flanagan/contact"&gt;Sen. John J. Flanagan&lt;/a&gt;. Putting aside for the moment the excess
+content in the div, including the NYS seal, and a few lines about
+contact information, this is the worst example against automatically
+generated HTML I have had the misfortune of needing to scrape.&lt;/p&gt;
+&lt;p&gt;Problem 1: &amp;lt;p &amp;gt;&amp;amp;nbsp;&amp;lt;p /&amp;gt;&amp;lt;br /&amp;gt; I kid you not, this is on the page a
+minimum of 20 times in a row so that his Albany Office is so far below
+the fold so as to be nonexistent. Sometimes there's inline styles,
+sometimes not. One line has a simple space character instead of the
+edgier, hipper &amp;amp;nbsp;. I wanted them all gone.this resulted in five
+separate regexps so python wouldn't get too greedy and remove all the
+content. One to replace &amp;amp;nbsp; with ' ', another to remove all
+whitespace between a closing angle bracket and an opening one, a third
+to remove anything matching style=&amp;quot;*&amp;quot;, a fourth to remove all the (now)
+empty paragraphs, and a fifth and final one to turn any group of two or
+more consecutive break tags into a single tag. It is probably fortunate
+that python would not correctly apply my first attempt which was far
+less readable, and more of a one-liner, as I don't know if I could have
+understood it now had I not broken it into its component parts.
+Problem 2 is a bit more of a WTF moment, both beautiful and frightening,
+so I will reproduce it here verbatim:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;lt;P style=&amp;quot;TEXT-ALIGN: center&amp;quot;&amp;gt;&amp;lt;SPAN style=&amp;quot;COLOR: #012849; FONT-SIZE:
+18pt&amp;quot;&amp;gt;&amp;lt;SPAN&amp;gt;&amp;lt;SPAN&amp;gt;&amp;lt;SPAN style=&amp;quot;LINE-HEIGHT: 115%; FONT-FAMILY:
+'Calibri', 'sans-serif'; COLOR: #012849; FONT-SIZE: 16pt;
+mso-fareast-font-family: Calibri; mso-ascii-theme-font: minor-latin;
+mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin;
+mso-bidi-font-family: 'Times New Roman'; mso-bidi-theme-font:
+minor-bidi; mso-ansi-language: EN-US; mso-fareast-language: EN-US;
+mso-bidi-language: AR-SA&amp;quot;&amp;gt;&amp;lt;SPAN&amp;gt;&amp;lt;STRONG&amp;gt;&amp;lt;SPAN style=&amp;quot;FONT-FAMILY: Times
+New Roman&amp;quot;&amp;gt;District Office&amp;lt;BR /&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/strong&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;SPAN
+style=&amp;quot;COLOR: #012849; FONT-SIZE: 16pt&amp;quot;&amp;gt;&amp;lt;SPAN style=&amp;quot;FONT-FAMILY: Times
+New Roman&amp;quot;&amp;gt;260 Middle Country Road, Suite 203&amp;lt;BR /&amp;gt;Smithtown, New York
+11787&amp;lt;BR /&amp;gt;631-361-2154&amp;lt;BR /&amp;gt;631-361-5367
+FAX&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;
+&lt;/pre&gt;
+&lt;p&gt;For those of you following along at home, that's
+P(text-align) &amp;gt; SPAN(color, font-size) &amp;gt; SPAN &amp;gt; SPAN &amp;gt; SPAN(line-height,
+font-family, color, font-size, a bunch of other font styles) &amp;gt;
+SPAN &amp;gt; STRONG &amp;gt; SPAN(font-family) &amp;gt;
+SPAN(color, font-size) &amp;gt; SPAN(font-family)&lt;/p&gt;
+&lt;p&gt;Naturally, my first order of business was to remove every single span
+from the HTML we take in. Because, frankly, this is preposterous. We
+already (by problem 1) strip out all the style information, because
+frankly, we don't need it, so this mess just turns into six nested
+spans, not a very useful thing. Suddenly, the HTML coming out of the
+sanitizer is much more compact, and not just because of all the breaks
+and paragraphs I took out.&lt;/p&gt;
+&lt;p&gt;By the time I finished with this, it was about an hour after most
+everyone else had left. I spent the next half hour checking that my
+sanitizer didn't break existing pages (it did, but only minorly) and
+making sure my code was legible.&lt;/p&gt;
+&lt;p&gt;At that point, almost ten hours after I had started, I sat back,
+committed my final changes, and decompressed. *This*- this is why I
+love open source.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Thu, 09 Sep 2010 18:11:00 -0400</pubDate><guid>tag:nathanielca.se,2010-09-09:civx/just-another-ten-hour-day.html</guid><category>peopledashboard</category><category>wat</category></item><item><title>Another Blog</title><link>http://nathanielca.se/meta/another-blog.html</link><description>&lt;p&gt;Just as I get used to this one, another of my classes requires me to
+keep a blog, and to keep it separate from any other blogs we may keep.
+The new blog is linked at left, but anything interesting will get
+cross-posted here and it's likely going to go unmaintained at the
+conclusion of the quarter.&lt;/p&gt;
+&lt;p&gt;Anyway, here it is: &lt;a class="reference external" href="other-person.tumblr.com"&gt;other-person.tumblr.com&lt;/a&gt;&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Tue, 07 Sep 2010 16:49:00 -0400</pubDate><guid>tag:nathanielca.se,2010-09-07:meta/another-blog.html</guid><category>journalism</category></item><item><title>Huzzah!</title><link>http://nathanielca.se/personal/huzzah.html</link><description>&lt;p&gt;Here we are, back at the beginning of another school year. It's going to
+be interesting, I'm still pretty laid back from Fan Expo Canada in
+Toronto.&lt;/p&gt;
+&lt;p&gt;My new monitor finally arrived. Well, it arrived Saturday, but the RIT
+post office isn't open on weekends over breaks, so I had to wait until
+this morning. Luckily, it seems that the stand on my last monitor which
+made me love it so much is a standard VESA mount, so I detached it from
+my old monitor, removed the sad excuse of a stand from my new monitor,
+and now have a beautiful new screen on the beautiful old stand. The new
+monitor, meanwhile, being an LED-backlit model, is much lighter now than
+it's stand. The speakers seem okay, although they're on the back of the
+monitor (no doubt meant to reflect off the wall behind them) so if I
+want to blast music, I'll just end up blasting Justin instead.&lt;/p&gt;
+&lt;p&gt;So I now have two monitors, though I don't know if I'm keeping the
+ancient 15&amp;quot; LCD from home that was serving as a spare. We'll see. In the
+meantime, Minecraft looks better than ever.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Mon, 06 Sep 2010 17:57:00 -0400</pubDate><guid>tag:nathanielca.se,2010-09-06:personal/huzzah.html</guid><category>hardware</category></item><item><title>Writing and Me</title><link>http://nathanielca.se/personal/writing-and-me.html</link><description>&lt;p&gt;I am not a writer. Had things progressed differently, I might have tried
+it. I do enjoy the writing process. One important problem is that I hate
+revision. I start from a theoretical perfect model, and slowly write it
+out, far slower than my brain, which can race ahead to new, more
+exciting topics, while I still need to actually write what has been
+planned out before.&lt;/p&gt;
+&lt;p&gt;Instead, I am a programmer. Really, the two are not very different. In
+programming, however, your audience is a computer, and the computer is
+far less forgiving of unclear communication. I'm not talking about typos
+or misplaced parentheses here, but in the ability of the writer to
+convey their ideas to the audience.&lt;/p&gt;
+&lt;p&gt;Programming generally has a very strict syntax compared to speech. Words
+generally have only one meaning, and if they have more than one, it is
+immediately obvious which one is meant in any situation. Human
+communication, on the other hand, has shades of meaning, imagery, and
+all sorts of other trickery to say the same thing in many ways. Years of
+programming has left my vocabulary a bit dry, opting for specific,
+technical jargon rather than the more general, descriptive prose.&lt;/p&gt;
+&lt;p&gt;To put it another way, if my writings were computer code, none of them
+would compile. But then, none of my real code does either, not on the
+first try. The compiler rejects a statement here or there, and when it
+finally runs, the output is all wrong. So I tweak the code, simplify and
+break down long statements, and try to say exactly what I mean.
+Eventually, the code compiles and runs, and does exactly what I want it
+to.&lt;/p&gt;
+&lt;p&gt;How does this relate to being a writer? Well, I follow mostly the same
+pattern in my writing. The only difference is that I do it without a
+compiler. I have learned long ago that self-correction is often useless
+for me, I tend to make the same mistakes while reading as I did writing
+it. My best writing comes form when I *do* have a compiler of sorts;
+school assignments where each revision compiles a little further with my
+teacher, and more meaning comes through.&lt;/p&gt;
+&lt;p&gt;Unfortunately, I do not write regularly anymore. The days of required
+writing are almost gone, and I have yet to find a compiler for writing
+which works as well as my teachers. Add to that my dislike of revision
+without glaring errors to fix, and my personal writing tends to throw
+parsing errors in anyone who isn't me.&lt;/p&gt;
+&lt;p&gt;Hopefully I'll get better at this. At the very least I hope to catch the
+common mistakes here.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Wed, 21 Jul 2010 04:13:00 -0400</pubDate><guid>tag:nathanielca.se,2010-07-21:personal/writing-and-me.html</guid><category>introspective</category></item><item><title>pyDex Progress</title><link>http://nathanielca.se/personal/pydex-progress.html</link><description>&lt;p&gt;I've finally gotten around to staging and committing a few enhancements
+to the &lt;a class="reference external" href="http://gitorious.org/pydex"&gt;pydex repository&lt;/a&gt;. The more advanced stuff like Isshu pokemon
+and the new file format are still in limbo, naturally, and won't get
+moved to master any time soon since they make older files incompatible,
+though I hope to at least be able to read them for the time being.
+I'm also beginning to wonder about dynamically limiting the National
+Pokedex based on the game setting, once that actually does something.
+I've only played Gen IV extensively, but after loading up Yellow on a
+whim, I see how this could be useful. But I'm more concerned with
+bugfixing 1.0 so that it can see the light of day than tacking on more
+features right now.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Sat, 10 Jul 2010 16:51:00 -0400</pubDate><guid>tag:nathanielca.se,2010-07-10:personal/pydex-progress.html</guid><category>pyDex</category></item><item><title>Diving Deep</title><link>http://nathanielca.se/civx/diving-deep.html</link><description>&lt;p&gt;Yesterday had been spent working on a proper dev branch to CIVX. Today
+we gave it a home.&lt;/p&gt;
+&lt;p&gt;Today started off trying to get the current dev CIVX running on our
+server. Now, I had some experience setting up a CIVX instance from
+getting one running on my box, but my box is mine and I know what's on
+it. This server is not, so we had a few troubles along the way. Once
+again the instructions proved insufficient (though not actually bad per
+se). The server was running Python 2.4 by default, and one of the
+scripts wanted to be run from Python 2.6, as it was pulling a few things
+from future. Remy and I spent more than a little while wondering why
+things weren't happening properly when we had neglected to run a command
+or two. &lt;a class="reference external" href="&amp;quot;http://lewk.org"&gt;Luke&lt;/a&gt; set us straight at every turn, and I can now say that I
+actually understand what most of those commands do with respect to the
+rest of the system.&lt;/p&gt;
+&lt;p&gt;The second half of the day was a bit more interesting. Once CIVX was
+running, my attention was turned to the scrapers. Most of the scrapers
+are v2 scrapers, and one of our tasks for the summer is to get things
+running up to v3. On the first try getting the stimulus watcher scraper
+running, we had a few problems remembering where everything went and
+where to call what when. On the second shot getting a scraper for
+howdtheyvote.ca data, it went much faster. I need to remember to source
+tg2env when I'm on the server, but mostly, things were good today.
+Tomorrow we put together the pieces of v3, and keep on moving towards
+our goals.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Wed, 30 Jun 2010 16:55:00 -0400</pubDate><guid>tag:nathanielca.se,2010-06-30:civx/diving-deep.html</guid><category>scrapers</category></item><item><title>More Conference Calls</title><link>http://nathanielca.se/civx/more-conference-calls.html</link><description>&lt;p&gt;Every time I go through one of these calls I feel like I come out
+knowing less about the topic discussed. The topics aren't hard, and I
+can now follow along and understand most of what they're talking about,
+but most of the technologies are things I haven't really looked at
+before. It's interesting, and it's exciting, but it's a little wearying
+too. The majority of the talks seem to revolve around the use of Amazon
+EC2 instances, of which I know nothing.&lt;/p&gt;
+&lt;p&gt;On my own tasks, the semifinal versions of the getall script and the
+associated documentation got pushed to &lt;a class="reference external" href="http://bitbucket.org/slinkp/geowebdns"&gt;geowebdns&lt;/a&gt;' repository today. I
+feel pretty good about the changes I made, even if it doesn't prove
+useful to the current task, I have opened up some small part of someone
+else's open source program, and that's really cool.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Thu, 24 Jun 2010 12:10:00 -0400</pubDate><guid>tag:nathanielca.se,2010-06-24:civx/more-conference-calls.html</guid><category>democracymap</category><category>geowebdns</category></item><item><title>Introducing: GeoPirate!</title><link>http://nathanielca.se/civx/introducing-geopirate.html</link><description>&lt;p&gt;So I've received my apparently mandated CIVX nickname, despite it
+possibly being inaccurate in a week or two. I, along with &lt;a class="reference external" href="http://rebeccanatalie.com/"&gt;Pixel Ninja&lt;/a&gt;
+and &lt;a class="reference external" href="http://foss.rit.edu/user/17"&gt;Python Princess&lt;/a&gt;, have been hacking away at our various tasks
+together for over a week now, and despite the seemingly constant moving
+from place to place, it's a pretty sweet gig.&lt;/p&gt;
+&lt;p&gt;My work yesterday was some final polishing of the getall script, and my
+first real push to the geowebdns repository. I'm also working on a
+supplemental, informational guide to maintenance. Unfortunately, my
+changes can't quite replace the old script yet, because the import
+script (the one that actually starts to bring the files into the
+database and do something with them) is hardcoded to the current files
+and that script is a bit harder to hack than the download script. The
+real work was on the documentation, trying to get people to understand
+my reasoning behind the changes and allow for them to continue my work
+without too much difficulty.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Wed, 23 Jun 2010 07:15:00 -0400</pubDate><guid>tag:nathanielca.se,2010-06-23:civx/introducing-geopirate.html</guid><category>democracymap</category><category>geowebdns</category></item><item><title>Hello, world...</title><link>http://nathanielca.se/civx/hello-world.html</link><description>&lt;p&gt;This is my first posting despite having been here for a week, because
+the zaniness that was my first week did not allow for such silly things
+as introductions. Now I finally have some of the infrastructure things
+worked out, and can report on my findings.&lt;/p&gt;
+&lt;p&gt;Work has been progressing on a scraper for &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Shapefile"&gt;shapefiles&lt;/a&gt; for the Senate.
+I've been fairly successful in getting a large amount of data, (up to
+7.6 GB of zip files!) so my task today was to clean up the script and
+make it readable to commit it back upstream. I had started by adding
+more loops to the script for special cases, but that meant repeating the
+core download code. Realizing this, I made a generalized downloader
+function which gets called by each loop, simplifying individual loops
+into a simple&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+'for URL in $URL_LIST; download $URL $FILE; done'
+&lt;/pre&gt;
+&lt;p&gt;Well, I think it's simpler...&lt;/p&gt;
+&lt;p&gt;Each time I tweak away at this file, my bash skill gets better and
+better, but whether any of this is going to stick around is another
+question. I always forget the simple bashisms, like for loops and
+conditionals, and I can never remember quite how variables work. But as
+I work more with this file, I get more comfortable with these
+conventions. Though I still occasionally pine for the occasional
+pythonic statement (and perhaps also for the fjords).&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Mon, 21 Jun 2010 14:53:00 -0400</pubDate><guid>tag:nathanielca.se,2010-06-21:civx/hello-world.html</guid><category>democracymap</category><category>geowebdns</category></item></channel></rss>

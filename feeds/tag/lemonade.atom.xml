@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://qalthos.github.io/blog/" rel="alternate"></link><link href="http://qalthos.github.io/blog/feeds/tag/lemonade.atom.xml" rel="self"></link><id>http://qalthos.github.io/blog/</id><updated>2011-05-08T03:16:00-04:00</updated><entry><title>Imagine RIT 2011</title><link href="http://qalthos.github.io/blog/FOSS@RIT/imagine-rit-2011.html" rel="alternate"></link><updated>2011-05-08T03:16:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2011-05-08:FOSS@RIT/imagine-rit-2011.html</id><summary type="html">&lt;p&gt;So I've been absent for a while lately, but with good reason. I've been
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://nathanielca.se/" rel="alternate"></link><link href="http://nathanielca.se/feeds/tag/lemonade.atom.xml" rel="self"></link><id>http://nathanielca.se/</id><updated>2011-05-08T03:16:00-04:00</updated><entry><title>Imagine RIT 2011</title><link href="http://nathanielca.se/fossrit/imagine-rit-2011.html" rel="alternate"></link><updated>2011-05-08T03:16:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-05-08:fossrit/imagine-rit-2011.html</id><summary type="html">&lt;p&gt;So I've been absent for a while lately, but with good reason. I've been
 preparing for Imagine RIT, which was held earlier today.
 After pulling possibly my longest day's hack yesterday (1pm to 4am,
 approximately), I woke up at 9 and headed over to the Innovation Center
@@ -34,7 +34,7 @@ new tasks before the final release.&lt;/p&gt;
 &lt;p&gt;All in all, a very exciting and fun weekend. We made a few contacts,
 introduced a few more people to FOSS&amp;#64;RIT, and gave away at least 40
 LiveCDs. I think that qualifies as quite a success.&lt;/p&gt;
-</summary><category term="journalism"></category><category term="lemonade"></category><category term="sugar"></category><category term="Rise"></category><category term="OPL"></category></entry><entry><title>Lemonade Stand 2.1 Released</title><link href="http://qalthos.github.io/blog/FOSS@RIT/lemonade-stand-21-released.html" rel="alternate"></link><updated>2010-11-12T07:03:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-11-12:FOSS@RIT/lemonade-stand-21-released.html</id><summary type="html">&lt;p&gt;I am proud to announce the immediate availability of Lemonade Stand 2.1,
+</summary><category term="journalism"></category><category term="lemonade"></category><category term="sugar"></category><category term="Rise"></category><category term="OPL"></category></entry><entry><title>Lemonade Stand 2.1 Released</title><link href="http://nathanielca.se/fossrit/lemonade-stand-21-released.html" rel="alternate"></link><updated>2010-11-12T07:03:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2010-11-12:fossrit/lemonade-stand-21-released.html</id><summary type="html">&lt;p&gt;I am proud to announce the immediate availability of Lemonade Stand 2.1,
 with a quarter's worth of work and effort behind it.
 There are few gameplay changes in this release, but it feels like a
 brand new game thanks to the wonderful new art assets courtesy of &lt;a class="reference external" href="http://jtmengel.blogspot.com/"&gt;JT&lt;/a&gt;.
@@ -43,7 +43,7 @@ the code to make adding new features even easier than before.
 We're a little late for a midnight release, but for my first real game
 release, I don't think we did half bad.
 &lt;a class="reference external" href="http://activities.sugarlabs.org/en-US/sugar/addon/4321"&gt;http://activities.sugarlabs.org/en-US/sugar/addon/4321&lt;/a&gt;&lt;/p&gt;
-</summary><category term="lemonade"></category></entry><entry><title>Lemonade Recap</title><link href="http://qalthos.github.io/blog/FOSS@RIT/lemonade-recap.html" rel="alternate"></link><updated>2010-11-10T20:26:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-11-10:FOSS@RIT/lemonade-recap.html</id><summary type="html">&lt;p&gt;So here we are at the end of the quarter. Have we accomplished our
+</summary><category term="lemonade"></category></entry><entry><title>Lemonade Recap</title><link href="http://nathanielca.se/fossrit/lemonade-recap.html" rel="alternate"></link><updated>2010-11-10T20:26:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2010-11-10:fossrit/lemonade-recap.html</id><summary type="html">&lt;p&gt;So here we are at the end of the quarter. Have we accomplished our
 goals? I think so.
 We've gotten a lot done in the last ten weeks. We got some new images,
 we got some new ideas into the game, and on the whole, it looks much
@@ -63,7 +63,7 @@ until we can get a more permanent solution later.&lt;/p&gt;
 &lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;Finally, the overlooked problem we were ignoring this whole time, an in
 game help system. This is moving along, not well, but it should be
 functional by our release.&lt;/p&gt;
-&lt;/div&gt;&lt;/p&gt;</summary><category term="lemonade"></category></entry><entry><title>Lemonade Week... 8?</title><link href="http://qalthos.github.io/blog/FOSS@RIT/lemonade-week-8.html" rel="alternate"></link><updated>2010-10-26T23:59:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-10-26:FOSS@RIT/lemonade-week-8.html</id><summary type="html">&lt;p&gt;So... lots of stuff has happened in the last few weeks.
+&lt;/div&gt;&lt;/p&gt;</summary><category term="lemonade"></category></entry><entry><title>Lemonade Week... 8?</title><link href="http://nathanielca.se/fossrit/lemonade-week-8.html" rel="alternate"></link><updated>2010-10-26T23:59:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2010-10-26:fossrit/lemonade-week-8.html</id><summary type="html">&lt;p&gt;So... lots of stuff has happened in the last few weeks.
 First, we have a new background, thanks to JT. In fact, we have three
 now, and as of five minutes ago, a different one will show up depending
 on the current weather.
@@ -73,7 +73,7 @@ of stuff goes in constants.py, but that might have to change if we need
 to add too much more stuff.
 We've got a few exciting ideas we hope to get done in the next few
 weeks, and I look forward to seeing what we can get done.&lt;/p&gt;
-</summary><category term="lemonade"></category><category term="sugar"></category></entry><entry><title>Lemons Taking Off</title><link href="http://qalthos.github.io/blog/FOSS@RIT/lemons-taking-off.html" rel="alternate"></link><updated>2010-09-23T14:35:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-09-23:FOSS@RIT/lemons-taking-off.html</id><summary type="html">&lt;p&gt;It looks like Lemonade Stand is taking off for fall quarter's &lt;a class="reference external" href="http://teachingopensource.org/index.php/RIT/The_Course"&gt;HFOSS&lt;/a&gt;
+</summary><category term="lemonade"></category><category term="sugar"></category></entry><entry><title>Lemons Taking Off</title><link href="http://nathanielca.se/fossrit/lemons-taking-off.html" rel="alternate"></link><updated>2010-09-23T14:35:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2010-09-23:fossrit/lemons-taking-off.html</id><summary type="html">&lt;p&gt;It looks like Lemonade Stand is taking off for fall quarter's &lt;a class="reference external" href="http://teachingopensource.org/index.php/RIT/The_Course"&gt;HFOSS&lt;/a&gt;
 class. This is quite exciting and there's a number of things I'm looking
 to get in for a 2.2 release
 * More events
@@ -84,7 +84,7 @@ The 2.1 release, meanwhile, I would like to focus on usability and
 graphics, as those have been being worked on for the longest so far.
 Whether any of this will work out the way I'm imagining is debatable,
 but I've got a plan and two &lt;a class="reference external" href="http://smw-os.blogspot.com/"&gt;awesome&lt;/a&gt; &lt;a class="reference external" href="http://jtmengel.blogspot.com"&gt;people&lt;/a&gt; working on it with me&lt;/p&gt;
-</summary><category term="lemonade"></category><category term="sugar"></category></entry><entry><title>Refreshing Lemonade</title><link href="http://qalthos.github.io/blog/FOSS@RIT/refreshing-lemonade.html" rel="alternate"></link><updated>2010-09-23T14:04:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-09-23:FOSS@RIT/refreshing-lemonade.html</id><summary type="html">&lt;p&gt;In other news, yesterday marked the &lt;a class="reference external" href="http://blog.jlewopensource.com/2010/07/lemonade-stand-release.html"&gt;final release of Lemonade
+</summary><category term="lemonade"></category><category term="sugar"></category></entry><entry><title>Refreshing Lemonade</title><link href="http://nathanielca.se/fossrit/refreshing-lemonade.html" rel="alternate"></link><updated>2010-09-23T14:04:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2010-09-23:fossrit/refreshing-lemonade.html</id><summary type="html">&lt;p&gt;In other news, yesterday marked the &lt;a class="reference external" href="http://blog.jlewopensource.com/2010/07/lemonade-stand-release.html"&gt;final release of Lemonade
 Stand 2.0&lt;/a&gt;. Now running on the &lt;a class="reference external" href="https://fedorahosted.org/fortune_hunter/wiki/FortuneEngine"&gt;Fortune Engine&lt;/a&gt; and containing 0% of
 my code, this marks an important milestone in my open-source
 &lt;a class="reference external" href="http://sugarlabs.org/"&gt;sugar-based&lt;/a&gt; lemonade stand game as it's still getting developed!

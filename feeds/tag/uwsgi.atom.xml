@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://qalthos.github.io/blog/" rel="alternate"></link><link href="http://qalthos.github.io/blog/feeds/tag/uwsgi.atom.xml" rel="self"></link><id>http://qalthos.github.io/blog/</id><updated>2013-09-23T13:20:00-04:00</updated><entry><title>Deploying MediaGoblin 1: FastCGI vs uWSGI</title><link href="http://qalthos.github.io/blog/FOSS@RIT/deploying-mediagoblin-1-fastcgi-vs-uwsgi.html" rel="alternate"></link><updated>2013-09-23T13:20:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2013-09-23:FOSS@RIT/deploying-mediagoblin-1-fastcgi-vs-uwsgi.html</id><summary type="html">&lt;p&gt;Last week I did a thing I really wasn't expecting to. I deployed
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://nathanielca.se/" rel="alternate"></link><link href="http://nathanielca.se/feeds/tag/uwsgi.atom.xml" rel="self"></link><id>http://nathanielca.se/</id><updated>2013-09-23T13:20:00-04:00</updated><entry><title>Deploying MediaGoblin 1: FastCGI vs uWSGI</title><link href="http://nathanielca.se/fossrit/deploying-mediagoblin-1-fastcgi-vs-uwsgi.html" rel="alternate"></link><updated>2013-09-23T13:20:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2013-09-23:fossrit/deploying-mediagoblin-1-fastcgi-vs-uwsgi.html</id><summary type="html">&lt;p&gt;Last week I did a thing I really wasn't expecting to. I deployed
 &lt;a class="reference external" href="http://mediagoblin.org"&gt;MediaGoblin&lt;/a&gt; to FOSS&amp;#64;RIT's yacht server &lt;a class="reference external" href="http://yacht.rit.edu/mediagoblin/"&gt;here&lt;/a&gt;. The initial setup and
 &lt;a class="reference external" href="https://mediagoblin.readthedocs.org/en/v0.5.0/siteadmin/deploying.html"&gt;instructions&lt;/a&gt; are some of the clearest and straightforward I have seen in an
 open-source project.&lt;/p&gt;
@@ -54,33 +54,33 @@ uWSGI. This is a bit complicated as &lt;tt class="docutils literal"&gt;lazyserve
 depending on the name by which it is invoked. I changed two sections &lt;a class="footnote-reference" href="#id2" id="id1"&gt;[1]&lt;/a&gt;,
 first:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;local_bin&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;./bin&amp;quot;&lt;/span&gt;
-&lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$selfname&amp;quot;&lt;/span&gt; in
+&lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$selfname&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; in
     lazyserver.sh&lt;span class="o"&gt;)&lt;/span&gt;
         &lt;span class="nv"&gt;starter_cmd&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;paster
         &lt;span class="nv"&gt;ini_prefix&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;paste
-        ;;
+        &lt;span class="p"&gt;;;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;became:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;local_bin&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;./bin&amp;quot;&lt;/span&gt;
-&lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$selfname&amp;quot;&lt;/span&gt; in
+&lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$selfname&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; in
     lazyserver.sh&lt;span class="o"&gt;)&lt;/span&gt;
         &lt;span class="nv"&gt;starter_cmd&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;uwsgi
         &lt;span class="nv"&gt;ini_prefix&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;paste
-        ;;
+        &lt;span class="p"&gt;;;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;And then near the very end of the file:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;CELERY_ALWAYS_EAGER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
-&lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$selfname&amp;quot;&lt;/span&gt; in
+&lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$selfname&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; in
     lazyserver.sh&lt;span class="o"&gt;)&lt;/span&gt;
-        &lt;span class="nv"&gt;$starter&lt;/span&gt; serve &lt;span class="s2"&gt;&amp;quot;$ini_file&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$@&amp;quot;&lt;/span&gt; --reload
-        ;;
+        &lt;span class="nv"&gt;$starter&lt;/span&gt; serve &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$ini_file&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$@&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; --reload
+        &lt;span class="p"&gt;;;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;became:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;CELERY_ALWAYS_EAGER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
-&lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$selfname&amp;quot;&lt;/span&gt; in
+&lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$selfname&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; in
     lazyserver.sh&lt;span class="o"&gt;)&lt;/span&gt;
-        &lt;span class="nv"&gt;$starter&lt;/span&gt; --plugin python --virtualenv . --ini-paste &lt;span class="s2"&gt;&amp;quot;$ini_file&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$@&amp;quot;&lt;/span&gt;
-        ;;
+        &lt;span class="nv"&gt;$starter&lt;/span&gt; --plugin python --virtualenv . --ini-paste &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$ini_file&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$@&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+        &lt;span class="p"&gt;;;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This method allows you to keep using all the information on how to run
 MediaGoblin from paste.ini, while using uWSGI to do all the heavy lifting.

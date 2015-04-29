@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://qalthos.github.io/blog/" rel="alternate"></link><link href="http://qalthos.github.io/blog/feeds/meta.atom.xml" rel="self"></link><id>http://qalthos.github.io/blog/</id><updated>2013-05-15T00:00:00-04:00</updated><entry><title>ditaa Addition</title><link href="http://qalthos.github.io/blog/meta/ditaa-addition.html" rel="alternate"></link><updated>2013-05-15T00:00:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2013-05-15:meta/ditaa-addition.html</id><summary type="html">&lt;p&gt;Recently, while wandering around the Internet, I found a neat little project
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://nathanielca.se/" rel="alternate"></link><link href="http://nathanielca.se/feeds/meta.atom.xml" rel="self"></link><id>http://nathanielca.se/</id><updated>2013-05-15T00:00:00-04:00</updated><entry><title>ditaa Addition</title><link href="http://nathanielca.se/meta/ditaa-addition.html" rel="alternate"></link><updated>2013-05-15T00:00:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2013-05-15:meta/ditaa-addition.html</id><summary type="html">&lt;p&gt;Recently, while wandering around the Internet, I found a neat little project
 called  &lt;a class="reference external" href="http://ditaa.sourceforge.net/"&gt;ditaa&lt;/a&gt;. The basic idea is it takes a textual representation of a
 diagram, and turns it into a real image. My first thought was that this looked
 real neat for use in this blog.&lt;/p&gt;
@@ -18,7 +18,7 @@ document), and it's vector-based, making it inherently scalable for different
 sized displays. As near as I can tell, ditaa appears to use SVG internally, at
 least to some extent. Ideally, I'd like to try to re-implement it in Python, not
 necessarily for any benefit, but because the problem sounds interesting.&lt;/p&gt;
-</summary><category term="blog"></category></entry><entry><title>Blog Rebuild</title><link href="http://qalthos.github.io/blog/meta/blog-rebuild.html" rel="alternate"></link><updated>2013-04-21T18:03:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2013-04-21:meta/blog-rebuild.html</id><summary type="html">&lt;p&gt;As you may notice, my blog looks a lot different now. On the recommendation of
+</summary><category term="blog"></category></entry><entry><title>Blog Rebuild</title><link href="http://nathanielca.se/meta/blog-rebuild.html" rel="alternate"></link><updated>2013-04-21T18:03:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2013-04-21:meta/blog-rebuild.html</id><summary type="html">&lt;p&gt;As you may notice, my blog looks a lot different now. On the recommendation of
 a few FOSSBoxers, I have moved to &lt;a class="reference external" href="http://blog.getpelican.com/"&gt;Pelican&lt;/a&gt;, a Python-based static site
 generator. The practical upshot of which is that I can now write posts in
 &lt;a class="reference external" href="http://docutils.sourceforge.net/rst.html"&gt;reStructuredText&lt;/a&gt;, keep the posts themselves in git, and host the whole thing
@@ -30,7 +30,7 @@ through.&lt;/p&gt;
 &lt;p&gt;One of the casualties of the move was the comments. Pelican does not handle
 comments on its own, and while I can hook up a specialized service like Disqus,
 I've decided that it isn't worth the effort at present.&lt;/p&gt;
-</summary><category term="blog"></category></entry><entry><title>Another Blog</title><link href="http://qalthos.github.io/blog/meta/another-blog.html" rel="alternate"></link><updated>2010-09-07T16:49:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:qalthos.github.io/blog,2010-09-07:meta/another-blog.html</id><summary type="html">&lt;p&gt;Just as I get used to this one, another of my classes requires me to
+</summary><category term="blog"></category></entry><entry><title>Another Blog</title><link href="http://nathanielca.se/meta/another-blog.html" rel="alternate"></link><updated>2010-09-07T16:49:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2010-09-07:meta/another-blog.html</id><summary type="html">&lt;p&gt;Just as I get used to this one, another of my classes requires me to
 keep a blog, and to keep it separate from any other blogs we may keep.
 The new blog is linked at left, but anything interesting will get
 cross-posted here and it's likely going to go unmaintained at the
