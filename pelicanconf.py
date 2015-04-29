@@ -14,7 +14,7 @@ DEFAULT_DATE = 'fs'
 THEME = 'themes/notmineeither'
 DEFAULT_PAGINATION = 5
 
-PLUGIN_PATH = '../pelican-plugins'
+PLUGIN_PATHS = ['plugins', '../pelican-plugins',]
 PLUGINS = [
     'assets',
     'ditaa',
