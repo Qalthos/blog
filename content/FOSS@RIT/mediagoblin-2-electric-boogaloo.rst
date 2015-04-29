@@ -1,5 +1,6 @@
 Deploying MediaGoblin 2: SELinux
 ################################
+:date: 2013-09-27 16:09
 :author: Nathaniel Case
 :email: Qalthos@gmail.com
 :tags: mediagoblin, yacht, SELinux
