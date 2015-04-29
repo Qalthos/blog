@@ -31,7 +31,7 @@ class DiTAA(Directive):
 
     def run(self):
         settings = self.state.document.settings
-        path = 'images/'
+        path = 'content/images/'
         if not os.path.exists(path):
             os.makedirs(path)
 
@@ -75,7 +75,7 @@ class DiTAA(Directive):
         else:
             if p.returncode == 0:
                 url = name
-                urlpath = 'static/images'
+                urlpath = 'images'
                 if not urlpath and path != '.':
                     urlpath = path
                 if urlpath:
