@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://nathanielca.se/" rel="alternate"></link><link href="http://nathanielca.se/feeds/tag/blog.atom.xml" rel="self"></link><id>http://nathanielca.se/</id><updated>2013-05-15T00:00:00-04:00</updated><entry><title>ditaa Addition</title><link href="http://nathanielca.se/meta/ditaa-addition.html" rel="alternate"></link><updated>2013-05-15T00:00:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2013-05-15:meta/ditaa-addition.html</id><summary type="html">&lt;p&gt;Recently, while wandering around the Internet, I found a neat little project
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://nathanielca.se/" rel="alternate"></link><link href="http://nathanielca.se/feeds/tag/blog.atom.xml" rel="self"></link><id>http://nathanielca.se/</id><updated>2015-04-29T18:23:00-04:00</updated><entry><title>New Domain!</title><link href="http://nathanielca.se/meta/new-domain.html" rel="alternate"></link><updated>2015-04-29T18:23:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2015-04-29:meta/new-domain.html</id><summary type="html">&lt;p&gt;Hey, look at that, I have a new domain!&lt;/p&gt;
+&lt;p&gt;It's a thing I've been looking into for a while now, but I finally went through
+with it. Hopefully it'll get me to update this a bit more in the future, I have
+a few draft posts I have been meaning to put together, especially after PyCon
+2015.&lt;/p&gt;
+</summary><category term="blog"></category></entry><entry><title>ditaa Addition</title><link href="http://nathanielca.se/meta/ditaa-addition.html" rel="alternate"></link><updated>2013-05-15T00:00:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2013-05-15:meta/ditaa-addition.html</id><summary type="html">&lt;p&gt;Recently, while wandering around the Internet, I found a neat little project
 called  &lt;a class="reference external" href="http://ditaa.sourceforge.net/"&gt;ditaa&lt;/a&gt;. The basic idea is it takes a textual representation of a
 diagram, and turns it into a real image. My first thought was that this looked
 real neat for use in this blog.&lt;/p&gt;

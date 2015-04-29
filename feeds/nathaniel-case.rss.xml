@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Why Not Wingnut?</title><link>http://nathanielca.se/</link><description></description><atom:link href="http://nathanielca.se/feeds/nathaniel-case.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 29 Apr 2015 16:33:46 -0400</lastBuildDate><item><title>Charsheet 1.0</title><link>http://nathanielca.se/fossrit/charsheet-10.html</link><description>&lt;p&gt;I've been doing some work for &lt;a class="reference external" href="https://charsheet-qalthos.rhcloud.com"&gt;Charsheet&lt;/a&gt; recently, fixing old bugs and adding
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Why Not Wingnut?</title><link>http://nathanielca.se/</link><description></description><atom:link href="http://nathanielca.se/feeds/nathaniel-case.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 29 Apr 2015 18:23:00 -0400</lastBuildDate><item><title>New Domain!</title><link>http://nathanielca.se/meta/new-domain.html</link><description>&lt;p&gt;Hey, look at that, I have a new domain!&lt;/p&gt;
+&lt;p&gt;It's a thing I've been looking into for a while now, but I finally went through
+with it. Hopefully it'll get me to update this a bit more in the future, I have
+a few draft posts I have been meaning to put together, especially after PyCon
+2015.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Wed, 29 Apr 2015 18:23:00 -0400</pubDate><guid>tag:nathanielca.se,2015-04-29:meta/new-domain.html</guid><category>blog</category></item><item><title>Charsheet 1.0</title><link>http://nathanielca.se/fossrit/charsheet-10.html</link><description>&lt;p&gt;I've been doing some work for &lt;a class="reference external" href="https://charsheet-qalthos.rhcloud.com"&gt;Charsheet&lt;/a&gt; recently, fixing old bugs and adding
 new features. I figured it was about time for a 1.0, so I tagged it and released
 it to the wild. Many thanks to &lt;a class="reference external" href="http://oddshocks.com"&gt;oddshocks&lt;/a&gt; not only for the original 0.1
 version of charsheet, but for continued assistance in massaging the site into
