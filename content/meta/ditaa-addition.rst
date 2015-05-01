@@ -31,5 +31,5 @@ necessarily for any benefit, but because the problem sounds interesting.
 .. _ditaa: http://ditaa.sourceforge.net/
 .. _directive: https://gist.github.com/dvarrazzo/3807373
 .. _reStructured Text: http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html
-.. _American Greetings hackathon: american-greetings-hackathon-followup.html
+.. _American Greetings hackathon: /fossrit/american-greetings-hackathon-followup.html
 .. _pelican-plugins: http://github.com/Qalthos/pelican-plugins
