@@ -4,3 +4,4 @@
 *.pid
 output
 cache
+content/images
