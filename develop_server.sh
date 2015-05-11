@@ -31,14 +31,14 @@ function shut_down(){
     PID=$(cat $SRV_PID)
     PROCESS=$(ps -p $PID | tail -n 1 | awk '{print $4}')
     if [[ $PROCESS != "" ]]; then
-      echo "Killing SimpleHTTPServer"
+      echo "Killing http.server"
       kill $PID
     else
       echo "Stale PID, deleting"
     fi
     rm $SRV_PID
   else
-    echo "SimpleHTTPServer PIDFile not found"
+    echo "http.server PIDFile not found"
   fi
 
   if [[ -f $PELICAN_PID ]]; then
@@ -57,15 +57,15 @@ function shut_down(){
 }
 
 function start_up(){
-  echo "Starting up Pelican and SimpleHTTPServer"
+  echo "Starting up Pelican and http.server"
   shift
   $PELICAN --debug --autoreload -r $INPUTDIR -o $OUTPUTDIR -s $CONFFILE $PELICANOPTS &
   echo $! > $PELICAN_PID
   cd $OUTPUTDIR
-  python -m SimpleHTTPServer &
+  python -m http.server &
   echo $! > $SRV_PID
   cd $BASEDIR
-  sleep 1 && echo 'Pelican and SimpleHTTPServer processes now running in background.'
+  sleep 1 && echo 'Pelican and http.server processes now running in background.'
 }
 
 ###

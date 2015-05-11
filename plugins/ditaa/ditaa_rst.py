@@ -66,7 +66,7 @@ class DiTAA(Directive):
         try:
             p = Popen(cmdline, stdout=PIPE, stderr=PIPE)
             out, err = p.communicate()
-        except Exception, exc:
+        except Exception as exc:
             error = self.state_machine.reporter.error(
                 'Failed to run ditaa: %s' % (exc, ),
                 literal_block(self.block_text, self.block_text),

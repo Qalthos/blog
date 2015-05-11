@@ -1,1 +1,1 @@
-from ditaa_rst import *
+from ditaa.ditaa_rst import *
