@@ -1,5 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Why Not Wingnut?</title><link>http://nathanielca.se/</link><description></description><atom:link href="http://nathanielca.se/feeds/nathaniel-case.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 29 Apr 2015 18:23:00 -0400</lastBuildDate><item><title>New Domain!</title><link>http://nathanielca.se/meta/new-domain.html</link><description>&lt;p&gt;Hey, look at that, I have a new domain!&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Why Not Wingnut?</title><link>http://nathanielca.se/</link><description></description><atom:link href="http://nathanielca.se/feeds/nathaniel-case.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 11 May 2015 17:28:00 -0400</lastBuildDate><item><title>GrooveBot 2015</title><link>http://nathanielca.se/personal/groovebot-2015.html</link><description>&lt;p&gt;So &lt;a class="reference external" href="http://www.grooveshark.com/"&gt;GrooveShark&lt;/a&gt; shut down a few days ago.&lt;/p&gt;
+&lt;p&gt;I haven't really followed them much since I took over the original &lt;a class="reference external" href="https://github.com/Qalthos/groovebot"&gt;GrooveBot&lt;/a&gt;
+codebase &lt;a class="reference external" href="/personal/groovebot-updates.html"&gt;sometime in 2011&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;But now GrooveBot's namesake is gone, which marks a neat sort of milestone for
+the project. It has now outlived its inspiration.&lt;/p&gt;
+&lt;p&gt;In any case, that isn't what I really want to talk about today. Instead of
+talking about the loss of GrooveShark, let me tell you about what GrooveBot has
+gained.&lt;/p&gt;
+&lt;p&gt;When I was last fiddling with GrooveBot sometime in 2014, I came to a sudden
+realization. If I wanted to subject the people of the FOSSBox to the mad fever
+dream of Smash Mouth mashups that is &lt;a class="reference external" href="http://neilcic.com"&gt;Neil Cicierega&lt;/a&gt;'s &lt;a class="reference external" href="http://neilcic.com/mouthsounds"&gt;Mouth Sounds&lt;/a&gt;, I
+would have to add some form of SoundCloud integration &lt;a class="footnote-reference" href="#need" id="id1"&gt;[1]&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;At the time, I was busy working on one of the issues that had been annoying me
+(and others) since the bot's early beginnings, namely the lack of a permanent
+queue that persisted through crashes (and live-coding restarts). Along with that
+came some architectural updates that should make it easier to one day support
+multiple backends at the same time, which is another longstanding issue that I
+would dearly like to fix one day. Point being, I had a lot of other things I
+wanted to accomplish, and not a lot of percieved benefit to stopping that and
+dropping in a new backend instead.&lt;/p&gt;
+&lt;p&gt;Fast-forward to PyCon 2015 sprints, and Neil Cicierega has not only made another
+ridiculous mashup album with &lt;a class="reference external" href="http://neilcic.com/mouthsilence"&gt;Mouth Silence&lt;/a&gt;, but has also been posting a
+number of not-yet-albumized music to SoundCloud individually. So, I took a look
+through SoundCloud's &lt;a class="reference external" href="https://developers.soundcloud.com/docs/api/guide"&gt;API&lt;/a&gt;, and went through some of GrooveBot's less atrophied
+backends &lt;a class="footnote-reference" href="#old" id="id2"&gt;[2]&lt;/a&gt;, and put together a new version that supports SoundCloud.&lt;/p&gt;
+&lt;p&gt;And then I proceeded to play &lt;a class="reference external" href="https://soundcloud.com/neilcic/bustin"&gt;Bustin'&lt;/a&gt; on repeat for a while.&lt;/p&gt;
+&lt;table class="docutils footnote" frame="void" id="need" rules="none"&gt;
+&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Well, I mean, I could use the mpd backend, but without multiple
+backend support, the pool of music would get stale quickly, and as much as
+this is a project to force my musical tastes onto others, it is important to
+me to let them do the same to me in return.&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;table class="docutils footnote" frame="void" id="old" rules="none"&gt;
+&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id2"&gt;[2]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;The 2014 changes I mentioned were actually pretty deep in scope, and
+while I am happier with where the bot is now, for a while Spotify was the
+only supported backend because it was the only one in use, and the only one
+that made the switch. Obviously now SoundCloud works, and I think MPD should
+be working, but Pandora has been broken for years, and GrooveShark never
+worked in the first place.&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nathaniel Case</dc:creator><pubDate>Mon, 11 May 2015 17:28:00 -0400</pubDate><guid>tag:nathanielca.se,2015-05-11:personal/groovebot-2015.html</guid><category>groovebot</category></item><item><title>New Domain!</title><link>http://nathanielca.se/meta/new-domain.html</link><description>&lt;p&gt;Hey, look at that, I have a new domain!&lt;/p&gt;
 &lt;p&gt;It's a thing I've been looking into for a while now, but I finally went through
 with it. Hopefully it'll get me to update this a bit more in the future, I have
 a few draft posts I have been meaning to put together, especially after PyCon

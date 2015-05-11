@@ -42,7 +42,80 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="http://nathanielca.se/personal/recent-projects-groovebot.html">Recent Projects: Groovebot</a></h1> 
+                    <h1 class="entry-title"><a href="http://nathanielca.se/personal/groovebot-2015.html">GrooveBot 2015</a></h1> 
+<footer class="post-info">
+        <p><img src="http://www.gravatar.com/avatar/3a3baabff105b46a458688ecf49901af" /></p>
+        <abbr class="published" title="2015-05-11T17:28:00-04:00">
+                Mon 11 May 2015
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="http://nathanielca.se/author/nathaniel-case.html">Nathaniel Case</a>
+        </address>
+<p>In <a href="http://nathanielca.se/category/personal.html">personal</a>. </p>
+<p>tags: <a href="http://nathanielca.se/tag/groovebot.html">groovebot</a></p>
+</footer><!-- /.post-info --><p>So <a class="reference external" href="http://www.grooveshark.com/">GrooveShark</a> shut down a few days ago.</p>
+<p>I haven't really followed them much since I took over the original <a class="reference external" href="https://github.com/Qalthos/groovebot">GrooveBot</a>
+codebase <a class="reference external" href="/personal/groovebot-updates.html">sometime in 2011</a>.</p>
+<p>But now GrooveBot's namesake is gone, which marks a neat sort of milestone for
+the project. It has now outlived its inspiration.</p>
+<p>In any case, that isn't what I really want to talk about today. Instead of
+talking about the loss of GrooveShark, let me tell you about what GrooveBot has
+gained.</p>
+<p>When I was last fiddling with GrooveBot sometime in 2014, I came to a sudden
+realization. If I wanted to subject the people of the FOSSBox to the mad fever
+dream of Smash Mouth mashups that is <a class="reference external" href="http://neilcic.com">Neil Cicierega</a>'s <a class="reference external" href="http://neilcic.com/mouthsounds">Mouth Sounds</a>, I
+would have to add some form of SoundCloud integration <a class="footnote-reference" href="#need" id="id1">[1]</a>.</p>
+<p>At the time, I was busy working on one of the issues that had been annoying me
+(and others) since the bot's early beginnings, namely the lack of a permanent
+queue that persisted through crashes (and live-coding restarts). Along with that
+came some architectural updates that should make it easier to one day support
+multiple backends at the same time, which is another longstanding issue that I
+would dearly like to fix one day. Point being, I had a lot of other things I
+wanted to accomplish, and not a lot of percieved benefit to stopping that and
+dropping in a new backend instead.</p>
+<p>Fast-forward to PyCon 2015 sprints, and Neil Cicierega has not only made another
+ridiculous mashup album with <a class="reference external" href="http://neilcic.com/mouthsilence">Mouth Silence</a>, but has also been posting a
+number of not-yet-albumized music to SoundCloud individually. So, I took a look
+through SoundCloud's <a class="reference external" href="https://developers.soundcloud.com/docs/api/guide">API</a>, and went through some of GrooveBot's less atrophied
+backends <a class="footnote-reference" href="#old" id="id2">[2]</a>, and put together a new version that supports SoundCloud.</p>
+<p>And then I proceeded to play <a class="reference external" href="https://soundcloud.com/neilcic/bustin">Bustin'</a> on repeat for a while.</p>
+<table class="docutils footnote" frame="void" id="need" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Well, I mean, I could use the mpd backend, but without multiple
+backend support, the pool of music would get stale quickly, and as much as
+this is a project to force my musical tastes onto others, it is important to
+me to let them do the same to me in return.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="old" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>The 2014 changes I mentioned were actually pretty deep in scope, and
+while I am happier with where the bot is now, for a while Spotify was the
+only supported backend because it was the only one in use, and the only one
+that made the switch. Obviously now SoundCloud works, and I think MPD should
+be working, but Pandora has been broken for years, and GrooveShark never
+worked in the first place.</td></tr>
+</tbody>
+</table>
+                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+        
+
+ 
+            <li><article class="hentry">    
+                <header>
+                    <h1><a href="http://nathanielca.se/personal/recent-projects-groovebot.html" rel="bookmark"
+                           title="Permalink to Recent Projects: Groovebot">Recent Projects: Groovebot</a></h1>
+                </header>
+                
+                <div class="entry-content">
 <footer class="post-info">
         <p><img src="http://www.gravatar.com/avatar/3a3baabff105b46a458688ecf49901af" /></p>
         <abbr class="published" title="2012-07-24T18:47:00-04:00">
@@ -54,69 +127,14 @@
         </address>
 <p>In <a href="http://nathanielca.se/category/personal.html">personal</a>. </p>
 <p>tags: <a href="http://nathanielca.se/tag/groovebot.html">groovebot</a></p>
-</footer><!-- /.post-info --><p>This is the first of a number of posts meant to overview the things I've
+</footer><!-- /.post-info -->                <p>This is the first of a number of posts meant to overview the things I've
 been doing recently. First up on the list is the long-overdue
 <a class="reference external" href="https://github.com/Qalthos/groovebot">Groovebot</a> update.</p>
 <p>Before this summer, Groovebot 'worked' on <a class="reference external" href="http://spotify.com/">Spotify</a>, and also had a
-fairly useful but under-tested <a class="reference external" href="http://en.wikipedia.org/wiki/Music_Player_Daemon">MPD</a> backend that worked for me when I
-could get MPD running properly. Unfortunately, I no longer had an active
-Spotify subscription, which meant that I couldn't use the Spotify
-backend, and I had moved off of RIT's campus, meaning I no longer had a
-~100Mb connection to my fileserver, so streaming files that way was more
-problematic.</p>
-<p>While looking around for other things I could use to get Groovebot
-running on, I rediscovered <a class="reference external" href="http://kevinmehall.net/p/pithos/">Pithos</a>, a Python frontend to Pandora.
-Using Pithos as an authenticator, I could get URLs to music files that I
-could play if I could figure out how to play them in Python. As a
-temporary test, I just sent them to mplayer to play the files. This
-worked well enough, but had the same problem I had encountered with
-Spotify, namely that I could not get a callback properly positioned to
-fire when the song finished.</p>
-<p>I put the project aside for a time, until <a class="reference external" href="http://www.jlewopensource.com/">Justin</a> pointed out
-GStreamer is made to do this sort of thing. With this in mind, I took
-another look at the task, first trying to run GStreamer in its own event
-loop on top of Twisted, then giving up and processing events on a tick.
-This means I have to respond to every event GStreamer throws out (which
-is a fair number of them), but most of them can be thrown out without
-looking at them. Some more tweaking later, and PandBot was born, able to
-connect to a user's Pandora station, play music, and thumb songs up or
-down based on user response in the IRC channel.</p>
-<p>At this point, I had been writing new bots each time I added a new
-backend, with a lot of repeated code in each, leading to subtle bugs and
-API implementations that were slowly drifting apart based on individual
-needs. This made me a little annoyed, but I didn't have any particular
-need to fix it, so I left it alone. Until an accidental click around the
-Spotify website left me with another Premium subscription (and $10
-poorer...) I poked around on SpotBot to see if it still worked. Turns
-out it did... just not on the DJ computer in the FOSSBox. Turns out that
-spytify, the python bindings for <a class="reference external" href="http://despotify.se/">despotify</a> have gotten a little stale
-in the interim, and no longer compile with modern versions of Cython.
-This meant I should probably break down and get an API key from Spotify
-and use the proper official API instead.</p>
-<p>However, in working on MPD and Pandora bots in the meantime had given me
-a number of ideas and fixes that would be problematic to port back to
-Spotify, which meant I had finally gotten an excuse to try to merge the
-three separate codebases into one unified version. Starting with MPD and
-Pandora, I merged the files and ran the result through a three-way diff,
-trying to identify important parts of each bot to make sure each worked
-properly after the merge. Next, I looked into the architecture of
-pyspotify, and immediately ran into some trouble. pyspotify works
-differently to the backends I had been used to, having its own threading
-I would need to juggle alongside my own. Additionally, the code is not
-thread safe, which is a problem with the heavily-threaded Groovebot
-code.</p>
-<p>So now, the status is that we are down to two bots. One is the ancient
-Grooveshark code that is in need of updating and integrating with the
-second bot. This second bot has all the work I've been doing lately and,
-some few remaining problems aside, mostly work. Ideally, I will soon
-have a better host for the bot that will let me run Spotify, but for now
-Pandora is working well enough.</p>
-</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+fairly useful but under-tested <a class="reference external" href="http://en.wikipedia.org/wiki/Music_Player_Daemon">MPD</a> backend that worked for me ...</p>
+                <a class="readmore" href="http://nathanielca.se/personal/recent-projects-groovebot.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
         
 
  
@@ -162,36 +180,36 @@ control over the songs played be available to ...</p>
     <div class="tagcloud">
       <h2>tag cloud</h2>
       <ul>
-          <li class="tag-4"><a href="http://nathanielca.se/tag/charsheet.html">charsheet</a></li>
-          <li class="tag-1"><a href="http://nathanielca.se/tag/hackathon.html">hackathon</a></li>
-          <li class="tag-4"><a href="http://nathanielca.se/tag/remysmoke.html">remysmoke</a></li>
-          <li class="tag-1"><a href="http://nathanielca.se/tag/scrapers.html">scrapers</a></li>
-          <li class="tag-1"><a href="http://nathanielca.se/tag/lemonade.html">lemonade</a></li>
-          <li class="tag-2"><a href="http://nathanielca.se/tag/pydex.html">pyDex</a></li>
-          <li class="tag-2"><a href="http://nathanielca.se/tag/blog.html">blog</a></li>
-          <li class="tag-3"><a href="http://nathanielca.se/tag/jquery.html">jQuery</a></li>
-          <li class="tag-2"><a href="http://nathanielca.se/tag/geowebdns.html">geowebdns</a></li>
-          <li class="tag-3"><a href="http://nathanielca.se/tag/groovebot.html">groovebot</a></li>
-          <li class="tag-1"><a href="http://nathanielca.se/tag/journalism.html">journalism</a></li>
           <li class="tag-3"><a href="http://nathanielca.se/tag/polyscraper.html">polyscraper</a></li>
-          <li class="tag-3"><a href="http://nathanielca.se/tag/data alchemy.html">data alchemy</a></li>
-          <li class="tag-1"><a href="http://nathanielca.se/tag/peopledashboard.html">peopledashboard</a></li>
-          <li class="tag-3"><a href="http://nathanielca.se/tag/wat.html">wat</a></li>
-          <li class="tag-4"><a href="http://nathanielca.se/tag/hardware.html">hardware</a></li>
-          <li class="tag-1"><a href="http://nathanielca.se/tag/floss-seminar.html">FLOSS-seminar</a></li>
-          <li class="tag-4"><a href="http://nathanielca.se/tag/fabulous.html">fabulous</a></li>
-          <li class="tag-1"><a href="http://nathanielca.se/tag/wikiotics.html">wikiotics</a></li>
-          <li class="tag-3"><a href="http://nathanielca.se/tag/mediagoblin.html">mediagoblin</a></li>
           <li class="tag-3"><a href="http://nathanielca.se/tag/timeline.html">timeline</a></li>
-          <li class="tag-1"><a href="http://nathanielca.se/tag/surs.html">SURS</a></li>
-          <li class="tag-1"><a href="http://nathanielca.se/tag/sugar.html">sugar</a></li>
-          <li class="tag-3"><a href="http://nathanielca.se/tag/yacht.html">yacht</a></li>
+          <li class="tag-4"><a href="http://nathanielca.se/tag/webbotwar.html">webbotwar</a></li>
+          <li class="tag-4"><a href="http://nathanielca.se/tag/charsheet.html">charsheet</a></li>
+          <li class="tag-4"><a href="http://nathanielca.se/tag/boston.html">Boston</a></li>
+          <li class="tag-1"><a href="http://nathanielca.se/tag/scrapers.html">scrapers</a></li>
+          <li class="tag-4"><a href="http://nathanielca.se/tag/uwsgi.html">uWSGI</a></li>
+          <li class="tag-2"><a href="http://nathanielca.se/tag/geowebdns.html">geowebdns</a></li>
           <li class="tag-1"><a href="http://nathanielca.se/tag/openshift.html">openshift</a></li>
+          <li class="tag-2"><a href="http://nathanielca.se/tag/blog.html">blog</a></li>
+          <li class="tag-1"><a href="http://nathanielca.se/tag/surs.html">SURS</a></li>
+          <li class="tag-1"><a href="http://nathanielca.se/tag/hackathon.html">hackathon</a></li>
           <li class="tag-2"><a href="http://nathanielca.se/tag/election.html">election</a></li>
-          <li class="tag-4"><a href="http://nathanielca.se/tag/knowledge.html">knowledge</a></li>
           <li class="tag-2"><a href="http://nathanielca.se/tag/democracymap.html">democracymap</a></li>
+          <li class="tag-2"><a href="http://nathanielca.se/tag/pydex.html">pyDex</a></li>
+          <li class="tag-1"><a href="http://nathanielca.se/tag/sugar.html">sugar</a></li>
+          <li class="tag-4"><a href="http://nathanielca.se/tag/selinux.html">SELinux</a></li>
+          <li class="tag-1"><a href="http://nathanielca.se/tag/floss-seminar.html">FLOSS-seminar</a></li>
+          <li class="tag-3"><a href="http://nathanielca.se/tag/mediagoblin.html">mediagoblin</a></li>
+          <li class="tag-1"><a href="http://nathanielca.se/tag/peopledashboard.html">peopledashboard</a></li>
+          <li class="tag-1"><a href="http://nathanielca.se/tag/journalism.html">journalism</a></li>
+          <li class="tag-4"><a href="http://nathanielca.se/tag/remysmoke.html">remysmoke</a></li>
+          <li class="tag-3"><a href="http://nathanielca.se/tag/jquery.html">jQuery</a></li>
+          <li class="tag-3"><a href="http://nathanielca.se/tag/yacht.html">yacht</a></li>
           <li class="tag-1"><a href="http://nathanielca.se/tag/widgets.html">widgets</a></li>
-          <li class="tag-4"><a href="http://nathanielca.se/tag/schoolserver.html">schoolserver</a></li>
+          <li class="tag-1"><a href="http://nathanielca.se/tag/lemonade.html">lemonade</a></li>
+          <li class="tag-3"><a href="http://nathanielca.se/tag/wat.html">wat</a></li>
+          <li class="tag-2"><a href="http://nathanielca.se/tag/groovebot.html">groovebot</a></li>
+          <li class="tag-1"><a href="http://nathanielca.se/tag/wikiotics.html">wikiotics</a></li>
+          <li class="tag-3"><a href="http://nathanielca.se/tag/data alchemy.html">data alchemy</a></li>
       </ul>
     </div>
     <div class="social">

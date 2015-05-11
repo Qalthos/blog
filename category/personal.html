@@ -40,7 +40,80 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="http://nathanielca.se/personal/remysmoke-improving.html">Remysmoke Improving</a></h1> 
+                    <h1 class="entry-title"><a href="http://nathanielca.se/personal/groovebot-2015.html">GrooveBot 2015</a></h1> 
+<footer class="post-info">
+        <p><img src="http://www.gravatar.com/avatar/3a3baabff105b46a458688ecf49901af" /></p>
+        <abbr class="published" title="2015-05-11T17:28:00-04:00">
+                Mon 11 May 2015
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="http://nathanielca.se/author/nathaniel-case.html">Nathaniel Case</a>
+        </address>
+<p>In <a href="http://nathanielca.se/category/personal.html">personal</a>. </p>
+<p>tags: <a href="http://nathanielca.se/tag/groovebot.html">groovebot</a></p>
+</footer><!-- /.post-info --><p>So <a class="reference external" href="http://www.grooveshark.com/">GrooveShark</a> shut down a few days ago.</p>
+<p>I haven't really followed them much since I took over the original <a class="reference external" href="https://github.com/Qalthos/groovebot">GrooveBot</a>
+codebase <a class="reference external" href="/personal/groovebot-updates.html">sometime in 2011</a>.</p>
+<p>But now GrooveBot's namesake is gone, which marks a neat sort of milestone for
+the project. It has now outlived its inspiration.</p>
+<p>In any case, that isn't what I really want to talk about today. Instead of
+talking about the loss of GrooveShark, let me tell you about what GrooveBot has
+gained.</p>
+<p>When I was last fiddling with GrooveBot sometime in 2014, I came to a sudden
+realization. If I wanted to subject the people of the FOSSBox to the mad fever
+dream of Smash Mouth mashups that is <a class="reference external" href="http://neilcic.com">Neil Cicierega</a>'s <a class="reference external" href="http://neilcic.com/mouthsounds">Mouth Sounds</a>, I
+would have to add some form of SoundCloud integration <a class="footnote-reference" href="#need" id="id1">[1]</a>.</p>
+<p>At the time, I was busy working on one of the issues that had been annoying me
+(and others) since the bot's early beginnings, namely the lack of a permanent
+queue that persisted through crashes (and live-coding restarts). Along with that
+came some architectural updates that should make it easier to one day support
+multiple backends at the same time, which is another longstanding issue that I
+would dearly like to fix one day. Point being, I had a lot of other things I
+wanted to accomplish, and not a lot of percieved benefit to stopping that and
+dropping in a new backend instead.</p>
+<p>Fast-forward to PyCon 2015 sprints, and Neil Cicierega has not only made another
+ridiculous mashup album with <a class="reference external" href="http://neilcic.com/mouthsilence">Mouth Silence</a>, but has also been posting a
+number of not-yet-albumized music to SoundCloud individually. So, I took a look
+through SoundCloud's <a class="reference external" href="https://developers.soundcloud.com/docs/api/guide">API</a>, and went through some of GrooveBot's less atrophied
+backends <a class="footnote-reference" href="#old" id="id2">[2]</a>, and put together a new version that supports SoundCloud.</p>
+<p>And then I proceeded to play <a class="reference external" href="https://soundcloud.com/neilcic/bustin">Bustin'</a> on repeat for a while.</p>
+<table class="docutils footnote" frame="void" id="need" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Well, I mean, I could use the mpd backend, but without multiple
+backend support, the pool of music would get stale quickly, and as much as
+this is a project to force my musical tastes onto others, it is important to
+me to let them do the same to me in return.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="old" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>The 2014 changes I mentioned were actually pretty deep in scope, and
+while I am happier with where the bot is now, for a while Spotify was the
+only supported backend because it was the only one in use, and the only one
+that made the switch. Obviously now SoundCloud works, and I think MPD should
+be working, but Pandora has been broken for years, and GrooveShark never
+worked in the first place.</td></tr>
+</tbody>
+</table>
+                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+        
+
+ 
+            <li><article class="hentry">    
+                <header>
+                    <h1><a href="http://nathanielca.se/personal/remysmoke-improving.html" rel="bookmark"
+                           title="Permalink to Remysmoke Improving">Remysmoke Improving</a></h1>
+                </header>
+                
+                <div class="entry-content">
 <footer class="post-info">
         <p><img src="http://www.gravatar.com/avatar/3a3baabff105b46a458688ecf49901af" /></p>
         <abbr class="published" title="2013-07-26T03:44:00-04:00">
@@ -52,44 +125,17 @@
         </address>
 <p>In <a href="http://nathanielca.se/category/personal.html">personal</a>. </p>
 <p>tags: <a href="http://nathanielca.se/tag/remysmoke.html">remysmoke</a></p>
-</footer><!-- /.post-info --><p><a class="reference external" href="http://remysmoke.linkybook.com/">Remysmoke</a> has had a few updates over the past week, and I think they've gone
+</footer><!-- /.post-info -->                <p><a class="reference external" href="http://remysmoke.linkybook.com/">Remysmoke</a> has had a few updates over the past week, and I think they've gone
 pretty well. Remysmoke is now at version 1.2, here's the changelog for the past
 few versions:</p>
 <div class="section" id="remysmoke-1-0">
 <h2>Remysmoke 1.0</h2>
 <ul class="simple">
 <li>Moved graphs from tw2-protoviz to <a class="reference external" href="http://pygal.org/">pygal</a>.</li>
-<li>Moved smoke input form from tw2-forms to hand-crafted HTML5 forms.</li>
-<li>Completely removed Toscawidgets and ToscaWidgets2 from Remysmoke (including
-some very old boilerplate TurboGears code).</li>
-</ul>
-</div>
-<div class="section" id="remysmoke-1-1">
-<h2>Remysmoke 1.1</h2>
-<ul class="simple">
-<li>Updated codebase to TurboGears 2.3.</li>
-<li>Redeployed Remysmoke on <a class="reference external" href="http://openshift.com/">OpenShift</a> Python 2.7 Cartridge (was Python 2.6).</li>
-</ul>
-</div>
-<div class="section" id="remysmoke-1-2">
-<h2>Remysmoke 1.2</h2>
-<ul class="simple">
-<li>Cleaned up login and smoke forms to be more consistent.</li>
-<li>Themed form checkboxes to be consistent with the rest of the UI.</li>
-<li>Added new theming for disabled input boxes.</li>
-<li>Added new 'unsmoke' option, allowing a user to attest that they have not
-smoked that day.</li>
-</ul>
-<p>Remysmoke 1.2 went live late last night, and a  hotfix 1.2.1 will be up shortly
-with an OpenShift-specific patch dealing with overriding the database location
-at runtime.</p>
-</div>
-                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+<li>Moved smoke input form from tw2-forms to ...</li></ul></div>
+                <a class="readmore" href="http://nathanielca.se/personal/remysmoke-improving.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
         
 
  
@@ -177,35 +223,6 @@ sure you add the changes in config/app_cfg.py</p>
                 <a class="readmore" href="http://nathanielca.se/personal/openshift-troubles-continued.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
-        
-
- 
-            <li><article class="hentry">    
-                <header>
-                    <h1><a href="http://nathanielca.se/personal/groovebot-updates.html" rel="bookmark"
-                           title="Permalink to GrooveBot updates">GrooveBot updates</a></h1>
-                </header>
-                
-                <div class="entry-content">
-<footer class="post-info">
-        <p><img src="http://www.gravatar.com/avatar/3a3baabff105b46a458688ecf49901af" /></p>
-        <abbr class="published" title="2011-09-28T01:28:00-04:00">
-                Wed 28 September 2011
-        </abbr>
-
-        <address class="vcard author">
-                By <a class="url fn" href="http://nathanielca.se/author/nathaniel-case.html">Nathaniel Case</a>
-        </address>
-<p>In <a href="http://nathanielca.se/category/personal.html">personal</a>. </p>
-<p>tags: <a href="http://nathanielca.se/tag/groovebot.html">groovebot</a></p>
-</footer><!-- /.post-info -->                <p>Today I'm going to talk about something a bit more understandable, I
-hope.</p>
-<p>Back around the summer of 2010, the FOSSBox wanted some ambient music to
-play in the background. One of the things we wanted was a way to have
-control over the songs played be available to ...</p>
-                <a class="readmore" href="http://nathanielca.se/personal/groovebot-updates.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
             </ol><!-- /#posts-list -->
 <p class="paginator">
     Page 1 / 3
@@ -223,36 +240,36 @@ control over the songs played be available to ...</p>
     <div class="tagcloud">
       <h2>tag cloud</h2>
       <ul>
-          <li class="tag-4"><a href="http://nathanielca.se/tag/charsheet.html">charsheet</a></li>
-          <li class="tag-1"><a href="http://nathanielca.se/tag/hackathon.html">hackathon</a></li>
-          <li class="tag-4"><a href="http://nathanielca.se/tag/remysmoke.html">remysmoke</a></li>
-          <li class="tag-1"><a href="http://nathanielca.se/tag/scrapers.html">scrapers</a></li>
-          <li class="tag-1"><a href="http://nathanielca.se/tag/lemonade.html">lemonade</a></li>
-          <li class="tag-2"><a href="http://nathanielca.se/tag/pydex.html">pyDex</a></li>
-          <li class="tag-2"><a href="http://nathanielca.se/tag/blog.html">blog</a></li>
-          <li class="tag-3"><a href="http://nathanielca.se/tag/jquery.html">jQuery</a></li>
-          <li class="tag-2"><a href="http://nathanielca.se/tag/geowebdns.html">geowebdns</a></li>
-          <li class="tag-3"><a href="http://nathanielca.se/tag/groovebot.html">groovebot</a></li>
-          <li class="tag-1"><a href="http://nathanielca.se/tag/journalism.html">journalism</a></li>
           <li class="tag-3"><a href="http://nathanielca.se/tag/polyscraper.html">polyscraper</a></li>
-          <li class="tag-3"><a href="http://nathanielca.se/tag/data alchemy.html">data alchemy</a></li>
-          <li class="tag-1"><a href="http://nathanielca.se/tag/peopledashboard.html">peopledashboard</a></li>
-          <li class="tag-3"><a href="http://nathanielca.se/tag/wat.html">wat</a></li>
-          <li class="tag-4"><a href="http://nathanielca.se/tag/hardware.html">hardware</a></li>
-          <li class="tag-1"><a href="http://nathanielca.se/tag/floss-seminar.html">FLOSS-seminar</a></li>
-          <li class="tag-4"><a href="http://nathanielca.se/tag/fabulous.html">fabulous</a></li>
-          <li class="tag-1"><a href="http://nathanielca.se/tag/wikiotics.html">wikiotics</a></li>
-          <li class="tag-3"><a href="http://nathanielca.se/tag/mediagoblin.html">mediagoblin</a></li>
           <li class="tag-3"><a href="http://nathanielca.se/tag/timeline.html">timeline</a></li>
-          <li class="tag-1"><a href="http://nathanielca.se/tag/surs.html">SURS</a></li>
-          <li class="tag-1"><a href="http://nathanielca.se/tag/sugar.html">sugar</a></li>
-          <li class="tag-3"><a href="http://nathanielca.se/tag/yacht.html">yacht</a></li>
+          <li class="tag-4"><a href="http://nathanielca.se/tag/webbotwar.html">webbotwar</a></li>
+          <li class="tag-4"><a href="http://nathanielca.se/tag/charsheet.html">charsheet</a></li>
+          <li class="tag-4"><a href="http://nathanielca.se/tag/boston.html">Boston</a></li>
+          <li class="tag-1"><a href="http://nathanielca.se/tag/scrapers.html">scrapers</a></li>
+          <li class="tag-4"><a href="http://nathanielca.se/tag/uwsgi.html">uWSGI</a></li>
+          <li class="tag-2"><a href="http://nathanielca.se/tag/geowebdns.html">geowebdns</a></li>
           <li class="tag-1"><a href="http://nathanielca.se/tag/openshift.html">openshift</a></li>
+          <li class="tag-2"><a href="http://nathanielca.se/tag/blog.html">blog</a></li>
+          <li class="tag-1"><a href="http://nathanielca.se/tag/surs.html">SURS</a></li>
+          <li class="tag-1"><a href="http://nathanielca.se/tag/hackathon.html">hackathon</a></li>
           <li class="tag-2"><a href="http://nathanielca.se/tag/election.html">election</a></li>
-          <li class="tag-4"><a href="http://nathanielca.se/tag/knowledge.html">knowledge</a></li>
           <li class="tag-2"><a href="http://nathanielca.se/tag/democracymap.html">democracymap</a></li>
+          <li class="tag-2"><a href="http://nathanielca.se/tag/pydex.html">pyDex</a></li>
+          <li class="tag-1"><a href="http://nathanielca.se/tag/sugar.html">sugar</a></li>
+          <li class="tag-4"><a href="http://nathanielca.se/tag/selinux.html">SELinux</a></li>
+          <li class="tag-1"><a href="http://nathanielca.se/tag/floss-seminar.html">FLOSS-seminar</a></li>
+          <li class="tag-3"><a href="http://nathanielca.se/tag/mediagoblin.html">mediagoblin</a></li>
+          <li class="tag-1"><a href="http://nathanielca.se/tag/peopledashboard.html">peopledashboard</a></li>
+          <li class="tag-1"><a href="http://nathanielca.se/tag/journalism.html">journalism</a></li>
+          <li class="tag-4"><a href="http://nathanielca.se/tag/remysmoke.html">remysmoke</a></li>
+          <li class="tag-3"><a href="http://nathanielca.se/tag/jquery.html">jQuery</a></li>
+          <li class="tag-3"><a href="http://nathanielca.se/tag/yacht.html">yacht</a></li>
           <li class="tag-1"><a href="http://nathanielca.se/tag/widgets.html">widgets</a></li>
-          <li class="tag-4"><a href="http://nathanielca.se/tag/schoolserver.html">schoolserver</a></li>
+          <li class="tag-1"><a href="http://nathanielca.se/tag/lemonade.html">lemonade</a></li>
+          <li class="tag-3"><a href="http://nathanielca.se/tag/wat.html">wat</a></li>
+          <li class="tag-2"><a href="http://nathanielca.se/tag/groovebot.html">groovebot</a></li>
+          <li class="tag-1"><a href="http://nathanielca.se/tag/wikiotics.html">wikiotics</a></li>
+          <li class="tag-3"><a href="http://nathanielca.se/tag/data alchemy.html">data alchemy</a></li>
       </ul>
     </div>
     <div class="social">

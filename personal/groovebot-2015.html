@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>OpenShift Troubles</title>
+  <title>GrooveBot 2015</title>
   <meta charset="utf-8" />
     <link rel="stylesheet" href="http://nathanielca.se/theme/css/main.min.css?6f94adab" type="text/css" />
       <link href="http://nathanielca.se/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Why Not Wingnut? Atom Feed" />
@@ -39,87 +39,74 @@
   <article>
     <header>
       <h1 class="entry-title">
-        <a href="http://nathanielca.se/personal/openshift-troubles.html" rel="bookmark"
-           title="Permalink to OpenShift Troubles">OpenShift Troubles</a>
+        <a href="http://nathanielca.se/personal/groovebot-2015.html" rel="bookmark"
+           title="Permalink to GrooveBot 2015">GrooveBot 2015</a>
       </h1>
     </header>
 
     <div class="entry-content">
 <footer class="post-info">
         <p><img src="http://www.gravatar.com/avatar/3a3baabff105b46a458688ecf49901af" /></p>
-        <abbr class="published" title="2012-02-03T06:47:00-05:00">
-                Fri 03 February 2012
+        <abbr class="published" title="2015-05-11T17:28:00-04:00">
+                Mon 11 May 2015
         </abbr>
 
         <address class="vcard author">
                 By <a class="url fn" href="http://nathanielca.se/author/nathaniel-case.html">Nathaniel Case</a>
         </address>
 <p>In <a href="http://nathanielca.se/category/personal.html">personal</a>. </p>
-<p>tags: <a href="http://nathanielca.se/tag/floss-seminar.html">FLOSS-seminar</a><a href="http://nathanielca.se/tag/openshift.html">openshift</a></p>
-</footer><!-- /.post-info -->      <p>Recently I've been playing with <a class="reference external" href="http://openshift.redhat.com/">OpenShift</a>, a new(ish) service from
-Red Hat as a sort of 'push to cloud' deployment strategy. It's
-interesting for people like me who can whip up a site quick, but don't
-necessarily have the framework in place to host it.</p>
-<p>Due to my work on <a class="reference external" href="http://civx.us/">CIVX</a>, I've gotten pretty familiar with
-<a class="reference external" href="http://turbogears.org/">TurboGears</a>, and the idea of being able to take a site like that and
-run it without having to set up apache or fiddle with paster sounded
-real nice. Unfortunately, it was not so simple as it seems.</p>
-<p>First up was to get something, anything, running. For a while, OpenShift
-was throwing a <a class="reference external" href="http://www.flickr.com/photos/girliemac/6509400855/in/set-72157628409467125">500 error</a> when you tried to get a new application
-registered. A brief poke into their IRC told had them aware of the
-problem and it was fixed shortly. Next came the other part that should
-have been easy, running TurboGears.</p>
-<p><a class="reference external" href="http://lewk.org/">Luke</a> our favorite wizard around these parts, wrote a bit of <a class="reference external" href="https://github.com/lmacken/openshift-quickstarter">code</a>
-to get most of the available applications up and running without too
-much effort, including the currently unsupported TurboGears. Running
-this went off without a problem, but the resulting site gave me another
-happy 500 error. After a consult with Remy, we determined there were
-some missing version requirements that kept the site from running. After
-pulling those edits out of his repo and moving them upstream to Luke's,
-I had a working default TurboGears site.</p>
-<p>Until I tried to log in. Then I got another 500 error.
-I was beginning to get used to this, but it was still annoying to make a
-small change, then push it to the server and wait for the server to
-update the settings before I could test it. Even more fun was the
-occasional <a class="reference external" href="http://www.flickr.com/photos/girliemac/6540643319/in/set-72157628409467125/">503 error</a> when OpenShift couldn't keep up with my rapidly
-building and tearing down sites.</p>
-<p>Feeling that that was going to be a project by itself, I set about
-moving all my non-db-interfacing files to this new repository. The
-prebuilt version assumes that the site internally is named tg2app, and I
-was having trouble convincing it to go by anything else. Eventually I
-just decided to move files across one by one; first the templates that
-don't care what they're named, then the root controller, than the new
-model and widget. A lot of frustration, many <a class="reference external" href="http://www.flickr.com/photos/girliemac/6508023617/in/set-72157628409467125">403</a> and <a class="reference external" href="http://www.flickr.com/photos/girliemac/6508022985/in/set-72157628409467125/">404</a> errors
-later, I had something that pretended to work as long as I didn't use
-the database. But since the database is kind of the point of the site I
-was building, this was not exactly acceptable.</p>
-<p>So back to the drawing board then. I had a hunch something was wrong
-when I saw SQLAlchemy errors scroll by every time I reloaded the site.
-My best guess is that SQLAlchemy is failing to create the tables needed
-to run the site and continuing on blindly. Once I realized that, I
-dumped a test db from my local copy to the MySQL db, and suddenly
-everything was working. Or almost everything, anyway.</p>
-<p>I could read form the db fine, but any time I tried to modify it, I got
-another dreaded 500 error. I poked into everything I could find to try
-to figure out where it was failing, and finally determined it couldn't
-be on my end, as my local copy worked just as expected.</p>
-<p>Finally I stumbled across the answer, almost accidentally. When I moved
-the db from local sqlite to MySQL, I failed to set the auto increment
-setting on the id of my new databases, so when I neglected to provide an
-id for the new entries I was making, MySQL quite rightly complained at
-me. Unfortunately, since I can't find how to re-enable debug mode (nor
-should I really try), I wasn't getting any good error messages.
-So what is the site that has been giving me all these troubles? It's a
-little site I set up to publicly shame Remy into stopping smoking:
-<a class="reference external" href="http://remysmoke-qalthos.rhcloud.com/">remysmoke-qalthos.rhcloud.com</a></p>
+<p>tags: <a href="http://nathanielca.se/tag/groovebot.html">groovebot</a></p>
+</footer><!-- /.post-info -->      <p>So <a class="reference external" href="http://www.grooveshark.com/">GrooveShark</a> shut down a few days ago.</p>
+<p>I haven't really followed them much since I took over the original <a class="reference external" href="https://github.com/Qalthos/groovebot">GrooveBot</a>
+codebase <a class="reference external" href="/personal/groovebot-updates.html">sometime in 2011</a>.</p>
+<p>But now GrooveBot's namesake is gone, which marks a neat sort of milestone for
+the project. It has now outlived its inspiration.</p>
+<p>In any case, that isn't what I really want to talk about today. Instead of
+talking about the loss of GrooveShark, let me tell you about what GrooveBot has
+gained.</p>
+<p>When I was last fiddling with GrooveBot sometime in 2014, I came to a sudden
+realization. If I wanted to subject the people of the FOSSBox to the mad fever
+dream of Smash Mouth mashups that is <a class="reference external" href="http://neilcic.com">Neil Cicierega</a>'s <a class="reference external" href="http://neilcic.com/mouthsounds">Mouth Sounds</a>, I
+would have to add some form of SoundCloud integration <a class="footnote-reference" href="#need" id="id1">[1]</a>.</p>
+<p>At the time, I was busy working on one of the issues that had been annoying me
+(and others) since the bot's early beginnings, namely the lack of a permanent
+queue that persisted through crashes (and live-coding restarts). Along with that
+came some architectural updates that should make it easier to one day support
+multiple backends at the same time, which is another longstanding issue that I
+would dearly like to fix one day. Point being, I had a lot of other things I
+wanted to accomplish, and not a lot of percieved benefit to stopping that and
+dropping in a new backend instead.</p>
+<p>Fast-forward to PyCon 2015 sprints, and Neil Cicierega has not only made another
+ridiculous mashup album with <a class="reference external" href="http://neilcic.com/mouthsilence">Mouth Silence</a>, but has also been posting a
+number of not-yet-albumized music to SoundCloud individually. So, I took a look
+through SoundCloud's <a class="reference external" href="https://developers.soundcloud.com/docs/api/guide">API</a>, and went through some of GrooveBot's less atrophied
+backends <a class="footnote-reference" href="#old" id="id2">[2]</a>, and put together a new version that supports SoundCloud.</p>
+<p>And then I proceeded to play <a class="reference external" href="https://soundcloud.com/neilcic/bustin">Bustin'</a> on repeat for a while.</p>
+<table class="docutils footnote" frame="void" id="need" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Well, I mean, I could use the mpd backend, but without multiple
+backend support, the pool of music would get stale quickly, and as much as
+this is a project to force my musical tastes onto others, it is important to
+me to let them do the same to me in return.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="old" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>The 2014 changes I mentioned were actually pretty deep in scope, and
+while I am happier with where the bot is now, for a while Spotify was the
+only supported backend because it was the only one in use, and the only one
+that made the switch. Obviously now SoundCloud works, and I think MPD should
+be working, but Pandora has been broken for years, and GrooveShark never
+worked in the first place.</td></tr>
+</tbody>
+</table>
 
     </div><!-- /.entry-content -->
     <ul>
-        <li><a href="http://nathanielca.se/fossrit/turbogears2-on-openshift-just-like-it-should-be.html">TurboGears2 on OpenShift, just like it should be</a></li>
-        <li><a href="http://nathanielca.se/personal/openshift-troubles-continued.html">Openshift Troubles Continued</a></li>
-        <li><a href="http://nathanielca.se/fossrit/final-stretch.html">Final Stretch</a></li>
-        <li><a href="http://nathanielca.se/fossrit/charsheet-10.html">Charsheet 1.0</a></li>
-        <li><a href="http://nathanielca.se/fossrit/first-floss-seminar-post.html">First FLOSS Seminar post</a></li>
+        <li><a href="http://nathanielca.se/personal/groovebot-updates.html">GrooveBot updates</a></li>
+        <li><a href="http://nathanielca.se/personal/recent-projects-groovebot.html">Recent Projects: Groovebot</a></li>
     </ul>
 
   </article>
