@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://nathanielca.se/" rel="alternate"></link><link href="http://nathanielca.se/feeds/tag/games.atom.xml" rel="self"></link><id>http://nathanielca.se/</id><updated>2011-01-23T07:12:00-05:00</updated><entry><title>Killer Bunnies and the Towering Draw Pile</title><link href="http://nathanielca.se/personal/killer-bunnies-and-the-towering-draw-pile.html" rel="alternate"></link><updated>2011-01-23T07:12:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-01-23:personal/killer-bunnies-and-the-towering-draw-pile.html</id><summary type="html">&lt;p&gt;There was a hackathon Friday night, and a write-up is coming soon, but
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut? - games</title><link href="http://nathanielca.se/" rel="alternate"></link><link href="http://nathanielca.se/feeds/tag/games.atom.xml" rel="self"></link><id>http://nathanielca.se/</id><updated>2011-01-23T07:12:00-05:00</updated><entry><title>Killer Bunnies and the Towering Draw Pile</title><link href="http://nathanielca.se/personal/killer-bunnies-and-the-towering-draw-pile.html" rel="alternate"></link><published>2011-01-23T07:12:00-05:00</published><updated>2011-01-23T07:12:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-01-23:/personal/killer-bunnies-and-the-towering-draw-pile.html</id><summary type="html">&lt;p&gt;There was a hackathon Friday night, and a write-up is coming soon, but
+first a bit of random chatter.&lt;/p&gt;
+&lt;p&gt;I have, for a few years, been collecting the various pieces that make up
+&lt;a class="reference external" href="http://boardgamegeek.com/boardgame/3699/killer-bunnies-and-the-quest-for-the-magic-carrot"&gt;Killer Bunnies and the Quest for the Magic Carrot&lt;/a&gt;. For Christmas, I
+received the Stainless Steel booster …&lt;/p&gt;</summary><content type="html">&lt;p&gt;There was a hackathon Friday night, and a write-up is coming soon, but
 first a bit of random chatter.&lt;/p&gt;
 &lt;p&gt;I have, for a few years, been collecting the various pieces that make up
 &lt;a class="reference external" href="http://boardgamegeek.com/boardgame/3699/killer-bunnies-and-the-quest-for-the-magic-carrot"&gt;Killer Bunnies and the Quest for the Magic Carrot&lt;/a&gt;. For Christmas, I
@@ -36,4 +40,4 @@ addition would extend gameplay a bit more and provide new challenges for
 longtime players (not to mention many more dice to play with).&lt;/p&gt;
 &lt;p&gt;So that's how I spent my weekend apart from coding like a superstar. But
 don't worry, I'll get to that soon.&lt;/p&gt;
-</summary><category term="games"></category></entry></feed>
+</content><category term="games"></category></entry></feed>

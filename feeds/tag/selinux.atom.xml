@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://nathanielca.se/" rel="alternate"></link><link href="http://nathanielca.se/feeds/tag/selinux.atom.xml" rel="self"></link><id>http://nathanielca.se/</id><updated>2013-09-27T16:09:00-04:00</updated><entry><title>Deploying MediaGoblin 2: SELinux</title><link href="http://nathanielca.se/fossrit/deploying-mediagoblin-2-selinux.html" rel="alternate"></link><updated>2013-09-27T16:09:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2013-09-27:fossrit/deploying-mediagoblin-2-selinux.html</id><summary type="html">&lt;p&gt;So, &lt;a class="reference external" href="deploying-mediagoblin-1-fastcgi-vs-uwsgi.html"&gt;earlier&lt;/a&gt;, I wrote about my experience deploying &lt;a class="reference external" href="http://mediagoblin.org"&gt;MediaGoblin&lt;/a&gt;. None of
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut? - SELinux</title><link href="http://nathanielca.se/" rel="alternate"></link><link href="http://nathanielca.se/feeds/tag/selinux.atom.xml" rel="self"></link><id>http://nathanielca.se/</id><updated>2013-09-27T16:09:00-04:00</updated><entry><title>Deploying MediaGoblin 2: SELinux</title><link href="http://nathanielca.se/fossrit/deploying-mediagoblin-2-selinux.html" rel="alternate"></link><published>2013-09-27T16:09:00-04:00</published><updated>2013-09-27T16:09:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2013-09-27:/fossrit/deploying-mediagoblin-2-selinux.html</id><summary type="html">&lt;p&gt;So, &lt;a class="reference external" href="deploying-mediagoblin-1-fastcgi-vs-uwsgi.html"&gt;earlier&lt;/a&gt;, I wrote about my experience deploying &lt;a class="reference external" href="http://mediagoblin.org"&gt;MediaGoblin&lt;/a&gt;. None of
+this was necessary, I was mostly trying to diagnose some problems I was having
+and found uWSGI a more comfortable environment than FastCGI.&lt;/p&gt;
+&lt;p&gt;And what problem was this, you ask? Well, when I first ran through the
+installation instructions …&lt;/p&gt;</summary><content type="html">&lt;p&gt;So, &lt;a class="reference external" href="deploying-mediagoblin-1-fastcgi-vs-uwsgi.html"&gt;earlier&lt;/a&gt;, I wrote about my experience deploying &lt;a class="reference external" href="http://mediagoblin.org"&gt;MediaGoblin&lt;/a&gt;. None of
 this was necessary, I was mostly trying to diagnose some problems I was having
 and found uWSGI a more comfortable environment than FastCGI.&lt;/p&gt;
 &lt;p&gt;And what problem was this, you ask? Well, when I first ran through the
@@ -25,4 +29,4 @@ documentation.&lt;/p&gt;
 of me figure out how to enable this simply without changing a large number of
 SELinux booleans. There may be some simpler way of accomplishing this, but alas,
 in this case SELinux has once again bested me.&lt;/p&gt;
-</summary><category term="mediagoblin"></category><category term="yacht"></category><category term="SELinux"></category></entry></feed>
+</content><category term="mediagoblin"></category><category term="yacht"></category><category term="SELinux"></category></entry></feed>

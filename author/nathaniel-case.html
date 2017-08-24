@@ -3,22 +3,8 @@
 <head>
   <title>Why Not Wingnut? - Nathaniel Case</title>
   <meta charset="utf-8" />
-    <link rel="stylesheet" href="http://nathanielca.se/theme/css/main.min.css?6f94adab" type="text/css" />
+  <link rel="stylesheet" href="http://nathanielca.se/theme/css/main.css" type="text/css" />
       <link href="http://nathanielca.se/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Why Not Wingnut? Atom Feed" />
-
-  <!--[if IE]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-
-  <!--[if lte IE 7]>
-    <link rel="stylesheet" type="text/css" media="all" href="http://nathanielca.se/css/ie.css"/>
-    <script src="http://nathanielca.se/js/IE8.js" type="text/javascript"></script>
-  <![endif]-->
-
-  <!--[if lt IE 7]>
-    <link rel="stylesheet" type="text/css" media="all" href="http://nathanielca.se/css/ie6.css"/>
-  <![endif]-->
-
 </head>
 
 <body id="index" class="home">
@@ -29,9 +15,6 @@
         <li ><a href="http://nathanielca.se/category/fossrit.html">FOSS@RIT</a></li>
         <li ><a href="http://nathanielca.se/category/meta.html">meta</a></li>
         <li ><a href="http://nathanielca.se/category/personal.html">personal</a></li>
-          <li><a href="http://nathanielca.se/pages/about.html">about</a></li>
-          <li><a href="http://nathanielca.se/pages/links.html">links</a></li>
-          <li><a href="http://nathanielca.se/pages/projects.html">projects</a></li>
         <li><a href="http://qalthos.github.io/resume/resume.pdf">resume</a></li>
     </ul></nav>
   </header><!-- /#banner -->
@@ -40,64 +23,55 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="http://nathanielca.se/personal/groovebot-2015.html">GrooveBot 2015</a></h1> 
+                    <h1 class="entry-title"><a href="http://nathanielca.se/personal/fail2ban-woes.html">Fail2Ban woes</a></h1> 
 <footer class="post-info">
-        <p><img src="http://www.gravatar.com/avatar/3a3baabff105b46a458688ecf49901af" /></p>
-        <abbr class="published" title="2015-05-11T17:28:00-04:00">
-                Mon 11 May 2015
+        <p><img src="https://www.gravatar.com/avatar/3a3baabff105b46a458688ecf49901af" /></p>
+        <abbr class="published" title="2017-08-24T16:30:00-04:00">
+                Thu 24 August 2017
         </abbr>
 
         <address class="vcard author">
                 By <a class="url fn" href="http://nathanielca.se/author/nathaniel-case.html">Nathaniel Case</a>
         </address>
 <p>In <a href="http://nathanielca.se/category/personal.html">personal</a>. </p>
-<p>tags: <a href="http://nathanielca.se/tag/groovebot.html">groovebot</a></p>
-</footer><!-- /.post-info --><p>So <a class="reference external" href="http://www.grooveshark.com/">GrooveShark</a> shut down a few days ago.</p>
-<p>I haven't really followed them much since I took over the original <a class="reference external" href="https://github.com/Qalthos/groovebot">GrooveBot</a>
-codebase <a class="reference external" href="/personal/groovebot-updates.html">sometime in 2011</a>.</p>
-<p>But now GrooveBot's namesake is gone, which marks a neat sort of milestone for
-the project. It has now outlived its inspiration.</p>
-<p>In any case, that isn't what I really want to talk about today. Instead of
-talking about the loss of GrooveShark, let me tell you about what GrooveBot has
-gained.</p>
-<p>When I was last fiddling with GrooveBot sometime in 2014, I came to a sudden
-realization. If I wanted to subject the people of the FOSSBox to the mad fever
-dream of Smash Mouth mashups that is <a class="reference external" href="http://neilcic.com">Neil Cicierega</a>'s <a class="reference external" href="http://neilcic.com/mouthsounds">Mouth Sounds</a>, I
-would have to add some form of SoundCloud integration <a class="footnote-reference" href="#need" id="id1">[1]</a>.</p>
-<p>At the time, I was busy working on one of the issues that had been annoying me
-(and others) since the bot's early beginnings, namely the lack of a permanent
-queue that persisted through crashes (and live-coding restarts). Along with that
-came some architectural updates that should make it easier to one day support
-multiple backends at the same time, which is another longstanding issue that I
-would dearly like to fix one day. Point being, I had a lot of other things I
-wanted to accomplish, and not a lot of percieved benefit to stopping that and
-dropping in a new backend instead.</p>
-<p>Fast-forward to PyCon 2015 sprints, and Neil Cicierega has not only made another
-ridiculous mashup album with <a class="reference external" href="http://neilcic.com/mouthsilence">Mouth Silence</a>, but has also been posting a
-number of not-yet-albumized music to SoundCloud individually. So, I took a look
-through SoundCloud's <a class="reference external" href="https://developers.soundcloud.com/docs/api/guide">API</a>, and went through some of GrooveBot's less atrophied
-backends <a class="footnote-reference" href="#old" id="id2">[2]</a>, and put together a new version that supports SoundCloud.</p>
-<p>And then I proceeded to play <a class="reference external" href="https://soundcloud.com/neilcic/bustin">Bustin'</a> on repeat for a while.</p>
-<table class="docutils footnote" frame="void" id="need" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Well, I mean, I could use the mpd backend, but without multiple
-backend support, the pool of music would get stale quickly, and as much as
-this is a project to force my musical tastes onto others, it is important to
-me to let them do the same to me in return.</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="old" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>The 2014 changes I mentioned were actually pretty deep in scope, and
-while I am happier with where the bot is now, for a while Spotify was the
-only supported backend because it was the only one in use, and the only one
-that made the switch. Obviously now SoundCloud works, and I think MPD should
-be working, but Pandora has been broken for years, and GrooveShark never
-worked in the first place.</td></tr>
-</tbody>
-</table>
+<p>tags: <a href="http://nathanielca.se/tag/server.html">server</a></p>
+</footer><!-- /.post-info --><p>So I had a bit of a scare this morning.</p>
+<p>I'm in a hotel in North Carolina, hundreds of miles from my server, when I try
+to log in and get a &quot;Connection refused&quot; error. Phooey. I hope the hotel wifi
+is just filtering port 22 for some terrible reason, and hop to a friend's server
+over a non-standard port and I'm in. Great! I type out the connection again and...</p>
+<p>Connection refused</p>
+<p>Hmmm. This is starting to get concerning. I briefly freak out that my server might
+have had a terrible accident, when I realize that all of the other services I rely
+on all the time are still running. Phew. Still, I don't have ssh access, and that
+is very troubling. I start poking around with other things and eventually
+unconsciously try to ssh back in to check something and to my surprise, it works!
+As soon as I realize what I've done, I pull up journalctl to see if sshd is going
+crazy and I'm met with hundreds of lines of Chinese IPs plugging away at my server.</p>
+<p>But wait! I have fail2ban installed. That should be stopping these, right? Well
+maybe something broke when the server was upgraded to Debian 9... and now I'm
+off trying to figure out what is running and where the config is.</p>
+<p>Some time later, I finally have a solution. The problem (ultimately) was
+systemd, though not directly. I had moved this system to systemd some time early
+in Debian 7, which meant that the standard logging locations were still there,
+but no loger being written to. So fail2ban was looking for /var/log/auth.log,
+found a file, read it and found no problems, completely ignoring the fact that
+the file hadn't been written to since 2013. This isn't really fail2ban's fault,
+it has support for ingesting the systemd journal, but on Debian, the default
+backend still tries to use those files. I could set up rsyslog to start
+writing those files again, but I have no particular need or desire to do that
+outside of this program, especially as fail2ban knows how to read the journal
+on its own, if it's configured to do so.</p>
+<p>So the solution is pretty simple, though it took me a while to get there. First,
+I had to <tt class="docutils literal"><span class="pre">apt-get</span> install <span class="pre">python3-systemd</span></tt>, to get the proper libraries to
+actually use the journal. Then, I had to have the following in my jail.local:</p>
+<pre class="literal-block">
+[sshd]
+backend = systemd
+</pre>
+<p>I also put a few other tweaks in there as my config hadn't actually moved over
+from the previous version, but since it's now in the jail.local instead of
+editing the system config, this shouldn't be a problem again.</p>
                 </article>
             </aside><!-- /#featured -->
                 <section id="content" class="body">
@@ -109,13 +83,43 @@ worked in the first place.</td></tr>
  
             <li><article class="hentry">    
                 <header>
+                    <h1><a href="http://nathanielca.se/personal/groovebot-2015.html" rel="bookmark"
+                           title="Permalink to GrooveBot 2015">GrooveBot 2015</a></h1>
+                </header>
+                
+                <div class="entry-content">
+<footer class="post-info">
+        <p><img src="https://www.gravatar.com/avatar/3a3baabff105b46a458688ecf49901af" /></p>
+        <abbr class="published" title="2015-05-11T17:28:00-04:00">
+                Mon 11 May 2015
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="http://nathanielca.se/author/nathaniel-case.html">Nathaniel Case</a>
+        </address>
+<p>In <a href="http://nathanielca.se/category/personal.html">personal</a>. </p>
+<p>tags: <a href="http://nathanielca.se/tag/groovebot.html">groovebot</a></p>
+</footer><!-- /.post-info -->                <p>So <a class="reference external" href="http://www.grooveshark.com/">GrooveShark</a> shut down a few days ago.</p>
+<p>I haven't really followed them much since I took over the original <a class="reference external" href="https://github.com/Qalthos/groovebot">GrooveBot</a>
+codebase <a class="reference external" href="/personal/groovebot-updates.html">sometime in 2011</a>.</p>
+<p>But now GrooveBot's namesake is gone, which marks a neat sort of milestone for
+the project. It has now outlived its inspiration.</p>
+<p>In any case …</p>
+                <a class="readmore" href="http://nathanielca.se/personal/groovebot-2015.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+        
+
+ 
+            <li><article class="hentry">    
+                <header>
                     <h1><a href="http://nathanielca.se/meta/new-domain.html" rel="bookmark"
                            title="Permalink to New Domain!">New Domain!</a></h1>
                 </header>
                 
                 <div class="entry-content">
 <footer class="post-info">
-        <p><img src="http://www.gravatar.com/avatar/3a3baabff105b46a458688ecf49901af" /></p>
+        <p><img src="https://www.gravatar.com/avatar/3a3baabff105b46a458688ecf49901af" /></p>
         <abbr class="published" title="2015-04-29T18:23:00-04:00">
                 Wed 29 April 2015
         </abbr>
@@ -128,7 +132,7 @@ worked in the first place.</td></tr>
 </footer><!-- /.post-info -->                <p>Hey, look at that, I have a new domain!</p>
 <p>It's a thing I've been looking into for a while now, but I finally went through
 with it. Hopefully it'll get me to update this a bit more in the future, I have
-a few draft posts I ...</p>
+a few draft posts I have been meaning …</p>
                 <a class="readmore" href="http://nathanielca.se/meta/new-domain.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
@@ -143,7 +147,7 @@ a few draft posts I ...</p>
                 
                 <div class="entry-content">
 <footer class="post-info">
-        <p><img src="http://www.gravatar.com/avatar/3a3baabff105b46a458688ecf49901af" /></p>
+        <p><img src="https://www.gravatar.com/avatar/3a3baabff105b46a458688ecf49901af" /></p>
         <abbr class="published" title="2013-12-02T17:24:00-05:00">
                 Mon 02 December 2013
         </abbr>
@@ -156,7 +160,7 @@ a few draft posts I ...</p>
 </footer><!-- /.post-info -->                <p>I've been doing some work for <a class="reference external" href="https://charsheet-qalthos.rhcloud.com">Charsheet</a> recently, fixing old bugs and adding
 new features. I figured it was about time for a 1.0, so I tagged it and released
 it to the wild. Many thanks to <a class="reference external" href="http://oddshocks.com">oddshocks</a> not only for the original 0.1
-version of charsheet ...</p>
+version of charsheet, but …</p>
                 <a class="readmore" href="http://nathanielca.se/fossrit/charsheet-10.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
@@ -171,7 +175,7 @@ version of charsheet ...</p>
                 
                 <div class="entry-content">
 <footer class="post-info">
-        <p><img src="http://www.gravatar.com/avatar/3a3baabff105b46a458688ecf49901af" /></p>
+        <p><img src="https://www.gravatar.com/avatar/3a3baabff105b46a458688ecf49901af" /></p>
         <abbr class="published" title="2013-09-27T16:09:00-04:00">
                 Fri 27 September 2013
         </abbr>
@@ -185,42 +189,13 @@ version of charsheet ...</p>
 this was necessary, I was mostly trying to diagnose some problems I was having
 and found uWSGI a more comfortable environment than FastCGI.</p>
 <p>And what problem was this, you ask? Well, when I first ran through the
-installation instructions ...</p>
+installation instructions …</p>
                 <a class="readmore" href="http://nathanielca.se/fossrit/deploying-mediagoblin-2-selinux.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-        
-
- 
-            <li><article class="hentry">    
-                <header>
-                    <h1><a href="http://nathanielca.se/fossrit/deploying-mediagoblin-1-fastcgi-vs-uwsgi.html" rel="bookmark"
-                           title="Permalink to Deploying MediaGoblin 1: FastCGI vs uWSGI">Deploying MediaGoblin 1: FastCGI vs uWSGI</a></h1>
-                </header>
-                
-                <div class="entry-content">
-<footer class="post-info">
-        <p><img src="http://www.gravatar.com/avatar/3a3baabff105b46a458688ecf49901af" /></p>
-        <abbr class="published" title="2013-09-23T13:20:00-04:00">
-                Mon 23 September 2013
-        </abbr>
-
-        <address class="vcard author">
-                By <a class="url fn" href="http://nathanielca.se/author/nathaniel-case.html">Nathaniel Case</a>
-        </address>
-<p>In <a href="http://nathanielca.se/category/fossrit.html">FOSS@RIT</a>. </p>
-<p>tags: <a href="http://nathanielca.se/tag/mediagoblin.html">mediagoblin</a><a href="http://nathanielca.se/tag/yacht.html">yacht</a><a href="http://nathanielca.se/tag/uwsgi.html">uWSGI</a></p>
-</footer><!-- /.post-info -->                <p>Last week I did a thing I really wasn't expecting to. I deployed
-<a class="reference external" href="http://mediagoblin.org">MediaGoblin</a> to FOSS&#64;RIT's yacht server <a class="reference external" href="http://yacht.rit.edu/mediagoblin/">here</a>. The initial setup and
-<a class="reference external" href="https://mediagoblin.readthedocs.org/en/v0.5.0/siteadmin/deploying.html">instructions</a> are some of the clearest and straightforward I have seen in an
-open-source project.</p>
-<p>There are several reasons I haven't written this ...</p>
-                <a class="readmore" href="http://nathanielca.se/fossrit/deploying-mediagoblin-1-fastcgi-vs-uwsgi.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
             </ol><!-- /#posts-list -->
 <p class="paginator">
-    Page 1 / 12
+    Page 1 / 13
         <a href="http://nathanielca.se/author/nathaniel-case2.html">&raquo;</a>
 </p>
             </section><!-- /#content -->
@@ -232,41 +207,6 @@ open-source project.</p>
         <li><a href="http://yacht.rit.edu/planet/">FOSSBox Planet</a></li>
       </ul>
     </div><!-- /.blogroll -->
-    <div class="tagcloud">
-      <h2>tag cloud</h2>
-      <ul>
-          <li class="tag-1"><a href="http://nathanielca.se/tag/peopledashboard.html">peopledashboard</a></li>
-          <li class="tag-4"><a href="http://nathanielca.se/tag/opl.html">OPL</a></li>
-          <li class="tag-2"><a href="http://nathanielca.se/tag/pydex.html">pyDex</a></li>
-          <li class="tag-3"><a href="http://nathanielca.se/tag/wat.html">wat</a></li>
-          <li class="tag-4"><a href="http://nathanielca.se/tag/fabulous.html">fabulous</a></li>
-          <li class="tag-1"><a href="http://nathanielca.se/tag/journalism.html">journalism</a></li>
-          <li class="tag-2"><a href="http://nathanielca.se/tag/blog.html">blog</a></li>
-          <li class="tag-1"><a href="http://nathanielca.se/tag/wikiotics.html">wikiotics</a></li>
-          <li class="tag-1"><a href="http://nathanielca.se/tag/widgets.html">widgets</a></li>
-          <li class="tag-3"><a href="http://nathanielca.se/tag/jquery.html">jQuery</a></li>
-          <li class="tag-3"><a href="http://nathanielca.se/tag/mediagoblin.html">mediagoblin</a></li>
-          <li class="tag-1"><a href="http://nathanielca.se/tag/sugar.html">sugar</a></li>
-          <li class="tag-4"><a href="http://nathanielca.se/tag/selinux.html">SELinux</a></li>
-          <li class="tag-3"><a href="http://nathanielca.se/tag/polyscraper.html">polyscraper</a></li>
-          <li class="tag-1"><a href="http://nathanielca.se/tag/surs.html">SURS</a></li>
-          <li class="tag-2"><a href="http://nathanielca.se/tag/geowebdns.html">geowebdns</a></li>
-          <li class="tag-3"><a href="http://nathanielca.se/tag/yacht.html">yacht</a></li>
-          <li class="tag-3"><a href="http://nathanielca.se/tag/data alchemy.html">data alchemy</a></li>
-          <li class="tag-2"><a href="http://nathanielca.se/tag/democracymap.html">democracymap</a></li>
-          <li class="tag-1"><a href="http://nathanielca.se/tag/scrapers.html">scrapers</a></li>
-          <li class="tag-1"><a href="http://nathanielca.se/tag/openshift.html">openshift</a></li>
-          <li class="tag-3"><a href="http://nathanielca.se/tag/timeline.html">timeline</a></li>
-          <li class="tag-1"><a href="http://nathanielca.se/tag/hackathon.html">hackathon</a></li>
-          <li class="tag-2"><a href="http://nathanielca.se/tag/groovebot.html">groovebot</a></li>
-          <li class="tag-1"><a href="http://nathanielca.se/tag/lemonade.html">lemonade</a></li>
-          <li class="tag-4"><a href="http://nathanielca.se/tag/introspective.html">introspective</a></li>
-          <li class="tag-4"><a href="http://nathanielca.se/tag/schoolserver.html">schoolserver</a></li>
-          <li class="tag-4"><a href="http://nathanielca.se/tag/games.html">games</a></li>
-          <li class="tag-2"><a href="http://nathanielca.se/tag/election.html">election</a></li>
-          <li class="tag-1"><a href="http://nathanielca.se/tag/floss-seminar.html">FLOSS-seminar</a></li>
-      </ul>
-    </div>
     <div class="social">
       <h2>social</h2>
       <ul>

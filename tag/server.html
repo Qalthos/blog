@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Why Not Wingnut? - server</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="http://nathanielca.se/theme/css/main.css" type="text/css" />
+    <link href="http://nathanielca.se/feeds/tag/server.atom.xml"
+          type="application/atom+xml" rel="alternate"
+          title="Why Not Wingnut? server Atom Feed" />
+</head>
+
+<body id="index" class="home">
+  <header id="banner" class="body">
+    <h1><a href="http://nathanielca.se/">Why Not Wingnut? </a></h1>
+    <nav><ul>
+        <li ><a href="http://nathanielca.se/category/civx.html">CIVX</a></li>
+        <li ><a href="http://nathanielca.se/category/fossrit.html">FOSS@RIT</a></li>
+        <li ><a href="http://nathanielca.se/category/meta.html">meta</a></li>
+        <li ><a href="http://nathanielca.se/category/personal.html">personal</a></li>
+        <li><a href="http://qalthos.github.io/resume/resume.pdf">resume</a></li>
+    </ul></nav>
+  </header><!-- /#banner -->
+        
+        
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="http://nathanielca.se/personal/fail2ban-woes.html">Fail2Ban woes</a></h1> 
+<footer class="post-info">
+        <p><img src="https://www.gravatar.com/avatar/3a3baabff105b46a458688ecf49901af" /></p>
+        <abbr class="published" title="2017-08-24T16:30:00-04:00">
+                Thu 24 August 2017
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="http://nathanielca.se/author/nathaniel-case.html">Nathaniel Case</a>
+        </address>
+<p>In <a href="http://nathanielca.se/category/personal.html">personal</a>. </p>
+<p>tags: <a href="http://nathanielca.se/tag/server.html">server</a></p>
+</footer><!-- /.post-info --><p>So I had a bit of a scare this morning.</p>
+<p>I'm in a hotel in North Carolina, hundreds of miles from my server, when I try
+to log in and get a &quot;Connection refused&quot; error. Phooey. I hope the hotel wifi
+is just filtering port 22 for some terrible reason, and hop to a friend's server
+over a non-standard port and I'm in. Great! I type out the connection again and...</p>
+<p>Connection refused</p>
+<p>Hmmm. This is starting to get concerning. I briefly freak out that my server might
+have had a terrible accident, when I realize that all of the other services I rely
+on all the time are still running. Phew. Still, I don't have ssh access, and that
+is very troubling. I start poking around with other things and eventually
+unconsciously try to ssh back in to check something and to my surprise, it works!
+As soon as I realize what I've done, I pull up journalctl to see if sshd is going
+crazy and I'm met with hundreds of lines of Chinese IPs plugging away at my server.</p>
+<p>But wait! I have fail2ban installed. That should be stopping these, right? Well
+maybe something broke when the server was upgraded to Debian 9... and now I'm
+off trying to figure out what is running and where the config is.</p>
+<p>Some time later, I finally have a solution. The problem (ultimately) was
+systemd, though not directly. I had moved this system to systemd some time early
+in Debian 7, which meant that the standard logging locations were still there,
+but no loger being written to. So fail2ban was looking for /var/log/auth.log,
+found a file, read it and found no problems, completely ignoring the fact that
+the file hadn't been written to since 2013. This isn't really fail2ban's fault,
+it has support for ingesting the systemd journal, but on Debian, the default
+backend still tries to use those files. I could set up rsyslog to start
+writing those files again, but I have no particular need or desire to do that
+outside of this program, especially as fail2ban knows how to read the journal
+on its own, if it's configured to do so.</p>
+<p>So the solution is pretty simple, though it took me a while to get there. First,
+I had to <tt class="docutils literal"><span class="pre">apt-get</span> install <span class="pre">python3-systemd</span></tt>, to get the proper libraries to
+actually use the journal. Then, I had to have the following in my jail.local:</p>
+<pre class="literal-block">
+[sshd]
+backend = systemd
+</pre>
+<p>I also put a few other tweaks in there as my config hadn't actually moved over
+from the previous version, but since it's now in the jail.local instead of
+editing the system config, this shouldn't be a problem again.</p>
+                </article>
+<p class="paginator">
+    Page 1 / 1
+</p>
+            </aside><!-- /#featured -->
+            </ol><!-- /#posts-list -->
+            </section><!-- /#content -->
+  <section id="extras" class="body">
+    <div class="blogroll">
+      <h2>blogroll</h2>
+      <ul>
+        <li><a href="http://foss.rit.edu">FOSS@RIT</a></li>
+        <li><a href="http://yacht.rit.edu/planet/">FOSSBox Planet</a></li>
+      </ul>
+    </div><!-- /.blogroll -->
+    <div class="social">
+      <h2>social</h2>
+      <ul>
+        <li><a href="http://nathanielca.se/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+          <li><a href="http://github.com/Qalthos">Github</a></li>
+          <li><a href="http://gplus.to/qalthos">Google+</a></li>
+      </ul>
+    </div><!-- /.social -->
+  </section><!-- /#extras -->
+
+  <footer id="contentinfo" class="body">
+    <address id="about" class="vcard body">
+      Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+    </address><!-- /#about -->
+
+    <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+  </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-40338393-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+</body>
+</html>

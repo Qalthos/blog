@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://nathanielca.se/" rel="alternate"></link><link href="http://nathanielca.se/feeds/tag/introspective.atom.xml" rel="self"></link><id>http://nathanielca.se/</id><updated>2010-07-21T04:13:00-04:00</updated><entry><title>Writing and Me</title><link href="http://nathanielca.se/personal/writing-and-me.html" rel="alternate"></link><updated>2010-07-21T04:13:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2010-07-21:personal/writing-and-me.html</id><summary type="html">&lt;p&gt;I am not a writer. Had things progressed differently, I might have tried
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut? - introspective</title><link href="http://nathanielca.se/" rel="alternate"></link><link href="http://nathanielca.se/feeds/tag/introspective.atom.xml" rel="self"></link><id>http://nathanielca.se/</id><updated>2010-07-21T04:13:00-04:00</updated><entry><title>Writing and Me</title><link href="http://nathanielca.se/personal/writing-and-me.html" rel="alternate"></link><published>2010-07-21T04:13:00-04:00</published><updated>2010-07-21T04:13:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2010-07-21:/personal/writing-and-me.html</id><summary type="html">&lt;p&gt;I am not a writer. Had things progressed differently, I might have tried
+it. I do enjoy the writing process. One important problem is that I hate
+revision. I start from a theoretical perfect model, and slowly write it
+out, far slower than my brain, which can race ahead to …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I am not a writer. Had things progressed differently, I might have tried
 it. I do enjoy the writing process. One important problem is that I hate
 revision. I start from a theoretical perfect model, and slowly write it
 out, far slower than my brain, which can race ahead to new, more
@@ -38,4 +41,4 @@ without glaring errors to fix, and my personal writing tends to throw
 parsing errors in anyone who isn't me.&lt;/p&gt;
 &lt;p&gt;Hopefully I'll get better at this. At the very least I hope to catch the
 common mistakes here.&lt;/p&gt;
-</summary><category term="introspective"></category></entry></feed>
+</content><category term="introspective"></category></entry></feed>

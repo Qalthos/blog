@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://nathanielca.se/" rel="alternate"></link><link href="http://nathanielca.se/feeds/tag/election.atom.xml" rel="self"></link><id>http://nathanielca.se/</id><updated>2011-03-29T03:07:00-04:00</updated><entry><title>Special Election Time</title><link href="http://nathanielca.se/fossrit/special-election-time.html" rel="alternate"></link><updated>2011-03-29T03:07:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-03-29:fossrit/special-election-time.html</id><summary type="html">&lt;p&gt;Rochester is having a special election tomorrow to choose a new Mayor,
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut? - election</title><link href="http://nathanielca.se/" rel="alternate"></link><link href="http://nathanielca.se/feeds/tag/election.atom.xml" rel="self"></link><id>http://nathanielca.se/</id><updated>2011-03-29T03:07:00-04:00</updated><entry><title>Special Election Time</title><link href="http://nathanielca.se/fossrit/special-election-time.html" rel="alternate"></link><published>2011-03-29T03:07:00-04:00</published><updated>2011-03-29T03:07:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-03-29:/fossrit/special-election-time.html</id><summary type="html">&lt;p&gt;Rochester is having a special election tomorrow to choose a new Mayor,
+as the previous Mayor, Robert Duffy, is now the Lieutenant Governor of
+New York. I've been following the race with some interest despite not
+being registered to vote in this area, especially since I know one of
+the …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Rochester is having a special election tomorrow to choose a new Mayor,
 as the previous Mayor, Robert Duffy, is now the Lieutenant Governor of
 New York. I've been following the race with some interest despite not
 being registered to vote in this area, especially since I know one of
@@ -15,7 +19,12 @@ accurate number.
 We probably won't have that many problems this time around. But who
 knows? I'm looking forward to an exciting night in any case, and I'll be
 ready to fix any problems as they come.&lt;/p&gt;
-</summary><category term="election"></category></entry><entry><title>Election Aftermath</title><link href="http://nathanielca.se/fossrit/election-aftermath.html" rel="alternate"></link><updated>2011-03-29T02:59:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-03-29:fossrit/election-aftermath.html</id><summary type="html">&lt;p&gt;So the election was almost a week ago. Here's how our little experiment
+</content><category term="election"></category></entry><entry><title>Election Aftermath</title><link href="http://nathanielca.se/fossrit/election-aftermath.html" rel="alternate"></link><published>2011-03-29T02:59:00-04:00</published><updated>2011-03-29T02:59:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-03-29:/fossrit/election-aftermath.html</id><summary type="html">&lt;p&gt;So the election was almost a week ago. Here's how our little experiment
+turned out.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://farm2.static.flickr.com/1386/5143595646_9e4e56f556.jpg"&gt;|image0|&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The evening started out rather slowly, with information trickling in
+about races that were all but confirmed. We had the Innovation Center's
+display set up with various maps and information, and my page in …&lt;/p&gt;</summary><content type="html">&lt;p&gt;So the election was almost a week ago. Here's how our little experiment
 turned out.&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://farm2.static.flickr.com/1386/5143595646_9e4e56f556.jpg"&gt;|image0|&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;The evening started out rather slowly, with information trickling in
@@ -74,7 +83,10 @@ something more than just a class assignment. This wasn't just another
 program to be written and forgotten, this was something that represented
 the school to some of the public who perhaps hadn't heard about what
 we're doing here. And that is cool.&lt;/p&gt;
-</summary><category term="journalism"></category><category term="election"></category></entry><entry><title>Election Night</title><link href="http://nathanielca.se/fossrit/election-night.html" rel="alternate"></link><updated>2011-03-29T02:59:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-03-29:fossrit/election-night.html</id><summary type="html">&lt;p&gt;So election night is tonight. I'll have free time soon.
+</content><category term="journalism"></category><category term="election"></category></entry><entry><title>Election Night</title><link href="http://nathanielca.se/fossrit/election-night.html" rel="alternate"></link><published>2011-03-29T02:59:00-04:00</published><updated>2011-03-29T02:59:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-03-29:/fossrit/election-night.html</id><summary type="html">&lt;p&gt;So election night is tonight. I'll have free time soon.
+The main reason for my lack of time lately has to do with the election.
+On Wednesday, just before I was going to classes, I got a call from Remy
+asking what my schedule was and if I'd like to …&lt;/p&gt;</summary><content type="html">&lt;p&gt;So election night is tonight. I'll have free time soon.
 The main reason for my lack of time lately has to do with the election.
 On Wednesday, just before I was going to classes, I got a call from Remy
 asking what my schedule was and if I'd like to take a trip to WXXI to
@@ -106,4 +118,4 @@ and started the countdown.
 The current version of the scraper is now running on
 &lt;a class="reference external" href="http://foss.rit.edu/election/"&gt;http://foss.rit.edu/election/&lt;/a&gt; and should update its information every 30
 seconds, once information exists.&lt;/p&gt;
-</summary><category term="journalism"></category><category term="election"></category></entry></feed>
+</content><category term="journalism"></category><category term="election"></category></entry></feed>

@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://nathanielca.se/" rel="alternate"></link><link href="http://nathanielca.se/feeds/tag/groovebot.atom.xml" rel="self"></link><id>http://nathanielca.se/</id><updated>2015-05-11T17:28:00-04:00</updated><entry><title>GrooveBot 2015</title><link href="http://nathanielca.se/personal/groovebot-2015.html" rel="alternate"></link><updated>2015-05-11T17:28:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2015-05-11:personal/groovebot-2015.html</id><summary type="html">&lt;p&gt;So &lt;a class="reference external" href="http://www.grooveshark.com/"&gt;GrooveShark&lt;/a&gt; shut down a few days ago.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut? - groovebot</title><link href="http://nathanielca.se/" rel="alternate"></link><link href="http://nathanielca.se/feeds/tag/groovebot.atom.xml" rel="self"></link><id>http://nathanielca.se/</id><updated>2015-05-11T17:28:00-04:00</updated><entry><title>GrooveBot 2015</title><link href="http://nathanielca.se/personal/groovebot-2015.html" rel="alternate"></link><published>2015-05-11T17:28:00-04:00</published><updated>2015-05-11T17:28:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2015-05-11:/personal/groovebot-2015.html</id><summary type="html">&lt;p&gt;So &lt;a class="reference external" href="http://www.grooveshark.com/"&gt;GrooveShark&lt;/a&gt; shut down a few days ago.&lt;/p&gt;
+&lt;p&gt;I haven't really followed them much since I took over the original &lt;a class="reference external" href="https://github.com/Qalthos/groovebot"&gt;GrooveBot&lt;/a&gt;
+codebase &lt;a class="reference external" href="/personal/groovebot-updates.html"&gt;sometime in 2011&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;But now GrooveBot's namesake is gone, which marks a neat sort of milestone for
+the project. It has now outlived its inspiration.&lt;/p&gt;
+&lt;p&gt;In any case …&lt;/p&gt;</summary><content type="html">&lt;p&gt;So &lt;a class="reference external" href="http://www.grooveshark.com/"&gt;GrooveShark&lt;/a&gt; shut down a few days ago.&lt;/p&gt;
 &lt;p&gt;I haven't really followed them much since I took over the original &lt;a class="reference external" href="https://github.com/Qalthos/groovebot"&gt;GrooveBot&lt;/a&gt;
 codebase &lt;a class="reference external" href="/personal/groovebot-updates.html"&gt;sometime in 2011&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;But now GrooveBot's namesake is gone, which marks a neat sort of milestone for
@@ -45,7 +50,11 @@ be working, but Pandora has been broken for years, and GrooveShark never
 worked in the first place.&lt;/td&gt;&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-</summary><category term="groovebot"></category></entry><entry><title>Recent Projects: Groovebot</title><link href="http://nathanielca.se/personal/recent-projects-groovebot.html" rel="alternate"></link><updated>2012-07-24T18:47:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2012-07-24:personal/recent-projects-groovebot.html</id><summary type="html">&lt;p&gt;This is the first of a number of posts meant to overview the things I've
+</content><category term="groovebot"></category></entry><entry><title>Recent Projects: Groovebot</title><link href="http://nathanielca.se/personal/recent-projects-groovebot.html" rel="alternate"></link><published>2012-07-24T18:47:00-04:00</published><updated>2012-07-24T18:47:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2012-07-24:/personal/recent-projects-groovebot.html</id><summary type="html">&lt;p&gt;This is the first of a number of posts meant to overview the things I've
+been doing recently. First up on the list is the long-overdue
+&lt;a class="reference external" href="https://github.com/Qalthos/groovebot"&gt;Groovebot&lt;/a&gt; update.&lt;/p&gt;
+&lt;p&gt;Before this summer, Groovebot 'worked' on &lt;a class="reference external" href="http://spotify.com/"&gt;Spotify&lt;/a&gt;, and also had a
+fairly useful but under-tested &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Music_Player_Daemon"&gt;MPD&lt;/a&gt; backend that worked for me when …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is the first of a number of posts meant to overview the things I've
 been doing recently. First up on the list is the long-overdue
 &lt;a class="reference external" href="https://github.com/Qalthos/groovebot"&gt;Groovebot&lt;/a&gt; update.&lt;/p&gt;
 &lt;p&gt;Before this summer, Groovebot 'worked' on &lt;a class="reference external" href="http://spotify.com/"&gt;Spotify&lt;/a&gt;, and also had a
@@ -102,7 +111,11 @@ second bot. This second bot has all the work I've been doing lately and,
 some few remaining problems aside, mostly work. Ideally, I will soon
 have a better host for the bot that will let me run Spotify, but for now
 Pandora is working well enough.&lt;/p&gt;
-&lt;/p&gt;</summary><category term="groovebot"></category></entry><entry><title>GrooveBot updates</title><link href="http://nathanielca.se/personal/groovebot-updates.html" rel="alternate"></link><updated>2011-09-28T01:28:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-09-28:personal/groovebot-updates.html</id><summary type="html">&lt;p&gt;Today I'm going to talk about something a bit more understandable, I
+&lt;/p&gt;</content><category term="groovebot"></category></entry><entry><title>GrooveBot updates</title><link href="http://nathanielca.se/personal/groovebot-updates.html" rel="alternate"></link><published>2011-09-28T01:28:00-04:00</published><updated>2011-09-28T01:28:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-09-28:/personal/groovebot-updates.html</id><summary type="html">&lt;p&gt;Today I'm going to talk about something a bit more understandable, I
+hope.&lt;/p&gt;
+&lt;p&gt;Back around the summer of 2010, the FOSSBox wanted some ambient music to
+play in the background. One of the things we wanted was a way to have
+control over the songs played be available to anyone …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Today I'm going to talk about something a bit more understandable, I
 hope.&lt;/p&gt;
 &lt;p&gt;Back around the summer of 2010, the FOSSBox wanted some ambient music to
 play in the background. One of the things we wanted was a way to have
@@ -137,4 +150,4 @@ Hopefully, when a new, free music API becomes available that we can hook
 into, it should be easier to reimplement those functions in a more
 general way so that multiple backends can be used for a more varied
 music experience. And then we can get back to the OS grooving.&lt;/p&gt;
-</summary><category term="groovebot"></category></entry></feed>
+</content><category term="groovebot"></category></entry></feed>

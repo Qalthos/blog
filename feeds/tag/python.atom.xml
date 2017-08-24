@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://nathanielca.se/" rel="alternate"></link><link href="http://nathanielca.se/feeds/tag/python.atom.xml" rel="self"></link><id>http://nathanielca.se/</id><updated>2013-06-01T20:46:00-04:00</updated><entry><title>A note on lxml</title><link href="http://nathanielca.se/fossrit/a-note-on-lxml.html" rel="alternate"></link><updated>2013-06-01T20:46:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2013-06-01:fossrit/a-note-on-lxml.html</id><summary type="html">&lt;p&gt;This post is being written from the &lt;a class="reference external" href="http://hackforchange.org/fossrit-rochester-civic-hackathon"&gt;Rochester edition&lt;/a&gt; of the
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut? - python</title><link href="http://nathanielca.se/" rel="alternate"></link><link href="http://nathanielca.se/feeds/tag/python.atom.xml" rel="self"></link><id>http://nathanielca.se/</id><updated>2013-06-01T20:46:00-04:00</updated><entry><title>A note on lxml</title><link href="http://nathanielca.se/fossrit/a-note-on-lxml.html" rel="alternate"></link><published>2013-06-01T20:46:00-04:00</published><updated>2013-06-01T20:46:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2013-06-01:/fossrit/a-note-on-lxml.html</id><summary type="html">&lt;p&gt;This post is being written from the &lt;a class="reference external" href="http://hackforchange.org/fossrit-rochester-civic-hackathon"&gt;Rochester edition&lt;/a&gt; of the
+&lt;a class="reference external" href="http://hackforchange.org"&gt;National Day of Civic Hacking&lt;/a&gt; hackathon.&lt;/p&gt;
+&lt;p&gt;I've been doing a lot of things with &lt;a class="reference external" href="http://pygal.org"&gt;pygal&lt;/a&gt; lately. It's a really neat tool
+for making SVG graphs in python. One 'problem' is that it needs &lt;a class="reference external" href="http://lxml.de"&gt;lxml&lt;/a&gt;, and
+that has C extensions …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This post is being written from the &lt;a class="reference external" href="http://hackforchange.org/fossrit-rochester-civic-hackathon"&gt;Rochester edition&lt;/a&gt; of the
 &lt;a class="reference external" href="http://hackforchange.org"&gt;National Day of Civic Hacking&lt;/a&gt; hackathon.&lt;/p&gt;
 &lt;p&gt;I've been doing a lot of things with &lt;a class="reference external" href="http://pygal.org"&gt;pygal&lt;/a&gt; lately. It's a really neat tool
 for making SVG graphs in python. One 'problem' is that it needs &lt;a class="reference external" href="http://lxml.de"&gt;lxml&lt;/a&gt;, and
@@ -17,4 +21,4 @@ download its requirements for you. I don't know how legitimate this is for a
 Python install, but it was certainly quite useful for me and the others
 trying to use lxml. It even works inside a virtualenv, though I don't know why
 it wouldn't.&lt;/p&gt;
-</summary><category term="hackathon"></category><category term="python"></category><category term="wat"></category></entry></feed>
+</content><category term="hackathon"></category><category term="python"></category><category term="wat"></category></entry></feed>

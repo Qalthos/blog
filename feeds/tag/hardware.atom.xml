@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://nathanielca.se/" rel="alternate"></link><link href="http://nathanielca.se/feeds/tag/hardware.atom.xml" rel="self"></link><id>http://nathanielca.se/</id><updated>2010-09-06T17:57:00-04:00</updated><entry><title>Huzzah!</title><link href="http://nathanielca.se/personal/huzzah.html" rel="alternate"></link><updated>2010-09-06T17:57:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2010-09-06:personal/huzzah.html</id><summary type="html">&lt;p&gt;Here we are, back at the beginning of another school year. It's going to
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut? - hardware</title><link href="http://nathanielca.se/" rel="alternate"></link><link href="http://nathanielca.se/feeds/tag/hardware.atom.xml" rel="self"></link><id>http://nathanielca.se/</id><updated>2010-09-06T17:57:00-04:00</updated><entry><title>Huzzah!</title><link href="http://nathanielca.se/personal/huzzah.html" rel="alternate"></link><published>2010-09-06T17:57:00-04:00</published><updated>2010-09-06T17:57:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2010-09-06:/personal/huzzah.html</id><summary type="html">&lt;p&gt;Here we are, back at the beginning of another school year. It's going to
+be interesting, I'm still pretty laid back from Fan Expo Canada in
+Toronto.&lt;/p&gt;
+&lt;p&gt;My new monitor finally arrived. Well, it arrived Saturday, but the RIT
+post office isn't open on weekends over breaks, so I had …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Here we are, back at the beginning of another school year. It's going to
 be interesting, I'm still pretty laid back from Fan Expo Canada in
 Toronto.&lt;/p&gt;
 &lt;p&gt;My new monitor finally arrived. Well, it arrived Saturday, but the RIT
@@ -15,4 +19,4 @@ want to blast music, I'll just end up blasting Justin instead.&lt;/p&gt;
 &lt;p&gt;So I now have two monitors, though I don't know if I'm keeping the
 ancient 15&amp;quot; LCD from home that was serving as a spare. We'll see. In the
 meantime, Minecraft looks better than ever.&lt;/p&gt;
-</summary><category term="hardware"></category></entry></feed>
+</content><category term="hardware"></category></entry></feed>

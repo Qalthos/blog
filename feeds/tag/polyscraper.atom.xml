@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://nathanielca.se/" rel="alternate"></link><link href="http://nathanielca.se/feeds/tag/polyscraper.atom.xml" rel="self"></link><id>http://nathanielca.se/</id><updated>2011-06-29T18:04:00-04:00</updated><entry><title>Multiprocessing the PolyScraper</title><link href="http://nathanielca.se/civx/multiprocessing-the-polyscraper.html" rel="alternate"></link><updated>2011-06-29T18:04:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-06-29:civx/multiprocessing-the-polyscraper.html</id><summary type="html">&lt;p&gt;Warning: This post was written at 4AM and contains a technical account
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut? - polyscraper</title><link href="http://nathanielca.se/" rel="alternate"></link><link href="http://nathanielca.se/feeds/tag/polyscraper.atom.xml" rel="self"></link><id>http://nathanielca.se/</id><updated>2011-06-29T18:04:00-04:00</updated><entry><title>Multiprocessing the PolyScraper</title><link href="http://nathanielca.se/civx/multiprocessing-the-polyscraper.html" rel="alternate"></link><published>2011-06-29T18:04:00-04:00</published><updated>2011-06-29T18:04:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-06-29:/civx/multiprocessing-the-polyscraper.html</id><summary type="html">&lt;p&gt;Warning: This post was written at 4AM and contains a technical account
+of what I have been doing attempting to parallelize CIVX's internals. If
+you are looking for a more general overview of what I have been doing
+recently, you are better off looking to another one of my posts …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Warning: This post was written at 4AM and contains a technical account
 of what I have been doing attempting to parallelize CIVX's internals. If
 you are looking for a more general overview of what I have been doing
 recently, you are better off looking to another one of my posts.
@@ -41,7 +44,11 @@ At this point, though, I have been working on this project for close to
 20 hours today now. Luke is in town and we're all posted up in Remy's
 new place all hacking on our projects together. With any luck a good
 night's sleep will clear my head and give me new ideas for tomorrow.&lt;/p&gt;
-</summary><category term="hackathon"></category><category term="SURS"></category><category term="polyscraper"></category></entry><entry><title>Grokking the Core</title><link href="http://nathanielca.se/civx/grokking-the-core.html" rel="alternate"></link><updated>2011-06-21T22:55:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-06-21:civx/grokking-the-core.html</id><summary type="html">&lt;p&gt;This week begins the real dive into the core of what makes CIVX. Today
+</content><category term="hackathon"></category><category term="SURS"></category><category term="polyscraper"></category></entry><entry><title>Grokking the Core</title><link href="http://nathanielca.se/civx/grokking-the-core.html" rel="alternate"></link><published>2011-06-21T22:55:00-04:00</published><updated>2011-06-21T22:55:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-06-21:/civx/grokking-the-core.html</id><summary type="html">&lt;p&gt;This week begins the real dive into the core of what makes CIVX. Today
+(and yesterday, though yesterday hardly counts as a real day) were spent
+adding major functionality to the polyscraper, something that's been
+overdue for a long time now.
+But what is this magical polyscraper? Well, in short …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This week begins the real dive into the core of what makes CIVX. Today
 (and yesterday, though yesterday hardly counts as a real day) were spent
 adding major functionality to the polyscraper, something that's been
 overdue for a long time now.
@@ -74,4 +81,4 @@ understand the underlying structure of everything. Every day I learn
 more about what goes on inside this machine, and every day marks another
 set of tools I've learned to wield. I can't wait to see how far I get by
 the end of the summer.&lt;/p&gt;
-</summary><category term="scrapers"></category><category term="SURS"></category><category term="polyscraper"></category></entry></feed>
+</content><category term="scrapers"></category><category term="SURS"></category><category term="polyscraper"></category></entry></feed>

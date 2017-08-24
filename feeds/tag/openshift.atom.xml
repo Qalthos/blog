@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://nathanielca.se/" rel="alternate"></link><link href="http://nathanielca.se/feeds/tag/openshift.atom.xml" rel="self"></link><id>http://nathanielca.se/</id><updated>2013-12-02T17:24:00-05:00</updated><entry><title>Charsheet 1.0</title><link href="http://nathanielca.se/fossrit/charsheet-10.html" rel="alternate"></link><updated>2013-12-02T17:24:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2013-12-02:fossrit/charsheet-10.html</id><summary type="html">&lt;p&gt;I've been doing some work for &lt;a class="reference external" href="https://charsheet-qalthos.rhcloud.com"&gt;Charsheet&lt;/a&gt; recently, fixing old bugs and adding
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut? - openshift</title><link href="http://nathanielca.se/" rel="alternate"></link><link href="http://nathanielca.se/feeds/tag/openshift.atom.xml" rel="self"></link><id>http://nathanielca.se/</id><updated>2013-12-02T17:24:00-05:00</updated><entry><title>Charsheet 1.0</title><link href="http://nathanielca.se/fossrit/charsheet-10.html" rel="alternate"></link><published>2013-12-02T17:24:00-05:00</published><updated>2013-12-02T17:24:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2013-12-02:/fossrit/charsheet-10.html</id><summary type="html">&lt;p&gt;I've been doing some work for &lt;a class="reference external" href="https://charsheet-qalthos.rhcloud.com"&gt;Charsheet&lt;/a&gt; recently, fixing old bugs and adding
+new features. I figured it was about time for a 1.0, so I tagged it and released
+it to the wild. Many thanks to &lt;a class="reference external" href="http://oddshocks.com"&gt;oddshocks&lt;/a&gt; not only for the original 0.1
+version of charsheet, but …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I've been doing some work for &lt;a class="reference external" href="https://charsheet-qalthos.rhcloud.com"&gt;Charsheet&lt;/a&gt; recently, fixing old bugs and adding
 new features. I figured it was about time for a 1.0, so I tagged it and released
 it to the wild. Many thanks to &lt;a class="reference external" href="http://oddshocks.com"&gt;oddshocks&lt;/a&gt; not only for the original 0.1
 version of charsheet, but for continued assistance in massaging the site into
@@ -39,7 +42,11 @@ forms.&lt;/td&gt;&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/div&gt;
-</summary><category term="charsheet"></category><category term="openshift"></category></entry><entry><title>Final Stretch</title><link href="http://nathanielca.se/fossrit/final-stretch.html" rel="alternate"></link><updated>2012-02-29T16:15:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2012-02-29:fossrit/final-stretch.html</id><summary type="html">&lt;p&gt;So the past two days have been madness trying to get the recently
+</content><category term="charsheet"></category><category term="openshift"></category></entry><entry><title>Final Stretch</title><link href="http://nathanielca.se/fossrit/final-stretch.html" rel="alternate"></link><published>2012-02-29T16:15:00-05:00</published><updated>2012-02-29T16:15:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2012-02-29:/fossrit/final-stretch.html</id><summary type="html">&lt;p&gt;So the past two days have been madness trying to get the recently
+christened WebBotWar (or just WebBot) to actually work on the web.&lt;/p&gt;
+&lt;p&gt;We had it working locally some time last week (I think... the days are
+really starting to mush together), but OpenShift was a whole other
+thing …&lt;/p&gt;</summary><content type="html">&lt;p&gt;So the past two days have been madness trying to get the recently
 christened WebBotWar (or just WebBot) to actually work on the web.&lt;/p&gt;
 &lt;p&gt;We had it working locally some time last week (I think... the days are
 really starting to mush together), but OpenShift was a whole other
@@ -78,7 +85,11 @@ other yet. As well, there are brand new pretty images for the robots and
 the turrets.&lt;/p&gt;
 &lt;p&gt;There's a few outstanding problems left, but (as long as I don't push
 anything broken) you can have a look at webbotwar in action &lt;a class="reference external" href="webbotwar-qalthos.rhcloud.com"&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;/p&gt;</summary><category term="pybotwar"></category><category term="hackathon"></category><category term="FLOSS-seminar"></category><category term="webbotwar"></category><category term="openshift"></category></entry><entry><title>OpenShift Troubles</title><link href="http://nathanielca.se/personal/openshift-troubles.html" rel="alternate"></link><updated>2012-02-03T06:47:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2012-02-03:personal/openshift-troubles.html</id><summary type="html">&lt;p&gt;Recently I've been playing with &lt;a class="reference external" href="http://openshift.redhat.com/"&gt;OpenShift&lt;/a&gt;, a new(ish) service from
+&lt;/p&gt;</content><category term="pybotwar"></category><category term="hackathon"></category><category term="FLOSS-seminar"></category><category term="webbotwar"></category><category term="openshift"></category></entry><entry><title>OpenShift Troubles</title><link href="http://nathanielca.se/personal/openshift-troubles.html" rel="alternate"></link><published>2012-02-03T06:47:00-05:00</published><updated>2012-02-03T06:47:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2012-02-03:/personal/openshift-troubles.html</id><summary type="html">&lt;p&gt;Recently I've been playing with &lt;a class="reference external" href="http://openshift.redhat.com/"&gt;OpenShift&lt;/a&gt;, a new(ish) service from
+Red Hat as a sort of 'push to cloud' deployment strategy. It's
+interesting for people like me who can whip up a site quick, but don't
+necessarily have the framework in place to host it.&lt;/p&gt;
+&lt;p&gt;Due to my work …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Recently I've been playing with &lt;a class="reference external" href="http://openshift.redhat.com/"&gt;OpenShift&lt;/a&gt;, a new(ish) service from
 Red Hat as a sort of 'push to cloud' deployment strategy. It's
 interesting for people like me who can whip up a site quick, but don't
 necessarily have the framework in place to host it.&lt;/p&gt;
@@ -134,7 +145,11 @@ should I really try), I wasn't getting any good error messages.
 So what is the site that has been giving me all these troubles? It's a
 little site I set up to publicly shame Remy into stopping smoking:
 &lt;a class="reference external" href="http://remysmoke-qalthos.rhcloud.com/"&gt;remysmoke-qalthos.rhcloud.com&lt;/a&gt;&lt;/p&gt;
-</summary><category term="FLOSS-seminar"></category><category term="openshift"></category></entry><entry><title>Openshift Troubles Continued</title><link href="http://nathanielca.se/personal/openshift-troubles-continued.html" rel="alternate"></link><updated>2012-02-03T06:47:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2012-02-03:personal/openshift-troubles-continued.html</id><summary type="html">&lt;p&gt;I figured out the problem I was having with OpenShift.&lt;/p&gt;
+</content><category term="FLOSS-seminar"></category><category term="openshift"></category></entry><entry><title>Openshift Troubles Continued</title><link href="http://nathanielca.se/personal/openshift-troubles-continued.html" rel="alternate"></link><published>2012-02-03T06:47:00-05:00</published><updated>2012-02-03T06:47:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2012-02-03:/personal/openshift-troubles-continued.html</id><summary type="html">&lt;p&gt;I figured out the problem I was having with OpenShift.&lt;/p&gt;
+&lt;p&gt;To put it simply, I didn't pay enough attention.&lt;/p&gt;
+&lt;p&gt;For reference, when moving an existing TurboGears app to OpenShift, make
+sure you add the changes in config/app_cfg.py&lt;/p&gt;
+&lt;p&gt;As soon as I saw that, I felt really silly for …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I figured out the problem I was having with OpenShift.&lt;/p&gt;
 &lt;p&gt;To put it simply, I didn't pay enough attention.&lt;/p&gt;
 &lt;p&gt;For reference, when moving an existing TurboGears app to OpenShift, make
 sure you add the changes in config/app_cfg.py&lt;/p&gt;
@@ -142,7 +157,11 @@ sure you add the changes in config/app_cfg.py&lt;/p&gt;
 that I had gotten all the relevant changes, but apparently I somehow
 missed this file.&lt;/p&gt;
 &lt;p&gt;More detailed directions coming soon.&lt;/p&gt;
-&lt;/p&gt;</summary><category term="FLOSS-seminar"></category><category term="openshift"></category></entry><entry><title>TurboGears2 on OpenShift, just like it should be</title><link href="http://nathanielca.se/fossrit/turbogears2-on-openshift-just-like-it-should-be.html" rel="alternate"></link><updated>2012-02-03T06:47:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2012-02-03:fossrit/turbogears2-on-openshift-just-like-it-should-be.html</id><summary type="html">&lt;p&gt;After much work and many trials, I finally have an app pushed to
+&lt;/p&gt;</content><category term="FLOSS-seminar"></category><category term="openshift"></category></entry><entry><title>TurboGears2 on OpenShift, just like it should be</title><link href="http://nathanielca.se/fossrit/turbogears2-on-openshift-just-like-it-should-be.html" rel="alternate"></link><published>2012-02-03T06:47:00-05:00</published><updated>2012-02-03T06:47:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2012-02-03:/fossrit/turbogears2-on-openshift-just-like-it-should-be.html</id><summary type="html">&lt;p&gt;After much work and many trials, I finally have an app pushed to
+OpenShift with no manual tweaking necessary. As often happens with these
+things, the solution was much simpler than expected.&lt;/p&gt;
+&lt;p&gt;Note: I still don't have a foolproof 'follow this' solution ready, as
+the one I built works exactly …&lt;/p&gt;</summary><content type="html">&lt;p&gt;After much work and many trials, I finally have an app pushed to
 OpenShift with no manual tweaking necessary. As often happens with these
 things, the solution was much simpler than expected.&lt;/p&gt;
 &lt;p&gt;Note: I still don't have a foolproof 'follow this' solution ready, as
@@ -201,4 +220,4 @@ application, not OpenShift), so it looked like I had finally fixed
 deploying a standard TurboGears app. I've no doubt that there's
 something I've left out, but I'm pretty amazed at the progress I've made
 so far, and learned a lot about both OpenShift and TurboGears.&lt;/p&gt;
-</summary><category term="hackathon"></category><category term="FLOSS-seminar"></category><category term="openshift"></category></entry></feed>
+</content><category term="hackathon"></category><category term="FLOSS-seminar"></category><category term="openshift"></category></entry></feed>

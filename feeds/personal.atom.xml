@@ -1,5 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://nathanielca.se/" rel="alternate"></link><link href="http://nathanielca.se/feeds/personal.atom.xml" rel="self"></link><id>http://nathanielca.se/</id><updated>2015-05-11T17:28:00-04:00</updated><entry><title>GrooveBot 2015</title><link href="http://nathanielca.se/personal/groovebot-2015.html" rel="alternate"></link><updated>2015-05-11T17:28:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2015-05-11:personal/groovebot-2015.html</id><summary type="html">&lt;p&gt;So &lt;a class="reference external" href="http://www.grooveshark.com/"&gt;GrooveShark&lt;/a&gt; shut down a few days ago.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut? - personal</title><link href="http://nathanielca.se/" rel="alternate"></link><link href="http://nathanielca.se/feeds/personal.atom.xml" rel="self"></link><id>http://nathanielca.se/</id><updated>2017-08-24T16:30:00-04:00</updated><entry><title>Fail2Ban woes</title><link href="http://nathanielca.se/personal/fail2ban-woes.html" rel="alternate"></link><published>2017-08-24T16:30:00-04:00</published><updated>2017-08-24T16:30:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2017-08-24:/personal/fail2ban-woes.html</id><summary type="html">&lt;p&gt;So I had a bit of a scare this morning.&lt;/p&gt;
+&lt;p&gt;I'm in a hotel in North Carolina, hundreds of miles from my server, when I try
+to log in and get a &amp;quot;Connection refused&amp;quot; error. Phooey. I hope the hotel wifi
+is just filtering port 22 for some terrible reason …&lt;/p&gt;</summary><content type="html">&lt;p&gt;So I had a bit of a scare this morning.&lt;/p&gt;
+&lt;p&gt;I'm in a hotel in North Carolina, hundreds of miles from my server, when I try
+to log in and get a &amp;quot;Connection refused&amp;quot; error. Phooey. I hope the hotel wifi
+is just filtering port 22 for some terrible reason, and hop to a friend's server
+over a non-standard port and I'm in. Great! I type out the connection again and...&lt;/p&gt;
+&lt;p&gt;Connection refused&lt;/p&gt;
+&lt;p&gt;Hmmm. This is starting to get concerning. I briefly freak out that my server might
+have had a terrible accident, when I realize that all of the other services I rely
+on all the time are still running. Phew. Still, I don't have ssh access, and that
+is very troubling. I start poking around with other things and eventually
+unconsciously try to ssh back in to check something and to my surprise, it works!
+As soon as I realize what I've done, I pull up journalctl to see if sshd is going
+crazy and I'm met with hundreds of lines of Chinese IPs plugging away at my server.&lt;/p&gt;
+&lt;p&gt;But wait! I have fail2ban installed. That should be stopping these, right? Well
+maybe something broke when the server was upgraded to Debian 9... and now I'm
+off trying to figure out what is running and where the config is.&lt;/p&gt;
+&lt;p&gt;Some time later, I finally have a solution. The problem (ultimately) was
+systemd, though not directly. I had moved this system to systemd some time early
+in Debian 7, which meant that the standard logging locations were still there,
+but no loger being written to. So fail2ban was looking for /var/log/auth.log,
+found a file, read it and found no problems, completely ignoring the fact that
+the file hadn't been written to since 2013. This isn't really fail2ban's fault,
+it has support for ingesting the systemd journal, but on Debian, the default
+backend still tries to use those files. I could set up rsyslog to start
+writing those files again, but I have no particular need or desire to do that
+outside of this program, especially as fail2ban knows how to read the journal
+on its own, if it's configured to do so.&lt;/p&gt;
+&lt;p&gt;So the solution is pretty simple, though it took me a while to get there. First,
+I had to &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;apt-get&lt;/span&gt; install &lt;span class="pre"&gt;python3-systemd&lt;/span&gt;&lt;/tt&gt;, to get the proper libraries to
+actually use the journal. Then, I had to have the following in my jail.local:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+[sshd]
+backend = systemd
+&lt;/pre&gt;
+&lt;p&gt;I also put a few other tweaks in there as my config hadn't actually moved over
+from the previous version, but since it's now in the jail.local instead of
+editing the system config, this shouldn't be a problem again.&lt;/p&gt;
+</content><category term="server"></category></entry><entry><title>GrooveBot 2015</title><link href="http://nathanielca.se/personal/groovebot-2015.html" rel="alternate"></link><published>2015-05-11T17:28:00-04:00</published><updated>2015-05-11T17:28:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2015-05-11:/personal/groovebot-2015.html</id><summary type="html">&lt;p&gt;So &lt;a class="reference external" href="http://www.grooveshark.com/"&gt;GrooveShark&lt;/a&gt; shut down a few days ago.&lt;/p&gt;
+&lt;p&gt;I haven't really followed them much since I took over the original &lt;a class="reference external" href="https://github.com/Qalthos/groovebot"&gt;GrooveBot&lt;/a&gt;
+codebase &lt;a class="reference external" href="/personal/groovebot-updates.html"&gt;sometime in 2011&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;But now GrooveBot's namesake is gone, which marks a neat sort of milestone for
+the project. It has now outlived its inspiration.&lt;/p&gt;
+&lt;p&gt;In any case …&lt;/p&gt;</summary><content type="html">&lt;p&gt;So &lt;a class="reference external" href="http://www.grooveshark.com/"&gt;GrooveShark&lt;/a&gt; shut down a few days ago.&lt;/p&gt;
 &lt;p&gt;I haven't really followed them much since I took over the original &lt;a class="reference external" href="https://github.com/Qalthos/groovebot"&gt;GrooveBot&lt;/a&gt;
 codebase &lt;a class="reference external" href="/personal/groovebot-updates.html"&gt;sometime in 2011&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;But now GrooveBot's namesake is gone, which marks a neat sort of milestone for
@@ -45,7 +90,14 @@ be working, but Pandora has been broken for years, and GrooveShark never
 worked in the first place.&lt;/td&gt;&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-</summary><category term="groovebot"></category></entry><entry><title>Remysmoke Improving</title><link href="http://nathanielca.se/personal/remysmoke-improving.html" rel="alternate"></link><updated>2013-07-26T03:44:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2013-07-26:personal/remysmoke-improving.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://remysmoke.linkybook.com/"&gt;Remysmoke&lt;/a&gt; has had a few updates over the past week, and I think they've gone
+</content><category term="groovebot"></category></entry><entry><title>Remysmoke Improving</title><link href="http://nathanielca.se/personal/remysmoke-improving.html" rel="alternate"></link><published>2013-07-26T03:44:00-04:00</published><updated>2013-07-26T03:44:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2013-07-26:/personal/remysmoke-improving.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://remysmoke.linkybook.com/"&gt;Remysmoke&lt;/a&gt; has had a few updates over the past week, and I think they've gone
+pretty well. Remysmoke is now at version 1.2, here's the changelog for the past
+few versions:&lt;/p&gt;
+&lt;div class="section" id="remysmoke-1-0"&gt;
+&lt;h2&gt;Remysmoke 1.0&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Moved graphs from tw2-protoviz to &lt;a class="reference external" href="http://pygal.org/"&gt;pygal&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Moved smoke input form from tw2-forms to hand-crafted HTML5 …&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;&lt;a class="reference external" href="http://remysmoke.linkybook.com/"&gt;Remysmoke&lt;/a&gt; has had a few updates over the past week, and I think they've gone
 pretty well. Remysmoke is now at version 1.2, here's the changelog for the past
 few versions:&lt;/p&gt;
 &lt;div class="section" id="remysmoke-1-0"&gt;
@@ -77,7 +129,11 @@ smoked that day.&lt;/li&gt;
 with an OpenShift-specific patch dealing with overriding the database location
 at runtime.&lt;/p&gt;
 &lt;/div&gt;
-</summary><category term="remysmoke"></category></entry><entry><title>Recent Projects: Groovebot</title><link href="http://nathanielca.se/personal/recent-projects-groovebot.html" rel="alternate"></link><updated>2012-07-24T18:47:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2012-07-24:personal/recent-projects-groovebot.html</id><summary type="html">&lt;p&gt;This is the first of a number of posts meant to overview the things I've
+</content><category term="remysmoke"></category></entry><entry><title>Recent Projects: Groovebot</title><link href="http://nathanielca.se/personal/recent-projects-groovebot.html" rel="alternate"></link><published>2012-07-24T18:47:00-04:00</published><updated>2012-07-24T18:47:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2012-07-24:/personal/recent-projects-groovebot.html</id><summary type="html">&lt;p&gt;This is the first of a number of posts meant to overview the things I've
+been doing recently. First up on the list is the long-overdue
+&lt;a class="reference external" href="https://github.com/Qalthos/groovebot"&gt;Groovebot&lt;/a&gt; update.&lt;/p&gt;
+&lt;p&gt;Before this summer, Groovebot 'worked' on &lt;a class="reference external" href="http://spotify.com/"&gt;Spotify&lt;/a&gt;, and also had a
+fairly useful but under-tested &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Music_Player_Daemon"&gt;MPD&lt;/a&gt; backend that worked for me when …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is the first of a number of posts meant to overview the things I've
 been doing recently. First up on the list is the long-overdue
 &lt;a class="reference external" href="https://github.com/Qalthos/groovebot"&gt;Groovebot&lt;/a&gt; update.&lt;/p&gt;
 &lt;p&gt;Before this summer, Groovebot 'worked' on &lt;a class="reference external" href="http://spotify.com/"&gt;Spotify&lt;/a&gt;, and also had a
@@ -134,7 +190,11 @@ second bot. This second bot has all the work I've been doing lately and,
 some few remaining problems aside, mostly work. Ideally, I will soon
 have a better host for the bot that will let me run Spotify, but for now
 Pandora is working well enough.&lt;/p&gt;
-&lt;/p&gt;</summary><category term="groovebot"></category></entry><entry><title>OpenShift Troubles</title><link href="http://nathanielca.se/personal/openshift-troubles.html" rel="alternate"></link><updated>2012-02-03T06:47:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2012-02-03:personal/openshift-troubles.html</id><summary type="html">&lt;p&gt;Recently I've been playing with &lt;a class="reference external" href="http://openshift.redhat.com/"&gt;OpenShift&lt;/a&gt;, a new(ish) service from
+&lt;/p&gt;</content><category term="groovebot"></category></entry><entry><title>OpenShift Troubles</title><link href="http://nathanielca.se/personal/openshift-troubles.html" rel="alternate"></link><published>2012-02-03T06:47:00-05:00</published><updated>2012-02-03T06:47:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2012-02-03:/personal/openshift-troubles.html</id><summary type="html">&lt;p&gt;Recently I've been playing with &lt;a class="reference external" href="http://openshift.redhat.com/"&gt;OpenShift&lt;/a&gt;, a new(ish) service from
+Red Hat as a sort of 'push to cloud' deployment strategy. It's
+interesting for people like me who can whip up a site quick, but don't
+necessarily have the framework in place to host it.&lt;/p&gt;
+&lt;p&gt;Due to my work …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Recently I've been playing with &lt;a class="reference external" href="http://openshift.redhat.com/"&gt;OpenShift&lt;/a&gt;, a new(ish) service from
 Red Hat as a sort of 'push to cloud' deployment strategy. It's
 interesting for people like me who can whip up a site quick, but don't
 necessarily have the framework in place to host it.&lt;/p&gt;
@@ -190,7 +250,11 @@ should I really try), I wasn't getting any good error messages.
 So what is the site that has been giving me all these troubles? It's a
 little site I set up to publicly shame Remy into stopping smoking:
 &lt;a class="reference external" href="http://remysmoke-qalthos.rhcloud.com/"&gt;remysmoke-qalthos.rhcloud.com&lt;/a&gt;&lt;/p&gt;
-</summary><category term="FLOSS-seminar"></category><category term="openshift"></category></entry><entry><title>Openshift Troubles Continued</title><link href="http://nathanielca.se/personal/openshift-troubles-continued.html" rel="alternate"></link><updated>2012-02-03T06:47:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2012-02-03:personal/openshift-troubles-continued.html</id><summary type="html">&lt;p&gt;I figured out the problem I was having with OpenShift.&lt;/p&gt;
+</content><category term="FLOSS-seminar"></category><category term="openshift"></category></entry><entry><title>Openshift Troubles Continued</title><link href="http://nathanielca.se/personal/openshift-troubles-continued.html" rel="alternate"></link><published>2012-02-03T06:47:00-05:00</published><updated>2012-02-03T06:47:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2012-02-03:/personal/openshift-troubles-continued.html</id><summary type="html">&lt;p&gt;I figured out the problem I was having with OpenShift.&lt;/p&gt;
+&lt;p&gt;To put it simply, I didn't pay enough attention.&lt;/p&gt;
+&lt;p&gt;For reference, when moving an existing TurboGears app to OpenShift, make
+sure you add the changes in config/app_cfg.py&lt;/p&gt;
+&lt;p&gt;As soon as I saw that, I felt really silly for …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I figured out the problem I was having with OpenShift.&lt;/p&gt;
 &lt;p&gt;To put it simply, I didn't pay enough attention.&lt;/p&gt;
 &lt;p&gt;For reference, when moving an existing TurboGears app to OpenShift, make
 sure you add the changes in config/app_cfg.py&lt;/p&gt;
@@ -198,7 +262,11 @@ sure you add the changes in config/app_cfg.py&lt;/p&gt;
 that I had gotten all the relevant changes, but apparently I somehow
 missed this file.&lt;/p&gt;
 &lt;p&gt;More detailed directions coming soon.&lt;/p&gt;
-&lt;/p&gt;</summary><category term="FLOSS-seminar"></category><category term="openshift"></category></entry><entry><title>GrooveBot updates</title><link href="http://nathanielca.se/personal/groovebot-updates.html" rel="alternate"></link><updated>2011-09-28T01:28:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-09-28:personal/groovebot-updates.html</id><summary type="html">&lt;p&gt;Today I'm going to talk about something a bit more understandable, I
+&lt;/p&gt;</content><category term="FLOSS-seminar"></category><category term="openshift"></category></entry><entry><title>GrooveBot updates</title><link href="http://nathanielca.se/personal/groovebot-updates.html" rel="alternate"></link><published>2011-09-28T01:28:00-04:00</published><updated>2011-09-28T01:28:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-09-28:/personal/groovebot-updates.html</id><summary type="html">&lt;p&gt;Today I'm going to talk about something a bit more understandable, I
+hope.&lt;/p&gt;
+&lt;p&gt;Back around the summer of 2010, the FOSSBox wanted some ambient music to
+play in the background. One of the things we wanted was a way to have
+control over the songs played be available to anyone …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Today I'm going to talk about something a bit more understandable, I
 hope.&lt;/p&gt;
 &lt;p&gt;Back around the summer of 2010, the FOSSBox wanted some ambient music to
 play in the background. One of the things we wanted was a way to have
@@ -233,12 +301,20 @@ Hopefully, when a new, free music API becomes available that we can hook
 into, it should be easier to reimplement those functions in a more
 general way so that multiple backends can be used for a more varied
 music experience. And then we can get back to the OS grooving.&lt;/p&gt;
-</summary><category term="groovebot"></category></entry><entry><title>pyDex 1.0</title><link href="http://nathanielca.se/personal/pydex-10.html" rel="alternate"></link><updated>2011-05-08T03:19:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-05-08:personal/pydex-10.html</id><summary type="html">&lt;p&gt;And in mostly unrelated but terribly belated news, I finally released
+</content><category term="groovebot"></category></entry><entry><title>pyDex 1.0</title><link href="http://nathanielca.se/personal/pydex-10.html" rel="alternate"></link><published>2011-05-08T03:19:00-04:00</published><updated>2011-05-08T03:19:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-05-08:/personal/pydex-10.html</id><summary type="html">&lt;p&gt;And in mostly unrelated but terribly belated news, I finally released
+&lt;a class="reference external" href="https://gitorious.org/pydex"&gt;pyDex 1.0&lt;/a&gt; this morning. Black/White pokedex, new config system, baby
+pokemon, and game detection, are all new features introduced in this
+version. Old configs should get read properly and get seamlessly updated
+to the new version, though …&lt;/p&gt;</summary><content type="html">&lt;p&gt;And in mostly unrelated but terribly belated news, I finally released
 &lt;a class="reference external" href="https://gitorious.org/pydex"&gt;pyDex 1.0&lt;/a&gt; this morning. Black/White pokedex, new config system, baby
 pokemon, and game detection, are all new features introduced in this
 version. Old configs should get read properly and get seamlessly updated
 to the new version, though there may be a few bugs in the process.&lt;/p&gt;
-</summary><category term="pyDex"></category></entry><entry><title>Killer Bunnies and the Towering Draw Pile</title><link href="http://nathanielca.se/personal/killer-bunnies-and-the-towering-draw-pile.html" rel="alternate"></link><updated>2011-01-23T07:12:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-01-23:personal/killer-bunnies-and-the-towering-draw-pile.html</id><summary type="html">&lt;p&gt;There was a hackathon Friday night, and a write-up is coming soon, but
+</content><category term="pyDex"></category></entry><entry><title>Killer Bunnies and the Towering Draw Pile</title><link href="http://nathanielca.se/personal/killer-bunnies-and-the-towering-draw-pile.html" rel="alternate"></link><published>2011-01-23T07:12:00-05:00</published><updated>2011-01-23T07:12:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-01-23:/personal/killer-bunnies-and-the-towering-draw-pile.html</id><summary type="html">&lt;p&gt;There was a hackathon Friday night, and a write-up is coming soon, but
+first a bit of random chatter.&lt;/p&gt;
+&lt;p&gt;I have, for a few years, been collecting the various pieces that make up
+&lt;a class="reference external" href="http://boardgamegeek.com/boardgame/3699/killer-bunnies-and-the-quest-for-the-magic-carrot"&gt;Killer Bunnies and the Quest for the Magic Carrot&lt;/a&gt;. For Christmas, I
+received the Stainless Steel booster …&lt;/p&gt;</summary><content type="html">&lt;p&gt;There was a hackathon Friday night, and a write-up is coming soon, but
 first a bit of random chatter.&lt;/p&gt;
 &lt;p&gt;I have, for a few years, been collecting the various pieces that make up
 &lt;a class="reference external" href="http://boardgamegeek.com/boardgame/3699/killer-bunnies-and-the-quest-for-the-magic-carrot"&gt;Killer Bunnies and the Quest for the Magic Carrot&lt;/a&gt;. For Christmas, I
@@ -275,7 +351,10 @@ addition would extend gameplay a bit more and provide new challenges for
 longtime players (not to mention many more dice to play with).&lt;/p&gt;
 &lt;p&gt;So that's how I spent my weekend apart from coding like a superstar. But
 don't worry, I'll get to that soon.&lt;/p&gt;
-</summary><category term="games"></category></entry><entry><title>pyDex on Sugar</title><link href="http://nathanielca.se/personal/pydex-on-sugar.html" rel="alternate"></link><updated>2011-01-19T23:51:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-01-19:personal/pydex-on-sugar.html</id><summary type="html">&lt;p&gt;A warning, this gets very technical with lots of acronyms and jargon.
+</content><category term="games"></category></entry><entry><title>pyDex on Sugar</title><link href="http://nathanielca.se/personal/pydex-on-sugar.html" rel="alternate"></link><published>2011-01-19T23:51:00-05:00</published><updated>2011-01-19T23:51:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-01-19:/personal/pydex-on-sugar.html</id><summary type="html">&lt;p&gt;A warning, this gets very technical with lots of acronyms and jargon.
+tl;dr: I have a new pyDex branch which *should* run on the OLPC
+A few days ago, I decided I'd finally see how well pyDex runs on the
+OLPC. Turns out, it runs pretty well, which isn't …&lt;/p&gt;</summary><content type="html">&lt;p&gt;A warning, this gets very technical with lots of acronyms and jargon.
 tl;dr: I have a new pyDex branch which *should* run on the OLPC
 A few days ago, I decided I'd finally see how well pyDex runs on the
 OLPC. Turns out, it runs pretty well, which isn't too surprising as it
@@ -304,7 +383,11 @@ probably get to test it sometime this weekend, maybe even turn it into a
 real activity by then. This is still just a small project, and I doubt
 it will ever go up on Sugar's activities site, but it has given me a
 much better understanding about how non-pygame activities work.&lt;/p&gt;
-</summary><category term="sugar"></category><category term="pyDex"></category></entry><entry><title>Huzzah!</title><link href="http://nathanielca.se/personal/huzzah.html" rel="alternate"></link><updated>2010-09-06T17:57:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2010-09-06:personal/huzzah.html</id><summary type="html">&lt;p&gt;Here we are, back at the beginning of another school year. It's going to
+</content><category term="sugar"></category><category term="pyDex"></category></entry><entry><title>Huzzah!</title><link href="http://nathanielca.se/personal/huzzah.html" rel="alternate"></link><published>2010-09-06T17:57:00-04:00</published><updated>2010-09-06T17:57:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2010-09-06:/personal/huzzah.html</id><summary type="html">&lt;p&gt;Here we are, back at the beginning of another school year. It's going to
+be interesting, I'm still pretty laid back from Fan Expo Canada in
+Toronto.&lt;/p&gt;
+&lt;p&gt;My new monitor finally arrived. Well, it arrived Saturday, but the RIT
+post office isn't open on weekends over breaks, so I had …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Here we are, back at the beginning of another school year. It's going to
 be interesting, I'm still pretty laid back from Fan Expo Canada in
 Toronto.&lt;/p&gt;
 &lt;p&gt;My new monitor finally arrived. Well, it arrived Saturday, but the RIT
@@ -320,7 +403,10 @@ want to blast music, I'll just end up blasting Justin instead.&lt;/p&gt;
 &lt;p&gt;So I now have two monitors, though I don't know if I'm keeping the
 ancient 15&amp;quot; LCD from home that was serving as a spare. We'll see. In the
 meantime, Minecraft looks better than ever.&lt;/p&gt;
-</summary><category term="hardware"></category></entry><entry><title>Writing and Me</title><link href="http://nathanielca.se/personal/writing-and-me.html" rel="alternate"></link><updated>2010-07-21T04:13:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2010-07-21:personal/writing-and-me.html</id><summary type="html">&lt;p&gt;I am not a writer. Had things progressed differently, I might have tried
+</content><category term="hardware"></category></entry><entry><title>Writing and Me</title><link href="http://nathanielca.se/personal/writing-and-me.html" rel="alternate"></link><published>2010-07-21T04:13:00-04:00</published><updated>2010-07-21T04:13:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2010-07-21:/personal/writing-and-me.html</id><summary type="html">&lt;p&gt;I am not a writer. Had things progressed differently, I might have tried
+it. I do enjoy the writing process. One important problem is that I hate
+revision. I start from a theoretical perfect model, and slowly write it
+out, far slower than my brain, which can race ahead to …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I am not a writer. Had things progressed differently, I might have tried
 it. I do enjoy the writing process. One important problem is that I hate
 revision. I start from a theoretical perfect model, and slowly write it
 out, far slower than my brain, which can race ahead to new, more
@@ -359,7 +445,11 @@ without glaring errors to fix, and my personal writing tends to throw
 parsing errors in anyone who isn't me.&lt;/p&gt;
 &lt;p&gt;Hopefully I'll get better at this. At the very least I hope to catch the
 common mistakes here.&lt;/p&gt;
-</summary><category term="introspective"></category></entry><entry><title>pyDex Progress</title><link href="http://nathanielca.se/personal/pydex-progress.html" rel="alternate"></link><updated>2010-07-10T16:51:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2010-07-10:personal/pydex-progress.html</id><summary type="html">&lt;p&gt;I've finally gotten around to staging and committing a few enhancements
+</content><category term="introspective"></category></entry><entry><title>pyDex Progress</title><link href="http://nathanielca.se/personal/pydex-progress.html" rel="alternate"></link><published>2010-07-10T16:51:00-04:00</published><updated>2010-07-10T16:51:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2010-07-10:/personal/pydex-progress.html</id><summary type="html">&lt;p&gt;I've finally gotten around to staging and committing a few enhancements
+to the &lt;a class="reference external" href="http://gitorious.org/pydex"&gt;pydex repository&lt;/a&gt;. The more advanced stuff like Isshu pokemon
+and the new file format are still in limbo, naturally, and won't get
+moved to master any time soon since they make older files incompatible,
+though I hope …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I've finally gotten around to staging and committing a few enhancements
 to the &lt;a class="reference external" href="http://gitorious.org/pydex"&gt;pydex repository&lt;/a&gt;. The more advanced stuff like Isshu pokemon
 and the new file format are still in limbo, naturally, and won't get
 moved to master any time soon since they make older files incompatible,
@@ -370,4 +460,4 @@ I've only played Gen IV extensively, but after loading up Yellow on a
 whim, I see how this could be useful. But I'm more concerned with
 bugfixing 1.0 so that it can see the light of day than tacking on more
 features right now.&lt;/p&gt;
-</summary><category term="pyDex"></category></entry></feed>
+</content><category term="pyDex"></category></entry></feed>

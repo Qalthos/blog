@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://nathanielca.se/" rel="alternate"></link><link href="http://nathanielca.se/feeds/tag/schoolserver.atom.xml" rel="self"></link><id>http://nathanielca.se/</id><updated>2013-08-05T02:04:00-04:00</updated><entry><title>Building a Schoolserver</title><link href="http://nathanielca.se/fossrit/building-a-schoolserver.html" rel="alternate"></link><updated>2013-08-05T02:04:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2013-08-05:fossrit/building-a-schoolserver.html</id><summary type="html">&lt;p&gt;One of my tasks for this summer has been to try and get the FOSSBox's
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut? - schoolserver</title><link href="http://nathanielca.se/" rel="alternate"></link><link href="http://nathanielca.se/feeds/tag/schoolserver.atom.xml" rel="self"></link><id>http://nathanielca.se/</id><updated>2013-08-05T02:04:00-04:00</updated><entry><title>Building a Schoolserver</title><link href="http://nathanielca.se/fossrit/building-a-schoolserver.html" rel="alternate"></link><published>2013-08-05T02:04:00-04:00</published><updated>2013-08-05T02:04:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2013-08-05:/fossrit/building-a-schoolserver.html</id><summary type="html">&lt;p&gt;One of my tasks for this summer has been to try and get the FOSSBox's
+schoolserver up and running again. We previouly had one a number of years ago,
+but the hardware failed some time ago and the system itself was running a
+hacked-together Debian build and did not have …&lt;/p&gt;</summary><content type="html">&lt;p&gt;One of my tasks for this summer has been to try and get the FOSSBox's
 schoolserver up and running again. We previouly had one a number of years ago,
 but the hardware failed some time ago and the system itself was running a
 hacked-together Debian build and did not have access to some of the actual
@@ -32,4 +35,4 @@ idea. This post will be further updated as time goes on.&lt;/p&gt;
 &lt;p&gt;The main problem seen so far is that this is being set up on a RHEL server
 backed by XEN, and the OLPC-XS repository keeps wanting to install an
 incompatible kernel, hosing the system on a regular basis.&lt;/p&gt;
-</summary><category term="sugar"></category><category term="schoolserver"></category></entry></feed>
+</content><category term="sugar"></category><category term="schoolserver"></category></entry></feed>

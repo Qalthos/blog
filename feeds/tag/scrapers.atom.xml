@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://nathanielca.se/" rel="alternate"></link><link href="http://nathanielca.se/feeds/tag/scrapers.atom.xml" rel="self"></link><id>http://nathanielca.se/</id><updated>2011-06-21T22:56:00-04:00</updated><entry><title>Back up to Speed</title><link href="http://nathanielca.se/civx/back-up-to-speed.html" rel="alternate"></link><updated>2011-06-21T22:56:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-06-21:civx/back-up-to-speed.html</id><summary type="html">&lt;p&gt;I've almost closed &lt;a class="reference external" href="https://fedorahosted.org/civx/ticket/106"&gt;bug #106&lt;/a&gt;. I've done all I can do for now, until I
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut? - scrapers</title><link href="http://nathanielca.se/" rel="alternate"></link><link href="http://nathanielca.se/feeds/tag/scrapers.atom.xml" rel="self"></link><id>http://nathanielca.se/</id><updated>2011-06-21T22:56:00-04:00</updated><entry><title>Back up to Speed</title><link href="http://nathanielca.se/civx/back-up-to-speed.html" rel="alternate"></link><published>2011-06-21T22:56:00-04:00</published><updated>2011-06-21T22:56:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-06-21:/civx/back-up-to-speed.html</id><summary type="html">&lt;p&gt;I've almost closed &lt;a class="reference external" href="https://fedorahosted.org/civx/ticket/106"&gt;bug #106&lt;/a&gt;. I've done all I can do for now, until I
+can figure out how to attribute actions to senators. Until then, I
+should comment out the 'actions' tab tomorrow with a note letting
+whoever tries this next what I've already tried.
+There is still some …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I've almost closed &lt;a class="reference external" href="https://fedorahosted.org/civx/ticket/106"&gt;bug #106&lt;/a&gt;. I've done all I can do for now, until I
 can figure out how to attribute actions to senators. Until then, I
 should comment out the 'actions' tab tomorrow with a note letting
 whoever tries this next what I've already tried.
@@ -87,7 +91,11 @@ that I really understand Python's Unicode in a way I never grasped
 before. This should definitely help in the future as Unicode is a very
 important part of coding portable applications and that's something I
 want to do.&lt;/p&gt;
-</summary><category term="peopledashboard"></category><category term="widgets"></category><category term="scrapers"></category><category term="SURS"></category></entry><entry><title>Shelves and Shoves</title><link href="http://nathanielca.se/civx/shelves-and-shoves.html" rel="alternate"></link><updated>2011-06-21T22:56:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-06-21:civx/shelves-and-shoves.html</id><summary type="html">&lt;p&gt;Today is the day to hit &lt;a class="reference external" href="https://fedorahosted.org/civx/ticket/105"&gt;bug #105&lt;/a&gt;, another of the leftover bugs from
+</content><category term="peopledashboard"></category><category term="widgets"></category><category term="scrapers"></category><category term="SURS"></category></entry><entry><title>Shelves and Shoves</title><link href="http://nathanielca.se/civx/shelves-and-shoves.html" rel="alternate"></link><published>2011-06-21T22:56:00-04:00</published><updated>2011-06-21T22:56:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-06-21:/civx/shelves-and-shoves.html</id><summary type="html">&lt;p&gt;Today is the day to hit &lt;a class="reference external" href="https://fedorahosted.org/civx/ticket/105"&gt;bug #105&lt;/a&gt;, another of the leftover bugs from
+last year.
+The story goes something like this: there's a lot of data on
+nysenate.gov that is nice to have, but asking for that info on every
+call is a little cumbersome. We want to …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Today is the day to hit &lt;a class="reference external" href="https://fedorahosted.org/civx/ticket/105"&gt;bug #105&lt;/a&gt;, another of the leftover bugs from
 last year.
 The story goes something like this: there's a lot of data on
 nysenate.gov that is nice to have, but asking for that info on every
@@ -137,7 +145,11 @@ pull smaller volumes of data at a time, hopefully speeding up the
 process.
 We'll see where I get tomorrow, but so far I'm feeling pretty good about
 all this.&lt;/p&gt;
-</summary><category term="peopledashboard"></category><category term="widgets"></category><category term="scrapers"></category><category term="SURS"></category></entry><entry><title>The Last Week</title><link href="http://nathanielca.se/civx/the-last-week.html" rel="alternate"></link><updated>2011-06-21T22:56:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-06-21:civx/the-last-week.html</id><summary type="html">&lt;p&gt;This week has been a mess for a lot of reasons. Let's see what I managed
+</content><category term="peopledashboard"></category><category term="widgets"></category><category term="scrapers"></category><category term="SURS"></category></entry><entry><title>The Last Week</title><link href="http://nathanielca.se/civx/the-last-week.html" rel="alternate"></link><published>2011-06-21T22:56:00-04:00</published><updated>2011-06-21T22:56:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-06-21:/civx/the-last-week.html</id><summary type="html">&lt;p&gt;This week has been a mess for a lot of reasons. Let's see what I managed
+to get through so far.
+One of the things I got to look at this week is threebean's mokshactl
+branch of CIVX and Moksha. This is a project to simplify the
+administration of a …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This week has been a mess for a lot of reasons. Let's see what I managed
 to get through so far.
 One of the things I got to look at this week is threebean's mokshactl
 branch of CIVX and Moksha. This is a project to simplify the
@@ -160,7 +172,11 @@ polyscraper, but that's nothing worth mentioning at this point. Between
 that and some internal matters and hours of meetings and my car
 developing a leak in it's brake line, that's all that went down this
 week. Tomorrow I get to drive home and hopefully fix my car properly.&lt;/p&gt;
-</summary><category term="peopledashboard"></category><category term="widgets"></category><category term="scrapers"></category><category term="SURS"></category><category term="fabulous"></category></entry><entry><title>Grokking the Core</title><link href="http://nathanielca.se/civx/grokking-the-core.html" rel="alternate"></link><updated>2011-06-21T22:55:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-06-21:civx/grokking-the-core.html</id><summary type="html">&lt;p&gt;This week begins the real dive into the core of what makes CIVX. Today
+</content><category term="peopledashboard"></category><category term="widgets"></category><category term="scrapers"></category><category term="SURS"></category><category term="fabulous"></category></entry><entry><title>Grokking the Core</title><link href="http://nathanielca.se/civx/grokking-the-core.html" rel="alternate"></link><published>2011-06-21T22:55:00-04:00</published><updated>2011-06-21T22:55:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-06-21:/civx/grokking-the-core.html</id><summary type="html">&lt;p&gt;This week begins the real dive into the core of what makes CIVX. Today
+(and yesterday, though yesterday hardly counts as a real day) were spent
+adding major functionality to the polyscraper, something that's been
+overdue for a long time now.
+But what is this magical polyscraper? Well, in short …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This week begins the real dive into the core of what makes CIVX. Today
 (and yesterday, though yesterday hardly counts as a real day) were spent
 adding major functionality to the polyscraper, something that's been
 overdue for a long time now.
@@ -193,7 +209,11 @@ understand the underlying structure of everything. Every day I learn
 more about what goes on inside this machine, and every day marks another
 set of tools I've learned to wield. I can't wait to see how far I get by
 the end of the summer.&lt;/p&gt;
-</summary><category term="scrapers"></category><category term="SURS"></category><category term="polyscraper"></category></entry><entry><title>Diving Deep</title><link href="http://nathanielca.se/civx/diving-deep.html" rel="alternate"></link><updated>2010-06-30T16:55:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2010-06-30:civx/diving-deep.html</id><summary type="html">&lt;p&gt;Yesterday had been spent working on a proper dev branch to CIVX. Today
+</content><category term="scrapers"></category><category term="SURS"></category><category term="polyscraper"></category></entry><entry><title>Diving Deep</title><link href="http://nathanielca.se/civx/diving-deep.html" rel="alternate"></link><published>2010-06-30T16:55:00-04:00</published><updated>2010-06-30T16:55:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2010-06-30:/civx/diving-deep.html</id><summary type="html">&lt;p&gt;Yesterday had been spent working on a proper dev branch to CIVX. Today
+we gave it a home.&lt;/p&gt;
+&lt;p&gt;Today started off trying to get the current dev CIVX running on our
+server. Now, I had some experience setting up a CIVX instance from
+getting one running on my box, but …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Yesterday had been spent working on a proper dev branch to CIVX. Today
 we gave it a home.&lt;/p&gt;
 &lt;p&gt;Today started off trying to get the current dev CIVX running on our
 server. Now, I had some experience setting up a CIVX instance from
@@ -217,4 +237,4 @@ howdtheyvote.ca data, it went much faster. I need to remember to source
 tg2env when I'm on the server, but mostly, things were good today.
 Tomorrow we put together the pieces of v3, and keep on moving towards
 our goals.&lt;/p&gt;
-</summary><category term="scrapers"></category></entry></feed>
+</content><category term="scrapers"></category></entry></feed>

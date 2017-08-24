@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://nathanielca.se/" rel="alternate"></link><link href="http://nathanielca.se/feeds/tag/opl.atom.xml" rel="self"></link><id>http://nathanielca.se/</id><updated>2011-05-08T03:16:00-04:00</updated><entry><title>Imagine RIT 2011</title><link href="http://nathanielca.se/fossrit/imagine-rit-2011.html" rel="alternate"></link><updated>2011-05-08T03:16:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-05-08:fossrit/imagine-rit-2011.html</id><summary type="html">&lt;p&gt;So I've been absent for a while lately, but with good reason. I've been
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut? - OPL</title><link href="http://nathanielca.se/" rel="alternate"></link><link href="http://nathanielca.se/feeds/tag/opl.atom.xml" rel="self"></link><id>http://nathanielca.se/</id><updated>2011-05-08T03:16:00-04:00</updated><entry><title>Imagine RIT 2011</title><link href="http://nathanielca.se/fossrit/imagine-rit-2011.html" rel="alternate"></link><published>2011-05-08T03:16:00-04:00</published><updated>2011-05-08T03:16:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-05-08:/fossrit/imagine-rit-2011.html</id><summary type="html">&lt;p&gt;So I've been absent for a while lately, but with good reason. I've been
+preparing for Imagine RIT, which was held earlier today.
+After pulling possibly my longest day's hack yesterday (1pm to 4am,
+approximately), I woke up at 9 and headed over to the Innovation Center
+to talk to …&lt;/p&gt;</summary><content type="html">&lt;p&gt;So I've been absent for a while lately, but with good reason. I've been
 preparing for Imagine RIT, which was held earlier today.
 After pulling possibly my longest day's hack yesterday (1pm to 4am,
 approximately), I woke up at 9 and headed over to the Innovation Center
@@ -34,4 +38,4 @@ new tasks before the final release.&lt;/p&gt;
 &lt;p&gt;All in all, a very exciting and fun weekend. We made a few contacts,
 introduced a few more people to FOSS&amp;#64;RIT, and gave away at least 40
 LiveCDs. I think that qualifies as quite a success.&lt;/p&gt;
-</summary><category term="journalism"></category><category term="lemonade"></category><category term="sugar"></category><category term="Rise"></category><category term="OPL"></category></entry></feed>
+</content><category term="journalism"></category><category term="lemonade"></category><category term="sugar"></category><category term="Rise"></category><category term="OPL"></category></entry></feed>

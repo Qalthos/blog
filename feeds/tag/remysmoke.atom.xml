@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://nathanielca.se/" rel="alternate"></link><link href="http://nathanielca.se/feeds/tag/remysmoke.atom.xml" rel="self"></link><id>http://nathanielca.se/</id><updated>2013-07-26T03:44:00-04:00</updated><entry><title>Remysmoke Improving</title><link href="http://nathanielca.se/personal/remysmoke-improving.html" rel="alternate"></link><updated>2013-07-26T03:44:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2013-07-26:personal/remysmoke-improving.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://remysmoke.linkybook.com/"&gt;Remysmoke&lt;/a&gt; has had a few updates over the past week, and I think they've gone
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut? - remysmoke</title><link href="http://nathanielca.se/" rel="alternate"></link><link href="http://nathanielca.se/feeds/tag/remysmoke.atom.xml" rel="self"></link><id>http://nathanielca.se/</id><updated>2013-07-26T03:44:00-04:00</updated><entry><title>Remysmoke Improving</title><link href="http://nathanielca.se/personal/remysmoke-improving.html" rel="alternate"></link><published>2013-07-26T03:44:00-04:00</published><updated>2013-07-26T03:44:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2013-07-26:/personal/remysmoke-improving.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://remysmoke.linkybook.com/"&gt;Remysmoke&lt;/a&gt; has had a few updates over the past week, and I think they've gone
+pretty well. Remysmoke is now at version 1.2, here's the changelog for the past
+few versions:&lt;/p&gt;
+&lt;div class="section" id="remysmoke-1-0"&gt;
+&lt;h2&gt;Remysmoke 1.0&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Moved graphs from tw2-protoviz to &lt;a class="reference external" href="http://pygal.org/"&gt;pygal&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Moved smoke input form from tw2-forms to hand-crafted HTML5 …&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;&lt;a class="reference external" href="http://remysmoke.linkybook.com/"&gt;Remysmoke&lt;/a&gt; has had a few updates over the past week, and I think they've gone
 pretty well. Remysmoke is now at version 1.2, here's the changelog for the past
 few versions:&lt;/p&gt;
 &lt;div class="section" id="remysmoke-1-0"&gt;
@@ -31,4 +38,4 @@ smoked that day.&lt;/li&gt;
 with an OpenShift-specific patch dealing with overriding the database location
 at runtime.&lt;/p&gt;
 &lt;/div&gt;
-</summary><category term="remysmoke"></category></entry></feed>
+</content><category term="remysmoke"></category></entry></feed>
