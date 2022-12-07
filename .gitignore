@@ -1,7 +1,8 @@
 *~
 *.sw?
-*.pyc
+__pycache__
 *.pid
 output
 cache
 content/images
+.python-version
