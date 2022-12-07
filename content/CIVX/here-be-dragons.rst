@@ -12,6 +12,7 @@ a hacked one that works locally, and needs to be morphed into something
 that will work in the context of the CIVX stack. Hopefully soon she will
 be up to speed and be able to make a more direct submission in the near
 future.
+
 As it stands, this is good stuff, and the end result is definitely
 usable, even if it's not in the format we want it just yet. Translating
 one to the other has proven tiresome as well; I spent the better part of

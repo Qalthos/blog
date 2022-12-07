@@ -8,7 +8,7 @@ Election Aftermath
 So the election was almost a week ago. Here's how our little experiment
 turned out.
 
-`|image0|`_
+|image0|
 
 The evening started out rather slowly, with information trickling in
 about races that were all but confirmed. We had the Innovation Center's
@@ -73,9 +73,5 @@ program to be written and forgotten, this was something that represented
 the school to some of the public who perhaps hadn't heard about what
 we're doing here. And that is cool.
 
-.. _|image0|: http://farm2.static.flickr.com/1386/5143595646_9e4e56f556.jpg
-.. _|image1|: http://farm2.static.flickr.com/1386/5143595646_9e4e56f556.jpg
 .. _official unofficial results page: http://66.192.47.50/flashresults.html
-
 .. |image0| image:: http://farm2.static.flickr.com/1386/5143595646_9e4e56f556.jpg
-.. |image1| image:: http://farm2.static.flickr.com/1386/5143595646_9e4e56f556.jpg

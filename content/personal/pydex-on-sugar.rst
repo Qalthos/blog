@@ -11,6 +11,7 @@ A few days ago, I decided I'd finally see how well pyDex runs on the
 OLPC. Turns out, it runs pretty well, which isn't too surprising as it
 is written in pure pyGTK and Glade, both of which are well supported in
 Sugar.
+
 So today, I loaded up my dev files and set to work. First, though, I had
 to clean up my dev branch and finish committing the few hacks I had
 accumulated over the last few months. I finally fixed the zero index bug
@@ -18,6 +19,7 @@ and found I had a problem in my new scraper that was causing all the
 evolution problems. In any case, that's all fixed, so my dev branch is
 nice and clean and almost ready for the Black/White release in a few
 weeks.
+
 Getting back to Sugar, I finally found `a good tutorial`_ on \*porting\*
 a pyGTK program rather than writing a new one. While admittedly I
 haven't looked very hard, I had had a bit of a problem getting past the
@@ -28,6 +30,7 @@ The most useful thing I found in this tutorial is sending different
 parents to the main panel depending on where it is called from. So if we
 call the program normally, main\_window is still loaded from Glade, but
 if Sugar loads it, we use their prebuilt panel.
+
 It still needs to be tested, and I need to add actual activity
 information (and an icon eventually), but I think it should work. I'll
 probably get to test it sometime this weekend, maybe even turn it into a

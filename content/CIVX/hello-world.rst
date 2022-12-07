@@ -19,9 +19,9 @@ core download code. Realizing this, I made a generalized downloader
 function which gets called by each loop, simplifying individual loops
 into a simple
 
-::
+.. code-block::
 
-    'for URL in $URL_LIST; download $URL $FILE; done'
+    for URL in $URL_LIST; download $URL $FILE; done
 
 Well, I think it's simpler...
 

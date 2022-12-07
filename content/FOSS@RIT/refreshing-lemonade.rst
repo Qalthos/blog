@@ -9,6 +9,7 @@ In other news, yesterday marked the `final release of Lemonade
 Stand 2.0`_. Now running on the `Fortune Engine`_ and containing 0% of
 my code, this marks an important milestone in my open-source
 `sugar-based`_ lemonade stand game as it's still getting developed!
+
 While I can claim none of the credit for the code, it is still
 satisfying to watch my very first open source project still on its feet,
 teetering around like a drunken toddler.

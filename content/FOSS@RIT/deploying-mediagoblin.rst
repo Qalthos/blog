@@ -70,45 +70,26 @@ uWSGI. This is a bit complicated as ``lazyserver.sh``, ``lazystarter.sh``, and
 depending on the name by which it is invoked. I changed two sections [#]_,
 first:
 
-.. code-block:: bash
+.. code-block:: diff
 
-    local_bin="./bin"
-    case "$selfname" in
-        lazyserver.sh)
-            starter_cmd=paster
-            ini_prefix=paste
-            ;;
-
-became:
-
-.. code-block:: bash
-
-    local_bin="./bin"
-    case "$selfname" in
-        lazyserver.sh)
-            starter_cmd=uwsgi
-            ini_prefix=paste
-            ;;
+      local_bin="./bin"
+      case "$selfname" in
+          lazyserver.sh)
+    -         starter_cmd=paster
+    +         starter_cmd=uwsgi
+              ini_prefix=paste
+              ;;
 
 And then near the very end of the file:
 
-.. code-block:: bash
+.. code-block:: diff
 
-    export CELERY_ALWAYS_EAGER=true
-    case "$selfname" in
-        lazyserver.sh)
-            $starter serve "$ini_file" "$@" --reload
-            ;;
-
-became:
-
-.. code-block:: bash
-
-    export CELERY_ALWAYS_EAGER=true
-    case "$selfname" in
-        lazyserver.sh)
-            $starter --plugin python --virtualenv . --ini-paste "$ini_file" "$@"
-            ;;
+      export CELERY_ALWAYS_EAGER=true
+      case "$selfname" in
+          lazyserver.sh)
+    -         $starter serve "$ini_file" "$@" --reload
+    +         $starter --plugin python --virtualenv . --ini-paste "$ini_file" "$@"
+              ;;
 
 This method allows you to keep using all the information on how to run
 MediaGoblin from paste.ini, while using uWSGI to do all the heavy lifting.

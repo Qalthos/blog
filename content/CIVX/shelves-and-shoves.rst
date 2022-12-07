@@ -7,6 +7,7 @@ Shelves and Shoves
 
 Today is the day to hit `bug #105`_, another of the leftover bugs from
 last year.
+
 The story goes something like this: there's a lot of data on
 nysenate.gov that is nice to have, but asking for that info on every
 call is a little cumbersome. We want to cache as much of the data as we
@@ -17,6 +18,7 @@ it pulled all the info again. And due to the way the scrape was written,
 it pulled all the info for all the senators at once, creating quite a
 bit of lag before the first page showed up. This clearly wasn't going to
 be something we could continue to develop with.
+
 Now, I know nothing about caching data, so I did some poking around in
 CIVX to see how it is done elsewhere. Most of the other caches I found
 in CIVX code were related to caching text feeds, which were not as
@@ -30,6 +32,7 @@ the proper inputs up and let it run. The results were... promising, but
 not astonishing. The file storage worked, once the data was cached, we
 stopped looking to nysenate.gov for data and instead used our own data,
 even after server restarts.
+
 The problem was that the file storage seemed to be slower than the
 previous memory cache. This is all perfectly reasonable, since disk
 access is much slower than memory, and a lot of data has to get pulled
@@ -53,6 +56,7 @@ the data gets pulled at once, which was done to pacify the pylons cache.
 However, if I can get individual caches for each senator, then I can
 pull smaller volumes of data at a time, hopefully speeding up the
 process.
+
 We'll see where I get tomorrow, but so far I'm feeling pretty good about
 all this.
 
