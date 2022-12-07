@@ -1,7 +1,7 @@
 Recent Projects: Groovebot
 ##########################
 :date: 2012-07-24 18:47
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: groovebot
 

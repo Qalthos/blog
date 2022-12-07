@@ -1,7 +1,7 @@
 Another Blog
 ############
 :date: 2010-09-07 16:49
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: journalism
 

@@ -1,7 +1,7 @@
 Winter Hackathon 2
 ##################
 :date: 2011-02-19 02:58
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: hackathon
 

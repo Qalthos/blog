@@ -1,7 +1,7 @@
 Updating git
 ############
 :date: 2010-10-04 19:39
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: wikiotics
 

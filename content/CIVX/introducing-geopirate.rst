@@ -1,7 +1,7 @@
 Introducing: GeoPirate!
 #######################
 :date: 2010-06-23 07:15
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: democracymap, geowebdns
 

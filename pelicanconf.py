@@ -3,7 +3,7 @@
 
 from __future__ import unicode_literals
 
-AUTHOR = u'Nathaniel Case'
+AUTHOR = 'Katherine Case'
 SITENAME = u'Why Not Wingnut?'
 SITEURL = 'http://0:8000'
 TIMEZONE = 'America/New_York'

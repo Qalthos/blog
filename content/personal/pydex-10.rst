@@ -1,7 +1,7 @@
 pyDex 1.0
 #########
 :date: 2011-05-08 03:19
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: pyDex
 

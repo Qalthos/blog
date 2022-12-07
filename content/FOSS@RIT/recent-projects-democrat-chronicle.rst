@@ -1,7 +1,7 @@
 Recent Projects: Democrat & Chronicle
 #####################################
 :date: 2012-08-22 22:16
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: journalism, data alchemy
 

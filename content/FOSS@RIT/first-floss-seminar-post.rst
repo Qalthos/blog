@@ -1,7 +1,7 @@
 First FLOSS Seminar post
 ########################
 :date: 2011-12-01 20:22
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: FLOSS-seminar
 

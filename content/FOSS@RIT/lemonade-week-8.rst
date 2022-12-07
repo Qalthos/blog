@@ -1,7 +1,7 @@
 Lemonade Week... 8?
 ###################
 :date: 2010-10-26 23:59
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: lemonade, sugar
 

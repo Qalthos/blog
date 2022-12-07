@@ -1,7 +1,7 @@
 TurboGears2 on OpenShift, just like it should be
 ################################################
 :date: 2012-02-03 06:47
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: hackathon, FLOSS-seminar, openshift
 

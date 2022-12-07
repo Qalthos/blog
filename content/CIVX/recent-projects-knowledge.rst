@@ -1,7 +1,7 @@
 Recent Projects: Knowledge
 ##########################
 :date: 2012-08-07 23:39
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: knowledge
 

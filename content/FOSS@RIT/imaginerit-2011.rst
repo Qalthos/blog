@@ -1,7 +1,7 @@
 Imagine RIT 2011
 ################
 :date: 2011-05-08 03:16
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: journalism, lemonade, sugar, Rise, OPL
 

@@ -1,7 +1,7 @@
 Wikiotics Visual Tweak
 ######################
 :date: 2010-12-08 23:51
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: wikiotics
 

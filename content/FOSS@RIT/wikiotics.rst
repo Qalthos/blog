@@ -1,7 +1,7 @@
 Wikiotics
 #########
 :date: 2010-09-20 19:45
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: wikiotics
 

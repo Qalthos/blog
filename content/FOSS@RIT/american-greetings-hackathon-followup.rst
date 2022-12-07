@@ -1,7 +1,7 @@
 American Greetings Hackathon Followup
 #####################################
 :date: 2013-01-24 22:33
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: hackathon
 

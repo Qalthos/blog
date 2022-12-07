@@ -1,7 +1,7 @@
 Building a Schoolserver
 #######################
 :date: 2013-08-05 02:04
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: sugar, schoolserver
 

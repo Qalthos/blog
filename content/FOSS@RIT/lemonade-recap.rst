@@ -1,7 +1,7 @@
 Lemonade Recap
 ##############
 :date: 2010-11-10 20:26
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: lemonade
 

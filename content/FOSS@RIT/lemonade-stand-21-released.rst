@@ -1,7 +1,7 @@
 Lemonade Stand 2.1 Released
 ###########################
 :date: 2010-11-12 07:03
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: lemonade
 

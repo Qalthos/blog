@@ -1,7 +1,7 @@
 Refreshing Lemonade
 ###################
 :date: 2010-09-23 14:04
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: lemonade, sugar
 

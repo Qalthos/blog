@@ -1,7 +1,7 @@
 Blog Rebuild
 ############
 :date: 2013-04-21 18:03
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: blog
 

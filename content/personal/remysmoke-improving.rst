@@ -1,7 +1,7 @@
 Remysmoke Improving
 ###################
 :date: 2013-07-26 03:44
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: remysmoke
 

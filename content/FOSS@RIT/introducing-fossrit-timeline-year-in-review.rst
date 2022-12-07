@@ -1,7 +1,7 @@
 Introducing: FOSS\@RIT Timeline Year in Review
 ##############################################
 :date: 2012-08-22 22:15
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: data alchemy, jQuery, timeline
 

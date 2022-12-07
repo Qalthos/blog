@@ -1,7 +1,7 @@
 FLOSS Seminar Update
 ####################
 :date: 2012-01-19 17:46
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: FLOSS-seminar
 

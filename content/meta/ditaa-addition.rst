@@ -1,7 +1,7 @@
 ditaa Addition
 ##############
 :date: 2013-05-15
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: blog
 

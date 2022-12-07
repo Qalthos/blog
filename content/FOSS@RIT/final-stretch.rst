@@ -1,7 +1,7 @@
 Final Stretch
 #############
 :date: 2012-02-29 16:15
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: pybotwar, hackathon, FLOSS-seminar, webbotwar, openshift
 

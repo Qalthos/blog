@@ -1,7 +1,7 @@
 Wikiotics Week 2
 ################
 :date: 2010-09-29 18:36
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: wikiotics
 

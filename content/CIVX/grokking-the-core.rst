@@ -1,7 +1,7 @@
 Grokking the Core
 #################
 :date: 2011-06-21 22:55
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: scrapers, SURS, polyscraper
 

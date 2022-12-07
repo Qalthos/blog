@@ -1,7 +1,7 @@
 Shelves and Shoves
 ##################
 :date: 2011-06-21 22:56
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: peopledashboard, widgets, scrapers, SURS
 

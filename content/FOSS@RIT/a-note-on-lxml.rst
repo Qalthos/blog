@@ -1,7 +1,7 @@
 A note on lxml
 ##############
 :date: 2013-06-01 20:46
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: hackathon, python, wat
 

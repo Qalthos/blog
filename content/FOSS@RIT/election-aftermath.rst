@@ -1,7 +1,7 @@
 Election Aftermath
 ##################
 :date: 2011-03-29 02:59
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: journalism, election
 

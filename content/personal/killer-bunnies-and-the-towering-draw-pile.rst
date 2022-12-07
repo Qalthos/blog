@@ -1,7 +1,7 @@
 Killer Bunnies and the Towering Draw Pile
 #########################################
 :date: 2011-01-23 07:12
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: games
 

@@ -1,7 +1,7 @@
 Writing and Me
 ##############
 :date: 2010-07-21 04:13
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: introspective
 

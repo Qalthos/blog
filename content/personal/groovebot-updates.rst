@@ -1,7 +1,7 @@
 GrooveBot updates
 #################
 :date: 2011-09-28 01:28
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: groovebot
 

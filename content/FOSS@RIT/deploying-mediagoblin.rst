@@ -1,7 +1,7 @@
 Deploying MediaGoblin 1: FastCGI vs uWSGI
 #########################################
 :date: 2013-09-23 13:20
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: mediagoblin, yacht, uWSGI
 

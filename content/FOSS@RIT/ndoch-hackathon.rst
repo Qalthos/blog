@@ -1,7 +1,7 @@
 National Day of Civic Hacking
 #############################
 :date: 2013-06-02 3:18:00
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: hackathon, timeline, jQuery
 

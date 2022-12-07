@@ -1,7 +1,7 @@
 pyDex on Sugar
 ##############
 :date: 2011-01-19 23:51
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: sugar, pyDex
 

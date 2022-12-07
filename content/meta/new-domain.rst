@@ -1,7 +1,7 @@
 New Domain!
 ###########
 :date: 2015-04-29 18:23
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: blog
 

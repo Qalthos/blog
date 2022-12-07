@@ -1,7 +1,7 @@
 pyDex Progress
 ##############
 :date: 2010-07-10 16:51
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: pyDex
 

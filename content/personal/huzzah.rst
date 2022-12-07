@@ -1,7 +1,7 @@
 Huzzah!
 #######
 :date: 2010-09-06 17:57
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: hardware
 

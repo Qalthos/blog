@@ -1,7 +1,7 @@
 CIVX Stuff
 ##########
 :date: 2010-09-09 18:11
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: peopledashboard, widgets
 

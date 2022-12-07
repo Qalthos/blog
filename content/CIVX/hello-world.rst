@@ -1,7 +1,7 @@
 Hello, world...
 ###############
 :date: 2010-06-21 14:53
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: democracymap, geowebdns
 

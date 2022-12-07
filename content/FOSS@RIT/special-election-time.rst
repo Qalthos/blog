@@ -1,7 +1,7 @@
 Special Election Time
 #####################
 :date: 2011-03-29 03:07
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: election
 

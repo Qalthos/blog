@@ -1,7 +1,7 @@
 GrooveBot 2015
 ##############
 :date: 2015-05-11 17:28
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: groovebot
 

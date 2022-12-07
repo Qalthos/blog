@@ -1,7 +1,7 @@
 More Conference Calls
 #####################
 :date: 2010-06-24 12:10
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: democracymap, geowebdns
 

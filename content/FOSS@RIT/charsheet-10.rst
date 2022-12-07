@@ -1,6 +1,7 @@
-:title: Charsheet 1.0
+Charsheet 1.0
+#############
 :date: 2013-12-02 17:24
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: charsheet, openshift
 

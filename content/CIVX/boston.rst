@@ -1,7 +1,7 @@
 Boston
 ######
 :date: 2011-01-23 07:14
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: peopledashboard, hackathon, widgets, Boston
 

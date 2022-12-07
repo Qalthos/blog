@@ -1,7 +1,7 @@
 Diving Deep
 ###########
 :date: 2010-06-30 16:55
-:author: Nathaniel Case
+:author: Katherine Case
 :email: Qalthos@gmail.com
 :tags: scrapers
 
