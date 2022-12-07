@@ -55,10 +55,6 @@ could add to this over time; one of the ideas thrown around at the
 beginning was integration with the NetHack wiki, providing additional
 information about items, monsters, even entire levels.
 
-.. raw:: html
-
-   </p>
-
 .. _American Greetings Hackathon: http://foss.rit.edu/node/425
 .. _Ross Delinger: http://blog.helixoide.com/
 .. _Ryan S. Brown: http://www.ryansb.com/

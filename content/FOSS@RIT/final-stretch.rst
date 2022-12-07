@@ -49,9 +49,5 @@ the turrets.
 There's a few outstanding problems left, but (as long as I don't push
 anything broken) you can have a look at webbotwar in action `here`_.
 
-.. raw:: html
-
-   </p>
-
 .. _NoSQL: http://en.wikipedia.org/wiki/NoSQL
 .. _here: webbotwar-qalthos.rhcloud.com

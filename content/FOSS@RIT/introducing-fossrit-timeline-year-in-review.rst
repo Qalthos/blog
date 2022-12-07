@@ -41,10 +41,6 @@ make a new one each year, but it works, it's fairly similar to what was
 handwritten last year, and it gets updated every time something gets
 added to Timeline.
 
-.. raw:: html
-
-   </p>
-
 .. _Timeline: http://foss.rit.edu/timeline/
 .. __: http://foss.rit.edu/timeline/2011.html
 .. __: http://foss.rit.edu/timeline/2010.html

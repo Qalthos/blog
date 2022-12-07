@@ -17,8 +17,3 @@ that I had gotten all the relevant changes, but apparently I somehow
 missed this file.
 
 More detailed directions coming soon.
-
-.. raw:: html
-
-   </p>
-

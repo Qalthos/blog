@@ -69,10 +69,6 @@ some few remaining problems aside, mostly work. Ideally, I will soon
 have a better host for the bot that will let me run Spotify, but for now
 Pandora is working well enough.
 
-.. raw:: html
-
-   </p>
-
 .. _Groovebot: https://github.com/Qalthos/groovebot
 .. _Spotify: http://spotify.com/
 .. _MPD: http://en.wikipedia.org/wiki/Music_Player_Daemon

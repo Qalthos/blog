@@ -16,8 +16,4 @@ requiring much tweaking of the internals, though a new interface would be
 required for use on the web. All in all the class is shaping up to be
 pretty interesting.
 
-.. raw:: html
-
-   </p>
-
 .. _robocode: http://robocode.sourceforge.net/

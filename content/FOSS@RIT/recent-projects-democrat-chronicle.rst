@@ -60,9 +60,5 @@ to certain facets of the data I was given, but it does manage to do a
 few things, and at each step it dumps the state of the data to a file so
 I can inspect the process and consider possible improvements.
 
-.. raw:: html
-
-   </p>
-
 .. _Democrat & Chronicle: http://www.democratandchronicle.com/
 .. _this: https://github.com/Qalthos/mail_scrape
