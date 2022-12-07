@@ -2,14 +2,15 @@
 # -*- coding: utf-8 -*- #
 
 import sys
-sys.path.append('.')
+
+sys.path.append(".")
 from pelicanconf import *
 
-SITEURL = 'http://nathanielca.se'
+SITEURL = "http://blog.katherineca.se"
 
-STATIC_PATHS += ['extra/CNAME']
+STATIC_PATHS += ["extra/CNAME"]
 EXTRA_PATH_METADATA = {
-    'extra/CNAME': {'path': 'CNAME'},
+    "extra/CNAME": {"path": "CNAME"},
 }
 
 DELETE_OUTPUT_DIRECTORY = True
@@ -19,5 +20,5 @@ DELETE_OUTPUT_DIRECTORY = True
 # Uncomment following line for absolute URLs in production:
 RELATIVE_URLS = False
 
-#DISQUS_SITENAME = ""
-GOOGLE_ANALYTICS = 'UA-40338393-1'
+# DISQUS_SITENAME = ""
+GOOGLE_ANALYTICS = "UA-40338393-1"
