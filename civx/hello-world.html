@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>More Conference Calls</title>
+  <title>Hello, world...</title>
   <meta charset="utf-8" />
     <link rel="stylesheet" href="http://blog.katherineca.se/theme/css/main.min.css?1f773f3a" type="text/css" />
       <link href="http://blog.katherineca.se/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Why Not Wingnut? Atom Feed" />
@@ -36,16 +36,16 @@
   <article>
     <header>
       <h1 class="entry-title">
-        <a href="http://blog.katherineca.se/civx/more-conference-calls.html" rel="bookmark"
-           title="Permalink to More Conference Calls">More Conference Calls</a>
+        <a href="http://blog.katherineca.se/civx/hello-world.html" rel="bookmark"
+           title="Permalink to Hello, world...">Hello, world...</a>
       </h1>
     </header>
 
     <div class="entry-content">
 <footer class="post-info">
         <p><img src="https://www.gravatar.com/avatar/3a3baabff105b46a458688ecf49901af" /></p>
-        <abbr class="published" title="2010-06-24T12:10:00-04:00">
-                Thu 24 June 2010
+        <abbr class="published" title="2010-06-21T14:53:00-04:00">
+                Mon 21 June 2010
         </abbr>
 
         <address class="vcard author">
@@ -53,25 +53,35 @@
         </address>
 <p>In <a href="http://blog.katherineca.se/category/civx.html">CIVX</a>. </p>
 <p>tags: <a href="http://blog.katherineca.se/tag/democracymap.html">democracymap</a><a href="http://blog.katherineca.se/tag/geowebdns.html">geowebdns</a></p>
-</footer><!-- /.post-info -->      <p>Every time I go through one of these calls I feel like I come out
-knowing less about the topic discussed. The topics aren't hard, and I
-can now follow along and understand most of what they're talking about,
-but most of the technologies are things I haven't really looked at
-before. It's interesting, and it's exciting, but it's a little wearying
-too. The majority of the talks seem to revolve around the use of Amazon
-EC2 instances, of which I know nothing.</p>
-<p>On my own tasks, the semifinal versions of the getall script and the
-associated documentation got pushed to <a class="reference external" href="http://bitbucket.org/slinkp/geowebdns">geowebdns</a>' repository today. I
-feel pretty good about the changes I made, even if it doesn't prove
-useful to the current task, I have opened up some small part of someone
-else's open source program, and that's really cool.</p>
+</footer><!-- /.post-info -->      <p>This is my first posting despite having been here for a week, because
+the zaniness that was my first week did not allow for such silly things
+as introductions. Now I finally have some of the infrastructure things
+worked out, and can report on my findings.</p>
+<p>Work has been progressing on a scraper for <a class="reference external" href="http://en.wikipedia.org/wiki/Shapefile">shapefiles</a> for the Senate.
+I've been fairly successful in getting a large amount of data, (up to
+7.6 GB of zip files!) so my task today was to clean up the script and
+make it readable to commit it back upstream. I had started by adding
+more loops to the script for special cases, but that meant repeating the
+core download code. Realizing this, I made a generalized downloader
+function which gets called by each loop, simplifying individual loops
+into a simple</p>
+<div class="highlight"><pre><span></span><span class="k">for</span> URL <span class="k">in</span> <span class="nv">$URL_LIST</span><span class="p">;</span> download <span class="nv">$URL</span> <span class="nv">$FILE</span><span class="p">;</span> <span class="k">done</span>
+</pre></div>
+<p>Well, I think it's simpler...</p>
+<p>Each time I tweak away at this file, my bash skill gets better and
+better, but whether any of this is going to stick around is another
+question. I always forget the simple bashisms, like for loops and
+conditionals, and I can never remember quite how variables work. But as
+I work more with this file, I get more comfortable with these
+conventions. Though I still occasionally pine for the occasional
+pythonic statement (and perhaps also for the fjords).</p>
 
     </div><!-- /.entry-content -->
     <hr />
     <h5>Similar posts to this one</h5>
     <ul>
+        <li><a href="http://blog.katherineca.se/civx/more-conference-calls.html">More Conference Calls</a></li>
         <li><a href="http://blog.katherineca.se/civx/introducing-geopirate.html">Introducing: GeoPirate!</a></li>
-        <li><a href="http://blog.katherineca.se/civx/hello-world.html">Hello, world...</a></li>
     </ul>
 
   </article>
