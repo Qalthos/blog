@@ -5,10 +5,10 @@
 .. _ditaa: http://ditaa.sourceforge.net/
 """
 
-import os
+from pathlib import Path
+from subprocess import Popen, PIPE
 import tempfile
 from zlib import adler32
-from subprocess import Popen, PIPE
 
 from docutils.nodes import image, literal_block
 from docutils.parsers.rst import Directive, directives
@@ -36,9 +36,8 @@ class DiTAA(Directive):
 
     def run(self):
         settings = self.state.document.settings
-        path = "content/images/"
-        if not os.path.exists(path):
-            os.makedirs(path)
+        path = Path("content/images/")
+        path.mkdir(exist_ok=True)
 
         nodes = []
 
@@ -58,49 +57,47 @@ class DiTAA(Directive):
         alt = self.options.get("alt", "ditaa diagram")
         classes = self.options.pop("class", ["ditaa"])
 
-        cmdline = [
-            "ditaa",
-            tf.name,
-            os.path.join(path, name),
-            "--overwrite",
-            "--encoding",
-            "utf8",
-        ]
+        filename = path / name
+        if not filename.exists():
+            cmdline = [
+                "ditaa",
+                tf.name,
+                filename,
+                "--overwrite",
+                "--encoding",
+                "utf8",
+            ]
 
-        if "scale" in self.options:
-            cmdline.extend(["--scale", "%f" % (float(self.options["scale"]) / 100)])
-        for f in self._ditaa_flags:
-            if f in self.options:
-                cmdline.append("--" + f)
+            if "scale" in self.options:
+                cmdline.extend(["--scale", "%f" % (float(self.options["scale"]) / 100)])
+            for f in self._ditaa_flags:
+                if f in self.options:
+                    cmdline.append("--" + f)
 
-        try:
-            p = Popen(cmdline, stdout=PIPE, stderr=PIPE)
-            out, err = p.communicate()
-        except Exception as exc:
-            error = self.state_machine.reporter.error(
-                "Failed to run ditaa: %s" % (exc,),
-                literal_block(self.block_text, self.block_text),
-                line=self.lineno,
-            )
-            nodes.append(error)
-        else:
-            if p.returncode == 0:
-                url = name
-                urlpath = "/images"
-                if not urlpath and path != ".":
-                    urlpath = path
-                if urlpath:
-                    url = urlpath + "/" + name
-                imgnode = image(uri=url, classes=classes, alt=alt)
-                nodes.append(imgnode)
-            else:
+            try:
+                p = Popen(cmdline, stdout=PIPE, stderr=PIPE)
+                out, err = p.communicate()
+            except Exception as exc:
                 error = self.state_machine.reporter.error(
-                    'Error in "%s" directive: %s' % (self.name, err),
+                    "Failed to run ditaa: %s" % (exc,),
                     literal_block(self.block_text, self.block_text),
                     line=self.lineno,
                 )
                 nodes.append(error)
+            else:
+                if p.returncode != 0:
+                    error = self.state_machine.reporter.error(
+                        'Error in "%s" directive: %s' % (self.name, err),
+                        literal_block(self.block_text, self.block_text),
+                        line=self.lineno,
+                    )
+                    nodes.append(error)
+                    return nodes
 
+        urlpath = "/images"
+        url = urlpath + "/" + name
+        imgnode = image(uri=url, classes=classes, alt=alt)
+        nodes.append(imgnode)
         return nodes
 
 
