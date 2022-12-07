@@ -1,42 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut? - server</title><link href="http://nathanielca.se/" rel="alternate"></link><link href="http://nathanielca.se/feeds/tag/server.atom.xml" rel="self"></link><id>http://nathanielca.se/</id><updated>2017-08-24T16:30:00-04:00</updated><entry><title>Fail2Ban woes</title><link href="http://nathanielca.se/personal/fail2ban-woes.html" rel="alternate"></link><published>2017-08-24T16:30:00-04:00</published><updated>2017-08-24T16:30:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2017-08-24:/personal/fail2ban-woes.html</id><summary type="html">&lt;p&gt;So I had a bit of a scare this morning.&lt;/p&gt;
-&lt;p&gt;I'm in a hotel in North Carolina, hundreds of miles from my server, when I try
-to log in and get a &amp;quot;Connection refused&amp;quot; error. Phooey. I hope the hotel wifi
-is just filtering port 22 for some terrible reason …&lt;/p&gt;</summary><content type="html">&lt;p&gt;So I had a bit of a scare this morning.&lt;/p&gt;
-&lt;p&gt;I'm in a hotel in North Carolina, hundreds of miles from my server, when I try
-to log in and get a &amp;quot;Connection refused&amp;quot; error. Phooey. I hope the hotel wifi
-is just filtering port 22 for some terrible reason, and hop to a friend's server
-over a non-standard port and I'm in. Great! I type out the connection again and...&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut? - server</title><link href="http://blog.katherineca.se/" rel="alternate"></link><link href="http://blog.katherineca.se/feeds/tag/server.atom.xml" rel="self"></link><id>http://blog.katherineca.se/</id><updated>2022-12-07T14:28:30-05:00</updated><entry><title>Fail2ban woes</title><link href="http://blog.katherineca.se/personal/fail2ban-woes.html" rel="alternate"></link><published>2017-08-24T16:30:00-04:00</published><updated>2022-12-07T14:28:30-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2017-08-24:/personal/fail2ban-woes.html</id><summary type="html">&lt;p&gt;So I had a bit of a scare this morning.&lt;/p&gt;
+&lt;p&gt;I'm in a hotel in North Carolina, hundreds of miles from my server, when I try to log in and get a &amp;quot;Connection refused&amp;quot; error. Phooey. I hope the hotel wifi is just filtering port 22 for some terrible reason …&lt;/p&gt;</summary><content type="html">&lt;p&gt;So I had a bit of a scare this morning.&lt;/p&gt;
+&lt;p&gt;I'm in a hotel in North Carolina, hundreds of miles from my server, when I try to log in and get a &amp;quot;Connection refused&amp;quot; error. Phooey. I hope the hotel wifi is just filtering port 22 for some terrible reason, and hop to a friend's server over a non-standard port and I'm in. Great! I type out the connection again and...&lt;/p&gt;
 &lt;p&gt;Connection refused&lt;/p&gt;
-&lt;p&gt;Hmmm. This is starting to get concerning. I briefly freak out that my server might
-have had a terrible accident, when I realize that all of the other services I rely
-on all the time are still running. Phew. Still, I don't have ssh access, and that
-is very troubling. I start poking around with other things and eventually
-unconsciously try to ssh back in to check something and to my surprise, it works!
-As soon as I realize what I've done, I pull up journalctl to see if sshd is going
-crazy and I'm met with hundreds of lines of Chinese IPs plugging away at my server.&lt;/p&gt;
-&lt;p&gt;But wait! I have fail2ban installed. That should be stopping these, right? Well
-maybe something broke when the server was upgraded to Debian 9... and now I'm
-off trying to figure out what is running and where the config is.&lt;/p&gt;
-&lt;p&gt;Some time later, I finally have a solution. The problem (ultimately) was
-systemd, though not directly. I had moved this system to systemd some time early
-in Debian 7, which meant that the standard logging locations were still there,
-but no loger being written to. So fail2ban was looking for /var/log/auth.log,
-found a file, read it and found no problems, completely ignoring the fact that
-the file hadn't been written to since 2013. This isn't really fail2ban's fault,
-it has support for ingesting the systemd journal, but on Debian, the default
-backend still tries to use those files. I could set up rsyslog to start
-writing those files again, but I have no particular need or desire to do that
-outside of this program, especially as fail2ban knows how to read the journal
-on its own, if it's configured to do so.&lt;/p&gt;
-&lt;p&gt;So the solution is pretty simple, though it took me a while to get there. First,
-I had to &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;apt-get&lt;/span&gt; install &lt;span class="pre"&gt;python3-systemd&lt;/span&gt;&lt;/tt&gt;, to get the proper libraries to
-actually use the journal. Then, I had to have the following in my jail.local:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-[sshd]
-backend = systemd
-&lt;/pre&gt;
-&lt;p&gt;I also put a few other tweaks in there as my config hadn't actually moved over
-from the previous version, but since it's now in the jail.local instead of
-editing the system config, this shouldn't be a problem again.&lt;/p&gt;
-</content><category term="server"></category></entry></feed>
+&lt;p&gt;Hmmm. This is starting to get concerning. I briefly freak out that my server might have had a terrible accident, when I realize that all of the other services I rely on all the time are still running. Phew. Still, I don't have ssh access, and that is very troubling. I start poking around with other things and eventually unconsciously try to ssh back in to check something and to my surprise, it works! As soon as I realize what I've done, I pull up journalctl to see if sshd is going crazy and I'm met with hundreds of lines of Chinese IPs plugging away at my server.&lt;/p&gt;
+&lt;p&gt;But wait! I have fail2ban installed. That should be stopping these, right? Well maybe something broke when the server was upgraded to Debian 9... and now I'm off trying to figure out what is running and where the config is.&lt;/p&gt;
+&lt;p&gt;Some time later, I finally have a solution. The problem (ultimately) was systemd, though not directly. I had moved this system to systemd some time early in Debian 7, which meant that the standard logging locations were still there, but no loger being written to. So fail2ban was looking for /var/log/auth.log, found a file, read it and found no problems, completely ignoring the fact that the file hadn't been written to since 2013. This isn't really fail2ban's fault, it has support for ingesting the systemd journal, but on Debian, the default backend still tries to use those files. I could set up rsyslog to start writing those files again, but I have no particular need or desire to do that outside of this program, especially as fail2ban knows how to read the journal on its own, if it's configured to do so.&lt;/p&gt;
+&lt;p&gt;So the solution is pretty simple, though it took me a while to get there. First, I had to &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;apt-get&lt;/span&gt; install &lt;span class="pre"&gt;python3-systemd&lt;/span&gt;&lt;/tt&gt;, to get the proper libraries to actually use the journal. Then, I had to have the following in my jail.local:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;[sshd]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;backend&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;systemd&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;I also put a few other tweaks in there as my config hadn't actually moved over from the previous version, but since it's now in the jail.local instead of editing the system config, this shouldn't be a problem again.&lt;/p&gt;
+</content><category term="personal"></category><category term="server"></category></entry></feed>

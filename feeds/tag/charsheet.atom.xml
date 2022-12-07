@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut? - charsheet</title><link href="http://nathanielca.se/" rel="alternate"></link><link href="http://nathanielca.se/feeds/tag/charsheet.atom.xml" rel="self"></link><id>http://nathanielca.se/</id><updated>2013-12-02T17:24:00-05:00</updated><entry><title>Charsheet 1.0</title><link href="http://nathanielca.se/fossrit/charsheet-10.html" rel="alternate"></link><published>2013-12-02T17:24:00-05:00</published><updated>2013-12-02T17:24:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2013-12-02:/fossrit/charsheet-10.html</id><summary type="html">&lt;p&gt;I've been doing some work for &lt;a class="reference external" href="https://charsheet-qalthos.rhcloud.com"&gt;Charsheet&lt;/a&gt; recently, fixing old bugs and adding
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut? - charsheet</title><link href="http://blog.katherineca.se/" rel="alternate"></link><link href="http://blog.katherineca.se/feeds/tag/charsheet.atom.xml" rel="self"></link><id>http://blog.katherineca.se/</id><updated>2022-12-07T14:07:06-05:00</updated><entry><title>Charsheet 1.0</title><link href="http://blog.katherineca.se/fossrit/charsheet-10.html" rel="alternate"></link><published>2013-12-02T17:24:00-05:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2013-12-02:/fossrit/charsheet-10.html</id><summary type="html">&lt;p&gt;I've been doing some work for &lt;a class="reference external" href="https://charsheet-qalthos.rhcloud.com"&gt;Charsheet&lt;/a&gt; recently, fixing old bugs and adding
 new features. I figured it was about time for a 1.0, so I tagged it and released
 it to the wild. Many thanks to &lt;a class="reference external" href="http://oddshocks.com"&gt;oddshocks&lt;/a&gt; not only for the original 0.1
 version of charsheet, but …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I've been doing some work for &lt;a class="reference external" href="https://charsheet-qalthos.rhcloud.com"&gt;Charsheet&lt;/a&gt; recently, fixing old bugs and adding
@@ -11,11 +11,11 @@ something cool.&lt;/p&gt;
 &lt;h2&gt;Notable Features&lt;/h2&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;Character classes! You are now given a class based on your favorite language
-(by klocs &lt;a class="footnote-reference" href="#kloc" id="id1"&gt;[1]&lt;/a&gt;), and your top two stats on the page.&lt;/li&gt;
+(by klocs &lt;a class="footnote-reference" href="#kloc" id="footnote-reference-1"&gt;[1]&lt;/a&gt;), and your top two stats on the page.&lt;/li&gt;
 &lt;li&gt;Fixing Github integration. This was technically fixed in August, but it was
 not finalized or pushed upstream until a few weeks ago.
 - Github backend switched from pygithub3 back to pygithub&lt;/li&gt;
-&lt;li&gt;Completely removed tw2 from the site &lt;a class="footnote-reference" href="#tw2" id="id2"&gt;[2]&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Completely removed tw2 from the site &lt;a class="footnote-reference" href="#tw2" id="footnote-reference-2"&gt;[2]&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Charsheet will now deploy on Openshift!
 - But not with a MySQL database. This is a known &lt;a class="reference external" href="https://github.com/civx/knowledge/issues/5"&gt;bug&lt;/a&gt; with knowledge.&lt;/li&gt;
 &lt;li&gt;Gnu-cat Will no longer stick around when the back button is pressed
@@ -29,17 +29,17 @@ Coderwall username(s) and see what your coder character sheet looks like!&lt;/p&
 &lt;table class="docutils footnote" frame="void" id="kloc" rules="none"&gt;
 &lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
 &lt;tbody valign="top"&gt;
-&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Kilo-Lines Of Code, or a unit of 1000 lines of code for the
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#footnote-reference-1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Kilo-Lines Of Code, or a unit of 1000 lines of code for the
 uninitiated.&lt;/td&gt;&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;table class="docutils footnote" frame="void" id="tw2" rules="none"&gt;
 &lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
 &lt;tbody valign="top"&gt;
-&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id2"&gt;[2]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;This bears some explanation, but it was just tw2.forms, and the forms were
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#footnote-reference-2"&gt;[2]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;This bears some explanation, but it was just tw2.forms, and the forms were
 static, meaning they were quite underutilized. Forms are now pure HTML
 forms.&lt;/td&gt;&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/div&gt;
-</content><category term="charsheet"></category><category term="openshift"></category></entry></feed>
+</content><category term="FOSS@RIT"></category><category term="charsheet"></category><category term="openshift"></category></entry></feed>

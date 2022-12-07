@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut? - sugar</title><link href="http://nathanielca.se/" rel="alternate"></link><link href="http://nathanielca.se/feeds/tag/sugar.atom.xml" rel="self"></link><id>http://nathanielca.se/</id><updated>2013-08-05T02:04:00-04:00</updated><entry><title>Building a Schoolserver</title><link href="http://nathanielca.se/fossrit/building-a-schoolserver.html" rel="alternate"></link><published>2013-08-05T02:04:00-04:00</published><updated>2013-08-05T02:04:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2013-08-05:/fossrit/building-a-schoolserver.html</id><summary type="html">&lt;p&gt;One of my tasks for this summer has been to try and get the FOSSBox's
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut? - sugar</title><link href="http://blog.katherineca.se/" rel="alternate"></link><link href="http://blog.katherineca.se/feeds/tag/sugar.atom.xml" rel="self"></link><id>http://blog.katherineca.se/</id><updated>2022-12-07T14:07:06-05:00</updated><entry><title>Building a Schoolserver</title><link href="http://blog.katherineca.se/fossrit/building-a-schoolserver.html" rel="alternate"></link><published>2013-08-05T02:04:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2013-08-05:/fossrit/building-a-schoolserver.html</id><summary type="html">&lt;p&gt;One of my tasks for this summer has been to try and get the FOSSBox's
 schoolserver up and running again. We previouly had one a number of years ago,
 but the hardware failed some time ago and the system itself was running a
 hacked-together Debian build and did not have …&lt;/p&gt;</summary><content type="html">&lt;p&gt;One of my tasks for this summer has been to try and get the FOSSBox's
@@ -35,7 +35,7 @@ idea. This post will be further updated as time goes on.&lt;/p&gt;
 &lt;p&gt;The main problem seen so far is that this is being set up on a RHEL server
 backed by XEN, and the OLPC-XS repository keeps wanting to install an
 incompatible kernel, hosing the system on a regular basis.&lt;/p&gt;
-</content><category term="sugar"></category><category term="schoolserver"></category></entry><entry><title>Imagine RIT 2011</title><link href="http://nathanielca.se/fossrit/imagine-rit-2011.html" rel="alternate"></link><published>2011-05-08T03:16:00-04:00</published><updated>2011-05-08T03:16:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-05-08:/fossrit/imagine-rit-2011.html</id><summary type="html">&lt;p&gt;So I've been absent for a while lately, but with good reason. I've been
+</content><category term="FOSS@RIT"></category><category term="sugar"></category><category term="schoolserver"></category></entry><entry><title>Imagine RIT 2011</title><link href="http://blog.katherineca.se/fossrit/imagine-rit-2011.html" rel="alternate"></link><published>2011-05-08T03:16:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2011-05-08:/fossrit/imagine-rit-2011.html</id><summary type="html">&lt;p&gt;So I've been absent for a while lately, but with good reason. I've been
 preparing for Imagine RIT, which was held earlier today.
 After pulling possibly my longest day's hack yesterday (1pm to 4am,
 approximately), I woke up at 9 and headed over to the Innovation Center
@@ -74,7 +74,7 @@ new tasks before the final release.&lt;/p&gt;
 &lt;p&gt;All in all, a very exciting and fun weekend. We made a few contacts,
 introduced a few more people to FOSS&amp;#64;RIT, and gave away at least 40
 LiveCDs. I think that qualifies as quite a success.&lt;/p&gt;
-</content><category term="journalism"></category><category term="lemonade"></category><category term="sugar"></category><category term="Rise"></category><category term="OPL"></category></entry><entry><title>pyDex on Sugar</title><link href="http://nathanielca.se/personal/pydex-on-sugar.html" rel="alternate"></link><published>2011-01-19T23:51:00-05:00</published><updated>2011-01-19T23:51:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-01-19:/personal/pydex-on-sugar.html</id><summary type="html">&lt;p&gt;A warning, this gets very technical with lots of acronyms and jargon.
+</content><category term="FOSS@RIT"></category><category term="journalism"></category><category term="lemonade"></category><category term="sugar"></category><category term="Rise"></category><category term="OPL"></category></entry><entry><title>pyDex on Sugar</title><link href="http://blog.katherineca.se/personal/pydex-on-sugar.html" rel="alternate"></link><published>2011-01-19T23:51:00-05:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2011-01-19:/personal/pydex-on-sugar.html</id><summary type="html">&lt;p&gt;A warning, this gets very technical with lots of acronyms and jargon.
 tl;dr: I have a new pyDex branch which *should* run on the OLPC
 A few days ago, I decided I'd finally see how well pyDex runs on the
 OLPC. Turns out, it runs pretty well, which isn't …&lt;/p&gt;</summary><content type="html">&lt;p&gt;A warning, this gets very technical with lots of acronyms and jargon.
@@ -106,7 +106,7 @@ probably get to test it sometime this weekend, maybe even turn it into a
 real activity by then. This is still just a small project, and I doubt
 it will ever go up on Sugar's activities site, but it has given me a
 much better understanding about how non-pygame activities work.&lt;/p&gt;
-</content><category term="sugar"></category><category term="pyDex"></category></entry><entry><title>Lemonade Week... 8?</title><link href="http://nathanielca.se/fossrit/lemonade-week-8.html" rel="alternate"></link><published>2010-10-26T23:59:00-04:00</published><updated>2010-10-26T23:59:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2010-10-26:/fossrit/lemonade-week-8.html</id><summary type="html">&lt;p&gt;So... lots of stuff has happened in the last few weeks.
+</content><category term="personal"></category><category term="sugar"></category><category term="pyDex"></category></entry><entry><title>Lemonade Week... 8?</title><link href="http://blog.katherineca.se/fossrit/lemonade-week-8.html" rel="alternate"></link><published>2010-10-26T23:59:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-10-26:/fossrit/lemonade-week-8.html</id><summary type="html">&lt;p&gt;So... lots of stuff has happened in the last few weeks.
 First, we have a new background, thanks to JT. In fact, we have three
 now, and as of five minutes ago, a different one will show up depending
 on the current weather.
@@ -120,7 +120,7 @@ of stuff goes in constants.py, but that might have to change if we need
 to add too much more stuff.
 We've got a few exciting ideas we hope to get done in the next few
 weeks, and I look forward to seeing what we can get done.&lt;/p&gt;
-</content><category term="lemonade"></category><category term="sugar"></category></entry><entry><title>Lemons Taking Off</title><link href="http://nathanielca.se/fossrit/lemons-taking-off.html" rel="alternate"></link><published>2010-09-23T14:35:00-04:00</published><updated>2010-09-23T14:35:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2010-09-23:/fossrit/lemons-taking-off.html</id><summary type="html">&lt;p&gt;It looks like Lemonade Stand is taking off for fall quarter's &lt;a class="reference external" href="http://teachingopensource.org/index.php/RIT/The_Course"&gt;HFOSS&lt;/a&gt;
+</content><category term="FOSS@RIT"></category><category term="lemonade"></category><category term="sugar"></category></entry><entry><title>Lemons Taking Off</title><link href="http://blog.katherineca.se/fossrit/lemons-taking-off.html" rel="alternate"></link><published>2010-09-23T14:35:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-09-23:/fossrit/lemons-taking-off.html</id><summary type="html">&lt;p&gt;It looks like Lemonade Stand is taking off for fall quarter's &lt;a class="reference external" href="http://teachingopensource.org/index.php/RIT/The_Course"&gt;HFOSS&lt;/a&gt;
 class. This is quite exciting and there's a number of things I'm looking
 to get in for a 2.2 release
 * More events
@@ -138,7 +138,7 @@ The 2.1 release, meanwhile, I would like to focus on usability and
 graphics, as those have been being worked on for the longest so far.
 Whether any of this will work out the way I'm imagining is debatable,
 but I've got a plan and two &lt;a class="reference external" href="http://smw-os.blogspot.com/"&gt;awesome&lt;/a&gt; &lt;a class="reference external" href="http://jtmengel.blogspot.com"&gt;people&lt;/a&gt; working on it with me&lt;/p&gt;
-</content><category term="lemonade"></category><category term="sugar"></category></entry><entry><title>Refreshing Lemonade</title><link href="http://nathanielca.se/fossrit/refreshing-lemonade.html" rel="alternate"></link><published>2010-09-23T14:04:00-04:00</published><updated>2010-09-23T14:04:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2010-09-23:/fossrit/refreshing-lemonade.html</id><summary type="html">&lt;p&gt;In other news, yesterday marked the &lt;a class="reference external" href="http://blog.jlewopensource.com/2010/07/lemonade-stand-release.html"&gt;final release of Lemonade
+</content><category term="FOSS@RIT"></category><category term="lemonade"></category><category term="sugar"></category></entry><entry><title>Refreshing Lemonade</title><link href="http://blog.katherineca.se/fossrit/refreshing-lemonade.html" rel="alternate"></link><published>2010-09-23T14:04:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-09-23:/fossrit/refreshing-lemonade.html</id><summary type="html">&lt;p&gt;In other news, yesterday marked the &lt;a class="reference external" href="http://blog.jlewopensource.com/2010/07/lemonade-stand-release.html"&gt;final release of Lemonade
 Stand 2.0&lt;/a&gt;. Now running on the &lt;a class="reference external" href="https://fedorahosted.org/fortune_hunter/wiki/FortuneEngine"&gt;Fortune Engine&lt;/a&gt; and containing 0% of
 my code, this marks an important milestone in my open-source
 &lt;a class="reference external" href="http://sugarlabs.org/"&gt;sugar-based&lt;/a&gt; lemonade stand game as it's still getting developed!
@@ -149,4 +149,4 @@ my code, this marks an important milestone in my open-source
 While I can claim none of the credit for the code, it is still
 satisfying to watch my very first open source project still on its feet,
 teetering around like a drunken toddler.&lt;/p&gt;
-</content><category term="lemonade"></category><category term="sugar"></category></entry></feed>
+</content><category term="FOSS@RIT"></category><category term="lemonade"></category><category term="sugar"></category></entry></feed>

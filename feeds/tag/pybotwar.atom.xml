@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut? - pybotwar</title><link href="http://nathanielca.se/" rel="alternate"></link><link href="http://nathanielca.se/feeds/tag/pybotwar.atom.xml" rel="self"></link><id>http://nathanielca.se/</id><updated>2012-02-29T16:15:00-05:00</updated><entry><title>Final Stretch</title><link href="http://nathanielca.se/fossrit/final-stretch.html" rel="alternate"></link><published>2012-02-29T16:15:00-05:00</published><updated>2012-02-29T16:15:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2012-02-29:/fossrit/final-stretch.html</id><summary type="html">&lt;p&gt;So the past two days have been madness trying to get the recently
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut? - pybotwar</title><link href="http://blog.katherineca.se/" rel="alternate"></link><link href="http://blog.katherineca.se/feeds/tag/pybotwar.atom.xml" rel="self"></link><id>http://blog.katherineca.se/</id><updated>2022-12-07T14:30:39-05:00</updated><entry><title>Final Stretch</title><link href="http://blog.katherineca.se/fossrit/final-stretch.html" rel="alternate"></link><published>2012-02-29T16:15:00-05:00</published><updated>2022-12-07T14:30:39-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2012-02-29:/fossrit/final-stretch.html</id><summary type="html">&lt;p&gt;So the past two days have been madness trying to get the recently
 christened WebBotWar (or just WebBot) to actually work on the web.&lt;/p&gt;
 &lt;p&gt;We had it working locally some time last week (I think... the days are
 really starting to mush together), but OpenShift was a whole other
@@ -42,4 +42,4 @@ other yet. As well, there are brand new pretty images for the robots and
 the turrets.&lt;/p&gt;
 &lt;p&gt;There's a few outstanding problems left, but (as long as I don't push
 anything broken) you can have a look at webbotwar in action &lt;a class="reference external" href="webbotwar-qalthos.rhcloud.com"&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;/p&gt;</content><category term="pybotwar"></category><category term="hackathon"></category><category term="FLOSS-seminar"></category><category term="webbotwar"></category><category term="openshift"></category></entry></feed>
+</content><category term="FOSS@RIT"></category><category term="pybotwar"></category><category term="hackathon"></category><category term="FLOSS-seminar"></category><category term="webbotwar"></category><category term="openshift"></category></entry></feed>

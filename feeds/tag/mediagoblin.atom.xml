@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut? - mediagoblin</title><link href="http://nathanielca.se/" rel="alternate"></link><link href="http://nathanielca.se/feeds/tag/mediagoblin.atom.xml" rel="self"></link><id>http://nathanielca.se/</id><updated>2013-09-27T16:09:00-04:00</updated><entry><title>Deploying MediaGoblin 2: SELinux</title><link href="http://nathanielca.se/fossrit/deploying-mediagoblin-2-selinux.html" rel="alternate"></link><published>2013-09-27T16:09:00-04:00</published><updated>2013-09-27T16:09:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2013-09-27:/fossrit/deploying-mediagoblin-2-selinux.html</id><summary type="html">&lt;p&gt;So, &lt;a class="reference external" href="deploying-mediagoblin-1-fastcgi-vs-uwsgi.html"&gt;earlier&lt;/a&gt;, I wrote about my experience deploying &lt;a class="reference external" href="http://mediagoblin.org"&gt;MediaGoblin&lt;/a&gt;. None of
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut? - mediagoblin</title><link href="http://blog.katherineca.se/" rel="alternate"></link><link href="http://blog.katherineca.se/feeds/tag/mediagoblin.atom.xml" rel="self"></link><id>http://blog.katherineca.se/</id><updated>2022-12-07T14:07:06-05:00</updated><entry><title>Deploying MediaGoblin 2: SELinux</title><link href="http://blog.katherineca.se/fossrit/deploying-mediagoblin-2-selinux.html" rel="alternate"></link><published>2013-09-27T16:09:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2013-09-27:/fossrit/deploying-mediagoblin-2-selinux.html</id><summary type="html">&lt;p&gt;So, &lt;a class="reference external" href="deploying-mediagoblin-1-fastcgi-vs-uwsgi.html"&gt;earlier&lt;/a&gt;, I wrote about my experience deploying &lt;a class="reference external" href="http://mediagoblin.org"&gt;MediaGoblin&lt;/a&gt;. None of
 this was necessary, I was mostly trying to diagnose some problems I was having
 and found uWSGI a more comfortable environment than FastCGI.&lt;/p&gt;
 &lt;p&gt;And what problem was this, you ask? Well, when I first ran through the
@@ -29,7 +29,7 @@ documentation.&lt;/p&gt;
 of me figure out how to enable this simply without changing a large number of
 SELinux booleans. There may be some simpler way of accomplishing this, but alas,
 in this case SELinux has once again bested me.&lt;/p&gt;
-</content><category term="mediagoblin"></category><category term="yacht"></category><category term="SELinux"></category></entry><entry><title>Deploying MediaGoblin 1: FastCGI vs uWSGI</title><link href="http://nathanielca.se/fossrit/deploying-mediagoblin-1-fastcgi-vs-uwsgi.html" rel="alternate"></link><published>2013-09-23T13:20:00-04:00</published><updated>2013-09-23T13:20:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2013-09-23:/fossrit/deploying-mediagoblin-1-fastcgi-vs-uwsgi.html</id><summary type="html">&lt;p&gt;Last week I did a thing I really wasn't expecting to. I deployed
+</content><category term="FOSS@RIT"></category><category term="mediagoblin"></category><category term="yacht"></category><category term="SELinux"></category></entry><entry><title>Deploying MediaGoblin 1: FastCGI vs uWSGI</title><link href="http://blog.katherineca.se/fossrit/deploying-mediagoblin-1-fastcgi-vs-uwsgi.html" rel="alternate"></link><published>2013-09-23T13:20:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2013-09-23:/fossrit/deploying-mediagoblin-1-fastcgi-vs-uwsgi.html</id><summary type="html">&lt;p&gt;Last week I did a thing I really wasn't expecting to. I deployed
 &lt;a class="reference external" href="http://mediagoblin.org"&gt;MediaGoblin&lt;/a&gt; to FOSS&amp;#64;RIT's yacht server &lt;a class="reference external" href="http://yacht.rit.edu/mediagoblin/"&gt;here&lt;/a&gt;. The initial setup and
 &lt;a class="reference external" href="https://mediagoblin.readthedocs.org/en/v0.5.0/siteadmin/deploying.html"&gt;instructions&lt;/a&gt; are some of the clearest and straightforward I have seen in an
 open-source project.&lt;/p&gt;
@@ -72,23 +72,23 @@ comprehensible &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;uWSGI-
 As I was also trying to move MediaGoblin to a subdirectory, I also added the
 &lt;tt class="docutils literal"&gt;uWSGI_modifier1&lt;/tt&gt; line and altered &lt;tt class="docutils literal"&gt;SCRIPT_NAME&lt;/tt&gt; accordingly:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Load MediaGoblin via uWSGI&lt;/span&gt;
-&lt;span class="k"&gt;location&lt;/span&gt; &lt;span class="s"&gt;/mediagoblin/&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-   &lt;span class="kn"&gt;include&lt;/span&gt; &lt;span class="s"&gt;uWSGI_params&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-   &lt;span class="kn"&gt;uWSGI_pass&lt;/span&gt; &lt;span class="n"&gt;127.0.0.1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;26543&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;location&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;/mediagoblin/&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="kn"&gt;include&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;uWSGI_params&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="kn"&gt;uWSGI_pass&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;127.0.0.1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;26543&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 
-   &lt;span class="c1"&gt;# our understanding vs nginx&amp;#39;s handling of script_name vs&lt;/span&gt;
-   &lt;span class="c1"&gt;# path_info don&amp;#39;t match :)&lt;/span&gt;
-   &lt;span class="kn"&gt;uWSGI_param&lt;/span&gt; &lt;span class="s"&gt;SCRIPT_NAME&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;/mediagoblin&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-   &lt;span class="kn"&gt;uWSGI_modifier1&lt;/span&gt; &lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="c1"&gt;# our understanding vs nginx&amp;#39;s handling of script_name vs&lt;/span&gt;
+&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="c1"&gt;# path_info don&amp;#39;t match :)&lt;/span&gt;
+&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="kn"&gt;uWSGI_param&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;SCRIPT_NAME&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;quot;/mediagoblin&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="kn"&gt;uWSGI_modifier1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Second, I altered the &lt;tt class="docutils literal"&gt;lazystarter.sh&lt;/tt&gt; file to accommodate being run with
 uWSGI. This is a bit complicated as &lt;tt class="docutils literal"&gt;lazyserver.sh&lt;/tt&gt;, &lt;tt class="docutils literal"&gt;lazystarter.sh&lt;/tt&gt;, and
 &lt;tt class="docutils literal"&gt;lazycelery.sh&lt;/tt&gt; are all actually the same file, with certain things changing
-depending on the name by which it is invoked. I changed two sections &lt;a class="footnote-reference" href="#id2" id="id1"&gt;[1]&lt;/a&gt;,
+depending on the name by which it is invoked. I changed two sections &lt;a class="footnote-reference" href="#footnote-1" id="footnote-reference-1"&gt;[1]&lt;/a&gt;,
 first:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;local_bin&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;./bin&amp;quot;&lt;/span&gt;
-&lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$selfname&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; in
+&lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$selfname&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt;
     lazyserver.sh&lt;span class="o"&gt;)&lt;/span&gt;
         &lt;span class="nv"&gt;starter_cmd&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;paster
         &lt;span class="nv"&gt;ini_prefix&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;paste
@@ -96,7 +96,7 @@ first:&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;became:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;local_bin&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;./bin&amp;quot;&lt;/span&gt;
-&lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$selfname&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; in
+&lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$selfname&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt;
     lazyserver.sh&lt;span class="o"&gt;)&lt;/span&gt;
         &lt;span class="nv"&gt;starter_cmd&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;uwsgi
         &lt;span class="nv"&gt;ini_prefix&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;paste
@@ -104,14 +104,14 @@ first:&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;And then near the very end of the file:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;CELERY_ALWAYS_EAGER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
-&lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$selfname&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; in
+&lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$selfname&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt;
     lazyserver.sh&lt;span class="o"&gt;)&lt;/span&gt;
         &lt;span class="nv"&gt;$starter&lt;/span&gt; serve &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$ini_file&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$@&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; --reload
         &lt;span class="p"&gt;;;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;became:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;CELERY_ALWAYS_EAGER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
-&lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$selfname&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; in
+&lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$selfname&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt;
     lazyserver.sh&lt;span class="o"&gt;)&lt;/span&gt;
         &lt;span class="nv"&gt;$starter&lt;/span&gt; --plugin python --virtualenv . --ini-paste &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$ini_file&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$@&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
         &lt;span class="p"&gt;;;&lt;/span&gt;
@@ -126,15 +126,15 @@ separate process&lt;/a&gt;, this still needs to be done somehow, but otherwise (
 you've kept &lt;tt class="docutils literal"&gt;CELERY_ALWAYS_EAGER=true&lt;/tt&gt;), then MediaGoblin should be managed
 automatically. This is the format I eventually settled upon, using the
 following uWSGI ini file:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;[uwsgi]&lt;/span&gt;
-&lt;span class="na"&gt;plugin&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;python&lt;/span&gt;
-&lt;span class="na"&gt;uid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;mediagoblin&lt;/span&gt;
-&lt;span class="na"&gt;gid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;mediagoblin&lt;/span&gt;
-&lt;span class="na"&gt;socket&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;127.0.0.1:26543&lt;/span&gt;
-&lt;span class="na"&gt;virtualenv&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;/srv/www/mediagoblin&lt;/span&gt;
-&lt;span class="na"&gt;chdir&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;/srv/www/mediagoblin&lt;/span&gt;
-&lt;span class="na"&gt;ini-paste&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;/srv/www/mediagoblin/paste.ini&lt;/span&gt;
-&lt;span class="na"&gt;logto&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;/srv/www/mediagoblin/mg.log&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;[uwsgi]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;plugin&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;python&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;uid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;mediagoblin&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;gid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;mediagoblin&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;socket&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;127.0.0.1:26543&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;virtualenv&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;/srv/www/mediagoblin&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;chdir&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;/srv/www/mediagoblin&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;ini-paste&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;/srv/www/mediagoblin/paste.ini&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;logto&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;/srv/www/mediagoblin/mg.log&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="what-next"&gt;
@@ -143,13 +143,13 @@ following uWSGI ini file:&lt;/p&gt;
 Well, this wouldn't have been necessary either, except for some of the
 repercussions of the other big problem that reared it's head, SELinux.&lt;/p&gt;
 &lt;p&gt;But that is &lt;a class="reference external" href="deploying-mediagoblin-2-selinux.html"&gt;another post&lt;/a&gt;.&lt;/p&gt;
-&lt;table class="docutils footnote" frame="void" id="id2" rules="none"&gt;
+&lt;table class="docutils footnote" frame="void" id="footnote-1" rules="none"&gt;
 &lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
 &lt;tbody valign="top"&gt;
-&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;This statement is not entirely accurate. I actually made a new link
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#footnote-reference-1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;This statement is not entirely accurate. I actually made a new link
 named &lt;tt class="docutils literal"&gt;lazyuwsgi.sh&lt;/tt&gt; and added the sections instead of altering the
 existing ones. This format was chosen for clarity.&lt;/td&gt;&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/div&gt;
-</content><category term="mediagoblin"></category><category term="yacht"></category><category term="uWSGI"></category></entry></feed>
+</content><category term="FOSS@RIT"></category><category term="mediagoblin"></category><category term="yacht"></category><category term="uWSGI"></category></entry></feed>

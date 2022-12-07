@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut? - FOSS@RIT</title><link href="http://nathanielca.se/" rel="alternate"></link><link href="http://nathanielca.se/feeds/fossrit.atom.xml" rel="self"></link><id>http://nathanielca.se/</id><updated>2013-12-02T17:24:00-05:00</updated><entry><title>Charsheet 1.0</title><link href="http://nathanielca.se/fossrit/charsheet-10.html" rel="alternate"></link><published>2013-12-02T17:24:00-05:00</published><updated>2013-12-02T17:24:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2013-12-02:/fossrit/charsheet-10.html</id><summary type="html">&lt;p&gt;I've been doing some work for &lt;a class="reference external" href="https://charsheet-qalthos.rhcloud.com"&gt;Charsheet&lt;/a&gt; recently, fixing old bugs and adding
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut? - FOSS@RIT</title><link href="http://blog.katherineca.se/" rel="alternate"></link><link href="http://blog.katherineca.se/feeds/fossrit.atom.xml" rel="self"></link><id>http://blog.katherineca.se/</id><updated>2022-12-07T14:32:12-05:00</updated><entry><title>Charsheet 1.0</title><link href="http://blog.katherineca.se/fossrit/charsheet-10.html" rel="alternate"></link><published>2013-12-02T17:24:00-05:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2013-12-02:/fossrit/charsheet-10.html</id><summary type="html">&lt;p&gt;I've been doing some work for &lt;a class="reference external" href="https://charsheet-qalthos.rhcloud.com"&gt;Charsheet&lt;/a&gt; recently, fixing old bugs and adding
 new features. I figured it was about time for a 1.0, so I tagged it and released
 it to the wild. Many thanks to &lt;a class="reference external" href="http://oddshocks.com"&gt;oddshocks&lt;/a&gt; not only for the original 0.1
 version of charsheet, but …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I've been doing some work for &lt;a class="reference external" href="https://charsheet-qalthos.rhcloud.com"&gt;Charsheet&lt;/a&gt; recently, fixing old bugs and adding
@@ -11,11 +11,11 @@ something cool.&lt;/p&gt;
 &lt;h2&gt;Notable Features&lt;/h2&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;Character classes! You are now given a class based on your favorite language
-(by klocs &lt;a class="footnote-reference" href="#kloc" id="id1"&gt;[1]&lt;/a&gt;), and your top two stats on the page.&lt;/li&gt;
+(by klocs &lt;a class="footnote-reference" href="#kloc" id="footnote-reference-1"&gt;[1]&lt;/a&gt;), and your top two stats on the page.&lt;/li&gt;
 &lt;li&gt;Fixing Github integration. This was technically fixed in August, but it was
 not finalized or pushed upstream until a few weeks ago.
 - Github backend switched from pygithub3 back to pygithub&lt;/li&gt;
-&lt;li&gt;Completely removed tw2 from the site &lt;a class="footnote-reference" href="#tw2" id="id2"&gt;[2]&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Completely removed tw2 from the site &lt;a class="footnote-reference" href="#tw2" id="footnote-reference-2"&gt;[2]&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Charsheet will now deploy on Openshift!
 - But not with a MySQL database. This is a known &lt;a class="reference external" href="https://github.com/civx/knowledge/issues/5"&gt;bug&lt;/a&gt; with knowledge.&lt;/li&gt;
 &lt;li&gt;Gnu-cat Will no longer stick around when the back button is pressed
@@ -29,20 +29,20 @@ Coderwall username(s) and see what your coder character sheet looks like!&lt;/p&
 &lt;table class="docutils footnote" frame="void" id="kloc" rules="none"&gt;
 &lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
 &lt;tbody valign="top"&gt;
-&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Kilo-Lines Of Code, or a unit of 1000 lines of code for the
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#footnote-reference-1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Kilo-Lines Of Code, or a unit of 1000 lines of code for the
 uninitiated.&lt;/td&gt;&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;table class="docutils footnote" frame="void" id="tw2" rules="none"&gt;
 &lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
 &lt;tbody valign="top"&gt;
-&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id2"&gt;[2]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;This bears some explanation, but it was just tw2.forms, and the forms were
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#footnote-reference-2"&gt;[2]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;This bears some explanation, but it was just tw2.forms, and the forms were
 static, meaning they were quite underutilized. Forms are now pure HTML
 forms.&lt;/td&gt;&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/div&gt;
-</content><category term="charsheet"></category><category term="openshift"></category></entry><entry><title>Deploying MediaGoblin 2: SELinux</title><link href="http://nathanielca.se/fossrit/deploying-mediagoblin-2-selinux.html" rel="alternate"></link><published>2013-09-27T16:09:00-04:00</published><updated>2013-09-27T16:09:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2013-09-27:/fossrit/deploying-mediagoblin-2-selinux.html</id><summary type="html">&lt;p&gt;So, &lt;a class="reference external" href="deploying-mediagoblin-1-fastcgi-vs-uwsgi.html"&gt;earlier&lt;/a&gt;, I wrote about my experience deploying &lt;a class="reference external" href="http://mediagoblin.org"&gt;MediaGoblin&lt;/a&gt;. None of
+</content><category term="FOSS@RIT"></category><category term="charsheet"></category><category term="openshift"></category></entry><entry><title>Deploying MediaGoblin 2: SELinux</title><link href="http://blog.katherineca.se/fossrit/deploying-mediagoblin-2-selinux.html" rel="alternate"></link><published>2013-09-27T16:09:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2013-09-27:/fossrit/deploying-mediagoblin-2-selinux.html</id><summary type="html">&lt;p&gt;So, &lt;a class="reference external" href="deploying-mediagoblin-1-fastcgi-vs-uwsgi.html"&gt;earlier&lt;/a&gt;, I wrote about my experience deploying &lt;a class="reference external" href="http://mediagoblin.org"&gt;MediaGoblin&lt;/a&gt;. None of
 this was necessary, I was mostly trying to diagnose some problems I was having
 and found uWSGI a more comfortable environment than FastCGI.&lt;/p&gt;
 &lt;p&gt;And what problem was this, you ask? Well, when I first ran through the
@@ -72,7 +72,7 @@ documentation.&lt;/p&gt;
 of me figure out how to enable this simply without changing a large number of
 SELinux booleans. There may be some simpler way of accomplishing this, but alas,
 in this case SELinux has once again bested me.&lt;/p&gt;
-</content><category term="mediagoblin"></category><category term="yacht"></category><category term="SELinux"></category></entry><entry><title>Deploying MediaGoblin 1: FastCGI vs uWSGI</title><link href="http://nathanielca.se/fossrit/deploying-mediagoblin-1-fastcgi-vs-uwsgi.html" rel="alternate"></link><published>2013-09-23T13:20:00-04:00</published><updated>2013-09-23T13:20:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2013-09-23:/fossrit/deploying-mediagoblin-1-fastcgi-vs-uwsgi.html</id><summary type="html">&lt;p&gt;Last week I did a thing I really wasn't expecting to. I deployed
+</content><category term="FOSS@RIT"></category><category term="mediagoblin"></category><category term="yacht"></category><category term="SELinux"></category></entry><entry><title>Deploying MediaGoblin 1: FastCGI vs uWSGI</title><link href="http://blog.katherineca.se/fossrit/deploying-mediagoblin-1-fastcgi-vs-uwsgi.html" rel="alternate"></link><published>2013-09-23T13:20:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2013-09-23:/fossrit/deploying-mediagoblin-1-fastcgi-vs-uwsgi.html</id><summary type="html">&lt;p&gt;Last week I did a thing I really wasn't expecting to. I deployed
 &lt;a class="reference external" href="http://mediagoblin.org"&gt;MediaGoblin&lt;/a&gt; to FOSS&amp;#64;RIT's yacht server &lt;a class="reference external" href="http://yacht.rit.edu/mediagoblin/"&gt;here&lt;/a&gt;. The initial setup and
 &lt;a class="reference external" href="https://mediagoblin.readthedocs.org/en/v0.5.0/siteadmin/deploying.html"&gt;instructions&lt;/a&gt; are some of the clearest and straightforward I have seen in an
 open-source project.&lt;/p&gt;
@@ -115,23 +115,23 @@ comprehensible &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;uWSGI-
 As I was also trying to move MediaGoblin to a subdirectory, I also added the
 &lt;tt class="docutils literal"&gt;uWSGI_modifier1&lt;/tt&gt; line and altered &lt;tt class="docutils literal"&gt;SCRIPT_NAME&lt;/tt&gt; accordingly:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Load MediaGoblin via uWSGI&lt;/span&gt;
-&lt;span class="k"&gt;location&lt;/span&gt; &lt;span class="s"&gt;/mediagoblin/&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-   &lt;span class="kn"&gt;include&lt;/span&gt; &lt;span class="s"&gt;uWSGI_params&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-   &lt;span class="kn"&gt;uWSGI_pass&lt;/span&gt; &lt;span class="n"&gt;127.0.0.1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;26543&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;location&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;/mediagoblin/&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="kn"&gt;include&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;uWSGI_params&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="kn"&gt;uWSGI_pass&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;127.0.0.1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;26543&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 
-   &lt;span class="c1"&gt;# our understanding vs nginx&amp;#39;s handling of script_name vs&lt;/span&gt;
-   &lt;span class="c1"&gt;# path_info don&amp;#39;t match :)&lt;/span&gt;
-   &lt;span class="kn"&gt;uWSGI_param&lt;/span&gt; &lt;span class="s"&gt;SCRIPT_NAME&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;/mediagoblin&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-   &lt;span class="kn"&gt;uWSGI_modifier1&lt;/span&gt; &lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="c1"&gt;# our understanding vs nginx&amp;#39;s handling of script_name vs&lt;/span&gt;
+&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="c1"&gt;# path_info don&amp;#39;t match :)&lt;/span&gt;
+&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="kn"&gt;uWSGI_param&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;SCRIPT_NAME&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;quot;/mediagoblin&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="kn"&gt;uWSGI_modifier1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Second, I altered the &lt;tt class="docutils literal"&gt;lazystarter.sh&lt;/tt&gt; file to accommodate being run with
 uWSGI. This is a bit complicated as &lt;tt class="docutils literal"&gt;lazyserver.sh&lt;/tt&gt;, &lt;tt class="docutils literal"&gt;lazystarter.sh&lt;/tt&gt;, and
 &lt;tt class="docutils literal"&gt;lazycelery.sh&lt;/tt&gt; are all actually the same file, with certain things changing
-depending on the name by which it is invoked. I changed two sections &lt;a class="footnote-reference" href="#id2" id="id1"&gt;[1]&lt;/a&gt;,
+depending on the name by which it is invoked. I changed two sections &lt;a class="footnote-reference" href="#footnote-1" id="footnote-reference-1"&gt;[1]&lt;/a&gt;,
 first:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;local_bin&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;./bin&amp;quot;&lt;/span&gt;
-&lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$selfname&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; in
+&lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$selfname&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt;
     lazyserver.sh&lt;span class="o"&gt;)&lt;/span&gt;
         &lt;span class="nv"&gt;starter_cmd&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;paster
         &lt;span class="nv"&gt;ini_prefix&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;paste
@@ -139,7 +139,7 @@ first:&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;became:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;local_bin&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;./bin&amp;quot;&lt;/span&gt;
-&lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$selfname&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; in
+&lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$selfname&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt;
     lazyserver.sh&lt;span class="o"&gt;)&lt;/span&gt;
         &lt;span class="nv"&gt;starter_cmd&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;uwsgi
         &lt;span class="nv"&gt;ini_prefix&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;paste
@@ -147,14 +147,14 @@ first:&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;And then near the very end of the file:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;CELERY_ALWAYS_EAGER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
-&lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$selfname&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; in
+&lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$selfname&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt;
     lazyserver.sh&lt;span class="o"&gt;)&lt;/span&gt;
         &lt;span class="nv"&gt;$starter&lt;/span&gt; serve &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$ini_file&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$@&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; --reload
         &lt;span class="p"&gt;;;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;became:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;CELERY_ALWAYS_EAGER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
-&lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$selfname&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; in
+&lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$selfname&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt;
     lazyserver.sh&lt;span class="o"&gt;)&lt;/span&gt;
         &lt;span class="nv"&gt;$starter&lt;/span&gt; --plugin python --virtualenv . --ini-paste &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$ini_file&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$@&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
         &lt;span class="p"&gt;;;&lt;/span&gt;
@@ -169,15 +169,15 @@ separate process&lt;/a&gt;, this still needs to be done somehow, but otherwise (
 you've kept &lt;tt class="docutils literal"&gt;CELERY_ALWAYS_EAGER=true&lt;/tt&gt;), then MediaGoblin should be managed
 automatically. This is the format I eventually settled upon, using the
 following uWSGI ini file:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;[uwsgi]&lt;/span&gt;
-&lt;span class="na"&gt;plugin&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;python&lt;/span&gt;
-&lt;span class="na"&gt;uid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;mediagoblin&lt;/span&gt;
-&lt;span class="na"&gt;gid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;mediagoblin&lt;/span&gt;
-&lt;span class="na"&gt;socket&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;127.0.0.1:26543&lt;/span&gt;
-&lt;span class="na"&gt;virtualenv&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;/srv/www/mediagoblin&lt;/span&gt;
-&lt;span class="na"&gt;chdir&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;/srv/www/mediagoblin&lt;/span&gt;
-&lt;span class="na"&gt;ini-paste&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;/srv/www/mediagoblin/paste.ini&lt;/span&gt;
-&lt;span class="na"&gt;logto&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;/srv/www/mediagoblin/mg.log&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;[uwsgi]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;plugin&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;python&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;uid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;mediagoblin&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;gid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;mediagoblin&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;socket&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;127.0.0.1:26543&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;virtualenv&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;/srv/www/mediagoblin&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;chdir&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;/srv/www/mediagoblin&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;ini-paste&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;/srv/www/mediagoblin/paste.ini&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="na"&gt;logto&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;/srv/www/mediagoblin/mg.log&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="what-next"&gt;
@@ -186,16 +186,16 @@ following uWSGI ini file:&lt;/p&gt;
 Well, this wouldn't have been necessary either, except for some of the
 repercussions of the other big problem that reared it's head, SELinux.&lt;/p&gt;
 &lt;p&gt;But that is &lt;a class="reference external" href="deploying-mediagoblin-2-selinux.html"&gt;another post&lt;/a&gt;.&lt;/p&gt;
-&lt;table class="docutils footnote" frame="void" id="id2" rules="none"&gt;
+&lt;table class="docutils footnote" frame="void" id="footnote-1" rules="none"&gt;
 &lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
 &lt;tbody valign="top"&gt;
-&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;This statement is not entirely accurate. I actually made a new link
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#footnote-reference-1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;This statement is not entirely accurate. I actually made a new link
 named &lt;tt class="docutils literal"&gt;lazyuwsgi.sh&lt;/tt&gt; and added the sections instead of altering the
 existing ones. This format was chosen for clarity.&lt;/td&gt;&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/div&gt;
-</content><category term="mediagoblin"></category><category term="yacht"></category><category term="uWSGI"></category></entry><entry><title>Building a Schoolserver</title><link href="http://nathanielca.se/fossrit/building-a-schoolserver.html" rel="alternate"></link><published>2013-08-05T02:04:00-04:00</published><updated>2013-08-05T02:04:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2013-08-05:/fossrit/building-a-schoolserver.html</id><summary type="html">&lt;p&gt;One of my tasks for this summer has been to try and get the FOSSBox's
+</content><category term="FOSS@RIT"></category><category term="mediagoblin"></category><category term="yacht"></category><category term="uWSGI"></category></entry><entry><title>Building a Schoolserver</title><link href="http://blog.katherineca.se/fossrit/building-a-schoolserver.html" rel="alternate"></link><published>2013-08-05T02:04:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2013-08-05:/fossrit/building-a-schoolserver.html</id><summary type="html">&lt;p&gt;One of my tasks for this summer has been to try and get the FOSSBox's
 schoolserver up and running again. We previouly had one a number of years ago,
 but the hardware failed some time ago and the system itself was running a
 hacked-together Debian build and did not have …&lt;/p&gt;</summary><content type="html">&lt;p&gt;One of my tasks for this summer has been to try and get the FOSSBox's
@@ -231,7 +231,7 @@ idea. This post will be further updated as time goes on.&lt;/p&gt;
 &lt;p&gt;The main problem seen so far is that this is being set up on a RHEL server
 backed by XEN, and the OLPC-XS repository keeps wanting to install an
 incompatible kernel, hosing the system on a regular basis.&lt;/p&gt;
-</content><category term="sugar"></category><category term="schoolserver"></category></entry><entry><title>National Day of Civic Hacking</title><link href="http://nathanielca.se/fossrit/national-day-of-civic-hacking.html" rel="alternate"></link><published>2013-06-02T03:18:00-04:00</published><updated>2013-06-02T03:18:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2013-06-02:/fossrit/national-day-of-civic-hacking.html</id><summary type="html">&lt;p&gt;One of the projects I worked on during the &lt;a class="reference external" href="http://hackforchange.org/fossrit-rochester-civic-hackathon"&gt;Rochester edition&lt;/a&gt; of the
+</content><category term="FOSS@RIT"></category><category term="sugar"></category><category term="schoolserver"></category></entry><entry><title>National Day of Civic Hacking</title><link href="http://blog.katherineca.se/fossrit/national-day-of-civic-hacking.html" rel="alternate"></link><published>2013-06-02T03:18:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2013-06-02:/fossrit/national-day-of-civic-hacking.html</id><summary type="html">&lt;p&gt;One of the projects I worked on during the &lt;a class="reference external" href="http://hackforchange.org/fossrit-rochester-civic-hackathon"&gt;Rochester edition&lt;/a&gt; of the
 &lt;a class="reference external" href="http://hackforchange.org"&gt;National Day of Civic Hacking&lt;/a&gt; hackathon was not actually anything intended
 for the hackathon, but a short project I wrote last summer.&lt;/p&gt;
 &lt;p&gt;If you remember from &lt;a class="reference external" href="introducing-fossrit-timeline-year-in-review.html"&gt;my last post&lt;/a&gt; on the subject, I had made three files …&lt;/p&gt;</summary><content type="html">&lt;p&gt;One of the projects I worked on during the &lt;a class="reference external" href="http://hackforchange.org/fossrit-rochester-civic-hackathon"&gt;Rochester edition&lt;/a&gt; of the
@@ -249,7 +249,7 @@ onto the page.&lt;/p&gt;
 &lt;p&gt;When the user clicks on another year from the list, the content is reloaded with
 data from the apropriate year. If you want to see it in action, the new review
 page for timeline now lives &lt;a class="reference external" href="http://foss.rit.edu/timeline/summary.html"&gt;here&lt;/a&gt;.&lt;/p&gt;
-</content><category term="hackathon"></category><category term="timeline"></category><category term="jQuery"></category></entry><entry><title>A note on lxml</title><link href="http://nathanielca.se/fossrit/a-note-on-lxml.html" rel="alternate"></link><published>2013-06-01T20:46:00-04:00</published><updated>2013-06-01T20:46:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2013-06-01:/fossrit/a-note-on-lxml.html</id><summary type="html">&lt;p&gt;This post is being written from the &lt;a class="reference external" href="http://hackforchange.org/fossrit-rochester-civic-hackathon"&gt;Rochester edition&lt;/a&gt; of the
+</content><category term="FOSS@RIT"></category><category term="hackathon"></category><category term="timeline"></category><category term="jQuery"></category></entry><entry><title>A note on lxml</title><link href="http://blog.katherineca.se/fossrit/a-note-on-lxml.html" rel="alternate"></link><published>2013-06-01T20:46:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2013-06-01:/fossrit/a-note-on-lxml.html</id><summary type="html">&lt;p&gt;This post is being written from the &lt;a class="reference external" href="http://hackforchange.org/fossrit-rochester-civic-hackathon"&gt;Rochester edition&lt;/a&gt; of the
 &lt;a class="reference external" href="http://hackforchange.org"&gt;National Day of Civic Hacking&lt;/a&gt; hackathon.&lt;/p&gt;
 &lt;p&gt;I've been doing a lot of things with &lt;a class="reference external" href="http://pygal.org"&gt;pygal&lt;/a&gt; lately. It's a really neat tool
 for making SVG graphs in python. One 'problem' is that it needs &lt;a class="reference external" href="http://lxml.de"&gt;lxml&lt;/a&gt;, and
@@ -271,7 +271,7 @@ download its requirements for you. I don't know how legitimate this is for a
 Python install, but it was certainly quite useful for me and the others
 trying to use lxml. It even works inside a virtualenv, though I don't know why
 it wouldn't.&lt;/p&gt;
-</content><category term="hackathon"></category><category term="python"></category><category term="wat"></category></entry><entry><title>American Greetings Hackathon Followup</title><link href="http://nathanielca.se/fossrit/american-greetings-hackathon-followup.html" rel="alternate"></link><published>2013-01-24T22:33:00-05:00</published><updated>2013-01-24T22:33:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2013-01-24:/fossrit/american-greetings-hackathon-followup.html</id><summary type="html">&lt;p&gt;Last weekend was the &lt;a class="reference external" href="http://foss.rit.edu/node/425"&gt;American Greetings Hackathon&lt;/a&gt;, and it was one of
+</content><category term="FOSS@RIT"></category><category term="hackathon"></category><category term="python"></category><category term="wat"></category></entry><entry><title>American Greetings Hackathon Followup</title><link href="http://blog.katherineca.se/fossrit/american-greetings-hackathon-followup.html" rel="alternate"></link><published>2013-01-24T22:33:00-05:00</published><updated>2022-12-07T14:30:39-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2013-01-24:/fossrit/american-greetings-hackathon-followup.html</id><summary type="html">&lt;p&gt;Last weekend was the &lt;a class="reference external" href="http://foss.rit.edu/node/425"&gt;American Greetings Hackathon&lt;/a&gt;, and it was one of
 the most successful yet. We got more than 70 people attending and
 working on projects, and most of those projects had at least something
 working by the end of the 24 hours.&lt;/p&gt;
@@ -305,7 +305,7 @@ monsters, items, traps), and other information. There's a lot more we
 could add to this over time; one of the ideas thrown around at the
 beginning was integration with the NetHack wiki, providing additional
 information about items, monsters, even entire levels.&lt;/p&gt;
-&lt;/p&gt;</content><category term="hackathon"></category></entry><entry><title>Recent Projects: Democrat &amp; Chronicle</title><link href="http://nathanielca.se/fossrit/recent-projects-democrat-chronicle.html" rel="alternate"></link><published>2012-08-22T22:16:00-04:00</published><updated>2012-08-22T22:16:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2012-08-22:/fossrit/recent-projects-democrat-chronicle.html</id><summary type="html">&lt;p&gt;One of the new projects I had this summer was a project proposed by the
+</content><category term="FOSS@RIT"></category><category term="hackathon"></category></entry><entry><title>Recent Projects: Democrat &amp; Chronicle</title><link href="http://blog.katherineca.se/fossrit/recent-projects-democrat-chronicle.html" rel="alternate"></link><published>2012-08-22T22:16:00-04:00</published><updated>2022-12-07T14:32:12-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2012-08-22:/fossrit/recent-projects-democrat-chronicle.html</id><summary type="html">&lt;p&gt;One of the new projects I had this summer was a project proposed by the
 &lt;a class="reference external" href="http://www.democratandchronicle.com/"&gt;Democrat &amp;amp; Chronicle&lt;/a&gt;. The project involved access to a selection of
 emails sent to the Greece school district in the wake of the YouTube
 video involving several of their students. The idea was that we would …&lt;/p&gt;</summary><content type="html">&lt;p&gt;One of the new projects I had this summer was a project proposed by the
@@ -357,7 +357,7 @@ researchers than those already familiar with Python), and is hardcoded
 to certain facets of the data I was given, but it does manage to do a
 few things, and at each step it dumps the state of the data to a file so
 I can inspect the process and consider possible improvements.&lt;/p&gt;
-&lt;/p&gt;</content><category term="journalism"></category><category term="data alchemy"></category></entry><entry><title>Introducing: FOSS@RIT Timeline Year in Review</title><link href="http://nathanielca.se/fossrit/introducing-fossrit-timeline-year-in-review.html" rel="alternate"></link><published>2012-08-22T22:15:00-04:00</published><updated>2012-08-22T22:15:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2012-08-22:/fossrit/introducing-fossrit-timeline-year-in-review.html</id><summary type="html">&lt;p&gt;Yesterday, I sat down with Remy and went over the last of the things we
+</content><category term="FOSS@RIT"></category><category term="journalism"></category><category term="data alchemy"></category></entry><entry><title>Introducing: FOSS@RIT Timeline Year in Review</title><link href="http://blog.katherineca.se/fossrit/introducing-fossrit-timeline-year-in-review.html" rel="alternate"></link><published>2012-08-22T22:15:00-04:00</published><updated>2022-12-07T14:31:22-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2012-08-22:/fossrit/introducing-fossrit-timeline-year-in-review.html</id><summary type="html">&lt;p&gt;Yesterday, I sat down with Remy and went over the last of the things we
 need to do to close out the summer. There was a long list of items,
 split into two sections, each containing the same sort of stuff.
 FOSS&amp;#64;RIT has done a lot of stuff in …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Yesterday, I sat down with Remy and went over the last of the things we
@@ -391,7 +391,7 @@ timeline page, and I'd rather have them all use one common file than
 make a new one each year, but it works, it's fairly similar to what was
 handwritten last year, and it gets updated every time something gets
 added to Timeline.&lt;/p&gt;
-&lt;/p&gt;</content><category term="data alchemy"></category><category term="jQuery"></category><category term="timeline"></category></entry><entry><title>Final Stretch</title><link href="http://nathanielca.se/fossrit/final-stretch.html" rel="alternate"></link><published>2012-02-29T16:15:00-05:00</published><updated>2012-02-29T16:15:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2012-02-29:/fossrit/final-stretch.html</id><summary type="html">&lt;p&gt;So the past two days have been madness trying to get the recently
+</content><category term="FOSS@RIT"></category><category term="data alchemy"></category><category term="jQuery"></category><category term="timeline"></category></entry><entry><title>Final Stretch</title><link href="http://blog.katherineca.se/fossrit/final-stretch.html" rel="alternate"></link><published>2012-02-29T16:15:00-05:00</published><updated>2022-12-07T14:30:39-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2012-02-29:/fossrit/final-stretch.html</id><summary type="html">&lt;p&gt;So the past two days have been madness trying to get the recently
 christened WebBotWar (or just WebBot) to actually work on the web.&lt;/p&gt;
 &lt;p&gt;We had it working locally some time last week (I think... the days are
 really starting to mush together), but OpenShift was a whole other
@@ -434,7 +434,7 @@ other yet. As well, there are brand new pretty images for the robots and
 the turrets.&lt;/p&gt;
 &lt;p&gt;There's a few outstanding problems left, but (as long as I don't push
 anything broken) you can have a look at webbotwar in action &lt;a class="reference external" href="webbotwar-qalthos.rhcloud.com"&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;/p&gt;</content><category term="pybotwar"></category><category term="hackathon"></category><category term="FLOSS-seminar"></category><category term="webbotwar"></category><category term="openshift"></category></entry><entry><title>TurboGears2 on OpenShift, just like it should be</title><link href="http://nathanielca.se/fossrit/turbogears2-on-openshift-just-like-it-should-be.html" rel="alternate"></link><published>2012-02-03T06:47:00-05:00</published><updated>2012-02-03T06:47:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2012-02-03:/fossrit/turbogears2-on-openshift-just-like-it-should-be.html</id><summary type="html">&lt;p&gt;After much work and many trials, I finally have an app pushed to
+</content><category term="FOSS@RIT"></category><category term="pybotwar"></category><category term="hackathon"></category><category term="FLOSS-seminar"></category><category term="webbotwar"></category><category term="openshift"></category></entry><entry><title>TurboGears2 on OpenShift, just like it should be</title><link href="http://blog.katherineca.se/fossrit/turbogears2-on-openshift-just-like-it-should-be.html" rel="alternate"></link><published>2012-02-03T06:47:00-05:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2012-02-03:/fossrit/turbogears2-on-openshift-just-like-it-should-be.html</id><summary type="html">&lt;p&gt;After much work and many trials, I finally have an app pushed to
 OpenShift with no manual tweaking necessary. As often happens with these
 things, the solution was much simpler than expected.&lt;/p&gt;
 &lt;p&gt;Note: I still don't have a foolproof 'follow this' solution ready, as
@@ -497,7 +497,7 @@ application, not OpenShift), so it looked like I had finally fixed
 deploying a standard TurboGears app. I've no doubt that there's
 something I've left out, but I'm pretty amazed at the progress I've made
 so far, and learned a lot about both OpenShift and TurboGears.&lt;/p&gt;
-</content><category term="hackathon"></category><category term="FLOSS-seminar"></category><category term="openshift"></category></entry><entry><title>FLOSS Seminar Update</title><link href="http://nathanielca.se/fossrit/floss-seminar-update.html" rel="alternate"></link><published>2012-01-19T17:46:00-05:00</published><updated>2012-01-19T17:46:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2012-01-19:/fossrit/floss-seminar-update.html</id><summary type="html">&lt;p&gt;So it's week 5, what has been going on?&lt;/p&gt;
+</content><category term="FOSS@RIT"></category><category term="hackathon"></category><category term="FLOSS-seminar"></category><category term="openshift"></category></entry><entry><title>FLOSS Seminar Update</title><link href="http://blog.katherineca.se/fossrit/floss-seminar-update.html" rel="alternate"></link><published>2012-01-19T17:46:00-05:00</published><updated>2022-12-07T14:31:11-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2012-01-19:/fossrit/floss-seminar-update.html</id><summary type="html">&lt;p&gt;So it's week 5, what has been going on?&lt;/p&gt;
 &lt;p&gt;The class has split into three groups, working on different games. My
 group's idea is a social update to the venerable likes of &lt;a class="reference external" href="http://robocode.sourceforge.net/"&gt;robocode&lt;/a&gt;,
 though how exactly that is going to pan out is still debatable.&lt;/p&gt;
@@ -509,7 +509,7 @@ though how exactly that is going to pan out is still debatable.&lt;/p&gt;
 requiring much tweaking of the internals, though a new interface would be
 required for use on the web. All in all the class is shaping up to be
 pretty interesting.&lt;/p&gt;
-&lt;/p&gt;</content><category term="FLOSS-seminar"></category></entry><entry><title>First FLOSS Seminar post</title><link href="http://nathanielca.se/fossrit/first-floss-seminar-post.html" rel="alternate"></link><published>2011-12-01T20:22:00-05:00</published><updated>2011-12-01T20:22:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-12-01:/fossrit/first-floss-seminar-post.html</id><summary type="html">&lt;p&gt;So this quarter I am taking a &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Free_and_open_source_software#FLOSS"&gt;FLOSS&lt;/a&gt; Seminar being taught by &lt;a class="reference external" href="http://threebean.org"&gt;Bean&lt;/a&gt;
+</content><category term="FOSS@RIT"></category><category term="FLOSS-seminar"></category></entry><entry><title>First FLOSS Seminar post</title><link href="http://blog.katherineca.se/fossrit/first-floss-seminar-post.html" rel="alternate"></link><published>2011-12-01T20:22:00-05:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2011-12-01:/fossrit/first-floss-seminar-post.html</id><summary type="html">&lt;p&gt;So this quarter I am taking a &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Free_and_open_source_software#FLOSS"&gt;FLOSS&lt;/a&gt; Seminar being taught by &lt;a class="reference external" href="http://threebean.org"&gt;Bean&lt;/a&gt;
 which should be pretty awesome. As a graduate student (as well as a
 fairly advanced FLOSS citizen) there are a few extra things going to be
 required of me, and we're working on ironing out the exact …&lt;/p&gt;</summary><content type="html">&lt;p&gt;So this quarter I am taking a &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Free_and_open_source_software#FLOSS"&gt;FLOSS&lt;/a&gt; Seminar being taught by &lt;a class="reference external" href="http://threebean.org"&gt;Bean&lt;/a&gt;
@@ -517,7 +517,7 @@ which should be pretty awesome. As a graduate student (as well as a
 fairly advanced FLOSS citizen) there are a few extra things going to be
 required of me, and we're working on ironing out the exact details now.
 It looks like it's going to be a really cool quarter.&lt;/p&gt;
-</content><category term="FLOSS-seminar"></category></entry><entry><title>Imagine RIT 2011</title><link href="http://nathanielca.se/fossrit/imagine-rit-2011.html" rel="alternate"></link><published>2011-05-08T03:16:00-04:00</published><updated>2011-05-08T03:16:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-05-08:/fossrit/imagine-rit-2011.html</id><summary type="html">&lt;p&gt;So I've been absent for a while lately, but with good reason. I've been
+</content><category term="FOSS@RIT"></category><category term="FLOSS-seminar"></category></entry><entry><title>Imagine RIT 2011</title><link href="http://blog.katherineca.se/fossrit/imagine-rit-2011.html" rel="alternate"></link><published>2011-05-08T03:16:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2011-05-08:/fossrit/imagine-rit-2011.html</id><summary type="html">&lt;p&gt;So I've been absent for a while lately, but with good reason. I've been
 preparing for Imagine RIT, which was held earlier today.
 After pulling possibly my longest day's hack yesterday (1pm to 4am,
 approximately), I woke up at 9 and headed over to the Innovation Center
@@ -556,7 +556,7 @@ new tasks before the final release.&lt;/p&gt;
 &lt;p&gt;All in all, a very exciting and fun weekend. We made a few contacts,
 introduced a few more people to FOSS&amp;#64;RIT, and gave away at least 40
 LiveCDs. I think that qualifies as quite a success.&lt;/p&gt;
-</content><category term="journalism"></category><category term="lemonade"></category><category term="sugar"></category><category term="Rise"></category><category term="OPL"></category></entry><entry><title>Special Election Time</title><link href="http://nathanielca.se/fossrit/special-election-time.html" rel="alternate"></link><published>2011-03-29T03:07:00-04:00</published><updated>2011-03-29T03:07:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-03-29:/fossrit/special-election-time.html</id><summary type="html">&lt;p&gt;Rochester is having a special election tomorrow to choose a new Mayor,
+</content><category term="FOSS@RIT"></category><category term="journalism"></category><category term="lemonade"></category><category term="sugar"></category><category term="Rise"></category><category term="OPL"></category></entry><entry><title>Special Election Time</title><link href="http://blog.katherineca.se/fossrit/special-election-time.html" rel="alternate"></link><published>2011-03-29T03:07:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2011-03-29:/fossrit/special-election-time.html</id><summary type="html">&lt;p&gt;Rochester is having a special election tomorrow to choose a new Mayor,
 as the previous Mayor, Robert Duffy, is now the Lieutenant Governor of
 New York. I've been following the race with some interest despite not
 being registered to vote in this area, especially since I know one of
@@ -576,7 +576,7 @@ accurate number.
 We probably won't have that many problems this time around. But who
 knows? I'm looking forward to an exciting night in any case, and I'll be
 ready to fix any problems as they come.&lt;/p&gt;
-</content><category term="election"></category></entry><entry><title>Election Aftermath</title><link href="http://nathanielca.se/fossrit/election-aftermath.html" rel="alternate"></link><published>2011-03-29T02:59:00-04:00</published><updated>2011-03-29T02:59:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-03-29:/fossrit/election-aftermath.html</id><summary type="html">&lt;p&gt;So the election was almost a week ago. Here's how our little experiment
+</content><category term="FOSS@RIT"></category><category term="election"></category></entry><entry><title>Election Aftermath</title><link href="http://blog.katherineca.se/fossrit/election-aftermath.html" rel="alternate"></link><published>2011-03-29T02:59:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2011-03-29:/fossrit/election-aftermath.html</id><summary type="html">&lt;p&gt;So the election was almost a week ago. Here's how our little experiment
 turned out.&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://farm2.static.flickr.com/1386/5143595646_9e4e56f556.jpg"&gt;|image0|&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;The evening started out rather slowly, with information trickling in
@@ -640,7 +640,7 @@ something more than just a class assignment. This wasn't just another
 program to be written and forgotten, this was something that represented
 the school to some of the public who perhaps hadn't heard about what
 we're doing here. And that is cool.&lt;/p&gt;
-</content><category term="journalism"></category><category term="election"></category></entry><entry><title>Election Night</title><link href="http://nathanielca.se/fossrit/election-night.html" rel="alternate"></link><published>2011-03-29T02:59:00-04:00</published><updated>2011-03-29T02:59:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-03-29:/fossrit/election-night.html</id><summary type="html">&lt;p&gt;So election night is tonight. I'll have free time soon.
+</content><category term="FOSS@RIT"></category><category term="journalism"></category><category term="election"></category></entry><entry><title>Election Night</title><link href="http://blog.katherineca.se/fossrit/election-night.html" rel="alternate"></link><published>2011-03-29T02:59:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2011-03-29:/fossrit/election-night.html</id><summary type="html">&lt;p&gt;So election night is tonight. I'll have free time soon.
 The main reason for my lack of time lately has to do with the election.
 On Wednesday, just before I was going to classes, I got a call from Remy
 asking what my schedule was and if I'd like to …&lt;/p&gt;</summary><content type="html">&lt;p&gt;So election night is tonight. I'll have free time soon.
@@ -675,15 +675,11 @@ and started the countdown.
 The current version of the scraper is now running on
 &lt;a class="reference external" href="http://foss.rit.edu/election/"&gt;http://foss.rit.edu/election/&lt;/a&gt; and should update its information every 30
 seconds, once information exists.&lt;/p&gt;
-</content><category term="journalism"></category><category term="election"></category></entry><entry><title>Winter Hackathon 2</title><link href="http://nathanielca.se/fossrit/winter-hackathon-2.html" rel="alternate"></link><published>2011-02-19T02:58:00-05:00</published><updated>2011-02-19T02:58:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-02-19:/fossrit/winter-hackathon-2.html</id><summary type="html">&lt;p&gt;So I was gonna do a write-up about the winter hackathon.
+</content><category term="FOSS@RIT"></category><category term="journalism"></category><category term="election"></category></entry><entry><title>Winter Hackathon 2</title><link href="http://blog.katherineca.se/fossrit/winter-hackathon-2.html" rel="alternate"></link><published>2011-02-19T02:58:00-05:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2011-02-19:/fossrit/winter-hackathon-2.html</id><content type="html">&lt;p&gt;So I was gonna do a write-up about the winter hackathon.
 That didn't happen too much.
 But there's another one going on now.
 ^__^&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;So I was gonna do a write-up about the winter hackathon.
-That didn't happen too much.
-But there's another one going on now.
-^__^&lt;/p&gt;
-</content><category term="hackathon"></category></entry><entry><title>Wikiotics Visual Tweak</title><link href="http://nathanielca.se/fossrit/wikiotics-visual-tweak.html" rel="alternate"></link><published>2010-12-08T23:51:00-05:00</published><updated>2010-12-08T23:51:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2010-12-08:/fossrit/wikiotics-visual-tweak.html</id><summary type="html">&lt;p&gt;So &lt;a class="reference external" href="http://trosehfoss.blogspot.com/"&gt;trose&lt;/a&gt; and I have been asked to put a bow on the Wikiotics work
+</content><category term="FOSS@RIT"></category><category term="hackathon"></category></entry><entry><title>Wikiotics Visual Tweak</title><link href="http://blog.katherineca.se/fossrit/wikiotics-visual-tweak.html" rel="alternate"></link><published>2010-12-08T23:51:00-05:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-12-08:/fossrit/wikiotics-visual-tweak.html</id><summary type="html">&lt;p&gt;So &lt;a class="reference external" href="http://trosehfoss.blogspot.com/"&gt;trose&lt;/a&gt; and I have been asked to put a bow on the Wikiotics work
 while we're between projects. We both hit some bumps at the end of the
 quarter, so there's a few unused hours left to put into this project.
 One of the things we've been tasked with …&lt;/p&gt;</summary><content type="html">&lt;p&gt;So &lt;a class="reference external" href="http://trosehfoss.blogspot.com/"&gt;trose&lt;/a&gt; and I have been asked to put a bow on the Wikiotics work
@@ -712,7 +708,7 @@ These changes are a small step, but I think they go some way towards
 making Wikiotics a bit more approachable to outsiders. There are a few
 more things to be done on Friday, but I don't think we're yet done
 looking at this.&lt;/p&gt;
-</content><category term="wikiotics"></category></entry><entry><title>Wikiotics at the Constellation Commons</title><link href="http://nathanielca.se/fossrit/wikiotics-at-the-constellation-commons.html" rel="alternate"></link><published>2010-12-08T23:30:00-05:00</published><updated>2010-12-08T23:30:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2010-12-08:/fossrit/wikiotics-at-the-constellation-commons.html</id><summary type="html">&lt;p&gt;This happened quite some time ago now, but with the election coverage I
+</content><category term="FOSS@RIT"></category><category term="wikiotics"></category></entry><entry><title>Wikiotics at the Constellation Commons</title><link href="http://blog.katherineca.se/fossrit/wikiotics-at-the-constellation-commons.html" rel="alternate"></link><published>2010-12-08T23:30:00-05:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-12-08:/fossrit/wikiotics-at-the-constellation-commons.html</id><summary type="html">&lt;p&gt;This happened quite some time ago now, but with the election coverage I
 haven't had much time to get this out.
 Two weeks ago, Taylor and I were asked to appear at the opening of the
 Constellation Commons for Global Learning, to show off Wikiotics as a
@@ -727,7 +723,7 @@ In all we showed off the project to a fair number of people and got a
 very positive reaction from most of them. I don't know if we've seen any
 more users from this, but it seems to me it should help spread the word
 about Wikiotics.&lt;/p&gt;
-</content><category term="wikiotics"></category></entry><entry><title>Lemonade Stand 2.1 Released</title><link href="http://nathanielca.se/fossrit/lemonade-stand-21-released.html" rel="alternate"></link><published>2010-11-12T07:03:00-05:00</published><updated>2010-11-12T07:03:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2010-11-12:/fossrit/lemonade-stand-21-released.html</id><summary type="html">&lt;p&gt;I am proud to announce the immediate availability of Lemonade Stand 2.1,
+</content><category term="FOSS@RIT"></category><category term="wikiotics"></category></entry><entry><title>Lemonade Stand 2.1 Released</title><link href="http://blog.katherineca.se/fossrit/lemonade-stand-21-released.html" rel="alternate"></link><published>2010-11-12T07:03:00-05:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-11-12:/fossrit/lemonade-stand-21-released.html</id><summary type="html">&lt;p&gt;I am proud to announce the immediate availability of Lemonade Stand 2.1,
 with a quarter's worth of work and effort behind it.
 There are few gameplay changes in this release, but it feels like a
 brand new game thanks to the wonderful new art assets courtesy of &lt;a class="reference external" href="http://jtmengel.blogspot.com/"&gt;JT&lt;/a&gt;.
@@ -740,7 +736,7 @@ the code to make adding new features even easier than before.
 We're a little late for a midnight release, but for my first real game
 release, I don't think we did half bad.
 &lt;a class="reference external" href="http://activities.sugarlabs.org/en-US/sugar/addon/4321"&gt;http://activities.sugarlabs.org/en-US/sugar/addon/4321&lt;/a&gt;&lt;/p&gt;
-</content><category term="lemonade"></category></entry><entry><title>Lemonade Recap</title><link href="http://nathanielca.se/fossrit/lemonade-recap.html" rel="alternate"></link><published>2010-11-10T20:26:00-05:00</published><updated>2010-11-10T20:26:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2010-11-10:/fossrit/lemonade-recap.html</id><summary type="html">&lt;p&gt;So here we are at the end of the quarter. Have we accomplished our
+</content><category term="FOSS@RIT"></category><category term="lemonade"></category></entry><entry><title>Lemonade Recap</title><link href="http://blog.katherineca.se/fossrit/lemonade-recap.html" rel="alternate"></link><published>2010-11-10T20:26:00-05:00</published><updated>2022-12-07T14:31:54-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-11-10:/fossrit/lemonade-recap.html</id><summary type="html">&lt;p&gt;So here we are at the end of the quarter. Have we accomplished our
 goals? I think so.
 We've gotten a lot done in the last ten weeks. We got some new images,
 we got some new ideas into the game, and on the whole, it looks much
@@ -750,21 +746,21 @@ We've gotten a lot done in the last ten weeks. We got some new images,
 we got some new ideas into the game, and on the whole, it looks much
 better. The game is slowly taking shape into something people might
 actually want to play.&lt;/p&gt;
-&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;But let's compare what we've actually done to our goals. The first goal
+&lt;p&gt;But let's compare what we've actually done to our goals. The first goal
 was to get an updated background image with prettier graphics that
 changed with the weather. This is definitely done, and has been for a
 week or two. We've since invented a few more graphics that need to be
 included in the main screen, but the placeholders we have should do for
 now.&lt;/p&gt;
-&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;Second, we wanted to get a graphical store in place and working. That's
+&lt;p&gt;Second, we wanted to get a graphical store in place and working. That's
 almost done, and should be finished before the end of the week. The
 store is fully functional, it just needs a few tweaks and some feedback
 on the user's current inventory. For the time being that can be fixed
 until we can get a more permanent solution later.&lt;/p&gt;
-&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;Finally, the overlooked problem we were ignoring this whole time, an in
+&lt;p&gt;Finally, the overlooked problem we were ignoring this whole time, an in
 game help system. This is moving along, not well, but it should be
 functional by our release.&lt;/p&gt;
-&lt;/div&gt;&lt;/p&gt;</content><category term="lemonade"></category></entry><entry><title>Lemonade Week... 8?</title><link href="http://nathanielca.se/fossrit/lemonade-week-8.html" rel="alternate"></link><published>2010-10-26T23:59:00-04:00</published><updated>2010-10-26T23:59:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2010-10-26:/fossrit/lemonade-week-8.html</id><summary type="html">&lt;p&gt;So... lots of stuff has happened in the last few weeks.
+</content><category term="FOSS@RIT"></category><category term="lemonade"></category></entry><entry><title>Lemonade Week... 8?</title><link href="http://blog.katherineca.se/fossrit/lemonade-week-8.html" rel="alternate"></link><published>2010-10-26T23:59:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-10-26:/fossrit/lemonade-week-8.html</id><summary type="html">&lt;p&gt;So... lots of stuff has happened in the last few weeks.
 First, we have a new background, thanks to JT. In fact, we have three
 now, and as of five minutes ago, a different one will show up depending
 on the current weather.
@@ -778,7 +774,7 @@ of stuff goes in constants.py, but that might have to change if we need
 to add too much more stuff.
 We've got a few exciting ideas we hope to get done in the next few
 weeks, and I look forward to seeing what we can get done.&lt;/p&gt;
-</content><category term="lemonade"></category><category term="sugar"></category></entry><entry><title>Updating git</title><link href="http://nathanielca.se/fossrit/updating-git.html" rel="alternate"></link><published>2010-10-04T19:39:00-04:00</published><updated>2010-10-04T19:39:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2010-10-04:/fossrit/updating-git.html</id><summary type="html">&lt;p&gt;We here at RIT are working on our own branch of Ductus, and Ductus got a
+</content><category term="FOSS@RIT"></category><category term="lemonade"></category><category term="sugar"></category></entry><entry><title>Updating git</title><link href="http://blog.katherineca.se/fossrit/updating-git.html" rel="alternate"></link><published>2010-10-04T19:39:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-10-04:/fossrit/updating-git.html</id><summary type="html">&lt;p&gt;We here at RIT are working on our own branch of Ductus, and Ductus got a
 big addition over the weekend, namespaces. Unfortunately, our repository
 didn't know anything about that and needed to be updated.
 Now, I'm not a novice to using git, nor are any of the people in …&lt;/p&gt;</summary><content type="html">&lt;p&gt;We here at RIT are working on our own branch of Ductus, and Ductus got a
@@ -796,7 +792,7 @@ up.
 git remote add
 git pull
 git push&lt;/p&gt;
-</content><category term="wikiotics"></category></entry><entry><title>Wikiotics Week 2</title><link href="http://nathanielca.se/fossrit/wikiotics-week-2.html" rel="alternate"></link><published>2010-09-29T18:36:00-04:00</published><updated>2010-09-29T18:36:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2010-09-29:/fossrit/wikiotics-week-2.html</id><summary type="html">&lt;p&gt;We're into week 2 of Wikiotics' &lt;a class="reference external" href="http://alpha.wikiotics.org/wiki/four_week_plan"&gt;four week plan&lt;/a&gt; to push Wikiotics
+</content><category term="FOSS@RIT"></category><category term="wikiotics"></category></entry><entry><title>Wikiotics Week 2</title><link href="http://blog.katherineca.se/fossrit/wikiotics-week-2.html" rel="alternate"></link><published>2010-09-29T18:36:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-09-29:/fossrit/wikiotics-week-2.html</id><summary type="html">&lt;p&gt;We're into week 2 of Wikiotics' &lt;a class="reference external" href="http://alpha.wikiotics.org/wiki/four_week_plan"&gt;four week plan&lt;/a&gt; to push Wikiotics
 development, so I thought I'd get out all the stuff I did last week.
 First, in order to get myself acquainted with the user interface I
 translated (badly) the introduction lesson into &lt;a class="reference external" href="http://alpha.wikiotics.org/wiki/Russian_lessons"&gt;Russian&lt;/a&gt; (and later
@@ -813,7 +809,7 @@ especially when I had to switch back and forth looking at things
 That's all I really got into for week one, but now that I'm fairly
 comfortable with the various technologies being used, I think things
 will really start rolling soon&lt;/p&gt;
-</content><category term="wikiotics"></category></entry><entry><title>Lemons Taking Off</title><link href="http://nathanielca.se/fossrit/lemons-taking-off.html" rel="alternate"></link><published>2010-09-23T14:35:00-04:00</published><updated>2010-09-23T14:35:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2010-09-23:/fossrit/lemons-taking-off.html</id><summary type="html">&lt;p&gt;It looks like Lemonade Stand is taking off for fall quarter's &lt;a class="reference external" href="http://teachingopensource.org/index.php/RIT/The_Course"&gt;HFOSS&lt;/a&gt;
+</content><category term="FOSS@RIT"></category><category term="wikiotics"></category></entry><entry><title>Lemons Taking Off</title><link href="http://blog.katherineca.se/fossrit/lemons-taking-off.html" rel="alternate"></link><published>2010-09-23T14:35:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-09-23:/fossrit/lemons-taking-off.html</id><summary type="html">&lt;p&gt;It looks like Lemonade Stand is taking off for fall quarter's &lt;a class="reference external" href="http://teachingopensource.org/index.php/RIT/The_Course"&gt;HFOSS&lt;/a&gt;
 class. This is quite exciting and there's a number of things I'm looking
 to get in for a 2.2 release
 * More events
@@ -831,7 +827,7 @@ The 2.1 release, meanwhile, I would like to focus on usability and
 graphics, as those have been being worked on for the longest so far.
 Whether any of this will work out the way I'm imagining is debatable,
 but I've got a plan and two &lt;a class="reference external" href="http://smw-os.blogspot.com/"&gt;awesome&lt;/a&gt; &lt;a class="reference external" href="http://jtmengel.blogspot.com"&gt;people&lt;/a&gt; working on it with me&lt;/p&gt;
-</content><category term="lemonade"></category><category term="sugar"></category></entry><entry><title>Refreshing Lemonade</title><link href="http://nathanielca.se/fossrit/refreshing-lemonade.html" rel="alternate"></link><published>2010-09-23T14:04:00-04:00</published><updated>2010-09-23T14:04:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2010-09-23:/fossrit/refreshing-lemonade.html</id><summary type="html">&lt;p&gt;In other news, yesterday marked the &lt;a class="reference external" href="http://blog.jlewopensource.com/2010/07/lemonade-stand-release.html"&gt;final release of Lemonade
+</content><category term="FOSS@RIT"></category><category term="lemonade"></category><category term="sugar"></category></entry><entry><title>Refreshing Lemonade</title><link href="http://blog.katherineca.se/fossrit/refreshing-lemonade.html" rel="alternate"></link><published>2010-09-23T14:04:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-09-23:/fossrit/refreshing-lemonade.html</id><summary type="html">&lt;p&gt;In other news, yesterday marked the &lt;a class="reference external" href="http://blog.jlewopensource.com/2010/07/lemonade-stand-release.html"&gt;final release of Lemonade
 Stand 2.0&lt;/a&gt;. Now running on the &lt;a class="reference external" href="https://fedorahosted.org/fortune_hunter/wiki/FortuneEngine"&gt;Fortune Engine&lt;/a&gt; and containing 0% of
 my code, this marks an important milestone in my open-source
 &lt;a class="reference external" href="http://sugarlabs.org/"&gt;sugar-based&lt;/a&gt; lemonade stand game as it's still getting developed!
@@ -842,7 +838,7 @@ my code, this marks an important milestone in my open-source
 While I can claim none of the credit for the code, it is still
 satisfying to watch my very first open source project still on its feet,
 teetering around like a drunken toddler.&lt;/p&gt;
-</content><category term="lemonade"></category><category term="sugar"></category></entry><entry><title>Wikiotics</title><link href="http://nathanielca.se/fossrit/wikiotics.html" rel="alternate"></link><published>2010-09-20T19:45:00-04:00</published><updated>2010-09-20T19:45:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2010-09-20:/fossrit/wikiotics.html</id><summary type="html">&lt;p&gt;As of Friday, I have been doing some work (along with &lt;a class="reference external" href="http://trosehfoss.blogspot.com/"&gt;Taylor&lt;/a&gt; for a
+</content><category term="FOSS@RIT"></category><category term="lemonade"></category><category term="sugar"></category></entry><entry><title>Wikiotics</title><link href="http://blog.katherineca.se/fossrit/wikiotics.html" rel="alternate"></link><published>2010-09-20T19:45:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-09-20:/fossrit/wikiotics.html</id><summary type="html">&lt;p&gt;As of Friday, I have been doing some work (along with &lt;a class="reference external" href="http://trosehfoss.blogspot.com/"&gt;Taylor&lt;/a&gt; for a
 new set of people, &lt;a class="reference external" href="http://alpha.wikiotics.org"&gt;Wikiotics&lt;/a&gt;. Their goal is basically to create a
 FLOSS alternative to some of the commercial translation software out
 there, particularly the ever-so-expensive Rosetta Stone. The whole thing
@@ -860,4 +856,4 @@ We're still figuring out where everyone stands with development. I think
 the guys at ductus are pleasantly surprised at how much we already have
 under our belts here at the FOSSBOX. But that's just how we roll here at
 RIT.&lt;/p&gt;
-</content><category term="wikiotics"></category></entry></feed>
+</content><category term="FOSS@RIT"></category><category term="wikiotics"></category></entry></feed>

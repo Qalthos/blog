@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut? - wat</title><link href="http://nathanielca.se/" rel="alternate"></link><link href="http://nathanielca.se/feeds/tag/wat.atom.xml" rel="self"></link><id>http://nathanielca.se/</id><updated>2013-06-01T20:46:00-04:00</updated><entry><title>A note on lxml</title><link href="http://nathanielca.se/fossrit/a-note-on-lxml.html" rel="alternate"></link><published>2013-06-01T20:46:00-04:00</published><updated>2013-06-01T20:46:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2013-06-01:/fossrit/a-note-on-lxml.html</id><summary type="html">&lt;p&gt;This post is being written from the &lt;a class="reference external" href="http://hackforchange.org/fossrit-rochester-civic-hackathon"&gt;Rochester edition&lt;/a&gt; of the
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut? - wat</title><link href="http://blog.katherineca.se/" rel="alternate"></link><link href="http://blog.katherineca.se/feeds/tag/wat.atom.xml" rel="self"></link><id>http://blog.katherineca.se/</id><updated>2022-12-07T14:07:06-05:00</updated><entry><title>A note on lxml</title><link href="http://blog.katherineca.se/fossrit/a-note-on-lxml.html" rel="alternate"></link><published>2013-06-01T20:46:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2013-06-01:/fossrit/a-note-on-lxml.html</id><summary type="html">&lt;p&gt;This post is being written from the &lt;a class="reference external" href="http://hackforchange.org/fossrit-rochester-civic-hackathon"&gt;Rochester edition&lt;/a&gt; of the
 &lt;a class="reference external" href="http://hackforchange.org"&gt;National Day of Civic Hacking&lt;/a&gt; hackathon.&lt;/p&gt;
 &lt;p&gt;I've been doing a lot of things with &lt;a class="reference external" href="http://pygal.org"&gt;pygal&lt;/a&gt; lately. It's a really neat tool
 for making SVG graphs in python. One 'problem' is that it needs &lt;a class="reference external" href="http://lxml.de"&gt;lxml&lt;/a&gt;, and
@@ -21,7 +21,7 @@ download its requirements for you. I don't know how legitimate this is for a
 Python install, but it was certainly quite useful for me and the others
 trying to use lxml. It even works inside a virtualenv, though I don't know why
 it wouldn't.&lt;/p&gt;
-</content><category term="hackathon"></category><category term="python"></category><category term="wat"></category></entry><entry><title>Just another ten-hour day</title><link href="http://nathanielca.se/civx/just-another-ten-hour-day.html" rel="alternate"></link><published>2010-09-09T18:11:00-04:00</published><updated>2010-09-09T18:11:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2010-09-09:/civx/just-another-ten-hour-day.html</id><summary type="html">&lt;p&gt;Today was another exciting day in CIVX-land.&lt;/p&gt;
+</content><category term="FOSS@RIT"></category><category term="hackathon"></category><category term="python"></category><category term="wat"></category></entry><entry><title>Just another ten-hour day</title><link href="http://blog.katherineca.se/civx/just-another-ten-hour-day.html" rel="alternate"></link><published>2010-09-09T18:11:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-09-09:/civx/just-another-ten-hour-day.html</id><summary type="html">&lt;p&gt;Today was another exciting day in CIVX-land.&lt;/p&gt;
 &lt;p&gt;tl;dr: I spend the day helping other people and being awesome
 It started out with the latest in a series of attempts at getting
 &lt;a class="reference external" href="http://www.rebeccanatalie.com"&gt;Rebecca&lt;/a&gt; to a working CIVX repo. As I work through this with her, I am
@@ -167,4 +167,4 @@ making sure my code was legible.&lt;/p&gt;
 &lt;p&gt;At that point, almost ten hours after I had started, I sat back,
 committed my final changes, and decompressed. *This*- this is why I
 love open source.&lt;/p&gt;
-</content><category term="peopledashboard"></category><category term="wat"></category></entry></feed>
+</content><category term="CIVX"></category><category term="peopledashboard"></category><category term="wat"></category></entry></feed>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut? - SURS</title><link href="http://nathanielca.se/" rel="alternate"></link><link href="http://nathanielca.se/feeds/tag/surs.atom.xml" rel="self"></link><id>http://nathanielca.se/</id><updated>2011-06-29T18:04:00-04:00</updated><entry><title>Multiprocessing the PolyScraper</title><link href="http://nathanielca.se/civx/multiprocessing-the-polyscraper.html" rel="alternate"></link><published>2011-06-29T18:04:00-04:00</published><updated>2011-06-29T18:04:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-06-29:/civx/multiprocessing-the-polyscraper.html</id><summary type="html">&lt;p&gt;Warning: This post was written at 4AM and contains a technical account
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut? - SURS</title><link href="http://blog.katherineca.se/" rel="alternate"></link><link href="http://blog.katherineca.se/feeds/tag/surs.atom.xml" rel="self"></link><id>http://blog.katherineca.se/</id><updated>2022-12-07T14:07:06-05:00</updated><entry><title>Multiprocessing the PolyScraper</title><link href="http://blog.katherineca.se/civx/multiprocessing-the-polyscraper.html" rel="alternate"></link><published>2011-06-29T18:04:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2011-06-29:/civx/multiprocessing-the-polyscraper.html</id><summary type="html">&lt;p&gt;Warning: This post was written at 4AM and contains a technical account
 of what I have been doing attempting to parallelize CIVX's internals. If
 you are looking for a more general overview of what I have been doing
 recently, you are better off looking to another one of my posts …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Warning: This post was written at 4AM and contains a technical account
@@ -44,7 +44,7 @@ At this point, though, I have been working on this project for close to
 20 hours today now. Luke is in town and we're all posted up in Remy's
 new place all hacking on our projects together. With any luck a good
 night's sleep will clear my head and give me new ideas for tomorrow.&lt;/p&gt;
-</content><category term="hackathon"></category><category term="SURS"></category><category term="polyscraper"></category></entry><entry><title>Back up to Speed</title><link href="http://nathanielca.se/civx/back-up-to-speed.html" rel="alternate"></link><published>2011-06-21T22:56:00-04:00</published><updated>2011-06-21T22:56:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-06-21:/civx/back-up-to-speed.html</id><summary type="html">&lt;p&gt;I've almost closed &lt;a class="reference external" href="https://fedorahosted.org/civx/ticket/106"&gt;bug #106&lt;/a&gt;. I've done all I can do for now, until I
+</content><category term="CIVX"></category><category term="hackathon"></category><category term="SURS"></category><category term="polyscraper"></category></entry><entry><title>Back up to Speed</title><link href="http://blog.katherineca.se/civx/back-up-to-speed.html" rel="alternate"></link><published>2011-06-21T22:56:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2011-06-21:/civx/back-up-to-speed.html</id><summary type="html">&lt;p&gt;I've almost closed &lt;a class="reference external" href="https://fedorahosted.org/civx/ticket/106"&gt;bug #106&lt;/a&gt;. I've done all I can do for now, until I
 can figure out how to attribute actions to senators. Until then, I
 should comment out the 'actions' tab tomorrow with a note letting
 whoever tries this next what I've already tried.
@@ -136,7 +136,7 @@ that I really understand Python's Unicode in a way I never grasped
 before. This should definitely help in the future as Unicode is a very
 important part of coding portable applications and that's something I
 want to do.&lt;/p&gt;
-</content><category term="peopledashboard"></category><category term="widgets"></category><category term="scrapers"></category><category term="SURS"></category></entry><entry><title>Shelves and Shoves</title><link href="http://nathanielca.se/civx/shelves-and-shoves.html" rel="alternate"></link><published>2011-06-21T22:56:00-04:00</published><updated>2011-06-21T22:56:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-06-21:/civx/shelves-and-shoves.html</id><summary type="html">&lt;p&gt;Today is the day to hit &lt;a class="reference external" href="https://fedorahosted.org/civx/ticket/105"&gt;bug #105&lt;/a&gt;, another of the leftover bugs from
+</content><category term="CIVX"></category><category term="peopledashboard"></category><category term="widgets"></category><category term="scrapers"></category><category term="SURS"></category></entry><entry><title>Shelves and Shoves</title><link href="http://blog.katherineca.se/civx/shelves-and-shoves.html" rel="alternate"></link><published>2011-06-21T22:56:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2011-06-21:/civx/shelves-and-shoves.html</id><summary type="html">&lt;p&gt;Today is the day to hit &lt;a class="reference external" href="https://fedorahosted.org/civx/ticket/105"&gt;bug #105&lt;/a&gt;, another of the leftover bugs from
 last year.
 The story goes something like this: there's a lot of data on
 nysenate.gov that is nice to have, but asking for that info on every
@@ -190,7 +190,7 @@ pull smaller volumes of data at a time, hopefully speeding up the
 process.
 We'll see where I get tomorrow, but so far I'm feeling pretty good about
 all this.&lt;/p&gt;
-</content><category term="peopledashboard"></category><category term="widgets"></category><category term="scrapers"></category><category term="SURS"></category></entry><entry><title>Summer of CIVX</title><link href="http://nathanielca.se/civx/summer-of-civx.html" rel="alternate"></link><published>2011-06-21T22:56:00-04:00</published><updated>2011-06-21T22:56:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-06-21:/civx/summer-of-civx.html</id><summary type="html">&lt;p&gt;So I'm back at RIT for the summer working on CIVX again. There's been a
+</content><category term="CIVX"></category><category term="peopledashboard"></category><category term="widgets"></category><category term="scrapers"></category><category term="SURS"></category></entry><entry><title>Summer of CIVX</title><link href="http://blog.katherineca.se/civx/summer-of-civx.html" rel="alternate"></link><published>2011-06-21T22:56:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2011-06-21:/civx/summer-of-civx.html</id><summary type="html">&lt;p&gt;So I'm back at RIT for the summer working on CIVX again. There's been a
 lot of development on Moksha, the software stack CIVX runs on, and not
 all of it was a trivial update. Still, many of the problems I
 encountered were definitely my fault, not the least of …&lt;/p&gt;</summary><content type="html">&lt;p&gt;So I'm back at RIT for the summer working on CIVX again. There's been a
@@ -209,7 +209,7 @@ I'm actually surprised how quickly I was able to work this out, though
 of course this is not even remotely new to me. But despite nearly a year
 of inactivity on the project I seem to have gotten back into the swing
 of it pretty well.&lt;/p&gt;
-</content><category term="peopledashboard"></category><category term="widgets"></category><category term="SURS"></category></entry><entry><title>The Last Week</title><link href="http://nathanielca.se/civx/the-last-week.html" rel="alternate"></link><published>2011-06-21T22:56:00-04:00</published><updated>2011-06-21T22:56:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-06-21:/civx/the-last-week.html</id><summary type="html">&lt;p&gt;This week has been a mess for a lot of reasons. Let's see what I managed
+</content><category term="CIVX"></category><category term="peopledashboard"></category><category term="widgets"></category><category term="SURS"></category></entry><entry><title>The Last Week</title><link href="http://blog.katherineca.se/civx/the-last-week.html" rel="alternate"></link><published>2011-06-21T22:56:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2011-06-21:/civx/the-last-week.html</id><summary type="html">&lt;p&gt;This week has been a mess for a lot of reasons. Let's see what I managed
 to get through so far.
 One of the things I got to look at this week is threebean's mokshactl
 branch of CIVX and Moksha. This is a project to simplify the
@@ -236,7 +236,7 @@ polyscraper, but that's nothing worth mentioning at this point. Between
 that and some internal matters and hours of meetings and my car
 developing a leak in it's brake line, that's all that went down this
 week. Tomorrow I get to drive home and hopefully fix my car properly.&lt;/p&gt;
-</content><category term="peopledashboard"></category><category term="widgets"></category><category term="scrapers"></category><category term="SURS"></category><category term="fabulous"></category></entry><entry><title>Grokking the Core</title><link href="http://nathanielca.se/civx/grokking-the-core.html" rel="alternate"></link><published>2011-06-21T22:55:00-04:00</published><updated>2011-06-21T22:55:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-06-21:/civx/grokking-the-core.html</id><summary type="html">&lt;p&gt;This week begins the real dive into the core of what makes CIVX. Today
+</content><category term="CIVX"></category><category term="peopledashboard"></category><category term="widgets"></category><category term="scrapers"></category><category term="SURS"></category><category term="fabulous"></category></entry><entry><title>Grokking the Core</title><link href="http://blog.katherineca.se/civx/grokking-the-core.html" rel="alternate"></link><published>2011-06-21T22:55:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2011-06-21:/civx/grokking-the-core.html</id><summary type="html">&lt;p&gt;This week begins the real dive into the core of what makes CIVX. Today
 (and yesterday, though yesterday hardly counts as a real day) were spent
 adding major functionality to the polyscraper, something that's been
 overdue for a long time now.
@@ -273,4 +273,4 @@ understand the underlying structure of everything. Every day I learn
 more about what goes on inside this machine, and every day marks another
 set of tools I've learned to wield. I can't wait to see how far I get by
 the end of the summer.&lt;/p&gt;
-</content><category term="scrapers"></category><category term="SURS"></category><category term="polyscraper"></category></entry></feed>
+</content><category term="CIVX"></category><category term="scrapers"></category><category term="SURS"></category><category term="polyscraper"></category></entry></feed>

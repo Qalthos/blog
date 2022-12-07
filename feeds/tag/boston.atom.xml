@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut? - Boston</title><link href="http://nathanielca.se/" rel="alternate"></link><link href="http://nathanielca.se/feeds/tag/boston.atom.xml" rel="self"></link><id>http://nathanielca.se/</id><updated>2011-01-23T07:14:00-05:00</updated><entry><title>Boston</title><link href="http://nathanielca.se/civx/boston.html" rel="alternate"></link><published>2011-01-23T07:14:00-05:00</published><updated>2011-01-23T07:14:00-05:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-01-23:/civx/boston.html</id><summary type="html">&lt;p&gt;So here we are in OLPC HQ, right in the middle of MIT. It's pretty sweet
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut? - Boston</title><link href="http://blog.katherineca.se/" rel="alternate"></link><link href="http://blog.katherineca.se/feeds/tag/boston.atom.xml" rel="self"></link><id>http://blog.katherineca.se/</id><updated>2022-12-07T14:07:06-05:00</updated><entry><title>Boston</title><link href="http://blog.katherineca.se/civx/boston.html" rel="alternate"></link><published>2011-01-23T07:14:00-05:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2011-01-23:/civx/boston.html</id><summary type="html">&lt;p&gt;So here we are in OLPC HQ, right in the middle of MIT. It's pretty sweet
 having &lt;a class="reference external" href="http://lewk.org/"&gt;Luke&lt;/a&gt; around again to hack CIVX with us.
 I've had a lot to do in the past few days. Remy's been showing me
 scrapers and models, and I've been helping transition &lt;a class="reference external" href="http://foss.rit.edu/user/17"&gt;Kate's&lt;/a&gt; people …&lt;/p&gt;</summary><content type="html">&lt;p&gt;So here we are in OLPC HQ, right in the middle of MIT. It's pretty sweet
@@ -20,4 +20,4 @@ projects, tossing ideas about and getting input from a few members
 upstream, not to mention the whole OLPC offices around the corner- this
 was a right proper hackathon, and something that makes me excited for the
 future of these projects.&lt;/p&gt;
-</content><category term="peopledashboard"></category><category term="hackathon"></category><category term="widgets"></category><category term="Boston"></category></entry></feed>
+</content><category term="CIVX"></category><category term="peopledashboard"></category><category term="hackathon"></category><category term="widgets"></category><category term="Boston"></category></entry></feed>

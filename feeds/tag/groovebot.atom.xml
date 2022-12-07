@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut? - groovebot</title><link href="http://nathanielca.se/" rel="alternate"></link><link href="http://nathanielca.se/feeds/tag/groovebot.atom.xml" rel="self"></link><id>http://nathanielca.se/</id><updated>2015-05-11T17:28:00-04:00</updated><entry><title>GrooveBot 2015</title><link href="http://nathanielca.se/personal/groovebot-2015.html" rel="alternate"></link><published>2015-05-11T17:28:00-04:00</published><updated>2015-05-11T17:28:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2015-05-11:/personal/groovebot-2015.html</id><summary type="html">&lt;p&gt;So &lt;a class="reference external" href="http://www.grooveshark.com/"&gt;GrooveShark&lt;/a&gt; shut down a few days ago.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut? - groovebot</title><link href="http://blog.katherineca.se/" rel="alternate"></link><link href="http://blog.katherineca.se/feeds/tag/groovebot.atom.xml" rel="self"></link><id>http://blog.katherineca.se/</id><updated>2022-12-07T14:32:44-05:00</updated><entry><title>GrooveBot 2015</title><link href="http://blog.katherineca.se/personal/groovebot-2015.html" rel="alternate"></link><published>2015-05-11T17:28:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2015-05-11:/personal/groovebot-2015.html</id><summary type="html">&lt;p&gt;So &lt;a class="reference external" href="http://www.grooveshark.com/"&gt;GrooveShark&lt;/a&gt; shut down a few days ago.&lt;/p&gt;
 &lt;p&gt;I haven't really followed them much since I took over the original &lt;a class="reference external" href="https://github.com/Qalthos/groovebot"&gt;GrooveBot&lt;/a&gt;
 codebase &lt;a class="reference external" href="/personal/groovebot-updates.html"&gt;sometime in 2011&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;But now GrooveBot's namesake is gone, which marks a neat sort of milestone for
@@ -15,7 +15,7 @@ gained.&lt;/p&gt;
 &lt;p&gt;When I was last fiddling with GrooveBot sometime in 2014, I came to a sudden
 realization. If I wanted to subject the people of the FOSSBox to the mad fever
 dream of Smash Mouth mashups that is &lt;a class="reference external" href="http://neilcic.com"&gt;Neil Cicierega&lt;/a&gt;'s &lt;a class="reference external" href="http://neilcic.com/mouthsounds"&gt;Mouth Sounds&lt;/a&gt;, I
-would have to add some form of SoundCloud integration &lt;a class="footnote-reference" href="#need" id="id1"&gt;[1]&lt;/a&gt;.&lt;/p&gt;
+would have to add some form of SoundCloud integration &lt;a class="footnote-reference" href="#need" id="footnote-reference-1"&gt;[1]&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;At the time, I was busy working on one of the issues that had been annoying me
 (and others) since the bot's early beginnings, namely the lack of a permanent
 queue that persisted through crashes (and live-coding restarts). Along with that
@@ -28,12 +28,12 @@ dropping in a new backend instead.&lt;/p&gt;
 ridiculous mashup album with &lt;a class="reference external" href="http://neilcic.com/mouthsilence"&gt;Mouth Silence&lt;/a&gt;, but has also been posting a
 number of not-yet-albumized music to SoundCloud individually. So, I took a look
 through SoundCloud's &lt;a class="reference external" href="https://developers.soundcloud.com/docs/api/guide"&gt;API&lt;/a&gt;, and went through some of GrooveBot's less atrophied
-backends &lt;a class="footnote-reference" href="#old" id="id2"&gt;[2]&lt;/a&gt;, and put together a new version that supports SoundCloud.&lt;/p&gt;
+backends &lt;a class="footnote-reference" href="#old" id="footnote-reference-2"&gt;[2]&lt;/a&gt;, and put together a new version that supports SoundCloud.&lt;/p&gt;
 &lt;p&gt;And then I proceeded to play &lt;a class="reference external" href="https://soundcloud.com/neilcic/bustin"&gt;Bustin'&lt;/a&gt; on repeat for a while.&lt;/p&gt;
 &lt;table class="docutils footnote" frame="void" id="need" rules="none"&gt;
 &lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
 &lt;tbody valign="top"&gt;
-&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Well, I mean, I could use the mpd backend, but without multiple
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#footnote-reference-1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Well, I mean, I could use the mpd backend, but without multiple
 backend support, the pool of music would get stale quickly, and as much as
 this is a project to force my musical tastes onto others, it is important to
 me to let them do the same to me in return.&lt;/td&gt;&lt;/tr&gt;
@@ -42,7 +42,7 @@ me to let them do the same to me in return.&lt;/td&gt;&lt;/tr&gt;
 &lt;table class="docutils footnote" frame="void" id="old" rules="none"&gt;
 &lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
 &lt;tbody valign="top"&gt;
-&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id2"&gt;[2]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;The 2014 changes I mentioned were actually pretty deep in scope, and
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#footnote-reference-2"&gt;[2]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;The 2014 changes I mentioned were actually pretty deep in scope, and
 while I am happier with where the bot is now, for a while Spotify was the
 only supported backend because it was the only one in use, and the only one
 that made the switch. Obviously now SoundCloud works, and I think MPD should
@@ -50,7 +50,7 @@ be working, but Pandora has been broken for years, and GrooveShark never
 worked in the first place.&lt;/td&gt;&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-</content><category term="groovebot"></category></entry><entry><title>Recent Projects: Groovebot</title><link href="http://nathanielca.se/personal/recent-projects-groovebot.html" rel="alternate"></link><published>2012-07-24T18:47:00-04:00</published><updated>2012-07-24T18:47:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2012-07-24:/personal/recent-projects-groovebot.html</id><summary type="html">&lt;p&gt;This is the first of a number of posts meant to overview the things I've
+</content><category term="personal"></category><category term="groovebot"></category></entry><entry><title>Recent Projects: Groovebot</title><link href="http://blog.katherineca.se/personal/recent-projects-groovebot.html" rel="alternate"></link><published>2012-07-24T18:47:00-04:00</published><updated>2022-12-07T14:32:44-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2012-07-24:/personal/recent-projects-groovebot.html</id><summary type="html">&lt;p&gt;This is the first of a number of posts meant to overview the things I've
 been doing recently. First up on the list is the long-overdue
 &lt;a class="reference external" href="https://github.com/Qalthos/groovebot"&gt;Groovebot&lt;/a&gt; update.&lt;/p&gt;
 &lt;p&gt;Before this summer, Groovebot 'worked' on &lt;a class="reference external" href="http://spotify.com/"&gt;Spotify&lt;/a&gt;, and also had a
@@ -111,7 +111,7 @@ second bot. This second bot has all the work I've been doing lately and,
 some few remaining problems aside, mostly work. Ideally, I will soon
 have a better host for the bot that will let me run Spotify, but for now
 Pandora is working well enough.&lt;/p&gt;
-&lt;/p&gt;</content><category term="groovebot"></category></entry><entry><title>GrooveBot updates</title><link href="http://nathanielca.se/personal/groovebot-updates.html" rel="alternate"></link><published>2011-09-28T01:28:00-04:00</published><updated>2011-09-28T01:28:00-04:00</updated><author><name>Nathaniel Case</name></author><id>tag:nathanielca.se,2011-09-28:/personal/groovebot-updates.html</id><summary type="html">&lt;p&gt;Today I'm going to talk about something a bit more understandable, I
+</content><category term="personal"></category><category term="groovebot"></category></entry><entry><title>GrooveBot updates</title><link href="http://blog.katherineca.se/personal/groovebot-updates.html" rel="alternate"></link><published>2011-09-28T01:28:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2011-09-28:/personal/groovebot-updates.html</id><summary type="html">&lt;p&gt;Today I'm going to talk about something a bit more understandable, I
 hope.&lt;/p&gt;
 &lt;p&gt;Back around the summer of 2010, the FOSSBox wanted some ambient music to
 play in the background. One of the things we wanted was a way to have
@@ -150,4 +150,4 @@ Hopefully, when a new, free music API becomes available that we can hook
 into, it should be easier to reimplement those functions in a more
 general way so that multiple backends can be used for a more varied
 music experience. And then we can get back to the OS grooving.&lt;/p&gt;
-</content><category term="groovebot"></category></entry></feed>
+</content><category term="personal"></category><category term="groovebot"></category></entry></feed>
