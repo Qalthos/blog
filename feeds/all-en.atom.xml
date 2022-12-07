@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://blog.katherineca.se/" rel="alternate"></link><link href="http://blog.katherineca.se/feeds/all-en.atom.xml" rel="self"></link><id>http://blog.katherineca.se/</id><updated>2022-12-07T16:55:29-05:00</updated><entry><title>Hello Again</title><link href="http://blog.katherineca.se/personal/hello-again.html" rel="alternate"></link><published>2022-12-07T16:08:00-05:00</published><updated>2022-12-07T16:55:29-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2022-12-07:/personal/hello-again.html</id><summary type="html">&lt;p&gt;I've thought a lot about writing this post.&lt;/p&gt;
-&lt;p&gt;I've also thought a lot about &lt;em&gt;not&lt;/em&gt; writing it, and just leaving the whole thingup as a semipermanent memorial to he-who-never-really-was.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://blog.katherineca.se/" rel="alternate"></link><link href="http://blog.katherineca.se/feeds/all-en.atom.xml" rel="self"></link><id>http://blog.katherineca.se/</id><updated>2022-12-07T17:00:07-05:00</updated><entry><title>Hello Again</title><link href="http://blog.katherineca.se/personal/hello-again.html" rel="alternate"></link><published>2022-12-07T16:08:00-05:00</published><updated>2022-12-07T17:00:07-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2022-12-07:/personal/hello-again.html</id><summary type="html">&lt;p&gt;I've thought a lot about writing this post.&lt;/p&gt;
+&lt;p&gt;I've also thought a lot about &lt;em&gt;not&lt;/em&gt; writing it, and just leaving the whole thing
+up as a semipermanent memorial to he-who-never-really-was.&lt;/p&gt;
 &lt;p&gt;But then I got to fixing up the domain redirects, and then I noticed the content
-errors, and got around to …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I've thought a lot about writing this post.&lt;/p&gt;
-&lt;p&gt;I've also thought a lot about &lt;em&gt;not&lt;/em&gt; writing it, and just leaving the whole thingup as a semipermanent memorial to he-who-never-really-was.&lt;/p&gt;
+errors, and got around …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I've thought a lot about writing this post.&lt;/p&gt;
+&lt;p&gt;I've also thought a lot about &lt;em&gt;not&lt;/em&gt; writing it, and just leaving the whole thing
+up as a semipermanent memorial to he-who-never-really-was.&lt;/p&gt;
 &lt;p&gt;But then I got to fixing up the domain redirects, and then I noticed the content
 errors, and got around to fixing rather a lot of things that had piled up in the
 last nine years since I'd last updated this and that meant taking some time to
