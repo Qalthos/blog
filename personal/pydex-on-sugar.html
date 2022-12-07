@@ -3,7 +3,7 @@
 <head>
   <title>pyDex on Sugar</title>
   <meta charset="utf-8" />
-    <link rel="stylesheet" href="http://blog.katherineca.se/theme/css/main.min.css?6f94adab" type="text/css" />
+    <link rel="stylesheet" href="http://blog.katherineca.se/theme/css/main.min.css?1f773f3a" type="text/css" />
       <link href="http://blog.katherineca.se/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Why Not Wingnut? Atom Feed" />
 
   <!--[if IE]>
@@ -58,15 +58,15 @@ tl;dr: I have a new pyDex branch which *should* run on the OLPC
 A few days ago, I decided I'd finally see how well pyDex runs on the
 OLPC. Turns out, it runs pretty well, which isn't too surprising as it
 is written in pure pyGTK and Glade, both of which are well supported in
-Sugar.
-So today, I loaded up my dev files and set to work. First, though, I had
+Sugar.</p>
+<p>So today, I loaded up my dev files and set to work. First, though, I had
 to clean up my dev branch and finish committing the few hacks I had
 accumulated over the last few months. I finally fixed the zero index bug
 and found I had a problem in my new scraper that was causing all the
 evolution problems. In any case, that's all fixed, so my dev branch is
 nice and clean and almost ready for the Black/White release in a few
-weeks.
-Getting back to Sugar, I finally found <a class="reference external" href="http://magazine.redhat.com/2007/04/26/building-the-xo-porting-a-pygtk-game-to-sugar-part-two/">a good tutorial</a> on *porting*
+weeks.</p>
+<p>Getting back to Sugar, I finally found <a class="reference external" href="http://magazine.redhat.com/2007/04/26/building-the-xo-porting-a-pygtk-game-to-sugar-part-two/">a good tutorial</a> on *porting*
 a pyGTK program rather than writing a new one. While admittedly I
 haven't looked very hard, I had had a bit of a problem getting past the
 example activity before, probably due to my use of Glade as I cannot
@@ -75,8 +75,8 @@ Glade's XML and I really don't feel like defining everything in code.
 The most useful thing I found in this tutorial is sending different
 parents to the main panel depending on where it is called from. So if we
 call the program normally, main_window is still loaded from Glade, but
-if Sugar loads it, we use their prebuilt panel.
-It still needs to be tested, and I need to add actual activity
+if Sugar loads it, we use their prebuilt panel.</p>
+<p>It still needs to be tested, and I need to add actual activity
 information (and an icon eventually), but I think it should work. I'll
 probably get to test it sometime this weekend, maybe even turn it into a
 real activity by then. This is still just a small project, and I doubt

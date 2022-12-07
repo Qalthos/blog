@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://blog.katherineca.se/" rel="alternate"></link><link href="http://blog.katherineca.se/feeds/all-en.atom.xml" rel="self"></link><id>http://blog.katherineca.se/</id><updated>2022-12-07T14:32:44-05:00</updated><entry><title>Fail2ban woes</title><link href="http://blog.katherineca.se/personal/fail2ban-woes.html" rel="alternate"></link><published>2017-08-24T16:30:00-04:00</published><updated>2022-12-07T14:28:30-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2017-08-24:/personal/fail2ban-woes.html</id><summary type="html">&lt;p&gt;So I had a bit of a scare this morning.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut?</title><link href="http://blog.katherineca.se/" rel="alternate"></link><link href="http://blog.katherineca.se/feeds/all-en.atom.xml" rel="self"></link><id>http://blog.katherineca.se/</id><updated>2022-12-07T16:02:11-05:00</updated><entry><title>Fail2ban woes</title><link href="http://blog.katherineca.se/personal/fail2ban-woes.html" rel="alternate"></link><published>2017-08-24T16:30:00-04:00</published><updated>2022-12-07T14:28:30-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2017-08-24:/personal/fail2ban-woes.html</id><summary type="html">&lt;p&gt;So I had a bit of a scare this morning.&lt;/p&gt;
 &lt;p&gt;I'm in a hotel in North Carolina, hundreds of miles from my server, when I try to log in and get a &amp;quot;Connection refused&amp;quot; error. Phooey. I hope the hotel wifi is just filtering port 22 for some terrible reason …&lt;/p&gt;</summary><content type="html">&lt;p&gt;So I had a bit of a scare this morning.&lt;/p&gt;
 &lt;p&gt;I'm in a hotel in North Carolina, hundreds of miles from my server, when I try to log in and get a &amp;quot;Connection refused&amp;quot; error. Phooey. I hope the hotel wifi is just filtering port 22 for some terrible reason, and hop to a friend's server over a non-standard port and I'm in. Great! I type out the connection again and...&lt;/p&gt;
 &lt;p&gt;Connection refused&lt;/p&gt;
@@ -143,7 +143,7 @@ documentation.&lt;/p&gt;
 of me figure out how to enable this simply without changing a large number of
 SELinux booleans. There may be some simpler way of accomplishing this, but alas,
 in this case SELinux has once again bested me.&lt;/p&gt;
-</content><category term="FOSS@RIT"></category><category term="mediagoblin"></category><category term="yacht"></category><category term="SELinux"></category></entry><entry><title>Deploying MediaGoblin 1: FastCGI vs uWSGI</title><link href="http://blog.katherineca.se/fossrit/deploying-mediagoblin-1-fastcgi-vs-uwsgi.html" rel="alternate"></link><published>2013-09-23T13:20:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2013-09-23:/fossrit/deploying-mediagoblin-1-fastcgi-vs-uwsgi.html</id><summary type="html">&lt;p&gt;Last week I did a thing I really wasn't expecting to. I deployed
+</content><category term="FOSS@RIT"></category><category term="mediagoblin"></category><category term="yacht"></category><category term="SELinux"></category></entry><entry><title>Deploying MediaGoblin 1: FastCGI vs uWSGI</title><link href="http://blog.katherineca.se/fossrit/deploying-mediagoblin-1-fastcgi-vs-uwsgi.html" rel="alternate"></link><published>2013-09-23T13:20:00-04:00</published><updated>2022-12-07T15:03:23-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2013-09-23:/fossrit/deploying-mediagoblin-1-fastcgi-vs-uwsgi.html</id><summary type="html">&lt;p&gt;Last week I did a thing I really wasn't expecting to. I deployed
 &lt;a class="reference external" href="http://mediagoblin.org"&gt;MediaGoblin&lt;/a&gt; to FOSS&amp;#64;RIT's yacht server &lt;a class="reference external" href="http://yacht.rit.edu/mediagoblin/"&gt;here&lt;/a&gt;. The initial setup and
 &lt;a class="reference external" href="https://mediagoblin.readthedocs.org/en/v0.5.0/siteadmin/deploying.html"&gt;instructions&lt;/a&gt; are some of the clearest and straightforward I have seen in an
 open-source project.&lt;/p&gt;
@@ -201,34 +201,21 @@ uWSGI. This is a bit complicated as &lt;tt class="docutils literal"&gt;lazyserve
 &lt;tt class="docutils literal"&gt;lazycelery.sh&lt;/tt&gt; are all actually the same file, with certain things changing
 depending on the name by which it is invoked. I changed two sections &lt;a class="footnote-reference" href="#footnote-1" id="footnote-reference-1"&gt;[1]&lt;/a&gt;,
 first:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;local_bin&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;./bin&amp;quot;&lt;/span&gt;
-&lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$selfname&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt;
-    lazyserver.sh&lt;span class="o"&gt;)&lt;/span&gt;
-        &lt;span class="nv"&gt;starter_cmd&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;paster
-        &lt;span class="nv"&gt;ini_prefix&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;paste
-        &lt;span class="p"&gt;;;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;became:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;local_bin&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;./bin&amp;quot;&lt;/span&gt;
-&lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$selfname&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt;
-    lazyserver.sh&lt;span class="o"&gt;)&lt;/span&gt;
-        &lt;span class="nv"&gt;starter_cmd&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;uwsgi
-        &lt;span class="nv"&gt;ini_prefix&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;paste
-        &lt;span class="p"&gt;;;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt; local_bin=&amp;quot;./bin&amp;quot;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt; &lt;/span&gt; case &amp;quot;$selfname&amp;quot; in&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt; &lt;/span&gt;     lazyserver.sh)&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="gd"&gt;-         starter_cmd=paster&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="gi"&gt;+         starter_cmd=uwsgi&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt; &lt;/span&gt;         ini_prefix=paste&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt; &lt;/span&gt;         ;;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;And then near the very end of the file:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;CELERY_ALWAYS_EAGER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
-&lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$selfname&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt;
-    lazyserver.sh&lt;span class="o"&gt;)&lt;/span&gt;
-        &lt;span class="nv"&gt;$starter&lt;/span&gt; serve &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$ini_file&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$@&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; --reload
-        &lt;span class="p"&gt;;;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;became:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;CELERY_ALWAYS_EAGER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
-&lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$selfname&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt;
-    lazyserver.sh&lt;span class="o"&gt;)&lt;/span&gt;
-        &lt;span class="nv"&gt;$starter&lt;/span&gt; --plugin python --virtualenv . --ini-paste &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$ini_file&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$@&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
-        &lt;span class="p"&gt;;;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt; export CELERY_ALWAYS_EAGER=true&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt; &lt;/span&gt; case &amp;quot;$selfname&amp;quot; in&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt; &lt;/span&gt;     lazyserver.sh)&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="gd"&gt;-         $starter serve &amp;quot;$ini_file&amp;quot; &amp;quot;$@&amp;quot; --reload&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="gi"&gt;+         $starter --plugin python --virtualenv . --ini-paste &amp;quot;$ini_file&amp;quot; &amp;quot;$@&amp;quot;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt; &lt;/span&gt;         ;;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This method allows you to keep using all the information on how to run
 MediaGoblin from paste.ini, while using uWSGI to do all the heavy lifting.
@@ -419,7 +406,7 @@ through.&lt;/p&gt;
 &lt;p&gt;One of the casualties of the move was the comments. Pelican does not handle
 comments on its own, and while I can hook up a specialized service like Disqus,
 I've decided that it isn't worth the effort at present.&lt;/p&gt;
-</content><category term="meta"></category><category term="blog"></category></entry><entry><title>American Greetings Hackathon Followup</title><link href="http://blog.katherineca.se/fossrit/american-greetings-hackathon-followup.html" rel="alternate"></link><published>2013-01-24T22:33:00-05:00</published><updated>2022-12-07T14:30:39-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2013-01-24:/fossrit/american-greetings-hackathon-followup.html</id><summary type="html">&lt;p&gt;Last weekend was the &lt;a class="reference external" href="http://foss.rit.edu/node/425"&gt;American Greetings Hackathon&lt;/a&gt;, and it was one of
+</content><category term="meta"></category><category term="blog"></category></entry><entry><title>American Greetings Hackathon Followup</title><link href="http://blog.katherineca.se/fossrit/american-greetings-hackathon-followup.html" rel="alternate"></link><published>2013-01-24T22:33:00-05:00</published><updated>2022-12-07T15:26:07-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2013-01-24:/fossrit/american-greetings-hackathon-followup.html</id><summary type="html">&lt;p&gt;Last weekend was the &lt;a class="reference external" href="http://foss.rit.edu/node/425"&gt;American Greetings Hackathon&lt;/a&gt;, and it was one of
 the most successful yet. We got more than 70 people attending and
 working on projects, and most of those projects had at least something
 working by the end of the 24 hours.&lt;/p&gt;
@@ -848,20 +835,20 @@ Hopefully, when a new, free music API becomes available that we can hook
 into, it should be easier to reimplement those functions in a more
 general way so that multiple backends can be used for a more varied
 music experience. And then we can get back to the OS grooving.&lt;/p&gt;
-</content><category term="personal"></category><category term="groovebot"></category></entry><entry><title>Multiprocessing the PolyScraper</title><link href="http://blog.katherineca.se/civx/multiprocessing-the-polyscraper.html" rel="alternate"></link><published>2011-06-29T18:04:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2011-06-29:/civx/multiprocessing-the-polyscraper.html</id><summary type="html">&lt;p&gt;Warning: This post was written at 4AM and contains a technical account
+</content><category term="personal"></category><category term="groovebot"></category></entry><entry><title>Multiprocessing the PolyScraper</title><link href="http://blog.katherineca.se/civx/multiprocessing-the-polyscraper.html" rel="alternate"></link><published>2011-06-29T18:04:00-04:00</published><updated>2022-12-07T15:55:10-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2011-06-29:/civx/multiprocessing-the-polyscraper.html</id><summary type="html">&lt;p&gt;Warning: This post was written at 4AM and contains a technical account
 of what I have been doing attempting to parallelize CIVX's internals. If
 you are looking for a more general overview of what I have been doing
 recently, you are better off looking to another one of my posts …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Warning: This post was written at 4AM and contains a technical account
 of what I have been doing attempting to parallelize CIVX's internals. If
 you are looking for a more general overview of what I have been doing
-recently, you are better off looking to another one of my posts.
-Recently, I have been working on CIVX's PolyScraper, a neat little piece
+recently, you are better off looking to another one of my posts.&lt;/p&gt;
+&lt;p&gt;Recently, I have been working on CIVX's PolyScraper, a neat little piece
 of code designed to be able to read and understand structured text
 without knowing how the text is structured beforehand. On Thursday, I
 let a test scrape of a rather large dataset start, figuring it would
 finish sometime over the weekend and I'd be able to pick it up on
-Monday. Then Monday rolled around, and the scrape was still running.
-Worse, it didn't seem to be taking full advantage of the available
+Monday. Then Monday rolled around, and the scrape was still running.&lt;/p&gt;
+&lt;p&gt;Worse, it didn't seem to be taking full advantage of the available
 resources. Running as it was on the boat, it had four cores at its
 disposal, however it was steadfastly using only one core.
 Now PolyScraping is not an inherently parallelizable task, but on large
@@ -871,12 +858,12 @@ numbers of large files, those types of tasks are usually sequential as
 you have a smaller number of resources blocking on read IO). Clearly
 there were other things to look into, but if I could do this, this would
 mean a huge win for offline scraping, which was one of the things I had
-enabled with my addition of local file support to the PolyScraper.
-This all led me to &lt;a class="reference external" href="http://docs.python.org/library/multiprocessing.html"&gt;multiprocessing&lt;/a&gt;, a library I'd been wanting to try
+enabled with my addition of local file support to the PolyScraper.&lt;/p&gt;
+&lt;p&gt;This all led me to &lt;a class="reference external" href="http://docs.python.org/library/multiprocessing.html"&gt;multiprocessing&lt;/a&gt;, a library I'd been wanting to try
 out in python for some time now. Without going into too much detail,
 multiprocessing attempts to get around the &lt;a class="reference external" href="http://docs.python.org/glossary.html#term-global-interpreter-lock"&gt;Global Interpreter Lock&lt;/a&gt; by
-spawning subprocesses instead of threads.
-The first attempt was written pretty quickly, as I still remember a lot
+spawning subprocesses instead of threads.&lt;/p&gt;
+&lt;p&gt;The first attempt was written pretty quickly, as I still remember a lot
 from my Parallel Computing class from a while ago. Indeed the main
 problem turned out to be SQLAlchemy, or, more specifically our use of
 sqlite for a backend db. Sqlite is not the most robust of databases and
@@ -884,35 +871,35 @@ can't really handle multiple processes attempting to write to the db at
 once. Luke suggested (and I would love to try) moving over to Postgres
 as we will eventually be doing on the boat, but unfortunately the boat
 has been 'stuck ashore' for some time now due to an extended outage in
-CSH's network.
-In the meantime I have been whittling the process down to what I think
+CSH's network.&lt;/p&gt;
+&lt;p&gt;In the meantime I have been whittling the process down to what I think
 is the essentials. In the process I have made a complete mess of the
 code concerning the PolyScraper, but I should be able to make things at
-least look like the way they were before too long.
-At this point, though, I have been working on this project for close to
+least look like the way they were before too long.&lt;/p&gt;
+&lt;p&gt;At this point, though, I have been working on this project for close to
 20 hours today now. Luke is in town and we're all posted up in Remy's
 new place all hacking on our projects together. With any luck a good
 night's sleep will clear my head and give me new ideas for tomorrow.&lt;/p&gt;
-</content><category term="CIVX"></category><category term="hackathon"></category><category term="SURS"></category><category term="polyscraper"></category></entry><entry><title>Back up to Speed</title><link href="http://blog.katherineca.se/civx/back-up-to-speed.html" rel="alternate"></link><published>2011-06-21T22:56:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2011-06-21:/civx/back-up-to-speed.html</id><summary type="html">&lt;p&gt;I've almost closed &lt;a class="reference external" href="https://fedorahosted.org/civx/ticket/106"&gt;bug #106&lt;/a&gt;. I've done all I can do for now, until I
+</content><category term="CIVX"></category><category term="hackathon"></category><category term="SURS"></category><category term="polyscraper"></category></entry><entry><title>Back up to Speed</title><link href="http://blog.katherineca.se/civx/back-up-to-speed.html" rel="alternate"></link><published>2011-06-21T22:56:00-04:00</published><updated>2022-12-07T15:51:45-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2011-06-21:/civx/back-up-to-speed.html</id><summary type="html">&lt;p&gt;I've almost closed &lt;a class="reference external" href="https://fedorahosted.org/civx/ticket/106"&gt;bug #106&lt;/a&gt;. I've done all I can do for now, until I
 can figure out how to attribute actions to senators. Until then, I
 should comment out the 'actions' tab tomorrow with a note letting
-whoever tries this next what I've already tried.
-There is still some …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I've almost closed &lt;a class="reference external" href="https://fedorahosted.org/civx/ticket/106"&gt;bug #106&lt;/a&gt;. I've done all I can do for now, until I
+whoever tries this next what I've already tried.&lt;/p&gt;
+&lt;p&gt;There is still some …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I've almost closed &lt;a class="reference external" href="https://fedorahosted.org/civx/ticket/106"&gt;bug #106&lt;/a&gt;. I've done all I can do for now, until I
 can figure out how to attribute actions to senators. Until then, I
 should comment out the 'actions' tab tomorrow with a note letting
-whoever tries this next what I've already tried.
-There is still some work to do in this code, particularly with fixing
+whoever tries this next what I've already tried.&lt;/p&gt;
+&lt;p&gt;There is still some work to do in this code, particularly with fixing
 the hacky Assembly scraping I wrote last year which also broke. However,
 considering that the Assembly is not currently one of the bits we are
 trying to expose (and they don't have a nice public API like the
-Senate), it probably won't get done for a little while.
-When I left yesterday, I had exposed the senator's social page, but none
+Senate), it probably won't get done for a little while.&lt;/p&gt;
+&lt;p&gt;When I left yesterday, I had exposed the senator's social page, but none
 of the other tabs were showing up. The problem for this turned out to be
 that the image representing the tab was corrupted and the text beneath
 it was white, making it overall look like the tab was invisible. Once I
 got a new image for the tab, they all suddenly appeared, though only the
-bills had any information.
-The next thing to fix was the scraping of the committees, whose pages
+bills had any information.&lt;/p&gt;
+&lt;p&gt;The next thing to fix was the scraping of the committees, whose pages
 had also changed subtly in the past few months. Fixing this was much
 less annoying than building them the first time, and I was able to
 remove a lot of old shims in the code from when I was first being
@@ -920,13 +907,13 @@ introduced to &lt;a class="reference external" href="http://www.crummy.com/softw
 particularly easy, and since BeautifulSoup is so powerful, I was able to
 restore access to the data with relative ease. As a bonus, as soon as I
 had committees back up, the tabs for votes and meetings came with it for
-free. Suddenly, I was almost there!
-The final problem I encountered today is actually not a new one, but one
+free. Suddenly, I was almost there!&lt;/p&gt;
+&lt;p&gt;The final problem I encountered today is actually not a new one, but one
 we struggled with last year, and one I now feel confident I have
 actually fixed and understand now. Once I got all the data pulling
 again, a few of the pages would crash the server with
-UnicodeDecodeErrors.
-As a warning, some heavy Python is about to come down
+UnicodeDecodeErrors.&lt;/p&gt;
+&lt;p&gt;As a warning, some heavy Python is about to come down
 UnicodeDecodeError is an error which happens (generally) when attempting
 to decode a string into a Unicode object. This is generally a great
 thing to do, as Python strings are generally encoded in the relatively
@@ -938,18 +925,18 @@ So why were we getting this error? The relevant line of code was 's =
 unicode(s)' and was contained within &lt;a class="reference external" href="http://pythonpaste.org/webob/#introduction"&gt;WebOb&lt;/a&gt; code, not something I was
 going to be able to modify successfully. Still, even this shouldn't be a
 problem. The purpose of this function is to turn strings to Unicode
-strings.
-Except I didn't have a string, I already had a Unicode string.
+strings.&lt;/p&gt;
+&lt;p&gt;Except I didn't have a string, I already had a Unicode string.
 Even this shouldn't be a problem, except that unicode() tries to
 interpret its input as a string and then turn it into a Unicode string.
 And while Unicode strings can be easily represented as normal strings,
 the default of the unicode() function is to try to interpret those
 strings as ASCII strings, and I had accents in the strings. These
 strings were representing the names of the senators, so I had to make
-sure it came out right.
-In order to solve this, I had to reversibly represent these names as a
-sequence of ASCII characters.
-There are a few ways to replace out-of-bound characters when changing
+sure it came out right.&lt;/p&gt;
+&lt;p&gt;In order to solve this, I had to reversibly represent these names as a
+sequence of ASCII characters.&lt;/p&gt;
+&lt;p&gt;There are a few ways to replace out-of-bound characters when changing
 strings into lesser encodings, and I had two useful ones to chose from.
 The obvious one to chose was to change the characters into XML character
 entities, however this quickly turned out to be insufficient. While
@@ -967,8 +954,8 @@ accurate as possible to the Senator's actual name, as it is going to be
 viewed publicly. The third, and the current stickler was the name in the
 URL. Again, this had to be authoritative but not necessarily accurate.
 This one, however, had to also only include web-safe characters, of
-which &amp;amp;, # and ; do not qualify.
-I mulled this over for a while, thinking up more and more elaborate
+which &amp;amp;, # and ; do not qualify.&lt;/p&gt;
+&lt;p&gt;I mulled this over for a while, thinking up more and more elaborate
 schemes for intercepting the names before they reached critical areas,
 but none of it was terribly good coding practice. After far too much
 thinking, I realized the obvious answer: have separate internal and
@@ -979,19 +966,19 @@ is something you should always keep in mind when programming around
 names. The display name, on the other hand, has none of the restrictions
 on characters (though it still needs to be ASCII to display properly),
 but by using XML entities, we can make any character we want without
-problems.
-This was a long path to take to get back to where we were, but I think
+problems.&lt;/p&gt;
+&lt;p&gt;This was a long path to take to get back to where we were, but I think
 that I really understand Python's Unicode in a way I never grasped
 before. This should definitely help in the future as Unicode is a very
 important part of coding portable applications and that's something I
 want to do.&lt;/p&gt;
-</content><category term="CIVX"></category><category term="peopledashboard"></category><category term="widgets"></category><category term="scrapers"></category><category term="SURS"></category></entry><entry><title>Shelves and Shoves</title><link href="http://blog.katherineca.se/civx/shelves-and-shoves.html" rel="alternate"></link><published>2011-06-21T22:56:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2011-06-21:/civx/shelves-and-shoves.html</id><summary type="html">&lt;p&gt;Today is the day to hit &lt;a class="reference external" href="https://fedorahosted.org/civx/ticket/105"&gt;bug #105&lt;/a&gt;, another of the leftover bugs from
-last year.
-The story goes something like this: there's a lot of data on
+</content><category term="CIVX"></category><category term="peopledashboard"></category><category term="widgets"></category><category term="scrapers"></category><category term="SURS"></category></entry><entry><title>Shelves and Shoves</title><link href="http://blog.katherineca.se/civx/shelves-and-shoves.html" rel="alternate"></link><published>2011-06-21T22:56:00-04:00</published><updated>2022-12-07T15:52:26-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2011-06-21:/civx/shelves-and-shoves.html</id><summary type="html">&lt;p&gt;Today is the day to hit &lt;a class="reference external" href="https://fedorahosted.org/civx/ticket/105"&gt;bug #105&lt;/a&gt;, another of the leftover bugs from
+last year.&lt;/p&gt;
+&lt;p&gt;The story goes something like this: there's a lot of data on
 nysenate.gov that is nice to have, but asking for that info on every
 call is a little cumbersome. We want to …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Today is the day to hit &lt;a class="reference external" href="https://fedorahosted.org/civx/ticket/105"&gt;bug #105&lt;/a&gt;, another of the leftover bugs from
-last year.
-The story goes something like this: there's a lot of data on
+last year.&lt;/p&gt;
+&lt;p&gt;The story goes something like this: there's a lot of data on
 nysenate.gov that is nice to have, but asking for that info on every
 call is a little cumbersome. We want to cache as much of the data as we
 can, particularly the stuff that's not going to change in the next week
@@ -1000,8 +987,8 @@ fast, but had no persistent storage, so every time the server went down
 it pulled all the info again. And due to the way the scrape was written,
 it pulled all the info for all the senators at once, creating quite a
 bit of lag before the first page showed up. This clearly wasn't going to
-be something we could continue to develop with.
-Now, I know nothing about caching data, so I did some poking around in
+be something we could continue to develop with.&lt;/p&gt;
+&lt;p&gt;Now, I know nothing about caching data, so I did some poking around in
 CIVX to see how it is done elsewhere. Most of the other caches I found
 in CIVX code were related to caching text feeds, which were not as
 explanatory as I was hoping. Once I felt I had a handle on how things
@@ -1013,8 +1000,8 @@ a configurable expire time. I dumped the code into the dashboard, hooked
 the proper inputs up and let it run. The results were... promising, but
 not astonishing. The file storage worked, once the data was cached, we
 stopped looking to nysenate.gov for data and instead used our own data,
-even after server restarts.
-The problem was that the file storage seemed to be slower than the
+even after server restarts.&lt;/p&gt;
+&lt;p&gt;The problem was that the file storage seemed to be slower than the
 previous memory cache. This is all perfectly reasonable, since disk
 access is much slower than memory, and a lot of data has to get pulled
 for each senator. The first obvious thing I could do is to re-enable the
@@ -1036,64 +1023,64 @@ think is to change how the data gets stored in the cache. Currently all
 the data gets pulled at once, which was done to pacify the pylons cache.
 However, if I can get individual caches for each senator, then I can
 pull smaller volumes of data at a time, hopefully speeding up the
-process.
-We'll see where I get tomorrow, but so far I'm feeling pretty good about
+process.&lt;/p&gt;
+&lt;p&gt;We'll see where I get tomorrow, but so far I'm feeling pretty good about
 all this.&lt;/p&gt;
-</content><category term="CIVX"></category><category term="peopledashboard"></category><category term="widgets"></category><category term="scrapers"></category><category term="SURS"></category></entry><entry><title>Summer of CIVX</title><link href="http://blog.katherineca.se/civx/summer-of-civx.html" rel="alternate"></link><published>2011-06-21T22:56:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2011-06-21:/civx/summer-of-civx.html</id><summary type="html">&lt;p&gt;So I'm back at RIT for the summer working on CIVX again. There's been a
+</content><category term="CIVX"></category><category term="peopledashboard"></category><category term="widgets"></category><category term="scrapers"></category><category term="SURS"></category></entry><entry><title>Summer of CIVX</title><link href="http://blog.katherineca.se/civx/summer-of-civx.html" rel="alternate"></link><published>2011-06-21T22:56:00-04:00</published><updated>2022-12-07T15:52:57-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2011-06-21:/civx/summer-of-civx.html</id><summary type="html">&lt;p&gt;So I'm back at RIT for the summer working on CIVX again. There's been a
 lot of development on Moksha, the software stack CIVX runs on, and not
 all of it was a trivial update. Still, many of the problems I
 encountered were definitely my fault, not the least of …&lt;/p&gt;</summary><content type="html">&lt;p&gt;So I'm back at RIT for the summer working on CIVX again. There's been a
 lot of development on Moksha, the software stack CIVX runs on, and not
 all of it was a trivial update. Still, many of the problems I
 encountered were definitely my fault, not the least of which was
-forgetting Arch Linux has switched to Python 3.
-Once I was up, I looked into fixing the people dashboard we worked on
+forgetting Arch Linux has switched to Python 3.&lt;/p&gt;
+&lt;p&gt;Once I was up, I looked into fixing the people dashboard we worked on
 last summer. In the meantime, the NYS Senate updated their API for
 getting open government data, so I had to figure out the new scheme and
 try to make it work. Complicating this is that they still don't have
 easy access to grabbing all the current senators, and the page we look
 at to get this information changed enough to stop the script from
-completing.
-I'm actually surprised how quickly I was able to work this out, though
+completing.&lt;/p&gt;
+&lt;p&gt;I'm actually surprised how quickly I was able to work this out, though
 of course this is not even remotely new to me. But despite nearly a year
 of inactivity on the project I seem to have gotten back into the swing
 of it pretty well.&lt;/p&gt;
-</content><category term="CIVX"></category><category term="peopledashboard"></category><category term="widgets"></category><category term="SURS"></category></entry><entry><title>The Last Week</title><link href="http://blog.katherineca.se/civx/the-last-week.html" rel="alternate"></link><published>2011-06-21T22:56:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2011-06-21:/civx/the-last-week.html</id><summary type="html">&lt;p&gt;This week has been a mess for a lot of reasons. Let's see what I managed
-to get through so far.
-One of the things I got to look at this week is threebean's mokshactl
+</content><category term="CIVX"></category><category term="peopledashboard"></category><category term="widgets"></category><category term="SURS"></category></entry><entry><title>The Last Week</title><link href="http://blog.katherineca.se/civx/the-last-week.html" rel="alternate"></link><published>2011-06-21T22:56:00-04:00</published><updated>2022-12-07T15:53:22-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2011-06-21:/civx/the-last-week.html</id><summary type="html">&lt;p&gt;This week has been a mess for a lot of reasons. Let's see what I managed
+to get through so far.&lt;/p&gt;
+&lt;p&gt;One of the things I got to look at this week is threebean's mokshactl
 branch of CIVX and Moksha. This is a project to simplify the
 administration of a …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This week has been a mess for a lot of reasons. Let's see what I managed
-to get through so far.
-One of the things I got to look at this week is threebean's mokshactl
+to get through so far.&lt;/p&gt;
+&lt;p&gt;One of the things I got to look at this week is threebean's mokshactl
 branch of CIVX and Moksha. This is a project to simplify the
 administration of a Moksha installation. The project grew out of an
 attempt to easily package Moksha and grew into a much larger system
 capable of managing most aspects of CIVX at once, and in a very pretty
 package, too. It has a few problems, but for the most part, it performs
 quite well, and best of all, it will even integrate itself with Moksha,
-controlling the necessary aspects of Moksha as well.
-In less exciting news, I poked around in the people dashboard while I
+controlling the necessary aspects of Moksha as well.&lt;/p&gt;
+&lt;p&gt;In less exciting news, I poked around in the people dashboard while I
 had some time and got Assembly members working again. It didn't take
 much as I had expected, but served to keep me on task while Remy was in
 one of the never ending series of meetings he's had this week.
 On a lighter side of things, I put some &lt;a class="reference external" href="http://lobstertech.com/fabulous.html"&gt;fabulous&lt;/a&gt; in the CIVX shell
 today as I was working in it. The mokshactl branch is already
 fabuloused, and once you see that, there's no coming back. fabulous
-makes things very pretty with only a little work.
-Other than that not a lot has gone down. Some work has gone into the
+makes things very pretty with only a little work.&lt;/p&gt;
+&lt;p&gt;Other than that not a lot has gone down. Some work has gone into the
 polyscraper, but that's nothing worth mentioning at this point. Between
 that and some internal matters and hours of meetings and my car
 developing a leak in it's brake line, that's all that went down this
 week. Tomorrow I get to drive home and hopefully fix my car properly.&lt;/p&gt;
-</content><category term="CIVX"></category><category term="peopledashboard"></category><category term="widgets"></category><category term="scrapers"></category><category term="SURS"></category><category term="fabulous"></category></entry><entry><title>Grokking the Core</title><link href="http://blog.katherineca.se/civx/grokking-the-core.html" rel="alternate"></link><published>2011-06-21T22:55:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2011-06-21:/civx/grokking-the-core.html</id><summary type="html">&lt;p&gt;This week begins the real dive into the core of what makes CIVX. Today
+</content><category term="CIVX"></category><category term="peopledashboard"></category><category term="widgets"></category><category term="scrapers"></category><category term="SURS"></category><category term="fabulous"></category></entry><entry><title>Grokking the Core</title><link href="http://blog.katherineca.se/civx/grokking-the-core.html" rel="alternate"></link><published>2011-06-21T22:55:00-04:00</published><updated>2022-12-07T15:53:48-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2011-06-21:/civx/grokking-the-core.html</id><summary type="html">&lt;p&gt;This week begins the real dive into the core of what makes CIVX. Today
 (and yesterday, though yesterday hardly counts as a real day) were spent
 adding major functionality to the polyscraper, something that's been
-overdue for a long time now.
-But what is this magical polyscraper? Well, in short …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This week begins the real dive into the core of what makes CIVX. Today
+overdue for a long time now.&lt;/p&gt;
+&lt;p&gt;But what is this magical polyscraper? Well, in short …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This week begins the real dive into the core of what makes CIVX. Today
 (and yesterday, though yesterday hardly counts as a real day) were spent
 adding major functionality to the polyscraper, something that's been
-overdue for a long time now.
-But what is this magical polyscraper? Well, in short, it's magic. A lot
+overdue for a long time now.&lt;/p&gt;
+&lt;p&gt;But what is this magical polyscraper? Well, in short, it's magic. A lot
 of magic, actually, and that's half the problem. You see, in ye olden
 days of CIVX, each data source had to have its own scraper, and these
 were called whenever CIVX decided its data was old enough to get shoved
@@ -1103,8 +1090,8 @@ You would have to define all the columns, give it a location to look,
 make sure you understood the site's particular dialect and scrubbed out
 any irregularities in their data. What the poly scraper does is it
 replaces all of those individual scrapers and replaces them with one big
-scraper which is smart enough to deal with any URL it finds.
-What I've been doing is adding new sources of data to the polyscraper.
+scraper which is smart enough to deal with any URL it finds.&lt;/p&gt;
+&lt;p&gt;What I've been doing is adding new sources of data to the polyscraper.
 In particular, yesterday was spent adding the ability to read files off
 of a local disk and properly store them. This, in turn, exposed a few
 holes in the underlying framework which needed to be patched. However,
@@ -1113,8 +1100,8 @@ scraper I wrote last year works outside of CIVX proper (in Java, no
 less) and cannot be thrown into the polyscraper as easily. But I can
 download the files locally, and then work on them when it is convenient.
 With proper message passing, I can even seamlessly tell the polyscraper
-to pick up the files as soon as they are downloaded.
-Previously to this I had been working at the periphery of CIVX, adding
+to pick up the files as soon as they are downloaded.&lt;/p&gt;
+&lt;p&gt;Previously to this I had been working at the periphery of CIVX, adding
 functionality to widgets and individual scrapers. This is my first real
 push into the core functionality of CIVX, and it is good to see that I
 really have picked enough up in all this time to really start to
@@ -1170,7 +1157,7 @@ new tasks before the final release.&lt;/p&gt;
 &lt;p&gt;All in all, a very exciting and fun weekend. We made a few contacts,
 introduced a few more people to FOSS&amp;#64;RIT, and gave away at least 40
 LiveCDs. I think that qualifies as quite a success.&lt;/p&gt;
-</content><category term="FOSS@RIT"></category><category term="journalism"></category><category term="lemonade"></category><category term="sugar"></category><category term="Rise"></category><category term="OPL"></category></entry><entry><title>Special Election Time</title><link href="http://blog.katherineca.se/fossrit/special-election-time.html" rel="alternate"></link><published>2011-03-29T03:07:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2011-03-29:/fossrit/special-election-time.html</id><summary type="html">&lt;p&gt;Rochester is having a special election tomorrow to choose a new Mayor,
+</content><category term="FOSS@RIT"></category><category term="journalism"></category><category term="lemonade"></category><category term="sugar"></category><category term="Rise"></category><category term="OPL"></category></entry><entry><title>Special Election Time</title><link href="http://blog.katherineca.se/fossrit/special-election-time.html" rel="alternate"></link><published>2011-03-29T03:07:00-04:00</published><updated>2022-12-07T15:49:18-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2011-03-29:/fossrit/special-election-time.html</id><summary type="html">&lt;p&gt;Rochester is having a special election tomorrow to choose a new Mayor,
 as the previous Mayor, Robert Duffy, is now the Lieutenant Governor of
 New York. I've been following the race with some interest despite not
 being registered to vote in this area, especially since I know one of
@@ -1178,26 +1165,26 @@ the …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Rochester is having a s
 as the previous Mayor, Robert Duffy, is now the Lieutenant Governor of
 New York. I've been following the race with some interest despite not
 being registered to vote in this area, especially since I know one of
-the candidates.
-But more exciting than the actual business of an politics is the
+the candidates.&lt;/p&gt;
+&lt;p&gt;But more exciting than the actual business of an politics is the
 election itself, which gives a great opportunity to introduce &lt;a class="reference external" href="http://foss.rit.edu/election/"&gt;Election
-Scraper 2.0&lt;/a&gt;.
-You may remember the old version. It was largely untested, had a few
+Scraper 2.0&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You may remember the old version. It was largely untested, had a few
 design issues, and wasn't very pretty to look at. Through the election
 night, I tweaked and honed it, until finally, mere minutes before the
 close of the last poll, it gave a very close approximation to an
-accurate number.
-We probably won't have that many problems this time around. But who
+accurate number.&lt;/p&gt;
+&lt;p&gt;We probably won't have that many problems this time around. But who
 knows? I'm looking forward to an exciting night in any case, and I'll be
 ready to fix any problems as they come.&lt;/p&gt;
-</content><category term="FOSS@RIT"></category><category term="election"></category></entry><entry><title>Election Aftermath</title><link href="http://blog.katherineca.se/fossrit/election-aftermath.html" rel="alternate"></link><published>2011-03-29T02:59:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2011-03-29:/fossrit/election-aftermath.html</id><summary type="html">&lt;p&gt;So the election was almost a week ago. Here's how our little experiment
+</content><category term="FOSS@RIT"></category><category term="election"></category></entry><entry><title>Election Aftermath</title><link href="http://blog.katherineca.se/fossrit/election-aftermath.html" rel="alternate"></link><published>2011-03-29T02:59:00-04:00</published><updated>2022-12-07T15:49:52-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2011-03-29:/fossrit/election-aftermath.html</id><summary type="html">&lt;p&gt;So the election was almost a week ago. Here's how our little experiment
 turned out.&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://farm2.static.flickr.com/1386/5143595646_9e4e56f556.jpg"&gt;|image0|&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image0" src="http://farm2.static.flickr.com/1386/5143595646_9e4e56f556.jpg" /&gt;&lt;/p&gt;
 &lt;p&gt;The evening started out rather slowly, with information trickling in
 about races that were all but confirmed. We had the Innovation Center's
-display set up with various maps and information, and my page in …&lt;/p&gt;</summary><content type="html">&lt;p&gt;So the election was almost a week ago. Here's how our little experiment
+display set up with various maps and information, and my page in the …&lt;/p&gt;</summary><content type="html">&lt;p&gt;So the election was almost a week ago. Here's how our little experiment
 turned out.&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://farm2.static.flickr.com/1386/5143595646_9e4e56f556.jpg"&gt;|image0|&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image0" src="http://farm2.static.flickr.com/1386/5143595646_9e4e56f556.jpg" /&gt;&lt;/p&gt;
 &lt;p&gt;The evening started out rather slowly, with information trickling in
 about races that were all but confirmed. We had the Innovation Center's
 display set up with various maps and information, and my page in the
@@ -1254,51 +1241,51 @@ something more than just a class assignment. This wasn't just another
 program to be written and forgotten, this was something that represented
 the school to some of the public who perhaps hadn't heard about what
 we're doing here. And that is cool.&lt;/p&gt;
-</content><category term="FOSS@RIT"></category><category term="journalism"></category><category term="election"></category></entry><entry><title>Election Night</title><link href="http://blog.katherineca.se/fossrit/election-night.html" rel="alternate"></link><published>2011-03-29T02:59:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2011-03-29:/fossrit/election-night.html</id><summary type="html">&lt;p&gt;So election night is tonight. I'll have free time soon.
-The main reason for my lack of time lately has to do with the election.
+</content><category term="FOSS@RIT"></category><category term="journalism"></category><category term="election"></category></entry><entry><title>Election Night</title><link href="http://blog.katherineca.se/fossrit/election-night.html" rel="alternate"></link><published>2011-03-29T02:59:00-04:00</published><updated>2022-12-07T15:50:42-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2011-03-29:/fossrit/election-night.html</id><summary type="html">&lt;p&gt;So election night is tonight. I'll have free time soon.&lt;/p&gt;
+&lt;p&gt;The main reason for my lack of time lately has to do with the election.
 On Wednesday, just before I was going to classes, I got a call from Remy
-asking what my schedule was and if I'd like to …&lt;/p&gt;</summary><content type="html">&lt;p&gt;So election night is tonight. I'll have free time soon.
-The main reason for my lack of time lately has to do with the election.
+asking what my schedule was and if I'd like to …&lt;/p&gt;</summary><content type="html">&lt;p&gt;So election night is tonight. I'll have free time soon.&lt;/p&gt;
+&lt;p&gt;The main reason for my lack of time lately has to do with the election.
 On Wednesday, just before I was going to classes, I got a call from Remy
 asking what my schedule was and if I'd like to take a trip to WXXI to
-talk with Rachel Ward and at their election coverage.
-A few hours later, we're in the lobby of WXXI, being mistaken for
+talk with Rachel Ward and at their election coverage.&lt;/p&gt;
+&lt;p&gt;A few hours later, we're in the lobby of WXXI, being mistaken for
 musicians (as anyone who meets Remy for the first time is likely to do),
-and waiting for Rachel to come down.
-We took a quick tour of the facilities, met a few other people, and got
+and waiting for Rachel to come down.&lt;/p&gt;
+&lt;p&gt;We took a quick tour of the facilities, met a few other people, and got
 down to business. Monroe County's Board of Elections hosts a server with
 the live election information on a static ip and takes it down once the
 election is done. Further, this information is released in the form of
-a flash app, making it harder to move the information.
-After a short discussion, we decided that we weren't going to get
+a flash app, making it harder to move the information.&lt;/p&gt;
+&lt;p&gt;After a short discussion, we decided that we weren't going to get
 anywhere without making a call to the BoE. Rachel did her magic on the
 phone, getting more information out of them than I ever could have done.
 To make a long story short, this flash application is driven by an XML
 file (actually two) and that the system was provided by the company who
 made the machines and was pretty much a black box as far as they were
-concerned.
-A short bit of Googling later, I had identified another location that
+concerned.&lt;/p&gt;
+&lt;p&gt;A short bit of Googling later, I had identified another location that
 used these machines: London, Ontario. using their XML files as a base, I
 made a quick scraper that spat out a basic table of races and
-candidates. It wasn't pretty, but it worked.
-Over the next few days, I poked and prodded at it, adding features and
+candidates. It wasn't pretty, but it worked.&lt;/p&gt;
+&lt;p&gt;Over the next few days, I poked and prodded at it, adding features and
 eventually moving to an HTML output and checking against a few more
 locations, and cleaned up the code some more. We met with Rachel once
 more yesterday, set the site up to be running on innovationtrail.org,
-and started the countdown.
-The current version of the scraper is now running on
+and started the countdown.&lt;/p&gt;
+&lt;p&gt;The current version of the scraper is now running on
 &lt;a class="reference external" href="http://foss.rit.edu/election/"&gt;http://foss.rit.edu/election/&lt;/a&gt; and should update its information every 30
 seconds, once information exists.&lt;/p&gt;
 </content><category term="FOSS@RIT"></category><category term="journalism"></category><category term="election"></category></entry><entry><title>Winter Hackathon 2</title><link href="http://blog.katherineca.se/fossrit/winter-hackathon-2.html" rel="alternate"></link><published>2011-02-19T02:58:00-05:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2011-02-19:/fossrit/winter-hackathon-2.html</id><content type="html">&lt;p&gt;So I was gonna do a write-up about the winter hackathon.
 That didn't happen too much.
 But there's another one going on now.
 ^__^&lt;/p&gt;
-</content><category term="FOSS@RIT"></category><category term="hackathon"></category></entry><entry><title>Boston</title><link href="http://blog.katherineca.se/civx/boston.html" rel="alternate"></link><published>2011-01-23T07:14:00-05:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2011-01-23:/civx/boston.html</id><summary type="html">&lt;p&gt;So here we are in OLPC HQ, right in the middle of MIT. It's pretty sweet
-having &lt;a class="reference external" href="http://lewk.org/"&gt;Luke&lt;/a&gt; around again to hack CIVX with us.
-I've had a lot to do in the past few days. Remy's been showing me
+</content><category term="FOSS@RIT"></category><category term="hackathon"></category></entry><entry><title>Boston</title><link href="http://blog.katherineca.se/civx/boston.html" rel="alternate"></link><published>2011-01-23T07:14:00-05:00</published><updated>2022-12-07T15:45:11-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2011-01-23:/civx/boston.html</id><summary type="html">&lt;p&gt;So here we are in OLPC HQ, right in the middle of MIT. It's pretty sweet
+having &lt;a class="reference external" href="http://lewk.org/"&gt;Luke&lt;/a&gt; around again to hack CIVX with us.&lt;/p&gt;
+&lt;p&gt;I've had a lot to do in the past few days. Remy's been showing me
 scrapers and models, and I've been helping transition &lt;a class="reference external" href="http://foss.rit.edu/user/17"&gt;Kate's&lt;/a&gt; people …&lt;/p&gt;</summary><content type="html">&lt;p&gt;So here we are in OLPC HQ, right in the middle of MIT. It's pretty sweet
-having &lt;a class="reference external" href="http://lewk.org/"&gt;Luke&lt;/a&gt; around again to hack CIVX with us.
-I've had a lot to do in the past few days. Remy's been showing me
+having &lt;a class="reference external" href="http://lewk.org/"&gt;Luke&lt;/a&gt; around again to hack CIVX with us.&lt;/p&gt;
+&lt;p&gt;I've had a lot to do in the past few days. Remy's been showing me
 scrapers and models, and I've been helping transition &lt;a class="reference external" href="http://foss.rit.edu/user/17"&gt;Kate's&lt;/a&gt; people
 dashboard into an integrated component or integrating &lt;a class="reference external" href="http://rebeccanatalie.com/"&gt;Rebecca's&lt;/a&gt; theme
 changes on the side. It's been hectic and fun and tough, but I finally
@@ -1307,8 +1294,8 @@ goals, not just writing code to accomplish a task like some of my
 previous co-ops. Being in a team this large helps, especially when we
 pull in outside help like Luke, but I think it's mainly Remy's
 infectious excitement for the project. When he gets down to work, one
-can't help but feel his vision and be excited for the possibilities.
-Unfortunately, that means I had precious little time to pay attention to
+can't help but feel his vision and be excited for the possibilities.&lt;/p&gt;
+&lt;p&gt;Unfortunately, that means I had precious little time to pay attention to
 the other teams. Three separate groups hacking away at their own
 projects, tossing ideas about and getting input from a few members
 upstream, not to mention the whole OLPC offices around the corner- this
@@ -1355,7 +1342,7 @@ addition would extend gameplay a bit more and provide new challenges for
 longtime players (not to mention many more dice to play with).&lt;/p&gt;
 &lt;p&gt;So that's how I spent my weekend apart from coding like a superstar. But
 don't worry, I'll get to that soon.&lt;/p&gt;
-</content><category term="personal"></category><category term="games"></category></entry><entry><title>pyDex on Sugar</title><link href="http://blog.katherineca.se/personal/pydex-on-sugar.html" rel="alternate"></link><published>2011-01-19T23:51:00-05:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2011-01-19:/personal/pydex-on-sugar.html</id><summary type="html">&lt;p&gt;A warning, this gets very technical with lots of acronyms and jargon.
+</content><category term="personal"></category><category term="games"></category></entry><entry><title>pyDex on Sugar</title><link href="http://blog.katherineca.se/personal/pydex-on-sugar.html" rel="alternate"></link><published>2011-01-19T23:51:00-05:00</published><updated>2022-12-07T15:45:54-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2011-01-19:/personal/pydex-on-sugar.html</id><summary type="html">&lt;p&gt;A warning, this gets very technical with lots of acronyms and jargon.
 tl;dr: I have a new pyDex branch which *should* run on the OLPC
 A few days ago, I decided I'd finally see how well pyDex runs on the
 OLPC. Turns out, it runs pretty well, which isn't …&lt;/p&gt;</summary><content type="html">&lt;p&gt;A warning, this gets very technical with lots of acronyms and jargon.
@@ -1363,15 +1350,15 @@ tl;dr: I have a new pyDex branch which *should* run on the OLPC
 A few days ago, I decided I'd finally see how well pyDex runs on the
 OLPC. Turns out, it runs pretty well, which isn't too surprising as it
 is written in pure pyGTK and Glade, both of which are well supported in
-Sugar.
-So today, I loaded up my dev files and set to work. First, though, I had
+Sugar.&lt;/p&gt;
+&lt;p&gt;So today, I loaded up my dev files and set to work. First, though, I had
 to clean up my dev branch and finish committing the few hacks I had
 accumulated over the last few months. I finally fixed the zero index bug
 and found I had a problem in my new scraper that was causing all the
 evolution problems. In any case, that's all fixed, so my dev branch is
 nice and clean and almost ready for the Black/White release in a few
-weeks.
-Getting back to Sugar, I finally found &lt;a class="reference external" href="http://magazine.redhat.com/2007/04/26/building-the-xo-porting-a-pygtk-game-to-sugar-part-two/"&gt;a good tutorial&lt;/a&gt; on *porting*
+weeks.&lt;/p&gt;
+&lt;p&gt;Getting back to Sugar, I finally found &lt;a class="reference external" href="http://magazine.redhat.com/2007/04/26/building-the-xo-porting-a-pygtk-game-to-sugar-part-two/"&gt;a good tutorial&lt;/a&gt; on *porting*
 a pyGTK program rather than writing a new one. While admittedly I
 haven't looked very hard, I had had a bit of a problem getting past the
 example activity before, probably due to my use of Glade as I cannot
@@ -1380,14 +1367,14 @@ Glade's XML and I really don't feel like defining everything in code.
 The most useful thing I found in this tutorial is sending different
 parents to the main panel depending on where it is called from. So if we
 call the program normally, main_window is still loaded from Glade, but
-if Sugar loads it, we use their prebuilt panel.
-It still needs to be tested, and I need to add actual activity
+if Sugar loads it, we use their prebuilt panel.&lt;/p&gt;
+&lt;p&gt;It still needs to be tested, and I need to add actual activity
 information (and an icon eventually), but I think it should work. I'll
 probably get to test it sometime this weekend, maybe even turn it into a
 real activity by then. This is still just a small project, and I doubt
 it will ever go up on Sugar's activities site, but it has given me a
 much better understanding about how non-pygame activities work.&lt;/p&gt;
-</content><category term="personal"></category><category term="sugar"></category><category term="pyDex"></category></entry><entry><title>Wikiotics Visual Tweak</title><link href="http://blog.katherineca.se/fossrit/wikiotics-visual-tweak.html" rel="alternate"></link><published>2010-12-08T23:51:00-05:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-12-08:/fossrit/wikiotics-visual-tweak.html</id><summary type="html">&lt;p&gt;So &lt;a class="reference external" href="http://trosehfoss.blogspot.com/"&gt;trose&lt;/a&gt; and I have been asked to put a bow on the Wikiotics work
+</content><category term="personal"></category><category term="sugar"></category><category term="pyDex"></category></entry><entry><title>Wikiotics Visual Tweak</title><link href="http://blog.katherineca.se/fossrit/wikiotics-visual-tweak.html" rel="alternate"></link><published>2010-12-08T23:51:00-05:00</published><updated>2022-12-07T15:48:23-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-12-08:/fossrit/wikiotics-visual-tweak.html</id><summary type="html">&lt;p&gt;So &lt;a class="reference external" href="http://trosehfoss.blogspot.com/"&gt;trose&lt;/a&gt; and I have been asked to put a bow on the Wikiotics work
 while we're between projects. We both hit some bumps at the end of the
 quarter, so there's a few unused hours left to put into this project.
 One of the things we've been tasked with …&lt;/p&gt;</summary><content type="html">&lt;p&gt;So &lt;a class="reference external" href="http://trosehfoss.blogspot.com/"&gt;trose&lt;/a&gt; and I have been asked to put a bow on the Wikiotics work
@@ -1397,15 +1384,15 @@ One of the things we've been tasked with is looking at the CSS and
 seeing if there is anything we can do to it to make it look a little
 better. Now, neither trose nor I are designers by any stretch of the
 imagination, but we've got a few ideas that might go a ways to making
-Wikiotics look more attractive.
-&lt;a class="reference external" href="http://3.bp.blogspot.com/_NuCXZozR8O8/TQAXjymF2KI/AAAAAAAAAi8/02g5WgJiCj0/s320/Screenshot-Wikiotics%2B-%2BNamoroka-1.png"&gt;|image0|&lt;/a&gt;
-This is how Wikiotics looks today. The different actions possible on a
+Wikiotics look more attractive.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image0" src="http://3.bp.blogspot.com/_NuCXZozR8O8/TQAXjymF2KI/AAAAAAAAAi8/02g5WgJiCj0/s320/Screenshot-Wikiotics%2B-%2BNamoroka-1.png" /&gt;&lt;/p&gt;
+&lt;p&gt;This is how Wikiotics looks today. The different actions possible on a
 page are hanging out awkwardly in the center, and there's no clear
 division between the header and the content. After looking at this for a
 while, trose and I decided that we would emulate a few of the more
-reasonable designs of the more common wiki systems out there.
-&lt;a class="reference external" href="http://4.bp.blogspot.com/_NuCXZozR8O8/TQAXkGhFoPI/AAAAAAAAAjE/lnUp7vNtbAI/s320/Screenshot-Wikiotics%2B-%2BNamoroka.png"&gt;|image1|&lt;/a&gt;
-This is how Wikiotics looks on our local git. The 'tabs' have been moved
+reasonable designs of the more common wiki systems out there.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image1" src="http://4.bp.blogspot.com/_NuCXZozR8O8/TQAXkGhFoPI/AAAAAAAAAjE/lnUp7vNtbAI/s320/Screenshot-Wikiotics%2B-%2BNamoroka.png" /&gt;&lt;/p&gt;
+&lt;p&gt;This is how Wikiotics looks on our local git. The 'tabs' have been moved
 to the right, and pushed further into the top bar (maybe too much).
 Further, the active tab bleeds into the content area, which is lightly
 colored to mark it as a separate area from the header and footer areas.
@@ -1416,34 +1403,33 @@ These changes are a small step, but I think they go some way towards
 making Wikiotics a bit more approachable to outsiders. There are a few
 more things to be done on Friday, but I don't think we're yet done
 looking at this.&lt;/p&gt;
-</content><category term="FOSS@RIT"></category><category term="wikiotics"></category></entry><entry><title>Wikiotics at the Constellation Commons</title><link href="http://blog.katherineca.se/fossrit/wikiotics-at-the-constellation-commons.html" rel="alternate"></link><published>2010-12-08T23:30:00-05:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-12-08:/fossrit/wikiotics-at-the-constellation-commons.html</id><summary type="html">&lt;p&gt;This happened quite some time ago now, but with the election coverage I
-haven't had much time to get this out.
-Two weeks ago, Taylor and I were asked to appear at the opening of the
+</content><category term="FOSS@RIT"></category><category term="wikiotics"></category></entry><entry><title>Wikiotics at the Constellation Commons</title><link href="http://blog.katherineca.se/fossrit/wikiotics-at-the-constellation-commons.html" rel="alternate"></link><published>2010-12-08T23:30:00-05:00</published><updated>2022-12-07T15:33:58-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-12-08:/fossrit/wikiotics-at-the-constellation-commons.html</id><summary type="html">&lt;p&gt;This happened quite some time ago now, but with the election coverage I
+haven't had much time to get this out.&lt;/p&gt;
+&lt;p&gt;Two weeks ago, Taylor and I were asked to appear at the opening of the
 Constellation Commons for Global Learning, to show off Wikiotics as a
 student project and …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This happened quite some time ago now, but with the election coverage I
-haven't had much time to get this out.
-Two weeks ago, Taylor and I were asked to appear at the opening of the
+haven't had much time to get this out.&lt;/p&gt;
+&lt;p&gt;Two weeks ago, Taylor and I were asked to appear at the opening of the
 Constellation Commons for Global Learning, to show off Wikiotics as a
 student project and set up Wikiotics on all the computers. We got to
 show the site off to President Destler and to a few foreign language
-professors who were all quite excited about such a thing existing.
-In all we showed off the project to a fair number of people and got a
+professors who were all quite excited about such a thing existing.&lt;/p&gt;
+&lt;p&gt;In all we showed off the project to a fair number of people and got a
 very positive reaction from most of them. I don't know if we've seen any
 more users from this, but it seems to me it should help spread the word
 about Wikiotics.&lt;/p&gt;
-</content><category term="FOSS@RIT"></category><category term="wikiotics"></category></entry><entry><title>Lemonade Stand 2.1 Released</title><link href="http://blog.katherineca.se/fossrit/lemonade-stand-21-released.html" rel="alternate"></link><published>2010-11-12T07:03:00-05:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-11-12:/fossrit/lemonade-stand-21-released.html</id><summary type="html">&lt;p&gt;I am proud to announce the immediate availability of Lemonade Stand 2.1,
-with a quarter's worth of work and effort behind it.
-There are few gameplay changes in this release, but it feels like a
-brand new game thanks to the wonderful new art assets courtesy of &lt;a class="reference external" href="http://jtmengel.blogspot.com/"&gt;JT&lt;/a&gt;.
-There's …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I am proud to announce the immediate availability of Lemonade Stand 2.1,
-with a quarter's worth of work and effort behind it.
-There are few gameplay changes in this release, but it feels like a
-brand new game thanks to the wonderful new art assets courtesy of &lt;a class="reference external" href="http://jtmengel.blogspot.com/"&gt;JT&lt;/a&gt;.
-There's also the beginning of a help system, and many generalizations in
-the code to make adding new features even easier than before.
-We're a little late for a midnight release, but for my first real game
-release, I don't think we did half bad.
-&lt;a class="reference external" href="http://activities.sugarlabs.org/en-US/sugar/addon/4321"&gt;http://activities.sugarlabs.org/en-US/sugar/addon/4321&lt;/a&gt;&lt;/p&gt;
+</content><category term="FOSS@RIT"></category><category term="wikiotics"></category></entry><entry><title>Lemonade Stand 2.1 Released</title><link href="http://blog.katherineca.se/fossrit/lemonade-stand-21-released.html" rel="alternate"></link><published>2010-11-12T07:03:00-05:00</published><updated>2022-12-07T15:35:16-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-11-12:/fossrit/lemonade-stand-21-released.html</id><summary type="html">&lt;p&gt;I am proud to announce the immediate availability of &lt;a class="reference external" href="http://activities.sugarlabs.org/en-US/sugar/addon/4321"&gt;Lemonade Stand 2.1&lt;/a&gt;,
+with a quarter's worth of work and effort behind it.&lt;/p&gt;
+&lt;p&gt;There are few gameplay changes in this release, but it feels like a
+brand new game thanks to the wonderful new art assets courtesy of &lt;a class="reference external" href="http://jtmengel.blogspot.com/"&gt;JT&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;There's …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I am proud to announce the immediate availability of &lt;a class="reference external" href="http://activities.sugarlabs.org/en-US/sugar/addon/4321"&gt;Lemonade Stand 2.1&lt;/a&gt;,
+with a quarter's worth of work and effort behind it.&lt;/p&gt;
+&lt;p&gt;There are few gameplay changes in this release, but it feels like a
+brand new game thanks to the wonderful new art assets courtesy of &lt;a class="reference external" href="http://jtmengel.blogspot.com/"&gt;JT&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;There's also the beginning of a help system, and many generalizations in
+the code to make adding new features even easier than before.&lt;/p&gt;
+&lt;p&gt;We're a little late for a midnight release, but for my first real game
+release, I don't think we did half bad.&lt;/p&gt;
 </content><category term="FOSS@RIT"></category><category term="lemonade"></category></entry><entry><title>Lemonade Recap</title><link href="http://blog.katherineca.se/fossrit/lemonade-recap.html" rel="alternate"></link><published>2010-11-10T20:26:00-05:00</published><updated>2022-12-07T14:31:54-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-11-10:/fossrit/lemonade-recap.html</id><summary type="html">&lt;p&gt;So here we are at the end of the quarter. Have we accomplished our
 goals? I think so.
 We've gotten a lot done in the last ten weeks. We got some new images,
@@ -1468,99 +1454,110 @@ until we can get a more permanent solution later.&lt;/p&gt;
 &lt;p&gt;Finally, the overlooked problem we were ignoring this whole time, an in
 game help system. This is moving along, not well, but it should be
 functional by our release.&lt;/p&gt;
-</content><category term="FOSS@RIT"></category><category term="lemonade"></category></entry><entry><title>Lemonade Week... 8?</title><link href="http://blog.katherineca.se/fossrit/lemonade-week-8.html" rel="alternate"></link><published>2010-10-26T23:59:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-10-26:/fossrit/lemonade-week-8.html</id><summary type="html">&lt;p&gt;So... lots of stuff has happened in the last few weeks.
-First, we have a new background, thanks to JT. In fact, we have three
+</content><category term="FOSS@RIT"></category><category term="lemonade"></category></entry><entry><title>Lemonade Week... 8?</title><link href="http://blog.katherineca.se/fossrit/lemonade-week-8.html" rel="alternate"></link><published>2010-10-26T23:59:00-04:00</published><updated>2022-12-07T15:36:15-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-10-26:/fossrit/lemonade-week-8.html</id><summary type="html">&lt;p&gt;So... lots of stuff has happened in the last few weeks.&lt;/p&gt;
+&lt;p&gt;First, we have a new background, thanks to &lt;a class="reference external" href="http://jtmengel.blogspot.com/"&gt;JT&lt;/a&gt;. In fact, we have three
 now, and as of five minutes ago, a different one will show up depending
-on the current weather.
-There's also been a lot of behind-the-scenes …&lt;/p&gt;</summary><content type="html">&lt;p&gt;So... lots of stuff has happened in the last few weeks.
-First, we have a new background, thanks to JT. In fact, we have three
+on the current weather.&lt;/p&gt;
+&lt;p&gt;There's also been a lot of behind-the-scenes …&lt;/p&gt;</summary><content type="html">&lt;p&gt;So... lots of stuff has happened in the last few weeks.&lt;/p&gt;
+&lt;p&gt;First, we have a new background, thanks to &lt;a class="reference external" href="http://jtmengel.blogspot.com/"&gt;JT&lt;/a&gt;. In fact, we have three
 now, and as of five minutes ago, a different one will show up depending
-on the current weather.
-There's also been a lot of behind-the-scenes updates to make adding new
+on the current weather.&lt;/p&gt;
+&lt;p&gt;There's also been a lot of behind-the-scenes updates to make adding new
 events and weather types easier in the future. Generally, all that kind
 of stuff goes in constants.py, but that might have to change if we need
-to add too much more stuff.
-We've got a few exciting ideas we hope to get done in the next few
+to add too much more stuff.&lt;/p&gt;
+&lt;p&gt;We've got a few exciting ideas we hope to get done in the next few
 weeks, and I look forward to seeing what we can get done.&lt;/p&gt;
-</content><category term="FOSS@RIT"></category><category term="lemonade"></category><category term="sugar"></category></entry><entry><title>Updating git</title><link href="http://blog.katherineca.se/fossrit/updating-git.html" rel="alternate"></link><published>2010-10-04T19:39:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-10-04:/fossrit/updating-git.html</id><summary type="html">&lt;p&gt;We here at RIT are working on our own branch of Ductus, and Ductus got a
+</content><category term="FOSS@RIT"></category><category term="lemonade"></category><category term="sugar"></category></entry><entry><title>Updating git</title><link href="http://blog.katherineca.se/fossrit/updating-git.html" rel="alternate"></link><published>2010-10-04T19:39:00-04:00</published><updated>2022-12-07T16:02:11-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-10-04:/fossrit/updating-git.html</id><summary type="html">&lt;p&gt;We here at RIT are working on our own branch of Ductus, and Ductus got a
 big addition over the weekend, namespaces. Unfortunately, our repository
-didn't know anything about that and needed to be updated.
-Now, I'm not a novice to using git, nor are any of the people in …&lt;/p&gt;</summary><content type="html">&lt;p&gt;We here at RIT are working on our own branch of Ductus, and Ductus got a
+didn't know anything about that and needed to be updated.&lt;/p&gt;
+&lt;p&gt;Now, I'm not a novice to using git, nor are any of the people in …&lt;/p&gt;</summary><content type="html">&lt;p&gt;We here at RIT are working on our own branch of Ductus, and Ductus got a
 big addition over the weekend, namespaces. Unfortunately, our repository
-didn't know anything about that and needed to be updated.
-Now, I'm not a novice to using git, nor are any of the people in the
+didn't know anything about that and needed to be updated.&lt;/p&gt;
+&lt;p&gt;Now, I'm not a novice to using git, nor are any of the people in the
 FOSSBOX. But we'd never had to worry about upstream repositories, for
-all of our projects, we *were* upstream.
-Taylor and I finally worked it out*, and now we're trying to fix all
+all of our projects, we *were* upstream.&lt;/p&gt;
+&lt;p&gt;Taylor and I finally worked it out &lt;a class="footnote-reference" href="#footnote-1" id="footnote-reference-1"&gt;[1]&lt;/a&gt;, and now we're trying to fix all
 the problems that came up with the new hotness as best as we can. but
 even when you feel comfortable with something, you can never quite
 escape the possibility that something you hadn't considered might show
-up.
-* The process, for reference, as near as I can figure
-git remote add
+up.&lt;/p&gt;
+&lt;table class="docutils footnote" frame="void" id="footnote-1" rules="none"&gt;
+&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#footnote-reference-1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;p class="first"&gt;The process, for reference, as near as I can figure&lt;/p&gt;
+&lt;div class="last"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git remote add
 git pull
-git push&lt;/p&gt;
-</content><category term="FOSS@RIT"></category><category term="wikiotics"></category></entry><entry><title>Wikiotics Week 2</title><link href="http://blog.katherineca.se/fossrit/wikiotics-week-2.html" rel="alternate"></link><published>2010-09-29T18:36:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-09-29:/fossrit/wikiotics-week-2.html</id><summary type="html">&lt;p&gt;We're into week 2 of Wikiotics' &lt;a class="reference external" href="http://alpha.wikiotics.org/wiki/four_week_plan"&gt;four week plan&lt;/a&gt; to push Wikiotics
-development, so I thought I'd get out all the stuff I did last week.
-First, in order to get myself acquainted with the user interface I
+git push
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</content><category term="FOSS@RIT"></category><category term="wikiotics"></category></entry><entry><title>Wikiotics Week 2</title><link href="http://blog.katherineca.se/fossrit/wikiotics-week-2.html" rel="alternate"></link><published>2010-09-29T18:36:00-04:00</published><updated>2022-12-07T15:31:42-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-09-29:/fossrit/wikiotics-week-2.html</id><summary type="html">&lt;p&gt;We're into week 2 of Wikiotics' &lt;a class="reference external" href="http://alpha.wikiotics.org/wiki/four_week_plan"&gt;four week plan&lt;/a&gt; to push Wikiotics
+development, so I thought I'd get out all the stuff I did last week.&lt;/p&gt;
+&lt;p&gt;First, in order to get myself acquainted with the user interface I
 translated (badly) the introduction lesson into &lt;a class="reference external" href="http://alpha.wikiotics.org/wiki/Russian_lessons"&gt;Russian&lt;/a&gt; (and later
 tapped &lt;a class="reference external" href="http://rockettium.net/wordpress/"&gt;Ellen Rocket's …&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;We're into week 2 of Wikiotics' &lt;a class="reference external" href="http://alpha.wikiotics.org/wiki/four_week_plan"&gt;four week plan&lt;/a&gt; to push Wikiotics
-development, so I thought I'd get out all the stuff I did last week.
-First, in order to get myself acquainted with the user interface I
+development, so I thought I'd get out all the stuff I did last week.&lt;/p&gt;
+&lt;p&gt;First, in order to get myself acquainted with the user interface I
 translated (badly) the introduction lesson into &lt;a class="reference external" href="http://alpha.wikiotics.org/wiki/Russian_lessons"&gt;Russian&lt;/a&gt; (and later
-tapped &lt;a class="reference external" href="http://rockettium.net/wordpress/"&gt;Ellen Rocket's&lt;/a&gt; German prowess for a &lt;a class="reference external" href="http://alpha.wikiotics.org/wiki/German_lessons"&gt;German&lt;/a&gt; one).
-Later I was asked to look into creoleparser to see if I could fix &lt;a class="reference external" href="http://code.google.com/p/creoleparser/issues/detail?id=42"&gt;bug
+tapped &lt;a class="reference external" href="http://rockettium.net/wordpress/"&gt;Ellen Rocket's&lt;/a&gt; German prowess for a &lt;a class="reference external" href="http://alpha.wikiotics.org/wiki/German_lessons"&gt;German&lt;/a&gt; one).&lt;/p&gt;
+&lt;p&gt;Later I was asked to look into creoleparser to see if I could fix &lt;a class="reference external" href="http://code.google.com/p/creoleparser/issues/detail?id=42"&gt;bug
 42&lt;/a&gt; to disable external image loading, which we also want for Ductus.
 Getting into yet another python codebase so soon was interesting,
 especially when I had to switch back and forth looking at things
-&lt;a class="reference external" href="http://trosehfoss.blogspot.com/"&gt;Taylor&lt;/a&gt; was doing.
-That's all I really got into for week one, but now that I'm fairly
+&lt;a class="reference external" href="http://trosehfoss.blogspot.com/"&gt;Taylor&lt;/a&gt; was doing.&lt;/p&gt;
+&lt;p&gt;That's all I really got into for week one, but now that I'm fairly
 comfortable with the various technologies being used, I think things
 will really start rolling soon&lt;/p&gt;
-</content><category term="FOSS@RIT"></category><category term="wikiotics"></category></entry><entry><title>Lemons Taking Off</title><link href="http://blog.katherineca.se/fossrit/lemons-taking-off.html" rel="alternate"></link><published>2010-09-23T14:35:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-09-23:/fossrit/lemons-taking-off.html</id><summary type="html">&lt;p&gt;It looks like Lemonade Stand is taking off for fall quarter's &lt;a class="reference external" href="http://teachingopensource.org/index.php/RIT/The_Course"&gt;HFOSS&lt;/a&gt;
+</content><category term="FOSS@RIT"></category><category term="wikiotics"></category></entry><entry><title>Lemons Taking Off</title><link href="http://blog.katherineca.se/fossrit/lemons-taking-off.html" rel="alternate"></link><published>2010-09-23T14:35:00-04:00</published><updated>2022-12-07T15:32:33-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-09-23:/fossrit/lemons-taking-off.html</id><summary type="html">&lt;p&gt;It looks like Lemonade Stand is taking off for fall quarter's &lt;a class="reference external" href="http://teachingopensource.org/index.php/RIT/The_Course"&gt;HFOSS&lt;/a&gt;
 class. This is quite exciting and there's a number of things I'm looking
-to get in for a 2.2 release
-* More events
-* Fluctuating prices
-* Loyalty and advertising
-among &lt;a class="reference external" href="http://wiki.sugarlabs.org/go/Lemonade_Stand#Additional_Ideas_.26_Features"&gt;others&lt;/a&gt;.
-The 2.1 release, meanwhile, I would like …&lt;/p&gt;</summary><content type="html">&lt;p&gt;It looks like Lemonade Stand is taking off for fall quarter's &lt;a class="reference external" href="http://teachingopensource.org/index.php/RIT/The_Course"&gt;HFOSS&lt;/a&gt;
+to get in for a 2.2 release&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;More events&lt;/li&gt;
+&lt;li&gt;Fluctuating prices&lt;/li&gt;
+&lt;li&gt;Loyalty and advertising&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;among &lt;a class="reference external" href="http://wiki.sugarlabs.org/go/Lemonade_Stand#Additional_Ideas_.26_Features"&gt;others&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The 2.1 release, meanwhile, I would like …&lt;/p&gt;</summary><content type="html">&lt;p&gt;It looks like Lemonade Stand is taking off for fall quarter's &lt;a class="reference external" href="http://teachingopensource.org/index.php/RIT/The_Course"&gt;HFOSS&lt;/a&gt;
 class. This is quite exciting and there's a number of things I'm looking
-to get in for a 2.2 release
-* More events
-* Fluctuating prices
-* Loyalty and advertising
-among &lt;a class="reference external" href="http://wiki.sugarlabs.org/go/Lemonade_Stand#Additional_Ideas_.26_Features"&gt;others&lt;/a&gt;.
-The 2.1 release, meanwhile, I would like to focus on usability and
+to get in for a 2.2 release&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;More events&lt;/li&gt;
+&lt;li&gt;Fluctuating prices&lt;/li&gt;
+&lt;li&gt;Loyalty and advertising&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;among &lt;a class="reference external" href="http://wiki.sugarlabs.org/go/Lemonade_Stand#Additional_Ideas_.26_Features"&gt;others&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The 2.1 release, meanwhile, I would like to focus on usability and
 graphics, as those have been being worked on for the longest so far.
 Whether any of this will work out the way I'm imagining is debatable,
 but I've got a plan and two &lt;a class="reference external" href="http://smw-os.blogspot.com/"&gt;awesome&lt;/a&gt; &lt;a class="reference external" href="http://jtmengel.blogspot.com"&gt;people&lt;/a&gt; working on it with me&lt;/p&gt;
-</content><category term="FOSS@RIT"></category><category term="lemonade"></category><category term="sugar"></category></entry><entry><title>Refreshing Lemonade</title><link href="http://blog.katherineca.se/fossrit/refreshing-lemonade.html" rel="alternate"></link><published>2010-09-23T14:04:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-09-23:/fossrit/refreshing-lemonade.html</id><summary type="html">&lt;p&gt;In other news, yesterday marked the &lt;a class="reference external" href="http://blog.jlewopensource.com/2010/07/lemonade-stand-release.html"&gt;final release of Lemonade
+</content><category term="FOSS@RIT"></category><category term="lemonade"></category><category term="sugar"></category></entry><entry><title>Refreshing Lemonade</title><link href="http://blog.katherineca.se/fossrit/refreshing-lemonade.html" rel="alternate"></link><published>2010-09-23T14:04:00-04:00</published><updated>2022-12-07T15:33:02-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-09-23:/fossrit/refreshing-lemonade.html</id><summary type="html">&lt;p&gt;In other news, yesterday marked the &lt;a class="reference external" href="http://blog.jlewopensource.com/2010/07/lemonade-stand-release.html"&gt;final release of Lemonade
 Stand 2.0&lt;/a&gt;. Now running on the &lt;a class="reference external" href="https://fedorahosted.org/fortune_hunter/wiki/FortuneEngine"&gt;Fortune Engine&lt;/a&gt; and containing 0% of
 my code, this marks an important milestone in my open-source
-&lt;a class="reference external" href="http://sugarlabs.org/"&gt;sugar-based&lt;/a&gt; lemonade stand game as it's still getting developed!
-While I can claim none of the credit …&lt;/p&gt;</summary><content type="html">&lt;p&gt;In other news, yesterday marked the &lt;a class="reference external" href="http://blog.jlewopensource.com/2010/07/lemonade-stand-release.html"&gt;final release of Lemonade
+&lt;a class="reference external" href="http://sugarlabs.org/"&gt;sugar-based&lt;/a&gt; lemonade stand game as it's still getting developed!&lt;/p&gt;
+&lt;p&gt;While I can claim none of the credit …&lt;/p&gt;</summary><content type="html">&lt;p&gt;In other news, yesterday marked the &lt;a class="reference external" href="http://blog.jlewopensource.com/2010/07/lemonade-stand-release.html"&gt;final release of Lemonade
 Stand 2.0&lt;/a&gt;. Now running on the &lt;a class="reference external" href="https://fedorahosted.org/fortune_hunter/wiki/FortuneEngine"&gt;Fortune Engine&lt;/a&gt; and containing 0% of
 my code, this marks an important milestone in my open-source
-&lt;a class="reference external" href="http://sugarlabs.org/"&gt;sugar-based&lt;/a&gt; lemonade stand game as it's still getting developed!
-While I can claim none of the credit for the code, it is still
+&lt;a class="reference external" href="http://sugarlabs.org/"&gt;sugar-based&lt;/a&gt; lemonade stand game as it's still getting developed!&lt;/p&gt;
+&lt;p&gt;While I can claim none of the credit for the code, it is still
 satisfying to watch my very first open source project still on its feet,
 teetering around like a drunken toddler.&lt;/p&gt;
-</content><category term="FOSS@RIT"></category><category term="lemonade"></category><category term="sugar"></category></entry><entry><title>Wikiotics</title><link href="http://blog.katherineca.se/fossrit/wikiotics.html" rel="alternate"></link><published>2010-09-20T19:45:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-09-20:/fossrit/wikiotics.html</id><summary type="html">&lt;p&gt;As of Friday, I have been doing some work (along with &lt;a class="reference external" href="http://trosehfoss.blogspot.com/"&gt;Taylor&lt;/a&gt; for a
+</content><category term="FOSS@RIT"></category><category term="lemonade"></category><category term="sugar"></category></entry><entry><title>Wikiotics</title><link href="http://blog.katherineca.se/fossrit/wikiotics.html" rel="alternate"></link><published>2010-09-20T19:45:00-04:00</published><updated>2022-12-07T15:27:20-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-09-20:/fossrit/wikiotics.html</id><summary type="html">&lt;p&gt;As of Friday, I have been doing some work (along with &lt;a class="reference external" href="http://trosehfoss.blogspot.com/"&gt;Taylor&lt;/a&gt;) for a
 new set of people, &lt;a class="reference external" href="http://alpha.wikiotics.org"&gt;Wikiotics&lt;/a&gt;. Their goal is basically to create a
 FLOSS alternative to some of the commercial translation software out
 there, particularly the ever-so-expensive Rosetta Stone. The whole thing
-is built on a custom …&lt;/p&gt;</summary><content type="html">&lt;p&gt;As of Friday, I have been doing some work (along with &lt;a class="reference external" href="http://trosehfoss.blogspot.com/"&gt;Taylor&lt;/a&gt; for a
+is built on a custom …&lt;/p&gt;</summary><content type="html">&lt;p&gt;As of Friday, I have been doing some work (along with &lt;a class="reference external" href="http://trosehfoss.blogspot.com/"&gt;Taylor&lt;/a&gt;) for a
 new set of people, &lt;a class="reference external" href="http://alpha.wikiotics.org"&gt;Wikiotics&lt;/a&gt;. Their goal is basically to create a
 FLOSS alternative to some of the commercial translation software out
 there, particularly the ever-so-expensive Rosetta Stone. The whole thing
-is built on a custom wiki platform called &lt;a class="reference external" href="http://code.ductus.us/"&gt;Ductus&lt;/a&gt;.
-Today, I cloned their development tree for local development, located at
+is built on a custom wiki platform called &lt;a class="reference external" href="http://code.ductus.us/"&gt;Ductus&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Today, I cloned their development tree for local development, located at
 &lt;a class="reference external" href="http://gitorious.org/ductus-rit/"&gt;http://gitorious.org/ductus-rit/&lt;/a&gt;. Right now, nothing's been done to
 it, but this will be the staging area for our work here at RIT (and
 anyone who wants to get any additions into our tree) before going off to
-the master tree at ductus.us.
-We're still figuring out where everyone stands with development. I think
+the master tree at ductus.us.&lt;/p&gt;
+&lt;p&gt;We're still figuring out where everyone stands with development. I think
 the guys at ductus are pleasantly surprised at how much we already have
 under our belts here at the FOSSBOX. But that's just how we roll here at
 RIT.&lt;/p&gt;
@@ -1607,7 +1604,7 @@ down the hall somewhere, getting information has turned into a more
 interesting experience when the necessary parts are in his head.&lt;/p&gt;
 &lt;p&gt;I'm looking forward to an exciting next few weeks here, and a fruitful
 next few years with the information learned from this experience.&lt;/p&gt;
-</content><category term="CIVX"></category><category term="peopledashboard"></category><category term="widgets"></category></entry><entry><title>Here be Dragons</title><link href="http://blog.katherineca.se/civx/here-be-dragons.html" rel="alternate"></link><published>2010-09-09T18:11:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-09-09:/civx/here-be-dragons.html</id><summary type="html">&lt;p&gt;Today was the day we got &lt;a class="reference external" href="http://www.rebeccanatalie.com"&gt;Rebecca&lt;/a&gt; on to a git repo towards
+</content><category term="CIVX"></category><category term="peopledashboard"></category><category term="widgets"></category></entry><entry><title>Here be Dragons</title><link href="http://blog.katherineca.se/civx/here-be-dragons.html" rel="alternate"></link><published>2010-09-09T18:11:00-04:00</published><updated>2022-12-07T15:30:46-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-09-09:/civx/here-be-dragons.html</id><summary type="html">&lt;p&gt;Today was the day we got &lt;a class="reference external" href="http://www.rebeccanatalie.com"&gt;Rebecca&lt;/a&gt; on to a git repo towards
 implementing her changes to the people dashboard. It's only a halfway
 step, as she isn't entirely using the proper version of the widgets but
 a hacked one that works locally, and needs to be morphed into something …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Today was the day we got &lt;a class="reference external" href="http://www.rebeccanatalie.com"&gt;Rebecca&lt;/a&gt; on to a git repo towards
@@ -1616,8 +1613,8 @@ step, as she isn't entirely using the proper version of the widgets but
 a hacked one that works locally, and needs to be morphed into something
 that will work in the context of the CIVX stack. Hopefully soon she will
 be up to speed and be able to make a more direct submission in the near
-future.
-As it stands, this is good stuff, and the end result is definitely
+future.&lt;/p&gt;
+&lt;p&gt;As it stands, this is good stuff, and the end result is definitely
 usable, even if it's not in the format we want it just yet. Translating
 one to the other has proven tiresome as well; I spent the better part of
 three hours just to clean up the first of our tabs. There are a few
@@ -1922,31 +1919,4 @@ and that script is a bit harder to hack than the download script. The
 real work was on the documentation, trying to get people to understand
 my reasoning behind the changes and allow for them to continue my work
 without too much difficulty.&lt;/p&gt;
-</content><category term="CIVX"></category><category term="democracymap"></category><category term="geowebdns"></category></entry><entry><title>Hello, world...</title><link href="http://blog.katherineca.se/civx/hello-world.html" rel="alternate"></link><published>2010-06-21T14:53:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-06-21:/civx/hello-world.html</id><summary type="html">&lt;p&gt;This is my first posting despite having been here for a week, because
-the zaniness that was my first week did not allow for such silly things
-as introductions. Now I finally have some of the infrastructure things
-worked out, and can report on my findings.&lt;/p&gt;
-&lt;p&gt;Work has been progressing …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is my first posting despite having been here for a week, because
-the zaniness that was my first week did not allow for such silly things
-as introductions. Now I finally have some of the infrastructure things
-worked out, and can report on my findings.&lt;/p&gt;
-&lt;p&gt;Work has been progressing on a scraper for &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Shapefile"&gt;shapefiles&lt;/a&gt; for the Senate.
-I've been fairly successful in getting a large amount of data, (up to
-7.6 GB of zip files!) so my task today was to clean up the script and
-make it readable to commit it back upstream. I had started by adding
-more loops to the script for special cases, but that meant repeating the
-core download code. Realizing this, I made a generalized downloader
-function which gets called by each loop, simplifying individual loops
-into a simple&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-'for URL in $URL_LIST; download $URL $FILE; done'
-&lt;/pre&gt;
-&lt;p&gt;Well, I think it's simpler...&lt;/p&gt;
-&lt;p&gt;Each time I tweak away at this file, my bash skill gets better and
-better, but whether any of this is going to stick around is another
-question. I always forget the simple bashisms, like for loops and
-conditionals, and I can never remember quite how variables work. But as
-I work more with this file, I get more comfortable with these
-conventions. Though I still occasionally pine for the occasional
-pythonic statement (and perhaps also for the fjords).&lt;/p&gt;
 </content><category term="CIVX"></category><category term="democracymap"></category><category term="geowebdns"></category></entry></feed>

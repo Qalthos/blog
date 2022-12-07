@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut? - personal</title><link href="http://blog.katherineca.se/" rel="alternate"></link><link href="http://blog.katherineca.se/feeds/personal.atom.xml" rel="self"></link><id>http://blog.katherineca.se/</id><updated>2022-12-07T14:32:44-05:00</updated><entry><title>Fail2ban woes</title><link href="http://blog.katherineca.se/personal/fail2ban-woes.html" rel="alternate"></link><published>2017-08-24T16:30:00-04:00</published><updated>2022-12-07T14:28:30-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2017-08-24:/personal/fail2ban-woes.html</id><summary type="html">&lt;p&gt;So I had a bit of a scare this morning.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut? - personal</title><link href="http://blog.katherineca.se/" rel="alternate"></link><link href="http://blog.katherineca.se/feeds/personal.atom.xml" rel="self"></link><id>http://blog.katherineca.se/</id><updated>2022-12-07T15:45:54-05:00</updated><entry><title>Fail2ban woes</title><link href="http://blog.katherineca.se/personal/fail2ban-woes.html" rel="alternate"></link><published>2017-08-24T16:30:00-04:00</published><updated>2022-12-07T14:28:30-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2017-08-24:/personal/fail2ban-woes.html</id><summary type="html">&lt;p&gt;So I had a bit of a scare this morning.&lt;/p&gt;
 &lt;p&gt;I'm in a hotel in North Carolina, hundreds of miles from my server, when I try to log in and get a &amp;quot;Connection refused&amp;quot; error. Phooey. I hope the hotel wifi is just filtering port 22 for some terrible reason …&lt;/p&gt;</summary><content type="html">&lt;p&gt;So I had a bit of a scare this morning.&lt;/p&gt;
 &lt;p&gt;I'm in a hotel in North Carolina, hundreds of miles from my server, when I try to log in and get a &amp;quot;Connection refused&amp;quot; error. Phooey. I hope the hotel wifi is just filtering port 22 for some terrible reason, and hop to a friend's server over a non-standard port and I'm in. Great! I type out the connection again and...&lt;/p&gt;
 &lt;p&gt;Connection refused&lt;/p&gt;
@@ -323,7 +323,7 @@ addition would extend gameplay a bit more and provide new challenges for
 longtime players (not to mention many more dice to play with).&lt;/p&gt;
 &lt;p&gt;So that's how I spent my weekend apart from coding like a superstar. But
 don't worry, I'll get to that soon.&lt;/p&gt;
-</content><category term="personal"></category><category term="games"></category></entry><entry><title>pyDex on Sugar</title><link href="http://blog.katherineca.se/personal/pydex-on-sugar.html" rel="alternate"></link><published>2011-01-19T23:51:00-05:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2011-01-19:/personal/pydex-on-sugar.html</id><summary type="html">&lt;p&gt;A warning, this gets very technical with lots of acronyms and jargon.
+</content><category term="personal"></category><category term="games"></category></entry><entry><title>pyDex on Sugar</title><link href="http://blog.katherineca.se/personal/pydex-on-sugar.html" rel="alternate"></link><published>2011-01-19T23:51:00-05:00</published><updated>2022-12-07T15:45:54-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2011-01-19:/personal/pydex-on-sugar.html</id><summary type="html">&lt;p&gt;A warning, this gets very technical with lots of acronyms and jargon.
 tl;dr: I have a new pyDex branch which *should* run on the OLPC
 A few days ago, I decided I'd finally see how well pyDex runs on the
 OLPC. Turns out, it runs pretty well, which isn't …&lt;/p&gt;</summary><content type="html">&lt;p&gt;A warning, this gets very technical with lots of acronyms and jargon.
@@ -331,15 +331,15 @@ tl;dr: I have a new pyDex branch which *should* run on the OLPC
 A few days ago, I decided I'd finally see how well pyDex runs on the
 OLPC. Turns out, it runs pretty well, which isn't too surprising as it
 is written in pure pyGTK and Glade, both of which are well supported in
-Sugar.
-So today, I loaded up my dev files and set to work. First, though, I had
+Sugar.&lt;/p&gt;
+&lt;p&gt;So today, I loaded up my dev files and set to work. First, though, I had
 to clean up my dev branch and finish committing the few hacks I had
 accumulated over the last few months. I finally fixed the zero index bug
 and found I had a problem in my new scraper that was causing all the
 evolution problems. In any case, that's all fixed, so my dev branch is
 nice and clean and almost ready for the Black/White release in a few
-weeks.
-Getting back to Sugar, I finally found &lt;a class="reference external" href="http://magazine.redhat.com/2007/04/26/building-the-xo-porting-a-pygtk-game-to-sugar-part-two/"&gt;a good tutorial&lt;/a&gt; on *porting*
+weeks.&lt;/p&gt;
+&lt;p&gt;Getting back to Sugar, I finally found &lt;a class="reference external" href="http://magazine.redhat.com/2007/04/26/building-the-xo-porting-a-pygtk-game-to-sugar-part-two/"&gt;a good tutorial&lt;/a&gt; on *porting*
 a pyGTK program rather than writing a new one. While admittedly I
 haven't looked very hard, I had had a bit of a problem getting past the
 example activity before, probably due to my use of Glade as I cannot
@@ -348,8 +348,8 @@ Glade's XML and I really don't feel like defining everything in code.
 The most useful thing I found in this tutorial is sending different
 parents to the main panel depending on where it is called from. So if we
 call the program normally, main_window is still loaded from Glade, but
-if Sugar loads it, we use their prebuilt panel.
-It still needs to be tested, and I need to add actual activity
+if Sugar loads it, we use their prebuilt panel.&lt;/p&gt;
+&lt;p&gt;It still needs to be tested, and I need to add actual activity
 information (and an icon eventually), but I think it should work. I'll
 probably get to test it sometime this weekend, maybe even turn it into a
 real activity by then. This is still just a small project, and I doubt

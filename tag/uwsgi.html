@@ -3,7 +3,7 @@
 <head>
   <title>Why Not Wingnut? - uWSGI</title>
   <meta charset="utf-8" />
-    <link rel="stylesheet" href="http://blog.katherineca.se/theme/css/main.min.css?6f94adab" type="text/css" />
+    <link rel="stylesheet" href="http://blog.katherineca.se/theme/css/main.min.css?1f773f3a" type="text/css" />
     <link href="http://blog.katherineca.se/feeds/tag/uWSGI.atom.xml"
           type="application/atom+xml" rel="alternate"
           title="Why Not Wingnut? uWSGI Atom Feed" />
@@ -105,34 +105,21 @@ uWSGI. This is a bit complicated as <tt class="docutils literal">lazyserver.sh</
 <tt class="docutils literal">lazycelery.sh</tt> are all actually the same file, with certain things changing
 depending on the name by which it is invoked. I changed two sections <a class="footnote-reference" href="#footnote-1" id="footnote-reference-1">[1]</a>,
 first:</p>
-<div class="highlight"><pre><span></span><span class="nv">local_bin</span><span class="o">=</span><span class="s2">&quot;./bin&quot;</span>
-<span class="k">case</span> <span class="s2">&quot;</span><span class="nv">$selfname</span><span class="s2">&quot;</span> <span class="k">in</span>
-    lazyserver.sh<span class="o">)</span>
-        <span class="nv">starter_cmd</span><span class="o">=</span>paster
-        <span class="nv">ini_prefix</span><span class="o">=</span>paste
-        <span class="p">;;</span>
-</pre></div>
-<p>became:</p>
-<div class="highlight"><pre><span></span><span class="nv">local_bin</span><span class="o">=</span><span class="s2">&quot;./bin&quot;</span>
-<span class="k">case</span> <span class="s2">&quot;</span><span class="nv">$selfname</span><span class="s2">&quot;</span> <span class="k">in</span>
-    lazyserver.sh<span class="o">)</span>
-        <span class="nv">starter_cmd</span><span class="o">=</span>uwsgi
-        <span class="nv">ini_prefix</span><span class="o">=</span>paste
-        <span class="p">;;</span>
+<div class="highlight"><pre><span></span><span class="w"> </span> local_bin=&quot;./bin&quot;<span class="w"></span>
+<span class="w"> </span> case &quot;$selfname&quot; in<span class="w"></span>
+<span class="w"> </span>     lazyserver.sh)<span class="w"></span>
+<span class="gd">-         starter_cmd=paster</span><span class="w"></span>
+<span class="gi">+         starter_cmd=uwsgi</span><span class="w"></span>
+<span class="w"> </span>         ini_prefix=paste<span class="w"></span>
+<span class="w"> </span>         ;;<span class="w"></span>
 </pre></div>
 <p>And then near the very end of the file:</p>
-<div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">CELERY_ALWAYS_EAGER</span><span class="o">=</span><span class="nb">true</span>
-<span class="k">case</span> <span class="s2">&quot;</span><span class="nv">$selfname</span><span class="s2">&quot;</span> <span class="k">in</span>
-    lazyserver.sh<span class="o">)</span>
-        <span class="nv">$starter</span> serve <span class="s2">&quot;</span><span class="nv">$ini_file</span><span class="s2">&quot;</span> <span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span> --reload
-        <span class="p">;;</span>
-</pre></div>
-<p>became:</p>
-<div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">CELERY_ALWAYS_EAGER</span><span class="o">=</span><span class="nb">true</span>
-<span class="k">case</span> <span class="s2">&quot;</span><span class="nv">$selfname</span><span class="s2">&quot;</span> <span class="k">in</span>
-    lazyserver.sh<span class="o">)</span>
-        <span class="nv">$starter</span> --plugin python --virtualenv . --ini-paste <span class="s2">&quot;</span><span class="nv">$ini_file</span><span class="s2">&quot;</span> <span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>
-        <span class="p">;;</span>
+<div class="highlight"><pre><span></span><span class="w"> </span> export CELERY_ALWAYS_EAGER=true<span class="w"></span>
+<span class="w"> </span> case &quot;$selfname&quot; in<span class="w"></span>
+<span class="w"> </span>     lazyserver.sh)<span class="w"></span>
+<span class="gd">-         $starter serve &quot;$ini_file&quot; &quot;$@&quot; --reload</span><span class="w"></span>
+<span class="gi">+         $starter --plugin python --virtualenv . --ini-paste &quot;$ini_file&quot; &quot;$@&quot;</span><span class="w"></span>
+<span class="w"> </span>         ;;<span class="w"></span>
 </pre></div>
 <p>This method allows you to keep using all the information on how to run
 MediaGoblin from paste.ini, while using uWSGI to do all the heavy lifting.

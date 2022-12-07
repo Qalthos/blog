@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut? - wikiotics</title><link href="http://blog.katherineca.se/" rel="alternate"></link><link href="http://blog.katherineca.se/feeds/tag/wikiotics.atom.xml" rel="self"></link><id>http://blog.katherineca.se/</id><updated>2022-12-07T14:07:06-05:00</updated><entry><title>Wikiotics Visual Tweak</title><link href="http://blog.katherineca.se/fossrit/wikiotics-visual-tweak.html" rel="alternate"></link><published>2010-12-08T23:51:00-05:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-12-08:/fossrit/wikiotics-visual-tweak.html</id><summary type="html">&lt;p&gt;So &lt;a class="reference external" href="http://trosehfoss.blogspot.com/"&gt;trose&lt;/a&gt; and I have been asked to put a bow on the Wikiotics work
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut? - wikiotics</title><link href="http://blog.katherineca.se/" rel="alternate"></link><link href="http://blog.katherineca.se/feeds/tag/wikiotics.atom.xml" rel="self"></link><id>http://blog.katherineca.se/</id><updated>2022-12-07T16:02:11-05:00</updated><entry><title>Wikiotics Visual Tweak</title><link href="http://blog.katherineca.se/fossrit/wikiotics-visual-tweak.html" rel="alternate"></link><published>2010-12-08T23:51:00-05:00</published><updated>2022-12-07T15:48:23-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-12-08:/fossrit/wikiotics-visual-tweak.html</id><summary type="html">&lt;p&gt;So &lt;a class="reference external" href="http://trosehfoss.blogspot.com/"&gt;trose&lt;/a&gt; and I have been asked to put a bow on the Wikiotics work
 while we're between projects. We both hit some bumps at the end of the
 quarter, so there's a few unused hours left to put into this project.
 One of the things we've been tasked with …&lt;/p&gt;</summary><content type="html">&lt;p&gt;So &lt;a class="reference external" href="http://trosehfoss.blogspot.com/"&gt;trose&lt;/a&gt; and I have been asked to put a bow on the Wikiotics work
@@ -9,15 +9,15 @@ One of the things we've been tasked with is looking at the CSS and
 seeing if there is anything we can do to it to make it look a little
 better. Now, neither trose nor I are designers by any stretch of the
 imagination, but we've got a few ideas that might go a ways to making
-Wikiotics look more attractive.
-&lt;a class="reference external" href="http://3.bp.blogspot.com/_NuCXZozR8O8/TQAXjymF2KI/AAAAAAAAAi8/02g5WgJiCj0/s320/Screenshot-Wikiotics%2B-%2BNamoroka-1.png"&gt;|image0|&lt;/a&gt;
-This is how Wikiotics looks today. The different actions possible on a
+Wikiotics look more attractive.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image0" src="http://3.bp.blogspot.com/_NuCXZozR8O8/TQAXjymF2KI/AAAAAAAAAi8/02g5WgJiCj0/s320/Screenshot-Wikiotics%2B-%2BNamoroka-1.png" /&gt;&lt;/p&gt;
+&lt;p&gt;This is how Wikiotics looks today. The different actions possible on a
 page are hanging out awkwardly in the center, and there's no clear
 division between the header and the content. After looking at this for a
 while, trose and I decided that we would emulate a few of the more
-reasonable designs of the more common wiki systems out there.
-&lt;a class="reference external" href="http://4.bp.blogspot.com/_NuCXZozR8O8/TQAXkGhFoPI/AAAAAAAAAjE/lnUp7vNtbAI/s320/Screenshot-Wikiotics%2B-%2BNamoroka.png"&gt;|image1|&lt;/a&gt;
-This is how Wikiotics looks on our local git. The 'tabs' have been moved
+reasonable designs of the more common wiki systems out there.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image1" src="http://4.bp.blogspot.com/_NuCXZozR8O8/TQAXkGhFoPI/AAAAAAAAAjE/lnUp7vNtbAI/s320/Screenshot-Wikiotics%2B-%2BNamoroka.png" /&gt;&lt;/p&gt;
+&lt;p&gt;This is how Wikiotics looks on our local git. The 'tabs' have been moved
 to the right, and pushed further into the top bar (maybe too much).
 Further, the active tab bleeds into the content area, which is lightly
 colored to mark it as a separate area from the header and footer areas.
@@ -28,71 +28,78 @@ These changes are a small step, but I think they go some way towards
 making Wikiotics a bit more approachable to outsiders. There are a few
 more things to be done on Friday, but I don't think we're yet done
 looking at this.&lt;/p&gt;
-</content><category term="FOSS@RIT"></category><category term="wikiotics"></category></entry><entry><title>Wikiotics at the Constellation Commons</title><link href="http://blog.katherineca.se/fossrit/wikiotics-at-the-constellation-commons.html" rel="alternate"></link><published>2010-12-08T23:30:00-05:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-12-08:/fossrit/wikiotics-at-the-constellation-commons.html</id><summary type="html">&lt;p&gt;This happened quite some time ago now, but with the election coverage I
-haven't had much time to get this out.
-Two weeks ago, Taylor and I were asked to appear at the opening of the
+</content><category term="FOSS@RIT"></category><category term="wikiotics"></category></entry><entry><title>Wikiotics at the Constellation Commons</title><link href="http://blog.katherineca.se/fossrit/wikiotics-at-the-constellation-commons.html" rel="alternate"></link><published>2010-12-08T23:30:00-05:00</published><updated>2022-12-07T15:33:58-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-12-08:/fossrit/wikiotics-at-the-constellation-commons.html</id><summary type="html">&lt;p&gt;This happened quite some time ago now, but with the election coverage I
+haven't had much time to get this out.&lt;/p&gt;
+&lt;p&gt;Two weeks ago, Taylor and I were asked to appear at the opening of the
 Constellation Commons for Global Learning, to show off Wikiotics as a
 student project and …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This happened quite some time ago now, but with the election coverage I
-haven't had much time to get this out.
-Two weeks ago, Taylor and I were asked to appear at the opening of the
+haven't had much time to get this out.&lt;/p&gt;
+&lt;p&gt;Two weeks ago, Taylor and I were asked to appear at the opening of the
 Constellation Commons for Global Learning, to show off Wikiotics as a
 student project and set up Wikiotics on all the computers. We got to
 show the site off to President Destler and to a few foreign language
-professors who were all quite excited about such a thing existing.
-In all we showed off the project to a fair number of people and got a
+professors who were all quite excited about such a thing existing.&lt;/p&gt;
+&lt;p&gt;In all we showed off the project to a fair number of people and got a
 very positive reaction from most of them. I don't know if we've seen any
 more users from this, but it seems to me it should help spread the word
 about Wikiotics.&lt;/p&gt;
-</content><category term="FOSS@RIT"></category><category term="wikiotics"></category></entry><entry><title>Updating git</title><link href="http://blog.katherineca.se/fossrit/updating-git.html" rel="alternate"></link><published>2010-10-04T19:39:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-10-04:/fossrit/updating-git.html</id><summary type="html">&lt;p&gt;We here at RIT are working on our own branch of Ductus, and Ductus got a
+</content><category term="FOSS@RIT"></category><category term="wikiotics"></category></entry><entry><title>Updating git</title><link href="http://blog.katherineca.se/fossrit/updating-git.html" rel="alternate"></link><published>2010-10-04T19:39:00-04:00</published><updated>2022-12-07T16:02:11-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-10-04:/fossrit/updating-git.html</id><summary type="html">&lt;p&gt;We here at RIT are working on our own branch of Ductus, and Ductus got a
 big addition over the weekend, namespaces. Unfortunately, our repository
-didn't know anything about that and needed to be updated.
-Now, I'm not a novice to using git, nor are any of the people in …&lt;/p&gt;</summary><content type="html">&lt;p&gt;We here at RIT are working on our own branch of Ductus, and Ductus got a
+didn't know anything about that and needed to be updated.&lt;/p&gt;
+&lt;p&gt;Now, I'm not a novice to using git, nor are any of the people in …&lt;/p&gt;</summary><content type="html">&lt;p&gt;We here at RIT are working on our own branch of Ductus, and Ductus got a
 big addition over the weekend, namespaces. Unfortunately, our repository
-didn't know anything about that and needed to be updated.
-Now, I'm not a novice to using git, nor are any of the people in the
+didn't know anything about that and needed to be updated.&lt;/p&gt;
+&lt;p&gt;Now, I'm not a novice to using git, nor are any of the people in the
 FOSSBOX. But we'd never had to worry about upstream repositories, for
-all of our projects, we *were* upstream.
-Taylor and I finally worked it out*, and now we're trying to fix all
+all of our projects, we *were* upstream.&lt;/p&gt;
+&lt;p&gt;Taylor and I finally worked it out &lt;a class="footnote-reference" href="#footnote-1" id="footnote-reference-1"&gt;[1]&lt;/a&gt;, and now we're trying to fix all
 the problems that came up with the new hotness as best as we can. but
 even when you feel comfortable with something, you can never quite
 escape the possibility that something you hadn't considered might show
-up.
-* The process, for reference, as near as I can figure
-git remote add
+up.&lt;/p&gt;
+&lt;table class="docutils footnote" frame="void" id="footnote-1" rules="none"&gt;
+&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#footnote-reference-1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;p class="first"&gt;The process, for reference, as near as I can figure&lt;/p&gt;
+&lt;div class="last"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git remote add
 git pull
-git push&lt;/p&gt;
-</content><category term="FOSS@RIT"></category><category term="wikiotics"></category></entry><entry><title>Wikiotics Week 2</title><link href="http://blog.katherineca.se/fossrit/wikiotics-week-2.html" rel="alternate"></link><published>2010-09-29T18:36:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-09-29:/fossrit/wikiotics-week-2.html</id><summary type="html">&lt;p&gt;We're into week 2 of Wikiotics' &lt;a class="reference external" href="http://alpha.wikiotics.org/wiki/four_week_plan"&gt;four week plan&lt;/a&gt; to push Wikiotics
-development, so I thought I'd get out all the stuff I did last week.
-First, in order to get myself acquainted with the user interface I
+git push
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</content><category term="FOSS@RIT"></category><category term="wikiotics"></category></entry><entry><title>Wikiotics Week 2</title><link href="http://blog.katherineca.se/fossrit/wikiotics-week-2.html" rel="alternate"></link><published>2010-09-29T18:36:00-04:00</published><updated>2022-12-07T15:31:42-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-09-29:/fossrit/wikiotics-week-2.html</id><summary type="html">&lt;p&gt;We're into week 2 of Wikiotics' &lt;a class="reference external" href="http://alpha.wikiotics.org/wiki/four_week_plan"&gt;four week plan&lt;/a&gt; to push Wikiotics
+development, so I thought I'd get out all the stuff I did last week.&lt;/p&gt;
+&lt;p&gt;First, in order to get myself acquainted with the user interface I
 translated (badly) the introduction lesson into &lt;a class="reference external" href="http://alpha.wikiotics.org/wiki/Russian_lessons"&gt;Russian&lt;/a&gt; (and later
 tapped &lt;a class="reference external" href="http://rockettium.net/wordpress/"&gt;Ellen Rocket's …&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;We're into week 2 of Wikiotics' &lt;a class="reference external" href="http://alpha.wikiotics.org/wiki/four_week_plan"&gt;four week plan&lt;/a&gt; to push Wikiotics
-development, so I thought I'd get out all the stuff I did last week.
-First, in order to get myself acquainted with the user interface I
+development, so I thought I'd get out all the stuff I did last week.&lt;/p&gt;
+&lt;p&gt;First, in order to get myself acquainted with the user interface I
 translated (badly) the introduction lesson into &lt;a class="reference external" href="http://alpha.wikiotics.org/wiki/Russian_lessons"&gt;Russian&lt;/a&gt; (and later
-tapped &lt;a class="reference external" href="http://rockettium.net/wordpress/"&gt;Ellen Rocket's&lt;/a&gt; German prowess for a &lt;a class="reference external" href="http://alpha.wikiotics.org/wiki/German_lessons"&gt;German&lt;/a&gt; one).
-Later I was asked to look into creoleparser to see if I could fix &lt;a class="reference external" href="http://code.google.com/p/creoleparser/issues/detail?id=42"&gt;bug
+tapped &lt;a class="reference external" href="http://rockettium.net/wordpress/"&gt;Ellen Rocket's&lt;/a&gt; German prowess for a &lt;a class="reference external" href="http://alpha.wikiotics.org/wiki/German_lessons"&gt;German&lt;/a&gt; one).&lt;/p&gt;
+&lt;p&gt;Later I was asked to look into creoleparser to see if I could fix &lt;a class="reference external" href="http://code.google.com/p/creoleparser/issues/detail?id=42"&gt;bug
 42&lt;/a&gt; to disable external image loading, which we also want for Ductus.
 Getting into yet another python codebase so soon was interesting,
 especially when I had to switch back and forth looking at things
-&lt;a class="reference external" href="http://trosehfoss.blogspot.com/"&gt;Taylor&lt;/a&gt; was doing.
-That's all I really got into for week one, but now that I'm fairly
+&lt;a class="reference external" href="http://trosehfoss.blogspot.com/"&gt;Taylor&lt;/a&gt; was doing.&lt;/p&gt;
+&lt;p&gt;That's all I really got into for week one, but now that I'm fairly
 comfortable with the various technologies being used, I think things
 will really start rolling soon&lt;/p&gt;
-</content><category term="FOSS@RIT"></category><category term="wikiotics"></category></entry><entry><title>Wikiotics</title><link href="http://blog.katherineca.se/fossrit/wikiotics.html" rel="alternate"></link><published>2010-09-20T19:45:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-09-20:/fossrit/wikiotics.html</id><summary type="html">&lt;p&gt;As of Friday, I have been doing some work (along with &lt;a class="reference external" href="http://trosehfoss.blogspot.com/"&gt;Taylor&lt;/a&gt; for a
+</content><category term="FOSS@RIT"></category><category term="wikiotics"></category></entry><entry><title>Wikiotics</title><link href="http://blog.katherineca.se/fossrit/wikiotics.html" rel="alternate"></link><published>2010-09-20T19:45:00-04:00</published><updated>2022-12-07T15:27:20-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2010-09-20:/fossrit/wikiotics.html</id><summary type="html">&lt;p&gt;As of Friday, I have been doing some work (along with &lt;a class="reference external" href="http://trosehfoss.blogspot.com/"&gt;Taylor&lt;/a&gt;) for a
 new set of people, &lt;a class="reference external" href="http://alpha.wikiotics.org"&gt;Wikiotics&lt;/a&gt;. Their goal is basically to create a
 FLOSS alternative to some of the commercial translation software out
 there, particularly the ever-so-expensive Rosetta Stone. The whole thing
-is built on a custom …&lt;/p&gt;</summary><content type="html">&lt;p&gt;As of Friday, I have been doing some work (along with &lt;a class="reference external" href="http://trosehfoss.blogspot.com/"&gt;Taylor&lt;/a&gt; for a
+is built on a custom …&lt;/p&gt;</summary><content type="html">&lt;p&gt;As of Friday, I have been doing some work (along with &lt;a class="reference external" href="http://trosehfoss.blogspot.com/"&gt;Taylor&lt;/a&gt;) for a
 new set of people, &lt;a class="reference external" href="http://alpha.wikiotics.org"&gt;Wikiotics&lt;/a&gt;. Their goal is basically to create a
 FLOSS alternative to some of the commercial translation software out
 there, particularly the ever-so-expensive Rosetta Stone. The whole thing
-is built on a custom wiki platform called &lt;a class="reference external" href="http://code.ductus.us/"&gt;Ductus&lt;/a&gt;.
-Today, I cloned their development tree for local development, located at
+is built on a custom wiki platform called &lt;a class="reference external" href="http://code.ductus.us/"&gt;Ductus&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Today, I cloned their development tree for local development, located at
 &lt;a class="reference external" href="http://gitorious.org/ductus-rit/"&gt;http://gitorious.org/ductus-rit/&lt;/a&gt;. Right now, nothing's been done to
 it, but this will be the staging area for our work here at RIT (and
 anyone who wants to get any additions into our tree) before going off to
-the master tree at ductus.us.
-We're still figuring out where everyone stands with development. I think
+the master tree at ductus.us.&lt;/p&gt;
+&lt;p&gt;We're still figuring out where everyone stands with development. I think
 the guys at ductus are pleasantly surprised at how much we already have
 under our belts here at the FOSSBOX. But that's just how we roll here at
 RIT.&lt;/p&gt;

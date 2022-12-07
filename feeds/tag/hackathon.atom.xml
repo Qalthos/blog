@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut? - hackathon</title><link href="http://blog.katherineca.se/" rel="alternate"></link><link href="http://blog.katherineca.se/feeds/tag/hackathon.atom.xml" rel="self"></link><id>http://blog.katherineca.se/</id><updated>2022-12-07T14:30:39-05:00</updated><entry><title>National Day of Civic Hacking</title><link href="http://blog.katherineca.se/fossrit/national-day-of-civic-hacking.html" rel="alternate"></link><published>2013-06-02T03:18:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2013-06-02:/fossrit/national-day-of-civic-hacking.html</id><summary type="html">&lt;p&gt;One of the projects I worked on during the &lt;a class="reference external" href="http://hackforchange.org/fossrit-rochester-civic-hackathon"&gt;Rochester edition&lt;/a&gt; of the
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut? - hackathon</title><link href="http://blog.katherineca.se/" rel="alternate"></link><link href="http://blog.katherineca.se/feeds/tag/hackathon.atom.xml" rel="self"></link><id>http://blog.katherineca.se/</id><updated>2022-12-07T15:55:10-05:00</updated><entry><title>National Day of Civic Hacking</title><link href="http://blog.katherineca.se/fossrit/national-day-of-civic-hacking.html" rel="alternate"></link><published>2013-06-02T03:18:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2013-06-02:/fossrit/national-day-of-civic-hacking.html</id><summary type="html">&lt;p&gt;One of the projects I worked on during the &lt;a class="reference external" href="http://hackforchange.org/fossrit-rochester-civic-hackathon"&gt;Rochester edition&lt;/a&gt; of the
 &lt;a class="reference external" href="http://hackforchange.org"&gt;National Day of Civic Hacking&lt;/a&gt; hackathon was not actually anything intended
 for the hackathon, but a short project I wrote last summer.&lt;/p&gt;
 &lt;p&gt;If you remember from &lt;a class="reference external" href="introducing-fossrit-timeline-year-in-review.html"&gt;my last post&lt;/a&gt; on the subject, I had made three files …&lt;/p&gt;</summary><content type="html">&lt;p&gt;One of the projects I worked on during the &lt;a class="reference external" href="http://hackforchange.org/fossrit-rochester-civic-hackathon"&gt;Rochester edition&lt;/a&gt; of the
@@ -39,7 +39,7 @@ download its requirements for you. I don't know how legitimate this is for a
 Python install, but it was certainly quite useful for me and the others
 trying to use lxml. It even works inside a virtualenv, though I don't know why
 it wouldn't.&lt;/p&gt;
-</content><category term="FOSS@RIT"></category><category term="hackathon"></category><category term="python"></category><category term="wat"></category></entry><entry><title>American Greetings Hackathon Followup</title><link href="http://blog.katherineca.se/fossrit/american-greetings-hackathon-followup.html" rel="alternate"></link><published>2013-01-24T22:33:00-05:00</published><updated>2022-12-07T14:30:39-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2013-01-24:/fossrit/american-greetings-hackathon-followup.html</id><summary type="html">&lt;p&gt;Last weekend was the &lt;a class="reference external" href="http://foss.rit.edu/node/425"&gt;American Greetings Hackathon&lt;/a&gt;, and it was one of
+</content><category term="FOSS@RIT"></category><category term="hackathon"></category><category term="python"></category><category term="wat"></category></entry><entry><title>American Greetings Hackathon Followup</title><link href="http://blog.katherineca.se/fossrit/american-greetings-hackathon-followup.html" rel="alternate"></link><published>2013-01-24T22:33:00-05:00</published><updated>2022-12-07T15:26:07-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2013-01-24:/fossrit/american-greetings-hackathon-followup.html</id><summary type="html">&lt;p&gt;Last weekend was the &lt;a class="reference external" href="http://foss.rit.edu/node/425"&gt;American Greetings Hackathon&lt;/a&gt;, and it was one of
 the most successful yet. We got more than 70 people attending and
 working on projects, and most of those projects had at least something
 working by the end of the 24 hours.&lt;/p&gt;
@@ -179,20 +179,20 @@ application, not OpenShift), so it looked like I had finally fixed
 deploying a standard TurboGears app. I've no doubt that there's
 something I've left out, but I'm pretty amazed at the progress I've made
 so far, and learned a lot about both OpenShift and TurboGears.&lt;/p&gt;
-</content><category term="FOSS@RIT"></category><category term="hackathon"></category><category term="FLOSS-seminar"></category><category term="openshift"></category></entry><entry><title>Multiprocessing the PolyScraper</title><link href="http://blog.katherineca.se/civx/multiprocessing-the-polyscraper.html" rel="alternate"></link><published>2011-06-29T18:04:00-04:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2011-06-29:/civx/multiprocessing-the-polyscraper.html</id><summary type="html">&lt;p&gt;Warning: This post was written at 4AM and contains a technical account
+</content><category term="FOSS@RIT"></category><category term="hackathon"></category><category term="FLOSS-seminar"></category><category term="openshift"></category></entry><entry><title>Multiprocessing the PolyScraper</title><link href="http://blog.katherineca.se/civx/multiprocessing-the-polyscraper.html" rel="alternate"></link><published>2011-06-29T18:04:00-04:00</published><updated>2022-12-07T15:55:10-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2011-06-29:/civx/multiprocessing-the-polyscraper.html</id><summary type="html">&lt;p&gt;Warning: This post was written at 4AM and contains a technical account
 of what I have been doing attempting to parallelize CIVX's internals. If
 you are looking for a more general overview of what I have been doing
 recently, you are better off looking to another one of my posts …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Warning: This post was written at 4AM and contains a technical account
 of what I have been doing attempting to parallelize CIVX's internals. If
 you are looking for a more general overview of what I have been doing
-recently, you are better off looking to another one of my posts.
-Recently, I have been working on CIVX's PolyScraper, a neat little piece
+recently, you are better off looking to another one of my posts.&lt;/p&gt;
+&lt;p&gt;Recently, I have been working on CIVX's PolyScraper, a neat little piece
 of code designed to be able to read and understand structured text
 without knowing how the text is structured beforehand. On Thursday, I
 let a test scrape of a rather large dataset start, figuring it would
 finish sometime over the weekend and I'd be able to pick it up on
-Monday. Then Monday rolled around, and the scrape was still running.
-Worse, it didn't seem to be taking full advantage of the available
+Monday. Then Monday rolled around, and the scrape was still running.&lt;/p&gt;
+&lt;p&gt;Worse, it didn't seem to be taking full advantage of the available
 resources. Running as it was on the boat, it had four cores at its
 disposal, however it was steadfastly using only one core.
 Now PolyScraping is not an inherently parallelizable task, but on large
@@ -202,12 +202,12 @@ numbers of large files, those types of tasks are usually sequential as
 you have a smaller number of resources blocking on read IO). Clearly
 there were other things to look into, but if I could do this, this would
 mean a huge win for offline scraping, which was one of the things I had
-enabled with my addition of local file support to the PolyScraper.
-This all led me to &lt;a class="reference external" href="http://docs.python.org/library/multiprocessing.html"&gt;multiprocessing&lt;/a&gt;, a library I'd been wanting to try
+enabled with my addition of local file support to the PolyScraper.&lt;/p&gt;
+&lt;p&gt;This all led me to &lt;a class="reference external" href="http://docs.python.org/library/multiprocessing.html"&gt;multiprocessing&lt;/a&gt;, a library I'd been wanting to try
 out in python for some time now. Without going into too much detail,
 multiprocessing attempts to get around the &lt;a class="reference external" href="http://docs.python.org/glossary.html#term-global-interpreter-lock"&gt;Global Interpreter Lock&lt;/a&gt; by
-spawning subprocesses instead of threads.
-The first attempt was written pretty quickly, as I still remember a lot
+spawning subprocesses instead of threads.&lt;/p&gt;
+&lt;p&gt;The first attempt was written pretty quickly, as I still remember a lot
 from my Parallel Computing class from a while ago. Indeed the main
 problem turned out to be SQLAlchemy, or, more specifically our use of
 sqlite for a backend db. Sqlite is not the most robust of databases and
@@ -215,12 +215,12 @@ can't really handle multiple processes attempting to write to the db at
 once. Luke suggested (and I would love to try) moving over to Postgres
 as we will eventually be doing on the boat, but unfortunately the boat
 has been 'stuck ashore' for some time now due to an extended outage in
-CSH's network.
-In the meantime I have been whittling the process down to what I think
+CSH's network.&lt;/p&gt;
+&lt;p&gt;In the meantime I have been whittling the process down to what I think
 is the essentials. In the process I have made a complete mess of the
 code concerning the PolyScraper, but I should be able to make things at
-least look like the way they were before too long.
-At this point, though, I have been working on this project for close to
+least look like the way they were before too long.&lt;/p&gt;
+&lt;p&gt;At this point, though, I have been working on this project for close to
 20 hours today now. Luke is in town and we're all posted up in Remy's
 new place all hacking on our projects together. With any luck a good
 night's sleep will clear my head and give me new ideas for tomorrow.&lt;/p&gt;
@@ -228,12 +228,12 @@ night's sleep will clear my head and give me new ideas for tomorrow.&lt;/p&gt;
 That didn't happen too much.
 But there's another one going on now.
 ^__^&lt;/p&gt;
-</content><category term="FOSS@RIT"></category><category term="hackathon"></category></entry><entry><title>Boston</title><link href="http://blog.katherineca.se/civx/boston.html" rel="alternate"></link><published>2011-01-23T07:14:00-05:00</published><updated>2022-12-07T14:07:06-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2011-01-23:/civx/boston.html</id><summary type="html">&lt;p&gt;So here we are in OLPC HQ, right in the middle of MIT. It's pretty sweet
-having &lt;a class="reference external" href="http://lewk.org/"&gt;Luke&lt;/a&gt; around again to hack CIVX with us.
-I've had a lot to do in the past few days. Remy's been showing me
+</content><category term="FOSS@RIT"></category><category term="hackathon"></category></entry><entry><title>Boston</title><link href="http://blog.katherineca.se/civx/boston.html" rel="alternate"></link><published>2011-01-23T07:14:00-05:00</published><updated>2022-12-07T15:45:11-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2011-01-23:/civx/boston.html</id><summary type="html">&lt;p&gt;So here we are in OLPC HQ, right in the middle of MIT. It's pretty sweet
+having &lt;a class="reference external" href="http://lewk.org/"&gt;Luke&lt;/a&gt; around again to hack CIVX with us.&lt;/p&gt;
+&lt;p&gt;I've had a lot to do in the past few days. Remy's been showing me
 scrapers and models, and I've been helping transition &lt;a class="reference external" href="http://foss.rit.edu/user/17"&gt;Kate's&lt;/a&gt; people …&lt;/p&gt;</summary><content type="html">&lt;p&gt;So here we are in OLPC HQ, right in the middle of MIT. It's pretty sweet
-having &lt;a class="reference external" href="http://lewk.org/"&gt;Luke&lt;/a&gt; around again to hack CIVX with us.
-I've had a lot to do in the past few days. Remy's been showing me
+having &lt;a class="reference external" href="http://lewk.org/"&gt;Luke&lt;/a&gt; around again to hack CIVX with us.&lt;/p&gt;
+&lt;p&gt;I've had a lot to do in the past few days. Remy's been showing me
 scrapers and models, and I've been helping transition &lt;a class="reference external" href="http://foss.rit.edu/user/17"&gt;Kate's&lt;/a&gt; people
 dashboard into an integrated component or integrating &lt;a class="reference external" href="http://rebeccanatalie.com/"&gt;Rebecca's&lt;/a&gt; theme
 changes on the side. It's been hectic and fun and tough, but I finally
@@ -242,8 +242,8 @@ goals, not just writing code to accomplish a task like some of my
 previous co-ops. Being in a team this large helps, especially when we
 pull in outside help like Luke, but I think it's mainly Remy's
 infectious excitement for the project. When he gets down to work, one
-can't help but feel his vision and be excited for the possibilities.
-Unfortunately, that means I had precious little time to pay attention to
+can't help but feel his vision and be excited for the possibilities.&lt;/p&gt;
+&lt;p&gt;Unfortunately, that means I had precious little time to pay attention to
 the other teams. Three separate groups hacking away at their own
 projects, tossing ideas about and getting input from a few members
 upstream, not to mention the whole OLPC offices around the corner- this
