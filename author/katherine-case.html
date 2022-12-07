@@ -3,7 +3,7 @@
 <head>
   <title>Why Not Wingnut? - Katherine Case</title>
   <meta charset="utf-8" />
-    <link rel="stylesheet" href="http://blog.katherineca.se/theme/css/main.min.css?1f773f3a" type="text/css" />
+    <link rel="stylesheet" href="http://blog.katherineca.se/theme/css/main.min.css?6f94adab" type="text/css" />
       <link href="http://blog.katherineca.se/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Why Not Wingnut? Atom Feed" />
 
   <!--[if IE]>
@@ -37,7 +37,46 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="http://blog.katherineca.se/personal/fail2ban-woes.html">Fail2ban woes</a></h1> 
+                    <h1 class="entry-title"><a href="http://blog.katherineca.se/personal/hello-again.html">Hello Again</a></h1> 
+<footer class="post-info">
+        <p><img src="https://www.gravatar.com/avatar/3a3baabff105b46a458688ecf49901af" /></p>
+        <abbr class="published" title="2022-12-07T16:08:00-05:00">
+                Wed 07 December 2022
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="http://blog.katherineca.se/author/katherine-case.html">Katherine Case</a>
+        </address>
+<p>In <a href="http://blog.katherineca.se/category/personal.html">personal</a>. </p>
+<p>tags: <a href="http://blog.katherineca.se/tag/blog.html">blog</a><a href="http://blog.katherineca.se/tag/introspective.html">introspective</a></p>
+</footer><!-- /.post-info --><p>I've thought a lot about writing this post.</p>
+<p>I've also thought a lot about <em>not</em> writing it, and just leaving the whole thingup as a semipermanent memorial to he-who-never-really-was.</p>
+<p>But then I got to fixing up the domain redirects, and then I noticed the content
+errors, and got around to fixing rather a lot of things that had piled up in the
+last nine years since I'd last updated this and that meant taking some time to
+read some of the posts I had made back in the FOSS&#64;RIT days. And it really
+crystalized a few things for me — and reinforced the idea that after all that
+has changed, I am still me.</p>
+<p>So, if you've been here before, please take note of the new name and location,
+and welcome back. If you're new here, well, I really don't know what to tell
+you. I can't say that I intend to update this ever again, but at least I will
+feel at home if I do.</p>
+                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+        
+
+ 
+            <li><article class="hentry">    
+                <header>
+                    <h1><a href="http://blog.katherineca.se/personal/fail2ban-woes.html" rel="bookmark"
+                           title="Permalink to Fail2ban woes">Fail2ban woes</a></h1>
+                </header>
+                
+                <div class="entry-content">
 <footer class="post-info">
         <p><img src="https://www.gravatar.com/avatar/3a3baabff105b46a458688ecf49901af" /></p>
         <abbr class="published" title="2017-08-24T16:30:00-04:00">
@@ -49,23 +88,11 @@
         </address>
 <p>In <a href="http://blog.katherineca.se/category/personal.html">personal</a>. </p>
 <p>tags: <a href="http://blog.katherineca.se/tag/server.html">server</a></p>
-</footer><!-- /.post-info --><p>So I had a bit of a scare this morning.</p>
-<p>I'm in a hotel in North Carolina, hundreds of miles from my server, when I try to log in and get a &quot;Connection refused&quot; error. Phooey. I hope the hotel wifi is just filtering port 22 for some terrible reason, and hop to a friend's server over a non-standard port and I'm in. Great! I type out the connection again and...</p>
-<p>Connection refused</p>
-<p>Hmmm. This is starting to get concerning. I briefly freak out that my server might have had a terrible accident, when I realize that all of the other services I rely on all the time are still running. Phew. Still, I don't have ssh access, and that is very troubling. I start poking around with other things and eventually unconsciously try to ssh back in to check something and to my surprise, it works! As soon as I realize what I've done, I pull up journalctl to see if sshd is going crazy and I'm met with hundreds of lines of Chinese IPs plugging away at my server.</p>
-<p>But wait! I have fail2ban installed. That should be stopping these, right? Well maybe something broke when the server was upgraded to Debian 9... and now I'm off trying to figure out what is running and where the config is.</p>
-<p>Some time later, I finally have a solution. The problem (ultimately) was systemd, though not directly. I had moved this system to systemd some time early in Debian 7, which meant that the standard logging locations were still there, but no loger being written to. So fail2ban was looking for /var/log/auth.log, found a file, read it and found no problems, completely ignoring the fact that the file hadn't been written to since 2013. This isn't really fail2ban's fault, it has support for ingesting the systemd journal, but on Debian, the default backend still tries to use those files. I could set up rsyslog to start writing those files again, but I have no particular need or desire to do that outside of this program, especially as fail2ban knows how to read the journal on its own, if it's configured to do so.</p>
-<p>So the solution is pretty simple, though it took me a while to get there. First, I had to <tt class="docutils literal"><span class="pre">apt-get</span> install <span class="pre">python3-systemd</span></tt>, to get the proper libraries to actually use the journal. Then, I had to have the following in my jail.local:</p>
-<div class="highlight"><pre><span></span><span class="k">[sshd]</span><span class="w"></span>
-<span class="na">backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">systemd</span><span class="w"></span>
-</pre></div>
-<p>I also put a few other tweaks in there as my config hadn't actually moved over from the previous version, but since it's now in the jail.local instead of editing the system config, this shouldn't be a problem again.</p>
-                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+</footer><!-- /.post-info -->                <p>So I had a bit of a scare this morning.</p>
+<p>I'm in a hotel in North Carolina, hundreds of miles from my server, when I try to log in and get a &quot;Connection refused&quot; error. Phooey. I hope the hotel wifi is just filtering port 22 for some terrible reason …</p>
+                <a class="readmore" href="http://blog.katherineca.se/personal/fail2ban-woes.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
         
 
  
@@ -150,35 +177,6 @@ new features. I figured it was about time for a 1.0, so I tagged it and released
 it to the wild. Many thanks to <a class="reference external" href="http://oddshocks.com">oddshocks</a> not only for the original 0.1
 version of charsheet, but …</p>
                 <a class="readmore" href="http://blog.katherineca.se/fossrit/charsheet-10.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-        
-
- 
-            <li><article class="hentry">    
-                <header>
-                    <h1><a href="http://blog.katherineca.se/fossrit/deploying-mediagoblin-2-selinux.html" rel="bookmark"
-                           title="Permalink to Deploying MediaGoblin 2: SELinux">Deploying MediaGoblin 2: SELinux</a></h1>
-                </header>
-                
-                <div class="entry-content">
-<footer class="post-info">
-        <p><img src="https://www.gravatar.com/avatar/3a3baabff105b46a458688ecf49901af" /></p>
-        <abbr class="published" title="2013-09-27T16:09:00-04:00">
-                Fri 27 September 2013
-        </abbr>
-
-        <address class="vcard author">
-                By <a class="url fn" href="http://blog.katherineca.se/author/katherine-case.html">Katherine Case</a>
-        </address>
-<p>In <a href="http://blog.katherineca.se/category/fossrit.html">FOSS@RIT</a>. </p>
-<p>tags: <a href="http://blog.katherineca.se/tag/mediagoblin.html">mediagoblin</a><a href="http://blog.katherineca.se/tag/yacht.html">yacht</a><a href="http://blog.katherineca.se/tag/selinux.html">SELinux</a></p>
-</footer><!-- /.post-info -->                <p>So, <a class="reference external" href="deploying-mediagoblin-1-fastcgi-vs-uwsgi.html">earlier</a>, I wrote about my experience deploying <a class="reference external" href="http://mediagoblin.org">MediaGoblin</a>. None of
-this was necessary, I was mostly trying to diagnose some problems I was having
-and found uWSGI a more comfortable environment than FastCGI.</p>
-<p>And what problem was this, you ask? Well, when I first ran through the
-installation instructions …</p>
-                <a class="readmore" href="http://blog.katherineca.se/fossrit/deploying-mediagoblin-2-selinux.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
             </ol><!-- /#posts-list -->

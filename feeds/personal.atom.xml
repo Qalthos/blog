@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut? - personal</title><link href="http://blog.katherineca.se/" rel="alternate"></link><link href="http://blog.katherineca.se/feeds/personal.atom.xml" rel="self"></link><id>http://blog.katherineca.se/</id><updated>2022-12-07T15:45:54-05:00</updated><entry><title>Fail2ban woes</title><link href="http://blog.katherineca.se/personal/fail2ban-woes.html" rel="alternate"></link><published>2017-08-24T16:30:00-04:00</published><updated>2022-12-07T14:28:30-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2017-08-24:/personal/fail2ban-woes.html</id><summary type="html">&lt;p&gt;So I had a bit of a scare this morning.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Why Not Wingnut? - personal</title><link href="http://blog.katherineca.se/" rel="alternate"></link><link href="http://blog.katherineca.se/feeds/personal.atom.xml" rel="self"></link><id>http://blog.katherineca.se/</id><updated>2022-12-07T16:55:29-05:00</updated><entry><title>Hello Again</title><link href="http://blog.katherineca.se/personal/hello-again.html" rel="alternate"></link><published>2022-12-07T16:08:00-05:00</published><updated>2022-12-07T16:55:29-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2022-12-07:/personal/hello-again.html</id><summary type="html">&lt;p&gt;I've thought a lot about writing this post.&lt;/p&gt;
+&lt;p&gt;I've also thought a lot about &lt;em&gt;not&lt;/em&gt; writing it, and just leaving the whole thingup as a semipermanent memorial to he-who-never-really-was.&lt;/p&gt;
+&lt;p&gt;But then I got to fixing up the domain redirects, and then I noticed the content
+errors, and got around to …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I've thought a lot about writing this post.&lt;/p&gt;
+&lt;p&gt;I've also thought a lot about &lt;em&gt;not&lt;/em&gt; writing it, and just leaving the whole thingup as a semipermanent memorial to he-who-never-really-was.&lt;/p&gt;
+&lt;p&gt;But then I got to fixing up the domain redirects, and then I noticed the content
+errors, and got around to fixing rather a lot of things that had piled up in the
+last nine years since I'd last updated this and that meant taking some time to
+read some of the posts I had made back in the FOSS&amp;#64;RIT days. And it really
+crystalized a few things for me — and reinforced the idea that after all that
+has changed, I am still me.&lt;/p&gt;
+&lt;p&gt;So, if you've been here before, please take note of the new name and location,
+and welcome back. If you're new here, well, I really don't know what to tell
+you. I can't say that I intend to update this ever again, but at least I will
+feel at home if I do.&lt;/p&gt;
+</content><category term="personal"></category><category term="blog"></category><category term="introspective"></category></entry><entry><title>Fail2ban woes</title><link href="http://blog.katherineca.se/personal/fail2ban-woes.html" rel="alternate"></link><published>2017-08-24T16:30:00-04:00</published><updated>2022-12-07T14:28:30-05:00</updated><author><name>Katherine Case</name></author><id>tag:blog.katherineca.se,2017-08-24:/personal/fail2ban-woes.html</id><summary type="html">&lt;p&gt;So I had a bit of a scare this morning.&lt;/p&gt;
 &lt;p&gt;I'm in a hotel in North Carolina, hundreds of miles from my server, when I try to log in and get a &amp;quot;Connection refused&amp;quot; error. Phooey. I hope the hotel wifi is just filtering port 22 for some terrible reason …&lt;/p&gt;</summary><content type="html">&lt;p&gt;So I had a bit of a scare this morning.&lt;/p&gt;
 &lt;p&gt;I'm in a hotel in North Carolina, hundreds of miles from my server, when I try to log in and get a &amp;quot;Connection refused&amp;quot; error. Phooey. I hope the hotel wifi is just filtering port 22 for some terrible reason, and hop to a friend's server over a non-standard port and I'm in. Great! I type out the connection again and...&lt;/p&gt;
 &lt;p&gt;Connection refused&lt;/p&gt;
