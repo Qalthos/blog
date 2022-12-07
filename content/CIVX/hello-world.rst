@@ -19,7 +19,7 @@ core download code. Realizing this, I made a generalized downloader
 function which gets called by each loop, simplifying individual loops
 into a simple
 
-.. code-block::
+.. code-block:: bash
 
     for URL in $URL_LIST; download $URL $FILE; done
 
